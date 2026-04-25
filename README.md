@@ -6,7 +6,9 @@ Paper draft and reproducibility code for the result that **60714 is a universal 
 
 ## Quick links
 
-📄 **[Read the full paper →](paper.md)**
+📖 **[Read the paper section by section →](#table-of-contents)** *(recommended for in-browser viewing)*
+
+📄 **[Download the complete paper as one file →](paper.md)** *(may have GitHub rendering limits — use sections for browsing)*
 
 📊 **[Browse the 506 fixed points at $`d = 6`$ →](d6_fps.txt)**
 
