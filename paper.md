@@ -64,7 +64,7 @@ $$K_{\pi, \sigma}(n) = \left| \sum_{i=0}^{d-1} c_i \, x_i \right|,$$
 
 where the integer coefficients $c_i$ depend only on $(\pi, \sigma)$ and satisfy $\sum_i c_i = 0$. Specifically, $c_i = 10^{d-1-\pi^{-1}(i)} - 10^{d-1-\sigma^{-1}(i)}$. Define the **algebraic rank** (or **surviving-variable count**) of the rule:
 
-$$\mathrm{sv}(K_{\pi, \sigma}) = \#\{ i : c_i \neq 0 \}.$$
+$$\mathrm{sv}(K_{\pi, \sigma}) = \bigl|\{ i : c_i \neq 0 \}\bigr|.$$
 
 The rule is **full-variable** at digit length $d$ if $\mathrm{sv} = d$ — every sorted-descending position participates nontrivially in the output. The classical rule is full-variable at $d = 4$ (coefficient vector $(999, 90, -90, -999)$) but not at odd $d$, where the middle-position coefficient vanishes by the cancellation of §1.1.
 
@@ -235,7 +235,7 @@ For rules arising in §5 and §6 (the $60714$ lifting family and the $6174$ cros
 
 The **algebraic rank** (or **surviving-variable count**) of a rule $K_{\pi, \sigma}$ is
 
-$$\mathrm{sv}(K_{\pi, \sigma}) \;=\; \#\{\,i : c_i \neq 0\,\} \;=\; \#\{\,i : \pi_i \neq \sigma_i\,\}.$$
+$$\mathrm{sv}(K_{\pi, \sigma}) \;=\; \bigl|\{\,i : c_i \neq 0\,\}\bigr| \;=\; \bigl|\{\,i : \pi_i \neq \sigma_i\,\}\bigr|.$$
 
 The rule is **full-variable** at digit length $d$ if $\mathrm{sv} = d$ — equivalently, if the map $i \mapsto (\pi_i, \sigma_i)$ has $\pi_i \neq \sigma_i$ for every $i$.
 
@@ -275,7 +275,7 @@ Our full-variable classification excludes these by design: we study only rules w
 
 For a fixed point $F$ with sorted-descending form $(f_0, f_1, \ldots, f_{d-1})$ at length $d$, and for a rule $K_{\pi, \sigma}$ with coefficient vector $c$, the **effective rank at $F$** is
 
-$$\mathrm{sv}_F(K_{\pi, \sigma}) \;=\; \#\{\,i : c_i \neq 0 \text{ and } f_i \neq 0\,\}.$$
+$$\mathrm{sv}_F(K_{\pi, \sigma}) \;=\; \bigl|\{\,i : c_i \neq 0 \text{ and } f_i \neq 0\,\}\bigr|.$$
 
 Thus $\mathrm{sv}_F$ counts coefficients of the rule that *land on nonzero digits of $F$*. If $F$ has $z$ zero digits in its sorted-descending form, then $\mathrm{sv}_F \leq d - z$ for any rule.
 
@@ -1403,7 +1403,7 @@ The digit pairs $(u_k, v_k)$ for each $\delta_k$:
 
 **Counting zeros in the block region.** Define
 
-$$Z_0 := \#\{k : \delta_k = 0\}, \qquad Z_1 := \#\{k : \delta_k = 1\}, \qquad Z_{2+} := \#\{k : \delta_k \geq 2\}.$$
+$$Z_0 := \bigl|\{k : \delta_k = 0\}\bigr|, \qquad Z_1 := \bigl|\{k : \delta_k = 1\}\bigr|, \qquad Z_{2+} := \bigl|\{k : \delta_k \geq 2\}\bigr|.$$
 
 Then $Z_0 + Z_1 + Z_{2+} = M$, and the number of zero digits contributed by blocks is at least $2 Z_0 + Z_1$ (each $\delta_k = 0$ block contributes $2$ zeros; each $\delta_k = 1$ block contributes $1$ zero from $u_k = 0$).
 
