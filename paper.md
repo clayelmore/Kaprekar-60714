@@ -609,17 +609,17 @@ The section is structured as follows. §5.1 defines coefficient-preserving lifti
 
 ### 5.1 Coefficient-preserving liftings
 
-Throughout this section, $F$ denotes a universal full-variable fixed point at some native digit length $d_F$, and $K_{F}^{(d_F)}$ denotes a specific universal rule at $d_F$ with coefficient vector $c^{(d_F)} = (c_0, c_1, \ldots, c_{d_F - 1})$. Let $f^{(d_F)} = (f_0, \ldots, f_{d_F - 1})$ be the sorted-descending form of $F$ at $d_F$, and let $Z = \{i : f_i = 0\}$ be the set of zero-digit positions, $N = \{i : f_i \neq 0\} = \{0, 1, \ldots, d_F - 1\} \setminus Z$ the nonzero-digit positions.
+Throughout this section, $F$ denotes a universal full-variable fixed point at some native digit length $d_F$, and $K_{F}^{(d_{F})}$ denotes a specific universal rule at $d_F$ with coefficient vector $c^{(d_{F})} = (c_0, c_1, \ldots, c_{d_{F} - 1})$. Let $f^{(d_{F})} = (f_0, \ldots, f_{d_{F} - 1})$ be the sorted-descending form of $F$ at $d_F$, and let $Z = \{i : f_i = 0\}$ be the set of zero-digit positions, $N = \{i : f_i \neq 0\} = \{0, 1, \ldots, d_F - 1\} \setminus Z$ the nonzero-digit positions.
 
-For any $d > d_F$, write $F_{(d)}$ for $F$ padded to $d$ digits. The sorted-descending form of $F_{(d)}$ is $f^{(d_F)}$ with $d - d_F$ zeros appended (since padding adds zeros, which sort to the smallest positions). Thus $f^{(d)} = (f_0, \ldots, f_{d_F - 1}, 0, 0, \ldots, 0)$ with $d - d_F$ trailing zeros.
+For any $d > d_F$, write $F_{(d)}$ for $F$ padded to $d$ digits. The sorted-descending form of $F_{(d)}$ is $f^{(d_{F})}$ with $d - d_F$ zeros appended (since padding adds zeros, which sort to the smallest positions). Thus $f^{(d)} = (f_0, \ldots, f_{d_{F} - 1}, 0, 0, \ldots, 0)$ with $d - d_F$ trailing zeros.
 
-**Definition 5.1 (coefficient-preserving lifting).** *A rule $K^{(d)}$ at digit length $d > d_F$ with coefficient vector $c^{(d)} = (\tilde c_0, \tilde c_1, \ldots, \tilde c_{d-1})$ is a **coefficient-preserving lifting** of $K_F^{(d_F)}$ at length $d$ if*
+**Definition 5.1 (coefficient-preserving lifting).** *A rule $K^{(d)}$ at digit length $d > d_F$ with coefficient vector $c^{(d)} = (\tilde c_0, \tilde c_1, \ldots, \tilde c_{d-1})$ is a **coefficient-preserving lifting** of $K_{F}^{(d_{F})}$ at length $d$ if*
 
 $$\tilde c_i = c_i \quad \text{for every } i \in N.$$
 
 *(That is, the coefficients at $F$'s nonzero-digit positions are preserved verbatim from the native rule.)*
 
-**Proposition 5.1 (fixed-point equation preservation).** *If $K^{(d)}$ is a coefficient-preserving lifting of $K_F^{(d_F)}$, then $K^{(d)}(F_{(d)}) = F$.*
+**Proposition 5.1 (fixed-point equation preservation).** *If $K^{(d)}$ is a coefficient-preserving lifting of $K_{F}^{(d_{F})}$, then $K^{(d)}(F_{(d)}) = F$.*
 
 **Proof.** By the coefficient expansion of §2.2,
 
@@ -627,9 +627,9 @@ $$K^{(d)}(F_{(d)}) = \left| \sum_{i = 0}^{d - 1} \tilde c_i \cdot f^{(d)}_i \rig
 
 For $i \in N$, $\tilde c_i = c_i$ and $f^{(d)}_i = f_i$. For $i \in Z \cap \{0, \ldots, d_F - 1\}$, $f^{(d)}_i = 0$, so $\tilde c_i \cdot 0 = 0$. For $i \in \{d_F, \ldots, d - 1\}$, $f^{(d)}_i = 0$ (the appended-zero positions), so again $\tilde c_i \cdot 0 = 0$. Therefore
 
-$$K^{(d)}(F_{(d)}) = \left| \sum_{i \in N} c_i \cdot f_i \right| = \left| K^{(d_F)}(F) \right| = F,$$
+$$K^{(d)}(F_{(d)}) = \left| \sum_{i \in N} c_i \cdot f_i \right| = \left| K^{(d_{F})}(F) \right| = F,$$
 
-where the final equality uses that $K_F^{(d_F)}$ fixes $F$ at $d_F$. $\square$
+where the final equality uses that $K_{F}^{(d_{F})}$ fixes $F$ at $d_F$. $\square$
 
 **Remark 5.1.** Proposition 5.1 shows that the fixed-point equation is automatic under coefficient-preserving lifting. All structural content of the lifting — both the nontrivial coefficients at zero-digit positions and the sign-sum structure — lives in the coefficient positions corresponding to $F$'s zero digits, where it does not affect $K(F) = F$. This is the fundamental observation enabling the uniform construction across $d$.
 
@@ -747,7 +747,7 @@ The proof uses two lemmas on the native rule's *core contribution* under sorted-
 
 **Definition 5.4 (native core contribution).** *At digit length $d$ on either ladder, the **core contribution** of an input $n$ with sorted-descending form $(x_0, \ldots, x_{d-1})$ is*
 
-$$\mathrm{core}(n) = \sum_{i = 0}^{d_F - 1} c_i^{(d_F)} \cdot x_i = 9900 \, x_0 + 9 \, x_1 + 90 \, x_2 - 9000 \, x_3 - 999 \, x_4$$
+$$\mathrm{core}(n) = \sum_{i = 0}^{d_{F} - 1} c_i^{(d_{F})} \cdot x_i = 9900 \, x_0 + 9 \, x_1 + 90 \, x_2 - 9000 \, x_3 - 999 \, x_4$$
 
 *(for the odd ladder, taking $d_F = 5$).*
 
@@ -763,7 +763,7 @@ which does not immediately give non-negativity. A sharper argument is needed, ex
 
 **Lemma 5.4 (Core upper bound).** *For every sorted-descending sequence at $d \geq 7$, $\mathrm{core}(n) \leq 10^{d-2}$.*
 
-**Proof.** Direct: $9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 - 999 x_4 \leq 9900 \cdot 9 + 9 \cdot 9 + 90 \cdot 9 = 89{,}991 + 81 + 810 < 10^5 = 10^{d_F}$ for $d_F = 5$. For $d \geq 7$, $10^{d-2} \geq 10^5$, so the bound holds. $\square$
+**Proof.** Direct: $9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 - 999 x_4 \leq 9900 \cdot 9 + 9 \cdot 9 + 90 \cdot 9 = 89{,}991 + 81 + 810 < 10^5 = 10^{d_{F}}$ for $d_F = 5$. For $d \geq 7$, $10^{d-2} \geq 10^5$, so the bound holds. $\square$
 
 **Proof of Proposition 5.3 (outline).** The argument uses a *block-structure decomposition* of $K^{(d)}(n)$: each zero-sum pair at positions $(3+2k, 4+2k)$ contributes a value of the form $9 \cdot 10^{3+2k} \delta_k$ where $\delta_k = x_{3+2k} - x_{4+2k} \in \{0, 1, \ldots, 9\}$ by sorted-descending. Combined with Lemma 5.3 (core non-negativity), the argument inside the absolute value is non-negative:
 
@@ -1013,7 +1013,7 @@ The methodology of the paper — exhaustive enumeration at each digit length, co
 
 This appendix provides the complete enumerated classifications at digit lengths $d = 3, 4, 5, 6$. Each section lists all universal full-variable fixed points at the given $d$ along with representative data for one universal rule per fixed point. Sign-flipped duplicates are not listed separately (see Proposition 2.2).
 
-The classifications were computed by exhaustive enumeration in Python. Runtime on commodity hardware: negligible at $d = 3, 4$; 3 seconds at $d = 5$; roughly 3 hours at $d = 6$. Source code for the enumerations is available in the supplementary materials.
+The classifications were computed by exhaustive enumeration in Python. Runtime on commodity hardware: negligible at $d = 3, 4$; ~5 seconds at $d = 5$; ~5–10 minutes at $d = 6$. Source code for the enumerations is available in the supplementary materials.
 
 ## A.1 Classification at $d = 3$
 
@@ -1100,7 +1100,6 @@ The $506$ fixed points distribute by zero-digit count:
 | $1$ | $240$ |
 | $2$ | $53$  |
 | $3$ | $8$   |
-| $4$ | $1$   |
 
 And by digit sum (every universal fp at $d = 6$ has digit sum divisible by $9$):
 
@@ -1110,7 +1109,7 @@ And by digit sum (every universal fp at $d = 6$ has digit sum divisible by $9$):
 | $18$ | $156$ |
 | $27$ | $244$ |
 | $36$ | $96$ |
-| $45$ | $3$ |
+| $45$ | $2$ |
 
 ### A.4.2 Distinguished fixed points
 
@@ -1600,7 +1599,7 @@ These eleven fps have native rules at $d = 7$ for which the core function can be
 
 **Total strict-universal rules across Case 2: $64$.**
 
-The "bounded-deficit threshold" for Case 2 at $d_F = 7$ is $|\mathrm{core}_{\min}| < 10^{d_F - 1} = 10^6$. All 11 fps satisfy this bound, with the loosest case ($545{,}040$) at $|\mathrm{core}_{\min}| = 818{,}910 < 10^6$.
+The "bounded-deficit threshold" for Case 2 at $d_F = 7$ is $|\mathrm{core}_{\min}| < 10^{d_{F} - 1} = 10^6$. All 11 fps satisfy this bound, with the loosest case ($545{,}040$) at $|\mathrm{core}_{\min}| = 818{,}910 < 10^6$.
 
 ## D.4 The NEAR-edge fp: $F = 1{,}406{,}070$
 

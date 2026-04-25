@@ -1,4 +1,4 @@
-[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 2. Framework](02_framework.md) · [Next: 4. Cross-check $d = 5 \to d = 6$ →](04_cross_check.md)
 
 ---
 
@@ -144,4 +144,4 @@ Each classification is complete and reproducible; full enumeration scripts and d
 
 ---
 
-[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 2. Framework](02_framework.md) · [Next: 4. Cross-check $d = 5 \to d = 6$ →](04_cross_check.md)

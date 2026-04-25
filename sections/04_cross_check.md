@@ -1,4 +1,4 @@
-[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 3. Classifications at $d \leq 6$](03_classifications.md) · [Next: 5. Theorem 5.2: 60714 universal at every $d \geq 5$ →](05_theorem_60714.md)
 
 ---
 
@@ -146,4 +146,4 @@ A formal conjecture — that every full-variable fixed point with unbounded dime
 
 ---
 
-[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 3. Classifications at $d \leq 6$](03_classifications.md) · [Next: 5. Theorem 5.2: 60714 universal at every $d \geq 5$ →](05_theorem_60714.md)
