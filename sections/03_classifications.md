@@ -1,8 +1,8 @@
-## §3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$
+# 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$
 
 This section presents the complete classification of universal full-variable fixed points at digit lengths $d = 3, 4, 5, 6$. The classification at each $d$ is obtained by exhaustive enumeration: every full-variable rule is tested against every admissible input, and the universal rules are identified. The counts are definitive; the full list of fixed points at $d = 6$ appears in Appendix A.
 
-### 3.1 Method
+## 3.1 Method
 
 At each digit length $d$, we enumerate the full-variable rules — ordered pairs $(\pi, \sigma) \in S_d \times S_d$ with $\pi_i \neq \sigma_i$ for every $i$ (Proposition 2.1) — and for each such rule we check:
 
@@ -13,7 +13,7 @@ A rule is **universal at $d$** if both conditions hold. The set of **universal f
 
 The enumerations are complete. At $d = 6$, the largest case we present, $191{,}520$ full-variable rules are tested against $999{,}900$ admissible inputs, a search that runs in hours on commodity hardware with the iteration-and-caching implementation described in Appendix A.
 
-### 3.2 $d = 3$: no universal full-variable fixed points
+## 3.2 $d = 3$: no universal full-variable fixed points
 
 At $d = 3$, there are $12$ full-variable rules (Proposition 2.1, $3! \cdot D_3 = 6 \cdot 2 = 12$).
 
@@ -23,7 +23,7 @@ At $d = 3$, there are $12$ full-variable rules (Proposition 2.1, $3! \cdot D_3 =
 
 **Remark on $495$.** The classical attractor $495$ does not appear here because the classical rule $K_0$ at $d = 3$ is not full-variable: its middle coefficient vanishes by the forced borrow chain (§1.1), giving $\mathrm{sv}(K_0) = 2$. $495$ is a fixed point of a rank-$2$ rule, outside the scope of Theorem 3.1. It reappears in Appendix §2.5 as a dimension-agnostic fixed point.
 
-### 3.3 $d = 4$: four universal full-variable fixed points
+## 3.3 $d = 4$: four universal full-variable fixed points
 
 At $d = 4$, there are $216$ full-variable rules (Proposition 2.1, $4! \cdot D_4 = 24 \cdot 9 = 216$).
 
@@ -45,7 +45,7 @@ This identity is a specific instance of reverse-pair structure at $d = 4$: if $F
 
 **Connection to the classical rule.** $K_0$ at $d = 4$ is full-variable (coefficient vector $(999, 90, -90, -999)$), and $K_0$ is one of the $2$ universal rules for $6174$. The classical Kaprekar theorem is thus recovered within our classification as a specific entry in Theorem 3.2.
 
-### 3.4 $d = 5$: thirty-three universal full-variable fixed points
+## 3.4 $d = 5$: thirty-three universal full-variable fixed points
 
 At $d = 5$, there are $5{,}280$ full-variable rules (Proposition 2.1, $5! \cdot D_5 = 120 \cdot 44 = 5{,}280$).
 
@@ -84,15 +84,15 @@ At $d = 5$, there are $5{,}280$ full-variable rules (Proposition 2.1, $5! \cdot 
 
 *These fixed points are genuinely in the full-variable classification — their native rules are algebraically rank-$5$ — but their effective rank at $F$ is reduced by absorption of coefficients at zero-digit positions. This is the mechanism that underlies coefficient-preserving lifting in §5, visible here at the root of the classification: a rule can be algebraically full-variable while being effectively lower-rank on a specific fixed point. The remaining $31$ fps in Table 3.1 all have no zero digits and therefore have $\mathrm{sv}_F = \mathrm{sv} = 5$.*
 
-### 3.5 $d = 6$: five hundred and seven universal full-variable fixed points
+## 3.5 $d = 6$: five hundred and seven universal full-variable fixed points
 
 At $d = 6$, there are $190{,}800$ full-variable rules (Proposition 2.1, $6! \cdot D_6 = 720 \cdot 265$).
 
-**Theorem 3.4.** *There are exactly $507$ universal full-variable fixed points at $d = 6$, reached collectively by $1{,}288$ universal full-variable rules.*
+**Theorem 3.4.** *There are exactly $506$ universal full-variable fixed points at $d = 6$, reached collectively by $1{,}174$ universal full-variable rules.*
 
-**Proof.** Exhaustive enumeration of $190{,}800$ full-variable rules against $999{,}900$ admissible inputs. Full enumeration data and the complete list of $507$ fixed points are in Appendix A.4.
+**Proof.** Exhaustive enumeration of $190{,}800$ full-variable rules against $999{,}900$ admissible inputs. Full enumeration data and the complete list of $506$ fixed points are in Appendix A.4.
 
-**Stratification by zero digit count.** The $507$ fixed points distribute as follows by the number of zero digits in each fixed point:
+**Stratification by zero digit count.** The $506$ fixed points distribute as follows by the number of zero digits in each fixed point:
 
 | Zero-digit count | Fixed-point count |
 |:---:|:---:|
@@ -100,12 +100,11 @@ At $d = 6$, there are $190{,}800$ full-variable rules (Proposition 2.1, $6! \cdo
 | $1$ | $240$ |
 | $2$ | $53$  |
 | $3$ | $8$   |
-| $4$ | $1$   |
-| **Total** | **$507$** |
+| **Total** | **$506$** |
 
 This stratification matters for §5 and §6: fixed points with more zero digits admit more coefficient-preserving liftings to higher $d$, a phenomenon visible already at the $d = 5 \to d = 6$ boundary and developed in detail at §6.
 
-**The unique four-zero fixed point at $d = 6$.** Section A.4.1 records exactly one universal full-variable fp at $d = 6$ with $4$ zero digits, identified during the April 2026 d=6 classification. Its identity is recorded in the supplementary file `d6_fps.txt` and its cross-dimensional behavior is reserved for forthcoming work. (The fixed point $549{,}945$, though sometimes mentioned in this connection, has digit multiset $\{4, 4, 5, 5, 9, 9\}$ with zero zero digits and so does *not* belong to the four-zero stratum; see §A.4.2.)
+**Note on the high-zero-count strata.** The $8$ fps with $3$ zero digits at $d = 6$ all share digit multiset $\{0, 0, 0, 2, 2, 5\}$: they are $\{252, 2520, 20025, 25200, 200025, 200250, 250200, 252000\}$. There are no universal full-variable fps at $d = 6$ with $4$ or more zero digits — the trivial fixed point $F = 0$ is excluded throughout this paper by the convention of §2 (Proposition 2.3). In particular, the fixed point $549{,}945$ has digit multiset $\{4, 4, 5, 5, 9, 9\}$ with no zero digits and does not appear in this stratification.
 
 **Connection to classical Kaprekar at $d = 6$.** The classical rule $K_0$ at $d = 6$ has coefficient vector $(999{,}999, \, 89{,}991, \, 8{,}991, \, -8{,}991, \, -89{,}991, \, -999{,}999)$ after simplification. It is full-variable at $d = 6$ (all coefficients nonzero). [Dahl 2026] analyzes its basin: the rule is *not* universal at $d = 6$ — it produces a 7-cycle that attracts $93.55\%$ of inputs, with $6.25\%$ reaching $F = 631{,}764$ and $0.20\%$ reaching $F = 549{,}945$. The universal fixed points at $d = 6$ in our classification are attractors of *other* full-variable rules, not the classical one.
 
@@ -117,12 +116,12 @@ This stratification matters for §5 and §6: fixed points with more zero digits 
 | $18$  | $156$ |
 | $27$  | $244$ |
 | $36$  | $96$  |
-| $45$  | $3$   |
-| **Total** | **$507$** |
+| $45$  | $2$   |
+| **Total** | **$506$** |
 
 This pattern reflects a general arithmetic fact about universal Kaprekar-type attractors: $K(n) \equiv 0 \pmod 9$ whenever $n \in A_d$, so fixed points satisfy $F \equiv 0 \pmod 9$. The bell-shape reflects the combinatorics of digit-multisets satisfying this modular constraint.
 
-### 3.6 Summary
+## 3.6 Summary
 
 The classifications at $d = 3, 4, 5, 6$ are:
 
@@ -131,8 +130,10 @@ The classifications at $d = 3, 4, 5, 6$ are:
 | $3$ | $12$       | $0$   | $0$   |
 | $4$ | $216$      | $4$   | $8$   |
 | $5$ | $5{,}280$     | $33$  | $66$  |
-| $6$ | $191{,}520$   | $507$ | $1{,}288$ |
+| $6$ | $190{,}800$   | $506$ | $1{,}174$ |
 
 Each classification is complete and reproducible; full enumeration scripts and data are in Appendix A.
 
-**Why the count grows so quickly.** The growth in universal fixed-point count from $0$ at $d = 3$ to $507$ at $d = 6$ reflects two phenomena: (i) the space of full-variable rules grows factorially in $d$, providing more opportunities for fixed points, and (ii) integers with more digits have more admissible multisets, more potential rearrangements, and so more potential fixed-point equations to satisfy. The question of which of these $507$ fixed points at $d = 6$ arise as coefficient-preserving liftings from lower $d$, and which are genuinely new at $d = 6$, is the content of §4.
+**Why the count grows so quickly.** The growth in universal fixed-point count from $0$ at $d = 3$ to $506$ at $d = 6$ reflects two phenomena: (i) the space of full-variable rules grows factorially in $d$, providing more opportunities for fixed points, and (ii) integers with more digits have more admissible multisets, more potential rearrangements, and so more potential fixed-point equations to satisfy. The question of which of these $506$ fixed points at $d = 6$ arise as coefficient-preserving liftings from lower $d$, and which are genuinely new at $d = 6$, is the content of §4.
+
+---

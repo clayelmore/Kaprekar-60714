@@ -56,7 +56,7 @@ The maximum is achieved at $(x_0, x_1, x_2, x_3, x_4) = (9, 9, 9, 0, 0)$. $\squa
 
 The main technical claim underlying Proposition 5.3 rests on a **block-structure decomposition** of the lifted rule's output.
 
-### C.4.1 Block-structure decomposition
+## C.4.1 Block-structure decomposition
 
 At odd digit length $d \geq 7$, the odd-ladder rule $K^{(d)}_{60714}$ has coefficient vector
 
@@ -80,7 +80,7 @@ $$\sum_{k = 1}^{M} \delta_k \leq x_3 - x_{d-1} \leq 9.$$
 
 $\square$
 
-### C.4.2 Non-negativity of $K^{(d)}(x)$
+## C.4.2 Non-negativity of $K^{(d)}(x)$
 
 **Lemma C.7.** *For every sorted-descending $(x_0, \ldots, x_{d-1})$ and every odd $d \geq 7$,*
 
@@ -94,7 +94,7 @@ $$K^{(d)}(x) \;=\; \left| \sum_{i = 0}^{d-1} c_i \, x_i \right| \;=\; \left| \ma
 
 By Lemma 5.3, $\mathrm{core}(x) \geq 0$. Each $p_k \, \delta_k \geq 0$ (since $p_k > 0$ and $\delta_k \geq 0$). Hence the argument is non-negative and the absolute-value bars can be dropped. $\square$
 
-### C.4.3 The reaching-time theorem
+## C.4.3 The reaching-time theorem
 
 **Lemma C.3 (one-step $T_d$ closure on the odd ladder at $d \geq 15$).** *Let $d \geq 15$ be odd. For every admissible input $n \in A_d$ with sorted-descending form $(x_0, \ldots, x_{d-1})$,*
 
@@ -261,3 +261,5 @@ For these inputs, the projection $m$ at $d - 2$ is a near-repdigit, so $m \notin
 ---
 
 *End of Appendix C.*
+
+---

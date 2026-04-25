@@ -1,8 +1,8 @@
-## §2. Framework
+# 2. Framework
 
 This section establishes the formal objects, notation, and basic properties used throughout the paper. Everything here is definitional and verifiable; no substantive claims are made in this section.
 
-### 2.1 Sorted-descending digit sequences
+## 2.1 Sorted-descending digit sequences
 
 Throughout, $d \geq 2$ is a fixed digit length (the digit length will vary between sections but is fixed within each statement). For a non-negative integer $n < 10^d$, the **padded digit string** of $n$ at length $d$ is the sequence $(n_{d-1}, n_{d-2}, \ldots, n_1, n_0)$ where $n_j$ is the digit at place $10^j$, padding with leading zeros as needed. Thus $n = \sum_{j = 0}^{d-1} 10^j \, n_j$.
 
@@ -10,7 +10,7 @@ The **sorted-descending form** of $n$ at length $d$ is the tuple $x(n) = (x_0, x
 
 An integer $n$ is a **repdigit** at length $d$ if all digits of its padded form are equal, i.e., $x_0 = x_{d-1}$. An integer is a **near-repdigit** at length $d$ if its sorted-descending form has one digit appearing $d - 1$ or $d$ times (the $d$-case coincides with repdigit). All classical Kaprekar analyses exclude repdigits; our convention additionally excludes near-repdigits. This follows standard usage in the literature [Prichett 1981, Dahl 2026] and is necessary in our setting because near-repdigits can produce degenerate trajectories under coefficient-preserving liftings, discussed at §5.6. The **admissible input set** at length $d$, denoted $A_d$, is the set of non-repdigit, non-near-repdigit $d$-digit integers.
 
-### 2.2 Permutation-pair rules
+## 2.2 Permutation-pair rules
 
 Let $S_d$ be the symmetric group on $\{0, 1, \ldots, d-1\}$. Given an ordered pair $(\pi, \sigma) \in S_d \times S_d$ with $\pi \neq \sigma$, define the **permutation-pair rule** $K_{\pi, \sigma}: \mathbb{Z}_{\geq 0} \to \mathbb{Z}_{\geq 0}$ by
 
@@ -54,9 +54,9 @@ For the classical Kaprekar rule at $d = 4$, the three representations are:
 
 The three representations encode the same information. The letter string is the most legible: reading $\mathrm{abcd} - \mathrm{dcba}$ makes immediately clear that the rule is "digits in descending order minus digits in ascending order," Kaprekar's original statement. The permutation pair $(\pi, \sigma)$ is the formal definition used in proofs. The coefficient vector $c = (c_0, \ldots, c_{d-1})$ with $c_i = 10^{\pi_i} - 10^{\sigma_i}$ is the most useful for algebraic manipulation, because it reduces the rule to a linear expression in the sorted-descending digits.
 
-For rules arising in §5 and §6 (the $60714$ lifting family and the $6174$ fingerprint), we will use whichever representation is most convenient for the context, and Appendix B provides a complete table of all three for $60714$'s ladder at each $d \in \{5, 6, \ldots, 20\}$.
+For rules arising in §5 and §6 (the $60714$ lifting family and the $6174$ cross-dimensional pattern), we will use whichever representation is most convenient for the context, and Appendix B provides a complete table of all three for $60714$'s ladder at each $d \in \{5, 6, \ldots, 20\}$.
 
-### 2.3 Algebraic rank
+## 2.3 Algebraic rank
 
 The **algebraic rank** (or **surviving-variable count**) of a rule $K_{\pi, \sigma}$ is
 
@@ -78,7 +78,7 @@ The rule is **full-variable** at digit length $d$ if $\mathrm{sv} = d$ — equiv
 | 5 | 14{,}280  | 5{,}280   |
 | 6 | 517{,}680 | 190{,}800 |
 
-### 2.4 Universality and fixed points
+## 2.4 Universality and fixed points
 
 A **fixed point** of $K_{\pi, \sigma}$ at length $d$ is an integer $F \in A_d$ with $K_{\pi, \sigma}(F) = F$. A fixed point $F$ is **universal** for $K_{\pi, \sigma}$ at length $d$ if, for every admissible input $n \in A_d$, the orbit $n, K(n), K^2(n), \ldots$ reaches $F$ in finitely many steps. A rule is **universal for $F$ at $d$** if it satisfies both conditions.
 
@@ -86,7 +86,7 @@ A **fixed point** of $K_{\pi, \sigma}$ at length $d$ is an integer $F \in A_d$ w
 
 **Example (dimension-agnostic).** At $d = 3$, the classical rule $K_0$ has coefficient vector $(-99, \, 0, \, 99)$ — the middle coefficient vanishes by the forced borrow chain of §1.1 — so $\mathrm{sv}(K_0) = 2$. The classical rule at $d = 3$ is *not* full-variable. It is universal for $F = 495$, but $495$ is a fixed point of a rank-$2$ rule, not a rank-$3$ rule.
 
-### 2.5 Native digit length
+## 2.5 Native digit length
 
 For an integer $F$, its **native digit length** $d_F$ is the smallest $d$ such that $F$ is a universal full-variable fixed point of some rule at digit length $d$. If $F$ admits no universal full-variable rule at any $d$, it has no native digit length in our sense.
 
@@ -96,7 +96,7 @@ For an integer $F$, its **native digit length** $d_F$ is the smallest $d$ such t
 
 Our full-variable classification excludes these by design: we study only rules with $\mathrm{sv} = d$, where every sorted-descending position contributes nontrivially. The dimension-agnostic family deserves independent study, but is outside the scope of this paper. See §1.1 for the structural derivation of the middle-digit cancellation that produces $495$'s rank-$2$ status.
 
-### 2.6 Effective rank at a fixed point
+## 2.6 Effective rank at a fixed point
 
 For a fixed point $F$ with sorted-descending form $(f_0, f_1, \ldots, f_{d-1})$ at length $d$, and for a rule $K_{\pi, \sigma}$ with coefficient vector $c$, the **effective rank at $F$** is
 
@@ -106,7 +106,7 @@ Thus $\mathrm{sv}_F$ counts coefficients of the rule that *land on nonzero digit
 
 Effective rank plays a structural role in §4 and §5. Coefficients paired with zero digits of $F$ vanish in the computation of $K(F)$, so the fixed-point equation $K(F) = F$ is determined only by the coefficients paired with nonzero digits. This is why coefficient-preserving lifting (defined in §5) can introduce large new coefficients at positions corresponding to $F$'s zero digits without disturbing $F$'s fixed-point status.
 
-### 2.7 Basic properties
+## 2.7 Basic properties
 
 We collect two basic properties used without comment throughout the rest of the paper.
 
@@ -122,7 +122,7 @@ In consequence, universal rules come in sign-flipped pairs. Throughout the paper
 
 Proposition 2.3 is why we exclude repdigits from the admissible input set: they provide no nontrivial dynamics and add a trivial fixed point $0$ to every rule's fixed-point set. Near-repdigits, excluded for similar reasons, can also produce trajectories that collapse to $0$ under coefficient-preserving liftings. The standard convention in Kaprekar analysis is to restrict attention to "generic" inputs with at least two distinct digit values, and we follow this.
 
-### 2.8 Summary of notation
+## 2.8 Summary of notation
 
 For reference:
 
@@ -141,3 +141,5 @@ For reference:
 | $F$ | a fixed point |
 | $d_F$ | native digit length of $F$ |
 | $(f_0, \ldots, f_{d-1})$ | sorted-descending form of $F$ at length $d$ |
+
+---

@@ -7,17 +7,28 @@ Reproduces the classification theorems (Theorems 3.1-3.4) of the paper:
     d=3: 0 universal full-variable fps (12 rules tested)
     d=4: 4 universal fps, 8 rules (216 rules tested)
     d=5: 33 universal fps, 66 rules (5,280 rules tested)
-    d=6: 507 universal fps, 1,288 rules (190,800 rules tested)
+    d=6: 506 universal fps, 1,174 rules (190,800 rules tested)
 
-Runtime:
+Counts exclude the trivial fixed point F=0 (which is fixed by every rule;
+see paper §2 for the convention of excluding repdigit and trivial inputs).
+
+Runtime (commodity hardware):
     d=3: <1 second
-    d=4: ~1 second
-    d=5: ~3 seconds
-    d=6: ~3 hours (commodity hardware)
+    d=4: <1 second
+    d=5: ~5 seconds
+    d=6: ~5-10 minutes (with sampling-heuristic candidate filter), or
+         ~5 minutes for a sound full-basin enumeration
+
+The script uses a fast sampling heuristic to identify candidate fps before
+running full basin tests. This is sound for d <= 5 and consistent with sound
+enumeration at d = 6 (cross-verified against 17 MB results_db.json from a
+PC run and against a fresh sound-enumeration container run; all three agree
+on the 506-fp / 1,174-rule count).
 
 Usage:
-    python3 classify_at_d.py 5        # runs d=5 classification
-    python3 classify_at_d.py 6 --save # runs d=6 and saves results to d6_fps.json
+    python3 classify_at_d.py 5                # runs d=5 classification
+    python3 classify_at_d.py 6 --save         # runs d=6, writes JSON
+    python3 classify_at_d.py 6 --save-txt     # runs d=6, writes d6_fps.txt
 """
 
 import sys

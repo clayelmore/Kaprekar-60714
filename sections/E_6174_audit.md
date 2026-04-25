@@ -24,7 +24,7 @@ $$5! \cdot D_5 = 120 \cdot 44 = 5{,}280.$$
 
 ## E.2 Audit results
 
-### E.2.1 At $d = 8$
+## E.2.1 At $d = 8$
 
 Exhaustive audit of all $216$ coefficient-preserving liftings at $d = 8$, each tested against all $24{,}210$ admissible multisets with iteration budget $50$:
 
@@ -47,7 +47,7 @@ $$c = (999,\; 90,\; -90,\; -999,\; -900{,}000,\; 9{,}990{,}000,\; 900{,}000,\; -
 
 Verification: $K(6174_{(8)}) = |999 \cdot 7 + 90 \cdot 6 - 90 \cdot 4 - 999 \cdot 1 + 0 + 0 + 0 + 0| = |6993 + 540 - 360 - 999| = 6174$. $\checkmark$
 
-### E.2.2 Escape characterization at $d = 8$
+## E.2.2 Escape characterization at $d = 8$
 
 For the best lifting, exactly $45$ admissible multisets fail to reach $6174$. All $45$ have the form of **two four-of-a-kind groups**: sorted-descending $(X, X, X, X, Y, Y, Y, Y)$ for some pair $X > Y \geq 0$.
 
@@ -76,7 +76,7 @@ The first four coefficients sum to $0$ (since $K_0$ has sum-zero structure), and
 
 This is not a feature of the specific best lifting — it is a structural consequence of sum-zero constraints on coefficient-preserving liftings. Every coefficient-preserving lifting at $d = 8$ maps every four-of-a-kind-paired multiset to $0$.
 
-### E.2.3 At $d = 9$
+## E.2.3 At $d = 9$
 
 Exhaustive audit of all $5{,}280$ coefficient-preserving liftings at $d = 9$, each tested against all $48{,}520$ admissible multisets with iteration budget $60$:
 
@@ -88,7 +88,7 @@ Exhaustive audit of all $5{,}280$ coefficient-preserving liftings at $d = 9$, ea
 
 Runtime: approximately $60$ minutes on commodity hardware.
 
-### E.2.4 Escape characterization at $d = 9$
+## E.2.4 Escape characterization at $d = 9$
 
 For the best lifting at $d = 9$, the $45$ escape multisets have the same structural form as at $d = 8$, extended with trailing zeros. Specifically: sorted-descending $(X, X, X, X, Y, Y, Y, Y, 0)$ for $X > Y \geq 0$ (when $Y \geq 1$) or $(X, X, X, X, 0, 0, 0, 0, 0)$ (when $Y = 0$). There are again $\binom{10}{2} = 45$ such multisets.
 
@@ -123,3 +123,5 @@ Resolving Conjecture E.1 requires a structural argument at general $d$ beyond th
 ---
 
 *End of Appendix E.*
+
+---

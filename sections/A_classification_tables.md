@@ -76,12 +76,12 @@ Both $54$ and $3753$ are dimension-locked at $d = 5 \to d = 6$: the cross-check 
 
 **Full-variable rules enumerated:** $6! \cdot D_6 = 720 \cdot 265 = 190{,}800$.
 **Admissible inputs enumerated:** $999{,}900$.
-**Universal full-variable fixed points:** $507$.
-**Universal full-variable rules (total, counting sign-flip pairs):** $1{,}288$.
+**Universal full-variable fixed points:** $506$.
+**Universal full-variable rules (total, counting sign-flip pairs):** $1{,}174$.
 
-### A.4.1 Summary statistics
+## A.4.1 Summary statistics
 
-The $507$ fixed points distribute by zero-digit count:
+The $506$ fixed points distribute by zero-digit count:
 
 | Zero-digit count | Fixed-point count |
 |:---:|:---:|
@@ -101,7 +101,7 @@ And by digit sum (every universal fp at $d = 6$ has digit sum divisible by $9$):
 | $36$ | $96$ |
 | $45$ | $3$ |
 
-### A.4.2 Distinguished fixed points
+## A.4.2 Distinguished fixed points
 
 The following $d = 6$ universal full-variable fixed points are singled out elsewhere in the paper:
 
@@ -114,9 +114,9 @@ The following $d = 6$ universal full-variable fixed points are singled out elsew
 | $607140$ | $\{0, 0, 1, 4, 6, 7\}$ | in the $\{7, 6, 4, 1\}$-thread; native at $d = 6$; transcendent to $d = 7$ |
 | $631764$ | $\{1, 3, 4, 6, 6, 7\}$ | attractor at $d = 6$ under classical rule with basin $0.0625$ [Dahl 2026] |
 
-### A.4.3 Fixed points with two or more zero digits
+## A.4.3 Fixed points with two or more zero digits
 
-The complete list of $507$ universal full-variable fixed points at $d = 6$ is lengthy; we provide it in the supplementary materials as a plain-text file (`d6_fps.txt`). The enumeration is fully reproducible from the source code.
+The complete list of $506$ universal full-variable fixed points at $d = 6$ is lengthy; we provide it in the supplementary materials as a plain-text file (`d6_fps.txt`). The enumeration is fully reproducible from the source code.
 
 Of particular relevance to §5 (the $60714$ theorem) and §6 (the $\{7, 6, 4, 1\}$-thread) are the fps with at least two zero digits, since these are the strata where dimension-transcendent behavior empirically concentrates (cf. Conjecture 7.2).
 
@@ -163,3 +163,5 @@ The $8$ fixed points with $3$ zero digits at $d = 6$ of §A.4.1 are the subject 
 ---
 
 *End of Appendix A.*
+
+---
