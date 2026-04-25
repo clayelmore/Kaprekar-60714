@@ -126,11 +126,9 @@ These are noted as open questions in §7.
 
 The audit data is recorded in:
 
-- `dF7_summary_complete.json` — 22-fp summary with cases, rule counts, signatures, and core bounds.
-- `dF7_bounded_deficit_scan.json` — per-fp coefficient-vector data for Case 2 fps.
-- `dF7_cycle_sig_scan.json` — per-fp signature inventory.
+- `dF7_summary_complete.json` — included in the repository root. Contains 22-fp summary with cases, rule counts, cycle signatures, and core bounds.
 
-These files are included in the supplementary materials. The audit script (`dF7_audit.py`, derived from `verify_60714_ladder.py` with $`d_F = 7`$ specialization) is in `scripts/`.
+Per-fp coefficient-vector data and signature inventories used in the analysis below were generated programmatically and are reproducible from the summary JSON via the `scripts/` directory utilities. A separate `dF7_audit.py` script is available on request; the audit can be reproduced by adapting `verify_60714_ladder.py` with $`d_F = 7`$ specialization.
 
 ---
 

@@ -15,7 +15,7 @@ At each digit length $`d`$, we enumerate the full-variable rules — ordered pai
 
 A rule is **universal at $`d`$** if both conditions hold. The set of **universal full-variable fixed points at $`d`$** is the set of integers $`F`$ arising as the attractor of some universal full-variable rule.
 
-The enumerations are complete. At $`d = 6`$, the largest case we present, $`191{,}520`$ full-variable rules are tested against $`999{,}900`$ admissible inputs, a search that runs in hours on commodity hardware with the iteration-and-caching implementation described in Appendix A.
+The enumerations are complete. At $`d = 6`$, the largest case we present, $`190{,}800`$ full-variable rules are tested against $`4{,}905`$ admissible digit multisets ($`999{,}450`$ admissible padded six-digit strings), a search that runs in hours on commodity hardware with the iteration-and-caching implementation described in Appendix A.
 
 ## 3.2 $`d = 3`$: no universal full-variable fixed points
 
@@ -37,7 +37,7 @@ $$F_4 = \{\, 1746,\; 2538,\; 5382,\; 6174 \,\}.$$
 
 *These fixed points are reached by exactly $`8`$ universal full-variable rules in total (each fixed point reached by exactly $`2`$ universal rules, which are sign-flips of each other per Proposition 2.2).*
 
-**Proof.** Exhaustive enumeration of $`216`$ rules against $`8{,}991`$ admissible inputs. For each universal rule, basin coverage of $`A_4`$ is verified directly. Full computation in Appendix A.2.
+**Proof.** Exhaustive enumeration of $`216`$ rules against $`615`$ admissible digit multisets ($`9{,}630`$ admissible padded four-digit strings). For each universal rule, basin coverage of $`A_4`$ is verified directly. Full computation in Appendix A.2.
 
 **Structure of the classification.** All four universal fixed points share the digit-sum property $`\sum_i f_i \equiv 0 \pmod 9`$. The integers $`6174`$ and $`1746`$ are digit-permutations of each other (both have multiset $`\{1, 4, 6, 7\}`$); $`2538`$ and $`5382`$ are digit-permutations of each other (multiset $`\{2, 3, 5, 8\}`$). These anagram clusters will recur in §3.4 and §6.
 
@@ -55,9 +55,9 @@ At $`d = 5`$, there are $`5{,}280`$ full-variable rules (Proposition 2.1, $`5! \
 
 **Theorem 3.3.** *There are exactly $`33`$ universal full-variable fixed points at $`d = 5`$, reached collectively by $`66`$ universal full-variable rules. Each fixed point is reached by exactly $`2`$ universal rules (sign-flip pairs).*
 
-**Proof.** Exhaustive enumeration of $`5{,}280`$ rules against $`99{,}900`$ admissible inputs. Full computation in Appendix A.3; the complete list of $`33`$ fixed points appears in Table 3.1 below.
+**Proof.** Exhaustive enumeration of $`5{,}280`$ rules against $`1{,}902`$ admissible digit multisets ($`99{,}540`$ admissible padded five-digit strings). Full computation in Appendix A.3; the complete list of $`33`$ fixed points appears in Table 3.1 below.
 
-**Classical rule does not appear.** The classical rule $`K_0`$ at $`d = 5`$ has coefficient vector $`(-9999, \, -90, \, 0, \, 90, \, 9999)`$ — the middle coefficient vanishes by the forced borrow chain at odd digit length (§1.1). $`K_0`$ at $`d = 5`$ has $`\mathrm{sv} = 4`$, not $`5`$; it is not in the full-variable classification. The observation that "the classical Kaprekar routine fails at $`d = 5`$" is, in our framing, the observation that the classical rule at $`d = 5`$ is not even in the full-variable space — there is no contradiction to the existence of $`33`$ universal attractors in that space.
+**Classical rule does not appear.** The classical rule $`K_0`$ at $`d = 5`$ has coefficient vector $`(9999, \, 990, \, 0, \, -990, \, -9999)`$ — the middle coefficient vanishes by the forced borrow chain at odd digit length (§1.1). $`K_0`$ at $`d = 5`$ has $`\mathrm{sv} = 4`$, not $`5`$; it is not in the full-variable classification. The observation that "the classical Kaprekar routine fails at $`d = 5`$" is, in our framing, the observation that the classical rule at $`d = 5`$ is not even in the full-variable space — there is no contradiction to the existence of $`33`$ universal attractors in that space.
 
 **Reverse-pair structure fails at odd $`d`$.** The classical rule is a specific "reverse-pair" rule ($`\sigma_i = \pi_{d-1-i}`$). At even $`d`$, reverse-pair rules can be full-variable; at odd $`d`$, they cannot — the middle position always satisfies $`\sigma_{(d-1)/2} = \pi_{(d-1)/2}`$, forcing $`\mathrm{sv} \leq d - 1`$. Consequently, all $`66`$ universal full-variable rules at $`d = 5`$ are *non-reverse-pair* — they have no mirror symmetry. This is a structural distinction from the classical case.
 
@@ -94,7 +94,7 @@ At $`d = 6`$, there are $`190{,}800`$ full-variable rules (Proposition 2.1, $`6!
 
 **Theorem 3.4.** *There are exactly $`506`$ universal full-variable fixed points at $`d = 6`$, reached collectively by $`1{,}174`$ universal full-variable rules.*
 
-**Proof.** Exhaustive enumeration of $`190{,}800`$ full-variable rules against $`999{,}900`$ admissible inputs. Full enumeration data and the complete list of $`506`$ fixed points are in Appendix A.4.
+**Proof.** Exhaustive enumeration of $`190{,}800`$ full-variable rules against $`4{,}905`$ admissible digit multisets ($`999{,}450`$ admissible padded six-digit strings). Full enumeration data and the complete list of $`506`$ fixed points are in Appendix A.4.
 
 **Stratification by zero digit count.** The $`506`$ fixed points distribute as follows by the number of zero digits in each fixed point:
 

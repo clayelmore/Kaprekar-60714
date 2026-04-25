@@ -21,13 +21,13 @@ No full-variable rule at $`d = 3`$ is universal for any fixed point. For every r
 ## A.2 Classification at $`d = 4`$
 
 **Full-variable rules enumerated:** $`4! \cdot D_4 = 24 \cdot 9 = 216`$.
-**Admissible inputs enumerated:** $`8{,}991`$.
+**Admissible inputs enumerated:** $`615`$ digit multisets ($`9{,}630`$ padded four-digit strings).
 **Universal full-variable fixed points:** $`4`$.
 **Universal full-variable rules (total, counting sign-flip pairs):** $`8`$.
 
 | Fixed point | Digit multiset | Sample $`\pi`$ | Sample $`\sigma`$ | Sample coefficient vector |
 |:---:|:---:|:---:|:---:|:---|
-| $`1746`$ | $`\{1, 4, 6, 7\}`$ | $`(0, 3, 2, 1)`$ | $`(1, 2, 3, 0)`$ | $`(-9, 900, 90, -999 + 18)`$ |
+| $`1746`$ | $`\{1, 4, 6, 7\}`$ | $`(0, 3, 2, 1)`$ | $`(1, 2, 3, 0)`$ | $`(-9, 900, -900, 9)`$ |
 | $`2538`$ | $`\{2, 3, 5, 8\}`$ | $`(1, 0, 3, 2)`$ | $`(2, 3, 0, 1)`$ | $`(-90, -999, 999, 90)`$ |
 | $`5382`$ | $`\{2, 3, 5, 8\}`$ | $`(2, 1, 0, 3)`$ | $`(3, 0, 1, 2)`$ | $`(-900, 9, -9, 900)`$ |
 | $`6174`$ | $`\{1, 4, 6, 7\}`$ | $`(0, 1, 2, 3)`$ | $`(3, 2, 1, 0)`$ | $`(-999, -90, 90, 999)`$ |
@@ -79,7 +79,7 @@ Both $`54`$ and $`3753`$ are dimension-locked at $`d = 5 \to d = 6`$: the cross-
 ## A.4 Classification at $`d = 6`$
 
 **Full-variable rules enumerated:** $`6! \cdot D_6 = 720 \cdot 265 = 190{,}800`$.
-**Admissible inputs enumerated:** $`999{,}900`$.
+**Admissible inputs enumerated:** $`4{,}905`$ digit multisets ($`999{,}450`$ padded six-digit strings).
 **Universal full-variable fixed points:** $`506`$.
 **Universal full-variable rules (total, counting sign-flip pairs):** $`1{,}174`$.
 
@@ -111,7 +111,7 @@ The following $`d = 6`$ universal full-variable fixed points are singled out els
 | Fixed point | Digit multiset | Note |
 |:---:|:---:|:---|
 | $`549945`$ | $`\{4, 4, 5, 5, 9, 9\}`$ | zero-zero fp; algebraically obstructed at $`d = 6 \to d = 7`$ |
-| $`60714`$ | $`\{0, 0, 1, 4, 6, 7\}`$ | central result; universal at every $`d \geq 5`$ (Theorem 5.2) |
+| $`60714`$ | $`\{0, 0, 1, 4, 6, 7\}`$ | central result; cross-dimensional fixed point at every $`d \geq 5`$, strict-universal at $`d = 5, 6`$ (Theorem 5.2) |
 | $`146070`$ | $`\{0, 0, 1, 4, 6, 7\}`$ | in the $`\{7, 6, 4, 1\}`$-thread; native at $`d = 6`$; transcendent to $`d = 7`$ |
 | $`170460`$ | $`\{0, 0, 1, 4, 6, 7\}`$ | in the $`\{7, 6, 4, 1\}`$-thread; native at $`d = 6`$ |
 | $`607140`$ | $`\{0, 0, 1, 4, 6, 7\}`$ | in the $`\{7, 6, 4, 1\}`$-thread; native at $`d = 6`$; transcendent to $`d = 7`$ |
