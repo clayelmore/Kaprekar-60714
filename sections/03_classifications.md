@@ -105,7 +105,7 @@ At $d = 6$, there are $190{,}800$ full-variable rules (Proposition 2.1, $6! \cdo
 
 This stratification matters for §5 and §6: fixed points with more zero digits admit more coefficient-preserving liftings to higher $d$, a phenomenon visible already at the $d = 5 \to d = 6$ boundary and developed in detail at §6.
 
-**The unique four-zero fixed point.** The single fixed point with four zero digits at $d = 6$ is $F = 549945$, a fixed point of a reverse-pair-like rule with $\mathrm{sv} = 6$. Its multiset is $\{0, 0, 0, 4, 5, 9\}$, distinct from the multisets discussed in the main thread of §6.
+**The unique four-zero fixed point at $d = 6$.** Section A.4.1 records exactly one universal full-variable fp at $d = 6$ with $4$ zero digits, identified during the April 2026 d=6 classification. Its identity is recorded in the supplementary file `d6_fps.txt` and its cross-dimensional behavior is reserved for forthcoming work. (The fixed point $549{,}945$, though sometimes mentioned in this connection, has digit multiset $\{4, 4, 5, 5, 9, 9\}$ with zero zero digits and so does *not* belong to the four-zero stratum; see §A.4.2.)
 
 **Connection to classical Kaprekar at $d = 6$.** The classical rule $K_0$ at $d = 6$ has coefficient vector $(999{,}999, \, 89{,}991, \, 8{,}991, \, -8{,}991, \, -89{,}991, \, -999{,}999)$ after simplification. It is full-variable at $d = 6$ (all coefficients nonzero). [Dahl 2026] analyzes its basin: the rule is *not* universal at $d = 6$ — it produces a 7-cycle that attracts $93.55\%$ of inputs, with $6.25\%$ reaching $F = 631{,}764$ and $0.20\%$ reaching $F = 549{,}945$. The universal fixed points at $d = 6$ in our classification are attractors of *other* full-variable rules, not the classical one.
 
