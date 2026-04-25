@@ -111,12 +111,12 @@ These are noted as open questions in §7.
 |:---|:---:|:---:|:---:|
 | $d = 4 \to d = 5$ | $4$ at $d = 4$ | $0$ at $d = 5$ | $0\%$ |
 | $d = 5 \to d = 6$ | $33$ at $d = 5$ | $1$ at $d = 6$ ($60{,}714$) | $3\%$ |
-| $d = 6 \to d = 7$ | $507$ at $d = 6$ | $\approx 21$ at $d = 7$ | $\approx 4\%$ |
+| $d = 6 \to d = 7$ | $506$ at $d = 6$ | $\approx 21$ at $d = 7$ | $\approx 4\%$ |
 | $d = 7 \to d = 8$ | $\geq 22$ at $d = 7$ | $\geq 22$ extending via lifting | $\geq 96\%$ |
 
 **Observation D.1 (empirical).** *Transcendence from $d_F$ to $d_F + 1$ is rare at low $d_F$ (3–4%) but becomes near-certain at higher $d_F$, particularly for fps with $\geq 3$ zero digits. Specifically, all $22$ TRANS fps audited at $d_F = 7$ have exactly $3$ zero digits. The trend is consistent with Conjecture 7.2: dimension-transcendence is enabled by absorbing capacity, and absorbing capacity grows with both $d_F$ and zero-digit count.*
 
-**Note on the 4-zero stratum at $d = 6$.** Section A.4.1 records a single universal full-variable fp at $d = 6$ with $4$ zero digits (count derived from the April 2026 d=6 classification). This fp's identity and its cross-dimensional behavior are not analyzed in this paper; they are reserved for forthcoming work that systematically audits LOCK boundaries.
+**Note on the 4-zero stratum at $d = 6$.** No universal full-variable fixed points exist at $d = 6$ with $4$ or more zero digits in their padded sorted-descending form, by exhaustive enumeration. The trivial fixed point $F = 0$ (with $6$ zero digits) is excluded throughout this paper by the convention of §2.
 
 ## D.8 Reproducibility
 
@@ -131,3 +131,5 @@ These files are included in the supplementary materials. The audit script (`dF7_
 ---
 
 *End of Appendix D.*
+
+---

@@ -1,26 +1,6 @@
-# Dimension-Transcendent Attractors in Generalized Kaprekar Routines
+# 1. Introduction
 
----
-
-## Abstract
-
-The classical Kaprekar routine at four digits iterates $K(n) = \alpha(n) - \beta(n)$, where $\alpha(n)$ and $\beta(n)$ are the integers formed by arranging $n$'s digits in descending and ascending order. For every non-repdigit four-digit input, the orbit converges in at most seven steps to the fixed point $6174$. Generalizing the construction to arbitrary digit length $d$, the analogous rule converges to $495$ at $d = 3$ but fails at $d = 5$: orbits enter cycles rather than fixed points.
-
-This failure is commonly described as a peculiarity of five-digit arithmetic. We argue that it is instead a peculiarity of the specific subtraction rule. The classical "descending minus ascending" construction is one specific point in a space of $d! \cdot (d! - 1)$ ordered permutation-pair rules at each digit length, and its behavior across $d$ is not uniform: the algebraic rank of the classical rule is $d$ at $d = 4$ but strictly less than $d$ at $d = 3$ and $d = 5$ because of forced middle-digit cancellation. The failure at $d = 5$ reflects the classical rule being rank-$4$ there, not a failure of Kaprekar convergence.
-
-When we classify all permutation-pair rules at each digit length, universal full-variable fixed points exist at $d = 4$, $d = 5$, and $d = 6$. We complete this classification exhaustively at $d \leq 6$, identifying $33$ universal fixed points at $d = 5$ and $507$ at $d = 6$. We then ask which fixed points extend from one digit length to the next: if $F$ is a universal full-variable fixed point at digit length $d$, does some rule at $d + 1$ also have $F$ as a universal fixed point?
-
-Among the $33$ universal fixed points at $d = 5$, exactly one — $F = 60714$ — is a universal full-variable fixed point at $d = 6$. The remaining $32$ are dimension-locked at $d = 5$: no full-variable rule at $d = 6$ attracts them universally. Moreover, for $60714$ we construct an explicit family of permutation-pair rules at each $d \geq 5$, connected by a coefficient-preserving lifting recipe, and prove:
-
-**Theorem.** *$60714$ is a universal full-variable fixed point at every digit length $d \geq 5$, under the coefficient-preserving lifting family constructed in §5.*
-
-This is, to our knowledge, the first rigorously dimension-transcendent attractor in the generalized Kaprekar family. The classical Kaprekar constant $6174$ exhibits a related but non-monotone cross-dimensional fingerprint, proven here: universal at $d = 4$ (native) and $d = 7$, with algebraic obstruction at $d = 5$, dynamic obstruction at $d = 6$, and near-universal lifting at $d = 8$ and $d = 9$. $60714$, $6174$, and $60417$ share the digit multiset $\{7, 6, 4, 1\}$ and are unified under a single structural invariant — $\mathrm{sum\_locked\_spans}$ — that determines each fixed point's cross-dimensional behavior.
-
----
-
-## §1. Introduction
-
-### 1.1 Kaprekar's routine and the middle-digit cancellation
+## 1.1 Kaprekar's routine and the middle-digit cancellation
 
 In 1949, D. R. Kaprekar observed a striking property of four-digit integers in base ten [Kaprekar 1955]. For any four-digit $n$ with at least two distinct digits, let $\alpha(n)$ be the integer formed by arranging $n$'s digits in descending order, and $\beta(n)$ the integer formed by arranging them in ascending order. Iterating
 
@@ -40,7 +20,7 @@ This is not a computational observation — it is a structural fact about the cl
 
 This observation opens the question we pursue in this paper. If the classical rule is a specific algebraic construction whose rank varies with $d$, and if convergence properties depend on rank, then the natural object of study is not the classical rule across $d$ but *the space of all rearrangement-subtraction rules* at each $d$. The classical rule is one specific point in that space. The question becomes: which integers are universal fixed points, which rules attract them, and how do the rules relate across digit lengths?
 
-### 1.2 Permutation-pair rules
+## 1.2 Permutation-pair rules
 
 Let $n$ be a positive integer padded to $d$ digits, and let $\mathrm{sort\_desc}(n) = (x_0, x_1, \ldots, x_{d-1})$ denote its sorted-descending digit sequence, with $x_0 \geq x_1 \geq \cdots \geq x_{d-1}$. Given any ordered pair of permutations $\pi, \sigma \in S_d$ with $\pi \neq \sigma$, the **permutation-pair rule** is
 
@@ -60,7 +40,7 @@ The rule is **full-variable** at digit length $d$ if $\mathrm{sv} = d$ — every
 
 A rule $K$ is **universal** for a fixed point $F$ at digit length $d$ if $K(F) = F$ and every non-repdigit $d$-digit input iterates to $F$ under $K$. We adopt the standard basin convention excluding repdigits (multisets with one distinct digit) and near-repdigits (multisets where one digit appears $d - 1$ or $d$ times); these degenerate inputs are excluded from Kaprekar-style convergence analysis throughout the literature [Prichett 1981, Dahl 2026].
 
-### 1.3 The organizing question
+## 1.3 The organizing question
 
 Fix an integer $F$. Define its **native digit length** $d_F$ to be the smallest $d$ at which $F$ is a universal full-variable fixed point of some rule $K_{\pi, \sigma}$ at $d$. If $F$ has no native digit length in this sense, it is outside the scope of this paper.
 
@@ -74,7 +54,7 @@ Among *full-variable* fixed points, the question is considerably sharper. The cl
 
 The full-variable universal fixed points at $d = 5$ are thirty-three specific integers — none of them $6174$. Among these thirty-three, the question of §1.3 becomes: which extend to $d = 6$ as universal rank-$6$ fixed points? Which further extend to $d = 7$, $d = 8$, and beyond?
 
-### 1.4 On method: from brute enumeration to structural proof
+## 1.4 On method: from brute enumeration to structural proof
 
 A word on how this investigation proceeded. The classical Kaprekar routine has an elegance accessible to anyone who can subtract: arrange the digits in descending order, arrange them in ascending order, subtract, iterate. Convergence to $6174$ is a surprise that anyone can verify with a calculator, and the rule requires no definition beyond ordinary arithmetic. Any generalization in the spirit of this result should ideally preserve some comparable transparency.
 
@@ -98,7 +78,7 @@ This methodological sequence — exhaustive empirical search, identification of 
 
 ¹ A companion article discussing this methodology and its broader implications for collaborative mathematical research will appear separately.
 
-### 1.5 The main results
+## 1.5 The main results
 
 This paper answers the following:
 
@@ -119,9 +99,9 @@ The proof is by exhaustive computation: for each of the thirty-three fixed point
 
 The lifting family consists of two ladders: an odd ladder $d = 5, 7, 9, \ldots$ and an even ladder $d = 6, 8, 10, \ldots$. At each step of each ladder, the rule at $d$ is obtained from the rule at $d - 2$ by appending a pair of coefficients summing to zero. The coefficients at positions corresponding to $60714$'s nonzero digits are preserved throughout; the coefficients at positions corresponding to $60714$'s zero digits absorb the structural content of the lifting.
 
-The proof reduces to two lemmas. Lemma 5.1 (structural) establishes that the set of inputs with two trailing zeros in their sorted-descending form is invariant under any zero-sum pair lifting, with the lifted rule acting on this set as the base rule at $d - 2$ on the non-tail digits. Lemma 5.2 (the main analytic content) establishes that every non-quasi-repdigit orbit at $d \geq 7$ reaches the tail-two-zeros absorbing set in a bounded number of iterations. Lemma 5.2 is proved by two complementary techniques: exhaustive finite-state enumeration over digit multisets at $d = 7, 8, \ldots, 16$ (approximately $25$ million multisets, zero exceptions), and a $d$-independent algebraic argument at $d \geq 17$ (odd) and $d \geq 18$ (even) based on core non-negativity under sorted-descending inputs (Lemmas C1, C2 in Appendix C). Together with direct verification at the ladder roots $d = 5$ and $d = 6$, the two lemmas yield universality at every $d \geq 5$ by induction along each ladder.
+The proof reduces to two lemmas. Lemma 5.1 (structural) establishes that the set of inputs with two trailing zeros in their sorted-descending form is invariant under any zero-sum pair lifting, with the lifted rule acting on this set as the base rule at $d - 2$ on the non-tail digits. Lemma 5.2 (the main analytic content) establishes that every non-quasi-repdigit orbit at $d \geq 7$ reaches the tail-two-zeros absorbing set in a bounded number of iterations. Lemma 5.2 is proved by two complementary techniques: exhaustive finite-state enumeration over digit multisets at $d = 7, 8, \ldots, 16$ (approximately $25$ million multisets, zero exceptions), and a $d$-independent algebraic argument at $d \geq 15$ (odd ladder, one-step $T_d$ closure) and a bounded-reaching-time argument at $d \geq 16$ (even ladder, at most two-step $T_d$ closure), based on core non-negativity under sorted-descending inputs (Lemmas 5.3 and 5.4; full proofs in Appendix C). Together with direct verification at the ladder roots $d = 5$ and $d = 6$, the two lemmas yield universality at every $d \geq 5$ by induction along each ladder.
 
-**Theorem 4 (The $\{7, 6, 4, 1\}$-thread, §6).** *The digit multiset $\{7, 6, 4, 1\}$ (with zero padding as needed) is the support of universal full-variable fixed points at three distinct digit lengths: $d = 4$ ($6174$, $1746$), $d = 5$ ($60714$, $60417$), and $d = 6$ ($60714$, $146070$, $170460$, $607140$). The classical Kaprekar constant $6174$ has a verified cross-dimensional fingerprint:*
+**Theorem 4 (The $\{7, 6, 4, 1\}$-thread, §6).** *The digit multiset $\{7, 6, 4, 1\}$ (with zero padding as needed) is the support of universal full-variable fixed points at three distinct digit lengths: $d = 4$ ($6174$, $1746$), $d = 5$ ($60714$, $60417$), and $d = 6$ ($60714$, $146070$, $170460$, $607140$). The classical Kaprekar constant $6174$ has a verified cross-dimensional pattern:*
 
 - *$d = 4$: strict-universal (native).*
 - *$d = 5$: algebraic obstruction — no rank-$5$ rule fixes $6174$.*
@@ -131,19 +111,19 @@ The proof reduces to two lemmas. Lemma 5.1 (structural) establishes that the set
 
 *$60714$, $6174$, and $60417$ are unified under a structural invariant, the $\mathrm{sum\_locked\_spans}$ of their native rules — taking values $5$, $8$, $7$ respectively — which empirically controls the number of absorbing (zero-digit) positions at which a coefficient-preserving lifting succeeds. This unification is empirical, not proven.*
 
-### 1.6 Why $60714$ is the uniquely complete case
+## 1.6 Why $60714$ is the uniquely complete case
 
 Theorem 3 establishes $60714$ as universal at every $d \geq 5$ via an explicit construction, with the proof closing out through a combination of finite-state verification at low $d$ and a $d$-independent algebraic argument at high $d$. No other fixed point is shown to admit a universal rule at every $d$ in its range.
 
 Other universal fixed points exhibit cross-dimensional transcendence in partial forms:
 
-- $6174$ transcends at $d = 4$, $d = 7$, and (near-universally) at $d = 8$, $d = 9$, with algebraic or dynamic obstruction at $d = 5, 6$.
+- $6174$ transcends at $d = 4$ (Kaprekar's classical result), and is near-universal at every $d \geq 6$ with monotonically improving basin under coefficient-preserving lifting. At $d = 5$ it is algebraically obstructed (no sv$=5$ rule fixes it). At $d = 8, 9$, the escape class consists of $45$ multisets of form $(X, X, X, X, Y, Y, Y, Y)$ for $X > Y \geq 0$, all collapsing to $0$.
 - $146070$ and $607140$ (both in the $\{7, 6, 4, 1\}$-thread, native at $d = 6$) transcend to $d = 7$ via the same coefficient-preserving machinery; $146070$'s ladder extension is verified through $d = 12$.
-- Among the $507$ universal fixed points at $d = 6$, empirical surveys indicate transcendence to $d = 7$ is *common*, not rare, at higher native digit lengths. These surveys are tabulated in Appendix D but not proven as theorems in this paper.
+- Among the $506$ universal fixed points at $d = 6$, empirical surveys indicate transcendence to $d = 7$ is *common*, not rare, at higher native digit lengths. These surveys are tabulated in Appendix D but not proven as theorems in this paper.
 
 $60714$'s distinction is therefore not "uniqueness as a transcendent fixed point" (many other fixed points transcend partially) but **uniqueness as the proven case**: the only fixed point for which a uniform lifting construction is established rigorously at every $d$ in its range. The structural contrast with $6174$ and $60417$ in §6 clarifies why $60714$ succeeds uniformly while other fixed points in its thread do not.
 
-### 1.7 Relation to existing literature
+## 1.7 Relation to existing literature
 
 The literature on Kaprekar routines generalizes the classical construction along three principal axes, each distinct from ours.
 
@@ -157,6 +137,8 @@ All three axes fix the classical rule and vary structural or algebraic propertie
 
 The systematic classification of universal full-variable fixed points at $d \leq 6$, the formulation of the cross-dimensional question in terms of permutation-pair liftings, and the proof of Theorem 3 at every $d \geq 5$ are, to our knowledge, all new.
 
-### 1.8 Organization
+## 1.8 Organization
 
 §2 establishes the formal framework: permutation-pair rules, algebraic rank, universal fixed points, native digit length, and effective rank at $F$. §3 presents the exhaustive classifications at $d = 3, 4, 5, 6$. §4 proves Theorem 2 (the $d = 5 \to d = 6$ cross-check). §5 develops the coefficient-preserving lifting framework and proves Theorem 3. §6 develops the $\{7, 6, 4, 1\}$-thread and proves Theorem 4. §7 is a short discussion of open questions. Appendices A–E contain the full classification tables, the $60714$ ladder through $d = 20$, the proofs of the support lemmas, observed transcendent fixed points at $d = 7$ (non-exhaustive, honestly labeled), and the $6174$ $d = 8, 9$ audit details.
+
+---

@@ -90,3 +90,5 @@ $$K(F) = | (9900)(7) + (9)(6) + (90)(4) + (-9000)(1) | = |\,69300 + 54 + 360 - 9
 This is the same arithmetic at every $d \geq 5$. **The coefficient-preserving lifting makes the fixed-point equation trivial at every $d$** because the structural content of the lifting lives entirely in the zero-digit positions, which absorb the new coefficients without affecting $K(F)$.
 
 The nontrivial content of Theorem 3 is not that $K(F) = F$ at every $d$ — that is automatic from the construction. The nontrivial content is that every non-quasi-repdigit orbit at every $d \geq 5$ reaches $F$, which is the work done by Lemmas 5.1 and 5.2.
+
+---
