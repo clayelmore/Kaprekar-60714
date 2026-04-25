@@ -64,7 +64,7 @@ $$60714,\ 65781,\ 67581.$$
 | Fixed point | $\pi$ | $\sigma$ | Coefficient vector |
 |:---:|:---:|:---:|:---|
 | $60714$ | $(4, 1, 2, 3, 0)$ | $(2, 0, 1, 4, 3)$ | $(9900,\; 9,\; 90,\; -9000,\; -999)$ |
-| $60417$ | $(4, 3, 2, 0, 1)$ | $(0, 2, 3, 1, 4)$ | $(9999,\; -90,\; -9,\; -9000,\; -900)$ |
+| $60417$ | $(4, 1, 0, 3, 2)$ | $(0, 2, 1, 4, 3)$ | $(9999,\; -90,\; -9,\; -9000,\; -900)$ |
 
 **Note on $54$.** The fixed point $54$ appears in the $d = 5$ full-variable classification under the rule $\pi = (1, 2, 4, 3, 0)$, $\sigma = (2, 0, 3, 4, 1)$ with coefficient vector $(-90, 99, 9000, -9000, -9)$. This rule is algebraically full-variable at $d = 5$ ($\mathrm{sv} = 5$), but its effective rank at $F = 54$ is only $2$ — three of the five coefficients land on zero digits of $F$'s sorted-descending form $(5, 4, 0, 0, 0)$ and do not contribute to $K(F) = F$. Thus $\mathrm{sv}_F(K_{54}) = 2 < 5 = \mathrm{sv}(K_{54})$. This is structurally analogous to the $495$ phenomenon at $d = 3$ (§1.1), occurring at higher digit length within a genuinely full-variable rule.
 
@@ -107,28 +107,52 @@ The following $d = 6$ universal full-variable fixed points are singled out elsew
 
 | Fixed point | Digit multiset | Note |
 |:---:|:---:|:---|
-| $549945$ | $\{0, 0, 0, 4, 5, 9\}$ | the unique fp with $4$ zero digits |
+| $549945$ | $\{4, 4, 5, 5, 9, 9\}$ | zero-zero fp; algebraically obstructed at $d = 6 \to d = 7$ |
 | $60714$ | $\{0, 0, 1, 4, 6, 7\}$ | central result; universal at every $d \geq 5$ (Theorem 5.2) |
 | $146070$ | $\{0, 0, 1, 4, 6, 7\}$ | in the $\{7, 6, 4, 1\}$-thread; native at $d = 6$; transcendent to $d = 7$ |
 | $170460$ | $\{0, 0, 1, 4, 6, 7\}$ | in the $\{7, 6, 4, 1\}$-thread; native at $d = 6$ |
 | $607140$ | $\{0, 0, 1, 4, 6, 7\}$ | in the $\{7, 6, 4, 1\}$-thread; native at $d = 6$; transcendent to $d = 7$ |
 | $631764$ | $\{1, 3, 4, 6, 6, 7\}$ | attractor at $d = 6$ under classical rule with basin $0.0625$ [Dahl 2026] |
 
-### A.4.3 The complete $507$-fp list
+### A.4.3 Fixed points with two or more zero digits
 
-The complete list of $507$ universal full-variable fixed points at $d = 6$ is lengthy; we provide it in the supplementary materials as a plain-text file (`d6_fps.txt`) rather than reproduce the full list here. The enumeration is fully reproducible from the source code in the supplementary materials.
+The complete list of $507$ universal full-variable fixed points at $d = 6$ is lengthy; we provide it in the supplementary materials as a plain-text file (`d6_fps.txt`). The enumeration is fully reproducible from the source code.
 
-Selected entries for reference (fps with two or three zero digits, highlighted because of their relevance to §5 and §6):
+Of particular relevance to §5 (the $60714$ theorem) and §6 (the $\{7, 6, 4, 1\}$-thread) are the fps with at least two zero digits, since these are the strata where dimension-transcendent behavior empirically concentrates (cf. Conjecture 7.2).
 
-*Fixed points with $3$ zero digits at $d = 6$* (8 total):
+**The $8$ fps with $3$ zero digits.** All eight share digit multiset $\{5, 2, 2, 0, 0, 0\}$ and are distinct integer arrangements of the same digits:
 
-$102948$, $109902$, $129168$, $149850$, $198090$, $251955$, $549945$, $702000$ —
-(illustrative; full list in supplementary materials).
+$$252,\ \ 2520,\ \ 20025,\ \ 25200,\ \ 200025,\ \ 200250,\ \ 250200,\ \ 252000.$$
 
-*Fixed points with $2$ zero digits at $d = 6$* (53 total, including $146070$, $607140$, $170460$):
+That all eight 3-zero fps belong to a single multiset is a notable structural fact — at higher zero-count strata, the multiset diversity drops sharply.
 
-$100089$, $100098$, $102960$, $105570$, $146070$, $170460$, $607140$, $108909$, ... —
-(illustrative; full list in supplementary materials).
+**The $53$ fps with $2$ zero digits**, grouped by digit multiset:
+
+| Multiset | Cluster size | Sample fps |
+|:---|:---:|:---|
+| $\{9, 9, 8, 1, 0, 0\}$ | $32$ | $8919, 8991, 9189, 10899, 80919, 80991, \ldots$ |
+| $\{5, 5, 4, 4, 0, 0\}$ | $7$  | $4545, 44505, 54450, 445005, 445050, 504450, 544500$ |
+| $\{9, 7, 1, 1, 0, 0\}$ | $5$  | $7191, 17019, 700191, 701901, 719100$ |
+| $\{7, 6, 4, 1, 0, 0\}$ | $4$  | $60714, 146070, 170460, 607140$ |
+| $\{7, 7, 3, 1, 0, 0\}$ | $2$  | $37017, 707130$ |
+| $\{9, 5, 2, 2, 0, 0\}$ | $1$  | $9225$ |
+| $\{7, 6, 3, 2, 0, 0\}$ | $1$  | $67023$ |
+| $\{6, 5, 5, 2, 0, 0\}$ | $1$  | $52605$ |
+
+The complete sorted list of all $53$ fps with $2$ zero digits:
+
+$$4545, 7191, 8919, 8991, 9189, 9225, 10899, 17019, 37017, 44505, 52605, 54450,$$
+$$60714, 67023, 80919, 80991, 81099, 89019, 90819, 90918, 91809, 98091, 100899,$$
+$$108099, 109809, 146070, 170460, 180909, 189009, 190089, 190809, 445005,$$
+$$445050, 504450, 544500, 607140, 700191, 701901, 707130, 719100, 809091,$$
+$$809109, 810909, 890091, 900891, 901890, 908091, 908109, 908190, 908901,$$
+$$909081, 910089, 910809.$$
+
+**The $\{7, 6, 4, 1, 0, 0\}$ multiset cluster.** The four fps in this cluster — $60714, 146070, 170460, 607140$ — share the multiset structure of the central object of §5 (60714 padded to $d = 6$). They are precisely the universal full-variable fps in this multiset at $d = 6$, and the cross-dimensional behavior of all four is documented at §6 and in Appendix D.
+
+**Note on the unique $4$-zero fp.** §A.4.1 records one universal full-variable fp at $d = 6$ with $4$ zero digits. Its identity is recorded in `d6_fps.txt` in the supplementary materials but is not analyzed individually in this paper.
+
+**Fixed points with $0$ or $1$ zero digit.** The remaining $445$ fps ($205$ with $0$ zeros, $240$ with $1$ zero) are listed in the supplementary file and are not analyzed individually here. Cross-dimensional behavior at $d = 6 \to d = 7$ for fps with fewer than $2$ zeros is empirically rare (cf. Observation D.1).
 
 ## A.5 Cross-reference to §4 and §6
 

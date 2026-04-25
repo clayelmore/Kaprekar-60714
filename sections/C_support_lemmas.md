@@ -143,7 +143,61 @@ $$2 Z_0 + Z_1 \;=\; 2(M - Z_1 - Z_{2+}) + Z_1 \;=\; 2M - Z_1 - 2 Z_{2+} \;\geq\;
 
 **At odd $d \geq 17$: $M \geq 6$, so $2 Z_0 + Z_1 \geq 3$.** This alone gives at least $3$ zero digits in the block region, more than enough for $K^{(d)}(x) \in T_d$.
 
-**At $d = 15$ (odd): $M = 5$, so $2 Z_0 + Z_1 \geq 1$.** This gives at least one zero digit from blocks, which must be supplemented by at least one zero digit from the core contribution. Since $\mathrm{core}(x) < 10^5$, it occupies decimals $[0, 4]$ with at most $5$ digits, leaving at least one position as zero *unless* the core saturates to $89{,}991 \cdot (\text{some carry factor})$. Direct computation at $d = 15$ confirms this holds for every admissible input: exhaustive enumeration over the $1{,}307{,}404$ admissible multisets at $d = 15$ shows every $K^{(15)}(x)$ has at least $2$ zero digits in its padded form.
+**At $d = 15$ (odd): $M = 5$, so $2 Z_0 + Z_1 \geq 1$.** This gives at least one zero digit from the block region, but the second zero requires a refined analysis. We complete the argument by partitioning according to the value of $x_4$.
+
+**Lemma C.7 (sharpened cliff-sum bound for $d = 15$).** *For sorted-descending $(x_0, \ldots, x_{14})$ with $x_i \in \{0, \ldots, 9\}$,*
+
+$$\sum_{k = 1}^{5} \delta_k \;\leq\; x_4.$$
+
+*Proof.* Each $\delta_k = x_{3 + 2k} - x_{4 + 2k}$ for $k = 1, \ldots, 5$ is a non-negative adjacent-position difference among positions $5, 6, \ldots, 14$. The full telescoping over these positions is
+
+$$\sum_{i = 5}^{13} (x_i - x_{i+1}) = x_5 - x_{14}.$$
+
+Our sum $\sum_k \delta_k$ picks out the five differences $(x_5 - x_6), (x_7 - x_8), (x_9 - x_{10}), (x_{11} - x_{12}), (x_{13} - x_{14})$, a strict subset of these nine. Since every omitted difference is non-negative,
+
+$$\sum_{k=1}^{5} \delta_k \;\leq\; x_5 - x_{14} \;\leq\; x_5 \;\leq\; x_4. \qquad \square$$
+
+**Lemma C.8 (core-bound when $x_4 \in \{8, 9\}$).** *If $x_4 \geq 8$ in sorted-descending $(x_0, \ldots, x_4)$, then $\mathrm{core}(x) < 10^4$.*
+
+*Proof.* By sorted-descending, $x_4 \geq 8$ forces $x_0, x_1, x_2, x_3 \in \{8, 9\}$. We compute:
+
+$$\mathrm{core}(x) = 9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 - 999 x_4 = 9000(x_0 - x_3) + 900 x_0 + 9 x_1 + 90 x_2 - 999 x_4.$$
+
+Since $x_0, x_3 \in \{8, 9\}$ with $x_0 \geq x_3$, we have $x_0 - x_3 \in \{0, 1\}$.
+
+*Case $x_0 = x_3$:* The first term vanishes. Then
+
+$$\mathrm{core}(x) = 900 x_0 + 9 x_1 + 90 x_2 - 999 x_4.$$
+
+The maximum over $x_0, x_1, x_2 \in \{8, 9\}$ and $x_4 \in \{8, 9\}$ with $x_4 \leq x_3 = x_0$ is achieved at $x_0 = x_1 = x_2 = 9$, $x_4 = 8$: $900 \cdot 9 + 9 \cdot 9 + 90 \cdot 9 - 999 \cdot 8 = 8100 + 81 + 810 - 7992 = 999$. So $\mathrm{core}(x) \leq 999 < 10^3$.
+
+*Case $x_0 = x_3 + 1$:* Then $x_0 = 9$ and $x_3 = x_4 = 8$ (forcing $x_4 = 8$ since $x_4 \leq x_3$). We get
+
+$$\mathrm{core}(x) = 9000 + 900 \cdot 9 + 9 x_1 + 90 x_2 - 999 \cdot 8 = 9108 + 9 x_1 + 90 x_2$$
+
+for $x_1, x_2 \in \{8, 9\}$ with $x_1 \geq x_2 \geq 8$. The minimum is $9108 + 72 + 720 = 9900$ and the maximum is $9108 + 81 + 810 = 9999$. So $\mathrm{core}(x) \in [9900, 9999]$, and in particular $\mathrm{core}(x) < 10^4$.
+
+In both cases, $\mathrm{core}(x) < 10^4$. $\square$
+
+We now complete the $d = 15$ closure argument.
+
+**Three cases for the second zero digit.**
+
+*Case A: $x_4 = 0$.* By sorted-descending, $x_5 = x_6 = \cdots = x_{14} = 0$. All five $\delta_k = 0$, so every block contributes $(0, 0)$ at decimals $[5, 6], [7, 8], \ldots, [13, 14]$. The block region produces $10$ zero digits at decimals $5$ through $14$. Even after accounting for at most one carry from the core into decimal $5$, decimals $6$ through $14$ remain zero — that is $9$ zero digits, far more than the $2$ required.
+
+*Case B1: $1 \leq x_4 \leq 7$.* By Lemma C.7, $\sum_k \delta_k \leq x_4 \leq 7$. Since $\delta_k \geq 2$ for $k \in Z_{2+}$,
+
+$$2 Z_{2+} + Z_1 \leq \sum_k \delta_k \leq 7,$$
+
+which gives
+
+$$2 Z_0 + Z_1 = 2M - Z_1 - 2 Z_{2+} \geq 10 - 7 = 3.$$
+
+So the block region contributes at least $3$ zero digits.
+
+*Case B2: $x_4 \in \{8, 9\}$.* By Lemma C.8, $\mathrm{core}(x) < 10^4$, so the padded core occupies only decimals $0$ through $3$, and decimal $4$ is a zero digit in the core's contribution to $K^{(15)}(x)$. Combined with at least one zero digit from the block region (the $2 Z_0 + Z_1 \geq 1$ bound), this gives at least $2$ zero digits total.
+
+In every case, $K^{(15)}(x)$ has at least $2$ zero digits in its padded $15$-digit representation, so its sorted-descending form ends in $(0, 0)$, which means $K^{(15)}(x) \in T_{15}$.
 
 Combining: at every odd $d \geq 15$, $K^{(d)}(x)$ has at least $2$ zero digits in its padded $d$-digit form, hence $K^{(d)}(x) \in T_d$. $\square$
 
