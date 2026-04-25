@@ -1,3 +1,7 @@
+[← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)
+
+---
+
 # 1. Introduction
 
 ## 1.1 Kaprekar's routine and the middle-digit cancellation
@@ -34,7 +38,7 @@ $$K_{\pi, \sigma}(n) = \left| \sum_{i=0}^{d-1} c_i \, x_i \right|,$$
 
 where the integer coefficients $c_i$ depend only on $(\pi, \sigma)$ and satisfy $\sum_i c_i = 0$. Specifically, $c_i = 10^{d-1-\pi^{-1}(i)} - 10^{d-1-\sigma^{-1}(i)}$. Define the **algebraic rank** (or **surviving-variable count**) of the rule:
 
-$$\mathrm{sv}(K_{\pi, \sigma}) = \#\{ i : c_i \neq 0 \}.$$
+$$\mathrm{sv}(K_{\pi, \sigma}) = \bigl|\{ i : c_i \neq 0 \}\bigr|.$$
 
 The rule is **full-variable** at digit length $d$ if $\mathrm{sv} = d$ — every sorted-descending position participates nontrivially in the output. The classical rule is full-variable at $d = 4$ (coefficient vector $(999, 90, -90, -999)$) but not at odd $d$, where the middle-position coefficient vanishes by the cancellation of §1.1.
 
@@ -142,3 +146,7 @@ The systematic classification of universal full-variable fixed points at $d \leq
 §2 establishes the formal framework: permutation-pair rules, algebraic rank, universal fixed points, native digit length, and effective rank at $F$. §3 presents the exhaustive classifications at $d = 3, 4, 5, 6$. §4 proves Theorem 2 (the $d = 5 \to d = 6$ cross-check). §5 develops the coefficient-preserving lifting framework and proves Theorem 3. §6 develops the $\{7, 6, 4, 1\}$-thread and proves Theorem 4. §7 is a short discussion of open questions. Appendices A–E contain the full classification tables, the $60714$ ladder through $d = 20$, the proofs of the support lemmas, observed transcendent fixed points at $d = 7$ (non-exhaustive, honestly labeled), and the $6174$ $d = 8, 9$ audit details.
 
 ---
+
+---
+
+[← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)

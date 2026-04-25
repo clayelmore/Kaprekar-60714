@@ -1,3 +1,7 @@
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)
+
+---
+
 # 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$
 
 This section presents the complete classification of universal full-variable fixed points at digit lengths $d = 3, 4, 5, 6$. The classification at each $d$ is obtained by exhaustive enumeration: every full-variable rule is tested against every admissible input, and the universal rules are identified. The counts are definitive; the full list of fixed points at $d = 6$ appears in Appendix A.
@@ -137,3 +141,7 @@ Each classification is complete and reproducible; full enumeration scripts and d
 **Why the count grows so quickly.** The growth in universal fixed-point count from $0$ at $d = 3$ to $506$ at $d = 6$ reflects two phenomena: (i) the space of full-variable rules grows factorially in $d$, providing more opportunities for fixed points, and (ii) integers with more digits have more admissible multisets, more potential rearrangements, and so more potential fixed-point equations to satisfy. The question of which of these $506$ fixed points at $d = 6$ arise as coefficient-preserving liftings from lower $d$, and which are genuinely new at $d = 6$, is the content of §4.
 
 ---
+
+---
+
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)

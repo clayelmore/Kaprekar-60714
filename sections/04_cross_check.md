@@ -1,3 +1,7 @@
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)
+
+---
+
 # 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$
 
 §3 established the classifications at $d = 3, 4, 5, 6$ independently at each digit length. This section addresses the cross-dimensional question of §1.3: among the $33$ universal full-variable fixed points at $d = 5$, which extend to $d = 6$ as universal full-variable fixed points?
@@ -139,3 +143,7 @@ Theorem 4.1 is the central cross-dimensional result at the $d = 5 \to d = 6$ bou
 A formal conjecture — that every full-variable fixed point with unbounded dimension-locking spectrum admits a coefficient-preserving lifting similar to $60714$'s — is stated as Conjecture 7.1.
 
 ---
+
+---
+
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)

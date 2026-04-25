@@ -1,3 +1,7 @@
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)](04_cross_check.md) · [Next: 6. The $\{7, 6, 4, 1\}$-Thread →](06_thread_7641.md)](05_theorem_60714.md) · [Next: 7. Open Questions and Conjectures →](07_open_questions.md)](06_thread_7641.md) · [Next: Appendix A. Classification Tables at $d = 3, 4, 5, 6$ →](A_classification_tables.md)](07_open_questions.md) · [Next: Appendix B. Coefficient-preserving ladder for $F = 60714$ →](B_60714_ladder.md)](A_classification_tables.md) · [Next: Appendix C. Support Lemmas for the Proof of Theorem 5.2 →](C_support_lemmas.md)](B_60714_ladder.md) · [Next: Appendix D. Transcendent Fixed Points at $d = 7$ →](D_dF7_observations.md)
+
+---
+
 # Appendix C. Support Lemmas for the Proof of Theorem 5.2
 
 This appendix provides the technical support lemmas referenced in §5. The organization mirrors the proof of Theorem 5.2: §C.1 fixes setup, §C.2 proves core non-negativity (Lemma 5.3), §C.3 proves core upper bound (Lemma 5.4), §C.4 proves the reaching-time bound on the odd ladder, §C.5 addresses the even ladder, and §C.6 establishes the admissible-projection lemma.
@@ -129,7 +133,7 @@ The digit pairs $(u_k, v_k)$ for each $\delta_k$:
 
 **Counting zeros in the block region.** Define
 
-$$Z_0 := \#\{k : \delta_k = 0\}, \qquad Z_1 := \#\{k : \delta_k = 1\}, \qquad Z_{2+} := \#\{k : \delta_k \geq 2\}.$$
+$$Z_0 := \bigl|\{k : \delta_k = 0\}\bigr|, \qquad Z_1 := \bigl|\{k : \delta_k = 1\}\bigr|, \qquad Z_{2+} := \bigl|\{k : \delta_k \geq 2\}\bigr|.$$
 
 Then $Z_0 + Z_1 + Z_{2+} = M$, and the number of zero digits contributed by blocks is at least $2 Z_0 + Z_1$ (each $\delta_k = 0$ block contributes $2$ zeros; each $\delta_k = 1$ block contributes $1$ zero from $u_k = 0$).
 
@@ -263,3 +267,7 @@ For these inputs, the projection $m$ at $d - 2$ is a near-repdigit, so $m \notin
 *End of Appendix C.*
 
 ---
+
+---
+
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)](04_cross_check.md) · [Next: 6. The $\{7, 6, 4, 1\}$-Thread →](06_thread_7641.md)](05_theorem_60714.md) · [Next: 7. Open Questions and Conjectures →](07_open_questions.md)](06_thread_7641.md) · [Next: Appendix A. Classification Tables at $d = 3, 4, 5, 6$ →](A_classification_tables.md)](07_open_questions.md) · [Next: Appendix B. Coefficient-preserving ladder for $F = 60714$ →](B_60714_ladder.md)](A_classification_tables.md) · [Next: Appendix C. Support Lemmas for the Proof of Theorem 5.2 →](C_support_lemmas.md)](B_60714_ladder.md) · [Next: Appendix D. Transcendent Fixed Points at $d = 7$ →](D_dF7_observations.md)

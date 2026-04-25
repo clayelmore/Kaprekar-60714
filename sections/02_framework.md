@@ -1,3 +1,7 @@
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)
+
+---
+
 # 2. Framework
 
 This section establishes the formal objects, notation, and basic properties used throughout the paper. Everything here is definitional and verifiable; no substantive claims are made in this section.
@@ -60,7 +64,7 @@ For rules arising in §5 and §6 (the $60714$ lifting family and the $6174$ cros
 
 The **algebraic rank** (or **surviving-variable count**) of a rule $K_{\pi, \sigma}$ is
 
-$$\mathrm{sv}(K_{\pi, \sigma}) \;=\; \#\{\,i : c_i \neq 0\,\} \;=\; \#\{\,i : \pi_i \neq \sigma_i\,\}.$$
+$$\mathrm{sv}(K_{\pi, \sigma}) \;=\; \bigl|\{\,i : c_i \neq 0\,\}\bigr| \;=\; \bigl|\{\,i : \pi_i \neq \sigma_i\,\}\bigr|.$$
 
 The rule is **full-variable** at digit length $d$ if $\mathrm{sv} = d$ — equivalently, if the map $i \mapsto (\pi_i, \sigma_i)$ has $\pi_i \neq \sigma_i$ for every $i$.
 
@@ -100,7 +104,7 @@ Our full-variable classification excludes these by design: we study only rules w
 
 For a fixed point $F$ with sorted-descending form $(f_0, f_1, \ldots, f_{d-1})$ at length $d$, and for a rule $K_{\pi, \sigma}$ with coefficient vector $c$, the **effective rank at $F$** is
 
-$$\mathrm{sv}_F(K_{\pi, \sigma}) \;=\; \#\{\,i : c_i \neq 0 \text{ and } f_i \neq 0\,\}.$$
+$$\mathrm{sv}_F(K_{\pi, \sigma}) \;=\; \bigl|\{\,i : c_i \neq 0 \text{ and } f_i \neq 0\,\}\bigr|.$$
 
 Thus $\mathrm{sv}_F$ counts coefficients of the rule that *land on nonzero digits of $F$*. If $F$ has $z$ zero digits in its sorted-descending form, then $\mathrm{sv}_F \leq d - z$ for any rule.
 
@@ -143,3 +147,7 @@ For reference:
 | $(f_0, \ldots, f_{d-1})$ | sorted-descending form of $F$ at length $d$ |
 
 ---
+
+---
+
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)

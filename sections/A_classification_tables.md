@@ -1,3 +1,7 @@
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)](04_cross_check.md) · [Next: 6. The $\{7, 6, 4, 1\}$-Thread →](06_thread_7641.md)](05_theorem_60714.md) · [Next: 7. Open Questions and Conjectures →](07_open_questions.md)](06_thread_7641.md) · [Next: Appendix A. Classification Tables at $d = 3, 4, 5, 6$ →](A_classification_tables.md)](07_open_questions.md) · [Next: Appendix B. Coefficient-preserving ladder for $F = 60714$ →](B_60714_ladder.md)
+
+---
+
 # Appendix A. Classification Tables at $d = 3, 4, 5, 6$
 
 This appendix provides the complete enumerated classifications at digit lengths $d = 3, 4, 5, 6$. Each section lists all universal full-variable fixed points at the given $d$ along with representative data for one universal rule per fixed point. Sign-flipped duplicates are not listed separately (see Proposition 2.2).
@@ -165,3 +169,7 @@ The $8$ fixed points with $3$ zero digits at $d = 6$ of §A.4.1 are the subject 
 *End of Appendix A.*
 
 ---
+
+---
+
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)](04_cross_check.md) · [Next: 6. The $\{7, 6, 4, 1\}$-Thread →](06_thread_7641.md)](05_theorem_60714.md) · [Next: 7. Open Questions and Conjectures →](07_open_questions.md)](06_thread_7641.md) · [Next: Appendix A. Classification Tables at $d = 3, 4, 5, 6$ →](A_classification_tables.md)](07_open_questions.md) · [Next: Appendix B. Coefficient-preserving ladder for $F = 60714$ →](B_60714_ladder.md)

@@ -1,3 +1,7 @@
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)](04_cross_check.md) · [Next: 6. The $\{7, 6, 4, 1\}$-Thread →](06_thread_7641.md)](05_theorem_60714.md) · [Next: 7. Open Questions and Conjectures →](07_open_questions.md)](06_thread_7641.md) · [Next: Appendix A. Classification Tables at $d = 3, 4, 5, 6$ →](A_classification_tables.md)
+
+---
+
 # 7. Open Questions and Conjectures
 
 The results of §3–§6 establish a specific empirical and structural picture at digit lengths $d \leq 9$ for the multiset thread $\{7, 6, 4, 1\}$, with a full theorem (§5, Theorem 5.2) covering $60714$ at every $d \geq 5$. Several natural questions extend beyond what we have proven; we collect them here.
@@ -68,3 +72,7 @@ The central result of this paper is Theorem 5.2: $60714$ is a universal full-var
 The methodology of the paper — exhaustive enumeration at each digit length, combined with structural proof on the cases the enumeration distinguishes — has been effective at $d \leq 6$ for the full rule space and at $d \leq 9$ for targeted verification of specific fps. Extending this methodology to $d \geq 7$ for the full rule space, or to $d \geq 10$ for $6174$, is the natural next step.
 
 ---
+
+---
+
+[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)](04_cross_check.md) · [Next: 6. The $\{7, 6, 4, 1\}$-Thread →](06_thread_7641.md)](05_theorem_60714.md) · [Next: 7. Open Questions and Conjectures →](07_open_questions.md)](06_thread_7641.md) · [Next: Appendix A. Classification Tables at $d = 3, 4, 5, 6$ →](A_classification_tables.md)
