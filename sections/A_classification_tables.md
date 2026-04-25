@@ -1,4 +1,4 @@
-[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)](04_cross_check.md) · [Next: 6. The $\{7, 6, 4, 1\}$-Thread →](06_thread_7641.md)](05_theorem_60714.md) · [Next: 7. Open Questions and Conjectures →](07_open_questions.md)](06_thread_7641.md) · [Next: Appendix A. Classification Tables at $d = 3, 4, 5, 6$ →](A_classification_tables.md)](07_open_questions.md) · [Next: Appendix B. Coefficient-preserving ladder for $F = 60714$ →](B_60714_ladder.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 7. Open questions](07_open_questions.md) · [Next: Appendix B. 60714 ladder →](B_60714_ladder.md)
 
 ---
 
@@ -6,7 +6,7 @@
 
 This appendix provides the complete enumerated classifications at digit lengths $d = 3, 4, 5, 6$. Each section lists all universal full-variable fixed points at the given $d$ along with representative data for one universal rule per fixed point. Sign-flipped duplicates are not listed separately (see Proposition 2.2).
 
-The classifications were computed by exhaustive enumeration in Python. Runtime on commodity hardware: negligible at $d = 3, 4$; 3 seconds at $d = 5$; roughly 3 hours at $d = 6$. Source code for the enumerations is available in the supplementary materials.
+The classifications were computed by exhaustive enumeration in Python. Runtime on commodity hardware: negligible at $d = 3, 4$; ~5 seconds at $d = 5$; ~5–10 minutes at $d = 6$. Source code for the enumerations is available in the supplementary materials.
 
 ## A.1 Classification at $d = 3$
 
@@ -93,7 +93,6 @@ The $506$ fixed points distribute by zero-digit count:
 | $1$ | $240$ |
 | $2$ | $53$  |
 | $3$ | $8$   |
-| $4$ | $1$   |
 
 And by digit sum (every universal fp at $d = 6$ has digit sum divisible by $9$):
 
@@ -103,7 +102,7 @@ And by digit sum (every universal fp at $d = 6$ has digit sum divisible by $9$):
 | $18$ | $156$ |
 | $27$ | $244$ |
 | $36$ | $96$ |
-| $45$ | $3$ |
+| $45$ | $2$ |
 
 ## A.4.2 Distinguished fixed points
 
@@ -172,4 +171,4 @@ The $8$ fixed points with $3$ zero digits at $d = 6$ of §A.4.1 are the subject 
 
 ---
 
-[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)](02_framework.md) · [Next: 4. Cross-Dimensional Cross-Check: $d = 5 \to d = 6$ →](04_cross_check.md)](03_classifications.md) · [Next: 5. Dimension-Transcendence of $F = 60714$ →](05_theorem_60714.md)](04_cross_check.md) · [Next: 6. The $\{7, 6, 4, 1\}$-Thread →](06_thread_7641.md)](05_theorem_60714.md) · [Next: 7. Open Questions and Conjectures →](07_open_questions.md)](06_thread_7641.md) · [Next: Appendix A. Classification Tables at $d = 3, 4, 5, 6$ →](A_classification_tables.md)](07_open_questions.md) · [Next: Appendix B. Coefficient-preserving ladder for $F = 60714$ →](B_60714_ladder.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 7. Open questions](07_open_questions.md) · [Next: Appendix B. 60714 ladder →](B_60714_ladder.md)

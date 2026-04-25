@@ -1,4 +1,4 @@
-[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 1. Introduction](01_introduction.md) · [Next: 3. Classifications at $d \leq 6$ →](03_classifications.md)
 
 ---
 
@@ -150,4 +150,4 @@ For reference:
 
 ---
 
-[← Back to paper](../README.md#table-of-contents) · [← Previous: [← Back to paper](../README.md#table-of-contents) · [Next: 2. Framework →](02_framework.md)](01_introduction.md) · [Next: 3. Classification of Universal Full-Variable Fixed Points at $d \leq 6$ →](03_classifications.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 1. Introduction](01_introduction.md) · [Next: 3. Classifications at $d \leq 6$ →](03_classifications.md)
