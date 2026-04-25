@@ -1,126 +1,123 @@
-# Dimension-Transcendent Attractors in Generalized Kaprekar Routines
+# 60714
 
-Paper draft and reproducibility code for the result that **60714 is a universal full-variable fixed point at every digit length $`d \geq 5`$** — the first rigorously dimension-transcendent attractor in the generalized Kaprekar family.
+A five-digit number that's a universal attractor at every digit length d ≥ 5.
 
----
+Pick any number with five or more digits. Apply the right rule. Watch it converge to **60714**. The rule depends on the input's digit length, but the destination is always the same.
 
-## Quick links
-
-📖 **[Read the paper section by section →](#table-of-contents)** *(recommended for in-browser viewing)*
-
-📄 **[Download the complete paper as one file →](paper.md)** *(may have GitHub rendering limits — use sections for browsing)*
-
-📊 **[Browse the 506 fixed points at $`d = 6`$ →](d6_fps.txt)**
-
-⚙️ **[Run the reproducibility scripts →](scripts/)**
+This is a generalization of Kaprekar's classical 1949 result, extended in a direction the literature has not explored: instead of fixing the rule and asking which digit lengths work, we let the rule vary with the digit length, and find a single fixed point — 60714 — whose universality holds across infinitely many dimensions simultaneously.
 
 ---
 
-## Table of contents
+## ⚡ Try it
 
-The full paper is in [`paper.md`](paper.md). For easier navigation, individual sections are also linked below.
+**👉 [Open the interactive calculator](60714_calculator.html)**
+
+Type any number 5–20 digits long. The calculator shows the full trajectory, step by step, until convergence.
+
+---
+
+## What's here
+
+| | |
+|---|---|
+| **[60714_calculator.html](60714_calculator.html)** | Single-file interactive calculator. Open it in any browser. No setup. |
+| **[paper.md](paper.md)** | The complete paper: classifications, theorems, proofs, appendices. ~170 KB; if GitHub's math renderer struggles with the size, browse the [section files](#-the-paper-section-by-section) below. |
+| **[d6_fps.txt](d6_fps.txt)** | All 506 universal fixed points at d = 6, with metadata. |
+| **[scripts/](scripts/)** | Reproducibility scripts for every exhaustive claim in the paper. |
+
+---
+
+## What 60714 actually is
+
+In Kaprekar's classical routine at d = 4, you sort the digits descending, sort them ascending, subtract, and repeat. From every non-repdigit input, you reach **6174** within seven steps.
+
+The trick "stops working" at d = 5 — Kaprekar's specific rule cycles instead of converging. The standard story for 77 years has been: 5-digit Kaprekar doesn't work.
+
+The story changes if you let the rule itself vary. For each digit length d there are many ways to combine sorted-descending and sorted-ascending digits — d! · (d! − 1) ordered permutation pairs, each defining its own iteration rule. Most produce cycles. A small subset converge universally. At d = 6 the count is exactly **506**.
+
+The natural follow-up question: which of these cross-dimensional fixed points persist? If F is universal at d, is it also universal at d + 1, under some related rule?
+
+The answer is mostly no. Of the 33 universal fixed points at d = 5, only one extends to d = 6. That one is **60714**.
+
+What makes 60714 special isn't just that it extends once. It extends to every higher d, with an explicit recipe: each rule is built from the d = 5 rule by appending pairs of coefficients summing to zero at the new digit positions. Theorem 5.2 proves this construction is universal — every admissible input converges — at every d ≥ 5.
+
+The paper proves it through finite-state verification at d ≤ 16 plus a d-independent algebraic argument extending it to all higher d.
+
+---
+
+## 🔗 The four main results
+
+| Theorem | Statement |
+|---|---|
+| **3.1–3.4** | Exhaustive classification: 0, 4, 33, and 506 universal full-variable fixed points at d = 3, 4, 5, 6 respectively |
+| **4.1** | Of the 33 fixed points at d = 5, exactly one (60714) also universalizes at d = 6 |
+| **5.2** | 60714 is universal at every d ≥ 5, via an explicit lifting recipe |
+| **6.1** | The classical Kaprekar constant 6174 has a characterized cross-dimensional pattern: strict-universal at d = 4 and d = 7, near-universal with bounded basin at d = 8, 9; obstructed at d = 5, 6 |
+
+---
+
+## 📖 The paper, section by section
+
+For in-browser viewing — sections render cleanly on GitHub.
 
 ### Main text
 
-| Section | Link | Topic |
+| § | Section | Topic |
 |---|---|---|
-| §1 | [Introduction](sections/01_introduction.md) | Kaprekar's routine, middle-digit cancellation at odd $`d`$, and the organizing question |
-| §2 | [Framework](sections/02_framework.md) | Permutation-pair rules, algebraic rank, universal fixed points, native digit length |
-| §3 | [Classifications at $`d \leq 6`$](sections/03_classifications.md) | Theorems 3.1–3.4: exhaustive classification yielding 0, 4, 33, 506 universal fps |
-| §4 | [Cross-check $`d = 5 \to d = 6`$](sections/04_cross_check.md) | Theorem 4.1: of the 33 fps at $`d = 5`$, only 60714 transcends |
-| §5 | [The 60714 theorem](sections/05_theorem_60714.md) | Theorem 5.2: 60714 is universal at every $`d \geq 5`$ |
-| §6 | [The {7,6,4,1} thread](sections/06_thread_7641.md) | 60714 vs 6174 vs 60417 vs 1746; the `sum_locked_spans` invariant |
-| §7 | [Open questions](sections/07_open_questions.md) | Conjectures and directions for further work |
+| 1 | [Introduction](sections/01_introduction.md) | Kaprekar's routine, the cross-dimensional question, the 54 → 60714 discovery arc |
+| 2 | [Framework](sections/02_framework.md) | Permutation-pair rules, algebraic rank, native digit length |
+| 3 | [Classifications at d ≤ 6](sections/03_classifications.md) | Exhaustive enumeration, Theorems 3.1–3.4 |
+| 4 | [Cross-check d = 5 → d = 6](sections/04_cross_check.md) | Theorem 4.1, the 32 dimension-locked fps |
+| 5 | [The 60714 theorem](sections/05_theorem_60714.md) | The lifting construction, Theorem 5.2 and its proof |
+| 6 | [The {7,6,4,1} thread](sections/06_thread_7641.md) | 60714 vs 6174 vs 60417 vs 1746 |
+| 7 | [Open questions](sections/07_open_questions.md) | Conjectures and directions |
 
 ### Appendices
 
-| Appendix | Link | Topic |
+| | Appendix | Topic |
 |---|---|---|
-| A | [Classification tables](sections/A_classification_tables.md) | Per-$`d`$ enumeration data, fixed-point catalogues |
-| B | [60714 ladder construction](sections/B_60714_ladder.md) | Coefficient-preserving liftings through $`d = 20`$ |
-| C | [Support lemmas for Theorem 5.2](sections/C_support_lemmas.md) | Core non-negativity, $`T_d`$ closure, $`d = 15`$ algebraic hinge |
-| D | [Transcendent fps at $`d = 7`$](sections/D_dF7_observations.md) | 22-fp audit (10 Case 1 + 11 Case 2 + 1 NEAR-edge) |
-| E | [6174 audit at $`d = 8, 9`$](sections/E_6174_audit.md) | The 45-input escape class characterized |
+| A | [Classification tables](sections/A_classification_tables.md) | Per-d enumeration data, fixed-point catalogues |
+| B | [60714 ladder construction](sections/B_60714_ladder.md) | Explicit coefficient vectors through d = 20 |
+| C | [Support lemmas for Theorem 5.2](sections/C_support_lemmas.md) | Core non-negativity, Td closure, the d = 15 algebraic hinge |
+| D | [Transcendent fps at d = 7](sections/D_dF7_observations.md) | 22-fp audit |
+| E | [6174 audit at d = 8, 9](sections/E_6174_audit.md) | The 45-input escape class |
 
 ---
 
-## The main result
-
-**Theorem (60714 is dimension-transcendent).** *The integer $`F = 60714`$ is a universal full-variable fixed point at every digit length $`d \geq 5`$ under an explicit family of permutation-pair rules connected by a coefficient-preserving lifting recipe.*
-
-The paper establishes four theorems:
-
-| | Statement |
-|---|---|
-| **Theorems 3.1–3.4** | Exhaustive classification of universal full-variable fixed points at $`d = 3, 4, 5, 6`$ — yielding $`0, 4, 33, 506`$ fps respectively |
-| **Theorem 4.1** | Of the $`33`$ universal fps at $`d = 5`$, exactly one ($`60714`$) also universalizes at $`d = 6`$ |
-| **Theorem 5.2** | $`60714`$ is universal at every $`d \geq 5`$ via the explicit lifting family of §5 |
-| **Theorem 6.1** | The classical Kaprekar fp $`6174`$ has a characterized cross-dimensional pattern: strict at $`d = 4`$, algebraic obstruction at $`d = 5`$, dynamic obstruction at $`d = 6`$, near-universal with monotonically improving basin at $`d = 7, 8, 9`$ |
-
----
-
-## Reproducibility
+## ⚙️ Reproducibility
 
 All exhaustive claims in the paper have corresponding Python scripts in [`scripts/`](scripts/). Pure Python 3 (≥ 3.8), no external dependencies.
 
 | Script | Reproduces | Runtime |
 |---|---|---|
-| [`classify_at_d.py`](scripts/classify_at_d.py) | Theorems 3.1–3.4 (classification) | $`d = 5`$: ~5 s · $`d = 6`$: ~5–10 min |
-| [`cross_check_d5_to_d6.py`](scripts/cross_check_d5_to_d6.py) | Theorem 4.1 ($`d = 5 \to d = 6`$) | ~30 min |
-| [`verify_60714_ladder.py`](scripts/verify_60714_ladder.py) | Theorem 5.2 (60714 lifting through $`d = 20`$) | < 1 s |
-| [`verify_lemma_5_2.py`](scripts/verify_lemma_5_2.py) | Proposition 5.2 (finite-state $`T_d`$ verification) | ~5 min |
-| [`audit_6174_d8_d9.py`](scripts/audit_6174_d8_d9.py) | Theorem 6.1, parts 5 & 6 | $`d = 8`$: ~3 min · $`d = 9`$: ~60 min |
+| [`classify_at_d.py`](scripts/classify_at_d.py) | Theorems 3.1–3.4 | d = 5: ~5 s · d = 6: ~5–10 min |
+| [`cross_check_d5_to_d6.py`](scripts/cross_check_d5_to_d6.py) | Theorem 4.1 | ~30 min |
+| [`verify_60714_ladder.py`](scripts/verify_60714_ladder.py) | Theorem 5.2 construction | < 1 s |
+| [`verify_lemma_5_2.py`](scripts/verify_lemma_5_2.py) | Proposition 5.2 | ~5 min |
+| [`audit_6174_d8_d9.py`](scripts/audit_6174_d8_d9.py) | Theorem 6.1, parts 5 & 6 | d = 8: ~3 min · d = 9: ~60 min |
 
 Run any script with `python3 scripts/<script>.py` and `--help` for options.
 
-To regenerate the [`d6_fps.txt`](d6_fps.txt) supplementary file (already in the repo):
+To regenerate the [`d6_fps.txt`](d6_fps.txt) supplementary file:
 
 ```bash
 python3 scripts/classify_at_d.py 6 --save-txt
 ```
 
-This produces `d6_fps.txt` with one line per fixed point, including zero-digit count, multiset, and rule count. The `--save` flag additionally produces a richer JSON file (`d6_classification.json`).
-
 ---
 
-## The d6_fps.txt supplementary file
+## How this paper was written
 
-[`d6_fps.txt`](d6_fps.txt) lists all $`506`$ universal full-variable fixed points at $`d = 6`$, with metadata per fp:
+The discovery arc, the classification errors and self-corrections, the proof gaps and their resolution, and the methodological pattern are documented in §1.4 of the paper. In short: brute-force enumeration produced the empirical landscape, an early candidate (54) revealed itself as algebraically degenerate on closer inspection, and the search refined toward fixed points with no zero digits in their native form. The unique answer was 60714.
 
-```
-# d6_fps.txt — Universal full-variable fixed points at d=6
-# Total: 506 fps, 1174 universal rules
-#
-# Zero-digit stratification:
-#   0 zeros: 205 fps
-#   1 zeros: 240 fps
-#   2 zeros:  53 fps
-#   3 zeros:   8 fps
-#
-# Format: <F> zeros=<count> multiset=<sorted-asc-string>
-#
-    252  zeros=3  multiset=000225  n_rules=2
-   2520  zeros=3  multiset=000225  n_rules=2
-   4545  zeros=2  multiset=004455  n_rules=2
-   ...
-```
-
-The $`506`$ count excludes the trivial fixed point $`F = 0`$ (cf. [§2 convention](sections/02_framework.md)).
-
----
-
-## Status
-
-Pre-submission revision complete. All five pre-submission items resolved:
-
-1. ✓ §4 Tables 4.1 & 4.2 filled with all 32 dimension-locked fps at $`d = 5`$ ([§4](sections/04_cross_check.md))
-2. ✓ $`d = 15`$ odd-ladder hinge argument strengthened ([Appendix C](sections/C_support_lemmas.md))
-3. ✓ All 22 TRANS fps at $`d_F = 7`$ documented ([Appendix D](sections/D_dF7_observations.md))
-4. ✓ `sum_locked_spans` invariant honestly characterized — within-thread only ([§6](sections/06_thread_7641.md))
-5. ✓ `d6_fps.txt` generated ([here](d6_fps.txt))
+The full collaboration story — including the wrong-answer detour through 45000, the 54-vs-60714 distinction, the proof saga that closed at 1 a.m. — is in the LinkedIn companion article *(link forthcoming)*.
 
 ---
 
 ## Citation
 
 *(To be filled in upon submission.)*
+
+---
+
+*The repository is private during pre-submission review. If you arrived here from a link and the calculator or paper isn't loading, contact the author.*

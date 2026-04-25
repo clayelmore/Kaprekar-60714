@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>60714 — A Universal Attractor</title>
+<style>
+  /* ─── Reset & base ─────────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1814;
+    --paper: #f4f0e6;
+    --paper-warm: #ebe4d3;
+    --rule: #c4a96b;
+    --rule-deep: #8a6f3d;
+    --hot: #b8311c;
+    --cool: #5b6e7a;
+    --soft: #6e6555;
+    --fade: #aaa294;
+    --highlight: #fff6db;
+  }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(196, 169, 107, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 110%, rgba(184, 49, 28, 0.07) 0%, transparent 55%),
+      var(--paper);
+    background-attachment: fixed;
+  }
+
+  .grain {
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+
+  /* ─── Layout ───────────────────────────────────────────────────── */
+  .frame {
+    position: relative; z-index: 2;
+    max-width: 760px; margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  /* ─── Header ───────────────────────────────────────────────────── */
+  header {
+    text-align: center;
+    border-bottom: 1px double var(--rule);
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-style: italic;
+    font-variant: small-caps;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    color: var(--rule-deep);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Didot', 'Bodoni 72', 'Hoefler Text', Garamond, serif;
+    font-weight: 400;
+    font-size: clamp(3.4rem, 9vw, 5.5rem);
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  h1 .num {
+    display: inline-block;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    color: var(--hot);
+  }
+
+  .subtitle {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--soft);
+    margin-top: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .lede {
+    margin-top: 2rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 60ch;
+    margin-left: auto; margin-right: auto;
+    text-align: left;
+  }
+  .lede em { color: var(--rule-deep); font-style: italic; }
+  .lede strong { font-weight: 600; }
+
+  /* ─── Input panel ──────────────────────────────────────────────── */
+  .panel {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.5) inset,
+      0 0 0 6px var(--paper),
+      0 0 0 7px var(--rule);
+  }
+
+  .panel::before {
+    content: '';
+    position: absolute; top: 0.5rem; left: 0.5rem; right: 0.5rem; bottom: 0.5rem;
+    border: 1px solid rgba(196, 169, 107, 0.4);
+    pointer-events: none;
+  }
+
+  .panel-label {
+    font-variant: small-caps;
+    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+    color: var(--rule-deep);
+    margin-bottom: 0.85rem;
+    text-align: center;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-size: 1.6rem;
+    padding: 0.6rem 0.9rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  input[type="text"]:focus {
+    border-color: var(--hot);
+    box-shadow: 0 0 0 1px var(--hot);
+  }
+
+  button {
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    padding: 0 1.2rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.15s, transform 0.05s;
+    white-space: nowrap;
+  }
+  button:hover { background: var(--hot); }
+  button:active { transform: translateY(1px); }
+  button.secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  button.secondary:hover { background: var(--ink); color: var(--paper); }
+
+  .controls {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.85rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hint {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--soft);
+    text-align: center;
+    margin-top: 0.6rem;
+    min-height: 1.2em;
+  }
+  .hint.error { color: var(--hot); font-style: normal; font-weight: 500; }
+
+  /* ─── Trajectory ───────────────────────────────────────────────── */
+  .trajectory { margin-top: 1rem; }
+
+  .step {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.8rem;
+    border-radius: 0 2px 2px 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: stepin 0.4s ease-out forwards;
+  }
+  @keyframes stepin {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step.fixed {
+    border-left-color: var(--hot);
+    background: var(--highlight);
+  }
+
+  .step-num {
+    position: absolute;
+    top: 0.65rem; right: 0.85rem;
+    font-variant: small-caps;
+    letter-spacing: 0.18em;
+    font-size: 0.65rem;
+    color: var(--rule-deep);
+  }
+
+  .step.fixed .step-num {
+    color: var(--hot);
+    font-weight: 600;
+  }
+
+  .step-current {
+    font-family: 'Didot', 'Bodoni 72', Garamond, serif;
+    font-size: 2rem;
+    color: var(--ink);
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .step.fixed .step-current { color: var(--hot); }
+
+  .arithmetic {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.15rem 0.7rem;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    font-size: 1.02rem;
+    color: var(--ink);
+    margin-top: 0.6rem;
+  }
+  .arithmetic .op {
+    font-style: italic;
+    color: var(--soft);
+    text-align: right;
+    font-size: 0.78rem;
+    line-height: 1.6em;
+    align-self: center;
+  }
+  .arithmetic .num-row {
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    letter-spacing: 0.15em;
+  }
+  .arithmetic .desc-row { color: var(--ink); }
+  .arithmetic .asc-row { color: var(--soft); }
+  .arithmetic .result-row {
+    color: var(--hot);
+    border-top: 1px solid var(--rule);
+    padding-top: 0.2rem;
+    margin-top: 0.2rem;
+    font-weight: 500;
+  }
+
+  .step .note {
+    font-style: italic;
+    color: var(--soft);
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+  }
+
+  .fixed-banner {
+    text-align: center;
+    margin: 1rem 0 0;
+    padding: 0.7rem 0;
+    border-top: 1px double var(--rule);
+    border-bottom: 1px double var(--rule);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--rule-deep);
+    letter-spacing: 0.04em;
+  }
+
+  /* ─── Footer / about ───────────────────────────────────────────── */
+  .about {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px double var(--rule);
+    font-size: 0.92rem;
+    color: var(--soft);
+    line-height: 1.65;
+    max-width: 60ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .about p + p { margin-top: 1em; }
+  .about strong { color: var(--ink); font-weight: 600; }
+  .about a {
+    color: var(--rule-deep);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .about a:hover { color: var(--hot); }
+
+  .ornament {
+    text-align: center;
+    color: var(--rule);
+    margin: 2.5rem 0 1.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+  }
+
+  /* ─── Responsive ───────────────────────────────────────────────── */
+  @media (max-width: 540px) {
+    .frame { padding: 2.5rem 1rem 3rem; }
+    .input-row { flex-direction: column; }
+    button { padding: 0.7rem 1rem; }
+    .step-current { font-size: 1.6rem; }
+    .arithmetic { font-size: 0.92rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="frame">
+
+  <header>
+    <div class="eyebrow">an interactive companion</div>
+    <h1>The Number <span class="num">60714</span></h1>
+    <div class="subtitle">A universal attractor at every digit length d ≥ 5</div>
+
+    <div class="lede">
+      <p>Pick any number with at least five digits. Apply the right rule. Watch it converge to <em>60714</em>.</p>
+      <p>The rule depends on the input's digit length — there is one rule at <em>d = 5</em>, another at <em>d = 6</em>, and a uniform recipe extending to every higher dimension. Each rule sorts the digits in two ways and combines them with a fixed coefficient vector. The result, after a finite number of iterations, is always 60714.</p>
+    </div>
+  </header>
+
+  <section class="panel">
+    <div class="panel-label">Try it</div>
+    <div class="input-row">
+      <input type="text" id="numinput" placeholder="enter a number with 5+ digits" inputmode="numeric" maxlength="20" autocomplete="off">
+      <button id="go" type="button">iterate</button>
+    </div>
+    <div class="controls">
+      <button class="secondary" type="button" data-example="12345">12345</button>
+      <button class="secondary" type="button" data-example="98765">98765</button>
+      <button class="secondary" type="button" data-example="142857">142857</button>
+      <button class="secondary" type="button" data-example="3141592">3141592</button>
+      <button class="secondary" type="button" id="random">random</button>
+    </div>
+    <div class="hint" id="hint">5 digits or more. Repdigits (like 11111) collapse to zero — try anything else.</div>
+  </section>
+
+  <div class="trajectory" id="trajectory"></div>
+
+  <div class="about">
+    <p>The number <strong>60714</strong> is what the paper calls a <em>dimension-transcendent attractor</em>: a fixed point of a permutation-pair rule whose universality persists across every digit length d ≥ 5 simultaneously, not just at one specific d.</p>
+
+    <p>This is a strict generalization of Kaprekar's classical 1949 result. Kaprekar's constant 6174 is universal at d = 4 alone — the trick "stops working" at d = 5 if you keep his original rule fixed. The result extended here is that if you let the rule itself vary with d (specifically, by appending pairs of coefficients that sum to zero at each new digit length), there is a distinguished fixed point — 60714, sharing 6174's digit multiset plus a zero — whose universality holds at every d simultaneously, with an inductive proof that closes through both finite-state verification and a d-independent algebraic argument.</p>
+
+    <p>Full paper, the proof, the 506-fixed-point classification at d = 6, and reproducibility scripts: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
+  </div>
+
+  <div class="ornament">⁂</div>
+
+</div>
+
+<script>
+'use strict';
+
+/* ─── Coefficient vectors (Theorem 5.2 ladders) ──────────────── */
+function getCoefs(d) {
+  if (d < 5) return null;
+  if (d === 5) return [9900, 9, 90, -9000, -999];
+  if (d === 6) return [9900, 9, 90, -9000, 99000, -99999];
+
+  // BigInt for d > 15 (safe integer is ~9e15)
+  const useBig = d > 15;
+  const NINE = useBig ? 9n : 9;
+  const TEN = useBig ? 10n : 10;
+  const pow = (base, exp) => {
+    let r = useBig ? 1n : 1;
+    for (let i = 0; i < exp; i++) r = r * base;
+    return r;
+  };
+
+  let base;
+  let startExp;
+  if (d % 2 === 1) {
+    // odd ladder: base at d=5
+    base = useBig
+      ? [9900n, 9n, 90n, -9000n, -999n]
+      : [9900, 9, 90, -9000, -999];
+    startExp = 6;
+  } else {
+    // even ladder: base at d=6
+    base = useBig
+      ? [9900n, 9n, 90n, -9000n, 99000n, -99999n]
+      : [9900, 9, 90, -9000, 99000, -99999];
+    startExp = 7;
+  }
+  for (let k = startExp; k < d; k += 2) {
+    const tenK = pow(TEN, k);
+    base.push(NINE * tenK);
+    base.push(-NINE * tenK);
+  }
+  return base;
+}
+
+function isBigArr(arr) { return arr.length > 0 && typeof arr[0] === 'bigint'; }
+
+/* ─── One iteration of K at digit length d ───────────────────── */
+function step(value, d) {
+  const padded = value.toString().padStart(d, '0');
+  const digits = padded.split('').map(c => parseInt(c, 10));
+  const desc = [...digits].sort((a, b) => b - a);
+  const asc  = [...digits].sort((a, b) => a - b);
+  const coefs = getCoefs(d);
+
+  let total;
+  if (isBigArr(coefs)) {
+    let acc = 0n;
+    for (let i = 0; i < d; i++) {
+      acc += coefs[i] * BigInt(desc[i]);
+    }
+    total = acc < 0n ? -acc : acc;
+  } else {
+    let acc = 0;
+    for (let i = 0; i < d; i++) {
+      acc += coefs[i] * desc[i];
+    }
+    total = Math.abs(acc);
+  }
+
+  return {
+    descArr: desc,
+    ascArr: asc,
+    descStr: desc.map(String).join(''),
+    ascStr: asc.map(String).join(''),
+    next: total
+  };
+}
+
+function isRepdigit(s) {
+  return /^(.)\1*$/.test(s);
+}
+
+/* ─── Run the trajectory ──────────────────────────────────────── */
+function iterate(input) {
+  const cleaned = input.replace(/\D/g, '');
+  if (!cleaned) return { error: 'enter a number, please.' };
+  if (cleaned.length < 5) return { error: 'needs at least 5 digits.' };
+  if (cleaned.length > 20) return { error: 'keep it under 20 digits for now.' };
+  if (isRepdigit(cleaned)) return { error: 'repdigits (like 11111) collapse to zero — try anything else.' };
+
+  const d = cleaned.length;
+  const useBig = d > 15;
+  const target = useBig ? 60714n : 60714;
+  const zero = useBig ? 0n : 0;
+
+  let cur = useBig ? BigInt(cleaned) : parseInt(cleaned, 10);
+  const trail = [];
+  const MAX = 80;
+
+  for (let i = 0; i < MAX; i++) {
+    const r = step(cur, d);
+    trail.push({
+      stepNum: i,
+      currentStr: cur.toString().padStart(d, '0'),
+      descStr: r.descStr,
+      ascStr: r.ascStr,
+      next: r.next,
+      isFixed: r.next === cur
+    });
+    if (r.next === cur) break;
+    cur = r.next;
+  }
+
+  return { trail, d, finalIs60714: trail[trail.length - 1].next === target };
+}
+
+/* ─── Rendering ───────────────────────────────────────────────── */
+const trajectoryEl = document.getElementById('trajectory');
+const hintEl = document.getElementById('hint');
+const inputEl = document.getElementById('numinput');
+
+function render(result) {
+  trajectoryEl.innerHTML = '';
+  hintEl.classList.remove('error');
+
+  if (result.error) {
+    hintEl.textContent = result.error;
+    hintEl.classList.add('error');
+    return;
+  }
+
+  hintEl.textContent = `digit length d = ${result.d}, ${result.trail.length - 1} iteration${result.trail.length - 1 === 1 ? '' : 's'} to converge`;
+
+  result.trail.forEach((t, idx) => {
+    const div = document.createElement('div');
+    div.className = 'step' + (t.isFixed ? ' fixed' : '');
+    div.style.animationDelay = (idx * 0.06) + 's';
+
+    const cleanCurrent = t.currentStr.replace(/^0+(?=\d)/, '') || '0';
+
+    let html = `<div class="step-num">step ${t.stepNum}</div>`;
+    html += `<div class="step-current">${formatNumber(cleanCurrent)}</div>`;
+
+    if (!t.isFixed) {
+      const descNum = formatNumber(t.descStr.replace(/^0+(?=\d)/, '') || '0');
+      const ascNum = formatNumber(t.ascStr.replace(/^0+(?=\d)/, '') || '0');
+      const nextStr = t.next.toString();
+
+      html += `<div class="arithmetic">`;
+      html += `<span class="op">descending</span><span class="num-row desc-row">${descNum}</span>`;
+      html += `<span class="op">ascending</span><span class="num-row asc-row">${ascNum}</span>`;
+      html += `<span class="op">K applied</span><span class="num-row result-row">${formatNumber(nextStr)}</span>`;
+      html += `</div>`;
+    } else {
+      html += `<div class="note">fixed point reached. K(60714) = 60714.</div>`;
+    }
+
+    div.innerHTML = html;
+    trajectoryEl.appendChild(div);
+  });
+
+  if (result.finalIs60714) {
+    const banner = document.createElement('div');
+    banner.className = 'fixed-banner';
+    banner.style.animationDelay = (result.trail.length * 0.06) + 's';
+    banner.innerHTML = `Theorem 5.2 in action: every admissible input at d = ${result.d} reaches 60714.`;
+    trajectoryEl.appendChild(banner);
+  }
+}
+
+function formatNumber(s) {
+  // Insert thousand separators, preserve leading zeros if intentional
+  if (s.length <= 4) return s;
+  const reversed = s.split('').reverse();
+  const grouped = [];
+  for (let i = 0; i < reversed.length; i++) {
+    if (i > 0 && i % 3 === 0) grouped.push(',');
+    grouped.push(reversed[i]);
+  }
+  return grouped.reverse().join('');
+}
+
+/* ─── Wiring ──────────────────────────────────────────────────── */
+function go() {
+  const result = iterate(inputEl.value);
+  render(result);
+}
+
+document.getElementById('go').addEventListener('click', go);
+
+inputEl.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') go();
+});
+
+document.querySelectorAll('button[data-example]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    inputEl.value = btn.dataset.example;
+    go();
+  });
+});
+
+document.getElementById('random').addEventListener('click', () => {
+  // Random length 5-9, random non-repdigit
+  const len = 5 + Math.floor(Math.random() * 5);
+  let s;
+  do {
+    s = '';
+    s += String(1 + Math.floor(Math.random() * 9));
+    for (let i = 1; i < len; i++) s += String(Math.floor(Math.random() * 10));
+  } while (isRepdigit(s));
+  inputEl.value = s;
+  go();
+});
+
+inputEl.addEventListener('input', () => {
+  hintEl.classList.remove('error');
+  hintEl.textContent = `5 digits or more. Repdigits (like 11111) collapse to zero — try anything else.`;
+});
+
+// Auto-run with example on load
+inputEl.value = '12345';
+go();
+
+</script>
+
+</body>
+</html>
