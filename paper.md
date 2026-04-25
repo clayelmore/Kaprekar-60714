@@ -5,6 +5,15 @@ Assembled from section drafts on 2026-04-23
 Sections 1-7 plus Appendices A, B, C, D, E
 -->
 
+> **⚠️ Note on viewing this file in GitHub:**
+> This file is the complete paper assembled in one document (~176 KB, 1,800+ lines, 3,000+ math expressions).
+> GitHub's web interface has rendering limits that may cause math expressions in this file to display as
+> "Unable to render expression" errors. **For the best reading experience, use the section files in
+> [`sections/`](sections/), which render correctly.** The [README](README.md) provides a clickable
+> table of contents. This `paper.md` file is provided for download/offline use; it is byte-identical
+> in content to the concatenation of all section files.
+
+---
 
 ---
 
