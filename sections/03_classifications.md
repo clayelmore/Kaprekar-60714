@@ -96,6 +96,8 @@ At $`d = 6`$, there are $`190{,}800`$ full-variable rules (Proposition 2.1, $`6!
 
 **Proof.** Exhaustive enumeration of $`190{,}800`$ full-variable rules against $`4{,}905`$ admissible digit multisets ($`999{,}450`$ admissible padded six-digit strings). Full enumeration data and the complete list of $`506`$ fixed points are in Appendix A.4.
 
+**Remark on enumeration soundness.** The reproducibility script `classify_at_d.py` uses a candidate-filtering heuristic followed by full-basin verification of each candidate, which scales tractably to $`d = 6`$ but is not by itself a sound enumeration (a candidate fp could in principle be missed by the filter). The $`506`$ count was independently cross-verified against three sources that all agree: (i) a 3-day exhaustive enumeration on consumer hardware producing `results_db.json`, (ii) a no-shortcut sound enumeration on the verifier container, and (iii) the supplementary file `d6_fps.txt`, whose stratification by zero-digit count $`(205 + 240 + 53 + 8 = 506)`$ matches the table below. The three sources independently arrive at the same fixed-point set and the same count.
+
 **Stratification by zero digit count.** The $`506`$ fixed points distribute as follows by the number of zero digits in each fixed point:
 
 | Zero-digit count | Fixed-point count |

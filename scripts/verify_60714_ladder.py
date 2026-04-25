@@ -80,7 +80,17 @@ def verify_fixed_point(coefs, d):
 
 
 def main():
-    max_d = int(sys.argv[1]) if len(sys.argv) > 1 else 20
+    import argparse
+    parser = argparse.ArgumentParser(
+        description=("Verify K^(d)(60714) = 60714 explicitly by constructing the "
+                     "coefficient-preserving ladder from d=5 up to a chosen max_d. "
+                     "Verifies the algebraic part of Theorem 5.2 (does NOT verify basin; "
+                     "use verify_60714_basin.py for that)."))
+    parser.add_argument('max_d', type=int, nargs='?', default=20,
+                        help="Maximum digit length to verify (default 20)")
+    args = parser.parse_args()
+
+    max_d = args.max_d
     
     rules = build_ladder(max_d)
     

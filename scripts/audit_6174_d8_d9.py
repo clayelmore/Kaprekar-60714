@@ -156,8 +156,13 @@ def audit(d):
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Usage: audit_6174_d8_d9.py <8 or 9>")
-        sys.exit(1)
-    d = int(sys.argv[1])
-    audit(d)
+    import argparse
+    parser = argparse.ArgumentParser(
+        description=("Exhaustive audit of 6174's coefficient-preserving liftings at d=8 or d=9. "
+                     "Reproduces Theorem 6.1 / Appendix E claims: 0 strict-universal liftings, "
+                     "15 NEAR at d=8 (best basin 0.998141), 302 NEAR at d=9 (best basin 0.999073), "
+                     "all with 45-input (X,X,X,X,Y,Y,Y,Y) escape class."))
+    parser.add_argument('d', type=int, choices=[8, 9],
+                        help="Digit length to audit (8 or 9)")
+    args = parser.parse_args()
+    audit(args.d)
