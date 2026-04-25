@@ -398,7 +398,7 @@
   <header>
     <div class="eyebrow">an interactive companion</div>
     <h1>The Number <span class="num">60714</span></h1>
-    <div class="subtitle">A universal attractor at every digit length d ≥ 5 (with one structural exception)</div>
+    <div class="subtitle">A universal attractor at every digit length d ≥ 5 (with a structurally characterized family of exceptions)</div>
 
     <div class="lede">
       <p>Pick any number with at least five digits. Apply the right rule. Watch it converge — almost always — to <em>60714</em>.</p>
@@ -431,6 +431,8 @@
     <p>The dynamics are <strong>strict-universal at d = 5 and d = 6</strong>: every admissible input reaches 60714. At <strong>d ≥ 7</strong>, the rule is <em>near-universal</em>: every admissible input outside a small structural class — the <strong>escape class</strong> of <strong>block-aligned multisets</strong> and their backward orbits — reaches 60714. Inputs in the escape class collapse to zero. The escape class has a closed-form description and at d ≤ 11 the escape orbits all reach zero within four iterations.</p>
 
     <p>This is a strict generalization of Kaprekar's classical 1949 result. Kaprekar's constant 6174 is universal at d = 4; the trick "stops working" at d = 5 if you keep his rule fixed. The result extended here is that if you let the rule itself vary with d (specifically, by appending zero-sum coefficient pairs), there is a distinguished fixed point — 60714, sharing 6174's digit multiset plus a zero — whose universality persists across infinitely many dimensions, modulo a structurally characterized escape class.</p>
+
+    <p style="font-style: italic; font-size: 0.85em; color: var(--soft); margin-top: 0.5em;">This calculator is a pedagogical companion to the paper, not a formal verifier. It demonstrates the iteration on individual inputs; the formal claims of the paper are established by the Python scripts and proofs in the repository.</p>
 
     <p>Full paper, the proof, the 506-fixed-point classification at d = 6, the closed-form description of the escape class, and reproducibility scripts: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
   </div>

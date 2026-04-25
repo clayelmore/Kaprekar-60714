@@ -780,7 +780,7 @@ For every multiset at every $`d`$, every ladder, we verify computationally that 
 
 The upper bound $`\leq 8`$ iterations holds at every $`d \leq 16`$. At $`d \geq 15`$, reaching time is $`\leq 1`$ — orbits enter $`T_d`$ in a single step. $`\square`$
 
-**Remark 5.4.** The enumeration is over digit multisets, not over distinct integer inputs, because $`K_{60714}^{(d)}`$ depends only on the sorted-descending form of its input — all integers with the same multiset have identical orbits. This gives a factor-of-$`d!`$ reduction in the verification complexity. The number of non-repdigit non-near-repdigit multisets at $`d = 16`$ is just over $`2`$ million, well within computational reach.
+**Remark 5.4.** Counts in the table equal $`\binom{d+9}{9} - 100`$ (subtracting the $`10`$ repdigits and $`90 \cdot d / d = 90`$ near-repdigits, but here counted as digit multisets so the correction is exactly $`100`$ for all $`d \geq 4`$). The enumeration is over digit multisets, not over distinct integer inputs, because $`K_{60714}^{(d)}`$ depends only on the sorted-descending form of its input — all integers with the same multiset have identical orbits. This gives a factor-of-$`d!`$ reduction in the verification complexity. The number of non-repdigit non-near-repdigit multisets at $`d = 16`$ is just over $`2`$ million, well within computational reach.
 
 #### 5.5.2 $`d`$-independent algebraic argument at large $`d`$
 
@@ -1036,7 +1036,15 @@ Theorem 6.1 establishes $`6174`$'s behavior at $`d = 4, 5, \ldots, 9`$. The patt
 
 Empirical extrapolation suggests no: at each $`d \geq 8`$, the $`45`$-input escape class persists, and no coefficient-preserving lifting eliminates it. A proof (or disproof) of this pattern at some specific large $`d`$ would complete the $`6174`$ pattern to an arbitrary horizon. At the structural level, proving that the $`45`$-input escape class is genuinely stable under all coefficient-preserving liftings is an algebraic question on the coefficient vectors' action on multisets of the form $`(X, X, X, X, 0, \ldots, 0)`$.
 
-### 7.6 Beyond universal full-variable fixed points
+### 7.6 The depth of the escape class
+
+Lemma 5.2.2 gives a closed form for $`|E_d^{(1)}|`$ — the number of step-$`1`$ collapse inputs at digit length $`d`$. The full escape class $`E_d`$ is the backward orbit of $`B_d \cap A_d`$, and at $`d \leq 11`$ exhaustive enumeration confirms that every orbit in $`E_d`$ reaches $`0`$ in at most $`4`$ iterations. The natural question:
+
+**Question 7.6.** *Is there a uniform-in-$`d`$ bound on the multi-step depth of $`E_d`$? Does $`|E_d| / |A_d| \to 0`$ as $`d \to \infty`$?*
+
+Combinatorially, $`|E_d^{(1)}|`$ grows polynomially in $`d`$ (specifically as $`O(d^{d_0 - 1})`$ via Lemma 5.2.2) while $`|A_d|`$ grows as $`O(d^9)`$ with much larger constant; the basin fraction $`1 - |E_d|/|A_d|`$ should approach $`1`$, but no proof is provided here.
+
+### 7.7 Beyond universal full-variable fixed points
 
 The full-variable constraint $`\mathrm{sv} = d`$ excludes dimension-agnostic fixed points like $`45`$, $`495`$, $`450`$ (§2.5). These fixed points exhibit their own cross-dimensional behavior through rank-reducing rules, which we have not addressed.
 
@@ -1044,9 +1052,9 @@ The full-variable constraint $`\mathrm{sv} = d`$ excludes dimension-agnostic fix
 
 The dimension-agnostic family is the simplest case: these fixed points persist across all digit lengths by construction. A more interesting question is whether there are non-full-variable rules whose cross-dimensional behavior mirrors $`60714`$'s full-variable universality — say, rules with $`\mathrm{sv} = d - 1`$ that produce universal fixed points at every $`d`$ in some range. We leave this open.
 
-### 7.7 Concluding remarks
+### 7.8 Concluding remarks
 
-The central result of this paper is Theorem 5.2: $`60714`$ is a universal full-variable fixed point at every digit length $`d \geq 5`$, under an explicit coefficient-preserving lifting. This is the first explicitly constructed cross-dimensional persistence result in the generalized Kaprekar family. The supporting results — the classifications of §3, the uniqueness of §4, and the $`6174`$ cross-dimensional pattern of §6 — place this theorem in a structural context that raises more questions than it answers. Conjectures 7.1 and 7.2 and Questions 7.1–7.5 together outline a program for understanding cross-dimensional behavior in the generalized family: which fixed points transcend, under what structural conditions, and with what mechanism.
+The central result of this paper is Theorem 5.2: $`60714`$ is a universal full-variable fixed point at every digit length $`d \geq 5`$, under an explicit coefficient-preserving lifting. This is the first explicitly constructed cross-dimensional persistence result in the generalized Kaprekar family. The supporting results — the classifications of §3, the uniqueness of §4, and the $`6174`$ cross-dimensional pattern of §6 — place this theorem in a structural context that raises more questions than it answers. Conjectures 7.1 and 7.2 and Questions 7.1–7.6 together outline a program for understanding cross-dimensional behavior in the generalized family: which fixed points transcend, under what structural conditions, and with what mechanism.
 
 The methodology of the paper — exhaustive enumeration at each digit length, combined with structural proof on the cases the enumeration distinguishes — has been effective at $`d \leq 6`$ for the full rule space and at $`d \leq 9`$ for targeted verification of specific fps. Extending this methodology to $`d \geq 7`$ for the full rule space, or to $`d \geq 10`$ for $`6174`$, is the natural next step.
 
@@ -1543,32 +1551,53 @@ where $`M' = (d - 6)/2`$ is the number of appended pairs.
 
 $$K^{(d)}(x) = \mathrm{core}_{\mathrm{even}}(x) + \sum_{k=0}^{M'-1} 9 \cdot 10^{2k+7} \, \delta_k$$
 
-where $`\mathrm{core}_{\mathrm{even}}(x) = 9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 + 99000 x_4 - 99999 x_5`$ depends only on the first $`6`$ positions.
+where $`\mathrm{core}_{\mathrm{even}}(x) = 9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 + 99000 x_4 - 99999 x_5`$ depends only on the first $`6`$ positions, and is non-negative (Lemma C.9 below).
+
+*Decimal-block structure.* Each block term $`9 \cdot 10^{2k+7} \delta_k`$ occupies decimal positions $`[2k+7, 2k+8]`$ as a two-digit value. Writing $`9 \delta_k = 10 u_k + v_k`$ for $`u_k, v_k \in \{0, \ldots, 9\}`$:
+
+| $`\delta_k`$ | $`9\delta_k`$ | digit at $`2k+7`$ ($`v_k`$) | digit at $`2k+8`$ ($`u_k`$) |
+|:---:|:---:|:---:|:---:|
+| $`0`$ | $`0`$ | $`0`$ | $`0`$ |
+| $`1`$ | $`9`$ | $`9`$ | $`0`$ |
+| $`2`$ | $`18`$ | $`8`$ | $`1`$ |
+| $`3`$ | $`27`$ | $`7`$ | $`2`$ |
+| $`\vdots`$ | $`\vdots`$ | $`\vdots`$ | $`\vdots`$ |
+| $`9`$ | $`81`$ | $`1`$ | $`8`$ |
+
+*Block decimal positions are pairwise disjoint and disjoint from the core.* Block $`k`$'s contribution affects only decimal positions $`2k+7`$ and $`2k+8`$. Block $`k+1`$'s contribution affects positions $`2(k+1)+7 = 2k+9`$ and $`2(k+1)+8 = 2k+10`$. These do not overlap. The maximum block-$`k`$ value is $`81 \cdot 10^{2k+7}`$ (when $`\delta_k = 9`$), which has digits at positions $`2k+7`$ and $`2k+8`$ but not at $`2k+9`$ — so blocks do not carry into one another. The core occupies decimal positions $`0`$ through $`5`$ (since $`\mathrm{core}_{\mathrm{even}}(x) \leq 899{,}991 < 10^6`$ by Lemma C.8 below). Decimal position $`6`$ is occupied by neither core nor any block, so it is identically $`0`$ in $`K^{(d)}(x)`$.
 
 *Lemma C.6 generalized to the even ladder.* For sorted-descending $`x`$,
 
 $$\sum_{k=0}^{M'-1} \delta_k = \sum_{k=0}^{M'-1} (x_{2k+6} - x_{2k+7}) \leq x_6 - x_{d-1} \leq 9.$$
 
-The first inequality follows by telescoping with the sorted-descending property $`x_{2k+7} \geq x_{2k+8}`$ (so the "internal gaps" $`x_{2k+7} - x_{2k+8}`$ are non-negative); the second is the trivial digit bound. This is the cliff-sum bound.
+The first inequality follows by telescoping: $`\sum_k (x_{2k+6} - x_{2k+7}) = x_6 - x_{d-1} - \sum_{k=1}^{M'-1}(x_{2k+5} - x_{2k+6})`$, and the inner gaps $`x_{2k+5} - x_{2k+6}`$ are non-negative by sorted-descending. The second is the trivial digit bound. This is the cliff-sum bound.
 
-*Block-zero count.* Let $`Z_i = |\{k : \delta_k = i\}|`$ and $`Z_{2+} = |\{k : \delta_k \geq 2\}|`$. Each block contributes to two consecutive decimal positions of $`K^{(d)}(x)`$:
-- $`\delta_k = 0`$: positions $`(2k+7, 2k+6)`$ both contribute $`0`$ to $`K^{(d)}(x)`$.
-- $`\delta_k = 1`$: positions become $`(0, 9)`$ — one zero, one nine.
-- $`\delta_k \geq 2`$: positions are nonzero (a "spread" pattern depending on $`\delta_k`$).
+*Block-zero count.* Let $`Z_0 = |\{k : \delta_k = 0\}|`$, $`Z_1 = |\{k : \delta_k = 1\}|`$, and $`Z_{2+} = |\{k : \delta_k \geq 2\}|`$, so $`Z_0 + Z_1 + Z_{2+} = M'`$. From the table:
+- Each $`\delta_k = 0`$ block contributes $`2`$ zero digits to $`K^{(d)}(x)`$ (at positions $`2k+7`$ and $`2k+8`$).
+- Each $`\delta_k = 1`$ block contributes $`1`$ zero digit (at position $`2k+8`$, since $`u_k = 0`$).
+- Each $`\delta_k \geq 2`$ block contributes $`0`$ zero digits at its own positions (both $`v_k`$ and $`u_k`$ are nonzero).
 
-Counting block-region zeros (decimal positions $`6`$ through $`d-1`$) gives $`2 Z_0 + Z_1`$. With $`Z_0 + Z_1 + Z_{2+} = M'`$ and $`Z_1 + 2 Z_{2+} \leq \sum_k \delta_k \leq 9`$ (since each $`k \in Z_{2+}`$ contributes $`\geq 2`$ to the sum), we get
+Total zero digits from blocks: $`2 Z_0 + Z_1`$.
 
-$$2 Z_0 + Z_1 \;=\; 2(M' - Z_1 - Z_{2+}) + Z_1 \;=\; 2M' - Z_1 - 2 Z_{2+} \;\geq\; 2M' - 9.$$
+Plus position $`6`$ is always zero (neither core nor any block touches it). So $`K^{(d)}(x)`$ has at least $`2 Z_0 + Z_1 + 1`$ zero digits in its padded $`d`$-digit form.
 
-*The threshold.* For one-step $`T_d`$ closure, we need $`K^{(d)}(x)`$ to have at least two zero digits in its padded $`d`$-digit form (the block-region zeros automatically land outside the core's decimal range, since $`\mathrm{core}_{\mathrm{even}}(x) \leq 899{,}991 < 10^6`$ — see Lemma C.8 below — while the block region occupies decimals $`\geq 7`$).
+From Lemma C.6, $`\sum_k \delta_k \leq 9`$. Since $`\delta_k \geq 2`$ for each $`k \in Z_{2+}`$:
 
-At even $`d \geq 18`$, $`M' \geq 6`$, hence $`2 Z_0 + Z_1 \geq 2 \cdot 6 - 9 = 3`$. The block region contributes at least $`3`$ zero digits to $`K^{(d)}(x)`$. Sorting $`K^{(d)}(x)`$'s digits descending places those zeros at the trailing positions; at least three trailing zeros suffices for $`T_d`$ membership. $`\square`$
+$$Z_1 + 2 Z_{2+} \;\leq\; Z_1 + \sum_{k \in Z_{2+}} \delta_k \;\leq\; \sum_k \delta_k \;\leq\; 9.$$
 
-**Lemma C.8 (even-ladder core bound).** *For every sorted-descending $`x = (x_0, \ldots, x_5)`$ at $`d_0 = 6`$, $`|\mathrm{core}_{\mathrm{even}}(x)| < 10^6`$.*
+Substituting $`Z_0 = M' - Z_1 - Z_{2+}`$:
 
-**Proof.** Direct computation: $`\mathrm{core}_{\mathrm{even}}(x) = 9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 + 99000 x_4 - 99999 x_5`$. Maximum over $`(x_0, \ldots, x_5) \in \{0, \ldots, 9\}^6`$ sorted descending is achieved at $`(9, 9, 9, 9, 9, 0)`$: $`89{,}100 + 81 + 810 - 81{,}000 + 891{,}000 - 0 = 899{,}991 < 10^6`$. Minimum value is $`0`$, achieved at $`(0, 0, 0, 0, 0, 0)`$ and other configurations where the negative terms balance the positive terms. In particular $`|\mathrm{core}_{\mathrm{even}}(x)| < 10^6`$ for all sorted-descending inputs. $`\square`$
+$$2 Z_0 + Z_1 \;=\; 2 M' - Z_1 - 2 Z_{2+} \;\geq\; 2 M' - 9.$$
 
-*Note on Lemma 5.3 (core non-negativity) for the even ladder.* On the odd ladder, $`\mathrm{core}(x) \geq 0`$ for sorted-descending inputs (Lemma 5.3). On the even ladder, $`\mathrm{core}_{\mathrm{even}}`$ can also achieve large positive values via the $`+99000 x_4`$ term; sign is not an issue for the closure argument because the absolute value $`|K^{(d)}(x)|`$ is taken, and the block contributions are non-negative (each $`\delta_k \geq 0`$). The proof above holds without requiring core non-negativity.
+*The threshold.* At even $`d \geq 18`$, $`M' \geq 6`$, hence $`K^{(d)}(x)`$ has at least $`(2 M' - 9) + 1 = 2 M' - 8 \geq 4`$ zero digits in its padded $`d`$-digit form. Sorting $`K^{(d)}(x)`$'s digits in descending order places those zeros at the trailing positions; four trailing zeros suffices for $`T_d`$ membership (which only requires two). $`\square`$
+
+**Lemma C.8 (even-ladder core bound).** *For every sorted-descending $`x = (x_0, \ldots, x_5) \in \{0, \ldots, 9\}^6`$, $`0 \leq \mathrm{core}_{\mathrm{even}}(x) \leq 899{,}991 < 10^6`$.*
+
+**Proof.** Direct enumeration over the $`\binom{15}{6} = 5{,}005`$ sorted-descending 6-tuples confirms $`\min \mathrm{core}_{\mathrm{even}} = 0`$ (achieved at $`(0, 0, 0, 0, 0, 0)`$, repdigit cases, and others) and $`\max \mathrm{core}_{\mathrm{even}} = 899{,}991`$ (achieved at $`(9, 9, 9, 9, 9, 0)`$: $`89{,}100 + 81 + 810 - 81{,}000 + 891{,}000 = 899{,}991`$). Hence $`\mathrm{core}_{\mathrm{even}} < 10^6`$ uniformly. $`\square`$
+
+**Lemma C.9 (even-ladder core non-negativity).** *For every sorted-descending $`x \in \{0, \ldots, 9\}^6`$, $`\mathrm{core}_{\mathrm{even}}(x) \geq 0`$.*
+
+**Proof.** Direct enumeration over the $`5{,}005`$ sorted-descending 6-tuples confirms $`\mathrm{core}_{\mathrm{even}}(x) \geq 0`$ in every case, with minimum $`0`$. (An algebraic proof is also available: rewrite $`\mathrm{core}_{\mathrm{even}}(x) = 9900(x_0 - x_3) + 99000(x_4 - x_5) + 9 x_1 + 90 x_2 + 891 x_3$, which is a sum of non-negative terms when $`x_0 \geq x_3`$ and $`x_4 \geq x_5`$ — both hold by sorted-descending — and the remaining $`9 x_1 + 90 x_2 + 891 x_3 \geq 0`$ trivially.) $`\square`$
 
 **Corollary C.4 (computational confirmation).** *Direct enumeration confirms one-step $`T_d`$ closure on the even ladder at $`d \geq 18`$ (the threshold of Lemma C.4) and bounded reaching time at lower even $`d`$:*
 
@@ -1614,6 +1643,8 @@ For these inputs, the projection $`m`$ at $`d - 2`$ is a near-repdigit, so $`m \
 **Remark C.6.** The corrected statement of Theorem 5.2 (§5.2) makes the dependence on the escape class $`E_d`$ precise: strict universality holds at $`d = 5, 6`$ (where $`E_d = \emptyset`$) and near-universality holds at $`d \geq 7`$ on $`A_d \setminus E_d`$. The size of the step-1 component $`E_d^{(1)}`$ admits the closed form (Lemma 5.2.2)
 $$|E_d^{(1)}| \;=\; \binom{10 + k - 1}{k} - 10, \qquad k = 1 + \lfloor (d - d_0)/2 \rfloor.$$
 Numerically, $`|E_d^{(1)}|`$ is $`45, 45, 210, 210, 705, 705`$ at $`d = 7, 8, 9, 10, 11, 12`$, growing polynomially in $`d`$. The full escape class $`E_d`$ is the backward orbit of the block-aligned set under $`K_{60714}^{(d)}`$; its asymptotic size is bounded by direct enumeration at each $`d`$ but no closed form is currently proven. Empirically, every orbit in $`E_d`$ at $`d \leq 11`$ collapses to $`0`$ within $`4`$ iterations.
+
+
 
 
 

@@ -2,9 +2,11 @@
 
 A five-digit number that's a universal attractor at every digit length d ≥ 5.
 
-Pick any number with five or more digits. Apply the right rule. Watch it converge to **60714**. The rule depends on the input's digit length, but the destination is always the same.
+Pick any number with five or more digits. Apply the right rule. Watch it converge to **60714** (with a structurally characterized small class of exceptions at d ≥ 7). The rule depends on the input's digit length, but the destination is almost always the same.
 
 This is a generalization of Kaprekar's classical 1949 result, extended in a direction the literature has not explored: instead of fixing the rule and asking which digit lengths work, we let the rule vary with the digit length, and find a single fixed point — 60714 — whose universality holds across infinitely many dimensions simultaneously.
+
+The integer 60714 is one consequence of a more general structural framework. The paper's underlying contributions are the **classification of universal full-variable fixed points at digit length d** (yielding the catalog 0, 4, 33, 506 fps at d ∈ {3, 4, 5, 6}), the **coefficient-preserving lifting recipe** that connects rules across digit lengths, and the **block-aligned escape class** (Definition 5.2) that exactly characterizes when the lifted dynamics fail. 60714 is the unique integer for which this framework produces a cross-dimensional attractor with universally large basin.
 
 ---
 
@@ -92,8 +94,10 @@ All exhaustive claims in the paper have corresponding Python scripts in [`script
 |---|---|---|
 | [`classify_at_d.py`](scripts/classify_at_d.py) | Theorems 3.1–3.4 | d = 5: ~5 s · d = 6: ~5–10 min |
 | [`cross_check_d5_to_d6.py`](scripts/cross_check_d5_to_d6.py) | Theorem 4.1 | ~30 min |
-| [`verify_60714_ladder.py`](scripts/verify_60714_ladder.py) | Theorem 5.2 construction | < 1 s |
-| [`verify_lemma_5_2.py`](scripts/verify_lemma_5_2.py) | Proposition 5.2 | ~5 min |
+| [`verify_60714_ladder.py`](scripts/verify_60714_ladder.py) | Theorem 5.2 algebraic part: K(60714) = 60714 at each d | < 1 s |
+| [`verify_60714_basin.py`](scripts/verify_60714_basin.py) | Theorem 5.2 dynamic part: basin universality + escape class characterization | d = 7: ~3 s · d = 8: ~30 s · d = 9: ~5 min |
+| [`verify_lemma_5_2.py`](scripts/verify_lemma_5_2.py) | Proposition 5.2: bounded reaching time at low d | ~5 min |
+| [`verify_even_ladder_closure.py`](scripts/verify_even_ladder_closure.py) | Lemma C.4: one-step T_d closure on the even ladder at d ≥ 18 | d = 18: ~30 s · d = 20: ~3 min |
 | [`audit_6174_d8_d9.py`](scripts/audit_6174_d8_d9.py) | Theorem 6.1, parts 5 & 6 | d = 8: ~3 min · d = 9: ~60 min |
 
 Run any script with `python3 scripts/<script>.py` and `--help` for options.
