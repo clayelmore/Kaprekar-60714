@@ -1,4 +1,4 @@
-[← Back to paper](../README.md#table-of-contents) · [← Previous: Appendix B. 60714 ladder](B_60714_ladder.md) · [Next: Appendix D. Transcendent fps at $d_F = 7$ →](D_dF7_observations.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: Appendix B. 60714 ladder](B_60714_ladder.md) · [Next: Appendix D. Transcendent fps at $`d_F = 7`$ →](D_dF7_observations.md)
 
 ---
 
@@ -8,136 +8,136 @@ This appendix provides the technical support lemmas referenced in §5. The organ
 
 ## C.1 Setup
 
-Throughout, $(x_0, x_1, \ldots, x_{d-1})$ denotes a sorted-descending digit sequence with $x_0 \geq x_1 \geq \cdots \geq x_{d-1}$ and each $x_i \in \{0, 1, \ldots, 9\}$. The **native core contribution** (Definition 5.4) is
+Throughout, $`(x_0, x_1, \ldots, x_{d-1})`$ denotes a sorted-descending digit sequence with $`x_0 \geq x_1 \geq \cdots \geq x_{d-1}`$ and each $`x_i \in \{0, 1, \ldots, 9\}`$. The **native core contribution** (Definition 5.4) is
 
 $$\mathrm{core}(x) \;=\; 9900 \, x_0 + 9 \, x_1 + 90 \, x_2 - 9000 \, x_3 - 999 \, x_4.$$
 
 ## C.2 Core non-negativity (Proof of Lemma 5.3)
 
-**Lemma 5.3 (restated).** *For every sorted-descending sequence $(x_0, x_1, x_2, x_3, x_4)$, $\mathrm{core}(x) \geq 0$.*
+**Lemma 5.3 (restated).** *For every sorted-descending sequence $`(x_0, x_1, x_2, x_3, x_4)`$, $`\mathrm{core}(x) \geq 0`$.*
 
-**Proof.** We proceed by case analysis on the values of $x_3$ and $x_4$.
+**Proof.** We proceed by case analysis on the values of $`x_3`$ and $`x_4`$.
 
-**Case 1: $x_3 = x_4 = 0$.** Then $\mathrm{core}(x) = 9900 x_0 + 9 x_1 + 90 x_2 \geq 0$, with equality iff $x_0 = x_1 = x_2 = 0$.
+**Case 1: $`x_3 = x_4 = 0`$.** Then $`\mathrm{core}(x) = 9900 x_0 + 9 x_1 + 90 x_2 \geq 0`$, with equality iff $`x_0 = x_1 = x_2 = 0`$.
 
-**Case 2: $x_3 \geq 1$, $x_4 = 0$.** By sorted-descending, $x_0 \geq x_3 \geq 1$. Writing $\mathrm{core}(x) = 9000(x_0 - x_3) + 900 x_0 + 9 x_1 + 90 x_2$, each term is non-negative, so $\mathrm{core}(x) \geq 0$.
+**Case 2: $`x_3 \geq 1`$, $`x_4 = 0`$.** By sorted-descending, $`x_0 \geq x_3 \geq 1`$. Writing $`\mathrm{core}(x) = 9000(x_0 - x_3) + 900 x_0 + 9 x_1 + 90 x_2`$, each term is non-negative, so $`\mathrm{core}(x) \geq 0`$.
 
-**Case 3: $x_3 \geq 1$ and $x_4 \geq 1$.** We use $x_2 \geq x_3$ and $x_1 \geq x_4$:
+**Case 3: $`x_3 \geq 1`$ and $`x_4 \geq 1`$.** We use $`x_2 \geq x_3`$ and $`x_1 \geq x_4`$:
 
 $$\mathrm{core}(x) = 9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 - 999 x_4.$$
 
-Replace $90 x_2 \geq 90 x_3$ (valid since $x_2 \geq x_3$):
+Replace $`90 x_2 \geq 90 x_3`$ (valid since $`x_2 \geq x_3`$):
 
 $$\mathrm{core}(x) \geq 9900 x_0 + 9 x_1 + 90 x_3 - 9000 x_3 - 999 x_4 = 9900 x_0 + 9 x_1 - 8910 x_3 - 999 x_4.$$
 
-Replace $9 x_1 \geq 9 x_4$:
+Replace $`9 x_1 \geq 9 x_4`$:
 
 $$\mathrm{core}(x) \geq 9900 x_0 - 8910 x_3 - 999 x_4 + 9 x_4 = 9900 x_0 - 8910 x_3 - 990 x_4.$$
 
-Replace $x_4 \leq x_3$:
+Replace $`x_4 \leq x_3`$:
 
 $$\mathrm{core}(x) \geq 9900 x_0 - 8910 x_3 - 990 x_3 = 9900 x_0 - 9900 x_3 = 9900 (x_0 - x_3) \geq 0,$$
 
-using $x_0 \geq x_3$ in the last step.
+using $`x_0 \geq x_3`$ in the last step.
 
-All three cases cover the admissible possibilities (Case 4 with $x_3 = 0$ and $x_4 \geq 1$ is impossible by sorted-descending). In each, $\mathrm{core}(x) \geq 0$. $\square$
+All three cases cover the admissible possibilities (Case 4 with $`x_3 = 0`$ and $`x_4 \geq 1`$ is impossible by sorted-descending). In each, $`\mathrm{core}(x) \geq 0`$. $`\square`$
 
-**Remark C.1.** The minimum $\mathrm{core}(x) = 0$ is achieved at $x = (0, 0, 0, 0, 0)$ (repdigit zero). Direct enumeration over all $2{,}002$ sorted-descending sequences in $\{0, \ldots, 9\}^5$ confirms the minimum is exactly $0$.
+**Remark C.1.** The minimum $`\mathrm{core}(x) = 0`$ is achieved at $`x = (0, 0, 0, 0, 0)`$ (repdigit zero). Direct enumeration over all $`2{,}002`$ sorted-descending sequences in $`\{0, \ldots, 9\}^5`$ confirms the minimum is exactly $`0`$.
 
 ## C.3 Core upper bound (Proof of Lemma 5.4)
 
-**Lemma 5.4 (restated).** *For every sorted-descending sequence $(x_0, x_1, x_2, x_3, x_4)$, $\mathrm{core}(x) \leq 89{,}991 < 10^5$.*
+**Lemma 5.4 (restated).** *For every sorted-descending sequence $`(x_0, x_1, x_2, x_3, x_4)`$, $`\mathrm{core}(x) \leq 89{,}991 < 10^5`$.*
 
-**Proof.** The negative terms $-9000 x_3 - 999 x_4$ contribute at most $0$ (when $x_3 = x_4 = 0$), so:
+**Proof.** The negative terms $`-9000 x_3 - 999 x_4`$ contribute at most $`0`$ (when $`x_3 = x_4 = 0`$), so:
 
 $$\mathrm{core}(x) \leq 9900 x_0 + 9 x_1 + 90 x_2 \leq 9900 \cdot 9 + 9 \cdot 9 + 90 \cdot 9 = 89{,}100 + 81 + 810 = 89{,}991.$$
 
-The maximum is achieved at $(x_0, x_1, x_2, x_3, x_4) = (9, 9, 9, 0, 0)$. $\square$
+The maximum is achieved at $`(x_0, x_1, x_2, x_3, x_4) = (9, 9, 9, 0, 0)`$. $`\square`$
 
-**Corollary C.2 (computational verification).** *Direct enumeration over all $2{,}002$ sorted-descending sequences $(x_0, \ldots, x_4) \in \{0, \ldots, 9\}^5$ confirms $\mathrm{core}(x) \in [0, 89{,}991]$ with minimum $0$ at $(0, 0, 0, 0, 0)$ and maximum $89{,}991$ at $(9, 9, 9, 0, 0)$. Runtime: milliseconds.*
+**Corollary C.2 (computational verification).** *Direct enumeration over all $`2{,}002`$ sorted-descending sequences $`(x_0, \ldots, x_4) \in \{0, \ldots, 9\}^5`$ confirms $`\mathrm{core}(x) \in [0, 89{,}991]`$ with minimum $`0`$ at $`(0, 0, 0, 0, 0)`$ and maximum $`89{,}991`$ at $`(9, 9, 9, 0, 0)`$. Runtime: milliseconds.*
 
-## C.4 The $T_d$ reaching-time bound (odd ladder)
+## C.4 The $`T_d`$ reaching-time bound (odd ladder)
 
 The main technical claim underlying Proposition 5.3 rests on a **block-structure decomposition** of the lifted rule's output.
 
 ## C.4.1 Block-structure decomposition
 
-At odd digit length $d \geq 7$, the odd-ladder rule $K^{(d)}_{60714}$ has coefficient vector
+At odd digit length $`d \geq 7`$, the odd-ladder rule $`K^{(d)}_{60714}`$ has coefficient vector
 
 $$c^{(d)} = \underbrace{(9900, 9, 90, -9000, -999)}_{\text{native, positions } 0..4} \; \| \; \underbrace{(+p_1, -p_1)}_{\text{pair }1, \text{positions } 5, 6} \; \| \; \cdots \; \| \; \underbrace{(+p_M, -p_M)}_{\text{pair }M, \text{positions } d-2, d-1},$$
 
-where $M = (d-5)/2$ and $p_k = 9 \cdot 10^{3 + 2k}$ is the pair-$k$ magnitude. Pair $k$ occupies positions $(3 + 2k, 4 + 2k)$.
+where $`M = (d-5)/2`$ and $`p_k = 9 \cdot 10^{3 + 2k}`$ is the pair-$`k`$ magnitude. Pair $`k`$ occupies positions $`(3 + 2k, 4 + 2k)`$.
 
-**Pair contribution.** For input $(x_0, \ldots, x_{d-1})$, each pair $k$ contributes
+**Pair contribution.** For input $`(x_0, \ldots, x_{d-1})`$, each pair $`k`$ contributes
 
 $$p_k \cdot x_{3 + 2k} - p_k \cdot x_{4 + 2k} = p_k \, \delta_k, \qquad \text{where } \delta_k := x_{3 + 2k} - x_{4 + 2k} \in \{0, 1, \ldots, 9\}.$$
 
-By the sorted-descending constraint, each $\delta_k \geq 0$.
+By the sorted-descending constraint, each $`\delta_k \geq 0`$.
 
-**Lemma C.6 (cliff-sequence bound).** *For any sorted-descending sequence $(x_0, \ldots, x_{d-1})$ with each $x_i \in \{0, \ldots, 9\}$,*
+**Lemma C.6 (cliff-sequence bound).** *For any sorted-descending sequence $`(x_0, \ldots, x_{d-1})`$ with each $`x_i \in \{0, \ldots, 9\}`$,*
 
 $$\sum_{k = 1}^{M} \delta_k \;=\; \sum_{k = 1}^{M} (x_{3 + 2k} - x_{4 + 2k}) \;\leq\; 9.$$
 
-**Proof.** Each $\delta_k$ is a non-negative adjacent-position difference within the sorted-descending sequence. The sum is a subset of the telescoping total $\sum_{i=3}^{d-2} (x_i - x_{i+1}) = x_3 - x_{d-1}$. Since all differences are non-negative and $x_3 - x_{d-1} \leq 9$, the selected subsum is bounded by the full telescoping:
+**Proof.** Each $`\delta_k`$ is a non-negative adjacent-position difference within the sorted-descending sequence. The sum is a subset of the telescoping total $`\sum_{i=3}^{d-2} (x_i - x_{i+1}) = x_3 - x_{d-1}`$. Since all differences are non-negative and $`x_3 - x_{d-1} \leq 9`$, the selected subsum is bounded by the full telescoping:
 
 $$\sum_{k = 1}^{M} \delta_k \leq x_3 - x_{d-1} \leq 9.$$
 
-$\square$
+$`\square`$
 
-## C.4.2 Non-negativity of $K^{(d)}(x)$
+## C.4.2 Non-negativity of $`K^{(d)}(x)`$
 
-**Lemma C.7.** *For every sorted-descending $(x_0, \ldots, x_{d-1})$ and every odd $d \geq 7$,*
+**Lemma C.7.** *For every sorted-descending $`(x_0, \ldots, x_{d-1})`$ and every odd $`d \geq 7`$,*
 
 $$K^{(d)}(x) \;=\; \mathrm{core}(x) + \sum_{k=1}^{M} p_k \, \delta_k.$$
 
-*In particular, $K^{(d)}(x) \geq 0$, so the absolute value operation in the rule definition is vacuous on sorted-descending inputs.*
+*In particular, $`K^{(d)}(x) \geq 0`$, so the absolute value operation in the rule definition is vacuous on sorted-descending inputs.*
 
 **Proof.** Direct substitution into the expanded rule gives
 
 $$K^{(d)}(x) \;=\; \left| \sum_{i = 0}^{d-1} c_i \, x_i \right| \;=\; \left| \mathrm{core}(x) + \sum_{k=1}^{M} p_k \, \delta_k \right|.$$
 
-By Lemma 5.3, $\mathrm{core}(x) \geq 0$. Each $p_k \, \delta_k \geq 0$ (since $p_k > 0$ and $\delta_k \geq 0$). Hence the argument is non-negative and the absolute-value bars can be dropped. $\square$
+By Lemma 5.3, $`\mathrm{core}(x) \geq 0`$. Each $`p_k \, \delta_k \geq 0`$ (since $`p_k > 0`$ and $`\delta_k \geq 0`$). Hence the argument is non-negative and the absolute-value bars can be dropped. $`\square`$
 
 ## C.4.3 The reaching-time theorem
 
-**Lemma C.3 (one-step $T_d$ closure on the odd ladder at $d \geq 15$).** *Let $d \geq 15$ be odd. For every admissible input $n \in A_d$ with sorted-descending form $(x_0, \ldots, x_{d-1})$,*
+**Lemma C.3 (one-step $`T_d`$ closure on the odd ladder at $`d \geq 15`$).** *Let $`d \geq 15`$ be odd. For every admissible input $`n \in A_d`$ with sorted-descending form $`(x_0, \ldots, x_{d-1})`$,*
 
 $$K^{(d)}_{60714}(n) \in T_d.$$
 
-*Equivalently, the padded $d$-digit representation of $K^{(d)}(n)$ has at least two zero digits.*
+*Equivalently, the padded $`d`$-digit representation of $`K^{(d)}(n)`$ has at least two zero digits.*
 
 **Proof.** By Lemma C.7,
 
 $$K^{(d)}(x) \;=\; \mathrm{core}(x) + \sum_{k=1}^{M} 9 \cdot 10^{3 + 2k} \, \delta_k.$$
 
-**Decimal-block structure.** Each term $9 \cdot 10^{3 + 2k} \delta_k$ occupies decimal positions $[3 + 2k, 4 + 2k]$ as a two-digit value. Writing $9 \delta_k = 10 u_k + v_k$ for $u_k, v_k \in \{0, \ldots, 9\}$:
+**Decimal-block structure.** Each term $`9 \cdot 10^{3 + 2k} \delta_k`$ occupies decimal positions $`[3 + 2k, 4 + 2k]`$ as a two-digit value. Writing $`9 \delta_k = 10 u_k + v_k`$ for $`u_k, v_k \in \{0, \ldots, 9\}`$:
 
 $$9 \cdot 10^{3 + 2k} \delta_k = u_k \cdot 10^{4 + 2k} + v_k \cdot 10^{3 + 2k}.$$
 
-The digit pairs $(u_k, v_k)$ for each $\delta_k$:
+The digit pairs $`(u_k, v_k)`$ for each $`\delta_k`$:
 
-| $\delta_k$ | $9 \delta_k$ | $(u_k, v_k)$ | Zeros |
+| $`\delta_k`$ | $`9 \delta_k`$ | $`(u_k, v_k)`$ | Zeros |
 |:---:|:---:|:---:|:---:|
-| $0$ | $0$  | $(0, 0)$ | $2$ |
-| $1$ | $9$  | $(0, 9)$ | $1$ |
-| $2$ | $18$ | $(1, 8)$ | $0$ |
-| $3$ | $27$ | $(2, 7)$ | $0$ |
-| $4$ | $36$ | $(3, 6)$ | $0$ |
-| $5$ | $45$ | $(4, 5)$ | $0$ |
-| $6$ | $54$ | $(5, 4)$ | $0$ |
-| $7$ | $63$ | $(6, 3)$ | $0$ |
-| $8$ | $72$ | $(7, 2)$ | $0$ |
-| $9$ | $81$ | $(8, 1)$ | $0$ |
+| $`0`$ | $`0`$  | $`(0, 0)`$ | $`2`$ |
+| $`1`$ | $`9`$  | $`(0, 9)`$ | $`1`$ |
+| $`2`$ | $`18`$ | $`(1, 8)`$ | $`0`$ |
+| $`3`$ | $`27`$ | $`(2, 7)`$ | $`0`$ |
+| $`4`$ | $`36`$ | $`(3, 6)`$ | $`0`$ |
+| $`5`$ | $`45`$ | $`(4, 5)`$ | $`0`$ |
+| $`6`$ | $`54`$ | $`(5, 4)`$ | $`0`$ |
+| $`7`$ | $`63`$ | $`(6, 3)`$ | $`0`$ |
+| $`8`$ | $`72`$ | $`(7, 2)`$ | $`0`$ |
+| $`9`$ | $`81`$ | $`(8, 1)`$ | $`0`$ |
 
-**Disjoint blocks.** Pair $k$'s block occupies decimals $[3 + 2k, 4 + 2k]$. Since the block value $9 \delta_k \leq 81 < 100$, it fits entirely within two decimal positions and does not propagate carries to higher blocks. Similarly, $\mathrm{core}(x) \leq 89{,}991 < 10^5$ (Lemma 5.4) fits within decimals $[0, 4]$ with at most one carry into decimal $5$. That carry combines additively with pair $1$'s block at positions $[5, 6]$: the combined value is at most $u_1 \cdot 10 + v_1 + 1 = 9 \delta_1 + 1 \leq 82$, still a two-digit value, so no further carry to decimal $7$. Blocks for $k \geq 2$ retain their $(u_k, v_k)$ form exactly.
+**Disjoint blocks.** Pair $`k`$'s block occupies decimals $`[3 + 2k, 4 + 2k]`$. Since the block value $`9 \delta_k \leq 81 < 100`$, it fits entirely within two decimal positions and does not propagate carries to higher blocks. Similarly, $`\mathrm{core}(x) \leq 89{,}991 < 10^5`$ (Lemma 5.4) fits within decimals $`[0, 4]`$ with at most one carry into decimal $`5`$. That carry combines additively with pair $`1`$'s block at positions $`[5, 6]`$: the combined value is at most $`u_1 \cdot 10 + v_1 + 1 = 9 \delta_1 + 1 \leq 82`$, still a two-digit value, so no further carry to decimal $`7`$. Blocks for $`k \geq 2`$ retain their $`(u_k, v_k)`$ form exactly.
 
 **Counting zeros in the block region.** Define
 
 $$Z_0 := \bigl|\{k : \delta_k = 0\}\bigr|, \qquad Z_1 := \bigl|\{k : \delta_k = 1\}\bigr|, \qquad Z_{2+} := \bigl|\{k : \delta_k \geq 2\}\bigr|.$$
 
-Then $Z_0 + Z_1 + Z_{2+} = M$, and the number of zero digits contributed by blocks is at least $2 Z_0 + Z_1$ (each $\delta_k = 0$ block contributes $2$ zeros; each $\delta_k = 1$ block contributes $1$ zero from $u_k = 0$).
+Then $`Z_0 + Z_1 + Z_{2+} = M`$, and the number of zero digits contributed by blocks is at least $`2 Z_0 + Z_1`$ (each $`\delta_k = 0`$ block contributes $`2`$ zeros; each $`\delta_k = 1`$ block contributes $`1`$ zero from $`u_k = 0`$).
 
-From Lemma C.6, $\sum_k \delta_k \leq 9$. Since $\delta_k \geq 2$ for $k \in Z_{2+}$:
+From Lemma C.6, $`\sum_k \delta_k \leq 9`$. Since $`\delta_k \geq 2`$ for $`k \in Z_{2+}`$:
 
 $$2 Z_{2+} + Z_1 \leq \sum_k \delta_k \leq 9.$$
 
@@ -145,51 +145,51 @@ Therefore:
 
 $$2 Z_0 + Z_1 \;=\; 2(M - Z_1 - Z_{2+}) + Z_1 \;=\; 2M - Z_1 - 2 Z_{2+} \;\geq\; 2M - 9.$$
 
-**At odd $d \geq 17$: $M \geq 6$, so $2 Z_0 + Z_1 \geq 3$.** This alone gives at least $3$ zero digits in the block region, more than enough for $K^{(d)}(x) \in T_d$.
+**At odd $`d \geq 17`$: $`M \geq 6`$, so $`2 Z_0 + Z_1 \geq 3`$.** This alone gives at least $`3`$ zero digits in the block region, more than enough for $`K^{(d)}(x) \in T_d`$.
 
-**At $d = 15$ (odd): $M = 5$, so $2 Z_0 + Z_1 \geq 1$.** This gives at least one zero digit from the block region, but the second zero requires a refined analysis. We complete the argument by partitioning according to the value of $x_4$.
+**At $`d = 15`$ (odd): $`M = 5`$, so $`2 Z_0 + Z_1 \geq 1`$.** This gives at least one zero digit from the block region, but the second zero requires a refined analysis. We complete the argument by partitioning according to the value of $`x_4`$.
 
-**Lemma C.7 (sharpened cliff-sum bound for $d = 15$).** *For sorted-descending $(x_0, \ldots, x_{14})$ with $x_i \in \{0, \ldots, 9\}$,*
+**Lemma C.7 (sharpened cliff-sum bound for $`d = 15`$).** *For sorted-descending $`(x_0, \ldots, x_{14})`$ with $`x_i \in \{0, \ldots, 9\}`$,*
 
 $$\sum_{k = 1}^{5} \delta_k \;\leq\; x_4.$$
 
-*Proof.* Each $\delta_k = x_{3 + 2k} - x_{4 + 2k}$ for $k = 1, \ldots, 5$ is a non-negative adjacent-position difference among positions $5, 6, \ldots, 14$. The full telescoping over these positions is
+*Proof.* Each $`\delta_k = x_{3 + 2k} - x_{4 + 2k}`$ for $`k = 1, \ldots, 5`$ is a non-negative adjacent-position difference among positions $`5, 6, \ldots, 14`$. The full telescoping over these positions is
 
 $$\sum_{i = 5}^{13} (x_i - x_{i+1}) = x_5 - x_{14}.$$
 
-Our sum $\sum_k \delta_k$ picks out the five differences $(x_5 - x_6), (x_7 - x_8), (x_9 - x_{10}), (x_{11} - x_{12}), (x_{13} - x_{14})$, a strict subset of these nine. Since every omitted difference is non-negative,
+Our sum $`\sum_k \delta_k`$ picks out the five differences $`(x_5 - x_6), (x_7 - x_8), (x_9 - x_{10}), (x_{11} - x_{12}), (x_{13} - x_{14})`$, a strict subset of these nine. Since every omitted difference is non-negative,
 
 $$\sum_{k=1}^{5} \delta_k \;\leq\; x_5 - x_{14} \;\leq\; x_5 \;\leq\; x_4. \qquad \square$$
 
-**Lemma C.8 (core-bound when $x_4 \in \{8, 9\}$).** *If $x_4 \geq 8$ in sorted-descending $(x_0, \ldots, x_4)$, then $\mathrm{core}(x) < 10^4$.*
+**Lemma C.8 (core-bound when $`x_4 \in \{8, 9\}`$).** *If $`x_4 \geq 8`$ in sorted-descending $`(x_0, \ldots, x_4)`$, then $`\mathrm{core}(x) < 10^4`$.*
 
-*Proof.* By sorted-descending, $x_4 \geq 8$ forces $x_0, x_1, x_2, x_3 \in \{8, 9\}$. We compute:
+*Proof.* By sorted-descending, $`x_4 \geq 8`$ forces $`x_0, x_1, x_2, x_3 \in \{8, 9\}`$. We compute:
 
 $$\mathrm{core}(x) = 9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 - 999 x_4 = 9000(x_0 - x_3) + 900 x_0 + 9 x_1 + 90 x_2 - 999 x_4.$$
 
-Since $x_0, x_3 \in \{8, 9\}$ with $x_0 \geq x_3$, we have $x_0 - x_3 \in \{0, 1\}$.
+Since $`x_0, x_3 \in \{8, 9\}`$ with $`x_0 \geq x_3`$, we have $`x_0 - x_3 \in \{0, 1\}`$.
 
-*Case $x_0 = x_3$:* The first term vanishes. Then
+*Case $`x_0 = x_3`$:* The first term vanishes. Then
 
 $$\mathrm{core}(x) = 900 x_0 + 9 x_1 + 90 x_2 - 999 x_4.$$
 
-The maximum over $x_0, x_1, x_2 \in \{8, 9\}$ and $x_4 \in \{8, 9\}$ with $x_4 \leq x_3 = x_0$ is achieved at $x_0 = x_1 = x_2 = 9$, $x_4 = 8$: $900 \cdot 9 + 9 \cdot 9 + 90 \cdot 9 - 999 \cdot 8 = 8100 + 81 + 810 - 7992 = 999$. So $\mathrm{core}(x) \leq 999 < 10^3$.
+The maximum over $`x_0, x_1, x_2 \in \{8, 9\}`$ and $`x_4 \in \{8, 9\}`$ with $`x_4 \leq x_3 = x_0`$ is achieved at $`x_0 = x_1 = x_2 = 9`$, $`x_4 = 8`$: $`900 \cdot 9 + 9 \cdot 9 + 90 \cdot 9 - 999 \cdot 8 = 8100 + 81 + 810 - 7992 = 999`$. So $`\mathrm{core}(x) \leq 999 < 10^3`$.
 
-*Case $x_0 = x_3 + 1$:* Then $x_0 = 9$ and $x_3 = x_4 = 8$ (forcing $x_4 = 8$ since $x_4 \leq x_3$). We get
+*Case $`x_0 = x_3 + 1`$:* Then $`x_0 = 9`$ and $`x_3 = x_4 = 8`$ (forcing $`x_4 = 8`$ since $`x_4 \leq x_3`$). We get
 
 $$\mathrm{core}(x) = 9000 + 900 \cdot 9 + 9 x_1 + 90 x_2 - 999 \cdot 8 = 9108 + 9 x_1 + 90 x_2$$
 
-for $x_1, x_2 \in \{8, 9\}$ with $x_1 \geq x_2 \geq 8$. The minimum is $9108 + 72 + 720 = 9900$ and the maximum is $9108 + 81 + 810 = 9999$. So $\mathrm{core}(x) \in [9900, 9999]$, and in particular $\mathrm{core}(x) < 10^4$.
+for $`x_1, x_2 \in \{8, 9\}`$ with $`x_1 \geq x_2 \geq 8`$. The minimum is $`9108 + 72 + 720 = 9900`$ and the maximum is $`9108 + 81 + 810 = 9999`$. So $`\mathrm{core}(x) \in [9900, 9999]`$, and in particular $`\mathrm{core}(x) < 10^4`$.
 
-In both cases, $\mathrm{core}(x) < 10^4$. $\square$
+In both cases, $`\mathrm{core}(x) < 10^4`$. $`\square`$
 
-We now complete the $d = 15$ closure argument.
+We now complete the $`d = 15`$ closure argument.
 
 **Three cases for the second zero digit.**
 
-*Case A: $x_4 = 0$.* By sorted-descending, $x_5 = x_6 = \cdots = x_{14} = 0$. All five $\delta_k = 0$, so every block contributes $(0, 0)$ at decimals $[5, 6], [7, 8], \ldots, [13, 14]$. The block region produces $10$ zero digits at decimals $5$ through $14$. Even after accounting for at most one carry from the core into decimal $5$, decimals $6$ through $14$ remain zero — that is $9$ zero digits, far more than the $2$ required.
+*Case A: $`x_4 = 0`$.* By sorted-descending, $`x_5 = x_6 = \cdots = x_{14} = 0`$. All five $`\delta_k = 0`$, so every block contributes $`(0, 0)`$ at decimals $`[5, 6], [7, 8], \ldots, [13, 14]`$. The block region produces $`10`$ zero digits at decimals $`5`$ through $`14`$. Even after accounting for at most one carry from the core into decimal $`5`$, decimals $`6`$ through $`14`$ remain zero — that is $`9`$ zero digits, far more than the $`2`$ required.
 
-*Case B1: $1 \leq x_4 \leq 7$.* By Lemma C.7, $\sum_k \delta_k \leq x_4 \leq 7$. Since $\delta_k \geq 2$ for $k \in Z_{2+}$,
+*Case B1: $`1 \leq x_4 \leq 7`$.* By Lemma C.7, $`\sum_k \delta_k \leq x_4 \leq 7`$. Since $`\delta_k \geq 2`$ for $`k \in Z_{2+}`$,
 
 $$2 Z_{2+} + Z_1 \leq \sum_k \delta_k \leq 7,$$
 
@@ -197,70 +197,70 @@ which gives
 
 $$2 Z_0 + Z_1 = 2M - Z_1 - 2 Z_{2+} \geq 10 - 7 = 3.$$
 
-So the block region contributes at least $3$ zero digits.
+So the block region contributes at least $`3`$ zero digits.
 
-*Case B2: $x_4 \in \{8, 9\}$.* By Lemma C.8, $\mathrm{core}(x) < 10^4$, so the padded core occupies only decimals $0$ through $3$, and decimal $4$ is a zero digit in the core's contribution to $K^{(15)}(x)$. Combined with at least one zero digit from the block region (the $2 Z_0 + Z_1 \geq 1$ bound), this gives at least $2$ zero digits total.
+*Case B2: $`x_4 \in \{8, 9\}`$.* By Lemma C.8, $`\mathrm{core}(x) < 10^4`$, so the padded core occupies only decimals $`0`$ through $`3`$, and decimal $`4`$ is a zero digit in the core's contribution to $`K^{(15)}(x)`$. Combined with at least one zero digit from the block region (the $`2 Z_0 + Z_1 \geq 1`$ bound), this gives at least $`2`$ zero digits total.
 
-In every case, $K^{(15)}(x)$ has at least $2$ zero digits in its padded $15$-digit representation, so its sorted-descending form ends in $(0, 0)$, which means $K^{(15)}(x) \in T_{15}$.
+In every case, $`K^{(15)}(x)`$ has at least $`2`$ zero digits in its padded $`15`$-digit representation, so its sorted-descending form ends in $`(0, 0)`$, which means $`K^{(15)}(x) \in T_{15}`$.
 
-Combining: at every odd $d \geq 15$, $K^{(d)}(x)$ has at least $2$ zero digits in its padded $d$-digit form, hence $K^{(d)}(x) \in T_d$. $\square$
+Combining: at every odd $`d \geq 15`$, $`K^{(d)}(x)`$ has at least $`2`$ zero digits in its padded $`d`$-digit form, hence $`K^{(d)}(x) \in T_d`$. $`\square`$
 
-**Remark C.3 (at $d \leq 13$, the bound fails).** At $d = 13$ (odd), $M = 4$ and $2 Z_0 + Z_1 \geq -1$ is vacuous. The algebraic argument does not apply. The finite-state enumeration of Proposition 5.2 handles $d \in \{7, 9, 11, 13\}$ directly, verifying reaching-time bounds of at most $8$ iterations.
+**Remark C.3 (at $`d \leq 13`$, the bound fails).** At $`d = 13`$ (odd), $`M = 4`$ and $`2 Z_0 + Z_1 \geq -1`$ is vacuous. The algebraic argument does not apply. The finite-state enumeration of Proposition 5.2 handles $`d \in \{7, 9, 11, 13\}`$ directly, verifying reaching-time bounds of at most $`8`$ iterations.
 
-**Corollary C.3 (computational confirmation).** *Direct enumeration at $d = 15$ and $d = 17$ (odd ladder) over all admissible multisets ($1{,}307{,}404$ and $3{,}124{,}450$ respectively) verifies one-step $T_d$ closure: every admissible input reaches $T_d$ in exactly one iteration.*
+**Corollary C.3 (computational confirmation).** *Direct enumeration at $`d = 15`$ and $`d = 17`$ (odd ladder) over all admissible multisets ($`1{,}307{,}404`$ and $`3{,}124{,}450`$ respectively) verifies one-step $`T_d`$ closure: every admissible input reaches $`T_d`$ in exactly one iteration.*
 
 ## C.5 The even ladder
 
-The even-ladder root at $d = 6$ uses the split-lifted rule with coefficient vector $(9900, 9, 90, -9000, 99000, -99999)$. The split replaces the native $c_4 = -999$ with two coefficients at positions $4$ and $5$ summing to $-999$. For all higher even $d$, zero-sum pair extensions operate from $d = 6$.
+The even-ladder root at $`d = 6`$ uses the split-lifted rule with coefficient vector $`(9900, 9, 90, -9000, 99000, -99999)`$. The split replaces the native $`c_4 = -999`$ with two coefficients at positions $`4`$ and $`5`$ summing to $`-999`$. For all higher even $`d`$, zero-sum pair extensions operate from $`d = 6`$.
 
-**Lemma C.4 (bounded reaching time on the even ladder).** *For every even $d \geq 8$ and every admissible input $n \in A_d$, the orbit of $n$ under $K^{(d)}_{60714}$ reaches $T_d$ in at most $T_{d}^*$ iterations, where:*
+**Lemma C.4 (bounded reaching time on the even ladder).** *For every even $`d \geq 8`$ and every admissible input $`n \in A_d`$, the orbit of $`n`$ under $`K^{(d)}_{60714}`$ reaches $`T_d`$ in at most $`T_{d}^*`$ iterations, where:*
 
-- *$T_{d}^* = 1$ for $d \in \{8, 10, 12, 14, 16\}$ — verified by Proposition 5.2's finite-state enumeration (reaching time $\leq 1$ from the table).*
-- *$T_{d}^* \leq 2$ for $d = 18$ — verified by extended enumeration: every admissible multiset reaches $T_{18}$ in at most $2$ iterations.*
-- *$T_{d}^* \leq 2$ for even $d \geq 18$, established by applying the block-structure argument of §C.4 in sequence, using that after one iteration the intermediate result has at least one zero digit in its block region, and the second iteration completes the reach to $T_d$.*
+- *$`T_{d}^* = 1`$ for $`d \in \{8, 10, 12, 14, 16\}`$ — verified by Proposition 5.2's finite-state enumeration (reaching time $`\leq 1`$ from the table).*
+- *$`T_{d}^* \leq 2`$ for $`d = 18`$ — verified by extended enumeration: every admissible multiset reaches $`T_{18}`$ in at most $`2`$ iterations.*
+- *$`T_{d}^* \leq 2`$ for even $`d \geq 18`$, established by applying the block-structure argument of §C.4 in sequence, using that after one iteration the intermediate result has at least one zero digit in its block region, and the second iteration completes the reach to $`T_d`$.*
 
-**Proof sketch.** The block-structure decomposition of §C.4.1 applies to the even ladder with coefficient vector adjusted for the split root. At even $d \geq 8$, the appended pairs occupy positions $(6, 7), (8, 9), \ldots$ and the analogous Lemma C.6 bound $\sum_k \delta_k \leq 9$ holds. The bound $2 Z_0 + Z_1 \geq 2M' - 9$ (where $M' = (d-6)/2$ is the number of appended pairs) yields:
+**Proof sketch.** The block-structure decomposition of §C.4.1 applies to the even ladder with coefficient vector adjusted for the split root. At even $`d \geq 8`$, the appended pairs occupy positions $`(6, 7), (8, 9), \ldots`$ and the analogous Lemma C.6 bound $`\sum_k \delta_k \leq 9`$ holds. The bound $`2 Z_0 + Z_1 \geq 2M' - 9`$ (where $`M' = (d-6)/2`$ is the number of appended pairs) yields:
 
-- At $d = 16$ (even), $M' = 5$, $2 Z_0 + Z_1 \geq 1$: one-step closure, confirmed by enumeration.
-- At $d = 18$ (even), $M' = 6$, $2 Z_0 + Z_1 \geq 3$: should give one-step closure by the block count alone. The empirically observed $\approx 0.86\%$ miss rate arises from carry interactions between the split-lifted coefficients at positions $4, 5$ and the first appended block at positions $6, 7$, which can cause specific cancellations. These interactions always resolve within $2$ iterations, verified by direct computation: at $d = 18$, every multiset reaches $T_{18}$ in at most $2$ steps, with $40{,}300$ multisets (out of $4{,}686{,}725$) requiring exactly $2$ steps.
-- At even $d \geq 20$, the effective block count is higher and the margin larger; reaching-time $\leq 2$ is expected to hold.
+- At $`d = 16`$ (even), $`M' = 5`$, $`2 Z_0 + Z_1 \geq 1`$: one-step closure, confirmed by enumeration.
+- At $`d = 18`$ (even), $`M' = 6`$, $`2 Z_0 + Z_1 \geq 3`$: should give one-step closure by the block count alone. The empirically observed $`\approx 0.86\%`$ miss rate arises from carry interactions between the split-lifted coefficients at positions $`4, 5`$ and the first appended block at positions $`6, 7`$, which can cause specific cancellations. These interactions always resolve within $`2`$ iterations, verified by direct computation: at $`d = 18`$, every multiset reaches $`T_{18}`$ in at most $`2`$ steps, with $`40{,}300`$ multisets (out of $`4{,}686{,}725`$) requiring exactly $`2`$ steps.
+- At even $`d \geq 20`$, the effective block count is higher and the margin larger; reaching-time $`\leq 2`$ is expected to hold.
 
-The uniform bound $T^*_d \leq 2$ for even $d \geq 18$ holds; combined with the Proposition 5.2 enumeration at $d \leq 16$, the reaching-time bound of Lemma 5.2 is established on the even ladder at every $d \geq 6$. $\square$
+The uniform bound $`T^*_d \leq 2`$ for even $`d \geq 18`$ holds; combined with the Proposition 5.2 enumeration at $`d \leq 16`$, the reaching-time bound of Lemma 5.2 is established on the even ladder at every $`d \geq 6`$. $`\square`$
 
-**Remark C.5.** The even-ladder reaching-time bound is weaker than the odd-ladder bound (reaching time $2$ vs $1$), but this does not affect the main theorem: the reduction in §5 requires only *bounded* reaching time, not one-step closure. Since $T^*_d \leq 2$ uniformly on the even ladder and $T^*_d = 1$ uniformly on the odd ladder at $d \geq 15$, the induction in §5.7 closes on both ladders.
+**Remark C.5.** The even-ladder reaching-time bound is weaker than the odd-ladder bound (reaching time $`2`$ vs $`1`$), but this does not affect the main theorem: the reduction in §5 requires only *bounded* reaching time, not one-step closure. Since $`T^*_d \leq 2`$ uniformly on the even ladder and $`T^*_d = 1`$ uniformly on the odd ladder at $`d \geq 15`$, the induction in §5.7 closes on both ladders.
 
 ## C.6 Admissible projection under Lemma 5.1
 
-**Lemma C.5 (admissible projection).** *Let $d \geq 7$, let $n \in A_d \cap T_d$ with sorted-descending form $(x_0, x_1, \ldots, x_{d-3}, 0, 0)$, and let $m$ be the integer with sorted-descending form $(x_0, x_1, \ldots, x_{d-3})$ at digit length $d - 2$. Then one of the following holds:*
+**Lemma C.5 (admissible projection).** *Let $`d \geq 7`$, let $`n \in A_d \cap T_d`$ with sorted-descending form $`(x_0, x_1, \ldots, x_{d-3}, 0, 0)`$, and let $`m`$ be the integer with sorted-descending form $`(x_0, x_1, \ldots, x_{d-3})`$ at digit length $`d - 2`$. Then one of the following holds:*
 
-1. *$m \in A_{d-2}$ (admissible at $d - 2$): the inductive step of Theorem 5.2 applies directly.*
-2. *$n$ belongs to a **residual escape class**: the projection $m$ is a repdigit or near-repdigit at $d - 2$, and the orbit of $n$ under $K^{(d)}$ reaches $0$ rather than $60714$.*
+1. *$`m \in A_{d-2}`$ (admissible at $`d - 2`$): the inductive step of Theorem 5.2 applies directly.*
+2. *$`n`$ belongs to a **residual escape class**: the projection $`m`$ is a repdigit or near-repdigit at $`d - 2`$, and the orbit of $`n`$ under $`K^{(d)}`$ reaches $`0`$ rather than $`60714`$.*
 
-**Proof.** We check the admissibility conditions at $d - 2$ in cases.
+**Proof.** We check the admissibility conditions at $`d - 2`$ in cases.
 
-**Case 1: $m$ is a repdigit at $d - 2$** (i.e., $x_0 = x_1 = \cdots = x_{d-3} = v$ for some $v \in \{0, \ldots, 9\}$).
+**Case 1: $`m`$ is a repdigit at $`d - 2`$** (i.e., $`x_0 = x_1 = \cdots = x_{d-3} = v`$ for some $`v \in \{0, \ldots, 9\}`$).
 
-Sub-case 1a: $v = 0$. Then $n$'s sorted-descending form is $(0, 0, \ldots, 0)$, i.e., $n = 0$. This is not in $A_d$, so this sub-case is excluded.
+Sub-case 1a: $`v = 0`$. Then $`n`$'s sorted-descending form is $`(0, 0, \ldots, 0)`$, i.e., $`n = 0`$. This is not in $`A_d`$, so this sub-case is excluded.
 
-Sub-case 1b: $v \geq 1$. Then $n$'s sorted-descending form is $(v, v, \ldots, v, 0, 0)$ with $d - 2$ copies of $v$ and $2$ zeros. This is admissible at $d$ as long as $d - 2 \leq d - 2$ (trivially) and the zero count is $< d - 1$ (true for $d \geq 3$). So $n \in A_d$.
+Sub-case 1b: $`v \geq 1`$. Then $`n`$'s sorted-descending form is $`(v, v, \ldots, v, 0, 0)`$ with $`d - 2`$ copies of $`v`$ and $`2`$ zeros. This is admissible at $`d`$ as long as $`d - 2 \leq d - 2`$ (trivially) and the zero count is $`< d - 1`$ (true for $`d \geq 3`$). So $`n \in A_d`$.
 
-Applying $K^{(d)}$ to $n$: by Lemma 5.1, $K^{(d)}(n) = K^{(d-2)}(m)$ where $m = (v, v, \ldots, v)$ is a repdigit at $d - 2$. By Proposition 2.3, $K^{(d-2)}(\text{repdigit}) = 0$. So $K^{(d)}(n) = 0$, and the orbit reaches zero rather than $60714$.
+Applying $`K^{(d)}`$ to $`n`$: by Lemma 5.1, $`K^{(d)}(n) = K^{(d-2)}(m)`$ where $`m = (v, v, \ldots, v)`$ is a repdigit at $`d - 2`$. By Proposition 2.3, $`K^{(d-2)}(\text{repdigit}) = 0`$. So $`K^{(d)}(n) = 0`$, and the orbit reaches zero rather than $`60714`$.
 
-These inputs form the **residual escape class** for $60714$'s lifting at $d$. Their count per $d$ equals the number of repdigit values $v \in \{1, \ldots, 9\}$, multiplied by (if we count integer inputs rather than multisets) the number of distinct permutations of the multiset, which is bounded by a small constant.
+These inputs form the **residual escape class** for $`60714`$'s lifting at $`d`$. Their count per $`d`$ equals the number of repdigit values $`v \in \{1, \ldots, 9\}`$, multiplied by (if we count integer inputs rather than multisets) the number of distinct permutations of the multiset, which is bounded by a small constant.
 
-**Case 2: $m$ is a near-repdigit at $d - 2$** (one digit appears $d - 3$ times among $(x_0, \ldots, x_{d-3})$).
+**Case 2: $`m`$ is a near-repdigit at $`d - 2`$** (one digit appears $`d - 3`$ times among $`(x_0, \ldots, x_{d-3})`$).
 
-If the near-repeated digit is $0$, then $n$ has at least $d - 3 + 2 = d - 1$ zero digits, making $n$ itself near-repdigit at $d$ (excluded from $A_d$).
+If the near-repeated digit is $`0`$, then $`n`$ has at least $`d - 3 + 2 = d - 1`$ zero digits, making $`n`$ itself near-repdigit at $`d`$ (excluded from $`A_d`$).
 
-If the near-repeated digit is some nonzero $v$, then $n$'s sorted-descending form has $d - 3$ copies of $v$, one other nonzero digit $w$, and two zeros. The digit count $(d - 3, 1, 2)$ does not make $n$ near-repdigit at $d$ (requires $d - 1$ or $d$ of a kind), so $n \in A_d$.
+If the near-repeated digit is some nonzero $`v`$, then $`n`$'s sorted-descending form has $`d - 3`$ copies of $`v`$, one other nonzero digit $`w`$, and two zeros. The digit count $`(d - 3, 1, 2)`$ does not make $`n`$ near-repdigit at $`d`$ (requires $`d - 1`$ or $`d`$ of a kind), so $`n \in A_d`$.
 
-For these inputs, the projection $m$ at $d - 2$ is a near-repdigit, so $m \notin A_{d-2}$ and the inductive hypothesis does not directly apply. Direct computation on these specific inputs determines their fate. For $60714$ at $d = 5, 6$, these are absent (verified by strict basin $= 1$). For $d \geq 7$, a small number of such inputs may or may not reach $60714$ — see Appendix D for the exact counts at $d = 7, 8, 9$.
+For these inputs, the projection $`m`$ at $`d - 2`$ is a near-repdigit, so $`m \notin A_{d-2}`$ and the inductive hypothesis does not directly apply. Direct computation on these specific inputs determines their fate. For $`60714`$ at $`d = 5, 6`$, these are absent (verified by strict basin $`= 1`$). For $`d \geq 7`$, a small number of such inputs may or may not reach $`60714`$ — see Appendix D for the exact counts at $`d = 7, 8, 9`$.
 
-**Case 3: $m \in A_{d-2}$** (admissible at $d - 2$, neither repdigit nor near-repdigit). The inductive hypothesis applies: by Theorem 5.2 at $d - 2$, the orbit of $m$ under $K^{(d-2)}$ reaches $60714$ in finitely many steps. By Lemma 5.1, the orbit of $n$ under $K^{(d)}$ tracks this orbit and reaches $60714_{(d)}$ (i.e., $60714$ padded to $d$ digits).
+**Case 3: $`m \in A_{d-2}`$** (admissible at $`d - 2`$, neither repdigit nor near-repdigit). The inductive hypothesis applies: by Theorem 5.2 at $`d - 2`$, the orbit of $`m`$ under $`K^{(d-2)}`$ reaches $`60714`$ in finitely many steps. By Lemma 5.1, the orbit of $`n`$ under $`K^{(d)}`$ tracks this orbit and reaches $`60714_{(d)}`$ (i.e., $`60714`$ padded to $`d`$ digits).
 
-**Summary.** For $n \in A_d \cap T_d$ with $m \in A_{d-2}$, the induction closes. For $n$ in the residual escape class (Cases 1b and 2), the orbit may reach $0$ rather than $60714$. The main theorem's statement — universal at every $d \geq 5$ — holds in the strict sense at $d = 5$ and $d = 6$ (where the escape class is empty) and holds *modulo the characterized escape class* at $d \geq 7$. The escape class is explicitly documented at each $d$ in Appendices D and E. $\square$
+**Summary.** For $`n \in A_d \cap T_d`$ with $`m \in A_{d-2}`$, the induction closes. For $`n`$ in the residual escape class (Cases 1b and 2), the orbit may reach $`0`$ rather than $`60714`$. The main theorem's statement — universal at every $`d \geq 5`$ — holds in the strict sense at $`d = 5`$ and $`d = 6`$ (where the escape class is empty) and holds *modulo the characterized escape class* at $`d \geq 7`$. The escape class is explicitly documented at each $`d`$ in Appendices D and E. $`\square`$
 
-**Remark C.6.** Theorem 5.2's statement as given in §5 is: "$60714$ is universally convergent at every digit length $d \geq 5$." This is the strict-universal statement and holds at $d = 5, 6$ by direct verification. At $d \geq 7$, the more precise statement is: "$60714$ is universally convergent modulo a characterized residual class arising from repdigit-like projections." The residual class is bounded in size ($\leq 45$ multisets per $d$, per the $6174$ analog at §6) and its structure is explicit from Lemma C.5. For expository clarity, we refer to both cases collectively as "universality" and flag the distinction only when specific basin fractions are relevant (as in §6 for $6174$).
+**Remark C.6.** Theorem 5.2's statement as given in §5 is: "$`60714`$ is universally convergent at every digit length $`d \geq 5`$." This is the strict-universal statement and holds at $`d = 5, 6`$ by direct verification. At $`d \geq 7`$, the more precise statement is: "$`60714`$ is universally convergent modulo a characterized residual class arising from repdigit-like projections." The residual class is bounded in size ($`\leq 45`$ multisets per $`d`$, per the $`6174`$ analog at §6) and its structure is explicit from Lemma C.5. For expository clarity, we refer to both cases collectively as "universality" and flag the distinction only when specific basin fractions are relevant (as in §6 for $`6174`$).
 
 ---
 
@@ -270,4 +270,4 @@ For these inputs, the projection $m$ at $d - 2$ is a near-repdigit, so $m \notin
 
 ---
 
-[← Back to paper](../README.md#table-of-contents) · [← Previous: Appendix B. 60714 ladder](B_60714_ladder.md) · [Next: Appendix D. Transcendent fps at $d_F = 7$ →](D_dF7_observations.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: Appendix B. 60714 ladder](B_60714_ladder.md) · [Next: Appendix D. Transcendent fps at $`d_F = 7`$ →](D_dF7_observations.md)
