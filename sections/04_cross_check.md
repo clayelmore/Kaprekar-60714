@@ -24,7 +24,7 @@ A positive answer to both questions constitutes **coefficient-lifting success** 
 
 - **$`17`$ fixed points face algebraic obstruction:** no full-variable rule at $`d = 6`$ fixes $`F`$.
 - **$`15`$ fixed points face dynamic obstruction:** full-variable rules at $`d = 6`$ fix $`F`$, but none is universal.
-- **$`1`$ fixed point admits a universal coefficient lifting:** $`F = 60714`$. Exactly two full-variable rules at $`d = 6`$ are universal for $`60714`$, forming a sign-flip pair.
+- **$`1`$ fixed point admits a universal coefficient lifting:** $`F = 60714`$. Of the four full-variable rules at $`d = 6`$ satisfying the fixed-point equation $`K(60714) = 60714`$, exactly two are dynamically universal (basin $`= 1`$ over admissible inputs), and these two form a sign-flip pair.
 
 *Formally: the set of $`d = 5`$ universal full-variable fixed points that are also $`d = 6`$ universal full-variable fixed points is $`\{60714\}`$. All other $`32`$ $`d = 5`$ fixed points are dimension-locked at $`d = 5`$.*
 
@@ -33,13 +33,13 @@ A positive answer to both questions constitutes **coefficient-lifting success** 
 *Algebraic part.* For each $`F^{(k)} \in F_5`$, we enumerate all full-variable rules $`K_{\pi, \sigma}`$ at $`d = 6`$ and test whether $`K(F^{(k)}_{(6)}) = F^{(k)}`$. This reduces to a solution-counting problem: writing $`\overline{F^{(k)}} = (f_0, \ldots, f_5)`$, we seek $`(\pi, \sigma) \in S_6 \times S_6`$ with $`\pi_i \neq \sigma_i`$ for every $`i`$ and $`\sum_i (10^{\pi_i} - 10^{\sigma_i}) f_i = \pm F^{(k)}`$. Since $`F^{(k)} \in F_5`$ is nonzero, the equation is nontrivial. For each $`F^{(k)}`$, the number of full-variable $`(\pi, \sigma)`$ satisfying the equation is a specific non-negative integer. Computing this count for all $`33`$ fixed points:
 
 - $`17`$ fixed points admit zero full-variable solutions.
-- $`16`$ fixed points admit at least one full-variable solution. The number of solutions per fixed point varies from $`2`$ (for $`60714`$, $`60417`$, and $`1`$ other) up to $`132`$ (for fixed points with larger zero-digit counts at $`d = 6`$ when padded).
+- $`16`$ fixed points admit at least one full-variable solution. The number of full-variable rules satisfying the fixed-point equation per fixed point varies from $`4`$ (for $`60714`$ and $`60417`$) up to $`528`$ (for $`F = 54`$, with three zero digits when padded). Among these algebraic solutions, only some are *dynamically* universal.
 
-*Dynamic part.* For each of the $`16`$ fixed points with at least one algebraic solution, we test each fixed-point-satisfying rule for universality: does every admissible input $`n \in A_6`$ iterate to $`F^{(k)}`$ under this rule? This test is direct: iterate from each non-repdigit non-near-repdigit input at $`d = 6`$ ($`999{,}900`$ inputs) for up to $`300`$ steps, and record whether $`F^{(k)}`$ is reached. The basin is then the fraction of inputs reaching $`F^{(k)}`$.
+*Dynamic part.* For each of the $`16`$ fixed points with at least one algebraic solution, we test each fixed-point-satisfying rule for universality: does every admissible input $`n \in A_6`$ iterate to $`F^{(k)}`$ under this rule? This test is direct: iterate from each admissible digit multiset at $`d = 6`$ ($`4{,}905`$ multisets) for up to $`300`$ steps, and record whether $`F^{(k)}`$ is reached. The basin is then the fraction of inputs reaching $`F^{(k)}`$.
 
 For $`15`$ of the $`16`$ fixed points with algebraic solutions, every fixed-point-satisfying rule has basin $`< 1`$. The best basins are tabulated below.
 
-For $`1`$ fixed point — $`F = 60714`$ — both full-variable rules satisfying the fixed-point equation are universal (basin $`= 1.0`$).
+For $`1`$ fixed point — $`F = 60714`$ — exactly two of the four full-variable rules satisfying the fixed-point equation are universal (basin $`= 1.0`$); the other two have basin substantially less than $`1`$.
 
 The computation is implemented as a two-stage enumeration: first a fast enumeration over $`(\pi, \sigma) \in S_6 \times S_6`$ with derangement filtering, producing the algebraic-solution set; then a basin test on each surviving candidate. Total runtime on commodity hardware: a few minutes for the algebraic part, several hours for the dynamic part. Full enumeration logs and per-fixed-point data are in Appendix A.4. $`\square`$
 
@@ -111,13 +111,13 @@ $$c = (9900,\; 9,\; 90,\; -9000,\; 99000,\; -99999).$$
 
 $$K(n) = \mathrm{eadcbf}(n) - \mathrm{fdeacb}(n).$$
 
-*The rule is universal at $`d = 6`$: every admissible input $`n \in A_6`$ iterates to $`60714`$ under $`K`$, with basin $`= 1.0`$ verified over all $`999{,}900`$ admissible inputs.*
+*The rule is universal at $`d = 6`$: every admissible input $`n \in A_6`$ iterates to $`60714`$ under $`K`$, with basin $`= 1.0`$ verified over all $`4{,}905`$ admissible digit multisets ($`999{,}450`$ admissible padded six-digit strings).*
 
 **Verification.** Apply $`K`$ to $`F_{(6)} = 060714`$. Sorted-descending form: $`(7, 6, 4, 1, 0, 0)`$. Compute:
 
 $$K(060714) = |eadcbf - fdeacb|_{a=7, b=6, c=4, d=1, e=0, f=0} = |071460 - 010746| = 60714. \quad \checkmark$$
 
-Universality is verified by exhaustive iteration over $`A_6`$: every admissible six-digit integer reaches $`60714`$ in at most some number of steps, with maximum reaching time $`T_6 = 1`$ for most inputs (direct fixing) and up to a small number of steps for the remainder. See Appendix A.4 for the full basin-verification log. $`\square`$
+Universality is verified by exhaustive iteration over $`A_6`$: every admissible six-digit integer reaches $`60714`$ in at most some number of steps, with maximum reaching time bounded for all inputs (direct fixing) and up to a small number of steps for the remainder. See Appendix A.4 for the full basin-verification log. $`\square`$
 
 **The structural shape of the lifting.** Compare $`60714`$'s native rule at $`d = 5`$:
 
@@ -125,7 +125,7 @@ $$\pi_5 = (4, 1, 2, 3, 0), \qquad \sigma_5 = (2, 0, 1, 4, 3),$$
 
 coefficient vector $`(9900, 9, 90, -9000, -999)`$.
 
-The $`d = 6`$ rule extends this by appending position $`5`$ with $`\pi_5 = 5, \sigma_5 = 5`$ — wait, no, this is wrong. The $`d = 6`$ rule does not simply append a position; it restructures. Specifically: the $`d = 5`$ rule's fifth coefficient is $`-999`$; the $`d = 6`$ rule's fifth and sixth coefficients are $`99000`$ and $`-99999`$, which sum to $`99000 - 99999 = -999`$. This is the **split lifting** structure developed at §5: the single native coefficient $`-999`$ is "split" across two new positions at $`d = 6`$, summing back to $`-999`$ to preserve the action of the rule on $`F`$'s nonzero digits (since both new positions correspond to zero digits of $`F_{(6)}`$, which absorb them in the $`K(F) = F`$ computation).
+The $`d = 6`$ rule does not simply append a position; it restructures. Specifically: the $`d = 5`$ rule's fifth coefficient is $`-999`$; the $`d = 6`$ rule's fifth and sixth coefficients are $`99000`$ and $`-99999`$, which sum to $`99000 - 99999 = -999`$. This is the **split lifting** structure developed at §5: the single native coefficient $`-999`$ is "split" across two new positions at $`d = 6`$, summing back to $`-999`$ to preserve the action of the rule on $`F`$'s nonzero digits (since both new positions correspond to zero digits of $`F_{(6)}`$, which absorb them in the $`K(F) = F`$ computation).
 
 This lifting structure is explicit, and its generalization to $`d = 7, 8, 9, \ldots`$ is the content of §5.
 

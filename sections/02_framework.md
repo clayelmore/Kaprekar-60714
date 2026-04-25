@@ -88,7 +88,7 @@ A **fixed point** of $`K_{\pi, \sigma}`$ at length $`d`$ is an integer $`F \in A
 
 **Example (classical).** The classical rule $`K_0`$ at $`d = 4`$ is universal for $`F = 6174`$ [Kaprekar 1955]. It reaches $`6174`$ within at most seven iterations for every admissible input.
 
-**Example (dimension-agnostic).** At $`d = 3`$, the classical rule $`K_0`$ has coefficient vector $`(-99, \, 0, \, 99)`$ — the middle coefficient vanishes by the forced borrow chain of §1.1 — so $`\mathrm{sv}(K_0) = 2`$. The classical rule at $`d = 3`$ is *not* full-variable. It is universal for $`F = 495`$, but $`495`$ is a fixed point of a rank-$`2`$ rule, not a rank-$`3`$ rule.
+**Example (dimension-agnostic).** At $`d = 3`$, the classical rule $`K_0`$ has coefficient vector $`(99, \, 0, \, -99)`$ — the middle coefficient vanishes by the forced borrow chain of §1.1 — so $`\mathrm{sv}(K_0) = 2`$. The classical rule at $`d = 3`$ is *not* full-variable. It is universal for $`F = 495`$, but $`495`$ is a fixed point of a rank-$`2`$ rule, not a rank-$`3`$ rule.
 
 ## 2.5 Native digit length
 

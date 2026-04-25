@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "date": "2026-04-23",
+    "description": "Complete d_F=7 TRANS fp analysis \u2014 summary level",
+    "total_fps_analyzed": 22,
+    "total_wall_time_seconds": 24308,
+    "case_counts": {
+      "Case 1": 10,
+      "Case 2": 11,
+      "NEAR-edge": 1,
+      "Outside": 0
+    },
+    "bounded_deficit_threshold": 1000000,
+    "note": "This is a reconstructed summary from console output. Per-rule coefficient data for 21 of 22 fps is not in this file; see dF7_bounded_deficit_scan.json for Case-2 per-rule data."
+  },
+  "results": [
+    {
+      "F": 146070,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 4,
+      "signatures_seen": [
+        [
+          7
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": -89100,
+      "any_core_nonneg": false,
+      "enum_time_s": 329.8,
+      "case": "Case 2"
+    },
+    {
+      "F": 1400706,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 2,
+      "signatures_seen": [
+        [
+          7
+        ]
+      ],
+      "best_core_min": -899991,
+      "any_core_nonneg": false,
+      "enum_time_s": 290.4,
+      "case": "Case 2"
+    },
+    {
+      "F": 1406070,
+      "zero_count": 3,
+      "strict_universal": false,
+      "n_universal_rules": 0,
+      "signatures_seen": [],
+      "best_core_min": null,
+      "any_core_nonneg": false,
+      "enum_time_s": 315.1,
+      "note": "NEAR-edge: no strict universal rule at d=7 (basin ~0.9999)",
+      "case": "NEAR-edge"
+    },
+    {
+      "F": 1009098,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 4,
+      "signatures_seen": [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "best_core_min": -891,
+      "any_core_nonneg": false,
+      "enum_time_s": 4937.9,
+      "case": "Case 2"
+    },
+    {
+      "F": 1009089,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 2,
+      "signatures_seen": [
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": -89910,
+      "any_core_nonneg": false,
+      "enum_time_s": 5482.9,
+      "case": "Case 2"
+    },
+    {
+      "F": 545040,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 2,
+      "signatures_seen": [
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": -818910,
+      "any_core_nonneg": false,
+      "enum_time_s": 5728.6,
+      "case": "Case 2"
+    },
+    {
+      "F": 4545000,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 8,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ]
+      ],
+      "best_core_min": -8910,
+      "any_core_nonneg": false,
+      "enum_time_s": 7949.3,
+      "case": "Case 2"
+    },
+    {
+      "F": 6040170,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 2,
+      "signatures_seen": [
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 366.8,
+      "case": "Case 1"
+    },
+    {
+      "F": 445050,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 10,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": -8910,
+      "any_core_nonneg": false,
+      "enum_time_s": 14154.9,
+      "case": "Case 2"
+    },
+    {
+      "F": 445005,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 8,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          7
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "best_core_min": -89991,
+      "any_core_nonneg": false,
+      "enum_time_s": 14236.4,
+      "case": "Case 2"
+    },
+    {
+      "F": 4450500,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 12,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": -89100,
+      "any_core_nonneg": false,
+      "enum_time_s": 14196.5,
+      "case": "Case 2"
+    },
+    {
+      "F": 1080909,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 8,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 16310.2,
+      "case": "Case 1"
+    },
+    {
+      "F": 4504500,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 16,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 13709.8,
+      "case": "Case 1"
+    },
+    {
+      "F": 9001089,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 8,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 5461.6,
+      "case": "Case 1"
+    },
+    {
+      "F": 9009081,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 6,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 5681.9,
+      "case": "Case 1"
+    },
+    {
+      "F": 9090081,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 2,
+      "signatures_seen": [
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 5687.0,
+      "case": "Case 1"
+    },
+    {
+      "F": 4455000,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 10,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": -89910,
+      "any_core_nonneg": false,
+      "enum_time_s": 16705.6,
+      "case": "Case 2"
+    },
+    {
+      "F": 9090810,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 4,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 5485.2,
+      "case": "Case 1"
+    },
+    {
+      "F": 8090901,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 2,
+      "signatures_seen": [
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": -8991,
+      "any_core_nonneg": false,
+      "enum_time_s": 9911.4,
+      "case": "Case 2"
+    },
+    {
+      "F": 9100089,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 10,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 4787.1,
+      "case": "Case 1"
+    },
+    {
+      "F": 9100809,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 20,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 4640.8,
+      "case": "Case 1"
+    },
+    {
+      "F": 9100890,
+      "zero_count": 3,
+      "strict_universal": true,
+      "n_universal_rules": 18,
+      "signatures_seen": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "best_core_min": 0,
+      "any_core_nonneg": true,
+      "enum_time_s": 4389.5,
+      "case": "Case 1"
+    }
+  ]
+}

@@ -35,7 +35,7 @@ Observation 6.2 records the empirical unification of $`60714`$, $`60417`$, and $
 
 The $`\{7, 6, 4, 1\}`$ thread is the only such example in our classification at $`d \leq 6`$. The other $`d = 4`$ multiset $`\{2, 3, 5, 8\}`$ produces fps at $`d = 4`$ but not at $`d = 5, 6`$. Several $`d = 5`$ multisets have analogues at $`d = 4`$ or $`d = 6`$ but not at both.
 
-Extending the search to $`d \geq 7`$ would require either a full classification at $`d = 7`$ (the $`d = 7`$ enumeration of $`25{,}401{,}600`$ full-variable rules is computationally demanding; see Appendix D) or a more structural argument for which multisets can support cross-dimensional threads.
+Extending the search to $`d \geq 7`$ would require either a full classification at $`d = 7`$ (the $`d = 7`$ enumeration of $`9{,}344{,}160`$ full-variable rules is computationally demanding; see Appendix D) or a more structural argument for which multisets can support cross-dimensional threads.
 
 **Question 7.2.** *Is there an analogue of $`60714`$ at higher native digit lengths — a fixed point $`F`$ with native $`d_F = 7`$ or $`d_F = 8`$ that is universal at every $`d \geq d_F`$ via a coefficient-preserving lifting?*
 
@@ -67,7 +67,7 @@ The dimension-agnostic family is the simplest case: these fixed points persist a
 
 ## 7.7 Concluding remarks
 
-The central result of this paper is Theorem 5.2: $`60714`$ is a universal full-variable fixed point at every digit length $`d \geq 5`$, under an explicit coefficient-preserving lifting. This is the first rigorously dimension-transcendent attractor in the generalized Kaprekar family. The supporting results — the classifications of §3, the uniqueness of §4, and the $`6174`$ cross-dimensional pattern of §6 — place this theorem in a structural context that raises more questions than it answers. Conjectures 7.1 and 7.2 and Questions 7.1–7.5 together outline a program for understanding cross-dimensional behavior in the generalized family: which fixed points transcend, under what structural conditions, and with what mechanism.
+The central result of this paper is Theorem 5.2: $`60714`$ is a universal full-variable fixed point at every digit length $`d \geq 5`$, under an explicit coefficient-preserving lifting. This is the first explicitly constructed cross-dimensional persistence result in the generalized Kaprekar family. The supporting results — the classifications of §3, the uniqueness of §4, and the $`6174`$ cross-dimensional pattern of §6 — place this theorem in a structural context that raises more questions than it answers. Conjectures 7.1 and 7.2 and Questions 7.1–7.5 together outline a program for understanding cross-dimensional behavior in the generalized family: which fixed points transcend, under what structural conditions, and with what mechanism.
 
 The methodology of the paper — exhaustive enumeration at each digit length, combined with structural proof on the cases the enumeration distinguishes — has been effective at $`d \leq 6`$ for the full rule space and at $`d \leq 9`$ for targeted verification of specific fps. Extending this methodology to $`d \geq 7`$ for the full rule space, or to $`d \geq 10`$ for $`6174`$, is the natural next step.
 

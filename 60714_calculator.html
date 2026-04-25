@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>60714 — A Universal Attractor</title>
 <style>
-  /* ─── Reset & base ─────────────────────────────────────────────── */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -19,6 +18,9 @@
     --soft: #6e6555;
     --fade: #aaa294;
     --highlight: #fff6db;
+    --escape-bg: #f3e8d0;
+    --escape-border: #a07a30;
+    --escape-text: #5e3f10;
   }
 
   html, body {
@@ -45,14 +47,12 @@
     mix-blend-mode: multiply;
   }
 
-  /* ─── Layout ───────────────────────────────────────────────────── */
   .frame {
     position: relative; z-index: 2;
     max-width: 760px; margin: 0 auto;
     padding: 4rem 1.5rem 5rem;
   }
 
-  /* ─── Header ───────────────────────────────────────────────────── */
   header {
     text-align: center;
     border-bottom: 1px double var(--rule);
@@ -62,7 +62,6 @@
   }
 
   .eyebrow {
-    font-family: 'Iowan Old Style', Georgia, serif;
     font-style: italic;
     font-variant: small-caps;
     letter-spacing: 0.18em;
@@ -107,7 +106,6 @@
   .lede em { color: var(--rule-deep); font-style: italic; }
   .lede strong { font-weight: 600; }
 
-  /* ─── Input panel ──────────────────────────────────────────────── */
   .panel {
     background: var(--paper-warm);
     border: 1px solid var(--rule);
@@ -185,6 +183,12 @@
     border: 1px solid var(--ink);
   }
   button.secondary:hover { background: var(--ink); color: var(--paper); }
+  button.escape-try {
+    background: var(--escape-border);
+    color: var(--paper);
+    border: none;
+  }
+  button.escape-try:hover { background: var(--hot); }
 
   .controls {
     display: flex;
@@ -203,8 +207,8 @@
     min-height: 1.2em;
   }
   .hint.error { color: var(--hot); font-style: normal; font-weight: 500; }
+  .hint.escape { color: var(--escape-text); font-weight: 500; }
 
-  /* ─── Trajectory ───────────────────────────────────────────────── */
   .trajectory { margin-top: 1rem; }
 
   .step {
@@ -226,6 +230,10 @@
     border-left-color: var(--hot);
     background: var(--highlight);
   }
+  .step.escape {
+    border-left-color: var(--escape-border);
+    background: var(--escape-bg);
+  }
 
   .step-num {
     position: absolute;
@@ -236,10 +244,8 @@
     color: var(--rule-deep);
   }
 
-  .step.fixed .step-num {
-    color: var(--hot);
-    font-weight: 600;
-  }
+  .step.fixed .step-num { color: var(--hot); font-weight: 600; }
+  .step.escape .step-num { color: var(--escape-text); font-weight: 600; }
 
   .step-current {
     font-family: 'Didot', 'Bodoni 72', Garamond, serif;
@@ -252,6 +258,7 @@
   }
 
   .step.fixed .step-current { color: var(--hot); }
+  .step.escape .step-current { color: var(--escape-text); }
 
   .arithmetic {
     display: grid;
@@ -291,6 +298,7 @@
     font-size: 0.85rem;
     margin-top: 0.6rem;
   }
+  .step.escape .note { color: var(--escape-text); font-style: normal; }
 
   .fixed-banner {
     text-align: center;
@@ -304,7 +312,45 @@
     letter-spacing: 0.04em;
   }
 
-  /* ─── Footer / about ───────────────────────────────────────────── */
+  .escape-explainer {
+    background: var(--escape-bg);
+    border: 1px solid var(--escape-border);
+    padding: 1.1rem 1.4rem;
+    margin-top: 1.2rem;
+    border-radius: 2px;
+    color: var(--escape-text);
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+  .escape-explainer h3 {
+    font-family: 'Didot', 'Bodoni 72', Garamond, serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    margin-bottom: 0.7rem;
+    color: var(--escape-text);
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+  }
+  .escape-explainer p { margin-bottom: 0.6rem; }
+  .escape-explainer p:last-child { margin-bottom: 0; }
+  .escape-explainer strong { color: var(--ink); }
+  .escape-explainer .digits {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.55rem 0.7rem;
+    margin: 0.7rem 0;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .escape-explainer .digits .block-A { color: var(--hot); font-weight: 600; }
+  .escape-explainer .digits .block-B { color: var(--cool); font-weight: 600; }
+  .escape-explainer .digits .block-C { color: var(--rule-deep); font-weight: 600; }
+  .escape-explainer .digits .block-D { color: var(--escape-text); font-weight: 600; }
+
   .about {
     margin-top: 4rem;
     padding-top: 2rem;
@@ -334,7 +380,6 @@
     letter-spacing: 0.5em;
   }
 
-  /* ─── Responsive ───────────────────────────────────────────────── */
   @media (max-width: 540px) {
     .frame { padding: 2.5rem 1rem 3rem; }
     .input-row { flex-direction: column; }
@@ -353,11 +398,11 @@
   <header>
     <div class="eyebrow">an interactive companion</div>
     <h1>The Number <span class="num">60714</span></h1>
-    <div class="subtitle">A universal attractor at every digit length d ≥ 5</div>
+    <div class="subtitle">A universal attractor at every digit length d ≥ 5 (with one structural exception)</div>
 
     <div class="lede">
-      <p>Pick any number with at least five digits. Apply the right rule. Watch it converge to <em>60714</em>.</p>
-      <p>The rule depends on the input's digit length — there is one rule at <em>d = 5</em>, another at <em>d = 6</em>, and a uniform recipe extending to every higher dimension. Each rule sorts the digits in two ways and combines them with a fixed coefficient vector. The result, after a finite number of iterations, is always 60714.</p>
+      <p>Pick any number with at least five digits. Apply the right rule. Watch it converge — almost always — to <em>60714</em>.</p>
+      <p>The rule depends on the input's digit length: there is one rule at <em>d = 5</em>, another at <em>d = 6</em>, and a uniform recipe extending to every higher dimension. At <em>d = 5</em> and <em>d = 6</em>, every admissible input reaches 60714. At <em>d ≥ 7</em>, almost every input does — but a small, exactly-characterized class of inputs collapses to zero instead. The calculator recognizes both cases.</p>
     </div>
   </header>
 
@@ -373,18 +418,21 @@
       <button class="secondary" type="button" data-example="142857">142857</button>
       <button class="secondary" type="button" data-example="3141592">3141592</button>
       <button class="secondary" type="button" id="random">random</button>
+      <button class="escape-try" type="button" id="doomed">try a doomed input</button>
     </div>
-    <div class="hint" id="hint">5 digits or more. Repdigits (like 11111) collapse to zero — try anything else.</div>
+    <div class="hint" id="hint">5 digits or more. Most inputs reach 60714 — try the "doomed input" button to see one that doesn't.</div>
   </section>
 
   <div class="trajectory" id="trajectory"></div>
 
   <div class="about">
-    <p>The number <strong>60714</strong> is what the paper calls a <em>dimension-transcendent attractor</em>: a fixed point of a permutation-pair rule whose universality persists across every digit length d ≥ 5 simultaneously, not just at one specific d.</p>
+    <p>The number <strong>60714</strong> is a fixed point of an explicit family of permutation-pair rules built from its native rule at <em>d = 5</em>, with the family extending to every higher digit length by appending pairs of coefficients that sum to zero. The fixed-point equation K(60714) = 60714 holds at every d ≥ 5.</p>
 
-    <p>This is a strict generalization of Kaprekar's classical 1949 result. Kaprekar's constant 6174 is universal at d = 4 alone — the trick "stops working" at d = 5 if you keep his original rule fixed. The result extended here is that if you let the rule itself vary with d (specifically, by appending pairs of coefficients that sum to zero at each new digit length), there is a distinguished fixed point — 60714, sharing 6174's digit multiset plus a zero — whose universality holds at every d simultaneously, with an inductive proof that closes through both finite-state verification and a d-independent algebraic argument.</p>
+    <p>The dynamics are <strong>strict-universal at d = 5 and d = 6</strong>: every admissible input reaches 60714. At <strong>d ≥ 7</strong>, the rule is <em>near-universal</em>: every admissible input outside a small structural class — the <strong>escape class</strong> of <strong>block-aligned multisets</strong> and their backward orbits — reaches 60714. Inputs in the escape class collapse to zero. The escape class has a closed-form description and at d ≤ 11 the escape orbits all reach zero within four iterations.</p>
 
-    <p>Full paper, the proof, the 506-fixed-point classification at d = 6, and reproducibility scripts: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
+    <p>This is a strict generalization of Kaprekar's classical 1949 result. Kaprekar's constant 6174 is universal at d = 4; the trick "stops working" at d = 5 if you keep his rule fixed. The result extended here is that if you let the rule itself vary with d (specifically, by appending zero-sum coefficient pairs), there is a distinguished fixed point — 60714, sharing 6174's digit multiset plus a zero — whose universality persists across infinitely many dimensions, modulo a structurally characterized escape class.</p>
+
+    <p>Full paper, the proof, the 506-fixed-point classification at d = 6, the closed-form description of the escape class, and reproducibility scripts: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
   </div>
 
   <div class="ornament">⁂</div>
@@ -394,13 +442,11 @@
 <script>
 'use strict';
 
-/* ─── Coefficient vectors (Theorem 5.2 ladders) ──────────────── */
 function getCoefs(d) {
   if (d < 5) return null;
   if (d === 5) return [9900, 9, 90, -9000, -999];
   if (d === 6) return [9900, 9, 90, -9000, 99000, -99999];
 
-  // BigInt for d > 15 (safe integer is ~9e15)
   const useBig = d > 15;
   const NINE = useBig ? 9n : 9;
   const TEN = useBig ? 10n : 10;
@@ -410,16 +456,13 @@ function getCoefs(d) {
     return r;
   };
 
-  let base;
-  let startExp;
+  let base, startExp;
   if (d % 2 === 1) {
-    // odd ladder: base at d=5
     base = useBig
       ? [9900n, 9n, 90n, -9000n, -999n]
       : [9900, 9, 90, -9000, -999];
     startExp = 6;
   } else {
-    // even ladder: base at d=6
     base = useBig
       ? [9900n, 9n, 90n, -9000n, 99000n, -99999n]
       : [9900, 9, 90, -9000, 99000, -99999];
@@ -435,7 +478,35 @@ function getCoefs(d) {
 
 function isBigArr(arr) { return arr.length > 0 && typeof arr[0] === 'bigint'; }
 
-/* ─── One iteration of K at digit length d ───────────────────── */
+/* Block-aligned detection (Definition 5.2) */
+function isBlockAligned(sortedDescStr, d) {
+  const digits = sortedDescStr.split('').map(c => parseInt(c, 10));
+  if (digits.length !== d) return false;
+  const d_0 = (d % 2 === 1) ? 5 : 6;
+  for (let i = 1; i < d_0; i++) {
+    if (digits[i] !== digits[0]) return false;
+  }
+  for (let i = d_0; i < d; i += 2) {
+    if (i + 1 >= d) break;
+    if (digits[i] !== digits[i + 1]) return false;
+  }
+  return true;
+}
+
+function colorizeBlockAligned(sortedDescStr, d) {
+  const d_0 = (d % 2 === 1) ? 5 : 6;
+  const colors = ['block-A', 'block-B', 'block-C', 'block-D'];
+  let html = '';
+  html += '<span class="' + colors[0] + '">' + sortedDescStr.substring(0, d_0) + '</span>';
+  let colorIdx = 1;
+  for (let i = d_0; i < d; i += 2) {
+    if (i + 1 >= d) break;
+    html += ' <span class="' + colors[colorIdx % colors.length] + '">' + sortedDescStr.substring(i, i + 2) + '</span>';
+    colorIdx++;
+  }
+  return html;
+}
+
 function step(value, d) {
   const padded = value.toString().padStart(d, '0');
   const digits = padded.split('').map(c => parseInt(c, 10));
@@ -471,13 +542,20 @@ function isRepdigit(s) {
   return /^(.)\1*$/.test(s);
 }
 
-/* ─── Run the trajectory ──────────────────────────────────────── */
+function isNearRepdigit(s) {
+  const d = s.length;
+  const counts = {};
+  for (const c of s) counts[c] = (counts[c] || 0) + 1;
+  return Object.values(counts).some(v => v >= d - 1);
+}
+
 function iterate(input) {
   const cleaned = input.replace(/\D/g, '');
   if (!cleaned) return { error: 'enter a number, please.' };
   if (cleaned.length < 5) return { error: 'needs at least 5 digits.' };
   if (cleaned.length > 20) return { error: 'keep it under 20 digits for now.' };
-  if (isRepdigit(cleaned)) return { error: 'repdigits (like 11111) collapse to zero — try anything else.' };
+  if (isRepdigit(cleaned)) return { error: 'repdigits (like 11111) collapse to zero — try a number with at least two different digits.' };
+  if (isNearRepdigit(cleaned)) return { error: 'this is a near-repdigit (almost all digits the same) — Kaprekar\'s classical exclusion. Try something with more digit variety.' };
 
   const d = cleaned.length;
   const useBig = d > 15;
@@ -490,29 +568,67 @@ function iterate(input) {
 
   for (let i = 0; i < MAX; i++) {
     const r = step(cur, d);
+    const isAtZero = r.next === zero;
+    const reachedFixed = r.next === cur;
+    const isBA = isBlockAligned(r.descStr, d);
+
     trail.push({
       stepNum: i,
       currentStr: cur.toString().padStart(d, '0'),
       descStr: r.descStr,
       ascStr: r.ascStr,
       next: r.next,
-      isFixed: r.next === cur
+      isFixed: reachedFixed,
+      isBlockAligned: isBA,
+      goesToZero: isAtZero
     });
-    if (r.next === cur) break;
+    if (reachedFixed) break;
+    if (isAtZero) {
+      trail.push({
+        stepNum: i + 1,
+        currentStr: '0'.repeat(d),
+        descStr: '0'.repeat(d),
+        ascStr: '0'.repeat(d),
+        next: zero,
+        isFixed: true,
+        isBlockAligned: false,
+        goesToZero: true,
+        isAbsorbed: true
+      });
+      break;
+    }
     cur = r.next;
   }
 
-  return { trail, d, finalIs60714: trail[trail.length - 1].next === target };
+  const lastStep = trail[trail.length - 1];
+  const finalIs60714 = lastStep.next === target;
+  const finalIs0 = lastStep.next === zero;
+
+  let firstBlockAligned = -1;
+  for (let i = 0; i < trail.length; i++) {
+    if (trail[i].isBlockAligned) {
+      firstBlockAligned = i;
+      break;
+    }
+  }
+
+  return {
+    trail,
+    d,
+    finalIs60714,
+    finalIs0,
+    firstBlockAligned,
+    isEscape: finalIs0
+  };
 }
 
-/* ─── Rendering ───────────────────────────────────────────────── */
 const trajectoryEl = document.getElementById('trajectory');
 const hintEl = document.getElementById('hint');
 const inputEl = document.getElementById('numinput');
 
 function render(result) {
   trajectoryEl.innerHTML = '';
-  hintEl.classList.remove('error');
+  hintEl.classList.remove('error', 'escape');
 
   if (result.error) {
     hintEl.textContent = result.error;
@@ -520,30 +636,48 @@ function render(result) {
     return;
   }
 
-  hintEl.textContent = `digit length d = ${result.d}, ${result.trail.length - 1} iteration${result.trail.length - 1 === 1 ? '' : 's'} to converge`;
+  if (result.isEscape) {
+    hintEl.textContent = 'digit length d = ' + result.d + ', this input belongs to the escape class — see explanation below';
+    hintEl.classList.add('escape');
+  } else {
+    const stepCount = result.trail.length - 1;
+    hintEl.textContent = 'digit length d = ' + result.d + ', ' + stepCount + ' iteration' + (stepCount === 1 ? '' : 's') + ' to converge';
+  }
+
+  const target = result.d > 15 ? 60714n : 60714;
 
   result.trail.forEach((t, idx) => {
     const div = document.createElement('div');
-    div.className = 'step' + (t.isFixed ? ' fixed' : '');
+    let stepClass = 'step';
+    if (t.isFixed && t.next === target) stepClass += ' fixed';
+    else if (t.isFixed && t.goesToZero) stepClass += ' escape';
+    else if (t.isBlockAligned) stepClass += ' escape';
+    div.className = stepClass;
     div.style.animationDelay = (idx * 0.06) + 's';
 
     const cleanCurrent = t.currentStr.replace(/^0+(?=\d)/, '') || '0';
 
-    let html = `<div class="step-num">step ${t.stepNum}</div>`;
-    html += `<div class="step-current">${formatNumber(cleanCurrent)}</div>`;
+    let html = '<div class="step-num">step ' + t.stepNum + '</div>';
+    html += '<div class="step-current">' + formatNumber(cleanCurrent) + '</div>';
 
     if (!t.isFixed) {
       const descNum = formatNumber(t.descStr.replace(/^0+(?=\d)/, '') || '0');
       const ascNum = formatNumber(t.ascStr.replace(/^0+(?=\d)/, '') || '0');
       const nextStr = t.next.toString();
 
-      html += `<div class="arithmetic">`;
-      html += `<span class="op">descending</span><span class="num-row desc-row">${descNum}</span>`;
-      html += `<span class="op">ascending</span><span class="num-row asc-row">${ascNum}</span>`;
-      html += `<span class="op">K applied</span><span class="num-row result-row">${formatNumber(nextStr)}</span>`;
-      html += `</div>`;
-    } else {
-      html += `<div class="note">fixed point reached. K(60714) = 60714.</div>`;
+      html += '<div class="arithmetic">';
+      html += '<span class="op">descending</span><span class="num-row desc-row">' + descNum + '</span>';
+      html += '<span class="op">ascending</span><span class="num-row asc-row">' + ascNum + '</span>';
+      html += '<span class="op">K applied</span><span class="num-row result-row">' + formatNumber(nextStr) + '</span>';
+      html += '</div>';
+
+      if (t.isBlockAligned) {
+        html += '<div class="note">⚠ this multiset is <strong>block-aligned</strong> — the rule annihilates it on the next step.</div>';
+      }
+    } else if (t.next === target) {
+      html += '<div class="note">fixed point reached. K(60714) = 60714.</div>';
+    } else if (t.goesToZero) {
+      html += '<div class="note">absorbed at zero. The rule\'s coefficients cancel completely on this input.</div>';
     }
 
     div.innerHTML = html;
@@ -554,13 +688,63 @@ function render(result) {
     const banner = document.createElement('div');
     banner.className = 'fixed-banner';
     banner.style.animationDelay = (result.trail.length * 0.06) + 's';
-    banner.innerHTML = `Theorem 5.2 in action: every admissible input at d = ${result.d} reaches 60714.`;
+    banner.innerHTML = 'Theorem 5.2 in action: this input reaches 60714 at d = ' + result.d + '.';
     trajectoryEl.appendChild(banner);
+  } else if (result.isEscape) {
+    const explainer = document.createElement('div');
+    explainer.className = 'escape-explainer';
+
+    let baStep = null;
+    if (result.firstBlockAligned >= 0) {
+      baStep = result.trail[result.firstBlockAligned];
+    }
+
+    const d = result.d;
+    const d_0 = (d % 2 === 1) ? 5 : 6;
+    const numPairs = Math.floor((d - d_0) / 2);
+
+    let baExplanation = '';
+    if (baStep) {
+      const descColored = colorizeBlockAligned(baStep.descStr, d);
+      const stepLabel = baStep.stepNum === 0 ? 'Your input itself, sorted descending, has this structure:' : 'At step ' + baStep.stepNum + ', the orbit reached this multiset (sorted descending):';
+      baExplanation = '<p>' + stepLabel + '</p><div class="digits">' + descColored + '</div>';
+    }
+
+    let ruleExplanation;
+    if (numPairs === 0) {
+      ruleExplanation = '<p>Sorted descending, the top <strong>' + d_0 + '</strong> digits are all the same.</p>';
+    } else {
+      const pairWord = numPairs === 1 ? 'pair' : 'pairs';
+      ruleExplanation = '<p>Sorted descending, the top <strong>' + d_0 + ' digits are all the same</strong>, and the remaining ' + (2 * numPairs) + ' digits split into <strong>' + numPairs + ' ' + pairWord + '</strong> of equal digits.</p>';
+    }
+
+    const e1 = closedFormE1(d);
+
+    explainer.innerHTML =
+      '<h3>Why this input goes to zero</h3>' +
+      '<p>At digit length d = ' + d + ', the rule sends a small structural class of admissible inputs to zero instead of 60714. ' +
+      (baStep && baStep.stepNum > 0 ? 'Your input\'s orbit landed on one of them.' : 'Your input is one of them.') +
+      '</p>' +
+      baExplanation +
+      ruleExplanation +
+      '<p>The rule is built from a base of <strong>' + d_0 + ' coefficients summing to zero</strong>, plus ' + numPairs + ' appended ' + (numPairs === 1 ? 'pair' : 'pairs') + ' each summing to zero. When all ' + d_0 + ' top digits are equal AND each pair has equal digits, every coefficient pairs with a digit-equal partner, every contribution cancels, and the result is exactly zero.</p>' +
+      '<p style="font-style: italic; font-size: 0.88em; margin-top: 0.8rem;">This is a <strong>block-aligned multiset</strong> (Definition 5.2 in the paper). At d = ' + d + ' there are exactly ' + e1 + ' such multisets that collapse in one step, plus a small number of inputs whose orbits land on one of them.</p>';
+    trajectoryEl.appendChild(explainer);
   }
 }
 
+function closedFormE1(d) {
+  if (d < 7) return 0;
+  const d_0 = (d % 2 === 1) ? 5 : 6;
+  const k = 1 + Math.floor((d - d_0) / 2);
+  let c = 1;
+  for (let i = 1; i <= k; i++) {
+    c = c * (10 + k - 1 - (i - 1)) / i;
+  }
+  return Math.round(c) - 10;
+}
+
 function formatNumber(s) {
-  // Insert thousand separators, preserve leading zeros if intentional
   if (s.length <= 4) return s;
   const reversed = s.split('').reverse();
   const grouped = [];
@@ -571,7 +755,6 @@ function formatNumber(s) {
   return grouped.reverse().join('');
 }
 
-/* ─── Wiring ──────────────────────────────────────────────────── */
 function go() {
   const result = iterate(inputEl.value);
   render(result);
@@ -591,24 +774,53 @@ document.querySelectorAll('button[data-example]').forEach(btn => {
 });
 
 document.getElementById('random').addEventListener('click', () => {
-  // Random length 5-9, random non-repdigit
   const len = 5 + Math.floor(Math.random() * 5);
   let s;
   do {
     s = '';
     s += String(1 + Math.floor(Math.random() * 9));
     for (let i = 1; i < len; i++) s += String(Math.floor(Math.random() * 10));
-  } while (isRepdigit(s));
+  } while (isRepdigit(s) || isNearRepdigit(s));
   inputEl.value = s;
   go();
 });
 
-inputEl.addEventListener('input', () => {
-  hintEl.classList.remove('error');
-  hintEl.textContent = `5 digits or more. Repdigits (like 11111) collapse to zero — try anything else.`;
+/* "Try a doomed input" — picks a curated block-aligned multiset.
+   The top-block digit (the digit repeated d_0 times at the start)
+   is drawn from {1,2,3,4,5,7,8,9} — avoiding 6, which would create
+   visual collision with 60714's leading digit.
+   All examples below are verified block-aligned and verified to
+   collapse to 0 under the constructed rule. */
+document.getElementById('doomed').addEventListener('click', () => {
+  const examples = [
+    // d = 7  (top block of 5 + one pair of 2)
+    '1111100', '2222200', '3333300', '4444400', '5555500',
+    '7777700', '8888800', '9999900',
+    '3333311', '4444411', '5555511', '7777711', '8888811', '9999911',
+    // d = 8  (top block of 6 + one pair of 2)
+    '11111100', '22222200', '33333300', '44444400', '55555500',
+    '77777700', '88888800', '99999900',
+    '33333311', '44444411', '55555511', '77777711', '88888811', '99999911',
+    // d = 9  (top block of 5 + two pairs of 2)
+    '111110000', '222220000', '333330000', '444440000', '555550000',
+    '777770000', '888880000', '999990000',
+    '444443333', '555554444', '777776666', '888887777', '999998888',
+    // d = 10 (top block of 6 + two pairs of 2)
+    '1111110000', '2222220000', '3333330000', '4444440000', '5555550000',
+    '7777770000', '8888880000', '9999990000',
+    '4444443333', '5555554444', '7777776666', '8888887777', '9999998888',
+  ];
+
+  const sortedStr = examples[Math.floor(Math.random() * examples.length)];
+  inputEl.value = sortedStr;
+  go();
 });
 
-// Auto-run with example on load
+inputEl.addEventListener('input', () => {
+  hintEl.classList.remove('error', 'escape');
+  hintEl.textContent = '5 digits or more. Most inputs reach 60714 — try the "doomed input" button to see one that doesn\'t.';
+});
+
 inputEl.value = '12345';
 go();
 
