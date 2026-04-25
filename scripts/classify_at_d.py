@@ -133,16 +133,24 @@ def classify(d):
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: classify_at_d.py <d> [--save] [--save-txt]")
-        print("  --save:     write d<d>_classification.json (full per-fp data)")
-        print("  --save-txt: write d<d>_fps.txt (clean fp list, one per line)")
-        sys.exit(1)
-    
-    d = int(sys.argv[1])
-    save = '--save' in sys.argv
-    save_txt = '--save-txt' in sys.argv
-    
+    import argparse
+    parser = argparse.ArgumentParser(
+        description=("Classify universal full-variable fixed points at digit length d. "
+                     "Uses a candidate-filtering heuristic followed by full-basin verification "
+                     "(see scripts/README.md and paper §3 Remark on enumeration soundness for "
+                     "the cross-verification of the d=6 count of 506 fps)."))
+    parser.add_argument('d', type=int,
+                        help="Digit length (3 to 6 supported on commodity hardware)")
+    parser.add_argument('--save', action='store_true',
+                        help="Write d<d>_classification.json (full per-fp data)")
+    parser.add_argument('--save-txt', action='store_true', dest='save_txt',
+                        help="Write d<d>_fps.txt (clean fp list, one per line)")
+    args = parser.parse_args()
+
+    d = args.d
+    save = args.save
+    save_txt = args.save_txt
+
     results = classify(d)
     
     # Group by multiset

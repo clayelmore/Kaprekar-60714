@@ -98,7 +98,7 @@ For an integer $`F`$, its **native digit length** $`d_F`$ is the smallest $`d`$ 
 
 **Dimension-agnostic fixed points.** Integers such as $`45`$ (universal at every $`d \geq 2`$ under low-rank rules derived from classical reverse-pair structure), $`495`$ (universal at $`d = 3`$ under $`K_0`$), and $`450`$ (universal at $`d = 3`$ under a cousin of the classical rule) are *not* in our full-variable classification because their rules have $`\mathrm{sv} < d`$ at every $`d`$ where they appear. These integers are fixed points of *rank-reducing* rules, where forced borrow chains or structural cancellations reduce the effective input count below $`d`$. They persist across digit lengths through this dimensional reduction.
 
-Our full-variable classification excludes these by design: we study only rules with $`\mathrm{sv} = d`$, where every sorted-descending position contributes nontrivially. The dimension-agnostic family deserves independent study, but is outside the scope of this paper. See §1.1 for the structural derivation of the middle-digit cancellation that produces $`495`$'s rank-$`2`$ status.
+Our full-variable classification excludes these by design: we study only rules with $`\mathrm{sv} = d`$, where every sorted-descending position contributes nontrivially. This restriction is principled rather than definitional. Rank-reducing rules are those whose coefficient vector has at least one zero — equivalently, whose action depends on strictly fewer than $`d`$ inputs. Such rules describe a $`(d-k)`$-dimensional dynamical system embedded in a $`d`$-dimensional input space; their fixed points and convergence behavior are determined by the lower-dimensional projection, not by the digit-length $`d`$ at which the rule happens to be expressed. Including them in the cross-dimensional question would conflate persistence-by-projection (a structural artifact) with persistence-by-genuine-extension (the phenomenon of interest). The classical rule at $`d = 5`$ is itself such a rank-reducer (sv $`= 4`$, not $`5`$), which is why classical Kaprekar fails at five digits — not because Kaprekar dynamics has no five-digit attractor, but because the classical rule is rank-$`4`$ when viewed at $`d = 5`$. The dimension-agnostic family ($`45, 495, 450`$, etc.) deserves independent study but is outside the scope of this paper. See §1.1 for the structural derivation of the middle-digit cancellation that produces $`495`$'s rank-$`2`$ status.
 
 ## 2.6 Effective rank at a fixed point
 
@@ -145,6 +145,17 @@ For reference:
 | $`F`$ | a fixed point |
 | $`d_F`$ | native digit length of $`F`$ |
 | $`(f_0, \ldots, f_{d-1})`$ | sorted-descending form of $`F`$ at length $`d`$ |
+| $`T_d`$ | tail-two-zeros set: sorted-desc inputs at length $`d`$ with $`x_{d-1} = x_{d-2} = 0`$ (§5.3) |
+| $`E_d`$ | escape class: admissible inputs whose orbit reaches a block-aligned multiset (§5.2) |
+| $`B_d`$ | block-aligned multisets at length $`d`$ (Definition 5.2) |
+| $`d_0`$ | base block size for the 60714 ladder: $`5`$ on the odd ladder, $`6`$ on the even ladder |
+| odd ladder | rules at odd $`d \geq 5`$ extending the $`d = 5`$ native rule by zero-sum pair appending |
+| even ladder | rules at even $`d \geq 6`$ extending the $`d = 6`$ split-lifted rule by zero-sum pair appending |
+| $`\mathrm{core}(x)`$ | base-block contribution to $`K^{(d)}(x)`$: $`9900 x_0 + 9 x_1 + 90 x_2 - 9000 x_3 - 999 x_4`$ (odd ladder) |
+| $`\delta_k`$ | difference at the $`k`$-th appended pair: $`x_{2k+d_0} - x_{2k+d_0+1}`$ (§C.4) |
+| $`\mathrm{sum\_locked\_spans}(K_F)`$ | within-thread invariant: $`\sum_{i : f_i \neq 0} \lvert \pi_i - \sigma_i \rvert`$ (§6.4) |
+| coefficient-preserving lifting | a rule at $`d + k`$ whose coefficient vector extends the $`d`$-coefficient vector by appending $`k`$ pairs that sum to zero (§5.1) |
+| dimension-transcendent | a fixed point with a coefficient-preserving lifting at every $`d \geq d_F`$ |
 
 ---
 

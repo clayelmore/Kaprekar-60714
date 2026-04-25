@@ -110,6 +110,16 @@ def check_fp_at_d6(F, admissible_d6):
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(
+        description=("Cross-dimensional check (Theorem 4.1): for each of the 33 universal "
+                     "full-variable fixed points at d=5, test whether F admits a universal "
+                     "full-variable rule at d=6. Expected result: 17 algebraically obstructed, "
+                     "15 dynamically obstructed, 1 universal (60714). Runtime ~30 minutes."))
+    parser.add_argument('--save', action='store_true', default=True,
+                        help="Write cross_check_d5_d6.json (default true)")
+    args = parser.parse_args()
+
     print("Building d=6 admissible multisets...", flush=True)
     admissible_d6 = build_admissible_multisets(6)
     print(f"  {len(admissible_d6)} admissible multisets at d=6", flush=True)

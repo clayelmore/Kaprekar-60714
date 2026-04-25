@@ -119,14 +119,24 @@ def verify_ladder(d, coefs, ladder_name):
 
 
 def main():
-    args = sys.argv[1:]
-    run_odd = '--even' not in args
-    run_even = '--odd' not in args
-    max_d = 16
-    if '--max-d' in args:
-        i = args.index('--max-d')
-        max_d = int(args[i + 1])
-    
+    import argparse
+    parser = argparse.ArgumentParser(
+        description=("Finite-state verification of bounded reaching time to T_d "
+                     "(tail-2-zeros set) for the 60714 lifting ladders. "
+                     "Verifies the structural lemma underlying Theorem 5.2. "
+                     "Does NOT verify basin universality (use verify_60714_basin.py for that)."))
+    parser.add_argument('--odd', action='store_true',
+                        help="Run only the odd ladder (d = 7, 9, 11, ...)")
+    parser.add_argument('--even', action='store_true',
+                        help="Run only the even ladder (d = 8, 10, 12, ...)")
+    parser.add_argument('--max-d', type=int, default=16, dest='max_d',
+                        help="Maximum digit length to verify (default 16)")
+    args = parser.parse_args()
+
+    run_odd = not args.even
+    run_even = not args.odd
+    max_d = args.max_d
+
     if run_odd:
         print("=" * 60)
         print("ODD LADDER (d = 7, 9, 11, ..., max)")

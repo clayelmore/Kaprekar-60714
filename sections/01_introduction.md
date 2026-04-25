@@ -88,10 +88,10 @@ This paper answers the following:
 
 **Theorem 1 (Classification, §3).** *The universal full-variable fixed points at digit lengths $`d \leq 6`$ are as follows:*
 
-- *$`d = 3`$: no universal full-variable fixed points. ($`30`$ rank-$`3`$ rules enumerated exhaustively.)*
-- *$`d = 4`$: four universal full-variable fixed points — $`1746`$, $`2538`$, $`5382`$, $`6174`$. ($`552`$ rank-$`4`$ rules enumerated exhaustively.)*
-- *$`d = 5`$: thirty-three universal full-variable fixed points. ($`14{,}280`$ rank-$`5`$ rules enumerated exhaustively.)*
-- *$`d = 6`$: five hundred and seven universal full-variable fixed points. ($`517{,}680`$ rank-$`6`$ rules enumerated exhaustively.)*
+- *$`d = 3`$: no universal full-variable fixed points. ($`12`$ full-variable rules enumerated exhaustively.)*
+- *$`d = 4`$: four universal full-variable fixed points — $`1746`$, $`2538`$, $`5382`$, $`6174`$. ($`216`$ full-variable rules enumerated exhaustively.)*
+- *$`d = 5`$: thirty-three universal full-variable fixed points. ($`5{,}280`$ full-variable rules enumerated exhaustively.)*
+- *$`d = 6`$: five hundred and six universal full-variable fixed points. ($`190{,}800`$ full-variable rules enumerated exhaustively.)*
 
 The classifications at each $`d`$ are complete, reproducible, and definitive. Full tables appear in Appendix A.
 
