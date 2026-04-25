@@ -258,11 +258,13 @@ At even $`d \geq 18`$, $`M' \geq 6`$, hence $`2 Z_0 + Z_1 \geq 2 \cdot 6 - 9 = 3
 
 *Note on Lemma 5.3 (core non-negativity) for the even ladder.* On the odd ladder, $`\mathrm{core}(x) \geq 0`$ for sorted-descending inputs (Lemma 5.3). On the even ladder, $`\mathrm{core}_{\mathrm{even}}`$ can also achieve large positive values via the $`+99000 x_4`$ term; sign is not an issue for the closure argument because the absolute value $`|K^{(d)}(x)|`$ is taken, and the block contributions are non-negative (each $`\delta_k \geq 0`$). The proof above holds without requiring core non-negativity.
 
-**Corollary C.4 (computational confirmation).** *Direct enumeration verifies one-step $`T_d`$ closure on the even ladder at every $`d \in \{8, 10, 12, 14, 16, 18\}`$. Specifically:*
+**Corollary C.4 (computational confirmation).** *Direct enumeration confirms one-step $`T_d`$ closure on the even ladder at $`d \geq 18`$ (the threshold of Lemma C.4) and bounded reaching time at lower even $`d`$:*
 
-- *$`d \in \{8, 10, 12, 14, 16\}`$: every admissible multiset reaches $`T_d`$ in exactly $`1`$ step. Verified by Proposition 5.2's finite-state enumeration.*
-- *$`d = 18`$: all $`4{,}686{,}725`$ admissible multisets reach $`T_{18}`$ in $`\leq 1`$ step. Verified by exhaustive enumeration via `verify_even_ladder_closure.py 18`.*
-- *$`d \in \{20, 22, 24\}`$: random sampling of $`200{,}000`$ admissibles per $`d`$ finds zero counterexamples. Verified by `verify_even_ladder_closure.py D --sample 200000`.*
+- *$`d \in \{8, 10, 12, 14\}`$: max reaching time is $`6, 3, 2, 2`$ iterations respectively. Verified by Proposition 5.2's finite-state enumeration. (Lemma C.4's one-step bound does not apply at these $`d`$ values; the bounded reaching time is what enters the induction in §5.7.)*
+- *$`d \in \{16\}`$: every admissible multiset reaches $`T_{16}`$ in exactly $`1`$ step. Verified by Proposition 5.2's finite-state enumeration.*
+- *$`d = 18`$: all $`4{,}686{,}725`$ admissible multisets reach $`T_{18}`$ in $`\leq 1`$ step. Verified exhaustively via `verify_even_ladder_closure.py 18`.*
+- *$`d = 20`$: all $`10{,}014{,}905`$ admissible multisets reach $`T_{20}`$ in $`\leq 1`$ step. Verified exhaustively via `verify_even_ladder_closure.py 20`.*
+- *$`d \in \{22, 24, 26\}`$: random sampling of $`200{,}000`$ admissibles per $`d`$ finds zero counterexamples. Verified by `verify_even_ladder_closure.py D --sample 200000` for $`D \in \{22, 24, 26\}`$.*
 
 **Remark C.4 (uniform reaching-time bound).** Combining Lemma C.3 (odd ladder, $`d \geq 15`$) and Lemma C.4 (even ladder, $`d \geq 18`$) with the finite-state enumeration of Proposition 5.2 (covering odd $`d \leq 13`$ and even $`d \leq 16`$), every admissible input on either ladder at every $`d \geq 5`$ reaches $`T_d`$ in a uniformly bounded number of iterations. Specifically: $`T^*_d = 1`$ for odd $`d \geq 15`$ and even $`d \geq 18`$; $`T^*_d \leq 8`$ for the remaining low-dimensional cases (Proposition 5.2). The induction in §5.7 closes on both ladders at every $`d \geq 5`$.
 
