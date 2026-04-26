@@ -166,8 +166,8 @@ def main():
     if overall_ok:
         print("✓ LEMMA C.10 VERIFIED: every Case 2 input across the tested range reaches 60714,")
         print("  with admissible-projection recovery in at most 2 iterations of K^(d).")
-        print("  Per-d split: 81 inputs recover in 1 step, 9 in 2 steps (at d >= 8).")
-        print("  At d = 7 (where d-2 = 5 admits all near-repdigits), all 90 recover in 1 step.")
+        print("  Per-d split: 72 inputs recover in 1 step, 9 in 2 steps (at d >= 8).")
+        print("  At d = 7 (where d-2 = 5 admits all near-repdigits), all 81 recover in 1 step.")
         sys.exit(0)
     else:
         print("✗ COUNTEREXAMPLE: some Case 2 inputs do not reach 60714.")
