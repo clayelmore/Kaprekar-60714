@@ -57,13 +57,16 @@ Theorem 6.1 establishes $`6174`$'s behavior at $`d = 4, 5, \ldots, 9`$. The patt
 
 Empirical extrapolation suggests no: at each $`d \geq 8`$, the $`45`$-input escape class persists, and no coefficient-preserving lifting eliminates it. A proof (or disproof) of this pattern at some specific large $`d`$ would complete the $`6174`$ pattern to an arbitrary horizon. At the structural level, proving that the $`45`$-input escape class is genuinely stable under all coefficient-preserving liftings is an algebraic question on the coefficient vectors' action on multisets of the form $`(X, X, X, X, 0, \ldots, 0)`$.
 
-## 7.6 The depth of the escape class
+## 7.6 The depth of the escape class — the Basin Density Conjecture
 
-Lemma 5.2.2 gives a closed form for $`|E_d^{(1)}|`$ — the number of step-$`1`$ collapse inputs at digit length $`d`$. The full escape class $`E_d`$ is the backward orbit of $`B_d \cap A_d`$, and at $`d \leq 11`$ exhaustive enumeration confirms that every orbit in $`E_d`$ reaches $`0`$ in at most $`4`$ iterations. The natural question:
+Lemma 5.2.2 gives a closed form for $`|E_d^{(1)}|`$ — the number of step-$`1`$ collapse inputs at digit length $`d`$. The full escape class $`E_d`$ is the backward orbit of $`B_d \cap A_d`$, and at $`d \leq 11`$ exhaustive enumeration confirms that every orbit in $`E_d`$ reaches $`0`$ in at most $`4`$ iterations. We name the asymptotic claim:
 
-**Question 7.6.** *Is there a uniform-in-$`d`$ bound on the multi-step depth of $`E_d`$? Does $`|E_d| / |A_d| \to 0`$ as $`d \to \infty`$?*
+**Conjecture 7.6 (Basin Density Conjecture).** *The Basin Density Conjecture for the $`60714`$ lifting family has two parts:*
 
-Combinatorially, $`|E_d^{(1)}|`$ grows polynomially in $`d`$ (specifically as $`O(d^{d_0 - 1})`$ via Lemma 5.2.2) while $`|A_d|`$ grows as $`O(d^9)`$ with much larger constant; the basin fraction $`1 - |E_d|/|A_d|`$ should approach $`1`$, but no proof is provided here.
+1. *(**Density**.) $`|E_d| / |A_d| \to 0`$ as $`d \to \infty`$, i.e., the basin of $`60714`$ at digit length $`d`$ has asymptotic density $`1`$ within admissible inputs.*
+2. *(**Depth**.) There exists a uniform constant $`T^*`$ such that every orbit in $`E_d`$ reaches $`0`$ in at most $`T^*`$ iterations of $`K^{(d)}`$, independently of $`d`$.*
+
+Combinatorially, $`|E_d^{(1)}|`$ grows polynomially in $`d`$ (specifically as $`O(d^{d_0 - 1})`$ via Lemma 5.2.2) while $`|A_d|`$ grows as $`O(d^9)`$ with much larger constant; the basin fraction $`1 - |E_d|/|A_d|`$ should approach $`1`$, supporting the Density part. For the Depth part, exhaustive enumeration at $`d \leq 11`$ shows $`T^* \leq 4`$ uniformly across the verified range, but no proof of a uniform bound for general $`d`$ is provided here.
 
 ## 7.7 Beyond universal full-variable fixed points
 
@@ -75,7 +78,7 @@ The dimension-agnostic family is the simplest case: these fixed points persist a
 
 ## 7.8 Concluding remarks
 
-The central result of this paper is Theorem 5.2: $`60714`$ is a universal full-variable fixed point at every digit length $`d \geq 5`$, under an explicit coefficient-preserving lifting. This is the first explicitly constructed cross-dimensional persistence result in the generalized Kaprekar family. The supporting results — the classifications of §3, the uniqueness of §4, and the $`6174`$ cross-dimensional pattern of §6 — place this theorem in a structural context that raises more questions than it answers. Conjectures 7.1 and 7.2 and Questions 7.1–7.6 together outline a program for understanding cross-dimensional behavior in the generalized family: which fixed points transcend, under what structural conditions, and with what mechanism.
+The central result of this paper is Theorem 5.2: $`60714`$ is a universal full-variable fixed point at every digit length $`d \geq 5`$, under an explicit coefficient-preserving lifting. This is the first explicitly constructed cross-dimensional persistence result in the generalized Kaprekar family. The supporting results — the classifications of §3, the uniqueness of §4, and the $`6174`$ cross-dimensional pattern of §6 — place this theorem in a structural context that raises more questions than it answers. Conjectures 7.1 and 7.2 and Questions 7.1–7.5 and the Basin Density Conjecture (7.6) together outline a program for understanding cross-dimensional behavior in the generalized family: which fixed points transcend, under what structural conditions, and with what mechanism.
 
 The methodology of the paper — exhaustive enumeration at each digit length, combined with structural proof on the cases the enumeration distinguishes — has been effective at $`d \leq 6`$ for the full rule space and at $`d \leq 9`$ for targeted verification of specific fps. Extending this methodology to $`d \geq 7`$ for the full rule space, or to $`d \geq 10`$ for $`6174`$, is the natural next step.
 

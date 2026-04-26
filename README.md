@@ -6,7 +6,7 @@ Pick any number with five or more digits. Apply the right rule. Watch it converg
 
 This is a generalization of Kaprekar's classical 1949 result, extended in a direction the literature has not explored: instead of fixing the rule and asking which digit lengths work, we let the rule vary with the digit length, and find a single fixed point — 60714 — whose universality holds across infinitely many dimensions simultaneously.
 
-The integer 60714 is one consequence of a more general structural framework. The paper's underlying contributions are the **classification of universal full-variable fixed points at digit length d** (yielding the catalog 0, 4, 33, 506 fps at d ∈ {3, 4, 5, 6}), the **coefficient-preserving lifting recipe** that connects rules across digit lengths, and the **block-aligned escape class** (Definition 5.2) that exactly characterizes when the lifted dynamics fail. 60714 is the unique integer for which this framework produces a cross-dimensional attractor with universally large basin.
+The integer 60714 is one consequence of a more general structural framework. The paper's underlying contributions are the **classification of universal full-variable fixed points at digit length d** (yielding the catalog 0, 4, 33, 506 fixed points at d ∈ {3, 4, 5, 6}), the **coefficient-preserving lifting recipe** that connects rules across digit lengths, and the **block-aligned escape class** (Definition 5.2) that exactly characterizes when the lifted dynamics fail. 60714 is the unique integer for which this framework produces a cross-dimensional attractor with universally large basin.
 
 ---
 
@@ -69,7 +69,7 @@ For in-browser viewing — sections render cleanly on GitHub.
 | 1 | [Introduction](sections/01_introduction.md) | Kaprekar's routine, the cross-dimensional question, the 54 → 60714 discovery arc |
 | 2 | [Framework](sections/02_framework.md) | Permutation-pair rules, algebraic rank, native digit length |
 | 3 | [Classifications at d ≤ 6](sections/03_classifications.md) | Exhaustive enumeration, Theorems 3.1–3.4 |
-| 4 | [Cross-check d = 5 → d = 6](sections/04_cross_check.md) | Theorem 4.1, the 32 dimension-locked fps |
+| 4 | [Cross-check d = 5 → d = 6](sections/04_cross_check.md) | Theorem 4.1, the 32 dimension-locked fixed points |
 | 5 | [The 60714 theorem](sections/05_theorem_60714.md) | The lifting construction, Theorem 5.2 and its proof |
 | 6 | [The {7,6,4,1} thread](sections/06_thread_7641.md) | 60714 vs 6174 vs 60417 vs 1746 |
 | 7 | [Open questions](sections/07_open_questions.md) | Conjectures and directions |

@@ -115,7 +115,7 @@ The proof reduces to two lemmas. Lemma 5.1 (structural) establishes that the set
 
 *$`60714`$, $`6174`$, and $`60417`$ are unified under a structural invariant, the $`\mathrm{sum\_locked\_spans}`$ of their native rules — taking values $`5`$, $`8`$, $`7`$ respectively — which empirically controls the number of absorbing (zero-digit) positions at which a coefficient-preserving lifting succeeds. This unification is empirical, not proven.*
 
-## 1.6 Why $`60714`$ is the uniquely complete case
+## 1.6 How the framework selects $`60714`$
 
 The result of this paper proceeds in two stages, with importantly different epistemic statuses. **The first stage is discovery.** At digit length $`d = 5`$, exhaustive enumeration over the $`5{,}280`$ full-variable permutation-pair rules identifies $`33`$ universal full-variable fixed points (Theorem 3.3). At $`d = 6`$, the analogous enumeration identifies $`506`$ such fixed points (Theorem 3.4). These classifications are computational facts, not constructions. Theorem 4.1 then asks a natural cross-dimensional question: of the $`33`$ universal fixed points at $`d = 5`$, how many admit a coefficient-preserving lifting to $`d = 6`$ that is also universal at $`d = 6`$? The answer is **exactly one**: $`60714`$. The other $`32`$ are obstructed — $`17`$ by algebra (no rank-$`6`$ rule satisfies $`K(F) = F`$), $`15`$ by dynamics (the rules that fix them have basin strictly less than $`1`$). This selection — one survivor from a population of $`33`$ — is the central discovery, and it is not a construction. We did not choose the lifting machinery to fit $`60714`$; $`60714`$ is the integer that survived the lifting test.
 

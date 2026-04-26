@@ -110,6 +110,36 @@ def case2_multisets(d):
     return out
 
 
+def case_partition(d):
+    """Partition the 81 admissible Case 2 inputs at digit length d into
+    Case A (w > v, projection singleton at top), Case B Δ ≥ 2 (one-step
+    recovery), and Case B Δ = 1 (two-step recovery via 89,100).
+    Returns three lists of input multisets.
+    """
+    case_A = []
+    case_B_delta_ge_2 = []
+    case_B_delta_eq_1 = []
+    for v in range(0, 10):
+        for w in range(0, 10):
+            if w == v:
+                continue
+            digits = [v] * (d - 3) + [w] + [0, 0]
+            ms = tuple(sorted(digits, reverse=True))
+            if not is_admissible_at(ms, d):
+                continue
+            if ms[-1] != 0 or ms[-2] != 0:
+                continue
+            if w > v:
+                case_A.append(ms)
+            else:  # w < v, so Case B
+                delta = v - w
+                if delta == 1:
+                    case_B_delta_eq_1.append(ms)
+                else:
+                    case_B_delta_ge_2.append(ms)
+    return case_A, case_B_delta_ge_2, case_B_delta_eq_1
+
+
 def main():
     parser = argparse.ArgumentParser(
         description=(
@@ -125,7 +155,33 @@ def main():
     parser.add_argument(
         "--max-d", type=int, default=20, help="Maximum digit length (default 20)"
     )
+    parser.add_argument(
+        "--print-counts",
+        action="store_true",
+        help=("Emit per-d partition counts (Case A, Case B Δ≥2, Case B Δ=1) "
+              "matching the proof's enumeration claim. Use this to verify "
+              "prose-script consistency on Lemma C.10's headcounts."),
+    )
     args = parser.parse_args()
+
+    if args.print_counts:
+        print("Lemma C.10 partition: Case 2 inputs by recovery type")
+        print()
+        print(f"{'d':>3} {'ladder':<6} {'admissible':>11} {'Case A':>7} "
+              f"{'Case B (Δ≥2)':>14} {'Case B (Δ=1)':>14}")
+        print("-" * 65)
+        for d in range(args.min_d, args.max_d + 1):
+            ladder = "odd" if d % 2 == 1 else "even"
+            case_A, case_B_ge_2, case_B_eq_1 = case_partition(d)
+            total = len(case_A) + len(case_B_ge_2) + len(case_B_eq_1)
+            print(f"{d:>3} {ladder:<6} {total:>11} {len(case_A):>7} "
+                  f"{len(case_B_ge_2):>14} {len(case_B_eq_1):>14}")
+        print()
+        print("Expected (per Lemma C.10's proof at d ≥ 8):")
+        print("  admissible = 81, Case A = 36, Case B Δ≥2 = 36, Case B Δ=1 = 9")
+        print("  72 recover in 1 iteration (Case A + Case B Δ≥2)")
+        print("  9 recover in 2 iterations (Case B Δ=1)")
+        sys.exit(0)
 
     print("Lemma C.10 verification: admissibility recovery for Case 2 inputs")
     print()
