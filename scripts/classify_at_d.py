@@ -160,8 +160,8 @@ def main():
         by_multiset[ms].append(fp)
     
     print("\nFixed points grouped by digit multiset:")
-    for ms, fixed points in sorted(by_multiset.items()):
-        print(f"  {ms}: {sorted(fixed points)}")
+    for ms, fps_list in sorted(by_multiset.items()):
+        print(f"  {ms}: {sorted(fps_list)}")
     
     if save:
         out_path = f"d{d}_classification.json"
