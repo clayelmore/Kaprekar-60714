@@ -278,6 +278,157 @@
     line-height: 1.6;
   }
 
+  /* ──────────── RULE & DEMO ──────────── */
+
+  .rule-statement {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+    line-height: 1.4;
+  }
+
+  .rule-formula {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.6rem;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-top: 0.3rem;
+  }
+
+  .step-card {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 1.75rem;
+    margin: 1.5rem 0;
+  }
+
+  .step-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .step-input {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--ink);
+  }
+
+  /* Digit boxes with variable labels */
+  .digit-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0.75rem 0 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .digit-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 2.4rem;
+  }
+
+  .digit-box .digit {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.4rem 0.6rem;
+    min-width: 2.4rem;
+    text-align: center;
+  }
+
+  .digit-box .var-label {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-top: 0.3rem;
+  }
+
+  /* Long-subtraction layout */
+  .subtraction {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    background: var(--paper);
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow-x: auto;
+  }
+
+  .sub-line {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .sub-op {
+    width: 1.2rem;
+    text-align: center;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .sub-num {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.08em;
+  }
+
+  .sub-formula {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    font-family: 'EB Garamond', serif;
+    margin-left: 0.5rem;
+  }
+
+  .sub-rule {
+    border-bottom: 2px solid var(--ink);
+    margin: 0.3rem 0;
+    height: 0;
+  }
+
+  .sub-result {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .step-arrow {
+    text-align: center;
+    color: var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    user-select: none;
+  }
+
+  .reach {
+    text-align: center;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 1.15rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    .subtraction { font-size: 1rem; }
+    .digit-box .digit { font-size: 1.1rem; min-width: 2rem; padding: 0.3rem 0.45rem; }
+    .digit-box { min-width: 2rem; }
+  }
+
   /* ──────────── FOOTER ──────────── */
 
   footer {
@@ -365,6 +516,100 @@
       <strong>Theorem 5.2.</strong> The integer <em>60714</em> is a fixed point of an explicit coefficient-preserving lifting <em>K<sup>(d)</sup></em> at every digit length <em>d ≥ 5</em>. The lifted dynamics are strict-universal at <em>d = 5, 6</em> (every admissible input reaches <em>60714</em>) and near-universal at <em>d ≥ 7</em> (every admissible input outside a structurally characterized escape class <em>E<sub>d</sub></em> reaches <em>60714</em>; every input in <em>E<sub>d</sub></em> reaches <em>0</em>).
     </div>
     <p>The escape class <em>E<sub>d</sub></em> has step-1 component of size <em>|E<sub>d</sub><sup>(1)</sup>| = C(⌊(d−3)/2⌋ + 9, 9) − 10</em>, growing polynomially in <em>d</em>; the basin density <em>1 − |E<sub>d</sub>|/|A<sub>d</sub>|</em> is conjectured to approach 1 (Conjecture 7.6, the Basin Density Conjecture).</p>
+  </section>
+
+  <!-- ═══════════ THE RULE ═══════════ -->
+  <section>
+    <h2>The Rule at d = 5</h2>
+    <p>Sort the digits of the input in descending order as <em>(a, b, c, d, e)</em>. Form two new five-digit numbers by interleaving the digits in fixed patterns, then subtract:</p>
+
+    <div class="rule-statement">
+      <div class="rule-formula">K(n) = | adcbe − deacb |</div>
+    </div>
+
+    <p>Both <em>adcbe</em> and <em>deacb</em> are five-digit integers built by reading <em>a, b, c, d, e</em> in the indicated order. The classical Kaprekar process at four digits uses descending minus ascending, <em>abcd − dcba</em>; that simple recipe has no full-variable fixed point at five digits. The interleaved rule <em>adcbe − deacb</em> is the rule the framework selects, and 60714 is its unique cross-dimensional fixed point.</p>
+
+    <p>Applied to 60714 itself: digits sorted descending are <em>(7, 6, 4, 1, 0)</em>, so <em>adcbe</em> = 71460 and <em>deacb</em> = 10746, and 71460 − 10746 = <strong>60714</strong>. ✓</p>
+  </section>
+
+  <!-- ═══════════ WORKED EXAMPLE ═══════════ -->
+  <section>
+    <h2>Worked Example</h2>
+    <p>Starting from <strong>10135</strong>, the rule reaches 60714 in two iterations.</p>
+
+    <!-- Step 1 -->
+    <div class="step-card">
+      <div class="step-label">Step 1</div>
+      <div class="step-input">Input: 10135</div>
+
+      <p style="font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 0.25rem;">Sort digits descending and label them:</p>
+      <div class="digit-row">
+        <div class="digit-box"><span class="digit">5</span><span class="var-label">a</span></div>
+        <div class="digit-box"><span class="digit">3</span><span class="var-label">b</span></div>
+        <div class="digit-box"><span class="digit">1</span><span class="var-label">c</span></div>
+        <div class="digit-box"><span class="digit">1</span><span class="var-label">d</span></div>
+        <div class="digit-box"><span class="digit">0</span><span class="var-label">e</span></div>
+      </div>
+
+      <div class="subtraction">
+        <div class="sub-line">
+          <span class="sub-op"></span>
+          <span class="sub-num">5 1 1 3 0</span>
+          <span class="sub-formula">= adcbe</span>
+        </div>
+        <div class="sub-line">
+          <span class="sub-op">−</span>
+          <span class="sub-num">1 0 5 1 3</span>
+          <span class="sub-formula">= deacb</span>
+        </div>
+        <div class="sub-rule"></div>
+        <div class="sub-line">
+          <span class="sub-op"></span>
+          <span class="sub-num sub-result">4 0 6 1 7</span>
+          <span class="sub-formula">= 40617</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-arrow">↓</div>
+
+    <!-- Step 2 -->
+    <div class="step-card">
+      <div class="step-label">Step 2</div>
+      <div class="step-input">Input: 40617</div>
+
+      <p style="font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 0.25rem;">Sort digits descending and label them:</p>
+      <div class="digit-row">
+        <div class="digit-box"><span class="digit">7</span><span class="var-label">a</span></div>
+        <div class="digit-box"><span class="digit">6</span><span class="var-label">b</span></div>
+        <div class="digit-box"><span class="digit">4</span><span class="var-label">c</span></div>
+        <div class="digit-box"><span class="digit">1</span><span class="var-label">d</span></div>
+        <div class="digit-box"><span class="digit">0</span><span class="var-label">e</span></div>
+      </div>
+
+      <div class="subtraction">
+        <div class="sub-line">
+          <span class="sub-op"></span>
+          <span class="sub-num">7 1 4 6 0</span>
+          <span class="sub-formula">= adcbe</span>
+        </div>
+        <div class="sub-line">
+          <span class="sub-op">−</span>
+          <span class="sub-num">1 0 7 4 6</span>
+          <span class="sub-formula">= deacb</span>
+        </div>
+        <div class="sub-rule"></div>
+        <div class="sub-line">
+          <span class="sub-op"></span>
+          <span class="sub-num sub-result">6 0 7 1 4</span>
+          <span class="sub-formula">= 60714</span>
+        </div>
+      </div>
+
+      <div class="reach">→ reached 60714 ✓</div>
+    </div>
+
+    <p>Notice that the intermediate value 40617 has the same digit multiset as 60714 — just permuted. Every five-digit number whose digits are <em>{0, 1, 4, 6, 7}</em> sorts to <em>(7, 6, 4, 1, 0)</em>, and the rule maps that descending arrangement directly to 60714. So the second step is the universal "snap to fixed point" move, while the first step is what gets the digit multiset there in the first place.</p>
   </section>
 
   <!-- ═══════════ ARTIFACTS ═══════════ -->

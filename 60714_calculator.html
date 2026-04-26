@@ -260,6 +260,158 @@
   .step.fixed .step-current { color: var(--hot); }
   .step.escape .step-current { color: var(--escape-text); }
 
+  /* === VARIABLE LABEL ROW (used at all d) === */
+  .var-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0.6rem 0 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .var-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 2rem;
+  }
+
+  .var-pill .var-digit {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    font-size: 1.15rem;
+    font-weight: 500;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    min-width: 2rem;
+    text-align: center;
+  }
+
+  .var-pill .var-name {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--hot);
+    margin-top: 0.18rem;
+  }
+
+  /* Lifting term (d ≥ 7): c·(p − q) factor */
+  .coef-formula .coef-lift {
+    color: var(--cool);
+  }
+
+  /* === PI MINUS SIGMA SUBTRACTION (d=5, d=6) === */
+  .subtract-block {
+    margin-top: 0.7rem;
+    background: rgba(244, 240, 230, 0.5);
+    border: 1px solid rgba(196, 169, 107, 0.4);
+    border-radius: 3px;
+    padding: 0.7rem 0.85rem;
+    overflow-x: auto;
+  }
+
+  .subtract-line {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .subtract-op {
+    width: 1rem;
+    text-align: center;
+    color: var(--hot);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .subtract-num {
+    letter-spacing: 0.18em;
+    color: var(--ink);
+  }
+
+  .subtract-num .var-cell {
+    display: inline-block;
+    margin-right: 0.18em;
+    text-align: center;
+  }
+  .subtract-num .var-cell:last-child { margin-right: 0; }
+
+  .subtract-vars {
+    font-style: italic;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    color: var(--cool);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    flex-shrink: 0;
+  }
+
+  .subtract-eq {
+    color: var(--soft);
+    font-style: italic;
+    font-size: 0.78rem;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .subtract-rule {
+    height: 0;
+    border-bottom: 1.5px solid var(--ink);
+    margin: 0.25rem 0;
+  }
+
+  .subtract-result {
+    color: var(--hot);
+    font-weight: 500;
+  }
+
+  .subtract-meta {
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--soft);
+    margin-bottom: 0.45rem;
+    line-height: 1.5;
+  }
+
+  /* === COEFFICIENT FORM (d ≥ 7) === */
+  .coef-block {
+    margin-top: 0.7rem;
+    background: rgba(244, 240, 230, 0.5);
+    border: 1px solid rgba(196, 169, 107, 0.4);
+    border-radius: 3px;
+    padding: 0.7rem 0.85rem;
+    overflow-x: auto;
+  }
+
+  .coef-formula {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--ink);
+    word-break: break-word;
+  }
+
+  .coef-formula .coef-pos { color: var(--ink); }
+  .coef-formula .coef-neg { color: var(--cool); }
+  .coef-formula .coef-eq { font-style: italic; color: var(--soft); margin: 0 0.3em; }
+  .coef-formula .coef-result {
+    display: block;
+    margin-top: 0.4rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--rule);
+    color: var(--hot);
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  /* === LEGACY .arithmetic kept for any leftover (escape banner etc) === */
   .arithmetic {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -531,12 +683,41 @@ function step(value, d) {
     total = Math.abs(acc);
   }
 
+  // For d=5 and d=6, the rule is expressible as π − σ where π and σ
+  // are permutations of the sorted-descending digits. Compute these here
+  // so the renderer can display the actual subtraction the rule performs.
+  // For d ≥ 7, the coefficient-preserving lifting is no longer a clean
+  // π − σ form; the renderer falls back to a coefficient-form display.
+  let piStr = null, sigmaStr = null, piVarStr = null, sigmaVarStr = null;
+  if (d === 5) {
+    // π = adcbe, σ = deacb
+    // (a,b,c,d,e) = (desc[0], desc[1], desc[2], desc[3], desc[4])
+    const [a, b, c, dd, e] = desc;
+    piStr    = `${a}${dd}${c}${b}${e}`;
+    sigmaStr = `${dd}${e}${a}${c}${b}`;
+    piVarStr    = 'a d c b e';
+    sigmaVarStr = 'd e a c b';
+  } else if (d === 6) {
+    // π = eadcbf, σ = fdeacb
+    // (a,b,c,d,e,f) = desc[0..5]
+    const [a, b, c, dd, e, f] = desc;
+    piStr    = `${e}${a}${dd}${c}${b}${f}`;
+    sigmaStr = `${f}${dd}${e}${a}${c}${b}`;
+    piVarStr    = 'e a d c b f';
+    sigmaVarStr = 'f d e a c b';
+  }
+
   return {
     descArr: desc,
     ascArr: asc,
     descStr: desc.map(String).join(''),
     ascStr: asc.map(String).join(''),
-    next: total
+    next: total,
+    piStr: piStr,
+    sigmaStr: sigmaStr,
+    piVarStr: piVarStr,
+    sigmaVarStr: sigmaVarStr,
+    coefs: coefs
   };
 }
 
@@ -582,7 +763,12 @@ function iterate(input) {
       next: r.next,
       isFixed: reachedFixed,
       isBlockAligned: isBA,
-      goesToZero: isAtZero
+      goesToZero: isAtZero,
+      piStr: r.piStr,
+      sigmaStr: r.sigmaStr,
+      piVarStr: r.piVarStr,
+      sigmaVarStr: r.sigmaVarStr,
+      coefs: r.coefs
     });
     if (reachedFixed) break;
     if (isAtZero) {
@@ -663,15 +849,133 @@ function render(result) {
     html += '<div class="step-current">' + formatNumber(cleanCurrent) + '</div>';
 
     if (!t.isFixed) {
-      const descNum = formatNumber(t.descStr.replace(/^0+(?=\d)/, '') || '0');
-      const ascNum = formatNumber(t.ascStr.replace(/^0+(?=\d)/, '') || '0');
       const nextStr = t.next.toString();
 
-      html += '<div class="arithmetic">';
-      html += '<span class="op">descending</span><span class="num-row desc-row">' + descNum + '</span>';
-      html += '<span class="op">ascending</span><span class="num-row asc-row">' + ascNum + '</span>';
-      html += '<span class="op">K applied</span><span class="num-row result-row">' + formatNumber(nextStr) + '</span>';
-      html += '</div>';
+      if (t.piStr !== null && t.piStr !== undefined) {
+        // d=5 or d=6: show actual π − σ subtraction
+        const dHere = t.descStr.length;
+        const desc = t.descStr.split('').map(c => parseInt(c, 10));
+        const LETTERS = ['a','b','c','d','e','f'];
+
+        // Helper: convert a digit string (e.g. "51130") to spaced cells
+        const spaceDigits = (s) => {
+          return '<span class="var-cell">' + s.split('').join('</span><span class="var-cell">') + '</span>';
+        };
+
+        const piVarsLabel = '= ' + t.piVarStr.replace(/ /g, '');
+        const sigmaVarsLabel = '= ' + t.sigmaVarStr.replace(/ /g, '');
+
+        html += '<div class="subtract-meta">Sort digits descending and label them <em>' +
+                LETTERS.slice(0, dHere).join(', ') +
+                '</em>. Apply the rule:</div>';
+
+        // Variable pills row
+        let varRowHtml = '<div class="var-row">';
+        for (let k = 0; k < dHere; k++) {
+          varRowHtml += '<div class="var-pill">' +
+                          '<span class="var-digit">' + desc[k] + '</span>' +
+                          '<span class="var-name">' + LETTERS[k] + '</span>' +
+                        '</div>';
+        }
+        varRowHtml += '</div>';
+        html += varRowHtml;
+
+        html += '<div class="subtract-block">';
+        html += '<div class="subtract-line">' +
+                  '<span class="subtract-op"></span>' +
+                  '<span class="subtract-num">' + spaceDigits(t.piStr) + '</span>' +
+                  '<span class="subtract-eq">' + piVarsLabel + '</span>' +
+                '</div>';
+        html += '<div class="subtract-line">' +
+                  '<span class="subtract-op">−</span>' +
+                  '<span class="subtract-num">' + spaceDigits(t.sigmaStr) + '</span>' +
+                  '<span class="subtract-eq">' + sigmaVarsLabel + '</span>' +
+                '</div>';
+        html += '<div class="subtract-rule"></div>';
+        html += '<div class="subtract-line">' +
+                  '<span class="subtract-op"></span>' +
+                  '<span class="subtract-num subtract-result">' + spaceDigits(nextStr.padStart(dHere, '0')) + '</span>' +
+                  '<span class="subtract-eq">= ' + formatNumber(nextStr) + '</span>' +
+                '</div>';
+        html += '</div>';
+      } else {
+        // d ≥ 7: coefficient-preserving lifting. Display as the d=5 (or d=6)
+        // base rule plus one "lifting term" per appended digit pair.
+        // Each pair (f, g), (h, i), ... contributes a term ±(9·10^k)·(p − q)
+        // where p is the digit at the higher position and q at the lower.
+        const dHere = t.descStr.length;
+        const desc = t.descStr.split('').map(c => parseInt(c, 10));
+        const LETTERS = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t'];
+
+        const useBig = isBigArr(t.coefs);
+        const fmtCoef = (c) => {
+          if (useBig) {
+            const cn = c < 0n ? -c : c;
+            return cn.toLocaleString('en-US');
+          }
+          const cn = Math.abs(c);
+          return cn.toLocaleString('en-US');
+        };
+        const isNeg = (c) => useBig ? c < 0n : c < 0;
+        const isZero = (c) => useBig ? c === 0n : c === 0;
+
+        // Determine base length: d=5 base for odd d, d=6 base for even d
+        const d_0 = (dHere % 2 === 1) ? 5 : 6;
+
+        // Variable labels (digits sorted descending)
+        let varRowHtml = '<div class="var-row">';
+        for (let k = 0; k < dHere; k++) {
+          varRowHtml += '<div class="var-pill">' +
+                          '<span class="var-digit">' + desc[k] + '</span>' +
+                          '<span class="var-name">' + LETTERS[k] + '</span>' +
+                        '</div>';
+        }
+        varRowHtml += '</div>';
+
+        // Build base rule: first d_0 coefficients
+        let baseFormula = '';
+        let first = true;
+        for (let k = 0; k < d_0; k++) {
+          if (isZero(t.coefs[k])) continue;
+          const cls = isNeg(t.coefs[k]) ? 'coef-neg' : 'coef-pos';
+          const sign = isNeg(t.coefs[k])
+            ? (first ? '−\u202F' : ' − ')
+            : (first ? '' : ' + ');
+          baseFormula += '<span class="' + cls + '">' + sign +
+                         fmtCoef(t.coefs[k]) + '·' + LETTERS[k] + '</span>';
+          first = false;
+        }
+
+        // Build lifting terms: pairs (k, k+1) for k = d_0, d_0+2, ...
+        // Each pair contributes coef[k]·LETTERS[k] + coef[k+1]·LETTERS[k+1]
+        // Since coef[k] = +9·10^j and coef[k+1] = -9·10^j, factor as
+        //   9·10^j · (LETTERS[k] − LETTERS[k+1])
+        let liftingHtml = '';
+        for (let k = d_0; k < dHere; k += 2) {
+          if (k + 1 >= dHere) break;
+          const cP = t.coefs[k];
+          const cN = t.coefs[k + 1];
+          // Common magnitude
+          const mag = fmtCoef(cP);
+          const pVar = LETTERS[k];
+          const qVar = LETTERS[k + 1];
+          // Determine sign of the leading term in the lifting pair
+          // (here c[k] is positive, c[k+1] negative — a + symbol prefix is correct)
+          liftingHtml += '<span class="coef-lift"> + ' +
+                         mag + '·(' + pVar + ' − ' + qVar + ')</span>';
+        }
+
+        html += '<div class="subtract-meta">Sort digits descending and label them ' +
+                '<em>' + LETTERS.slice(0, dHere).join(', ') + '</em>. At <em>d = ' + dHere + '</em>, ' +
+                'the rule is the <em>d = ' + d_0 + '</em> base rule lifted by adding zero-sum digit pairs:</div>';
+
+        html += varRowHtml;
+
+        html += '<div class="coef-block"><div class="coef-formula">';
+        html += '|&nbsp;' + baseFormula + liftingHtml + '&nbsp;|';
+        html += '<span class="coef-result">= ' + formatNumber(nextStr) + '</span>';
+        html += '</div></div>';
+      }
 
       if (t.isBlockAligned) {
         html += '<div class="note">⚠ this multiset is <strong>block-aligned</strong> — the rule annihilates it on the next step.</div>';
