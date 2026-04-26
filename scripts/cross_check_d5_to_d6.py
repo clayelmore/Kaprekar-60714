@@ -1,10 +1,10 @@
 """
 cross_check_d5_to_d6.py
 =======================
-Verifies Theorem 4.1: among the 33 universal full-variable fps at d=5,
+Verifies Theorem 4.1: among the 33 universal full-variable fixed points at d=5,
 exactly one (60714) is also a universal full-variable fp at d=6.
 
-For each of the 33 fps at d=5, this script:
+For each of the 33 fixed points at d=5, this script:
   1. Enumerates all sv=6 full-variable rules fixing F (padded to 6 digits).
   2. Tests each such rule for universality at d=6.
   3. Classifies each fp as:
@@ -13,8 +13,8 @@ For each of the 33 fps at d=5, this script:
      - UNIVERSAL LIFTING: at least one sv=6 rule is strict-universal
 
 Expected output (per paper):
-    ALGEBRAIC: 17 fps
-    DYNAMIC:   15 fps
+    ALGEBRAIC: 17 fixed points
+    DYNAMIC:   15 fixed points
     UNIVERSAL: 1 fp (60714)
 
 Runtime: approximately 30 minutes on commodity hardware.
@@ -30,7 +30,7 @@ from itertools import permutations, combinations_with_replacement
 from collections import defaultdict, Counter
 
 
-# The 33 universal fps at d=5 (from Theorem 3.3 / Appendix A.3)
+# The 33 universal fixed points at d=5 (from Theorem 3.3 / Appendix A.3)
 D5_UNIVERSAL_FPS = [
     54, 3753, 12456, 14562, 15642, 16524, 16578, 16758, 17685, 18342,
     21456, 21834, 24156, 24183, 24561, 28539, 37584, 37854, 38754, 41562,
@@ -148,9 +148,9 @@ def main():
     print(f"\n==========================================")
     print(f"THEOREM 4.1 VERIFICATION COMPLETE in {total_elapsed:.0f}s")
     print(f"==========================================")
-    print(f"  ALGEBRAIC OBSTRUCTION: {counts['ALGEBRAIC']} fps (expected 17)")
-    print(f"  DYNAMIC OBSTRUCTION:   {counts['DYNAMIC']} fps (expected 15)")
-    print(f"  UNIVERSAL LIFTING:     {counts['UNIVERSAL']} fps (expected 1: 60714)")
+    print(f"  ALGEBRAIC OBSTRUCTION: {counts['ALGEBRAIC']} fixed points (expected 17)")
+    print(f"  DYNAMIC OBSTRUCTION:   {counts['DYNAMIC']} fixed points (expected 15)")
+    print(f"  UNIVERSAL LIFTING:     {counts['UNIVERSAL']} fixed points (expected 1: 60714)")
     
     # The UNIVERSAL case
     universal = [F for F, r in results.items() if r['status'] == 'UNIVERSAL']
