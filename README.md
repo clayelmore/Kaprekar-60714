@@ -98,6 +98,7 @@ All exhaustive claims in the paper have corresponding Python scripts in [`script
 | [`verify_60714_basin.py`](scripts/verify_60714_basin.py) | Theorem 5.2 dynamic part: basin universality + escape class characterization | d = 7: ~3 s · d = 8: ~30 s · d = 9: ~5 min |
 | [`verify_lemma_5_2.py`](scripts/verify_lemma_5_2.py) | Proposition 5.2: bounded reaching time at low d | ~5 min |
 | [`verify_even_ladder_closure.py`](scripts/verify_even_ladder_closure.py) | Lemma C.4: one-step T_d closure on the even ladder at d ≥ 18 | d = 18: ~30 s · d = 20: ~3 min |
+| [`verify_case2_recovery.py`](scripts/verify_case2_recovery.py) | Lemma C.10: Case 2 admissibility recovery for d ∈ [7, 30] | ~30 s |
 | [`audit_6174_d8_d9.py`](scripts/audit_6174_d8_d9.py) | Theorem 6.1, parts 5 & 6 | d = 8: ~3 min · d = 9: ~60 min |
 
 Run any script with `python3 scripts/<script>.py` and `--help` for options.

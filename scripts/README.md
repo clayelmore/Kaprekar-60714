@@ -18,6 +18,7 @@ Pure Python 3 (≥ 3.8), no external dependencies. Runs on commodity hardware.
 | [`verify_60714_basin.py`](verify_60714_basin.py) | **Basin verifier** for the 60714 ladder: iterates every admissible multiset at $`d`$ and reports basin coverage, escape class size, and verifies the block-aligned characterization. Distinct from `verify_lemma_5_2.py`. | [§5.2, Theorem 5.2](../sections/05_theorem_60714.md) | $`d = 7`$: ~3 s; $`d = 8`$: ~30 s; $`d = 9`$: ~5 min |
 | [`verify_lemma_5_2.py`](verify_lemma_5_2.py) | Finite-state reaching-time bound for entry into the tail-2-zeros set $`T_d`$ (NOT basin universality — see `verify_60714_basin.py` for that). Covers the low-d cases. | [§5.5.1, Proposition 5.2](../sections/05_theorem_60714.md) | ~5 min |
 | [`verify_even_ladder_closure.py`](verify_even_ladder_closure.py) | One-step $`T_d`$ closure on the even ladder at $`d \geq 18`$. Confirms the algebraic argument of Lemma C.4. | [§C.5, Lemma C.4](../sections/C_support_lemmas.md) | $`d = 18`$: ~30 s; $`d = 20`$: ~3 min |
+| [`verify_case2_recovery.py`](verify_case2_recovery.py) | Lemma C.10 (admissibility recovery for Case 2 inputs): every Case 2 input at $`d \in [7, 30]`$ reaches $`60714`$, with admissible-projection recovery in $`\leq 2`$ iterations. | [§C.6, Lemma C.5 / C.10](../sections/C_support_lemmas.md) | $`d \leq 20`$: ~30 s; full $`d \leq 30`$: ~2 min |
 | [`audit_6174_d8_d9.py`](audit_6174_d8_d9.py) | 6174 coefficient-preserving lifting audit at $`d = 8, 9`$ | [§6.2, Theorem 6.1, Appendix E](../sections/06_thread_7641.md) | $`d = 8`$: ~3 min; $`d = 9`$: ~60 min |
 
 ---
@@ -67,6 +68,7 @@ python3 verify_60714_ladder.py 20             # algebraic part: K(60714) = 60714
 python3 verify_lemma_5_2.py                   # bounded reaching time to T_d (low d)
 python3 verify_even_ladder_closure.py 18      # one-step T_d closure on even ladder, d=18 (~30 s)
 python3 verify_even_ladder_closure.py 20      # exhaustive at d=20 (~3 min)
+python3 verify_case2_recovery.py              # Lemma C.10: Case 2 admissibility recovery (~30 s)
 python3 verify_60714_basin.py 7               # basin universality + escape class characterization
 python3 verify_60714_basin.py 8               # repeat at higher d
 ```
