@@ -12,8 +12,8 @@ Pure Python 3 (≥ 3.8), no external dependencies. Runs on commodity hardware.
 
 | Script | Purpose | Paper reference | Runtime |
 |---|---|---|---|
-| [`classify_at_d.py`](classify_at_d.py) | Classification of universal full-variable fps at digit length $`d`$ | [§3, Theorems 3.1–3.4](../sections/03_classifications.md) | $`d \leq 5`$: seconds; $`d = 6`$: ~5–10 min |
-| [`cross_check_d5_to_d6.py`](cross_check_d5_to_d6.py) | Theorem 4.1: the 33 $`d=5`$ fps tested at $`d=6`$ | [§4](../sections/04_cross_check.md) | ~30 min |
+| [`classify_at_d.py`](classify_at_d.py) | Classification of universal full-variable fixed points at digit length $`d`$ | [§3, Theorems 3.1–3.4](../sections/03_classifications.md) | $`d \leq 5`$: seconds; $`d = 6`$: ~5–10 min |
+| [`cross_check_d5_to_d6.py`](cross_check_d5_to_d6.py) | Theorem 4.1: the 33 $`d=5`$ fixed points tested at $`d=6`$ | [§4](../sections/04_cross_check.md) | ~30 min |
 | [`verify_60714_ladder.py`](verify_60714_ladder.py) | Explicit construction of 60714's lifting family at $`d = 5`$ to $`d = 100`$. Verifies the **fixed-point equation** $`K(60714) = 60714`$ at each $`d`$. | [§5.2, Appendix B](../sections/05_theorem_60714.md) | < 1 s |
 | [`verify_60714_basin.py`](verify_60714_basin.py) | **Basin verifier** for the 60714 ladder: iterates every admissible multiset at $`d`$ and reports basin coverage, escape class size, and verifies the block-aligned characterization. Distinct from `verify_lemma_5_2.py`. | [§5.2, Theorem 5.2](../sections/05_theorem_60714.md) | $`d = 7`$: ~3 s; $`d = 8`$: ~30 s; $`d = 9`$: ~5 min |
 | [`verify_lemma_5_2.py`](verify_lemma_5_2.py) | Finite-state reaching-time bound for entry into the tail-2-zeros set $`T_d`$ (NOT basin universality — see `verify_60714_basin.py` for that). Covers the low-d cases. | [§5.5.1, Proposition 5.2](../sections/05_theorem_60714.md) | ~5 min |
@@ -25,25 +25,25 @@ Pure Python 3 (≥ 3.8), no external dependencies. Runs on commodity hardware.
 
 ## Reproducing the paper's main theorems
 
-### Theorem 3.1 ($`d = 3`$: 0 universal fps)
+### Theorem 3.1 ($`d = 3`$: 0 universal fixed points)
 
 ```bash
 python3 classify_at_d.py 3
 ```
 
-### Theorem 3.2 ($`d = 4`$: 4 universal fps)
+### Theorem 3.2 ($`d = 4`$: 4 universal fixed points)
 
 ```bash
 python3 classify_at_d.py 4
 ```
 
-### Theorem 3.3 ($`d = 5`$: 33 universal fps)
+### Theorem 3.3 ($`d = 5`$: 33 universal fixed points)
 
 ```bash
 python3 classify_at_d.py 5 --save
 ```
 
-### Theorem 3.4 ($`d = 6`$: 506 universal fps)
+### Theorem 3.4 ($`d = 6`$: 506 universal fixed points)
 
 ```bash
 python3 classify_at_d.py 6 --save-txt
