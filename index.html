@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>60714 — Universal Full-Variable Fixed Points Under Coefficient-Preserving Liftings</title>
+<meta name="description" content="A five-digit number that is a fixed point of an explicit Kaprekar-type lifting at every digit length d ≥ 5, with strict-universal dynamics at d = 5, 6 and near-universal dynamics at d ≥ 7. By Clay Elmore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #444;
+    --paper: #f5f1e8;
+    --paper-deep: #ebe4d2;
+    --rule: #d4c9a8;
+    --accent: #8b1a1a;
+    --accent-soft: #c4534a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 18px;
+    overflow-x: hidden;
+  }
+
+  /* Subtle paper texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(139, 26, 26, 0.02) 0%, transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(139, 26, 26, 0.015) 0%, transparent 35%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 5rem 2rem 8rem;
+  }
+
+  /* ──────────── HERO ──────────── */
+
+  .hero {
+    text-align: center;
+    margin-bottom: 6rem;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .integer {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(8rem, 22vw, 16rem);
+    font-weight: 500;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    user-select: all;
+    cursor: text;
+    transition: color 0.4s ease;
+  }
+
+  .integer:hover {
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+  }
+
+  .hero-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-meta span + span::before {
+    content: ' · ';
+    margin: 0 0.5rem;
+    color: var(--rule);
+  }
+
+  /* Decorative frame */
+  .hero::before, .hero::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    background: var(--rule);
+    height: 60px;
+  }
+  .hero::before { top: -2rem; left: 50%; }
+  .hero::after { bottom: -3rem; left: 50%; }
+
+  /* ──────────── ABSTRACT ──────────── */
+
+  .abstract {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 0;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .abstract::before {
+    content: 'Abstract';
+    position: absolute;
+    top: -0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--paper);
+    padding: 0 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .abstract p {
+    margin-bottom: 1rem;
+  }
+  .abstract p:last-child { margin-bottom: 0; }
+
+  .abstract em { color: var(--ink); }
+
+  /* ──────────── SECTIONS ──────────── */
+
+  section {
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  h2::before {
+    content: '§';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  /* ──────────── ARTIFACTS GRID ──────────── */
+
+  .artifacts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .artifacts { grid-template-columns: 1fr 1fr; }
+  }
+
+  .artifact {
+    display: block;
+    padding: 1.75rem 1.5rem;
+    background: var(--paper);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.25s ease, transform 0.25s ease;
+    position: relative;
+  }
+
+  .artifact:hover {
+    background: var(--paper-deep);
+    transform: translateY(-1px);
+  }
+
+  .artifact[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .artifact[aria-disabled="true"]:hover {
+    background: var(--paper);
+    transform: none;
+  }
+
+  .artifact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+
+  .artifact-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+  }
+
+  .artifact-desc {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+
+  .artifact-arrow {
+    position: absolute;
+    top: 1.75rem;
+    right: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    transition: transform 0.25s ease;
+  }
+  .artifact:hover .artifact-arrow { transform: translateX(3px); }
+  .artifact[aria-disabled="true"] .artifact-arrow { opacity: 0.3; }
+
+  /* ──────────── RESULT BOX ──────────── */
+
+  .result {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+    font-style: italic;
+  }
+
+  .result strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ──────────── CITATIONS ──────────── */
+
+  .citation {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: var(--paper-deep);
+    padding: 1.25rem 1.5rem;
+    border-left: 2px solid var(--rule);
+    margin: 1rem 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.6;
+  }
+
+  /* ──────────── FOOTER ──────────── */
+
+  footer {
+    margin-top: 6rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+  }
+
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+  }
+
+  /* ──────────── PROSE LINKS ──────────── */
+
+  p a, li a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-soft);
+    transition: border-color 0.2s ease;
+  }
+  p a:hover, li a:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  /* ──────────── SMALL TEXT ──────────── */
+
+  .note {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 0.75rem;
+  }
+
+  /* ──────────── ANIMATIONS ──────────── */
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.8s ease 0.1s both; }
+  .integer { animation: fadeUp 1s ease 0.25s both; }
+  .hero-subtitle { animation: fadeUp 0.8s ease 0.55s both; }
+  .hero-meta { animation: fadeUp 0.8s ease 0.75s both; }
+
+  /* Reduce motion respect */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="hero-eyebrow">A Generalized Kaprekar Phenomenon</div>
+    <div class="integer" id="integer" title="Click to copy">60714</div>
+    <p class="hero-subtitle">A five-digit number that is a universal attractor at every digit length <em>d ≥ 5</em>, under an explicit family of generalized Kaprekar rules.</p>
+    <div class="hero-meta">
+      <span>Clay Elmore</span>
+      <span>2026</span>
+      <span id="status-meta">Preprint forthcoming</span>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABSTRACT ═══════════ -->
+  <section class="abstract">
+    <p>Classical Kaprekar's process famously fixes <em>6174</em> at four digits and <em>495</em> at three. The natural question — does the phenomenon extend to higher digit lengths? — has resisted a clean answer because the classical rule, applied at <em>d = 5</em>, has rank deficiency and no full-variable fixed point.</p>
+    <p>This paper introduces a <em>coefficient-preserving lifting</em> framework that classifies universal full-variable fixed points across digit lengths. At <em>d = 5</em>, exhaustive enumeration over all 5,280 full-variable rules yields 33 such fixed points; at <em>d = 6</em>, 506. Of the 33 candidates at <em>d = 5</em>, exactly one — <em>60714</em> — survives the lifting test to <em>d = 6</em> and beyond.</p>
+    <p>The main theorem establishes that <em>60714</em> is a fixed point of an explicit lifting at every <em>d ≥ 5</em>, with strict-universal dynamics at <em>d = 5, 6</em> and near-universal dynamics at <em>d ≥ 7</em> on a structurally characterized escape class. The proof closes by induction along two ladders (odd and even <em>d</em>), with the inductive step verified algebraically at large <em>d</em> and exhaustively at low <em>d</em>.</p>
+  </section>
+
+  <!-- ═══════════ MAIN RESULT ═══════════ -->
+  <section>
+    <h2>Main Result</h2>
+    <div class="result">
+      <strong>Theorem 5.2.</strong> The integer <em>60714</em> is a fixed point of an explicit coefficient-preserving lifting <em>K<sup>(d)</sup></em> at every digit length <em>d ≥ 5</em>. The lifted dynamics are strict-universal at <em>d = 5, 6</em> (every admissible input reaches <em>60714</em>) and near-universal at <em>d ≥ 7</em> (every admissible input outside a structurally characterized escape class <em>E<sub>d</sub></em> reaches <em>60714</em>; every input in <em>E<sub>d</sub></em> reaches <em>0</em>).
+    </div>
+    <p>The escape class <em>E<sub>d</sub></em> has step-1 component of size <em>|E<sub>d</sub><sup>(1)</sup>| = C(⌊(d−3)/2⌋ + 9, 9) − 10</em>, growing polynomially in <em>d</em>; the basin density <em>1 − |E<sub>d</sub>|/|A<sub>d</sub>|</em> is conjectured to approach 1 (Conjecture 7.6, the Basin Density Conjecture).</p>
+  </section>
+
+  <!-- ═══════════ ARTIFACTS ═══════════ -->
+  <section>
+    <h2>Read &amp; Explore</h2>
+    <div class="artifacts">
+
+      <a class="artifact" href="60714_calculator.html">
+        <div class="artifact-label">Interactive</div>
+        <div class="artifact-title">The 60714 Calculator</div>
+        <div class="artifact-desc">Type any number with at least five digits. Watch the lifted Kaprekar process iterate to 60714 (or its padded form) in finitely many steps.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/paper.md">
+        <div class="artifact-label">Paper · Markdown</div>
+        <div class="artifact-title">Full Paper (single file)</div>
+        <div class="artifact-desc">Sections 1–7, Appendices A–E, and References, in one Markdown file. Renders math via KaTeX-compatible inline syntax.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" id="arxiv-link" href="#" aria-disabled="true" onclick="return false;">
+        <div class="artifact-label">Preprint · arXiv</div>
+        <div class="artifact-title">arXiv:PENDING</div>
+        <div class="artifact-desc">Forthcoming. The arXiv preprint will provide the canonical citable version with DOI.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" id="oeis-link" href="#" aria-disabled="true" onclick="return false;">
+        <div class="artifact-label">Sequence · OEIS</div>
+        <div class="artifact-title">|E<sub>d</sub><sup>(1)</sup>|: 45, 210, 705, 1992, …</div>
+        <div class="artifact-desc">Forthcoming OEIS submission for the step-1 escape class size, with closed form C(k+9, 9) − 10.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ STRUCTURE ═══════════ -->
+  <section>
+    <h2>Paper Structure</h2>
+    <div class="artifacts">
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/01_introduction.md">
+        <div class="artifact-label">§1</div>
+        <div class="artifact-title">Introduction</div>
+        <div class="artifact-desc">Background, the rank-4 reframing, and the framework selection of 60714.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/02_framework.md">
+        <div class="artifact-label">§2</div>
+        <div class="artifact-title">Framework</div>
+        <div class="artifact-desc">Universal full-variable fixed points; admissibility and the rule space.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/03_classifications.md">
+        <div class="artifact-label">§3</div>
+        <div class="artifact-title">Classifications at d ≤ 6</div>
+        <div class="artifact-desc">The 0, 4, 33, 506 catalog. Exhaustive enumeration over all full-variable rules.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/04_cross_check.md">
+        <div class="artifact-label">§4</div>
+        <div class="artifact-title">Cross-check d = 5 → d = 6</div>
+        <div class="artifact-desc">Theorem 4.1: of 33 candidates at d=5, exactly one (60714) lifts to d=6.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/05_theorem_60714.md">
+        <div class="artifact-label">§5</div>
+        <div class="artifact-title">Theorem 5.2</div>
+        <div class="artifact-desc">60714 universal at every d ≥ 5. Two-ladder induction; structural closure of T<sub>d</sub>.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/06_thread_7641.md">
+        <div class="artifact-label">§6</div>
+        <div class="artifact-title">The {7,6,4,1}-thread</div>
+        <div class="artifact-desc">6174, 60714, and 60417 unified through their digit multiset.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/07_open_questions.md">
+        <div class="artifact-label">§7</div>
+        <div class="artifact-title">Open Questions</div>
+        <div class="artifact-desc">The Basin Density Conjecture and five further open problems.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/C_support_lemmas.md">
+        <div class="artifact-label">App. C</div>
+        <div class="artifact-title">Support Lemmas</div>
+        <div class="artifact-desc">The proof's heavy lifting: closure of T<sub>d</sub>, Lemmas C.3–C.10.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ CODE ═══════════ -->
+  <section>
+    <h2>Reproducibility</h2>
+    <p>Every numerical claim in the paper is reproducible from the verification scripts. The full bundle (paper, sections, scripts, supplementary data) is in the public repository.</p>
+    <div class="artifacts">
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/tree/main/scripts/">
+        <div class="artifact-label">Code · Python 3</div>
+        <div class="artifact-title">Verification Scripts</div>
+        <div class="artifact-desc">Eight scripts, ~5 to ~30 minutes each on consumer hardware. Includes the d=18 even-ladder exhaustive run (4.69M admissibles, 0 stuck).</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/d6_fps.txt">
+        <div class="artifact-label">Data</div>
+        <div class="artifact-title">All 506 fixed points at d = 6</div>
+        <div class="artifact-desc">Plain text file. The supplementary list referenced in §3.4 and Appendix A.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════ CITE ═══════════ -->
+  <section>
+    <h2>Cite</h2>
+    <p>While the arXiv preprint is forthcoming, the paper can be cited as:</p>
+    <div class="citation">@unpublished{elmore2026kaprekar60714,
+  author = {Elmore, Clay},
+  title  = {Universal Full-Variable Fixed Points
+            Under Coefficient-Preserving Liftings:
+            Classification at $d \leq 6$ and the
+            Cross-Dimensional Survivor 60714},
+  year   = {2026},
+  note   = {Preprint forthcoming on arXiv.
+            See https://github.com/clayelmore/Kaprekar-60714}
+}</div>
+    <p class="note">This BibTeX entry will be updated to <code>@article</code> with arXiv ID once the preprint is posted.</p>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <p>By Clay Elmore · <a href="https://github.com/clayelmore/Kaprekar-60714">github</a></p>
+    <p style="margin-top: 0.5rem; opacity: 0.7;">Set in EB Garamond &amp; JetBrains Mono.</p>
+  </footer>
+
+</main>
+
+<script>
+  // Click-to-copy on the integer
+  const integer = document.getElementById('integer');
+  if (integer) {
+    integer.addEventListener('click', () => {
+      navigator.clipboard.writeText('60714').then(() => {
+        const original = integer.textContent;
+        integer.textContent = 'copied';
+        integer.style.fontSize = '4rem';
+        setTimeout(() => {
+          integer.textContent = original;
+          integer.style.fontSize = '';
+        }, 800);
+      });
+    });
+  }
+</script>
+
+</body>
+</html>
