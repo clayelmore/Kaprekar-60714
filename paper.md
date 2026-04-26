@@ -84,7 +84,7 @@ A word on how this investigation proceeded. The classical Kaprekar routine has a
 
 Our approach proceeds in the opposite order. We did not begin with a structural hypothesis about which integers ought to be dimension-transcendent attractors. We began with brute-force enumeration: at each digit length $`d`$, compute the universal full-variable fixed points by testing every permutation-pair rule exhaustively against every non-repdigit input. At $`d = 3`$, $`4`$, $`5`$, $`6`$ this enumeration is tractable — the largest, $`d = 6`$, requires testing $`190{,}800`$ full-variable rules against $`4{,}905`$ admissible digit multisets ($`999{,}450`$ admissible padded six-digit strings), a search that runs in hours on commodity hardware but is impractical to organize, verify, and iterate on without automated scaffolding. From the resulting lists of fixed points, we asked the cross-dimensional question empirically: which fixed points at $`d`$ reappear at $`d + 1`$?
 
-The enumerations themselves, the data-structuring of the resulting fixed-point catalogues, and the systematic probe of structural hypotheses against the empirical evidence were conducted in collaboration with AI research tools (principally Anthropic's Claude), used as a working partner for code generation, numerical verification, adversarial review of proposed structural claims, and iterative hypothesis testing. We document this collaboration explicitly because the paper's empirical foundation would not have been practical to produce without it, and because the methodological pattern — exhaustive brute search, pattern recognition on the output, proposed structural explanation, adversarial re-testing, repeat — is one we believe is increasingly relevant to exploratory mathematics.¹
+The enumerations themselves, the data-structuring of the resulting fixed-point catalogues, and the systematic probe of structural hypotheses against the empirical evidence were carried out using a methodological pattern — exhaustive brute search, pattern recognition on the output, proposed structural explanation, adversarial re-testing of the proposal against further enumeration, repeat — that we believe is increasingly relevant to exploratory mathematics. The use of AI research tools as a working partner in this process is documented in the Acknowledgments section, in keeping with current publishing norms regarding the disclosure of artificial-intelligence tool use.
 
 #### 1.4.1 The 54 → 60714 discovery arc
 
@@ -99,8 +99,6 @@ The paper's main theorem is thus the answer to a question that the $`54`$ counte
 #### 1.4.2 Conclusion
 
 This methodological sequence — exhaustive empirical search, identification of counterexamples that refine the question, structural proof on the refined target — is explicit rather than disguised. The classical Kaprekar routine is elegant because its rule is stated in a single sentence; the result we present here is structural in a different sense. The rule varies with $`d`$ (via coefficient-preserving lifting), the construction is explicit, the proof is finite-state-plus-algebraic, and the fixed point $`60714`$ is distinguished not by aesthetic priority but by being the one case where the proof closes out uniformly across all $`d \geq 5`$.
-
-¹ A companion article discussing this methodology and its broader implications for collaborative mathematical research will appear separately.
 
 ### 1.5 The main results
 
@@ -1058,6 +1056,26 @@ The dimension-agnostic family is the simplest case: these fixed points persist a
 The central result of this paper is Theorem 5.2: $`60714`$ is a universal full-variable fixed point at every digit length $`d \geq 5`$, under an explicit coefficient-preserving lifting. This is the first explicitly constructed cross-dimensional persistence result in the generalized Kaprekar family. The supporting results — the classifications of §3, the uniqueness of §4, and the $`6174`$ cross-dimensional pattern of §6 — place this theorem in a structural context that raises more questions than it answers. Conjectures 7.1 and 7.2 and Questions 7.1–7.5 and the Basin Density Conjecture (7.6) together outline a program for understanding cross-dimensional behavior in the generalized family: which fixed points transcend, under what structural conditions, and with what mechanism.
 
 The methodology of the paper — exhaustive enumeration at each digit length, combined with structural proof on the cases the enumeration distinguishes — has been effective at $`d \leq 6`$ for the full rule space and at $`d \leq 9`$ for targeted verification of specific fps. Extending this methodology to $`d \geq 7`$ for the full rule space, or to $`d \geq 10`$ for $`6174`$, is the natural next step.
+
+---
+
+## Acknowledgments and disclosure of AI tool usage
+
+In keeping with current publishing norms regarding the disclosure of artificial-intelligence tool use, I record here the nature and extent of AI assistance in the preparation of this paper.
+
+The mathematical content — the framing of the organizing question, the classification results at $`d = 3, 4, 5, 6`$, the cross-dimensional cross-check, the coefficient-preserving lifting framework, the proof of Theorem 5.2 (including the structural arguments of Lemmas 5.1, 5.2, 5.3, 5.4 and the support lemmas of Appendix C), the $`\{7, 6, 4, 1\}`$-thread analysis, and the open-question program of §7 — was developed by the author. AI research tools, principally Anthropic's Claude (model versions Claude Opus 4.6 and 4.7, accessed during 2025 and 2026), were used as a working partner throughout the project for the following tasks:
+
+- **Code generation and verification.** The verification scripts (in the supplementary materials) were drafted in collaboration with Claude and verified by the author. All numerical claims in the paper — classifications, basin counts, ladder-extension data, escape-class enumerations — were generated by executing the relevant scripts.
+
+- **Numerical and structural review.** Drafts of structural arguments (most notably Lemma C.10's case enumeration and the $`d \geq 15`$ algebraic argument in Appendix C.4) were tested against independent Claude instances acting as adversarial reviewers. This process identified and corrected several defects during development, including a parenthetical algebraic error in an earlier version of Lemma C.9, an enumeration-count error in an earlier version of Lemma C.10, and an off-by-one error in the closed-form formula for $`|E_d^{(1)}|`$ in supplementary material.
+
+- **Prose editing.** Mathematical statements, definitions, and prose explanations were edited iteratively in collaboration with Claude. The author wrote, accepted, and is responsible for all prose in this paper.
+
+- **Prior-art search.** The cross-reference of the escape-class size sequence to OEIS A000582 (and the corresponding reframe of supplementary OEIS material) was identified through AI-assisted literature search.
+
+The full development history — including the verification scripts, the supplementary OEIS draft, and a transparency record of the iterative review process — is publicly available at <https://github.com/clayelmore/Kaprekar-60714>.
+
+The author is solely responsible for the paper's content, including any remaining errors. Theorems, lemmas, propositions, conjectures, proofs, and computational claims are the author's; the AI tools were used as instruments for verification, drafting, and review, not as authors. No AI tool was used to generate the prose of this paper without the author's substantive editing and acceptance.
 
 ---
 

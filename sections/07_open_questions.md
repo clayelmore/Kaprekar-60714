@@ -1,4 +1,4 @@
-[← Back to paper](../README.md#table-of-contents) · [← Previous: 6. The $`\{7, 6, 4, 1\}`$-thread](06_thread_7641.md) · [Next: Appendix A. Classification tables →](A_classification_tables.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 6. The {7,6,4,1}-thread](06_thread_7641.md) · [Next: A. Classification tables →](A_classification_tables.md)
 
 ---
 
@@ -86,4 +86,4 @@ The methodology of the paper — exhaustive enumeration at each digit length, co
 
 ---
 
-[← Back to paper](../README.md#table-of-contents) · [← Previous: 6. The $`\{7, 6, 4, 1\}`$-thread](06_thread_7641.md) · [Next: Appendix A. Classification tables →](A_classification_tables.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: 6. The {7,6,4,1}-thread](06_thread_7641.md) · [Next: A. Classification tables →](A_classification_tables.md)
