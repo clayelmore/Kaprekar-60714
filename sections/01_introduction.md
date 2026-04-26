@@ -68,7 +68,7 @@ A word on how this investigation proceeded. The classical Kaprekar routine has a
 
 Our approach proceeds in the opposite order. We did not begin with a structural hypothesis about which integers ought to be dimension-transcendent attractors. We began with brute-force enumeration: at each digit length $`d`$, compute the universal full-variable fixed points by testing every permutation-pair rule exhaustively against every non-repdigit input. At $`d = 3`$, $`4`$, $`5`$, $`6`$ this enumeration is tractable — the largest, $`d = 6`$, requires testing $`190{,}800`$ full-variable rules against $`4{,}905`$ admissible digit multisets ($`999{,}450`$ admissible padded six-digit strings), a search that runs in hours on commodity hardware but is impractical to organize, verify, and iterate on without automated scaffolding. From the resulting lists of fixed points, we asked the cross-dimensional question empirically: which fixed points at $`d`$ reappear at $`d + 1`$?
 
-The enumerations themselves, the data-structuring of the resulting fixed-point catalogues, and the systematic probe of structural hypotheses against the empirical evidence were conducted in collaboration with AI research tools (principally Anthropic's Claude), used as a working partner for code generation, numerical verification, adversarial review of proposed structural claims, and iterative hypothesis testing. We document this collaboration explicitly because the paper's empirical foundation would not have been practical to produce without it, and because the methodological pattern — exhaustive brute search, pattern recognition on the output, proposed structural explanation, adversarial re-testing, repeat — is one we believe is increasingly relevant to exploratory mathematics.¹
+The enumerations themselves, the data-structuring of the resulting fixed-point catalogues, and the systematic probe of structural hypotheses against the empirical evidence were carried out using a methodological pattern — exhaustive brute search, pattern recognition on the output, proposed structural explanation, adversarial re-testing of the proposal against further enumeration, repeat — that we believe is increasingly relevant to exploratory mathematics. The use of AI research tools as a working partner in this process is documented in the Acknowledgments section, in keeping with current publishing norms regarding the disclosure of artificial-intelligence tool use.
 
 #### 1.4.1 The 54 → 60714 discovery arc
 
@@ -83,8 +83,6 @@ The paper's main theorem is thus the answer to a question that the $`54`$ counte
 #### 1.4.2 Conclusion
 
 This methodological sequence — exhaustive empirical search, identification of counterexamples that refine the question, structural proof on the refined target — is explicit rather than disguised. The classical Kaprekar routine is elegant because its rule is stated in a single sentence; the result we present here is structural in a different sense. The rule varies with $`d`$ (via coefficient-preserving lifting), the construction is explicit, the proof is finite-state-plus-algebraic, and the fixed point $`60714`$ is distinguished not by aesthetic priority but by being the one case where the proof closes out uniformly across all $`d \geq 5`$.
-
-¹ A companion article discussing this methodology and its broader implications for collaborative mathematical research will appear separately.
 
 ## 1.5 The main results
 
