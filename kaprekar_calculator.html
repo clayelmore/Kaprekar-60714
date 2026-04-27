@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaprekar's Classic Trick — 495 and 6174</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1814;
+    --paper: #f4f0e6;
+    --paper-warm: #ebe4d3;
+    --rule: #c4a96b;
+    --rule-deep: #8a6f3d;
+    --hot: #b8311c;
+    --cool: #5b6e7a;
+    --soft: #6e6555;
+    --fade: #aaa294;
+    --highlight: #fff6db;
+    --escape-bg: #f3e8d0;
+    --escape-border: #a07a30;
+    --escape-text: #5e3f10;
+  }
+
+  html, body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(196, 169, 107, 0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 110%, rgba(184, 49, 28, 0.07) 0%, transparent 55%),
+      var(--paper);
+    background-attachment: fixed;
+  }
+
+  .grain {
+    position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.5;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+  }
+
+  .frame {
+    position: relative; z-index: 2;
+    max-width: 760px; margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  header {
+    text-align: center;
+    border-bottom: 1px double var(--rule);
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .eyebrow {
+    font-style: italic;
+    font-variant: small-caps;
+    letter-spacing: 0.18em;
+    font-size: 0.78rem;
+    color: var(--rule-deep);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: 'Didot', 'Bodoni 72', 'Hoefler Text', Garamond, serif;
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 3.8rem);
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  h1 .num {
+    display: inline-block;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    color: var(--hot);
+  }
+
+  h1 .num-gold {
+    display: inline-block;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    color: var(--rule-deep);
+  }
+
+  h1 .amp {
+    font-style: italic;
+    color: var(--soft);
+    font-weight: 300;
+    margin: 0 0.15em;
+  }
+
+  .subtitle {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--soft);
+    margin-top: 0.5rem;
+    letter-spacing: 0.01em;
+  }
+
+  .lede {
+    margin-top: 2rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 60ch;
+    margin-left: auto; margin-right: auto;
+    text-align: left;
+  }
+  .lede em { color: var(--rule-deep); font-style: italic; }
+  .lede strong { font-weight: 600; }
+
+  .panel {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.5) inset,
+      0 0 0 6px var(--paper),
+      0 0 0 7px var(--rule);
+  }
+
+  .panel::before {
+    content: '';
+    position: absolute; top: 0.5rem; left: 0.5rem; right: 0.5rem; bottom: 0.5rem;
+    border: 1px solid rgba(196, 169, 107, 0.4);
+    pointer-events: none;
+  }
+
+  .panel-label {
+    font-variant: small-caps;
+    letter-spacing: 0.2em;
+    font-size: 0.72rem;
+    color: var(--rule-deep);
+    margin-bottom: 0.85rem;
+    text-align: center;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-size: 1.6rem;
+    padding: 0.6rem 0.9rem;
+    text-align: center;
+    letter-spacing: 0.1em;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  input[type="text"]:focus {
+    border-color: var(--hot);
+    box-shadow: 0 0 0 1px var(--hot);
+  }
+
+  button {
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    padding: 0 1.2rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.15s, transform 0.05s;
+    white-space: nowrap;
+  }
+  button:hover { background: var(--hot); }
+  button:active { transform: translateY(1px); }
+  button.secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  button.secondary:hover { background: var(--ink); color: var(--paper); }
+
+  .controls {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 0.85rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hint {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--soft);
+    text-align: center;
+    margin-top: 0.6rem;
+    min-height: 1.2em;
+  }
+  .hint.error { color: var(--hot); font-style: normal; font-weight: 500; }
+  .hint.escape { color: var(--escape-text); font-weight: 500; }
+
+  .trajectory { margin-top: 1rem; }
+
+  .step {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--rule);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.8rem;
+    border-radius: 0 2px 2px 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: stepin 0.4s ease-out forwards;
+  }
+  @keyframes stepin {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .step.fixed {
+    border-left-color: var(--hot);
+    background: var(--highlight);
+  }
+  .step.fixed-gold {
+    border-left-color: var(--rule-deep);
+    background: var(--highlight);
+  }
+  .step.escape {
+    border-left-color: var(--escape-border);
+    background: var(--escape-bg);
+  }
+
+  .step-num {
+    position: absolute;
+    top: 0.65rem; right: 0.85rem;
+    font-variant: small-caps;
+    letter-spacing: 0.18em;
+    font-size: 0.65rem;
+    color: var(--rule-deep);
+  }
+
+  .step.fixed .step-num { color: var(--hot); font-weight: 600; }
+  .step.fixed-gold .step-num { color: var(--rule-deep); font-weight: 600; }
+  .step.escape .step-num { color: var(--escape-text); font-weight: 600; }
+
+  .step-current {
+    font-family: 'Didot', 'Bodoni 72', Garamond, serif;
+    font-size: 2rem;
+    color: var(--ink);
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .step.fixed .step-current { color: var(--hot); }
+  .step.fixed-gold .step-current { color: var(--rule-deep); }
+  .step.escape .step-current { color: var(--escape-text); }
+
+  /* === VARIABLE LABEL ROW (boxes with digit on top, letter below) === */
+  .var-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0.6rem 0 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .var-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 2rem;
+  }
+
+  .var-pill .var-digit {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    font-size: 1.15rem;
+    font-weight: 500;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    min-width: 2rem;
+    text-align: center;
+  }
+
+  .var-pill .var-name {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: var(--hot);
+    margin-top: 0.18rem;
+  }
+
+  /* === KAPREKAR SUBTRACTION (descending − ascending) === */
+  .subtract-block {
+    margin-top: 0.7rem;
+    background: rgba(244, 240, 230, 0.5);
+    border: 1px solid rgba(196, 169, 107, 0.4);
+    border-radius: 3px;
+    padding: 0.7rem 0.85rem;
+    overflow-x: auto;
+  }
+
+  .subtract-line {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .subtract-op {
+    width: 1rem;
+    text-align: center;
+    color: var(--hot);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .subtract-num {
+    letter-spacing: 0.22em;
+    color: var(--ink);
+  }
+
+  .subtract-num .var-cell {
+    display: inline-block;
+    margin-right: 0.18em;
+    text-align: center;
+  }
+  .subtract-num .var-cell:last-child { margin-right: 0; }
+
+  .subtract-eq {
+    font-style: italic;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    color: var(--cool);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    flex-shrink: 0;
+  }
+
+  .subtract-rule {
+    height: 0;
+    border-bottom: 1.5px solid var(--ink);
+    margin: 0.25rem 0;
+  }
+
+  .subtract-result {
+    color: var(--hot);
+    font-weight: 500;
+  }
+
+  .subtract-meta {
+    font-style: italic;
+    font-size: 0.83rem;
+    color: var(--soft);
+    margin-bottom: 0.45rem;
+    line-height: 1.5;
+  }
+
+  .step .note {
+    font-style: italic;
+    color: var(--soft);
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+  }
+  .step.escape .note { color: var(--escape-text); font-style: normal; }
+
+  .fixed-banner {
+    text-align: center;
+    margin: 1rem 0 0;
+    padding: 0.7rem 0;
+    border-top: 1px double var(--rule);
+    border-bottom: 1px double var(--rule);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--rule-deep);
+    letter-spacing: 0.04em;
+  }
+
+  .escape-explainer {
+    background: var(--escape-bg);
+    border: 1px solid var(--escape-border);
+    padding: 1.1rem 1.4rem;
+    margin-top: 1.2rem;
+    border-radius: 2px;
+    color: var(--escape-text);
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+  .escape-explainer h3 {
+    font-family: 'Didot', 'Bodoni 72', Garamond, serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    margin-bottom: 0.7rem;
+    color: var(--escape-text);
+    font-variant: small-caps;
+    letter-spacing: 0.1em;
+  }
+  .escape-explainer p { margin-bottom: 0.6rem; }
+  .escape-explainer p:last-child { margin-bottom: 0; }
+  .escape-explainer strong { color: var(--ink); }
+  .escape-explainer a {
+    color: var(--escape-text);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+  }
+  .escape-explainer a:hover { color: var(--hot); }
+
+  .about {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px double var(--rule);
+    font-size: 0.92rem;
+    color: var(--soft);
+    line-height: 1.65;
+    max-width: 60ch;
+    margin-left: auto; margin-right: auto;
+  }
+  .about p + p { margin-top: 1em; }
+  .about strong { color: var(--ink); font-weight: 600; }
+  .about a {
+    color: var(--rule-deep);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .about a:hover { color: var(--hot); }
+
+  .ornament {
+    text-align: center;
+    color: var(--rule);
+    margin: 2.5rem 0 1.5rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+  }
+
+  @media (max-width: 540px) {
+    .frame { padding: 2.5rem 1rem 3rem; }
+    .input-row { flex-direction: column; }
+    button { padding: 0.7rem 1rem; }
+    .step-current { font-size: 1.6rem; }
+    .subtract-line { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="frame">
+
+  <header>
+    <div class="eyebrow">an interactive companion</div>
+    <h1>Kaprekar's Classic Trick<br><span class="num-gold">495</span> <span class="amp">&amp;</span> <span class="num">6174</span></h1>
+    <div class="subtitle">The original 1949 routine, at three and four digits</div>
+
+    <div class="lede">
+      <p>Pick a number with three or four digits — using at least two different digits. Sort the digits one way, then the other. Subtract the smaller from the larger. Do it again with the answer.</p>
+      <p>At <em>three digits</em> you always reach <em>495</em>. At <em>four digits</em> you always reach <em>6174</em>. This is the trick the Indian schoolteacher D.&nbsp;R.&nbsp;Kaprekar discovered in 1949. It still works.</p>
+    </div>
+  </header>
+
+  <section class="panel">
+    <div class="panel-label">Try it</div>
+    <div class="input-row">
+      <input type="text" id="numinput" placeholder="enter a 3- or 4-digit number" inputmode="numeric" maxlength="4" autocomplete="off">
+      <button id="go" type="button">iterate</button>
+    </div>
+    <div class="controls">
+      <button class="secondary" type="button" data-example="123">123</button>
+      <button class="secondary" type="button" data-example="847">847</button>
+      <button class="secondary" type="button" data-example="1729">1729</button>
+      <button class="secondary" type="button" data-example="3524">3524</button>
+      <button class="secondary" type="button" data-example="9831">9831</button>
+      <button class="secondary" type="button" id="random">random</button>
+    </div>
+    <div class="hint" id="hint">3 or 4 digits, with at least two different digits. Want to go further? Try the <a href="60714_calculator.html" style="color:var(--rule-deep);">60714 calculator</a> for five digits and beyond.</div>
+  </section>
+
+  <div class="trajectory" id="trajectory"></div>
+
+  <div class="about">
+    <p>This is the classical <strong>Kaprekar routine</strong>: sort the digits descending, sort them ascending, subtract. Repeat. At three digits the routine always reaches <strong>495</strong> (within six steps). At four digits it always reaches <strong>6174</strong> (within seven steps). The two numbers are sometimes called <em>Kaprekar's constants</em>.</p>
+
+    <p>The trick is famous because of how clean it is: one simple rule, one number every input ends up at, and a short proof you can almost do in your head. Try it with five-digit numbers, though, and the trick stops working — you bounce around in a small loop forever instead of reaching a fixed number. For a long time, that was the end of the story.</p>
+
+    <p>The companion <a href="60714_calculator.html">60714 calculator</a> picks up where this one leaves off. It iterates a slightly different rule that <em>does</em> have a five-digit fixed point — and unlike Kaprekar's original, the new rule keeps reaching a fixed point at six digits, seven digits, and every length above.</p>
+
+    <p>Full paper, the proof, and reproducibility scripts: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
+  </div>
+
+  <div class="ornament">⁂</div>
+
+</div>
+
+<script>
+'use strict';
+
+/* The classical Kaprekar routine: K(n) = (digits sorted descending)
+   minus (digits sorted ascending). Defined for any digit length d ≥ 2,
+   but here we focus on the two cases where it converges to a single
+   fixed point: d = 3 (→ 495) and d = 4 (→ 6174). */
+
+function kaprekarStep(value, d) {
+  const padded = value.toString().padStart(d, '0');
+  const digits = padded.split('').map(c => parseInt(c, 10));
+  const desc = [...digits].sort((a, b) => b - a);
+  const asc  = [...digits].sort((a, b) => a - b);
+  const descNum = parseInt(desc.join(''), 10);
+  const ascNum  = parseInt(asc.join(''), 10);
+  const next = Math.abs(descNum - ascNum);
+  return {
+    descArr: desc,
+    ascArr: asc,
+    descStr: desc.map(String).join(''),
+    ascStr: asc.map(String).join(''),
+    descNum,
+    ascNum,
+    next
+  };
+}
+
+function isRepdigit(s) {
+  return /^(.)\1*$/.test(s);
+}
+
+function iterate(input) {
+  const cleaned = input.replace(/\D/g, '');
+  if (!cleaned) return { error: 'enter a number, please.' };
+  if (cleaned.length < 3) {
+    return { error: 'try a 3- or 4-digit number.' };
+  }
+  if (cleaned.length > 4) {
+    return { error: 'Kaprekar\'s classic trick works at 3 and 4 digits. For longer numbers, try the 60714 calculator.', tooLong: true };
+  }
+  if (isRepdigit(cleaned)) {
+    return { error: 'repdigits (like 111 or 4444) collapse to zero on the first step — Kaprekar\'s exclusion. Try a number with at least two different digits.' };
+  }
+
+  const d = cleaned.length;
+  const target = d === 3 ? 495 : 6174;
+  let cur = parseInt(cleaned, 10);
+  const trail = [];
+  const MAX = 20;
+
+  for (let i = 0; i < MAX; i++) {
+    const r = kaprekarStep(cur, d);
+    const reachedFixed = r.next === cur;
+
+    trail.push({
+      stepNum: i,
+      currentStr: cur.toString().padStart(d, '0'),
+      descStr: r.descStr,
+      ascStr: r.ascStr,
+      descNum: r.descNum,
+      ascNum: r.ascNum,
+      next: r.next,
+      isFixed: reachedFixed,
+      isTarget: r.next === target && reachedFixed
+    });
+
+    if (reachedFixed) break;
+    cur = r.next;
+  }
+
+  const lastStep = trail[trail.length - 1];
+
+  return {
+    trail,
+    d,
+    target,
+    finalIsTarget: lastStep.next === target && lastStep.isFixed
+  };
+}
+
+const trajectoryEl = document.getElementById('trajectory');
+const hintEl = document.getElementById('hint');
+const inputEl = document.getElementById('numinput');
+
+const DEFAULT_HINT = '3 or 4 digits, with at least two different digits. Want to go further? Try the <a href="60714_calculator.html" style="color:var(--rule-deep);">60714 calculator</a> for five digits and beyond.';
+
+function setHint(html, cls) {
+  hintEl.classList.remove('error', 'escape');
+  if (cls) hintEl.classList.add(cls);
+  hintEl.innerHTML = html;
+}
+
+function render(result) {
+  trajectoryEl.innerHTML = '';
+
+  if (result.error) {
+    if (result.tooLong) {
+      setHint(
+        'Kaprekar\'s classic trick works at <strong>3 and 4 digits</strong>. For longer numbers, try the <a href="60714_calculator.html" style="color:var(--hot);">60714 calculator</a>.',
+        'error'
+      );
+    } else {
+      setHint(result.error, 'error');
+    }
+    return;
+  }
+
+  const stepCount = result.trail.length - 1;
+  const targetWord = result.d === 3 ? '495' : '6174';
+  setHint(
+    'digit length d = ' + result.d + ', ' +
+    stepCount + ' iteration' + (stepCount === 1 ? '' : 's') +
+    ' to reach ' + targetWord + '.'
+  );
+
+  result.trail.forEach((t, idx) => {
+    const div = document.createElement('div');
+    let stepClass = 'step';
+    if (t.isFixed) {
+      stepClass += result.d === 3 ? ' fixed-gold' : ' fixed';
+    }
+    div.className = stepClass;
+    div.style.animationDelay = (idx * 0.06) + 's';
+
+    const cleanCurrent = t.currentStr.replace(/^0+(?=\d)/, '') || '0';
+
+    let html = '<div class="step-num">step ' + t.stepNum + '</div>';
+    html += '<div class="step-current">' + cleanCurrent + '</div>';
+
+    if (!t.isFixed) {
+      const dHere = result.d;
+      const LETTERS = ['a', 'b', 'c', 'd'];
+      const desc = t.descStr.split('').map(c => parseInt(c, 10));
+
+      // For the classical routine, sort descending → label digits a,b,c,(d).
+      // The descending number is then abcd (or abc); ascending is dcba (or cba).
+      const descLabel  = LETTERS.slice(0, dHere).join('');
+      const ascLabel   = LETTERS.slice(0, dHere).reverse().join('');
+
+      html += '<div class="subtract-meta">Sort digits descending and label them <em>' +
+              LETTERS.slice(0, dHere).join(', ') +
+              '</em>. Apply the rule:</div>';
+
+      // Variable pills row — boxes with digit on top, letter below
+      let varRowHtml = '<div class="var-row">';
+      for (let k = 0; k < dHere; k++) {
+        varRowHtml += '<div class="var-pill">' +
+                        '<span class="var-digit">' + desc[k] + '</span>' +
+                        '<span class="var-name">' + LETTERS[k] + '</span>' +
+                      '</div>';
+      }
+      varRowHtml += '</div>';
+      html += varRowHtml;
+
+      const spaceDigits = (s) => {
+        return '<span class="var-cell">' + s.split('').join('</span><span class="var-cell">') + '</span>';
+      };
+
+      const cleanNext = t.next.toString();
+
+      html += '<div class="subtract-block">';
+      html += '<div class="subtract-line">' +
+                '<span class="subtract-op"></span>' +
+                '<span class="subtract-num">' + spaceDigits(t.descStr) + '</span>' +
+                '<span class="subtract-eq">= ' + descLabel + '</span>' +
+              '</div>';
+      html += '<div class="subtract-line">' +
+                '<span class="subtract-op">−</span>' +
+                '<span class="subtract-num">' + spaceDigits(t.ascStr) + '</span>' +
+                '<span class="subtract-eq">= ' + ascLabel + '</span>' +
+              '</div>';
+      html += '<div class="subtract-rule"></div>';
+      html += '<div class="subtract-line">' +
+                '<span class="subtract-op"></span>' +
+                '<span class="subtract-num subtract-result">' + spaceDigits(cleanNext.padStart(dHere, '0')) + '</span>' +
+                '<span class="subtract-eq">= ' + cleanNext + '</span>' +
+              '</div>';
+      html += '</div>';
+    } else {
+      const fpName = result.d === 3 ? '495' : '6174';
+      html += '<div class="note">fixed point reached. K(' + fpName + ') = ' + fpName + '. The number eats its own tail.</div>';
+    }
+
+    div.innerHTML = html;
+    trajectoryEl.appendChild(div);
+  });
+
+  if (result.finalIsTarget) {
+    const banner = document.createElement('div');
+    banner.className = 'fixed-banner';
+    banner.style.animationDelay = (result.trail.length * 0.06) + 's';
+    if (result.d === 3) {
+      banner.innerHTML = 'Kaprekar 1949 in action: every admissible 3-digit input reaches 495 within six steps.';
+    } else {
+      banner.innerHTML = 'Kaprekar 1949 in action: every admissible 4-digit input reaches 6174 within seven steps.';
+    }
+    trajectoryEl.appendChild(banner);
+  }
+}
+
+function go() {
+  const result = iterate(inputEl.value);
+  render(result);
+}
+
+document.getElementById('go').addEventListener('click', go);
+
+inputEl.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') go();
+});
+
+document.querySelectorAll('button[data-example]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    inputEl.value = btn.dataset.example;
+    go();
+  });
+});
+
+document.getElementById('random').addEventListener('click', () => {
+  // Pick 3 or 4 digits, ensure at least two distinct digits, no leading zero.
+  const len = Math.random() < 0.4 ? 3 : 4;
+  let s;
+  do {
+    s = String(1 + Math.floor(Math.random() * 9));
+    for (let i = 1; i < len; i++) s += String(Math.floor(Math.random() * 10));
+  } while (isRepdigit(s));
+  inputEl.value = s;
+  go();
+});
+
+inputEl.addEventListener('input', () => {
+  setHint(DEFAULT_HINT);
+});
+
+inputEl.value = '1729';
+go();
+
+</script>
+
+</body>
+</html>
