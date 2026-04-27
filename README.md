@@ -2,7 +2,7 @@
 
 A five-digit number that's a universal attractor at every digit length d ≥ 5.
 
-Pick any number with five or more digits. Apply the right rule. Watch it converge to **60714** (with a structurally characterized small class of exceptions at d ≥ 7). The rule depends on the input's digit length, but the destination is almost always the same.
+Pick any number with five or more digits. Apply the right rule. Watch it converge to **60714** at every digit length $d \geq 5$, modulo a small structurally characterized escape class that's continuous with the classical Kaprekar escape phenomenon at $d = 3, 4$ (the ten repdigits at $d = 3$, the ten multiples of 1111 at $d = 4$). The rule depends on the input's digit length, but the destination is almost always the same.
 
 This is a generalization of Kaprekar's classical 1949 result, extended in a direction the literature has not explored: instead of fixing the rule and asking which digit lengths work, we let the rule vary with the digit length, and find a single fixed point — 60714 — whose universality holds across infinitely many dimensions simultaneously.
 
