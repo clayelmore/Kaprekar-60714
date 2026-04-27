@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The five-digit cousin of 6174 — A plain-English explainer</title>
+<meta name="description" content="A plain-English companion to the technical paper on 60714. Why Kaprekar's classic four-digit trick has a five-digit cousin nobody had cataloged.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-soft: #444;
+    --paper: #f5f1e8;
+    --paper-deep: #ebe4d2;
+    --rule: #d4c9a8;
+    --accent: #8b1a1a;
+    --accent-soft: #c4534a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 19px;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(139, 26, 26, 0.02) 0%, transparent 40%),
+      radial-gradient(circle at 80% 60%, rgba(139, 26, 26, 0.015) 0%, transparent 35%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  /* nav */
+  nav.crumbs {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 3rem;
+  }
+  nav.crumbs a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+  nav.crumbs a:hover { border-bottom-color: var(--accent); }
+
+  /* eyebrow */
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  /* title */
+  h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: 1.5rem;
+  }
+
+  .deck {
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    margin-bottom: 0.5rem;
+    max-width: 640px;
+  }
+
+  .byline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 1.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 3rem;
+  }
+  .byline span + span::before {
+    content: ' · ';
+    margin: 0 0.5rem;
+    color: var(--rule);
+  }
+
+  /* body */
+  article p {
+    margin-bottom: 1.4rem;
+  }
+
+  article p.dropcap::first-letter {
+    font-family: 'EB Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 500;
+    float: left;
+    line-height: 0.85;
+    margin: 0.1rem 0.6rem -0.1rem 0;
+    color: var(--accent);
+  }
+
+  article h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 3.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--ink);
+  }
+
+  article h2::before {
+    content: '§ ';
+    color: var(--accent);
+  }
+
+  article a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-soft);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  article a:hover {
+    color: var(--accent-soft);
+    border-bottom-color: var(--accent);
+  }
+
+  article em {
+    color: var(--ink-soft);
+  }
+
+  /* pull quote */
+  .pullquote {
+    font-style: italic;
+    font-size: 1.5rem;
+    line-height: 1.35;
+    color: var(--accent);
+    text-align: center;
+    margin: 3rem 0;
+    padding: 0 2rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* try-it call-out */
+  .tryit {
+    background: var(--paper-deep);
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 2rem;
+    margin: 2.5rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .tryit-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  /* numerals (61pt accent throughout for any 60714 mention is too much; use sparingly) */
+  .num-accent {
+    font-feature-settings: 'lnum';
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* example block */
+  .example {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    background: var(--paper-deep);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    line-height: 1.7;
+    border-radius: 2px;
+  }
+  .example .arrow { color: var(--accent); padding: 0 0.4rem; }
+
+  /* footer */
+  footer {
+    margin-top: 5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--rule);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    main { padding: 2.5rem 1.25rem 4rem; }
+    h1 { font-size: 2rem; }
+    .deck { font-size: 1.1rem; }
+    article p.dropcap::first-letter { font-size: 3.5rem; }
+    .pullquote { font-size: 1.2rem; padding: 1.5rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+
+  <nav class="crumbs">
+    <a href="index.html">← back to 60714</a>
+  </nav>
+
+  <header>
+    <div class="eyebrow">A plain-English explainer</div>
+    <h1>The five-digit cousin of 6174</h1>
+    <p class="deck">In 1949, an Indian schoolteacher noticed something beautiful about four-digit numbers — a clean trick that always lands on the same answer. The trick worked at three digits too. At five digits, his rule didn't lead to a single landing spot, and that's been the story for seventy-five years. There's a different question you can ask alongside his. This is what I found when I asked it.</p>
+    <div class="byline">
+      <span>By Clay Elmore</span>
+      <span>April 2026</span>
+      <span>~6 min read</span>
+    </div>
+  </header>
+
+  <article>
+
+    <p class="dropcap">Pick a four-digit number — any one will do, as long as it has at least two different digits in it. <strong>1729</strong> works. <strong>2024</strong> works. <strong>9876</strong> works. Now do this:</p>
+
+    <ol style="margin: 0 0 1.4rem 1.5rem;">
+      <li>Put the digits in order from biggest to smallest.</li>
+      <li>Put the same digits in order from smallest to biggest.</li>
+      <li>Subtract the smaller number from the bigger one.</li>
+      <li>Do it again with the answer.</li>
+    </ol>
+
+    <p>Try it with 1729:</p>
+
+    <div class="example">
+      9721 − 1279 = <span class="arrow">→</span> 8442<br>
+      8442 − 2448 = <span class="arrow">→</span> 5994<br>
+      9954 − 4599 = <span class="arrow">→</span> 5355<br>
+      5553 − 3555 = <span class="arrow">→</span> 1998<br>
+      9981 − 1899 = <span class="arrow">→</span> 8082<br>
+      8820 − 0288 = <span class="arrow">→</span> 8532<br>
+      8532 − 2358 = <span class="arrow">→</span> <span class="num-accent">6174</span>
+    </div>
+
+    <p>You land on <strong>6174</strong>. And then you stay there. <strong>7641 − 1467 = 6174.</strong> The number eats its own tail.</p>
+
+    <p>Pick any other four-digit number, follow the same steps, and the same thing happens. You land on 6174. Always within seven steps. Always.</p>
+
+    <p>This trick was discovered in 1949 by an Indian schoolteacher named D.R. Kaprekar. The number 6174 is sometimes called Kaprekar's constant. The trick is famous because of how clean it is: one simple rule, one number every four-digit input ends up at, and a short proof you can almost do in your head. That's the kind of result mathematicians love. Elegant. Math teachers have been showing it to kids for seventy-five years.</p>
+
+    <h2>What about five digits?</h2>
+
+    <p>Try the same steps with three digits and you always land on <strong>495</strong>. Three digits work. Four digits work.</p>
+
+    <p>But try the same trick with five digits and there's no constant to land on. You don't reach a fixed number; you bounce around in a small loop forever.</p>
+
+    <p>For a long time, that was the end of it. Kaprekar's trick is what it is — beautiful at three and four digits, doesn't reach a single number at five. Different digit lengths just behave differently, and that's the story.</p>
+
+    <p>I kept wondering if there was more to say.</p>
+
+    <h2>Another way of asking the question</h2>
+
+    <p>Kaprekar's trick uses one specific way to mix up the digits before subtracting: sort them one way, sort them the other way, subtract. That's the rule. It's a really good rule. It's elegant exactly because it's simple. But it's not the <em>only</em> way you could mix the digits. You could shuffle them in lots of other orders before subtracting and still ask the same kind of question — does any starting number always land on the same final number?</p>
+
+    <p>How many other shuffles are there?</p>
+
+    <p>At three digits, there are 12. At four digits, 216. At five digits, 5,280. At six digits, almost 200,000.</p>
+
+    <p>Kaprekar's shuffle is one of them. The classic version. The famous version. The other ones aren't in the spotlight, but they're sitting there in the same family.</p>
+
+    <p>So a different question from the classic one is: among all those shuffles, are there any other "land here forever" numbers? And if there are, do any of them keep working as you stretch the trick to longer numbers?</p>
+
+    <p>This is the question I kept thinking about. It's not the question Kaprekar was asking — his question was about his beautiful single rule, and his answer was complete on its own. This is just a different question, sitting next to his.</p>
+
+    <p>Answering it takes more bookkeeping than answering Kaprekar's. To check just the five-digit case you have to test 5,280 different shuffles against 99,540 different starting numbers, follow each one until it either lands somewhere or starts looping, and keep track of all the results. That's about half a billion subtractions. A modern laptop crunches the numbers in seconds. The harder part is making sense of what comes out the other side.</p>
+
+    <div class="tryit">
+      <span class="tryit-label">Try it yourself</span>
+      The <a href="60714_calculator.html">calculator</a> lets you watch any number — five digits or twenty — walk to 60714, the same way 1729 walked to 6174 above. Type a number. Watch it move. Try another one.
+    </div>
+
+    <h2>What turned up</h2>
+
+    <p>At five digits, there are exactly <strong>33</strong> numbers that act like 6174 — each under one of those other shuffles. Land there, and you stay there.</p>
+
+    <p>One of the 33 is <strong class="num-accent">60714</strong>.</p>
+
+    <p>That alone isn't the interesting part. Here's the interesting part: out of those 33 numbers, only one of them keeps working when you stretch the trick to six-digit numbers. Then to seven digits. Then to eight. All the way up.</p>
+
+    <p>That one is 60714.</p>
+
+    <p class="pullquote">"60714 is the only five-digit number whose Kaprekar-style behavior keeps working at six digits, and seven, and eight, and every digit length above."</p>
+
+    <p>The shuffle changes a little each time you add a digit — it has to, to fit the longer number — but there's a clean recipe for how it changes. And that recipe holds up. Not just up to some limit a computer can check, but provably, all the way up. As far as anyone has shown, 60714 is the first number that does this.</p>
+
+    <h2>So what's it good for?</h2>
+
+    <p>I'm not going to oversell this. 60714 isn't going to make your phone faster or unlock some secret code. It's a small new fact about how numbers behave when you shuffle their digits in a certain way. That's all.</p>
+
+    <p>Even so, I wouldn't say it's good for nothing. Math like this has a long history of being useful in ways nobody saw coming, sometimes years later. Closer to today, the trick has the right shape for a daily online puzzle, a school competition, a classroom example for kids learning about numbers, or a starting point for someone else's project. A few of those ideas are already on my list.</p>
+
+    <p>What I'd really say is this. The kind of math that started Kaprekar's work — and the kind of math that produced 60714 — is the kind anyone curious can pick up and play with. Kaprekar himself was a high-school teacher in a small town in India. He wasn't a famous professor. He just kept noticing things and writing them down.</p>
+
+    <p>The result here is in the same spirit. It's a small, real fact. You can pick it up and play with it.</p>
+
+    <h2>What's next</h2>
+
+    <p>The full paper is online and is being sent to a math archive called <em>arXiv</em> and to a journal that publishes computer-aided math discoveries. The number sequence at the heart of the result has been sent to the Online Encyclopedia of Integer Sequences, which catalogs interesting number patterns. All the code, all the data, and the full record of how the work was done are in the public folder linked below.</p>
+
+    <p>If you want to see the trick in action, there's a <a href="60714_calculator.html">calculator</a> that lets you type any number and watch it walk home to 60714. That's how I started. It's how I'd recommend you start too.</p>
+
+  </article>
+
+  <footer>
+    <p>The full technical paper, the interactive calculator, the verification scripts, and the complete reproducibility record live at <a href="index.html">the main page</a>.</p>
+    <p style="margin-top: 1rem;">© 2026 Clay Elmore · CC BY 4.0</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
