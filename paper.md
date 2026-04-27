@@ -84,7 +84,7 @@ A word on how this investigation proceeded. The classical Kaprekar routine has a
 
 Our approach proceeds in the opposite order. We did not begin with a structural hypothesis about which integers ought to be dimension-transcendent attractors. We began with brute-force enumeration: at each digit length $`d`$, compute the universal full-variable fixed points by testing every permutation-pair rule exhaustively against every non-repdigit input. At $`d = 3`$, $`4`$, $`5`$, $`6`$ this enumeration is tractable — the largest, $`d = 6`$, requires testing $`190{,}800`$ full-variable rules against $`4{,}905`$ admissible digit multisets ($`999{,}450`$ admissible padded six-digit strings), a search that runs in hours on commodity hardware but is impractical to organize, verify, and iterate on without automated scaffolding. From the resulting lists of fixed points, we asked the cross-dimensional question empirically: which fixed points at $`d`$ reappear at $`d + 1`$?
 
-The enumerations themselves, the data-structuring of the resulting fixed-point catalogues, and the systematic probe of structural hypotheses against the empirical evidence were carried out using a methodological pattern — exhaustive brute search, pattern recognition on the output, proposed structural explanation, adversarial re-testing of the proposal against further enumeration, repeat — that we believe is increasingly relevant to exploratory mathematics. The use of AI research tools as a working partner in this process is documented in the Acknowledgments section, in keeping with current publishing norms regarding the disclosure of artificial-intelligence tool use.
+The enumerations themselves, the data-structuring of the resulting fixed-point catalogues, and the systematic probe of structural hypotheses against the empirical evidence were carried out using a methodological pattern — exhaustive brute search, pattern recognition on the output, proposed structural explanation, adversarial re-testing of the proposal against further enumeration, repeat — that we believe is increasingly relevant to exploratory mathematics. The computer assistance used throughout the project — including AI tools alongside conventional scripting — is documented in the Acknowledgments.
 
 #### 1.4.1 The 54 → 60714 discovery arc
 
@@ -1065,23 +1065,15 @@ The methodology of the paper — exhaustive enumeration at each digit length, co
 
 ---
 
-## Acknowledgments and disclosure of AI tool usage
+## Acknowledgments
 
-In keeping with current publishing norms regarding the disclosure of artificial-intelligence tool use, I record here the nature and extent of AI assistance in the preparation of this paper.
+The mathematical content of this paper — the framing of the organizing question, the classifications at $`d = 3, 4, 5, 6`$, the cross-dimensional cross-check, the coefficient-preserving lifting framework, the proof of Theorem 5.2 (including the structural arguments of Lemmas 5.1, 5.2, 5.3, 5.4 and the support lemmas of Appendix C), the $`\{7, 6, 4, 1\}`$-thread analysis, and the open-question program of §7 — was developed by the author, who is solely responsible for the paper's content, including any remaining errors.
 
-The mathematical content — the framing of the organizing question, the classification results at $`d = 3, 4, 5, 6`$, the cross-dimensional cross-check, the coefficient-preserving lifting framework, the proof of Theorem 5.2 (including the structural arguments of Lemmas 5.1, 5.2, 5.3, 5.4 and the support lemmas of Appendix C), the $`\{7, 6, 4, 1\}`$-thread analysis, and the open-question program of §7 — was developed by the author. AI research tools, principally Anthropic's Claude (model versions Claude Opus 4.6 and 4.7, accessed during 2025 and 2026), were used as a working partner throughout the project for the following tasks:
+The development of the paper used substantial computer assistance, in the spirit of the increasing role of computational tools in number-theoretic research. Verification scripts were written and executed for every numerical claim in the paper — classifications, basin counts, ladder-extension data, escape-class enumerations. Structural arguments (most notably Lemma C.10's case enumeration and the $`d \geq 15`$ algebraic argument in Appendix C.4) were tested against worked examples and edge cases, a process that identified and corrected several defects during development — including a parenthetical algebraic error in an earlier version of Lemma C.9, an enumeration-count error in an earlier version of Lemma C.10, and an off-by-one error in a closed-form formula in supplementary material. Prose was edited iteratively. The cross-reference of the escape-class size sequence to OEIS A000582 was identified through assisted literature search.
 
-- **Code generation and verification.** The verification scripts (in the supplementary materials) were drafted in collaboration with Claude and verified by the author. All numerical claims in the paper — classifications, basin counts, ladder-extension data, escape-class enumerations — were generated by executing the relevant scripts.
+These computer-assisted activities used AI tools (Anthropic's Claude, model versions Claude Opus 4.6 and 4.7, accessed during 2025 and 2026) alongside conventional scripting in Python. The full development record, the verification scripts, and the iterative review history are publicly available at <https://github.com/clayelmore/Kaprekar-60714>.
 
-- **Numerical and structural review.** Drafts of structural arguments (most notably Lemma C.10's case enumeration and the $`d \geq 15`$ algebraic argument in Appendix C.4) were tested against independent Claude instances acting as adversarial reviewers. This process identified and corrected several defects during development, including a parenthetical algebraic error in an earlier version of Lemma C.9, an enumeration-count error in an earlier version of Lemma C.10, and an off-by-one error in the closed-form formula for $`|E_d^{(1)}|`$ in supplementary material.
-
-- **Prose editing.** Mathematical statements, definitions, and prose explanations were edited iteratively in collaboration with Claude. The author wrote, accepted, and is responsible for all prose in this paper.
-
-- **Prior-art search.** The cross-reference of the escape-class size sequence to OEIS A000582 (and the corresponding reframe of supplementary OEIS material) was identified through AI-assisted literature search.
-
-The full development history — including the verification scripts, the supplementary OEIS draft, and a transparency record of the iterative review process — is publicly available at <https://github.com/clayelmore/Kaprekar-60714>.
-
-The author is solely responsible for the paper's content, including any remaining errors. Theorems, lemmas, propositions, conjectures, proofs, and computational claims are the author's; the AI tools were used as instruments for verification, drafting, and review, not as authors. No AI tool was used to generate the prose of this paper without the author's substantive editing and acceptance.
+Theorems, lemmas, propositions, conjectures, proofs, and computational claims are the author's; computational tools were used as instruments for verification, drafting, and review, not as authors.
 
 ---
 
