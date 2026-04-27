@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kaprekar's Classic Trick — 495 and 6174</title>
+<title>Kaprekar's Classic Routine — 495 and 6174</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -476,12 +476,12 @@
 
   <header>
     <div class="eyebrow">an interactive companion</div>
-    <h1>Kaprekar's Classic Trick<br><span class="num-gold">495</span> <span class="amp">&amp;</span> <span class="num">6174</span></h1>
+    <h1>Kaprekar's Classic Routine<br><span class="num-gold">495</span> <span class="amp">&amp;</span> <span class="num">6174</span></h1>
     <div class="subtitle">The original 1949 routine, at three and four digits</div>
 
     <div class="lede">
       <p>Pick a number with three or four digits — using at least two different digits. Sort the digits one way, then the other. Subtract the smaller from the larger. Do it again with the answer.</p>
-      <p>At <em>three digits</em> you always reach <em>495</em>. At <em>four digits</em> you always reach <em>6174</em>. This is the trick the Indian schoolteacher D.&nbsp;R.&nbsp;Kaprekar discovered in 1949. It still works.</p>
+      <p>At <em>three digits</em> you always reach <em>495</em>. At <em>four digits</em> you always reach <em>6174</em>. This is the routine the Indian schoolteacher D.&nbsp;R.&nbsp;Kaprekar discovered in 1949. It still works.</p>
     </div>
   </header>
 
@@ -507,7 +507,7 @@
   <div class="about">
     <p>This is the classical <strong>Kaprekar routine</strong>: sort the digits descending, sort them ascending, subtract. Repeat. At three digits the routine always reaches <strong>495</strong> (within six steps). At four digits it always reaches <strong>6174</strong> (within seven steps). The two numbers are sometimes called <em>Kaprekar's constants</em>.</p>
 
-    <p>The trick is famous because of how clean it is: one simple rule, one number every input ends up at, and a short proof you can almost do in your head. Try it with five-digit numbers, though, and the trick stops working — you bounce around in a small loop forever instead of reaching a fixed number. For a long time, that was the end of the story.</p>
+    <p>The routine is famous because of how clean it is: one simple rule, one number every input ends up at, and a short proof you can almost do in your head. Try it with five-digit numbers, though, and the routine stops working — you bounce around in a small loop forever instead of reaching a fixed number. For a long time, that was the end of the story.</p>
 
     <p>The companion <a href="60714_calculator.html">60714 calculator</a> picks up where this one leaves off. It iterates a slightly different rule that <em>does</em> have a five-digit fixed point — and unlike Kaprekar's original, the new rule keeps reaching a fixed point at six digits, seven digits, and every length above.</p>
 
@@ -556,7 +556,7 @@ function iterate(input) {
     return { error: 'try a 3- or 4-digit number.' };
   }
   if (cleaned.length > 4) {
-    return { error: 'Kaprekar\'s classic trick works at 3 and 4 digits. For longer numbers, try the 60714 calculator.', tooLong: true };
+    return { error: 'Kaprekar\'s classic routine works at 3 and 4 digits. For longer numbers, try the 60714 calculator.', tooLong: true };
   }
   if (isRepdigit(cleaned)) {
     return { error: 'repdigits (like 111 or 4444) collapse to zero on the first step — Kaprekar\'s exclusion. Try a number with at least two different digits.' };
@@ -616,7 +616,7 @@ function render(result) {
   if (result.error) {
     if (result.tooLong) {
       setHint(
-        'Kaprekar\'s classic trick works at <strong>3 and 4 digits</strong>. For longer numbers, try the <a href="60714_calculator.html" style="color:var(--hot);">60714 calculator</a>.',
+        'Kaprekar\'s classic routine works at <strong>3 and 4 digits</strong>. For longer numbers, try the <a href="60714_calculator.html" style="color:var(--hot);">60714 calculator</a>.',
         'error'
       );
     } else {
