@@ -137,10 +137,13 @@ $60714$ is a fixed point at every digit length
 $d \geq 5$ under the coefficient-preserving lifting family constructed
 in §5. The corresponding dynamics are universal on $A_d \setminus E_d$
 at every $d \geq 5$, where $A_d$ is the admissible input set and
-$E_d$ is an exactly-characterized escape class of block-aligned
-multisets that vanishes at $d = 5, 6$ and is structurally continuous
-with the classical Kaprekar escape class at $d = 3, 4$ (the ten
-repdigits at $d = 3$, the ten multiples of $1111$ at $d = 4$).
+$E_d$ is an exactly-characterized escape class. The escape class is
+empty at $d = 5, 6$, and at $d \geq 7$ has the same structural form
+--- block-aligned multisets that collapse to $0$ under the rule --- as
+the classical Kaprekar escape class at $d = 3, 4$ (the ten repdigits
+at $d = 3$ and the ten multiples of $1111$ at $d = 4$, which under
+the classical rule each map to $0$ rather than to the nontrivial fixed
+point).
 \end{theorem}
 
 This is, to our knowledge, the first explicitly constructed attractor in
@@ -292,15 +295,21 @@ modification across all $33$ candidates --- and $60714$ is the
 integer that survives the test. Once the lifting is identified and
 $60714$ is selected, Theorem 5.2 proves that the lifted family is
 universally convergent on $A_d \setminus E_d$ at every $d \geq 5$,
-where $E_d$ is the structurally characterized escape class of §5.2
-(empty at $d = 5, 6$; non-empty at $d \geq 7$ but continuous with
-the classical d = 3, 4 escape phenomenon, see §7.6). Universal
-convergence is a substantive dynamical claim that does not follow from
-the lifting's algebraic preservation property; it requires the proof
-developed in §5 and Appendix C. The discovery sequence --- observation
-of the rank gap, classification at low $d$, cross-dimensional check,
-structural mechanism, dynamical theorem --- is the methodological spine
-of §1.4 and is recapitulated in detail there.
+where $E_d$ is the structurally characterized escape class of §5.2.
+The escape class is empty at $d = 5, 6$. At $d \geq 7$ it is
+non-empty but takes the same structural form as the classical Kaprekar
+escape class at $d = 3, 4$: a set of inputs that map to $0$ in one
+or more applications of the rule, with the inputs characterized by an
+algebraic block-alignment condition (single-block repdigits at
+$d = 3$, single-block multiples of $1111$ at $d = 4$, multi-block
+aligned multisets at $d \geq 7$). See §7.6 for the full continuity
+argument. Universal convergence on $A_d \setminus E_d$ is a
+substantive dynamical claim that does not follow from the lifting's
+algebraic preservation property; it requires the proof developed in §5
+and Appendix C. The discovery sequence --- observation of the rank gap,
+classification at low $d$, cross-dimensional check, structural
+mechanism, dynamical theorem --- is the methodological spine of §1.4 and
+is recapitulated in detail there.
 
 Fix an integer $F$. Define its \textbf{native digit length} $d_F$ to
 be the smallest $d$ at which $F$ is a universal full-variable fixed
@@ -2701,10 +2710,22 @@ This is the structural connection between 6174 and 60714 that the \{7,
 content through different rules with different absorbing-position
 structure, leading to qualitatively different cross-dimensional fates.
 
-\subsection{The sum\_locked\_spans
-invariant}\label{the-sum_locked_spans-invariant}
+\subsection{An empirical observation: sum\_locked\_spans within the
+thread}\label{an-empirical-observation-sum_locked_spans-within-the-thread}
 
-We now introduce a structural invariant that orders cross-dimensional
+\emph{The remainder of §6 (§6.4 and §6.5) presents an empirical
+observation about the four fixed points 6174, 1746, 60714, and 60417,
+expressed through a structural invariant we call
+$\mathrm{sum\_locked\_spans}$. \textbf{This material is not a
+theorem.} The observation is verified on these specific four fixed
+points within the $\{7, 6, 4, 1\}$-multiset thread; it does not
+generalize across multisets, as a direct control test confirms (§6.5).
+We present this material because it captures a structural pattern that
+is suggestive and reproducible within the thread, but we are explicit
+that it is empirical, not proven, and that its scope is bounded. A
+formal conjecture extending the empirical pattern appears in §7.2.}
+
+We now introduce the structural invariant that orders cross-dimensional
 behavior across the four fps studied in this section.
 
 \begin{definition}[6.1 (locked span and sum)]
