@@ -35,7 +35,7 @@ Type any number 5–20 digits long. The calculator shows the full trajectory, st
 
 In Kaprekar's classical routine at d = 4, you sort the digits descending, sort them ascending, subtract, and repeat. From every non-repdigit input, you reach **6174** within seven steps.
 
-The trick "stops working" at d = 5 — Kaprekar's specific rule cycles instead of converging. The standard story for 77 years has been: 5-digit Kaprekar doesn't work.
+The routine "stops working" at d = 5 — Kaprekar's specific rule cycles instead of converging. The standard story for 77 years has been: 5-digit Kaprekar doesn't work.
 
 The story changes if you let the rule itself vary. For each digit length d there are many ways to combine sorted-descending and sorted-ascending digits — d! · (d! − 1) ordered permutation pairs, each defining its own iteration rule. Most produce cycles. A small subset converge universally. At d = 6 the count is exactly **506**.
 
