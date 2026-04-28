@@ -129,7 +129,7 @@ The escape class $`E_d`$ at $`d \geq 7`$ is continuous with the classical Kaprek
 
 - $`6174`$ transcends at $`d = 4`$ (Kaprekar's classical result), and is near-universal at every $`d \geq 6`$ with monotonically improving basin under coefficient-preserving lifting. At $`d = 5`$ it is algebraically obstructed (no sv$`=5`$ rule fixes it). At $`d = 8, 9`$, the escape class consists of $`45`$ multisets of form $`(X, X, X, X, Y, Y, Y, Y)`$ for $`X > Y \geq 0`$, all collapsing to $`0`$.
 - $`146070`$ and $`607140`$ (both in the $`\{7, 6, 4, 1\}`$-thread, native at $`d = 6`$) transcend to $`d = 7`$ via the same coefficient-preserving machinery; $`146070`$'s ladder extension is verified through $`d = 12`$.
-- Among the $`506`$ universal fixed points at $`d = 6`$, empirical surveys indicate transcendence to $`d = 7`$ is *common*, not rare, at higher native digit lengths. These surveys are tabulated in Appendix D but not proven as theorems in this paper.
+- Among the $`506`$ universal fixed points at $`d = 6`$, exhaustive enumeration at $`d = 7`$ (Appendix D) identifies $`18{,}004`$ universal full-variable fps at $`d = 7`$. Cross-dimensional verification of the $`53`$-fp two-zero stratum gives a strict-transcendence rate of $`81\%`$ ($`43`$ TRANS, $`2`$ NEAR, $`8`$ LOCK). Held-out validation across $`0`$/$`1`$/$`2`$/$`3`$-zero strata confirms the Type A LOCK characterization (§6.6) generalizes beyond the two-zero stratum.
 
 $`60714`$'s distinction is therefore not "uniqueness as a transcendent fixed point" — many other fixed points transcend partially — but **uniqueness as the case that survives Theorem 4.1's selection test among the $`d = 5`$ universal full-variable fixed points**. The classification machinery (Theorems 3.3 and 3.4) and the cross-dimensional selection (Theorem 4.1) are the durable contributions; the integer $`60714`$ is what those tools select.
 
@@ -147,9 +147,13 @@ All three axes fix the classical rule and vary structural or algebraic propertie
 
 The systematic classification of universal full-variable fixed points at $`d \leq 6`$, the formulation of the cross-dimensional question in terms of permutation-pair liftings, and the proof of Theorem 3 at every $`d \geq 5`$ are, to our knowledge, all new.
 
+### 1.7.1 Computational reproducibility
+
+The d = 7 classification and outcome verification reported in this paper are reproducible on commodity hardware. A self-contained package (`d7_audit/`) is provided as supplementary material. The package contains: an audit of the 60714 lifting at $`d = 7`$ over all 11,340 admissibles (~3 s wall-time); a parallel audit at $`d = 8`$ over all 24,210 admissibles (~3 s); a sound exhaustive enumeration over all 9,344,160 full-variable rules at $`d = 7`$ identifying every universal full-variable fixed point (~45 s with Numba parallel); and a per-fp outcome verifier with exact basin computation via multiset memoization (~1 hour for the 53-fp two-zero $`d = 6`$ stratum verified at $`d = 7`$). Total reproduction time end-to-end: under two hours on a 2024-era laptop. The package is documented for non-specialist users and supports crash-resume for the longer enumerations.
+
 ## 1.8 Organization
 
-§2 establishes the formal framework: permutation-pair rules, algebraic rank, universal fixed points, native digit length, and effective rank at $`F`$. §3 presents the exhaustive classifications at $`d = 3, 4, 5, 6`$. §4 proves Theorem 2 (the $`d = 5 \to d = 6`$ cross-check). §5 develops the coefficient-preserving lifting framework and proves Theorem 3. §6 develops the $`\{7, 6, 4, 1\}`$-thread and proves Theorem 4. §7 is a short discussion of open questions. Appendices A–E contain the full classification tables, the $`60714`$ ladder through $`d = 20`$, the proofs of the support lemmas, observed transcendent fixed points at $`d = 7`$ (non-exhaustive, honestly labeled), and the $`6174`$ $`d = 8, 9`$ audit details.
+§2 establishes the formal framework: permutation-pair rules, algebraic rank, universal fixed points, native digit length, and effective rank at $`F`$. §3 presents the exhaustive classifications at $`d = 3, 4, 5, 6`$. §4 proves Theorem 2 (the $`d = 5 \to d = 6`$ cross-check). §5 develops the coefficient-preserving lifting framework and proves Theorem 3. §6 develops the $`\{7, 6, 4, 1\}`$-thread and proves Theorem 4. §7 is a short discussion of open questions. Appendices A–E contain the full classification tables, the $`60714`$ ladder through $`d = 20`$, the proofs of the support lemmas, the verified classification of universal full-variable fps at $`d = 7`$ together with cross-dimensional outcomes for the two-zero $`d = 6`$ stratum (Appendix D), and the $`6174`$ $`d = 8, 9`$ audit details.
 
 ---
 

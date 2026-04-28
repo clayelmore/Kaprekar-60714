@@ -1,0 +1,15 @@
+# d7_classifier_analysis.txt
+# Cross-tabulation of cycle signature (of best rule) vs verified outcome
+# Tests within-thread invariants and signature-based classifiers
+#
+# signature                 TRANS   NEAR   LOCK  fps
+# ------------------------------------------------------------
+  (2, 2, 3)                    15      0      1
+  (2, 5)                       17      2      0
+  (3, 4)                        9      0      5
+  (7,)                          2      0      2
+#
+# Total: 53 fps
+#   TRANS: 43
+#   NEAR:  2
+#   LOCK:  8
