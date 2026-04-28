@@ -1837,7 +1837,7 @@ Sample fps
 \bottomrule\noalign{}
 \endlastfoot
 \(\{9, 9, 8, 1, 0, 0\}\) & \(32\) & \(8919, 8991, 9189, 10899, 80919, 80991, \ldots\) \\
-\(\{5, 5, 4, 4, 0, 0\}\) & \(7\) & \(4545, 44505, 54450, 445005, 445050, 504450, 544500\) \\
+\(\{5, 5, 4, 4, 0, 0\}\) & \(7\) & \(4545, 44505, 54450, 445005, 445050, \ldots\) \\
 \(\{9, 7, 1, 1, 0, 0\}\) & \(5\) & \(7191, 17019, 700191, 701901, 719100\) \\
 \(\{7, 6, 4, 1, 0, 0\}\) & \(4\) & \(60714, 146070, 170460, 607140\) \\
 \(\{7, 7, 3, 1, 0, 0\}\) & \(2\) & \(37017, 707130\) \\
@@ -1880,50 +1880,31 @@ For each digit length \(d \geq 5\), the following tables give the permutation-pa
 \hypertarget{table-b.1.-ladder-rules-through-d-20}{%
 \section{\texorpdfstring{Table B.1. Ladder rules through \(d = 20\)}{Table B.1. Ladder rules through d = 20}}\label{table-b.1.-ladder-rules-through-d-20}}
 
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1562}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1250}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1562}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1562}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1562}}@{}}
+(Per the fixed-point verification above, every row in this table gives \(\pi \cdot F = 71460\), \(\sigma \cdot F = 10746\), and \(K(F) = 60714\). We omit those three columns to keep the letter strings legible at high \(d\).)
+
+\begin{longtable}[]{@{}clll@{}}
 \toprule\noalign{}
-\begin{minipage}[b]{\linewidth}\centering
-\(d\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Ladder
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\pi\) (letters)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-\(\sigma\) (letters)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(\pi \cdot F\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(\sigma \cdot F\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(K(F)\)
-\end{minipage} \\
+\(d\) & Ladder & \(\pi\) (letters) & \(\sigma\) (letters) \\
 \midrule\noalign{}
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-5 & odd (native) & \texttt{adcbe} & \texttt{deacb} & 71460 & 10746 & 60714 \\
-6 & even (split) & \texttt{eadcbf} & \texttt{fdeacb} & 71460 & 10746 & 60714 \\
-7 & odd & \texttt{fgadcbe} & \texttt{gfdeacb} & 71460 & 10746 & 60714 \\
-8 & even & \texttt{hgeadcbf} & \texttt{ghfdeacb} & 71460 & 10746 & 60714 \\
-9 & odd & \texttt{hifgadcbe} & \texttt{ihgfdeacb} & 71460 & 10746 & 60714 \\
-10 & even & \texttt{jihgeadcbf} & \texttt{ijghfdeacb} & 71460 & 10746 & 60714 \\
-11 & odd & \texttt{jkhifgadcbe} & \texttt{kjihgfdeacb} & 71460 & 10746 & 60714 \\
-12 & even & \texttt{lkjihgeadcbf} & \texttt{klijghfdeacb} & 71460 & 10746 & 60714 \\
-13 & odd & \texttt{lmjkhifgadcbe} & \texttt{mlkjihgfdeacb} & 71460 & 10746 & 60714 \\
-14 & even & \texttt{nmlkjihgeadcbf} & \texttt{mnklijghfdeacb} & 71460 & 10746 & 60714 \\
-15 & odd & \texttt{nolmjkhifgadcbe} & \texttt{onmlkjihgfdeacb} & 71460 & 10746 & 60714 \\
-16 & even & \texttt{ponmlkjihgeadcbf} & \texttt{opmnklijghfdeacb} & 71460 & 10746 & 60714 \\
-17 & odd & \texttt{pqnolmjkhifgadcbe} & \texttt{qponmlkjihgfdeacb} & 71460 & 10746 & 60714 \\
-18 & even & \texttt{rqponmlkjihgeadcbf} & \texttt{qropmnklijghfdeacb} & 71460 & 10746 & 60714 \\
-19 & odd & \texttt{rspqnolmjkhifgadcbe} & \texttt{srqponmlkjihgfdeacb} & 71460 & 10746 & 60714 \\
-20 & even & \texttt{tsrqponmlkjihgeadcbf} & \texttt{stqropmnklijghfdeacb} & 71460 & 10746 & 60714 \\
+5 & odd (native) & \texttt{adcbe} & \texttt{deacb} \\
+6 & even (split) & \texttt{eadcbf} & \texttt{fdeacb} \\
+7 & odd & \texttt{fgadcbe} & \texttt{gfdeacb} \\
+8 & even & \texttt{hgeadcbf} & \texttt{ghfdeacb} \\
+9 & odd & \texttt{hifgadcbe} & \texttt{ihgfdeacb} \\
+10 & even & \texttt{jihgeadcbf} & \texttt{ijghfdeacb} \\
+11 & odd & \texttt{jkhifgadcbe} & \texttt{kjihgfdeacb} \\
+12 & even & \texttt{lkjihgeadcbf} & \texttt{klijghfdeacb} \\
+13 & odd & \texttt{lmjkhifgadcbe} & \texttt{mlkjihgfdeacb} \\
+14 & even & \texttt{nmlkjihgeadcbf} & \texttt{mnklijghfdeacb} \\
+15 & odd & \texttt{nolmjkhifgadcbe} & \texttt{onmlkjihgfdeacb} \\
+16 & even & \texttt{ponmlkjihgeadcbf} & \texttt{opmnklijghfdeacb} \\
+17 & odd & \texttt{pqnolmjkhifgadcbe} & \texttt{qponmlkjihgfdeacb} \\
+18 & even & \texttt{rqponmlkjihgeadcbf} & \texttt{qropmnklijghfdeacb} \\
+19 & odd & \texttt{rspqnolmjkhifgadcbe} & \texttt{srqponmlkjihgfdeacb} \\
+20 & even & \texttt{tsrqponmlkjihgeadcbf} & \texttt{stqropmnklijghfdeacb} \\
 \end{longtable}
 
 \hypertarget{table-b.2.-coefficient-vectors-through-d-12}{%
