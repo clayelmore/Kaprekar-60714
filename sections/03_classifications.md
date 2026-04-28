@@ -88,7 +88,7 @@ At $`d = 5`$, there are $`5{,}280`$ full-variable rules (Proposition 2.1, $`5! \
 
 *These fixed points are genuinely in the full-variable classification — their native rules are algebraically rank-$`5`$ — but their effective rank at $`F`$ is reduced by absorption of coefficients at zero-digit positions. This is the mechanism that underlies coefficient-preserving lifting in §5, visible here at the root of the classification: a rule can be algebraically full-variable while being effectively lower-rank on a specific fixed point. The remaining $`31`$ fps in Table 3.1 all have no zero digits and therefore have $`\mathrm{sv}_F = \mathrm{sv} = 5`$.*
 
-## 3.5 $`d = 6`$: five hundred and seven universal full-variable fixed points
+## 3.5 $`d = 6`$: five hundred and six universal full-variable fixed points
 
 At $`d = 6`$, there are $`190{,}800`$ full-variable rules (Proposition 2.1, $`6! \cdot D_6 = 720 \cdot 265`$).
 
