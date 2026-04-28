@@ -129,7 +129,7 @@ The proof reduces to two lemmas. Lemma 5.1 (structural) establishes that the set
 - *$`d = 5`$: algebraic obstruction — no rank-$`5`$ rule fixes $`6174`$.*
 - *$`d = 6`$: dynamic obstruction — four rank-$`6`$ rules fix $`6174`$, best basin $`0.969`$.*
 - *$`d = 7`$: strict-universal via the coefficient-preserving lifting $`(efgabcd, fgedcba)`$.*
-- *$`d = 8`$, $`d = 9`$: near-universal, with a constant escape class of $`45`$ multisets of the form $`(X, X, X, X, 0, 0, \ldots)`$; basin asymptotes to $`1`$ as $`d`$ grows.*
+- *$`d = 8`$, $`d = 9`$: near-universal, with a $`45`$-multiset escape class of the form $`(X, X, X, X, 0, 0, \ldots)`$; basin asymptotes to $`1`$.*
 
 *$`60714`$, $`6174`$, and $`60417`$ are unified under a structural invariant, the $`\mathrm{sum\_locked\_spans}`$ of their native rules — taking values $`5`$, $`8`$, $`7`$ respectively — which empirically controls the number of absorbing (zero-digit) positions at which a coefficient-preserving lifting succeeds. This unification is empirical, not proven.*
 
@@ -385,7 +385,7 @@ At $`d = 5`$, there are $`5{,}280`$ full-variable rules (Proposition 2.1, $`5! \
 
 **Proof.** Exhaustive enumeration of $`5{,}280`$ rules against $`1{,}902`$ admissible digit multisets ($`99{,}540`$ admissible padded five-digit strings). Full computation in Appendix A.3; the complete list of $`33`$ fixed points appears in Table 3.1 below.
 
-**Classical rule does not appear.** The classical rule $`K_0`$ at $`d = 5`$ has coefficient vector $`(9999, \, 990, \, 0, \, -990, \, -9999)`$ — the middle coefficient vanishes by the forced borrow chain at odd digit length (§1.1). $`K_0`$ at $`d = 5`$ has $`\mathrm{sv} = 4`$, not $`5`$; it is not in the full-variable classification. The observation that "the classical Kaprekar routine fails at $`d = 5`$" is, in our framing, the observation that the classical rule at $`d = 5`$ is not even in the full-variable space — there is no contradiction to the existence of $`33`$ universal attractors in that space.
+**Classical rule does not appear.** The classical rule $`K_0`$ at $`d = 5`$ is not in the full-variable classification: its coefficient vector $`(9999, 990, 0, -990, -9999)`$ has middle coefficient zero (by the forced borrow chain at odd digit length, §1.1), so $`\mathrm{sv}(K_0) = 4`$, not $`5`$. The observation that "the classical Kaprekar routine fails at $`d = 5`$" is, in our framing, the observation that the classical rule at $`d = 5`$ is not even in the full-variable space — there is no contradiction to the existence of $`33`$ universal attractors in that space.
 
 **Reverse-pair structure fails at odd $`d`$.** The classical rule is a specific "reverse-pair" rule ($`\sigma_i = \pi_{d-1-i}`$). At even $`d`$, reverse-pair rules can be full-variable; at odd $`d`$, they cannot — the middle position always satisfies $`\sigma_{(d-1)/2} = \pi_{(d-1)/2}`$, forcing $`\mathrm{sv} \leq d - 1`$. Consequently, all $`66`$ universal full-variable rules at $`d = 5`$ are *non-reverse-pair* — they have no mirror symmetry. This is a structural distinction from the classical case.
 
@@ -881,7 +881,7 @@ One of this section's claims (Theorem 6.1, the $`6174`$ cross-dimensional patter
 
 ### 6.1 6174 as predecessor: where the classical recipe runs out
 
-Kaprekar's 1949 result identifies 6174 as the unique attractor of the classical four-digit Kaprekar routine: starting from any non-repdigit four-digit integer, the iteration $`K_0(n) = (\text{digits of } n \text{ rearranged descending}) - (\text{digits rearranged ascending})`$ reaches 6174 within at most seven steps. In our framework, this is the rule with permutation pair $`\pi = (3, 2, 1, 0)`$, $`\sigma = (0, 1, 2, 3)`$ and coefficient vector $`(999, 90, -90, -999)`$.
+Kaprekar's 1949 result identifies 6174 as the unique attractor of the classical four-digit Kaprekar routine: starting from any non-repdigit four-digit integer, the iteration $`K_0(n)`$ — defined as the digits of $`n`$ rearranged descending, minus the digits rearranged ascending — reaches 6174 within at most seven steps. In our framework, this is the rule with permutation pair $`\pi = (3, 2, 1, 0)`$, $`\sigma = (0, 1, 2, 3)`$ and coefficient vector $`(999, 90, -90, -999)`$.
 
 At $`d = 5`$, the analogous rule $`\mathrm{abcde} - \mathrm{edcba}`$ has coefficient vector $`(9999, 990, 0, -990, -9999)`$. The middle coefficient is identically zero: the classical rule at $`d = 5`$ has algebraic rank $`4`$, not $`5`$. The classical recipe degenerates at odd digit lengths in this way, and the result is well-known: there is no fixed point of the classical $`d = 5`$ rule. Every input enters a four-cycle $`(74943, 62964, 71973, 83952)`$ that catches the entire admissible set.
 
@@ -1084,7 +1084,7 @@ Informally: when a fixed point appears at a non-native digit length, it always d
 
 ### 7.2 The structural invariant and dimensional fate
 
-Observation 6.2 records the empirical unification of $`60714`$, $`60417`$, and $`6174`$ through the $`\mathrm{sum\_locked\_spans}`$ invariant. The natural formal statement is:
+Observation 6.2 records the empirical unification of $`60714`$, $`60417`$, and $`6174`$ through the $`\mathrm{sls}`$ invariant. The natural formal statement is:
 
 **Conjecture 7.2 (structural invariant controls dimensional fate).** *For a universal full-variable fixed point $`F`$ with native digit length $`d_F`$ and native rule $`K_F`$, the cross-dimensional behavior of $`F`$ at $`d > d_F`$ is controlled by $`\mathrm{sum\_locked\_spans}(K_F)`$ and the number of zero digits of $`F`$ at $`d`$. Specifically:*
 
@@ -1229,10 +1229,12 @@ $$60714,\ 65781,\ 67581.$$
 
 **Representative rules at the $`\{0, 1, 4, 6, 7\}`$ cluster** (the $`\{7, 6, 4, 1\}`$-thread of §6):
 
-| Fixed point | $`\pi`$ | $`\sigma`$ | Coefficient vector |
-|:---:|:---:|:---:|:---|
-| $`60714`$ | $`(4, 1, 2, 3, 0)`$ | $`(2, 0, 1, 4, 3)`$ | $`(9900,\; 9,\; 90,\; -9000,\; -999)`$ |
-| $`60417`$ | $`(4, 1, 0, 3, 2)`$ | $`(0, 2, 1, 4, 3)`$ | $`(9999,\; -90,\; -9,\; -9000,\; -900)`$ |
+| Fixed point | $`\pi`$ | $`\sigma`$ |
+|:---:|:---:|:---:|
+| $`60714`$ | $`(4, 1, 2, 3, 0)`$ | $`(2, 0, 1, 4, 3)`$ |
+| $`60417`$ | $`(4, 1, 0, 3, 2)`$ | $`(0, 2, 1, 4, 3)`$ |
+
+(Coefficient vectors are recoverable as $`c_i = 10^{\pi_i} - 10^{\sigma_i}`$: $`(9900, 9, 90, -9000, -999)`$ for $`60714`$ and $`(9999, -90, -9, -9000, -900)`$ for $`60417`$.)
 
 **Note on $`54`$.** The fixed point $`54`$ appears in the $`d = 5`$ full-variable classification under the rule $`\pi = (1, 2, 4, 3, 0)`$, $`\sigma = (2, 0, 3, 4, 1)`$ with coefficient vector $`(-90, 99, 9000, -9000, -9)`$. This rule is algebraically full-variable at $`d = 5`$ ($`\mathrm{sv} = 5`$), but its effective rank at $`F = 54`$ is only $`2`$ — three of the five coefficients land on zero digits of $`F`$'s sorted-descending form $`(5, 4, 0, 0, 0)`$ and do not contribute to $`K(F) = F`$. Thus $`\mathrm{sv}_F(K_{54}) = 2 < 5 = \mathrm{sv}(K_{54})`$. This is structurally analogous to the $`495`$ phenomenon at $`d = 3`$ (§1.1), occurring at higher digit length within a genuinely full-variable rule.
 
@@ -1297,9 +1299,9 @@ That all eight 3-zero fps belong to a single multiset is a notable structural fa
 
 | Multiset | Cluster size | Sample fps |
 |:---|:---:|:---|
-| $`\{9, 9, 8, 1, 0, 0\}`$ | $`32`$ | $`8919, 8991, 9189, 10899, 80919, 80991, \ldots`$ |
-| $`\{5, 5, 4, 4, 0, 0\}`$ | $`7`$  | $`4545, 44505, 54450, 445005, 445050, \ldots`$ |
-| $`\{9, 7, 1, 1, 0, 0\}`$ | $`5`$  | $`7191, 17019, 700191, 701901, 719100`$ |
+| $`\{9, 9, 8, 1, 0, 0\}`$ | $`32`$ | $`8919, 8991, 9189, 10899, 80919, \ldots`$ |
+| $`\{5, 5, 4, 4, 0, 0\}`$ | $`7`$  | $`4545, 44505, 54450, 445005, \ldots`$ |
+| $`\{9, 7, 1, 1, 0, 0\}`$ | $`5`$  | $`7191, 17019, 700191, 701901, \ldots`$ |
 | $`\{7, 6, 4, 1, 0, 0\}`$ | $`4`$  | $`60714, 146070, 170460, 607140`$ |
 | $`\{7, 7, 3, 1, 0, 0\}`$ | $`2`$  | $`37017, 707130`$ |
 | $`\{9, 5, 2, 2, 0, 0\}`$ | $`1`$  | $`9225`$ |
@@ -1392,9 +1394,15 @@ The full coefficient vector at any $`d`$ is the locked-plus-root prefix followed
 
 The tables above are the output of a simple recursive recipe that generalizes to every $`d \geq 5`$:
 
-**Base cases.**  
-Odd ladder root: at $`d = 5`$, $`\pi = (4, 1, 2, 3, 0)`$, $`\sigma = (2, 0, 1, 4, 3)`$, coefficient vector $`(9900, 9, 90, -9000, -999)`$.  
-Even ladder root: at $`d = 6`$, $`\pi = (4, 1, 2, 3, 5, 0)`$, $`\sigma = (2, 0, 1, 4, 3, 5)`$, coefficient vector $`(9900, 9, 90, -9000, 99000, -99999)`$.
+**Base cases.**
+
+*Odd ladder root* (at $`d = 5`$): $`\pi = (4, 1, 2, 3, 0)`$, $`\sigma = (2, 0, 1, 4, 3)`$, with coefficient vector
+
+$$c^{(5)} = (9900, 9, 90, -9000, -999).$$
+
+*Even ladder root* (at $`d = 6`$): $`\pi = (4, 1, 2, 3, 5, 0)`$, $`\sigma = (2, 0, 1, 4, 3, 5)`$, with coefficient vector
+
+$$c^{(6)} = (9900, 9, 90, -9000, 99000, -99999).$$
 
 **Inductive step.** Given the rule at $`d`$ on a ladder, the rule at $`d + 2`$ on the same ladder is obtained by appending two new positions:
 
@@ -1648,7 +1656,11 @@ Combining: at every odd $`d \geq 15`$, $`K^{(d)}(x)`$ has at least $`2`$ zero di
 
 ## C.5 The even ladder
 
-The even-ladder root at $`d = 6`$ uses the split-lifted rule with coefficient vector $`(9900, 9, 90, -9000, 99000, -99999)`$. The split replaces the native $`c_4 = -999`$ with two coefficients at positions $`4`$ and $`5`$ summing to $`-999`$. For all higher even $`d`$, zero-sum pair extensions operate from $`d = 6`$.
+The even-ladder root at $`d = 6`$ uses the split-lifted rule with coefficient vector
+
+$$c^{(6)} = (9900, 9, 90, -9000, 99000, -99999).$$
+
+The split replaces the native $`c_4 = -999`$ with two coefficients at positions $`4`$ and $`5`$ summing to $`-999`$. For all higher even $`d`$, zero-sum pair extensions operate from $`d = 6`$.
 
 **Lemma C.4 (one-step $`T_d`$ closure on the even ladder at $`d \geq 18`$).** *Let $`d \geq 18`$ be even. For every admissible input $`n \in A_d`$ with sorted-descending form $`(x_0, \ldots, x_{d-1})`$,*
 
