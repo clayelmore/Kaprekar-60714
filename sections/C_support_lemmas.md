@@ -1,4 +1,4 @@
-[← Back to paper](../README.md#table-of-contents) · [← Previous: Appendix B. 60714 ladder](B_60714_ladder.md) · [Next: Appendix D. Transcendent fps at $`d_F = 7`$ →](D_dF7_observations.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: B. Coefficient ladder](B_60714_ladder.md) · [Next: D. Transcendent fixed points →](D_transcendent_fps.md)
 
 ---
 
@@ -348,10 +348,10 @@ For these $`9`$ second-iteration stragglers, applying $`K^{(d)}`$ again — whic
 
 **Summary.** For $`n \in A_d \cap T_d`$ with $`m \in A_{d-2}`$ (Case 3), the induction closes directly. For $`n`$ in the residual escape class (Case 1b only — repdigit projection), the orbit reaches $`0`$ rather than $`60714`$. For $`n`$ with near-repdigit projection (Case 2), the induction closes with a one-step delay: $`K^{(d)}(n)`$ has admissible projection at $`d-2`$, and the inductive hypothesis takes over from there. The main theorem's statement — universal at every $`d \geq 5`$ — holds in the strict sense at $`d = 5`$ and $`d = 6`$ (where the escape class is empty) and holds *modulo the characterized residual escape class* (Case 1b only) at $`d \geq 7`$. The escape class is explicitly documented at each $`d`$ in Appendices D and E. $`\square`$
 
-**Remark C.6.** The corrected statement of Theorem 5.2 (§5.2) makes the dependence on the escape class $`E_d`$ precise: strict universality holds at $`d = 5, 6`$ (where $`E_d = \emptyset`$) and near-universality holds at $`d \geq 7`$ on $`A_d \setminus E_d`$. The size of the step-1 component $`E_d^{(1)}`$ admits the closed form (Lemma 5.2.2)
+**Remark C.6.** The statement of Theorem 5.2 (§5.2) makes the dependence on the escape class $`E_d`$ precise: universal convergence holds on $`A_d \setminus E_d`$ at every $`d \geq 5`$, with $`E_d = \emptyset`$ at $`d = 5, 6`$ and $`E_d`$ non-empty at $`d \geq 7`$. The size of the step-1 component $`E_d^{(1)}`$ admits the closed form (Lemma 5.5)
 $$|E_d^{(1)}| \;=\; \binom{10 + k - 1}{k} - 10, \qquad k = 1 + \lfloor (d - d_0)/2 \rfloor.$$
 Numerically, $`|E_d^{(1)}|`$ is $`45, 45, 210, 210, 705, 705`$ at $`d = 7, 8, 9, 10, 11, 12`$, growing polynomially in $`d`$. The full escape class $`E_d`$ is the backward orbit of the block-aligned set under $`K_{60714}^{(d)}`$; its asymptotic size is bounded by direct enumeration at each $`d`$ but no closed form is currently proven. Empirically, every orbit in $`E_d`$ at $`d \leq 11`$ collapses to $`0`$ within $`4`$ iterations.
 
 ---
 
-[← Back to paper](../README.md#table-of-contents) · [← Previous: Appendix B. 60714 ladder](B_60714_ladder.md) · [Next: Appendix D. Transcendent fps at $`d_F = 7`$ →](D_dF7_observations.md)
+[← Back to paper](../README.md#table-of-contents) · [← Previous: B. Coefficient ladder](B_60714_ladder.md) · [Next: D. Transcendent fixed points →](D_transcendent_fps.md)

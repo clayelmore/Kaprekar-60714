@@ -98,7 +98,7 @@ d7_audit/
 ├── audit_60714_d7.py          ← Stage 2: Run A  (d=7 odd ladder)
 ├── audit_60714_d8.py          ← Stage 3: Run A2 (d=8 even ladder)
 ├── classify_d7_full.py        ← Stage 4: Run B (full d=7 classification)
-├── d7_outcome_verifier.py     ← Stage 5: Run C (52-fp verifier)
+├── d7_outcome_verifier.py     ← Stage 5: Run C (53-fp verifier)
 └── reproduce.sh               ← runs all stages in sequence
 ```
 
@@ -116,4 +116,4 @@ d7_summary.txt
 d7_classifier_analysis.txt
 ```
 
-These are the inputs needed for analysis: paper Appendix D extension, classifier confirmation/refutation on the larger 52-fp sample, and any sub-classifier search within the long-cycle bucket.
+These are the inputs needed for analysis: paper Appendix D extension, classifier confirmation/refutation on the larger 53-fp sample, and any sub-classifier search within the long-cycle bucket.

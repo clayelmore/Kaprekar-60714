@@ -1,10 +1,12 @@
 # d7 Outcome Verifier
 
+> **Status (April 28, 2026):** Run C is complete. All 53 two-zero d=6 fps were verified at d=7; results are recorded in `d7_verified_outcomes.json` and tabulated in Appendix D of the paper. This document is preserved as the methodology specification — the "what / how / why" for the verifier — written before the run; the planning notes about pre-Run-C confirmed counts and unverified buckets reflect that planning state.
+
 Purpose: determine the exact d=7 transcendence outcome (TRANS / NEAR / LOCK) for every two-zero d=6 universal sv=6 fixed point.
 
 ## What it does
 
-For each of the 52 two-zero d=6 universal fps, the script:
+For each of the 53 two-zero d=6 universal fps, the script:
 
 1. **Enumerates every valid sv=7 rule** — all (pi, sigma) permutation pairs at d=7 such that K(F_padded) = F and the coefficient vector has no zero entries. Uses an optimized backtracking enumerator that finds all valid rules in well under a second per fp (vs. minutes for brute-force enumeration).
 
@@ -31,7 +33,7 @@ All four match Clay's earlier memory notes.
 
 - Infrastructure setup: ~10 seconds (builds sort-desc table for 10 million integers)
 - Per fp runtime: 1-30 seconds depending on rule count (36 to 1632 valid rules per fp)
-- Total for all 52 fps: estimated **1-3 hours** on a modern laptop
+- Total for all 53 fps: estimated **1-3 hours** on a modern laptop
 
 The script saves progress incrementally to `d7_verified_partial.json` after every fp, so an interruption does not lose work. If restarted, it resumes from the saved checkpoint.
 
@@ -59,7 +61,7 @@ No arguments, no flags. Writes everything to the current directory. Progress pri
 
 After the run completes, we'll have:
 
-1. **Verified outcomes for all 52 two-zero d=6 fps** — eliminating the current gap where only 27 are individually confirmed and 25 are inferred from paper totals.
+1. **Verified outcomes for all 53 two-zero d=6 fps** — eliminating the current gap where only 27 are individually confirmed and 25 are inferred from paper totals.
 
 2. **Full picture of the long-cycle bucket.** The partial classifier says "cycle signature with all lengths ≤ 3 at d=6 ⇒ LOCK" (verified 12-for-12). The remaining 40 fps (four signatures: (2,4), (6,), (3,4), plus any surprise others) split TRANS/LOCK. We'll see the exact split and can then hunt within it for second-order discriminators that weren't visible in the noisy 27-fp sample.
 

@@ -2,7 +2,7 @@
 
 A five-digit number that's a universal attractor at every digit length d ≥ 5.
 
-Pick any number with five or more digits. Apply the right rule. Watch it converge to **60714** (with a structurally characterized small class of exceptions at d ≥ 7). The rule depends on the input's digit length, but the destination is almost always the same.
+Pick any number with five or more digits. Apply the right rule. Watch it converge to **60714** at every digit length $d \geq 5$, modulo a small structurally characterized escape class that's continuous with the classical Kaprekar escape phenomenon at $d = 3, 4$ (the ten repdigits at $d = 3$, the ten multiples of 1111 at $d = 4$). The rule depends on the input's digit length, but the destination is almost always the same.
 
 This is a generalization of Kaprekar's classical 1949 result, extended in a direction the literature has not explored: instead of fixing the rule and asking which digit lengths work, we let the rule vary with the digit length, and find a single fixed point — 60714 — whose universality holds across infinitely many dimensions simultaneously.
 
@@ -22,10 +22,19 @@ Type any number 5–20 digits long. The calculator shows the full trajectory, st
 
 | | |
 |---|---|
+| **[paper.pdf](paper.pdf)** | The complete paper, compiled (71 pages, 629 KB). The canonical reading version. |
 | **[60714_calculator.html](60714_calculator.html)** | Single-file interactive calculator. Open it in any browser. No setup. |
-| **[paper.md](paper.md)** | The complete paper: classifications, theorems, proofs, appendices. ~170 KB; if GitHub's math renderer struggles with the size, browse the [section files](#-the-paper-section-by-section) below. |
+| **[paper.md](paper.md)** | Markdown source of the paper, identical content to the PDF. ~225 KB; if GitHub's math renderer struggles with the size, browse the [section files](#-the-paper-section-by-section) below. |
+| **[paper.tex](paper.tex)** | LaTeX source. Compiles to `paper.pdf` with `pdflatex`. |
 | **[d6_fps.txt](d6_fps.txt)** | All 506 universal fixed points at d = 6, with metadata. |
-| **[scripts/](scripts/)** | Reproducibility scripts for every exhaustive claim in the paper. |
+| **[d7_fps.txt](d7_fps.txt)** | All 18,004 universal full-variable fixed points at d = 7, from the exhaustive Run B classification (Appendix D). |
+| **[d7_summary.txt](d7_summary.txt)** | Human-readable summary of the d=7 classification: per-zero-stratum counts, rule totals, and reproducibility metadata. |
+| **[d7_classification.json](d7_classification.json)** | Run B output: full machine-readable d=7 classification (10 MB). |
+| **[d7_verified_outcomes.json](d7_verified_outcomes.json)** | Run C output: cross-dimensional outcomes for the two-zero d=6 stratum verified at d=7 (42 MB). |
+| **[audit_60714_d7.json](audit_60714_d7.json)**, **[audit_60714_d8.json](audit_60714_d8.json)** | Empirical confirmation of Lemma 5.5 at d=7 and d=8 (cf. §5 Remark). |
+| **[README_d7_verifier.md](README_d7_verifier.md)** | Documentation for the d=7 outcome verifier methodology. |
+| **[scripts/](scripts/)** | Reproducibility scripts for every exhaustive claim in the paper at $d \leq 6$. |
+| **[d7_audit/](d7_audit/)** | Self-contained $d = 7$ verification package: Run B (exhaustive classification), Run C (cross-dimensional outcomes), Run A/A2 (60714 lifting audits at $d = 7, 8$). See `d7_audit/README.md`. |
 
 ---
 
@@ -33,7 +42,7 @@ Type any number 5–20 digits long. The calculator shows the full trajectory, st
 
 In Kaprekar's classical routine at d = 4, you sort the digits descending, sort them ascending, subtract, and repeat. From every non-repdigit input, you reach **6174** within seven steps.
 
-The trick "stops working" at d = 5 — Kaprekar's specific rule cycles instead of converging. The standard story for 77 years has been: 5-digit Kaprekar doesn't work.
+The routine "stops working" at d = 5 — Kaprekar's specific rule cycles instead of converging. The standard story for 77 years has been: 5-digit Kaprekar doesn't work.
 
 The story changes if you let the rule itself vary. For each digit length d there are many ways to combine sorted-descending and sorted-ascending digits — d! · (d! − 1) ordered permutation pairs, each defining its own iteration rule. Most produce cycles. A small subset converge universally. At d = 6 the count is exactly **506**.
 
@@ -81,7 +90,7 @@ For in-browser viewing — sections render cleanly on GitHub.
 | A | [Classification tables](sections/A_classification_tables.md) | Per-d enumeration data, fixed-point catalogues |
 | B | [60714 ladder construction](sections/B_60714_ladder.md) | Explicit coefficient vectors through d = 20 |
 | C | [Support lemmas for Theorem 5.2](sections/C_support_lemmas.md) | Core non-negativity, Td closure, the d = 15 algebraic hinge |
-| D | [Transcendent fps at d = 7](sections/D_dF7_observations.md) | 22-fp audit |
+| D | [Universal full-variable fps at d = 7](sections/D_dF7_observations.md) | Exhaustive d = 7 classification (18,004 fps) and cross-dimensional outcomes for the two-zero d = 6 stratum |
 | E | [6174 audit at d = 8, 9](sections/E_6174_audit.md) | The 45-input escape class |
 
 ---
@@ -108,6 +117,18 @@ To regenerate the [`d6_fps.txt`](d6_fps.txt) supplementary file:
 ```bash
 python3 scripts/classify_at_d.py 6 --save-txt
 ```
+
+### d = 7 verification
+
+For the d = 7 work in Appendix D — the exhaustive classification, the cross-dimensional outcome verification, and the empirical confirmation of Lemma 5.5 — see the self-contained [`d7_audit/`](d7_audit/) package. It uses Numba parallel acceleration and supports crash-resume on the longer enumerations.
+
+| Script | Reproduces | Runtime |
+|---|---|---|
+| [`d7_audit/audit_60714_d7.py`](d7_audit/audit_60714_d7.py) | §5 Remark: Lemma 5.5 confirmation at d = 7 | ~3 s |
+| [`d7_audit/audit_60714_d8.py`](d7_audit/audit_60714_d8.py) | §5 Remark: Lemma 5.5 confirmation at d = 8 | ~3 s |
+| [`d7_audit/classify_d7_full.py`](d7_audit/classify_d7_full.py) | Run B: exhaustive d=7 classification (18,004 universal fps) | ~5–30 min |
+| [`d7_audit/d7_outcome_verifier.py`](d7_audit/d7_outcome_verifier.py) | Run C: cross-dimensional outcomes for the 53-fp two-zero d=6 stratum | ~1–3 hours |
+| [`d7_audit/typeA_validator.py`](d7_audit/typeA_validator.py) | §6.6 Observation 6.3: held-out validation of the Type A LOCK characterization | ~5 min |
 
 ---
 
