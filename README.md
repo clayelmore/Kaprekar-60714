@@ -22,7 +22,7 @@ Type any number 5–20 digits long. The calculator shows the full trajectory, st
 
 | | |
 |---|---|
-| **[paper.pdf](paper.pdf)** | The complete paper, compiled (71 pages, 629 KB). The canonical reading version. |
+| **[paper.pdf](paper.pdf)** | The complete paper, compiled (71 pages, 832 KB). The canonical reading version. |
 | **[60714_calculator.html](60714_calculator.html)** | Single-file interactive calculator. Open it in any browser. No setup. |
 | **[paper.md](paper.md)** | Markdown source of the paper, identical content to the PDF. ~225 KB; if GitHub's math renderer struggles with the size, browse the [section files](#-the-paper-section-by-section) below. |
 | **[paper.tex](paper.tex)** | LaTeX source. Compiles to `paper.pdf` with `pdflatex`. |
