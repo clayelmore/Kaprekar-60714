@@ -12,24 +12,26 @@ For each digit length $`d \geq 5`$, the following tables give the permutation-pa
 
 ## Table B.1. Ladder rules through $`d = 20`$
 
-| $`d`$ | Ladder | $`\pi`$ (letters) | $`\sigma`$ (letters) | $`\pi \cdot F`$ | $`\sigma \cdot F`$ | $`K(F)`$ |
-|:---:|:---|:---|:---|:---:|:---:|:---:|
-| 5  | odd (native)    | `adcbe`                    | `deacb`                    | 71460 | 10746 | 60714 |
-| 6  | even (split)    | `eadcbf`                   | `fdeacb`                   | 71460 | 10746 | 60714 |
-| 7  | odd             | `fgadcbe`                  | `gfdeacb`                  | 71460 | 10746 | 60714 |
-| 8  | even            | `hgeadcbf`                 | `ghfdeacb`                 | 71460 | 10746 | 60714 |
-| 9  | odd             | `hifgadcbe`                | `ihgfdeacb`                | 71460 | 10746 | 60714 |
-| 10 | even            | `jihgeadcbf`               | `ijghfdeacb`               | 71460 | 10746 | 60714 |
-| 11 | odd             | `jkhifgadcbe`              | `kjihgfdeacb`              | 71460 | 10746 | 60714 |
-| 12 | even            | `lkjihgeadcbf`             | `klijghfdeacb`             | 71460 | 10746 | 60714 |
-| 13 | odd             | `lmjkhifgadcbe`            | `mlkjihgfdeacb`            | 71460 | 10746 | 60714 |
-| 14 | even            | `nmlkjihgeadcbf`           | `mnklijghfdeacb`           | 71460 | 10746 | 60714 |
-| 15 | odd             | `nolmjkhifgadcbe`          | `onmlkjihgfdeacb`          | 71460 | 10746 | 60714 |
-| 16 | even            | `ponmlkjihgeadcbf`         | `opmnklijghfdeacb`         | 71460 | 10746 | 60714 |
-| 17 | odd             | `pqnolmjkhifgadcbe`        | `qponmlkjihgfdeacb`        | 71460 | 10746 | 60714 |
-| 18 | even            | `rqponmlkjihgeadcbf`       | `qropmnklijghfdeacb`       | 71460 | 10746 | 60714 |
-| 19 | odd             | `rspqnolmjkhifgadcbe`      | `srqponmlkjihgfdeacb`      | 71460 | 10746 | 60714 |
-| 20 | even            | `tsrqponmlkjihgeadcbf`     | `stqropmnklijghfdeacb`     | 71460 | 10746 | 60714 |
+(Per the fixed-point verification above, every row in this table gives $`\pi \cdot F = 71460`$, $`\sigma \cdot F = 10746`$, and $`K(F) = 60714`$. We omit those three columns to keep the letter strings legible at high $`d`$.)
+
+| $`d`$ | Ladder | $`\pi`$ (letters) | $`\sigma`$ (letters) |
+|:---:|:---|:---|:---|
+| 5  | odd (native) | `adcbe`                | `deacb`                |
+| 6  | even (split) | `eadcbf`               | `fdeacb`               |
+| 7  | odd          | `fgadcbe`              | `gfdeacb`              |
+| 8  | even         | `hgeadcbf`             | `ghfdeacb`             |
+| 9  | odd          | `hifgadcbe`            | `ihgfdeacb`            |
+| 10 | even         | `jihgeadcbf`           | `ijghfdeacb`           |
+| 11 | odd          | `jkhifgadcbe`          | `kjihgfdeacb`          |
+| 12 | even         | `lkjihgeadcbf`         | `klijghfdeacb`         |
+| 13 | odd          | `lmjkhifgadcbe`        | `mlkjihgfdeacb`        |
+| 14 | even         | `nmlkjihgeadcbf`       | `mnklijghfdeacb`       |
+| 15 | odd          | `nolmjkhifgadcbe`      | `onmlkjihgfdeacb`      |
+| 16 | even         | `ponmlkjihgeadcbf`     | `opmnklijghfdeacb`     |
+| 17 | odd          | `pqnolmjkhifgadcbe`    | `qponmlkjihgfdeacb`    |
+| 18 | even         | `rqponmlkjihgeadcbf`   | `qropmnklijghfdeacb`   |
+| 19 | odd          | `rspqnolmjkhifgadcbe`  | `srqponmlkjihgfdeacb`  |
+| 20 | even         | `tsrqponmlkjihgeadcbf` | `stqropmnklijghfdeacb` |
 
 ## Table B.2. Coefficient vectors through $`d = 12`$
 
