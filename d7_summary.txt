@@ -1,0 +1,61 @@
+# d7_summary.txt — d=7 outcome for two-zero d=6 fps
+# Total: 53 fps verified
+# TRANS (basin >= 0.99): 43
+# NEAR  (0.95 <= basin < 0.99): 2
+# LOCK  (basin < 0.95): 8
+#
+# Format: <F>  <outcome>  best_basin=<>  n_valid_rules=<>  trans_rules=<>  multiset=<>
+#
+   4545  TRANS  best_basin=1.000000  n_valid_rules= 1920  trans_rules= 12  multiset=0004455
+   7191  NEAR   best_basin=0.984568  n_valid_rules=  432  trans_rules=  0  multiset=0001179
+   8919  TRANS  best_basin=1.000000  n_valid_rules=  768  trans_rules= 14  multiset=0001899
+   8991  TRANS  best_basin=1.000000  n_valid_rules= 1632  trans_rules= 68  multiset=0001899
+   9189  TRANS  best_basin=1.000000  n_valid_rules= 1344  trans_rules=  8  multiset=0001899
+   9225  LOCK   best_basin=0.884215  n_valid_rules=  216  trans_rules=  0  multiset=0002259
+  10899  TRANS  best_basin=1.000000  n_valid_rules= 1632  trans_rules= 16  multiset=0001899
+  17019  LOCK   best_basin=0.574250  n_valid_rules=  192  trans_rules=  0  multiset=0001179
+  37017  LOCK   best_basin=0.860582  n_valid_rules=  192  trans_rules=  0  multiset=0001377
+  44505  TRANS  best_basin=1.000000  n_valid_rules= 1920  trans_rules=  4  multiset=0004455
+  52605  LOCK   best_basin=0.563404  n_valid_rules=  288  trans_rules=  0  multiset=0002556
+  54450  TRANS  best_basin=1.000000  n_valid_rules= 1920  trans_rules= 10  multiset=0004455
+  60714  TRANS  best_basin=0.992857  n_valid_rules=   36  trans_rules=  4  multiset=0001467
+  67023  LOCK   best_basin=0.868783  n_valid_rules=   36  trans_rules=  0  multiset=0002367
+  80919  TRANS  best_basin=1.000000  n_valid_rules= 1584  trans_rules= 30  multiset=0001899
+  80991  TRANS  best_basin=1.000000  n_valid_rules=  768  trans_rules= 26  multiset=0001899
+  81099  TRANS  best_basin=1.000000  n_valid_rules=  768  trans_rules=  8  multiset=0001899
+  89019  TRANS  best_basin=1.000000  n_valid_rules= 2208  trans_rules= 20  multiset=0001899
+  90819  TRANS  best_basin=1.000000  n_valid_rules= 2112  trans_rules=  4  multiset=0001899
+  90918  TRANS  best_basin=1.000000  n_valid_rules= 1344  trans_rules=  4  multiset=0001899
+  91809  TRANS  best_basin=1.000000  n_valid_rules= 1440  trans_rules=  6  multiset=0001899
+  98091  TRANS  best_basin=1.000000  n_valid_rules= 1440  trans_rules= 16  multiset=0001899
+ 100899  TRANS  best_basin=1.000000  n_valid_rules= 2400  trans_rules= 46  multiset=0001899
+ 108099  TRANS  best_basin=1.000000  n_valid_rules= 1440  trans_rules= 18  multiset=0001899
+ 109809  TRANS  best_basin=1.000000  n_valid_rules= 1296  trans_rules=  4  multiset=0001899
+ 146070  TRANS  best_basin=1.000000  n_valid_rules=  108  trans_rules=  4  multiset=0001467
+ 170460  LOCK   best_basin=0.922928  n_valid_rules=   36  trans_rules=  0  multiset=0001467
+ 180909  TRANS  best_basin=1.000000  n_valid_rules= 1440  trans_rules=  6  multiset=0001899
+ 189009  TRANS  best_basin=1.000000  n_valid_rules= 2784  trans_rules=  8  multiset=0001899
+ 190089  TRANS  best_basin=1.000000  n_valid_rules= 2208  trans_rules= 22  multiset=0001899
+ 190809  TRANS  best_basin=1.000000  n_valid_rules=  768  trans_rules= 30  multiset=0001899
+ 445005  TRANS  best_basin=1.000000  n_valid_rules= 1920  trans_rules= 10  multiset=0004455
+ 445050  TRANS  best_basin=1.000000  n_valid_rules= 1920  trans_rules= 12  multiset=0004455
+ 504450  TRANS  best_basin=1.000000  n_valid_rules= 1920  trans_rules= 14  multiset=0004455
+ 544500  TRANS  best_basin=1.000000  n_valid_rules= 1920  trans_rules= 12  multiset=0004455
+ 607140  NEAR   best_basin=0.985450  n_valid_rules=   36  trans_rules=  0  multiset=0001467
+ 700191  TRANS  best_basin=1.000000  n_valid_rules=  432  trans_rules=  2  multiset=0001179
+ 701901  LOCK   best_basin=0.816755  n_valid_rules=  192  trans_rules=  0  multiset=0001179
+ 707130  LOCK   best_basin=0.916314  n_valid_rules=  384  trans_rules=  0  multiset=0001377
+ 719100  TRANS  best_basin=1.000000  n_valid_rules=  432  trans_rules=  2  multiset=0001179
+ 809091  TRANS  best_basin=1.000000  n_valid_rules= 2880  trans_rules= 24  multiset=0001899
+ 809109  TRANS  best_basin=1.000000  n_valid_rules= 2208  trans_rules= 16  multiset=0001899
+ 810909  TRANS  best_basin=1.000000  n_valid_rules= 2976  trans_rules= 10  multiset=0001899
+ 890091  TRANS  best_basin=1.000000  n_valid_rules=  768  trans_rules= 14  multiset=0001899
+ 900891  TRANS  best_basin=1.000000  n_valid_rules=  768  trans_rules= 24  multiset=0001899
+ 901890  TRANS  best_basin=1.000000  n_valid_rules= 1440  trans_rules=  6  multiset=0001899
+ 908091  TRANS  best_basin=1.000000  n_valid_rules= 2208  trans_rules= 28  multiset=0001899
+ 908109  TRANS  best_basin=1.000000  n_valid_rules= 2304  trans_rules= 18  multiset=0001899
+ 908190  TRANS  best_basin=1.000000  n_valid_rules= 2112  trans_rules= 14  multiset=0001899
+ 908901  TRANS  best_basin=1.000000  n_valid_rules= 1536  trans_rules= 36  multiset=0001899
+ 909081  TRANS  best_basin=1.000000  n_valid_rules= 2976  trans_rules= 34  multiset=0001899
+ 910089  TRANS  best_basin=1.000000  n_valid_rules=  768  trans_rules= 44  multiset=0001899
+ 910809  TRANS  best_basin=1.000000  n_valid_rules= 2208  trans_rules= 14  multiset=0001899
