@@ -8,8 +8,8 @@
       90,
       -9000,
       -999,
-      9000000,
-      -9000000
+      900000,
+      -900000
     ],
     "pi": [
       4,
@@ -39,7 +39,7 @@
       0,
       0
     ],
-    "wall_time_seconds": 0.406
+    "wall_time_seconds": 0.463
   },
   "admissibles_total": 11340,
   "fate_counts": {

@@ -106,20 +106,40 @@ def trace_python(ms_desc, d, coefs, max_steps=80):
 # ---------------------------------------------------------------------------
 
 def coefs_60714_odd_ladder(d):
-    """60714's coefficient-preserving lifted rule at odd d >= 5 (and d=6 for even root)."""
+    """60714's coefficient-preserving lifted rule at d >= 5.
+
+    Returns the canonical Table B.1/B.2 coefficient vector. Despite the
+    legacy function name, this returns the correct rule on BOTH ladders.
+
+    The two ladders differ in the sign convention on the appended pair
+    AND in the choice of base-block exponents:
+
+      Odd ladder  (d = 5, 7, 9, ...): k-th pair appended at d = 5 + 2k uses
+        (+9*10^(d-2), -9*10^(d-2)).  E.g., d=7 appends (9*10^5, -9*10^5).
+      Even ladder (d = 6, 8, 10, ...): k-th pair appended at d = 6 + 2k uses
+        (-9*10^(d-2), +9*10^(d-2)).  E.g., d=8 appends (-9*10^6, 9*10^6).
+
+    This matches Table B.1's letter-string conventions exactly.
+    """
     if d == 5:
         return (9900, 9, 90, -9000, -999)
     if d == 6:
         return (9900, 9, 90, -9000, 99000, -99999)
     if d % 2 == 1:  # odd ladder, d >= 7
+        # Odd-ladder rule at d is: d=5 base, then for each appended digit length
+        # 7, 9, ..., d, append (+9*10^(d'-2), -9*10^(d'-2)) where d' is that length.
         base = [9900, 9, 90, -9000, -999]
-        for k in range(6, d, 2):
+        for dprime in range(7, d + 1, 2):
+            k = dprime - 2  # exponent
             base.extend([9 * 10**k, -9 * 10**k])
         return tuple(base)
     else:  # even ladder, d >= 8
+        # Even-ladder rule at d: d=6 base, then for each d' in 8, 10, ..., d
+        # append (-9*10^(d'-2), +9*10^(d'-2)).
         base = [9900, 9, 90, -9000, 99000, -99999]
-        for k in range(7, d, 2):
-            base.extend([9 * 10**k, -9 * 10**k])
+        for dprime in range(8, d + 1, 2):
+            k = dprime - 2
+            base.extend([-9 * 10**k, 9 * 10**k])
         return tuple(base)
 
 

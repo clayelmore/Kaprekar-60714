@@ -974,14 +974,14 @@ The closed-form prediction of Lemma 5.5 has been verified by exhaustive enumerat
 \begin{itemize}
 \tightlist
 \item
-  \emph{\(d = 7\): \(45\) admissibles collapse to \(0\) in step \(1\) under the \(d = 7\) lifted rule. Total escape class \(|E_7| = 81\) (\(45\) in step \(1\), \(36\) in step \(2\)). Maximum reaching time among successful trajectories: \(30\) steps.}
+  \emph{\(d = 7\) (odd ladder): \(45\) admissibles collapse to \(0\) in step \(1\) under the \(d = 7\) lifted rule of Tables B.1--B.2. Total escape class \(|E_7| = 81\) (\(45\) in step \(1\), \(36\) in step \(2\)). Maximum reaching time among successful trajectories: \(30\) steps. Basin: \(11{,}259/11{,}340 \approx 0.992857\).}
 \item
-  \emph{\(d = 8\): \(45\) admissibles collapse to \(0\) in step \(1\) under the \(d = 8\) lifted rule. Total escape class \(|E_8| = 137\) (\(45\) in step \(1\), \(36\) in step \(2\), \(56\) in step \(3\)). Maximum reaching time among successful trajectories: \(19\) steps.}
+  \emph{\(d = 8\) (even ladder): \(45\) admissibles collapse to \(0\) in step \(1\) under the \(d = 8\) lifted rule of Tables B.1--B.2. Total escape class \(|E_8| = 45\) --- every escape is a one-step collapse, with no multi-step escapes. Maximum reaching time among successful trajectories: \(21\) steps. Basin: \(24{,}165/24{,}210 \approx 0.998141\).}
 \end{itemize}
 
-\emph{The step-\(2\) escape count is exactly \(36\) at both \(d = 7\) and \(d = 8\) --- a cross-dimensional structural invariant beyond what Lemma 5.5 predicts, worth flagging as a target for future structural analysis.}
+\emph{The contrast --- multi-step escapes at \(d = 7\) vs.~uniformly one-step escapes at \(d = 8\) --- is part of a real even/odd ladder asymmetry verified by exhaustive enumeration through \(d = 11\). At even \(d\) on the canonical lifting, \(|E_d| = |E_d^{(1)}|\) exactly (every escape orbit collapses in one step). At odd \(d\), multi-step escape orbits exist and \(|E_d|\) is a small multiple of \(|E_d^{(1)}|\). The mechanism distinguishing the two ladders sits in the sign convention on the appended zero-sum pair (Table B.1) and is structurally interesting; we flag it here as a target for future analysis.}
 
-The full escape class \(E_d\) is the backward orbit of \(B_d \cap A_d\) under \(K_{60714}^{(d)}\). Empirical computation shows \(`|E_d|\) is bounded by a small multiple of \(|E_d^{(1)}|\) at each \(d \leq 11\) and that all orbits in \(E_d\) reach \(0\) in at most \(4\) iterations. A general bound on \(|E_d|\) as \(d \to \infty\) remains open.
+The full escape class \(E_d\) is the backward orbit of \(B_d \cap A_d\) under \(K_{60714}^{(d)}\). Empirical computation shows \(|E_d|\) is bounded by a small multiple of \(|E_d^{(1)}|\) at each \(d \leq 11\) and that all orbits in \(E_d\) reach \(0\) in at most \(4\) iterations. A general bound on \(|E_d|\) as \(d \to \infty\) remains open.
 
 The proof of Theorem 5.2 occupies the remainder of this section.
 
@@ -1232,7 +1232,9 @@ Let \(K_{6174}^{(d)}\) denote the natural coefficient-preserving lifting of the 
 
 \textbf{Proof.} Statement 1 is Kaprekar's original result. Statement 2 is verified by exhaustive enumeration over the \(5! \cdot D_5 = 5{,}280\) full-variable rules at \(d = 5\): zero of them fix 6174's padded form \((7, 6, 4, 1, 0)\), establishing algebraic obstruction. Statements 3--6 are proven by direct enumeration at the corresponding \(d\). At each \(d\), all coefficient-preserving liftings are enumerated, the best basin is computed, and the non-reaching inputs are characterized. Full enumeration logs and escape-set characterization are in Appendix E. \(\square\)
 
-\textbf{The pattern: monotone NEAR-universality.} Statements 3--6 establish that 6174's basin under coefficient-preserving lifting \textbf{monotonically improves} toward \(1\) as \(d\) grows: \(0.969 \to 0.989683 \to 0.998141 \to 0.999073\) at \(d = 6, 7, 8, 9\). The escape class is structurally fixed (the four-of-a-kind-paired multisets at \(d \geq 8\)), but the admissible multiset count grows combinatorially with \(d\), so the ratio of escapes to admissible inputs decays toward zero. This is \emph{near-universality with a fixed escape class}, not the non-monotone ``fingerprint'' sometimes attributed to 6174.
+\textbf{The pattern: monotone NEAR-universality.} Statements 3--6 establish that 6174's basin under coefficient-preserving lifting \textbf{monotonically improves} toward \(1\) as \(d\) grows: \(0.969 \to 0.989683 \to 0.998141 \to 0.999073\) at \(d = 6, 7, 8, 9\). The escape class is structurally fixed at \(d \geq 8\) (the four-of-a-kind-paired multisets \((X^4, Y^4)\), all \(45\) of them), and the admissible multiset count grows combinatorially with \(d\), so the ratio of escapes to admissible inputs decays toward zero from \(d = 8\) onward. This is \emph{near-universality with a fixed escape class}, not the non-monotone ``fingerprint'' sometimes attributed to 6174.
+
+\textbf{Note on the escape class at \(d = 6, 7\).} The fixed \(45\)-multiset \((X^4, Y^4)\) form first crystallizes at \(d = 8\). At \(d = 6\), only \(45\) admissibles reach \(0\) (the same \((X^4, Y^2)\)-shape escape class, in the appropriate ladder convention), but an additional \(109\) admissibles fail to reach \(6174\) by entering non-trivial cycles --- these account for the basin shortfall to \(0.969\) but are not part of the escape class. At \(d = 7\) the canonical lifting has no cycles, but the escape class is larger and structurally heterogeneous: \(117\) multisets across four shape classes (\((3,2,1,1)\): \(56\); \((4,3)\): \(45\) --- the canonical four-of-a-kind-paired form; \((3,3,1)\): \(8\); \((5,1,1)\): \(8\)). The ``fixed escape class'' framing applies precisely from \(d = 8\) onward; basin monotonicity holds throughout but the dynamical structure simplifies sharply at \(d = 8\).
 
 \textbf{Remark on escape structure.} At \(d \geq 8\), the \(45\) non-reaching inputs have a specific combinatorial form: four-of-a-kind of one digit \(X\) paired with four-of-a-kind of another digit \(Y\), with \(X > Y \geq 0\). There are exactly \(\binom{10}{2} = 45\) such pairs \((X, Y)\). These multisets are just outside the near-repdigit threshold (four-of-a-kind rather than seven- or eight-of-a-kind), so they remain admissible. Their trajectories under any coefficient-preserving lifting collapse to zero rather than reaching 6174, because the rule acts on an effectively-rank-2 structure (only two distinct digit values contribute), and the sum-zero coefficient structure produces zero algebraically. The escape count \(45\) is \(d\)-independent: the same \(45\) multisets reappear at \(d = 8, 9\) (with appropriate trailing zeros) and presumably higher \(d\). Since \(|A_d|\) grows with \(d\) while the escape count stays fixed, the basin ratio asymptotically approaches \(1\) as \(d \to \infty\).
 
@@ -2491,9 +2493,9 @@ The \(21\) strict-universal \(d = 7\) fps catalogued in earlier drafts of this A
 
 Of the \(506\) universal full-variable fixed points at \(d = 6\), exactly \(53\) have multiset structure with two trailing zeros at \(d = 6\) (equivalently, three trailing zeros when padded to \(d = 7\)). Run C performs exhaustive outcome verification for these \(53\) fps at \(d = 7\), classifying each as TRANS (best basin \(\geq 0.99\)), NEAR (basin in \([0.95, 0.99)\)), LOCK (basin \(< 0.95\)), or algebraic obstruction (no fixing rule exists).
 
-\textbf{Result.} \(43\) TRANS, \(2\) NEAR, \(8\) LOCK. Of the \(8\) LOCK fps, \(4\) are Type A LOCK and \(4\) are Type B LOCK in the sense of §6.6. The \(43\) TRANS comprise \(42\) strict-universal (basin \(= 1\)) plus \(F = 60714\) (basin \(`= 0.992857\), NEAR-strict by the threshold of §1.4).
+\textbf{Result.} \(43\) TRANS, \(2\) NEAR, \(8\) LOCK. Of the \(8\) LOCK fps, \(4\) are Type A LOCK and \(4\) are Type B LOCK in the sense of §6.6. The \(43\) TRANS comprise \(42\) strict-universal (basin \(= 1\)) plus \(F = 60714\) (basin \(= 0.992857\), NEAR-strict by the threshold of §1.4).
 
-\textbf{Strict-transcendence rate} for the two-zero \(d = 6\) stratum at \(d = 7\): \(43/53 \approx 81.1\%\). Including NEAR cases the rate is \(45/53 \approx 84.9\%\). Earlier estimates based on the smaller \(21\)-fp strict-universal subset (table D.7 of the prior draft) suggested cross-dimensional rates near \(`96\%\); the corrected figure for the full \(53\)-fp stratum is lower, though still high enough to justify the qualitative claim that cross-dimensional transcendence is ``common at higher \(d_F\).''
+\textbf{Strict-transcendence rate} for the two-zero \(d = 6\) stratum at \(d = 7\): \(43/53 \approx 81.1\%\). Including NEAR cases the rate is \(45/53 \approx 84.9\%\). Earlier estimates based on the smaller \(21\)-fp strict-universal subset (table D.7 of the prior draft) suggested cross-dimensional rates near \(96\%\); the corrected figure for the full \(53\)-fp stratum is lower, though still high enough to justify the qualitative claim that cross-dimensional transcendence is ``common at higher \(d_F\).''
 
 The full verified outcomes table:
 
@@ -2559,7 +2561,7 @@ The full verified outcomes table:
 \(910{,}809\) & TRANS & \(1.000000\) & -- & \(2{,}208\) & \(14\) \\
 \end{longtable}
 
-The ``Type'' column is \(-\) for TRANS/NEAR fps; A or B for LOCK fps per the §6.6 classification. The ``Rules \(`\geq 0.99\)'' column counts \(d = 7\) fixing rules whose basin meets the strict-universal threshold of §1.4.
+The ``Type'' column is \(-\) for TRANS/NEAR fps; A or B for LOCK fps per the §6.6 classification. The ``Rules \(\geq 0.99\)'' column counts \(d = 7\) fixing rules whose basin meets the strict-universal threshold of §1.4.
 
 \section{D.3 Held-out validation of the Type A LOCK characterization}
 
