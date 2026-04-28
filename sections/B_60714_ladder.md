@@ -52,9 +52,15 @@ The coefficient vectors are the same data as the letter strings, presented numer
 
 The tables above are the output of a simple recursive recipe that generalizes to every $`d \geq 5`$:
 
-**Base cases.**  
-Odd ladder root: at $`d = 5`$, $`\pi = (4, 1, 2, 3, 0)`$, $`\sigma = (2, 0, 1, 4, 3)`$, coefficient vector $`(9900, 9, 90, -9000, -999)`$.  
-Even ladder root: at $`d = 6`$, $`\pi = (4, 1, 2, 3, 5, 0)`$, $`\sigma = (2, 0, 1, 4, 3, 5)`$, coefficient vector $`(9900, 9, 90, -9000, 99000, -99999)`$.
+**Base cases.**
+
+*Odd ladder root* (at $`d = 5`$): $`\pi = (4, 1, 2, 3, 0)`$, $`\sigma = (2, 0, 1, 4, 3)`$, with coefficient vector
+
+$$c^{(5)} = (9900, 9, 90, -9000, -999).$$
+
+*Even ladder root* (at $`d = 6`$): $`\pi = (4, 1, 2, 3, 5, 0)`$, $`\sigma = (2, 0, 1, 4, 3, 5)`$, with coefficient vector
+
+$$c^{(6)} = (9900, 9, 90, -9000, 99000, -99999).$$
 
 **Inductive step.** Given the rule at $`d`$ on a ladder, the rule at $`d + 2`$ on the same ladder is obtained by appending two new positions:
 

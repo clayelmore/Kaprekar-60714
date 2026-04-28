@@ -65,10 +65,12 @@ $$60714,\ 65781,\ 67581.$$
 
 **Representative rules at the $`\{0, 1, 4, 6, 7\}`$ cluster** (the $`\{7, 6, 4, 1\}`$-thread of §6):
 
-| Fixed point | $`\pi`$ | $`\sigma`$ | Coefficient vector |
-|:---:|:---:|:---:|:---|
-| $`60714`$ | $`(4, 1, 2, 3, 0)`$ | $`(2, 0, 1, 4, 3)`$ | $`(9900,\; 9,\; 90,\; -9000,\; -999)`$ |
-| $`60417`$ | $`(4, 1, 0, 3, 2)`$ | $`(0, 2, 1, 4, 3)`$ | $`(9999,\; -90,\; -9,\; -9000,\; -900)`$ |
+| Fixed point | $`\pi`$ | $`\sigma`$ |
+|:---:|:---:|:---:|
+| $`60714`$ | $`(4, 1, 2, 3, 0)`$ | $`(2, 0, 1, 4, 3)`$ |
+| $`60417`$ | $`(4, 1, 0, 3, 2)`$ | $`(0, 2, 1, 4, 3)`$ |
+
+(Coefficient vectors are recoverable as $`c_i = 10^{\pi_i} - 10^{\sigma_i}`$: $`(9900, 9, 90, -9000, -999)`$ for $`60714`$ and $`(9999, -90, -9, -9000, -900)`$ for $`60417`$.)
 
 **Note on $`54`$.** The fixed point $`54`$ appears in the $`d = 5`$ full-variable classification under the rule $`\pi = (1, 2, 4, 3, 0)`$, $`\sigma = (2, 0, 3, 4, 1)`$ with coefficient vector $`(-90, 99, 9000, -9000, -9)`$. This rule is algebraically full-variable at $`d = 5`$ ($`\mathrm{sv} = 5`$), but its effective rank at $`F = 54`$ is only $`2`$ — three of the five coefficients land on zero digits of $`F`$'s sorted-descending form $`(5, 4, 0, 0, 0)`$ and do not contribute to $`K(F) = F`$. Thus $`\mathrm{sv}_F(K_{54}) = 2 < 5 = \mathrm{sv}(K_{54})`$. This is structurally analogous to the $`495`$ phenomenon at $`d = 3`$ (§1.1), occurring at higher digit length within a genuinely full-variable rule.
 
@@ -133,9 +135,9 @@ That all eight 3-zero fps belong to a single multiset is a notable structural fa
 
 | Multiset | Cluster size | Sample fps |
 |:---|:---:|:---|
-| $`\{9, 9, 8, 1, 0, 0\}`$ | $`32`$ | $`8919, 8991, 9189, 10899, 80919, 80991, \ldots`$ |
-| $`\{5, 5, 4, 4, 0, 0\}`$ | $`7`$  | $`4545, 44505, 54450, 445005, 445050, \ldots`$ |
-| $`\{9, 7, 1, 1, 0, 0\}`$ | $`5`$  | $`7191, 17019, 700191, 701901, 719100`$ |
+| $`\{9, 9, 8, 1, 0, 0\}`$ | $`32`$ | $`8919, 8991, 9189, 10899, 80919, \ldots`$ |
+| $`\{5, 5, 4, 4, 0, 0\}`$ | $`7`$  | $`4545, 44505, 54450, 445005, \ldots`$ |
+| $`\{9, 7, 1, 1, 0, 0\}`$ | $`5`$  | $`7191, 17019, 700191, 701901, \ldots`$ |
 | $`\{7, 6, 4, 1, 0, 0\}`$ | $`4`$  | $`60714, 146070, 170460, 607140`$ |
 | $`\{7, 7, 3, 1, 0, 0\}`$ | $`2`$  | $`37017, 707130`$ |
 | $`\{9, 5, 2, 2, 0, 0\}`$ | $`1`$  | $`9225`$ |
