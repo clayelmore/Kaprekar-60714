@@ -3,8 +3,14 @@
 % --- Encoding & fonts ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-% Note: lmodern intentionally omitted — the default Computer Modern font
-% has full ec-lm coverage in this build environment.
+% lmodern is required on user machines; this container uses cm-super instead
+                                      % fonts. Required to avoid Type 3
+                                      % bitmap fallbacks under T1 fontenc.
+                                      % If lmodern is unavailable on the
+                                      % build machine, cm-super (texlive-
+                                      % fonts-extra on Debian/Ubuntu) is
+                                      % an acceptable substitute that
+                                      % also yields Type 1 output.
 \usepackage[expansion=false,protrusion=false]{microtype}
 \usepackage{textcomp}                 % needed by some Unicode passthroughs
 
