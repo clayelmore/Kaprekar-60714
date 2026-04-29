@@ -169,7 +169,7 @@ The d = 7 classification and outcome verification reported in this paper are rep
 
 ### 1.8 Organization
 
-§2 establishes the formal framework: permutation-pair rules, algebraic rank, universal fixed points, native digit length, and effective rank at $`F`$. §3 presents the exhaustive classifications at $`d = 3, 4, 5, 6`$. §4 proves Theorem 2 (the $`d = 5 \to d = 6`$ cross-check). §5 develops the coefficient-preserving lifting framework and proves Theorem 3. §6 develops the $`\{7, 6, 4, 1\}`$-thread and proves Theorem 4. §7 is a short discussion of open questions. Appendices A–E contain the full classification tables, the $`60714`$ ladder through $`d = 20`$, the proofs of the support lemmas, the verified classification of universal full-variable fps at $`d = 7`$ together with cross-dimensional outcomes for the two-zero $`d = 6`$ stratum (Appendix D), and the $`6174`$ $`d = 8, 9`$ audit details. Appendix F (added April 29, 2026) is a preliminary working note introducing a strengthened *strict-$`d`$* criterion and reporting cross-dimensional findings for the $`\{7, 6, 4, 1\}`$-thread at $`d = 7`$.
+§2 establishes the formal framework: permutation-pair rules, algebraic rank, universal fixed points, native digit length, and effective rank at $`F`$. §3 presents the exhaustive classifications at $`d = 3, 4, 5, 6`$. §4 proves Theorem 2 (the $`d = 5 \to d = 6`$ cross-check). §5 develops the coefficient-preserving lifting framework and proves Theorem 3. §6 develops the $`\{7, 6, 4, 1\}`$-thread and proves Theorem 4. §7 is a short discussion of open questions. Appendices A–E contain the full classification tables, the $`60714`$ ladder through $`d = 20`$, the proofs of the support lemmas, the verified classification of universal full-variable fps at $`d = 7`$ together with cross-dimensional outcomes for the two-zero $`d = 6`$ stratum (Appendix D), and the $`6174`$ $`d = 8, 9`$ audit details. Appendix F (added April 29, 2026; §F.5 revised April 30, 2026) is a preliminary working note introducing a strengthened *strict-$`d`$* criterion and reporting cross-dimensional findings for the $`\{7, 6, 4, 1\}`$-thread at $`d = 7`$.
 
 ---
 
@@ -2093,7 +2093,8 @@ Resolving Conjecture E.1 requires a structural argument at general $`d`$ beyond 
 
 # Appendix F. Strict-$`d`$ Anchors and the $`\{7, 6, 4, 1\}`$-Thread Tower
 
-*Status: Preliminary working notes added April 29, 2026. The classifications and
+*Status: Preliminary working notes added April 29, 2026 (revised April 30, 2026
+to correct §F.5 — see "Note (added in revision)" below). The classifications and
 counts in §F.3 and §F.4 are computational findings established by two
 independent enumerations: the original `universality_scan_v3.py` run and a
 fresh from-scratch verifier (`verifier_v2.py`, fp-first traversal with direct
@@ -2246,8 +2247,8 @@ $`d`$. We tested the alternative — *pure-duplication extension*, where the
 digits added at $`d > 4`$ are drawn from the classical core itself (e.g.,
 $`\{7, 7, 6, 4, 1\}`$ at $`d = 5`$).
 
-***Observation F.4*** *(pure-duplication extensions are empty).* Let
-$`M = \{7, 6, 4, 1\}`$ be the $`d = 4`$ classical multiset. For
+***Observation F.4*** *(pure-duplication extensions at $`d \in \{5, 6, 7\}`$).*
+Let $`M = \{7, 6, 4, 1\}`$ be the $`d = 4`$ classical multiset. For
 $`d \in \{5, 6\}`$, every multiset of the form $`M \cup S`$ with $`S`$
 drawn from $`M`$ has digit sum $`18 + |S| \cdot \bar{m}`$ where $`\bar{m}`$
 ranges over averages of multisets of $`M`$. No such sum is divisible by $`9`$
@@ -2258,14 +2259,24 @@ $`\{7,7,7,6,4,4,1\}`$, $`\{7,7,6,4,1,1,1\}`$,
 $`\{7,6,6,6,6,4,1\}`$, $`\{7,6,4,4,4,1,1\}`$
 — and exhaustive enumeration over all sv$`\geq 2`$ rules at $`d = 7`$
 produces zero rule-fp pairs satisfying $`K(F) = F`$ in any of the four. The
-same result holds for $`\{8, 5, 3, 2\}`$ at $`d = 5, 6, 7`$. We conjecture, on
-this evidence, that pure-duplication extension produces no Kaprekar fixed
-points at any $`d > 4`$ for either classical thread.
+same result holds for $`\{8, 5, 3, 2\}`$ at $`d = 5, 6, 7`$.
 
-This identifies zero-padding as the *unique* viable extension mechanism for
-the $`\{7, 6, 4, 1\}`$-thread (and, by the analog with $`9`$ in place of
-$`0`$, for the $`\{8, 5, 3, 2\}`$-thread). The thread structure is not just
-one extension among several — it is forced.
+***Note (added in revision).*** A subsequent investigation extended this
+inquiry to $`d = 8`$. At $`d = 8`$ in the $`\{7, 6, 4, 1\}`$-thread, three of
+the four admissible pure-duplication multisets — $`\{7,7,7,7,6,6,4,1\}`$,
+$`\{7,6,6,4,4,4,4,1\}`$, $`\{7,6,6,4,1,1,1,1\}`$ — remain empty of universal
+sv$`= 8`$ fps, but the *symmetric*-duplication multiset
+$`\{7,7,6,6,4,4,1,1\}`$ (each core digit doubled exactly twice) admits
+universal full-variable rules. Pure-duplication extensions are therefore not
+uniformly empty across all $`d > 4`$, and zero-padding is not the unique
+viable extension mechanism. The pattern by which symmetric duplications
+break the empty-pure-duplication property at $`d = 8`$ — and whether this
+extends to higher even $`d`$ or to the $`\{8, 5, 3, 2\}`$-thread — is open.
+
+The empirical pattern at $`d \in \{5, 6, 7\}`$ remains: zero-padding is the
+viable extension mechanism for the strict-$`d`$ tower at those digit lengths.
+The qualifier "at any $`d > 4`$" stated in earlier versions of this appendix
+is withdrawn; the correct scope is $`d \in \{5, 6, 7\}`$.
 
 ## F.6 Open questions
 
@@ -2287,10 +2298,12 @@ This appendix reports observations; it does not settle them.
    not accommodate. A precise statement and proof are open.
 
 3. *Strict-anchor count at $`d = 8, 9, \ldots`$?* The $`d = 7`$ count is
-   $`11`$ — substantially larger than the $`d = 6`$ count of $`4`$. Whether
-   the strict-anchor count continues to grow with $`d`$, stabilizes, or
-   oscillates is open. Computational reach at $`d = 8`$ is feasible on
-   Apple M-series hardware; runs are pending.
+   $`11`$ — substantially larger than the $`d = 6`$ count of $`4`$. A
+   subsequent $`d = 8`$ scan in the canonical zero-padded multiset
+   $`\{7, 6, 4, 1, 0^4\}`$ produced $`89`$ strict anchors, and the symmetric
+   pure-duplication multiset $`\{7, 7, 6, 6, 4, 4, 1, 1\}`$ produced $`465`$.
+   Whether the strict-anchor count continues to grow at $`d \geq 9`$,
+   stabilizes, or oscillates is open.
 
 4. *Parallel structure for the $`\{8, 5, 3, 2\}`$-thread.* Strict-$`d`$
    anchor counts at $`d = 5, 6`$ are $`3, 3`$ (versus $`2, 4`$ for

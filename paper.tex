@@ -1612,7 +1612,7 @@ This appendix provides the complete enumerated classifications at digit lengths 
 The classifications were computed by exhaustive enumeration in Python. Runtime on commodity hardware: negligible at \(d = 3, 4\); \textasciitilde5 seconds at \(d = 5\); \textasciitilde5--10 minutes at \(d = 6\). Source code for the enumerations is available in the supplementary materials.
 
 \hypertarget{a.1-classification-at-d-3}{%
-\section*{\texorpdfstring{A.1 Classification at \(d = 3\)}{A.1 Classification at d = 3}}\label{a.1-classification-at-d-3}}
+\section{\texorpdfstring{A.1 Classification at \(d = 3\)}{A.1 Classification at d = 3}}\label{a.1-classification-at-d-3}}
 
 \textbf{Full-variable rules enumerated:} \(3! \cdot D_3 = 6 \cdot 2 = 12\).
 \textbf{Admissible inputs enumerated:} \(720\) (non-repdigit, non-near-repdigit \(3\)-digit integers).
@@ -1623,7 +1623,7 @@ No full-variable rule at \(d = 3\) is universal for any fixed point. For every r
 \textbf{Note on the dimension-agnostic fixed point \(495\).} The classical rule \(K_0\) at \(d = 3\) is universal for \(495\), but has algebraic rank \(2\) (the middle-position coefficient vanishes; see §1.1). \(495\) is thus an sv\(=2\) fixed point, not an sv\(=3\) fixed point, and is outside the scope of the full-variable classification.
 
 \hypertarget{a.2-classification-at-d-4}{%
-\section*{\texorpdfstring{A.2 Classification at \(d = 4\)}{A.2 Classification at d = 4}}\label{a.2-classification-at-d-4}}
+\section{\texorpdfstring{A.2 Classification at \(d = 4\)}{A.2 Classification at d = 4}}\label{a.2-classification-at-d-4}}
 
 \textbf{Full-variable rules enumerated:} \(4! \cdot D_4 = 24 \cdot 9 = 216\).
 \textbf{Admissible inputs enumerated:} \(615\) digit multisets (\(9{,}630\) padded four-digit strings).
@@ -1663,7 +1663,7 @@ Sample coefficient vector
 \textbf{Note on anagram clusters.} The four fps fall into two anagram pairs: \(\{1746, 6174\}\) (multiset \(\{1, 4, 6, 7\}\)) and \(\{2538, 5382\}\) (multiset \(\{2, 3, 5, 8\}\)). In each cluster, the two fps sum to \(7920\), a specific instance of reverse-pair identity at \(d = 4\).
 
 \hypertarget{a.3-classification-at-d-5}{%
-\section*{\texorpdfstring{A.3 Classification at \(d = 5\)}{A.3 Classification at d = 5}}\label{a.3-classification-at-d-5}}
+\section{\texorpdfstring{A.3 Classification at \(d = 5\)}{A.3 Classification at d = 5}}\label{a.3-classification-at-d-5}}
 
 \textbf{Full-variable rules enumerated:} \(5! \cdot D_5 = 120 \cdot 44 = 5{,}280\).
 \textbf{Admissible inputs enumerated:} \(99{,}540\).
@@ -1727,14 +1727,14 @@ Fixed point & \(\pi\) & \(\sigma\) \\
 Both \(54\) and \(3753\) are dimension-locked at \(d = 5 \to d = 6\): the cross-check of §4 finds no universal full-variable rule for either at \(d = 6\).
 
 \hypertarget{a.4-classification-at-d-6}{%
-\section*{\texorpdfstring{A.4 Classification at \(d = 6\)}{A.4 Classification at d = 6}}\label{a.4-classification-at-d-6}}
+\section{\texorpdfstring{A.4 Classification at \(d = 6\)}{A.4 Classification at d = 6}}\label{a.4-classification-at-d-6}}
 
 \textbf{Full-variable rules enumerated:} \(6! \cdot D_6 = 720 \cdot 265 = 190{,}800\).
 \textbf{Admissible inputs enumerated:} \(4{,}905\) digit multisets (\(999{,}450\) padded six-digit strings).
 \textbf{Universal full-variable fixed points:} \(506\).
 \textbf{Universal full-variable rules (total, counting sign-flip pairs):} \(1{,}174\).
 
-\subsection*{A.4.1 Summary statistics}
+\subsection{A.4.1 Summary statistics}
 
 The \(506\) fixed points distribute by zero-digit count:
 
@@ -1767,7 +1767,7 @@ Digit sum & Fixed-point count \\
 \(45\) & \(2\) \\
 \end{longtable}
 
-\subsection*{A.4.2 Distinguished fixed points}
+\subsection{A.4.2 Distinguished fixed points}
 
 The following \(d = 6\) universal full-variable fixed points are singled out elsewhere in the paper:
 
@@ -1795,7 +1795,7 @@ Note
 \(631764\) & \(\{1, 3, 4, 6, 6, 7\}\) & attractor at \(d = 6\) under classical rule with basin \(0.0625\) \cite{Dahl2026} \\
 \end{longtable}
 
-\subsection*{A.4.3 Fixed points with two or more zero digits}
+\subsection{A.4.3 Fixed points with two or more zero digits}
 
 The complete list of \(506\) universal full-variable fixed points at \(d = 6\) is lengthy; we provide it in the supplementary materials as a plain-text file (\texttt{d6\_fps.txt}). The enumeration is fully reproducible from the source code.
 
@@ -1850,7 +1850,7 @@ The complete sorted list of all \(53\) fps with \(2\) zero digits:
 
 \textbf{Fixed points with \(0\) or \(1\) zero digit.} The remaining \(445\) fps (\(205\) with \(0\) zeros, \(240\) with \(1\) zero) are listed in the supplementary file and are not analyzed individually here. Cross-dimensional behavior at \(d = 6 \to d = 7\) for fps with fewer than \(2\) zeros is empirically rare (cf.~Observation D.1).
 
-\section*{A.5 Cross-reference to §4 and §6}
+\section{A.5 Cross-reference to §4 and §6}
 
 The \(33\) fixed points at \(d = 5\) of §A.3 are the subject of §4's cross-check: the exhaustive computation of which are dimension-locked at \(d = 5 \to d = 6\). The result (\(17\) algebraic obstruction, \(15\) dynamic obstruction, \(1\) universal lifting to \(d = 6\)) is proven at that section.
 
@@ -1867,7 +1867,7 @@ For each digit length \(d \geq 5\), the following tables give the permutation-pa
 \textbf{Fixed-point verification.} At every \(d\), the assignment \(a = 7, b = 6, c = 4, d = 1\), and every subsequent letter \(= 0\) corresponds to \(F = 60714\)'s sorted-descending form (padded to \(d\) digits). Under this assignment, \(\pi \cdot x\) evaluates to \(71460\) and \(\sigma \cdot x\) evaluates to \(10746\), so \(K(F) = |71460 - 10746| = 60714\) at every \(d\).
 
 \hypertarget{table-b.1.-ladder-rules-through-d-20}{%
-\section*{\texorpdfstring{Table B.1. Ladder rules through \(d = 20\)}{Table B.1. Ladder rules through d = 20}}\label{table-b.1.-ladder-rules-through-d-20}}
+\section{\texorpdfstring{Table B.1. Ladder rules through \(d = 20\)}{Table B.1. Ladder rules through d = 20}}\label{table-b.1.-ladder-rules-through-d-20}}
 
 (Per the fixed-point verification above, every row in this table gives \(\pi \cdot F = 71460\), \(\sigma \cdot F = 10746\), and \(K(F) = 60714\). We omit those three columns to keep the letter strings legible at high \(d\).)
 
@@ -1897,7 +1897,7 @@ For each digit length \(d \geq 5\), the following tables give the permutation-pa
 \end{longtable}
 
 \hypertarget{table-b.2.-coefficient-vectors-through-d-12}{%
-\section*{\texorpdfstring{Table B.2. Coefficient vectors through \(d = 12\)}{Table B.2. Coefficient vectors through d = 12}}\label{table-b.2.-coefficient-vectors-through-d-12}}
+\section{\texorpdfstring{Table B.2. Coefficient vectors through \(d = 12\)}{Table B.2. Coefficient vectors through d = 12}}\label{table-b.2.-coefficient-vectors-through-d-12}}
 
 The coefficient vectors are the same data as the letter strings in Table B.1, presented numerically. The structure is uniform along each ladder: every rule begins with the four locked coefficients \((9900, 9, 90, -9000)\) at \(F\)'s nonzero-digit positions, and every higher-\(d\) rule extends the previous one by appending one zero-sum pair.
 
@@ -1965,7 +1965,7 @@ The tables above are the output of a simple recursive recipe that generalizes to
 In both cases, the two appended coefficients \(c_d = 10^{\pi_d} - 10^{\sigma_d}\) and \(c_{d+1} = 10^{\pi_{d+1}} - 10^{\sigma_{d+1}}\) satisfy \(c_d + c_{d+1} = 0\) --- they form a \textbf{zero-sum pair}. The only difference between ladders is the sign convention on the new pair.
 
 \hypertarget{table-b.3.-demonstration-at-d-100}{%
-\section*{\texorpdfstring{Table B.3. Demonstration at \(d = 100\)}{Table B.3. Demonstration at d = 100}}\label{table-b.3.-demonstration-at-d-100}}
+\section{\texorpdfstring{Table B.3. Demonstration at \(d = 100\)}{Table B.3. Demonstration at d = 100}}\label{table-b.3.-demonstration-at-d-100}}
 
 To show the recipe is not merely finite-table-bound but scales mechanically, we give the rule at \(d = 100\) on the even ladder.
 
@@ -2014,13 +2014,13 @@ Appendix C. Support Lemmas for the Proof of Theorem 5.2
 
 This appendix provides the technical support lemmas referenced in §5. The organization mirrors the proof of Theorem 5.2: §C.1 fixes setup, §C.2 proves core non-negativity (Lemma 5.3), §C.3 proves core upper bound (Lemma 5.4), §C.4 proves the reaching-time bound on the odd ladder, §C.5 addresses the even ladder, and §C.6 establishes the admissible-projection lemma.
 
-\section*{C.1 Setup}
+\section{C.1 Setup}
 
 Throughout, \((x_0, x_1, \ldots, x_{d-1})\) denotes a sorted-descending digit sequence with \(x_0 \geq x_1 \geq \cdots \geq x_{d-1}\) and each \(x_i \in \{0, 1, \ldots, 9\}\). The \textbf{native core contribution} (Definition 5.4) is
 
 \[\mathrm{core}(x) \;=\; 9900 \, x_0 + 9 \, x_1 + 90 \, x_2 - 9000 \, x_3 - 999 \, x_4.\]
 
-\section*{C.2 Core non-negativity (Proof of Lemma 5.3)}
+\section{C.2 Core non-negativity (Proof of Lemma 5.3)}
 
 \begin{lemma}[5.3 (restated)]
 For every sorted-descending sequence \((x_0, x_1, x_2, x_3, x_4)\), \(\mathrm{core}(x) \geq 0\).
@@ -2054,7 +2054,7 @@ All three cases cover the admissible possibilities (Case 4 with \(x_3 = 0\) and 
 
 \textbf{Remark C.1.} The minimum \(\mathrm{core}(x) = 0\) is achieved at \(x = (0, 0, 0, 0, 0)\) (repdigit zero). Direct enumeration over all \(2{,}002\) sorted-descending sequences in \(\{0, \ldots, 9\}^5\) confirms the minimum is exactly \(0\).
 
-\section*{C.3 Core upper bound (Proof of Lemma 5.4)}
+\section{C.3 Core upper bound (Proof of Lemma 5.4)}
 
 \begin{lemma}[5.4 (restated)]
 For every sorted-descending sequence \((x_0, x_1, x_2, x_3, x_4)\), \(\mathrm{core}(x) \leq 89{,}991 < 10^5\).
@@ -2071,11 +2071,11 @@ Direct enumeration over all \(2{,}002\) sorted-descending sequences \((x_0, \ldo
 \end{corollary}
 
 \hypertarget{c.4-the-t_d-reaching-time-bound-odd-ladder}{%
-\section*{\texorpdfstring{C.4 The \(T_d\) reaching-time bound (odd ladder)}{C.4 The T\_d reaching-time bound (odd ladder)}}\label{c.4-the-t_d-reaching-time-bound-odd-ladder}}
+\section{\texorpdfstring{C.4 The \(T_d\) reaching-time bound (odd ladder)}{C.4 The T\_d reaching-time bound (odd ladder)}}\label{c.4-the-t_d-reaching-time-bound-odd-ladder}}
 
 The main technical claim underlying Proposition 5.3 rests on a \textbf{block-structure decomposition} of the lifted rule's output.
 
-\section*{C.4.1 Block-structure decomposition}
+\section{C.4.1 Block-structure decomposition}
 
 At odd digit length \(d \geq 7\), the odd-ladder rule \(K^{(d)}_{60714}\) has coefficient vector
 
@@ -2102,7 +2102,7 @@ For any sorted-descending sequence \((x_0, \ldots, x_{d-1})\) with each \(x_i \i
 \(\square\)
 
 \hypertarget{c.4.2-non-negativity-of-kdx}{%
-\section*{\texorpdfstring{C.4.2 Non-negativity of \(K^{(d)}(x)\)}{C.4.2 Non-negativity of K\^{}\{(d)\}(x)}}\label{c.4.2-non-negativity-of-kdx}}
+\section{\texorpdfstring{C.4.2 Non-negativity of \(K^{(d)}(x)\)}{C.4.2 Non-negativity of K\^{}\{(d)\}(x)}}\label{c.4.2-non-negativity-of-kdx}}
 
 \begin{lemma}[C.7]
 For every sorted-descending \((x_0, \ldots, x_{d-1})\) and every odd \(d \geq 7\),
@@ -2118,7 +2118,7 @@ For every sorted-descending \((x_0, \ldots, x_{d-1})\) and every odd \(d \geq 7\
 
 By Lemma 5.3, \(\mathrm{core}(x) \geq 0\). Each \(p_k \, \delta_k \geq 0\) (since \(p_k > 0\) and \(\delta_k \geq 0\)). Hence the argument is non-negative and the absolute-value bars can be dropped. \(\square\)
 
-\section*{C.4.3 The reaching-time theorem}
+\section{C.4.3 The reaching-time theorem}
 
 \begin{lemma}[C.3 (one-step \(T_d\) closure on the odd ladder at \(d \geq 15\))]
 Let \(d \geq 15\) be odd. For every admissible input \(n \in A_d\) with sorted-descending form \((x_0, \ldots, x_{d-1})\),
@@ -2241,7 +2241,7 @@ Combining: at every odd \(d \geq 15\), \(K^{(d)}(x)\) has at least \(2\) zero di
 Direct enumeration at \(d = 15\) and \(d = 17\) (odd ladder) over all admissible multisets (\(1{,}307{,}404\) and \(3{,}124{,}450\) respectively) verifies one-step \(T_d\) closure: every admissible input reaches \(T_d\) in exactly one iteration.
 \end{corollary}
 
-\section*{C.5 The even ladder}
+\section{C.5 The even ladder}
 
 The even-ladder root at \(d = 6\) uses the split-lifted rule with coefficient vector
 
@@ -2359,7 +2359,7 @@ Direct enumeration confirms one-step \(T_d\) closure on the even ladder at \(d \
 
 \textbf{Remark C.4 (uniform reaching-time bound).} Combining Lemma C.3 (odd ladder, \(d \geq 15\)) and Lemma C.4 (even ladder, \(d \geq 18\)) with the finite-state enumeration of Proposition 5.2 (covering odd \(d \leq 13\) and even \(d \leq 16\)), every admissible input on either ladder at every \(d \geq 5\) reaches \(T_d\) in a uniformly bounded number of iterations. Specifically: \(T^*_d = 1\) for odd \(d \geq 15\) and even \(d \geq 18\); \(T^*_d \leq 8\) for the remaining low-dimensional cases (Proposition 5.2). The induction in §5.7 closes on both ladders at every \(d \geq 5\).
 
-\section*{C.6 Admissible projection under Lemma 5.1}
+\section{C.6 Admissible projection under Lemma 5.1}
 
 \begin{lemma}[C.5 (admissible projection)]
 Let \(d \geq 7\), let \(n \in A_d \cap T_d\) with sorted-descending form \((x_0, x_1, \ldots, x_{d-3}, 0, 0)\), and let \(m\) be the integer with sorted-descending form \((x_0, x_1, \ldots, x_{d-3})\) at digit length \(d - 2\). Then one of the following holds:
@@ -2453,7 +2453,7 @@ This appendix documents the classification of universal full-variable fixed poin
 A held-out validation set of \(12\) additional \(d = 6\) fps (drawn from \(0\)-zero, \(1\)-zero, \(2\)-zero, and \(3\)-zero strata) is used in §D.2 to validate the Type A LOCK characterization beyond the two-zero stratum. The complete computational pipeline, including the audit package \texttt{d7\_audit/}, is provided as supplementary material (§1.7.1).
 
 \hypertarget{d.1-universal-full-variable-fps-at-d-7}{%
-\section*{\texorpdfstring{D.1 Universal full-variable fps at \(d = 7\)}{D.1 Universal full-variable fps at d = 7}}\label{d.1-universal-full-variable-fps-at-d-7}}
+\section{\texorpdfstring{D.1 Universal full-variable fps at \(d = 7\)}{D.1 Universal full-variable fps at d = 7}}\label{d.1-universal-full-variable-fps-at-d-7}}
 
 Run B identifies \textbf{\(18{,}004\) universal full-variable fixed points at \(d = 7\)}, attained by \(49{,}292\) universal rules. Zero-stratification:
 
@@ -2475,7 +2475,7 @@ Zero count & Universal fixed points \\
 The \(21\) strict-universal \(d = 7\) fps catalogued in earlier drafts of this Appendix (under ``Case 1'' and ``Case 2'') all appear in the Run B catalog with rule-count metadata matching exactly. The earlier draft also listed \(F = 1{,}406{,}070\) as a ``NEAR-edge'' case; this fp does not appear in the Run B catalog of strict-universal fps because its best basin at \(d = 7\) is below the strict-universal threshold (basin \(\approx 0.9999 < 1\)), confirming the earlier NEAR-edge characterization.
 
 \hypertarget{d.2-cross-dimensional-outcomes-the-two-zero-d-6-stratum}{%
-\section*{\texorpdfstring{D.2 Cross-dimensional outcomes: the two-zero \(d = 6\) stratum}{D.2 Cross-dimensional outcomes: the two-zero d = 6 stratum}}\label{d.2-cross-dimensional-outcomes-the-two-zero-d-6-stratum}}
+\section{\texorpdfstring{D.2 Cross-dimensional outcomes: the two-zero \(d = 6\) stratum}{D.2 Cross-dimensional outcomes: the two-zero d = 6 stratum}}\label{d.2-cross-dimensional-outcomes-the-two-zero-d-6-stratum}}
 
 Of the \(506\) universal full-variable fixed points at \(d = 6\), exactly \(53\) have multiset structure with two trailing zeros at \(d = 6\) (equivalently, three trailing zeros when padded to \(d = 7\)). Run C performs exhaustive outcome verification for these \(53\) fps at \(d = 7\), classifying each as TRANS (best basin \(\geq 0.99\)), NEAR (basin in \([0.95, 0.99)\)), LOCK (basin \(< 0.95\)), or algebraic obstruction (no fixing rule exists).
 
@@ -2549,7 +2549,7 @@ The full verified outcomes table:
 
 The ``Type'' column is \(-\) for TRANS/NEAR fps; A or B for LOCK fps per the §6.6 classification. The ``Rules \(\geq 0.99\)'' column counts \(d = 7\) fixing rules whose basin meets the strict-universal threshold of §1.4.
 
-\section*{D.3 Held-out validation of the Type A LOCK characterization}
+\section{D.3 Held-out validation of the Type A LOCK characterization}
 
 To validate the Type A characterization (Definition 6.3) beyond the two-zero stratum, we ran the verifier on \(12\) additional \(d = 6\) universal fps drawn from \(0\)-zero, \(1\)-zero, \(2\)-zero, and \(3\)-zero strata (\(3\) each):
 
@@ -2594,13 +2594,13 @@ The Type A predictor was tested blind on this held-out set: \(3\) of \(12\) fps 
 The held-out result confirms that Type A LOCK is not specific to the two-zero stratum; it is a general structural mechanism applicable across multiple zero-count strata at \(d = 6 \to d = 7\). Combined with Run C, the Type A predictor has \(7\) correct predictions out of \(7\) across \(65\) total verified records, with zero false positives.
 
 \hypertarget{d.4-cycle-signatures-at-d-7}{%
-\section*{\texorpdfstring{D.4 Cycle signatures at \(d = 7\)}{D.4 Cycle signatures at d = 7}}\label{d.4-cycle-signatures-at-d-7}}
+\section{\texorpdfstring{D.4 Cycle signatures at \(d = 7\)}{D.4 Cycle signatures at d = 7}}\label{d.4-cycle-signatures-at-d-7}}
 
 The cycle signature of a permutation pair \((\pi, \sigma)\) records the cycle decomposition of \(\pi \cdot \sigma^{-1}\). Among the \(53\) Run C fps, four signatures appear among fixing rules: \((2, 2, 3)\), \((2, 5)\), \((3, 4)\), and \((7,)\). The signature \((3, 4)\) --- the natural structural analog at \(d_F = 7\) of \((3, 3)\) at \(d_F = 6\) --- does \emph{not} uniformly produce LOCK rules: \(9\) of the \(53\) fps include \((3, 4)\) in their signature set and TRANS, while \(5\) include \((3, 4)\) and LOCK. The factorization mechanism that locks \((3, 3)\) at \(d_F = 6\) (Theorem 6.1 part 4) does not generalize directly to \((3, 4)\) at \(d_F = 7\).
 
 A refined cycle-signature pattern does hold (§6.7, observation 4): fps whose fixing-rule space is restricted to only the long-cycle signatures \(\{(3, 4), (7,)\}\) uniformly LOCK at \(d = 7\) (\(4\) of \(4\) in Run C). All four cases are also Type A LOCK by Observation 6.3, which suggests the cycle-signature restriction is a \emph{consequence} of the more fundamental zsp absence rather than an independent classifier.
 
-\section*{D.5 Cross-dimensional behavior}
+\section{D.5 Cross-dimensional behavior}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2105}}
@@ -2633,7 +2633,7 @@ Cross-dimensional transcendence from \(d_F\) to \(d_F + 1\) rises sharply with t
 
 \textbf{Note on the 4-zero stratum at \(d = 6\).} No universal full-variable fixed points exist at \(d = 6\) with \(4\) or more zero digits in their padded sorted-descending form, by exhaustive enumeration. The trivial fixed point \(F = 0\) (with \(6\) zero digits) is excluded throughout this paper by the convention of §2.
 
-\section*{D.6 Reproducibility}
+\section{D.6 Reproducibility}
 
 The complete data underlying this appendix is reproducible from the supplementary \texttt{d7\_audit/} package (§1.7.1):
 
@@ -2655,7 +2655,7 @@ Appendix E. Audit of \(6174\) at \(d = 8, 9\)
 
 This appendix documents the exhaustive audit of coefficient-preserving liftings of \(6174\)'s native rule at digit lengths \(d = 8\) and \(d = 9\), supporting Theorem 6.1 in §6.
 
-\section*{E.1 Setup}
+\section{E.1 Setup}
 
 The native rule of \(6174\) at \(d_F = 4\) is the classical Kaprekar rule \(K_0\): \(\pi = (3, 2, 1, 0)\), \(\sigma = (0, 1, 2, 3)\), coefficient vector \(c^{(4)} = (999, 90, -90, -999)\). The sorted-descending form of \(6174\) at \(d = 4\) is \((7, 6, 4, 1)\) with no zero digits, so every native coefficient lands on a nonzero digit: \(\mathrm{sv}_F(K_0) = \mathrm{sv}(K_0) = 4\).
 
@@ -2681,10 +2681,10 @@ Given the native constraint \(c_i = c_i^{(4)}\) at positions \(0, 1, 2, 3\), the
 
 \[5! \cdot D_5 = 120 \cdot 44 = 5{,}280.\]
 
-\section*{E.2 Audit results}
+\section{E.2 Audit results}
 
 \hypertarget{e.2.1-at-d-8}{%
-\subsection*{\texorpdfstring{E.2.1 At \(d = 8\)}{E.2.1 At d = 8}}\label{e.2.1-at-d-8}}
+\subsection{\texorpdfstring{E.2.1 At \(d = 8\)}{E.2.1 At d = 8}}\label{e.2.1-at-d-8}}
 
 Exhaustive audit of all \(216\) coefficient-preserving liftings at \(d = 8\), each tested against all \(24{,}210\) admissible multisets with iteration budget \(50\):
 
@@ -2714,7 +2714,7 @@ with coefficient vector
 Verification: \(K(6174_{(8)}) = |999 \cdot 7 + 90 \cdot 6 - 90 \cdot 4 - 999 \cdot 1 + 0 + 0 + 0 + 0| = |6993 + 540 - 360 - 999| = 6174\). \(\checkmark\)
 
 \hypertarget{e.2.2-escape-characterization-at-d-8}{%
-\subsection*{\texorpdfstring{E.2.2 Escape characterization at \(d = 8\)}{E.2.2 Escape characterization at d = 8}}\label{e.2.2-escape-characterization-at-d-8}}
+\subsection{\texorpdfstring{E.2.2 Escape characterization at \(d = 8\)}{E.2.2 Escape characterization at d = 8}}\label{e.2.2-escape-characterization-at-d-8}}
 
 For the best lifting, exactly \(45\) admissible multisets fail to reach \(6174\). All \(45\) have the form of \textbf{two four-of-a-kind groups}: sorted-descending \((X, X, X, X, Y, Y, Y, Y)\) for some pair \(X > Y \geq 0\).
 
@@ -2744,7 +2744,7 @@ The first four coefficients sum to \(0\) (since \(K_0\) has sum-zero structure),
 This is not a feature of the specific best lifting --- it is a structural consequence of sum-zero constraints on coefficient-preserving liftings. Every coefficient-preserving lifting at \(d = 8\) maps every four-of-a-kind-paired multiset to \(0\).
 
 \hypertarget{e.2.3-at-d-9}{%
-\subsection*{\texorpdfstring{E.2.3 At \(d = 9\)}{E.2.3 At d = 9}}\label{e.2.3-at-d-9}}
+\subsection{\texorpdfstring{E.2.3 At \(d = 9\)}{E.2.3 At d = 9}}\label{e.2.3-at-d-9}}
 
 Exhaustive audit of all \(5{,}280\) coefficient-preserving liftings at \(d = 9\), each tested against all \(48{,}520\) admissible multisets with iteration budget \(60\):
 
@@ -2763,13 +2763,13 @@ Best basin & \(0.999073\) \\
 Runtime: approximately \(60\) minutes on commodity hardware.
 
 \hypertarget{e.2.4-escape-characterization-at-d-9}{%
-\subsection*{\texorpdfstring{E.2.4 Escape characterization at \(d = 9\)}{E.2.4 Escape characterization at d = 9}}\label{e.2.4-escape-characterization-at-d-9}}
+\subsection{\texorpdfstring{E.2.4 Escape characterization at \(d = 9\)}{E.2.4 Escape characterization at d = 9}}\label{e.2.4-escape-characterization-at-d-9}}
 
 For the best lifting at \(d = 9\), the \(45\) escape multisets have the same structural form as at \(d = 8\), extended with trailing zeros. Specifically: sorted-descending \((X, X, X, X, Y, Y, Y, Y, 0)\) for \(X > Y \geq 0\) (when \(Y \geq 1\)) or \((X, X, X, X, 0, 0, 0, 0, 0)\) (when \(Y = 0\)). There are again \(\binom{10}{2} = 45\) such multisets.
 
 \textbf{The escape count is independent of \(d\).} The \(45\)-multiset structural form is preserved across \(d = 8, 9\) and is expected to continue at \(d \geq 10\): at higher \(d\), the escape multisets are obtained by appending trailing zeros to the \(d = 8\) escape forms.
 
-\section*{E.3 Asymptotic behavior}
+\section{E.3 Asymptotic behavior}
 
 \textbf{Basin growth.} The escape count at \(d = 8, 9\) is fixed at \(45\). The admissible multiset count grows with \(d\):
 
@@ -2807,7 +2807,7 @@ The constant-count escape class means the ratio \(45 / |A_d|\) decays as \(|A_d|
 
 \textbf{Strict-universal at any \(d \geq 8\)?} Audit at \(d = 8, 9\) finds \(0\) strict-universal liftings. Whether any \(d \geq 10\) admits a strict-universal coefficient-preserving lifting of \(6174\) remains open. The structural argument of §E.2.2 suggests the answer is no: the four-of-a-kind-paired escape class is algebraically forced by sum-zero on the native and appended coefficients, and appears in every coefficient-preserving lifting.
 
-\section*{E.4 Conjectural extension}
+\section{E.4 Conjectural extension}
 
 \begin{conjecture}[E.1]
 For every \(d \geq 8\), the \(45\)-multiset escape class persists at \(6174\)'s coefficient-preserving liftings, and no coefficient-preserving lifting is strict-universal. The best basin asymptotes to \(1\) monotonically.
@@ -2819,7 +2819,8 @@ Resolving Conjecture E.1 requires a structural argument at general \(d\) beyond 
 
 Appendix F. Strict-\(d\) Anchors and the \(\{7, 6, 4, 1\}\)-Thread Tower
 
-\emph{Status: Preliminary working notes added April 29, 2026. The classifications and
+\emph{Status: Preliminary working notes added April 29, 2026 (revised April 30, 2026
+to correct §F.5 --- see ``Note (added in revision)'' below). The classifications and
 counts in §F.3 and §F.4 are computational findings established by two
 independent enumerations: the original \texttt{universality\_scan\_v3.py} run and a
 fresh from-scratch verifier (\texttt{verifier\_v2.py}, fp-first traversal with direct
@@ -2829,7 +2830,7 @@ distinction we use; whether it is the right central object for a future
 revision of the main paper, and whether the reported \(d = 7\) counts extend
 to higher \(d\), are explicitly left open in §F.6.}
 
-\section*{F.1 Purpose}
+\section{F.1 Purpose}
 
 The main paper establishes that \(60714\) is a universal full-variable fixed
 point at every digit length \(d \geq 5\) under the coefficient-preserving
@@ -2855,7 +2856,7 @@ with, but sharper than, the cross-dimensional pattern of \(6174\) described in
 §6.
 
 \hypertarget{f.2-the-strict-d-criterion}{%
-\section*{\texorpdfstring{F.2 The strict-\(d\) criterion}{F.2 The strict-d criterion}}\label{f.2-the-strict-d-criterion}}
+\section{\texorpdfstring{F.2 The strict-\(d\) criterion}{F.2 The strict-d criterion}}\label{f.2-the-strict-d-criterion}}
 
 Let \(K = K_{\pi, \sigma}\) be a universal full-variable rule for \(F\) at
 digit length \(d\), with coefficient vector
@@ -2883,7 +2884,7 @@ subset of universal fps for which the universality is not achieved purely by
 zero-sum-pair extension on equal-digit positions of \(F\).
 
 \hypertarget{f.3-the-7641-thread-under-strict-d}{%
-\section*{\texorpdfstring{F.3 The \{7,6,4,1\}-thread under strict-\(d\)}{F.3 The \{7,6,4,1\}-thread under strict-d}}\label{f.3-the-7641-thread-under-strict-d}}
+\section{\texorpdfstring{F.3 The \{7,6,4,1\}-thread under strict-\(d\)}{F.3 The \{7,6,4,1\}-thread under strict-d}}\label{f.3-the-7641-thread-under-strict-d}}
 
 We applied the strict-\(d\) criterion exhaustively at digit lengths
 \(d = 5, 6, 7\) to all universal full-variable fps in the relevant
@@ -2926,7 +2927,7 @@ produce the same lists at \(d = 5, 6, 7\), the same rule-counts per fp, and
 the same actual rule sets where checked. Source code and JSON outputs are
 provided as supplementary material.
 
-\section*{F.4 The non-monotone strict-anchor pattern}
+\section{F.4 The non-monotone strict-anchor pattern}
 
 \textbf{\emph{Observation F.2}} \emph{(non-monotone strict-anchor pattern of \(6174\) and
 \(1746\)).} The classical Kaprekar fixed points \(6174\) and \(1746\) are
@@ -2981,15 +2982,15 @@ a universal full-variable fp at every \(d \geq 5\). The strengthening is that
 for \(d \geq 7\), the lifting is non-strict by Definition F.2; the genuinely
 \(d\)-dimensional dynamics of \(60714\) live at \(d = 5\) and \(d = 6\).
 
-\section*{F.5 Pure-duplication extensions}
+\section{F.5 Pure-duplication extensions}
 
 The main paper considers only zero-padded extensions of multisets across
 \(d\). We tested the alternative --- \emph{pure-duplication extension}, where the
 digits added at \(d > 4\) are drawn from the classical core itself (e.g.,
 \(\{7, 7, 6, 4, 1\}\) at \(d = 5\)).
 
-\textbf{\emph{Observation F.4}} \emph{(pure-duplication extensions are empty).} Let
-\(M = \{7, 6, 4, 1\}\) be the \(d = 4\) classical multiset. For
+\textbf{\emph{Observation F.4}} \emph{(pure-duplication extensions at \(d \in \{5, 6, 7\}\)).}
+Let \(M = \{7, 6, 4, 1\}\) be the \(d = 4\) classical multiset. For
 \(d \in \{5, 6\}\), every multiset of the form \(M \cup S\) with \(S\)
 drawn from \(M\) has digit sum \(18 + |S| \cdot \bar{m}\) where \(\bar{m}\)
 ranges over averages of multisets of \(M\). No such sum is divisible by \(9\)
@@ -3000,16 +3001,26 @@ admissible by digit sum --- namely
 \(\{7,6,6,6,6,4,1\}\), \(\{7,6,4,4,4,1,1\}\)
 --- and exhaustive enumeration over all sv\(\geq 2\) rules at \(d = 7\)
 produces zero rule-fp pairs satisfying \(K(F) = F\) in any of the four. The
-same result holds for \(\{8, 5, 3, 2\}\) at \(d = 5, 6, 7\). We conjecture, on
-this evidence, that pure-duplication extension produces no Kaprekar fixed
-points at any \(d > 4\) for either classical thread.
+same result holds for \(\{8, 5, 3, 2\}\) at \(d = 5, 6, 7\).
 
-This identifies zero-padding as the \emph{unique} viable extension mechanism for
-the \(\{7, 6, 4, 1\}\)-thread (and, by the analog with \(9\) in place of
-\(0\), for the \(\{8, 5, 3, 2\}\)-thread). The thread structure is not just
-one extension among several --- it is forced.
+\textbf{\emph{Note (added in revision).}} A subsequent investigation extended this
+inquiry to \(d = 8\). At \(d = 8\) in the \(\{7, 6, 4, 1\}\)-thread, three of
+the four admissible pure-duplication multisets --- \(\{7,7,7,7,6,6,4,1\}\),
+\(\{7,6,6,4,4,4,4,1\}\), \(\{7,6,6,4,1,1,1,1\}\) --- remain empty of universal
+sv\(= 8\) fps, but the \emph{symmetric}-duplication multiset
+\(\{7,7,6,6,4,4,1,1\}\) (each core digit doubled exactly twice) admits
+universal full-variable rules. Pure-duplication extensions are therefore not
+uniformly empty across all \(d > 4\), and zero-padding is not the unique
+viable extension mechanism. The pattern by which symmetric duplications
+break the empty-pure-duplication property at \(d = 8\) --- and whether this
+extends to higher even \(d\) or to the \(\{8, 5, 3, 2\}\)-thread --- is open.
 
-\section*{F.6 Open questions}
+The empirical pattern at \(d \in \{5, 6, 7\}\) remains: zero-padding is the
+viable extension mechanism for the strict-\(d\) tower at those digit lengths.
+The qualifier ``at any \(d > 4\)'' stated in earlier versions of this appendix
+is withdrawn; the correct scope is \(d \in \{5, 6, 7\}\).
+
+\section{F.6 Open questions}
 
 This appendix reports observations; it does not settle them.
 
@@ -3032,10 +3043,12 @@ This appendix reports observations; it does not settle them.
   not accommodate. A precise statement and proof are open.
 \item
   \emph{Strict-anchor count at \(d = 8, 9, \ldots\)?} The \(d = 7\) count is
-  \(11\) --- substantially larger than the \(d = 6\) count of \(4\). Whether
-  the strict-anchor count continues to grow with \(d\), stabilizes, or
-  oscillates is open. Computational reach at \(d = 8\) is feasible on
-  Apple M-series hardware; runs are pending.
+  \(11\) --- substantially larger than the \(d = 6\) count of \(4\). A
+  subsequent \(d = 8\) scan in the canonical zero-padded multiset
+  \(\{7, 6, 4, 1, 0^4\}\) produced \(89\) strict anchors, and the symmetric
+  pure-duplication multiset \(\{7, 7, 6, 6, 4, 4, 1, 1\}\) produced \(465\).
+  Whether the strict-anchor count continues to grow at \(d \geq 9\),
+  stabilizes, or oscillates is open.
 \item
   \emph{Parallel structure for the \(\{8, 5, 3, 2\}\)-thread.} Strict-\(d\)
   anchor counts at \(d = 5, 6\) are \(3, 3\) (versus \(2, 4\) for
@@ -3059,7 +3072,7 @@ This appendix reports observations; it does not settle them.
   settled here.
 \end{enumerate}
 
-\section*{F.7 Reproducibility note}
+\section{F.7 Reproducibility note}
 
 The results of this appendix are reproducible from the supplementary scripts.
 The main scanner is \texttt{universality\_scan\_v3.py}; the independent verifier is
