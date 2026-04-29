@@ -20,6 +20,7 @@ Pure Python 3 (≥ 3.8), no external dependencies. Runs on commodity hardware.
 | [`verify_even_ladder_closure.py`](verify_even_ladder_closure.py) | One-step $`T_d`$ closure on the even ladder at $`d \geq 18`$. Confirms the algebraic argument of Lemma C.4. | [§C.5, Lemma C.4](../sections/C_support_lemmas.md) | $`d = 18`$: ~30 s; $`d = 20`$: ~3 min |
 | [`verify_case2_recovery.py`](verify_case2_recovery.py) | Lemma C.10 (admissibility recovery for Case 2 inputs): every Case 2 input at $`d \in [7, 30]`$ reaches $`60714`$, with admissible-projection recovery in $`\leq 2`$ iterations. | [§C.6, Lemma C.5 / C.10](../sections/C_support_lemmas.md) | $`d \leq 20`$: ~30 s; full $`d \leq 30`$: ~2 min |
 | [`audit_6174_d8_d9.py`](audit_6174_d8_d9.py) | 6174 coefficient-preserving lifting audit at $`d = 8, 9`$ | [§6.2, Theorem 6.1, Appendix E](../sections/06_thread_7641.md) | $`d = 8`$: ~3 min; $`d = 9`$: ~60 min |
+| [`verifier_strict_d.py`](verifier_strict_d.py) | Independent verifier for strict-$`d`$ anchors of the $`\{7,6,4,1\}`$-thread at $`d = 5, 6, 7`$. Fp-first traversal with direct $`(A, B)`$ image-pair lookup; reproduces every count in Appendix F. | [Appendix F](../paper.md) | $`d = 5`$: ~1 s; $`d = 6`$: ~6 s; $`d = 7`$: ~70 s |
 
 ---
 
@@ -81,6 +82,23 @@ python3 verify_60714_basin.py 8               # repeat at higher d
 python3 audit_6174_d8_d9.py 8   # verifies best basin = 0.998141, 45 escapes
 python3 audit_6174_d8_d9.py 9   # verifies best basin = 0.999073, 45 escapes
 ```
+
+### Appendix F (strict-$`d`$ anchors of the $`\{7,6,4,1\}`$-thread)
+
+```bash
+python3 verifier_strict_d.py 5   # reproduces 2 strict-anchors: 60417, 60714
+python3 verifier_strict_d.py 6   # reproduces 4 strict-anchors: 60714, 146070, 170460, 607140
+python3 verifier_strict_d.py 7   # reproduces 11 strict-anchors (~70 s)
+```
+
+The $`d = 7`$ run reproduces the 11 strict-anchor list reported in
+Appendix F: $`\{1746, 6174, 17460, 61740, 146070, 174006, 174600,
+1{,}400{,}706, 1{,}460{,}700, 1{,}746{,}000, 6{,}174{,}000\}`$. The script
+is structurally distinct from `universality_scan_v3.py` (the original
+scanner): it iterates fps first and enumerates fixing rules via direct
+$`(A, B)`$ image-pair lookup, rather than iterating rules first. Both
+implementations produce the same lists at $`d = 5, 6, 7`$, providing
+cross-verification.
 
 ---
 

@@ -22,7 +22,7 @@ Type any number 5–20 digits long. The calculator shows the full trajectory, st
 
 | | |
 |---|---|
-| **[paper.pdf](paper.pdf)** | The complete paper, compiled (71 pages, 832 KB). The canonical reading version. |
+| **[paper.pdf](paper.pdf)** | The complete paper, compiled (76 pages, ~720 KB). The canonical reading version. Includes Appendix F (added April 29, 2026): preliminary working notes on a strengthened *strict-d* criterion. |
 | **[60714_calculator.html](60714_calculator.html)** | Single-file interactive calculator. Open it in any browser. No setup. |
 | **[paper.md](paper.md)** | Markdown source of the paper, identical content to the PDF. ~225 KB; if GitHub's math renderer struggles with the size, browse the [section files](#-the-paper-section-by-section) below. |
 | **[paper.tex](paper.tex)** | LaTeX source. Compiles to `paper.pdf` with `pdflatex`. |
@@ -92,6 +92,7 @@ For in-browser viewing — sections render cleanly on GitHub.
 | C | [Support lemmas for Theorem 5.2](sections/C_support_lemmas.md) | Core non-negativity, Td closure, the d = 15 algebraic hinge |
 | D | [Universal full-variable fps at d = 7](sections/D_dF7_observations.md) | Exhaustive d = 7 classification (18,004 fps) and cross-dimensional outcomes for the two-zero d = 6 stratum |
 | E | [6174 audit at d = 8, 9](sections/E_6174_audit.md) | The 45-input escape class |
+| F | [Strict-d anchors and the {7,6,4,1}-thread tower](sections/F_strict_d_anchors.md) | Preliminary working notes (April 29, 2026): strict-d criterion, the 11-fp d=7 strict-anchor list, 6174 reappearance at d=7 |
 
 ---
 
