@@ -119,7 +119,7 @@ This is, to our knowledge, the first explicitly constructed attractor in the gen
 \section{Introduction}\label{introduction}}
 
 \hypertarget{kaprekars-routine-and-the-middle-digit-cancellation}{%
-\subsection{1.1 Kaprekar's routine and the middle-digit cancellation}\label{kaprekars-routine-and-the-middle-digit-cancellation}}
+\subsection{Kaprekar's routine and the middle-digit cancellation}\label{kaprekars-routine-and-the-middle-digit-cancellation}}
 
 In 1949, D. R. Kaprekar observed a striking property of four-digit
 integers in base ten {[}Kaprekar 1955{]}. For any four-digit \(n\) with
@@ -174,7 +174,7 @@ becomes: which integers are universal fixed points, which rules attract
 them, and how do the rules relate across digit lengths?
 
 \hypertarget{permutation-pair-rules}{%
-\subsection{1.2 Permutation-pair rules}\label{permutation-pair-rules}}
+\subsection{Permutation-pair rules}\label{permutation-pair-rules}}
 
 Let \(n\) be a positive integer padded to \(d\) digits, and let
 \(\mathrm{sort\_desc}(n) = (x_0, x_1, \ldots, x_{d-1})\) denote its
@@ -221,7 +221,7 @@ convergence analysis throughout the literature {[}Prichett 1981, Dahl
 2026{]}.
 
 \hypertarget{the-organizing-question}{%
-\subsection{1.3 The organizing question}\label{the-organizing-question}}
+\subsection{The organizing question}\label{the-organizing-question}}
 
 A note on the order of discovery, before the formalism. The
 investigation reported in this paper did not begin with the integer
@@ -305,7 +305,7 @@ rank-\(6\) fixed points? Which further extend to \(d = 7\), \(d = 8\),
 and beyond?
 
 \hypertarget{on-method-from-brute-enumeration-to-structural-proof}{%
-\subsection{1.4 On method: from brute enumeration to structural proof}\label{on-method-from-brute-enumeration-to-structural-proof}}
+\subsection{On method: from brute enumeration to structural proof}\label{on-method-from-brute-enumeration-to-structural-proof}}
 
 A word on how this investigation proceeded. The classical Kaprekar
 routine has an elegance accessible to anyone who can subtract: arrange
@@ -341,8 +341,7 @@ assistance used throughout the project --- including AI tools alongside
 conventional scripting --- is documented in the Acknowledgments.
 
 \hypertarget{the-54-60714-discovery-arc}{%
-\paragraph{1.4.1 The 54 → 60714 discovery
-arc}\label{the-54-60714-discovery-arc}}
+\subsubsection{The 54 → 60714 discovery arc}\label{the-54-60714-discovery-arc}}
 
 To make the method concrete, we describe the specific discovery process
 that led to this paper's main theorem. An early candidate for
@@ -388,7 +387,7 @@ digit length, which admit universal coefficient-preserving liftings at
 every higher digit length?
 
 \hypertarget{conclusion}{%
-\paragraph{1.4.2 Conclusion}\label{conclusion}}
+\subsubsection{Conclusion}\label{conclusion}}
 
 This methodological sequence --- exhaustive empirical search,
 identification of counterexamples that refine the question, structural
@@ -402,7 +401,7 @@ but by being the one case where the proof closes out uniformly across
 all \(d \geq 5\).
 
 \hypertarget{the-main-results}{%
-\subsection{1.5 The main results}\label{the-main-results}}
+\subsection{The main results}\label{the-main-results}}
 
 This paper answers the following. (Throughout this section, theorems are
 presented as overview statements with section pointers; the body
@@ -512,7 +511,7 @@ coefficient-preserving lifting succeeds. This unification is empirical,
 not proven.}
 
 \hypertarget{how-the-framework-selects-60714}{%
-\subsection{\texorpdfstring{1.6 How the framework selects \(60714\)}{1.6 How the framework selects 60714}}\label{how-the-framework-selects-60714}}
+\subsection{\texorpdfstring{How the framework selects \(60714\)}{How the framework selects 60714}}\label{how-the-framework-selects-60714}}
 
 The result of this paper proceeds in two stages, with importantly
 different epistemic statuses. \textbf{The first stage is discovery.} At
@@ -606,7 +605,7 @@ cross-dimensional selection (Theorem 4.1) are the durable contributions;
 the integer \(60714\) is what those tools select.
 
 \hypertarget{relation-to-existing-literature}{%
-\subsection{1.7 Relation to existing literature}\label{relation-to-existing-literature}}
+\subsection{Relation to existing literature}\label{relation-to-existing-literature}}
 
 The literature on Kaprekar routines generalizes the classical
 construction along three principal axes, each distinct from ours.
@@ -664,8 +663,7 @@ of permutation-pair liftings, and the proof of Theorem 3 at every
 \(d \geq 5\) are, to our knowledge, all new.
 
 \hypertarget{computational-reproducibility}{%
-\paragraph{1.7.1 Computational
-reproducibility}\label{computational-reproducibility}}
+\subsubsection{Computational reproducibility}\label{computational-reproducibility}}
 
 The d = 7 classification and outcome verification reported in this paper
 are reproducible on commodity hardware. A self-contained package
@@ -683,7 +681,7 @@ laptop. The package is documented for non-specialist users and supports
 crash-resume for the longer enumerations.
 
 \hypertarget{organization}{%
-\subsection{1.8 Organization}\label{organization}}
+\subsection{Organization}\label{organization}}
 
 §2 establishes the formal framework: permutation-pair rules, algebraic
 rank, universal fixed points, native digit length, and effective rank at
@@ -712,7 +710,7 @@ properties used throughout the paper. Everything here is definitional
 and verifiable; no substantive claims are made in this section.
 
 \hypertarget{sorted-descending-digit-sequences}{%
-\subsection{2.1 Sorted-descending digit sequences}\label{sorted-descending-digit-sequences}}
+\subsection{Sorted-descending digit sequences}\label{sorted-descending-digit-sequences}}
 
 Throughout, \(d \geq 2\) is a fixed digit length (the digit length will
 vary between sections but is fixed within each statement). For a
@@ -742,7 +740,7 @@ The \textbf{admissible input set} at length \(d\), denoted \(A_d\), is
 the set of non-repdigit, non-near-repdigit \(d\)-digit integers.
 
 \hypertarget{permutation-pair-rules-1}{%
-\subsection{2.2 Permutation-pair rules}\label{permutation-pair-rules-1}}
+\subsection{Permutation-pair rules}\label{permutation-pair-rules-1}}
 
 Let \(S_d\) be the symmetric group on \(\{0, 1, \ldots, d-1\}\). Given
 an ordered pair \((\pi, \sigma) \in S_d \times S_d\) with
@@ -842,7 +840,7 @@ provides a complete table of all three for \(60714\)'s ladder at each
 \(d \in \{5, 6, \ldots, 20\}\).
 
 \hypertarget{algebraic-rank}{%
-\subsection{2.3 Algebraic rank}\label{algebraic-rank}}
+\subsection{Algebraic rank}\label{algebraic-rank}}
 
 The \textbf{algebraic rank} (or \textbf{surviving-variable count}) of a
 rule \(K_{\pi, \sigma}\) is
@@ -885,7 +883,7 @@ number of derangements of \(d\) elements. For small \(d\):
 \end{longtable}
 
 \hypertarget{universality-and-fixed-points}{%
-\subsection{2.4 Universality and fixed points}\label{universality-and-fixed-points}}
+\subsection{Universality and fixed points}\label{universality-and-fixed-points}}
 
 A \textbf{fixed point} of \(K_{\pi, \sigma}\) at length \(d\) is an
 integer \(F \in A_d\) with \(K_{\pi, \sigma}(F) = F\). A fixed point
@@ -907,7 +905,7 @@ full-variable. It is universal for \(F = 495\), but \(495\) is a fixed
 point of a rank-\(2\) rule, not a rank-\(3\) rule.
 
 \hypertarget{native-digit-length}{%
-\subsection{2.5 Native digit length}\label{native-digit-length}}
+\subsection{Native digit length}\label{native-digit-length}}
 
 For an integer \(F\), its \textbf{native digit length} \(d_F\) is the
 smallest \(d\) such that \(F\) is a universal full-variable fixed point
@@ -954,7 +952,7 @@ the structural derivation of the middle-digit cancellation that produces
 \(495\)'s rank-\(2\) status.
 
 \hypertarget{effective-rank-at-a-fixed-point}{%
-\subsection{2.6 Effective rank at a fixed point}\label{effective-rank-at-a-fixed-point}}
+\subsection{Effective rank at a fixed point}\label{effective-rank-at-a-fixed-point}}
 
 For a fixed point \(F\) with sorted-descending form
 \((f_0, f_1, \ldots, f_{d-1})\) at length \(d\), and for a rule
@@ -976,7 +974,7 @@ corresponding to \(F\)'s zero digits without disturbing \(F\)'s
 fixed-point status.
 
 \hypertarget{basic-properties}{%
-\subsection{2.7 Basic properties}\label{basic-properties}}
+\subsection{Basic properties}\label{basic-properties}}
 
 We collect two basic properties used without comment throughout the rest
 of the paper.
@@ -1016,7 +1014,7 @@ Kaprekar analysis is to restrict attention to ``generic'' inputs with at
 least two distinct digit values, and we follow this.
 
 \hypertarget{summary-of-notation}{%
-\subsection{2.8 Summary of notation}\label{summary-of-notation}}
+\subsection{Summary of notation}\label{summary-of-notation}}
 
 For reference:
 
@@ -1088,7 +1086,7 @@ the universal rules are identified. The counts are definitive; the full
 list of fixed points at \(d = 6\) appears in Appendix A.
 
 \hypertarget{method}{%
-\subsection{3.1 Method}\label{method}}
+\subsection{Method}\label{method}}
 
 At each digit length \(d\), we enumerate the full-variable rules ---
 ordered pairs \((\pi, \sigma) \in S_d \times S_d\) with
@@ -1117,7 +1115,7 @@ six-digit strings), a search that runs in hours on commodity hardware
 with the iteration-and-caching implementation described in Appendix A.
 
 \hypertarget{d-3-no-universal-full-variable-fixed-points}{%
-\subsection{\texorpdfstring{3.2 \(d = 3\): no universal full-variable fixed points}{3.2 d = 3: no universal full-variable fixed points}}\label{d-3-no-universal-full-variable-fixed-points}}
+\subsection{\texorpdfstring{\(d = 3\): no universal full-variable fixed points}{d = 3: no universal full-variable fixed points}}\label{d-3-no-universal-full-variable-fixed-points}}
 
 At \(d = 3\), there are \(12\) full-variable rules (Proposition 2.1,
 \(3! \cdot D_3 = 6 \cdot 2 = 12\)).
@@ -1139,7 +1137,7 @@ of a rank-\(2\) rule, outside the scope of Theorem 3.1. It reappears in
 Appendix §2.5 as a dimension-agnostic fixed point.
 
 \hypertarget{d-4-four-universal-full-variable-fixed-points}{%
-\subsection{\texorpdfstring{3.3 \(d = 4\): four universal full-variable fixed points}{3.3 d = 4: four universal full-variable fixed points}}\label{d-4-four-universal-full-variable-fixed-points}}
+\subsection{\texorpdfstring{\(d = 4\): four universal full-variable fixed points}{d = 4: four universal full-variable fixed points}}\label{d-4-four-universal-full-variable-fixed-points}}
 
 At \(d = 4\), there are \(216\) full-variable rules (Proposition 2.1,
 \(4! \cdot D_4 = 24 \cdot 9 = 216\)).
@@ -1184,7 +1182,7 @@ theorem is thus recovered within our classification as a specific entry
 in Theorem 3.2.
 
 \hypertarget{d-5-thirty-three-universal-full-variable-fixed-points}{%
-\subsection{\texorpdfstring{3.4 \(d = 5\): thirty-three universal full-variable fixed points}{3.4 d = 5: thirty-three universal full-variable fixed points}}\label{d-5-thirty-three-universal-full-variable-fixed-points}}
+\subsection{\texorpdfstring{\(d = 5\): thirty-three universal full-variable fixed points}{d = 5: thirty-three universal full-variable fixed points}}\label{d-5-thirty-three-universal-full-variable-fixed-points}}
 
 At \(d = 5\), there are \(5{,}280\) full-variable rules (Proposition
 2.1, \(5! \cdot D_5 = 120 \cdot 44 = 5{,}280\)).
@@ -1302,7 +1300,7 @@ being effectively lower-rank on a specific fixed point. The remaining
 \(\mathrm{sv}_F = \mathrm{sv} = 5\).}
 
 \hypertarget{d-6-five-hundred-and-six-universal-full-variable-fixed-points}{%
-\subsection{\texorpdfstring{3.5 \(d = 6\): five hundred and six universal full-variable fixed points}{3.5 d = 6: five hundred and six universal full-variable fixed points}}\label{d-6-five-hundred-and-six-universal-full-variable-fixed-points}}
+\subsection{\texorpdfstring{\(d = 6\): five hundred and six universal full-variable fixed points}{d = 6: five hundred and six universal full-variable fixed points}}\label{d-6-five-hundred-and-six-universal-full-variable-fixed-points}}
 
 At \(d = 6\), there are \(190{,}800\) full-variable rules (Proposition
 2.1, \(6! \cdot D_6 = 720 \cdot 265\)).
@@ -1400,7 +1398,7 @@ bell-shape reflects the combinatorics of digit-multisets satisfying this
 modular constraint.
 
 \hypertarget{summary}{%
-\subsection{3.6 Summary}\label{summary}}
+\subsection{Summary}\label{summary}}
 
 The classifications at \(d = 3, 4, 5, 6\) are:
 
@@ -1442,7 +1440,7 @@ at \(d = 5\), which extend to \(d = 6\) as universal full-variable fixed
 points?
 
 \hypertarget{the-question-formally}{%
-\subsection{4.1 The question, formally}\label{the-question-formally}}
+\subsection{The question, formally}\label{the-question-formally}}
 
 Let \(F_5 = \{F^{(1)}, \ldots, F^{(33)}\}\) be the set of universal
 full-variable fixed points at \(d = 5\) (Theorem 3.3). For each
@@ -1473,7 +1471,7 @@ answer to Question B despite a positive answer to A is \textbf{dynamic
 obstruction} (rules fix \(F^{(k)}\) but none is universal).
 
 \hypertarget{the-result}{%
-\subsection{4.2 The result}\label{the-result}}
+\subsection{The result}\label{the-result}}
 
 \textbf{Theorem 4.1.} \emph{Among the \(33\) universal full-variable
 fixed points at \(d = 5\), the cross-dimensional behavior at \(d = 6\)
@@ -1552,7 +1550,7 @@ enumeration logs and per-fixed-point data are in Appendix A.4.
 \(\square\)
 
 \hypertarget{tabulation-of-the-32-dimension-locked-fixed-points}{%
-\subsection{4.3 Tabulation of the 32 dimension-locked fixed points}\label{tabulation-of-the-32-dimension-locked-fixed-points}}
+\subsection{Tabulation of the 32 dimension-locked fixed points}\label{tabulation-of-the-32-dimension-locked-fixed-points}}
 
 \textbf{Table 4.1.} \emph{The \(17\) fixed points at \(d = 5\) with
 algebraic obstruction at \(d = 6\).}
@@ -1641,7 +1639,7 @@ sv=\(6\) rule fixing them. This pattern --- more zero digits
 solutions --- is developed further at §5 and §6.}
 
 \hypertarget{the-unique-success-case-f-60714}{%
-\subsection{\texorpdfstring{4.4 The unique success case: \(F = 60714\)}{4.4 The unique success case: F = 60714}}\label{the-unique-success-case-f-60714}}
+\subsection{\texorpdfstring{The unique success case: \(F = 60714\)}{The unique success case: F = 60714}}\label{the-unique-success-case-f-60714}}
 
 We record the \(d = 6\) universal lifting of \(60714\) explicitly, as it
 is the cornerstone of §5.
@@ -1697,7 +1695,7 @@ This lifting structure is explicit, and its generalization to
 \(d = 7, 8, 9, \ldots\) is the content of §5.
 
 \hypertarget{implications-for-the-paper}{%
-\subsection{4.5 Implications for the paper}\label{implications-for-the-paper}}
+\subsection{Implications for the paper}\label{implications-for-the-paper}}
 
 Theorem 4.1 is the central cross-dimensional result at the
 \(d = 5 \to d = 6\) boundary. It establishes:
@@ -1770,7 +1768,7 @@ reaching time at \(d \geq 16\) on the even ladder). §5.6 addresses
 near-repdigit exclusion. §5.7 completes the proof of the main theorem.
 
 \hypertarget{coefficient-preserving-liftings}{%
-\subsection{5.1 Coefficient-preserving liftings}\label{coefficient-preserving-liftings}}
+\subsection{Coefficient-preserving liftings}\label{coefficient-preserving-liftings}}
 
 Throughout this section, \(F\) denotes a universal full-variable fixed
 point at some native digit length \(d_F\), and \(K_{F}^{(d_{F})}\)
@@ -1858,7 +1856,7 @@ and yielding universal dynamics is not. The integer \(60714\) is what
 the framework selected, not what it was built to fit.
 
 \hypertarget{the-zero-sum-pair-construction-for-60714}{%
-\subsection{\texorpdfstring{5.2 The zero-sum pair construction for \(60714\)}{5.2 The zero-sum pair construction for 60714}}\label{the-zero-sum-pair-construction-for-60714}}
+\subsection{\texorpdfstring{The zero-sum pair construction for \(60714\)}{The zero-sum pair construction for 60714}}\label{the-zero-sum-pair-construction-for-60714}}
 
 Let \(K_{60714}^{(5)}\) denote the native rule at \(d = 5\) for
 \(F = 60714\): permutations \(\pi = (4, 1, 2, 3, 0)\),
@@ -2028,7 +2026,7 @@ general bound on \(|E_d|\) as \(d \to \infty\) remains open.
 The proof of Theorem 5.2 occupies the remainder of this section.
 
 \hypertarget{reduction-to-two-lemmas}{%
-\subsection{5.3 Reduction to two lemmas}\label{reduction-to-two-lemmas}}
+\subsection{Reduction to two lemmas}\label{reduction-to-two-lemmas}}
 
 The proof strategy has two parts.
 
@@ -2098,7 +2096,7 @@ This completes the proof of Theorem 5.2 modulo the two lemmas, which are
 proven in §5.4--§5.5.
 
 \hypertarget{proof-of-lemma-5.1-structural-closure}{%
-\subsection{5.4 Proof of Lemma 5.1 (structural closure)}\label{proof-of-lemma-5.1-structural-closure}}
+\subsection{Proof of Lemma 5.1 (structural closure)}\label{proof-of-lemma-5.1-structural-closure}}
 
 Fix \(d \geq 7\) on the odd ladder (the even ladder argument is
 identical with appropriate sign conventions). Let \(n \in T_d\) with
@@ -2144,7 +2142,7 @@ holds verbatim for any zero-sum pair lifting of any
 coefficient-preserving lifting family --- not just \(60714\)'s.
 
 \hypertarget{proof-of-lemma-5.2-bounded-reaching-time}{%
-\subsection{5.5 Proof of Lemma 5.2 (bounded reaching time)}\label{proof-of-lemma-5.2-bounded-reaching-time}}
+\subsection{Proof of Lemma 5.2 (bounded reaching time)}\label{proof-of-lemma-5.2-bounded-reaching-time}}
 
 Lemma 5.2 is the substantive content of Theorem 5.2. We prove it in two
 parts: a finite-state verification at \(d \in \{7, 8, \ldots, 16\}\)
@@ -2154,8 +2152,7 @@ two-step) \(T_d\) closure at \(d \geq 16\) (even) (§5.5.2). Together,
 these cover all \(d \geq 7\).
 
 \hypertarget{finite-state-verification-at-d-leq-16}{%
-\paragraph{\texorpdfstring{5.5.1 Finite-state verification at
-\(d \leq 16\)}{5.5.1 Finite-state verification at d \textbackslash leq 16}}\label{finite-state-verification-at-d-leq-16}}
+\subsubsection{\texorpdfstring{Finite-state verification at \(d \leq 16\)}{Finite-state verification at d \textbackslash leq 16}}\label{finite-state-verification-at-d-leq-16}}
 
 \textbf{Proposition 5.2 (finite-state verification).} \emph{For each
 \(d \in \{7, 8, 9, 10, 11, 12, 13, 14, 15, 16\}\) and each ladder's rule
@@ -2213,9 +2210,7 @@ non-repdigit non-near-repdigit multisets at \(d = 16\) is just over
 \(2\) million, well within computational reach.
 
 \hypertarget{d-independent-algebraic-argument-at-large-d}{%
-\paragraph{\texorpdfstring{5.5.2 \(d\)-independent algebraic argument at
-large
-\(d\)}{5.5.2 d-independent algebraic argument at large d}}\label{d-independent-algebraic-argument-at-large-d}}
+\subsubsection{\texorpdfstring{\(d\)-independent algebraic argument at large \(d\)}{d-independent algebraic argument at large d}}\label{d-independent-algebraic-argument-at-large-d}}
 
 \textbf{Proposition 5.3.} \emph{On the odd ladder at every
 \(d \geq 15\), every admissible input \(n \in A_d\) satisfies
@@ -2306,7 +2301,7 @@ at \(d \geq 16\). \(\square\)
 Propositions 5.2 and 5.3 together establish Lemma 5.2.
 
 \hypertarget{near-repdigit-exclusion}{%
-\subsection{5.6 Near-repdigit exclusion}\label{near-repdigit-exclusion}}
+\subsection{Near-repdigit exclusion}\label{near-repdigit-exclusion}}
 
 Near-repdigit inputs --- multisets where one digit appears \(d - 1\) or
 \(d\) times --- can produce pathological trajectories under
@@ -2335,7 +2330,7 @@ analogous class for \(60714\). The exclusion of near-repdigits in
 \(A_d\) removes these pathological inputs from consideration.
 
 \hypertarget{completing-the-proof-of-theorem-5.2}{%
-\subsection{5.7 Completing the proof of Theorem 5.2}\label{completing-the-proof-of-theorem-5.2}}
+\subsection{Completing the proof of Theorem 5.2}\label{completing-the-proof-of-theorem-5.2}}
 
 We now complete the proof of Theorem 5.2.
 
@@ -2376,7 +2371,7 @@ integer with leading zeros). Therefore the original orbit of \(n\)
 reaches \(60714\) in finitely many total steps. \(\square\)
 
 \hypertarget{summary-1}{%
-\subsection{5.8 Summary}\label{summary-1}}
+\subsection{Summary}\label{summary-1}}
 
 The structure of the proof is:
 
@@ -2455,7 +2450,7 @@ such, that organizes and explains the within-thread data but is not
 proven as a theorem.
 
 \hypertarget{as-predecessor-where-the-classical-recipe-runs-out}{%
-\subsection{6.1 6174 as predecessor: where the classical recipe runs out}\label{as-predecessor-where-the-classical-recipe-runs-out}}
+\subsection{6174 as predecessor: where the classical recipe runs out}\label{as-predecessor-where-the-classical-recipe-runs-out}}
 
 Kaprekar's 1949 result identifies 6174 as the unique attractor of the
 classical four-digit Kaprekar routine: starting from any non-repdigit
@@ -2494,7 +2489,7 @@ cross-dimensional behavior of each gives information about the
 structural role of the multiset.
 
 \hypertarget{cross-dimensional-pattern-of-6174}{%
-\subsection{6.2 Cross-dimensional pattern of 6174}\label{cross-dimensional-pattern-of-6174}}
+\subsection{Cross-dimensional pattern of 6174}\label{cross-dimensional-pattern-of-6174}}
 
 Even though the classical rule fails at \(d = 5\), 6174 itself can be
 lifted to higher \(d\) via coefficient-preserving liftings of its native
@@ -2611,7 +2606,7 @@ structure produces zero algebraically. The escape count \(45\) is
 ratio asymptotically approaches \(1\) as \(d \to \infty\).
 
 \hypertarget{the-d5-generalization-6174-hinted-at}{%
-\subsection{6.3 60714: the d=5 generalization 6174 hinted at}\label{the-d5-generalization-6174-hinted-at}}
+\subsection{60714: the d=5 generalization 6174 hinted at}\label{the-d5-generalization-6174-hinted-at}}
 
 The contrast with 60714 is immediate. Where 6174 achieves only
 near-universality at \(d \geq 5\), \textbf{60714 achieves universal
@@ -2664,7 +2659,7 @@ content through different rules with different absorbing-position
 structure, leading to qualitatively different cross-dimensional fates.
 
 \hypertarget{an-empirical-observation-sum_locked_spans-within-the-thread}{%
-\subsection{6.4 An empirical observation: sum\_locked\_spans within the thread}\label{an-empirical-observation-sum_locked_spans-within-the-thread}}
+\subsection{An empirical observation: sum\_locked\_spans within the thread}\label{an-empirical-observation-sum_locked_spans-within-the-thread}}
 
 \emph{The remainder of §6 (§6.4 and §6.5) presents an empirical
 observation about the four fixed points 6174, 1746, 60714, and 60417,
@@ -2737,7 +2732,7 @@ multiset through different permutation pairs, as reflected in their
 distinct sum\_locked\_spans values.
 
 \hypertarget{the-unified-empirical-observation}{%
-\subsection{6.5 The unified empirical observation}\label{the-unified-empirical-observation}}
+\subsection{The unified empirical observation}\label{the-unified-empirical-observation}}
 
 \textbf{Observation 6.2 (within-thread, empirical, not proven).}
 \emph{Within the \(\{7, 6, 4, 1\}\)-thread, sum\_locked\_spans
@@ -2819,8 +2814,7 @@ at \(d = 7\) but does not generalize to a cross-multiset principle. A
 formal conjecture in this direction appears in §7.
 
 \hypertarget{verified-d7-thread-ordering}{%
-\paragraph{6.5.1 Verified d=7 thread
-ordering}\label{verified-d7-thread-ordering}}
+\subsubsection{Verified d=7 thread ordering}\label{verified-d7-thread-ordering}}
 
 The within-thread sls observation is corroborated at \(d = 7\) for the
 four members of the \(\{7, 6, 4, 1\}\)-thread that share the padded
@@ -2863,14 +2857,14 @@ consistent cross-multiset accuracy. The structural mechanism that
 below.
 
 \hypertarget{mechanism-of-dimension-locking-type-a-and-type-b}{%
-\subsection{6.6 Mechanism of dimension-locking: Type A and Type B}\label{mechanism-of-dimension-locking-type-a-and-type-b}}
+\subsection{Mechanism of dimension-locking: Type A and Type B}\label{mechanism-of-dimension-locking-type-a-and-type-b}}
 
 We now describe a structural characterization of dimension-locking at
 \(d = 6 \to d = 7\) that decomposes the locked cases into two
 mechanistically distinct types.
 
 \hypertarget{setup-and-definitions}{%
-\paragraph{6.6.1 Setup and definitions}\label{setup-and-definitions}}
+\subsubsection{Setup and definitions}\label{setup-and-definitions}}
 
 Let \(F\) be a universal full-variable rank-\(d_F\) fixed point. We test
 \(F\)'s fate at digit length \(d > d_F\) by enumerating all
@@ -2929,7 +2923,7 @@ structurally unavailable. Type B locking is \emph{dynamic}: the lifting
 structure exists but does not produce universal convergence.
 
 \hypertarget{empirical-observation}{%
-\paragraph{6.6.2 Empirical observation}\label{empirical-observation}}
+\subsubsection{Empirical observation}\label{empirical-observation}}
 
 \textbf{Observation 6.3 (verified at \(d = 6 \to d = 7\)).} \emph{Every
 \(F\) that achieves TRANS or NEAR at \(d = 7\) admits at least one
@@ -2981,8 +2975,7 @@ multiset admits zsp rules. The multiset is therefore \emph{wholly Type
 A} at \(d = 7\).
 
 \hypertarget{connection-to-coefficient-preserving-lifting}{%
-\paragraph{6.6.3 Connection to coefficient-preserving
-lifting}\label{connection-to-coefficient-preserving-lifting}}
+\subsubsection{Connection to coefficient-preserving lifting}\label{connection-to-coefficient-preserving-lifting}}
 
 Observation 6.3 generalizes the coefficient-preserving lifting mechanism
 of §5. The lifted rule for \(60714\) at \(d = 7\) contains a zero-sum
@@ -3004,8 +2997,7 @@ within-multiset basin structure not captured by the coarser Type A /
 Type B partition.
 
 \hypertarget{type-b-locking-an-open-question}{%
-\paragraph{6.6.4 Type B locking: an open
-question}\label{type-b-locking-an-open-question}}
+\subsubsection{Type B locking: an open question}\label{type-b-locking-an-open-question}}
 
 Type B LOCK is mechanistically distinct from Type A but lacks a clean
 structural characterization. Across the \(6\) Type B LOCK cases in the
@@ -3023,7 +3015,7 @@ target \(d\)) and the Type B boundary potentially shifting. Verification
 at \(d = 7 \to d = 8\) is left to future work.
 
 \hypertarget{context-and-open-directions}{%
-\subsection{6.7 Context and open directions}\label{context-and-open-directions}}
+\subsection{Context and open directions}\label{context-and-open-directions}}
 
 The \(\{7, 6, 4, 1\}\)-thread exposes three phenomena worth noting for
 the broader research direction.
@@ -3079,7 +3071,7 @@ rather than an independent classifier. The Type A characterization of
 §6.6 supersedes the cycle-signature pattern at \(d = 7\).
 
 \hypertarget{summary-2}{%
-\subsection{6.8 Summary}\label{summary-2}}
+\subsection{Summary}\label{summary-2}}
 
 Theorem 6.1 establishes the cross-dimensional pattern of 6174 at
 \(d = 4, \ldots, 9\): strict universal at \(d = 4\) (Kaprekar's 1949
@@ -3113,7 +3105,7 @@ picture at digit lengths \(d \leq 9\) for the multiset thread
 what we have proven; we collect them here.
 
 \hypertarget{dimension-locking-as-a-general-phenomenon}{%
-\subsection{7.1 Dimension-locking as a general phenomenon}\label{dimension-locking-as-a-general-phenomenon}}
+\subsection{Dimension-locking as a general phenomenon}\label{dimension-locking-as-a-general-phenomenon}}
 
 Theorem 4.1 established that \(32\) of \(33\) universal full-variable
 fixed points at \(d = 5\) are dimension-locked at \(d = 5\) --- no
@@ -3151,7 +3143,7 @@ reduces to exhaustive enumeration over rank-\(d\) rules satisfying
 demanding at \(d \geq 8\).
 
 \hypertarget{the-structural-invariant-and-dimensional-fate}{%
-\subsection{7.2 The structural invariant and dimensional fate}\label{the-structural-invariant-and-dimensional-fate}}
+\subsection{The structural invariant and dimensional fate}\label{the-structural-invariant-and-dimensional-fate}}
 
 Observation 6.2 records the empirical unification of \(60714\),
 \(60417\), and \(6174\) through the \(\mathrm{sls}\) invariant. The
@@ -3185,7 +3177,7 @@ rule alone, obviating the need for direct enumeration at each candidate
 \(d\).
 
 \hypertarget{other-multiset-clusters}{%
-\subsection{7.3 Other multiset clusters}\label{other-multiset-clusters}}
+\subsection{Other multiset clusters}\label{other-multiset-clusters}}
 
 \textbf{Question 7.1.} \emph{Which digit multisets support universal
 full-variable fixed points at three or more consecutive native digit
@@ -3215,7 +3207,7 @@ to \(d + 1\), but none has been proven to lift uniformly to every higher
 \(d\) as \(60714\) does.
 
 \hypertarget{other-bases}{%
-\subsection{7.4 Other bases}\label{other-bases}}
+\subsection{Other bases}\label{other-bases}}
 
 All results in this paper concern base \(10\). The analogous framework
 in base \(b \geq 2\) would replace \(10^{\pi_i}\) with \(b^{\pi_i}\) in
@@ -3234,7 +3226,7 @@ addresses the classical Kaprekar rule at other bases; our framework has
 not been systematically extended.
 
 \hypertarget{the-6174-pattern-at-d-geq-10}{%
-\subsection{\texorpdfstring{7.5 The \(6174\) pattern at \(d \geq 10\)}{7.5 The 6174 pattern at d \textbackslash geq 10}}\label{the-6174-pattern-at-d-geq-10}}
+\subsection{\texorpdfstring{The \(6174\) pattern at \(d \geq 10\)}{The 6174 pattern at d \textbackslash geq 10}}\label{the-6174-pattern-at-d-geq-10}}
 
 Theorem 6.1 establishes \(6174\)'s behavior at \(d = 4, 5, \ldots, 9\).
 The pattern at \(d = 8, 9\) (near-universal with \(45\)-input escape
@@ -3256,7 +3248,7 @@ an algebraic question on the coefficient vectors' action on multisets of
 the form \((X, X, X, X, 0, \ldots, 0)\).
 
 \hypertarget{the-depth-of-the-escape-class-the-basin-density-conjecture}{%
-\subsection{7.6 The depth of the escape class --- the Basin Density Conjecture}\label{the-depth-of-the-escape-class-the-basin-density-conjecture}}
+\subsection{The depth of the escape class --- the Basin Density Conjecture}\label{the-depth-of-the-escape-class-the-basin-density-conjecture}}
 
 Before stating the Basin Density Conjecture, we record a structural
 observation that places the escape class \(E_d\) in continuity with the
@@ -3327,7 +3319,7 @@ For the Depth part, exhaustive enumeration at \(d \leq 11\) shows
 uniform bound for general \(d\) is provided here.
 
 \hypertarget{beyond-universal-full-variable-fixed-points}{%
-\subsection{7.7 Beyond universal full-variable fixed points}\label{beyond-universal-full-variable-fixed-points}}
+\subsection{Beyond universal full-variable fixed points}\label{beyond-universal-full-variable-fixed-points}}
 
 The full-variable constraint \(\mathrm{sv} = d\) excludes
 dimension-agnostic fixed points like \(45\), \(495\), \(450\) (§2.5).
@@ -3345,7 +3337,7 @@ universality --- say, rules with \(\mathrm{sv} = d - 1\) that produce
 universal fixed points at every \(d\) in some range. We leave this open.
 
 \hypertarget{concluding-remarks}{%
-\subsection{7.8 Concluding remarks}\label{concluding-remarks}}
+\subsection{Concluding remarks}\label{concluding-remarks}}
 
 The central result of this paper is Theorem 5.2: \(60714\) is a
 universal full-variable fixed point at every digit length \(d \geq 5\),
@@ -3425,7 +3417,7 @@ Runtime on commodity hardware: negligible at \(d = 3, 4\);
 supplementary materials.
 
 \hypertarget{a.1-classification-at-d-3}{%
-\subsection{\texorpdfstring{A.1 Classification at \(d = 3\)}{A.1 Classification at d = 3}}\label{a.1-classification-at-d-3}}
+\subsection{\texorpdfstring{Classification at \(d = 3\)}{Classification at d = 3}}\label{a.1-classification-at-d-3}}
 
 \textbf{Full-variable rules enumerated:}
 \(3! \cdot D_3 = 6 \cdot 2 = 12\). \textbf{Admissible inputs
@@ -3443,7 +3435,7 @@ algebraic rank \(2\) (the middle-position coefficient vanishes; see
 point, and is outside the scope of the full-variable classification.
 
 \hypertarget{a.2-classification-at-d-4}{%
-\subsection{\texorpdfstring{A.2 Classification at \(d = 4\)}{A.2 Classification at d = 4}}\label{a.2-classification-at-d-4}}
+\subsection{\texorpdfstring{Classification at \(d = 4\)}{Classification at d = 4}}\label{a.2-classification-at-d-4}}
 
 \textbf{Full-variable rules enumerated:}
 \(4! \cdot D_4 = 24 \cdot 9 = 216\). \textbf{Admissible inputs
@@ -3495,7 +3487,7 @@ two fps sum to \(7920\), a specific instance of reverse-pair identity at
 \(d = 4\).
 
 \hypertarget{a.3-classification-at-d-5}{%
-\subsection{\texorpdfstring{A.3 Classification at \(d = 5\)}{A.3 Classification at d = 5}}\label{a.3-classification-at-d-5}}
+\subsection{\texorpdfstring{Classification at \(d = 5\)}{Classification at d = 5}}\label{a.3-classification-at-d-5}}
 
 \textbf{Full-variable rules enumerated:}
 \(5! \cdot D_5 = 120 \cdot 44 = 5{,}280\). \textbf{Admissible inputs
@@ -3582,7 +3574,7 @@ the cross-check of §4 finds no universal full-variable rule for either
 at \(d = 6\).
 
 \hypertarget{a.4-classification-at-d-6}{%
-\subsection{\texorpdfstring{A.4 Classification at \(d = 6\)}{A.4 Classification at d = 6}}\label{a.4-classification-at-d-6}}
+\subsection{\texorpdfstring{Classification at \(d = 6\)}{Classification at d = 6}}\label{a.4-classification-at-d-6}}
 
 \textbf{Full-variable rules enumerated:}
 \(6! \cdot D_6 = 720 \cdot 265 = 190{,}800\). \textbf{Admissible inputs
@@ -3592,7 +3584,7 @@ strings). \textbf{Universal full-variable fixed points:} \(506\).
 pairs):} \(1{,}174\).
 
 \hypertarget{a.4.1-summary-statistics}{%
-\subsection{A.4.1 Summary statistics}\label{a.4.1-summary-statistics}}
+\subsection{Summary statistics}\label{a.4.1-summary-statistics}}
 
 The \(506\) fixed points distribute by zero-digit count:
 
@@ -3627,7 +3619,7 @@ Digit sum & Fixed-point count \\
 \end{longtable}
 
 \hypertarget{a.4.2-distinguished-fixed-points}{%
-\subsection{A.4.2 Distinguished fixed points}\label{a.4.2-distinguished-fixed-points}}
+\subsection{Distinguished fixed points}\label{a.4.2-distinguished-fixed-points}}
 
 The following \(d = 6\) universal full-variable fixed points are singled
 out elsewhere in the paper:
@@ -3666,7 +3658,7 @@ classical rule with basin \(0.0625\) {[}Dahl 2026{]} \\
 \end{longtable}
 
 \hypertarget{a.4.3-fixed-points-with-two-or-more-zero-digits}{%
-\subsection{A.4.3 Fixed points with two or more zero digits}\label{a.4.3-fixed-points-with-two-or-more-zero-digits}}
+\subsection{Fixed points with two or more zero digits}\label{a.4.3-fixed-points-with-two-or-more-zero-digits}}
 
 The complete list of \(506\) universal full-variable fixed points at
 \(d = 6\) is lengthy; we provide it in the supplementary materials as a
@@ -3748,7 +3740,7 @@ Cross-dimensional behavior at \(d = 6 \to d = 7\) for fps with fewer
 than \(2\) zeros is empirically rare (cf.~Observation D.1).
 
 \hypertarget{a.5-cross-reference-to-4-and-6}{%
-\subsection{A.5 Cross-reference to §4 and §6}\label{a.5-cross-reference-to-4-and-6}}
+\subsection{Cross-reference to §4 and §6}\label{a.5-cross-reference-to-4-and-6}}
 
 The \(33\) fixed points at \(d = 5\) of §A.3 are the subject of §4's
 cross-check: the exhaustive computation of which are dimension-locked at
@@ -3888,7 +3880,7 @@ followed by the chain of appended pairs from \(d - 2\) down to the
 ladder root. The construction is stated formally in §B.3.
 
 \hypertarget{b.3.-the-construction-stated-formally}{%
-\subsection{B.3. The construction, stated formally}\label{b.3.-the-construction-stated-formally}}
+\subsection{The construction, stated formally}\label{b.3.-the-construction-stated-formally}}
 
 The tables above are the output of a simple recursive recipe that
 generalizes to every \(d \geq 5\):
@@ -3998,7 +3990,7 @@ ladder, §C.5 addresses the even ladder, and §C.6 establishes the
 admissible-projection lemma.
 
 \hypertarget{c.1-setup}{%
-\subsection{C.1 Setup}\label{c.1-setup}}
+\subsection{Setup}\label{c.1-setup}}
 
 Throughout, \((x_0, x_1, \ldots, x_{d-1})\) denotes a sorted-descending
 digit sequence with \(x_0 \geq x_1 \geq \cdots \geq x_{d-1}\) and each
@@ -4008,7 +4000,7 @@ digit sequence with \(x_0 \geq x_1 \geq \cdots \geq x_{d-1}\) and each
 \[\mathrm{core}(x) \;=\; 9900 \, x_0 + 9 \, x_1 + 90 \, x_2 - 9000 \, x_3 - 999 \, x_4.\]
 
 \hypertarget{c.2-core-non-negativity-proof-of-lemma-5.3}{%
-\subsection{C.2 Core non-negativity (Proof of Lemma 5.3)}\label{c.2-core-non-negativity-proof-of-lemma-5.3}}
+\subsection{Core non-negativity (Proof of Lemma 5.3)}\label{c.2-core-non-negativity-proof-of-lemma-5.3}}
 
 \textbf{Lemma 5.3 (restated).} \emph{For every sorted-descending
 sequence \((x_0, x_1, x_2, x_3, x_4)\), \(\mathrm{core}(x) \geq 0\).}
@@ -4054,7 +4046,7 @@ each, \(\mathrm{core}(x) \geq 0\). \(\square\)
 confirms the minimum is exactly \(0\).
 
 \hypertarget{c.3-core-upper-bound-proof-of-lemma-5.4}{%
-\subsection{C.3 Core upper bound (Proof of Lemma 5.4)}\label{c.3-core-upper-bound-proof-of-lemma-5.4}}
+\subsection{Core upper bound (Proof of Lemma 5.4)}\label{c.3-core-upper-bound-proof-of-lemma-5.4}}
 
 \textbf{Lemma 5.4 (restated).} \emph{For every sorted-descending
 sequence \((x_0, x_1, x_2, x_3, x_4)\),
@@ -4076,13 +4068,13 @@ enumeration over all \(2{,}002\) sorted-descending sequences
 Runtime: milliseconds.}
 
 \hypertarget{c.4-the-t_d-reaching-time-bound-odd-ladder}{%
-\subsection{\texorpdfstring{C.4 The \(T_d\) reaching-time bound (odd ladder)}{C.4 The T\_d reaching-time bound (odd ladder)}}\label{c.4-the-t_d-reaching-time-bound-odd-ladder}}
+\subsection{\texorpdfstring{The \(T_d\) reaching-time bound (odd ladder)}{The T\_d reaching-time bound (odd ladder)}}\label{c.4-the-t_d-reaching-time-bound-odd-ladder}}
 
 The main technical claim underlying Proposition 5.3 rests on a
 \textbf{block-structure decomposition} of the lifted rule's output.
 
 \hypertarget{c.4.1-block-structure-decomposition}{%
-\subsection{C.4.1 Block-structure decomposition}\label{c.4.1-block-structure-decomposition}}
+\subsection{Block-structure decomposition}\label{c.4.1-block-structure-decomposition}}
 
 At odd digit length \(d \geq 7\), the odd-ladder rule
 \(K^{(d)}_{60714}\) has coefficient vector
@@ -4118,7 +4110,7 @@ subsum is bounded by the full telescoping:
 \(\square\)
 
 \hypertarget{c.4.2-non-negativity-of-kdx}{%
-\subsection{\texorpdfstring{C.4.2 Non-negativity of \(K^{(d)}(x)\)}{C.4.2 Non-negativity of K\^{}\{(d)\}(x)}}\label{c.4.2-non-negativity-of-kdx}}
+\subsection{\texorpdfstring{Non-negativity of \(K^{(d)}(x)\)}{Non-negativity of K\^{}\{(d)\}(x)}}\label{c.4.2-non-negativity-of-kdx}}
 
 \textbf{Lemma C.7.} \emph{For every sorted-descending
 \((x_0, \ldots, x_{d-1})\) and every odd \(d \geq 7\),}
@@ -4139,7 +4131,7 @@ Hence the argument is non-negative and the absolute-value bars can be
 dropped. \(\square\)
 
 \hypertarget{c.4.3-the-reaching-time-theorem}{%
-\subsection{C.4.3 The reaching-time theorem}\label{c.4.3-the-reaching-time-theorem}}
+\subsection{The reaching-time theorem}\label{c.4.3-the-reaching-time-theorem}}
 
 \textbf{Lemma C.3 (one-step \(T_d\) closure on the odd ladder at
 \(d \geq 15\)).} \emph{Let \(d \geq 15\) be odd. For every admissible
@@ -4329,7 +4321,7 @@ respectively) verifies one-step \(T_d\) closure: every admissible input
 reaches \(T_d\) in exactly one iteration.}
 
 \hypertarget{c.5-the-even-ladder}{%
-\subsection{C.5 The even ladder}\label{c.5-the-even-ladder}}
+\subsection{The even ladder}\label{c.5-the-even-ladder}}
 
 The even-ladder root at \(d = 6\) uses the split-lifted rule with
 coefficient vector
@@ -4525,7 +4517,7 @@ low-dimensional cases (Proposition 5.2). The induction in §5.7 closes on
 both ladders at every \(d \geq 5\).
 
 \hypertarget{c.6-admissible-projection-under-lemma-5.1}{%
-\subsection{C.6 Admissible projection under Lemma 5.1}\label{c.6-admissible-projection-under-lemma-5.1}}
+\subsection{Admissible projection under Lemma 5.1}\label{c.6-admissible-projection-under-lemma-5.1}}
 
 \textbf{Lemma C.5 (admissible projection).} \emph{Let \(d \geq 7\), let
 \(n \in A_d \cap T_d\) with sorted-descending form
@@ -4780,7 +4772,7 @@ package \texttt{d7\_audit/}, is provided as supplementary material
 (§1.7.1).
 
 \hypertarget{d.1-universal-full-variable-fps-at-d-7}{%
-\subsection{\texorpdfstring{D.1 Universal full-variable fps at \(d = 7\)}{D.1 Universal full-variable fps at d = 7}}\label{d.1-universal-full-variable-fps-at-d-7}}
+\subsection{\texorpdfstring{Universal full-variable fps at \(d = 7\)}{Universal full-variable fps at d = 7}}\label{d.1-universal-full-variable-fps-at-d-7}}
 
 Run B identifies \textbf{\(18{,}004\) universal full-variable fixed
 points at \(d = 7\)}, attained by \(49{,}292\) universal rules.
@@ -4811,7 +4803,7 @@ basin at \(d = 7\) is below the strict-universal threshold (basin
 characterization.
 
 \hypertarget{d.2-cross-dimensional-outcomes-the-two-zero-d-6-stratum}{%
-\subsection{\texorpdfstring{D.2 Cross-dimensional outcomes: the two-zero \(d = 6\) stratum}{D.2 Cross-dimensional outcomes: the two-zero d = 6 stratum}}\label{d.2-cross-dimensional-outcomes-the-two-zero-d-6-stratum}}
+\subsection{\texorpdfstring{Cross-dimensional outcomes: the two-zero \(d = 6\) stratum}{Cross-dimensional outcomes: the two-zero d = 6 stratum}}\label{d.2-cross-dimensional-outcomes-the-two-zero-d-6-stratum}}
 
 Of the \(506\) universal full-variable fixed points at \(d = 6\),
 exactly \(53\) have multiset structure with two trailing zeros at
@@ -4907,7 +4899,7 @@ the §6.6 classification. The ``Rules \(\geq 0.99\)'' column counts
 of §1.4.
 
 \hypertarget{d.3-held-out-validation-of-the-type-a-lock-characterization}{%
-\subsection{D.3 Held-out validation of the Type A LOCK characterization}\label{d.3-held-out-validation-of-the-type-a-lock-characterization}}
+\subsection{Held-out validation of the Type A LOCK characterization}\label{d.3-held-out-validation-of-the-type-a-lock-characterization}}
 
 To validate the Type A characterization (Definition 6.3) beyond the
 two-zero stratum, we ran the verifier on \(12\) additional \(d = 6\)
@@ -4964,7 +4956,7 @@ the Type A predictor has \(7\) correct predictions out of \(7\) across
 \(65\) total verified records, with zero false positives.
 
 \hypertarget{d.4-cycle-signatures-at-d-7}{%
-\subsection{\texorpdfstring{D.4 Cycle signatures at \(d = 7\)}{D.4 Cycle signatures at d = 7}}\label{d.4-cycle-signatures-at-d-7}}
+\subsection{\texorpdfstring{Cycle signatures at \(d = 7\)}{Cycle signatures at d = 7}}\label{d.4-cycle-signatures-at-d-7}}
 
 The cycle signature of a permutation pair \((\pi, \sigma)\) records the
 cycle decomposition of \(\pi \cdot \sigma^{-1}\). Among the \(53\) Run C
@@ -4985,7 +4977,7 @@ suggests the cycle-signature restriction is a \emph{consequence} of the
 more fundamental zsp absence rather than an independent classifier.
 
 \hypertarget{d.5-cross-dimensional-behavior}{%
-\subsection{D.5 Cross-dimensional behavior}\label{d.5-cross-dimensional-behavior}}
+\subsection{Cross-dimensional behavior}\label{d.5-cross-dimensional-behavior}}
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2105}}
@@ -5033,7 +5025,7 @@ enumeration. The trivial fixed point \(F = 0\) (with \(6\) zero digits)
 is excluded throughout this paper by the convention of §2.
 
 \hypertarget{d.6-reproducibility}{%
-\subsection{D.6 Reproducibility}\label{d.6-reproducibility}}
+\subsection{Reproducibility}\label{d.6-reproducibility}}
 
 The complete data underlying this appendix is reproducible from the
 supplementary \texttt{d7\_audit/} package (§1.7.1):
@@ -5075,7 +5067,7 @@ liftings of \(6174\)'s native rule at digit lengths \(d = 8\) and
 \(d = 9\), supporting Theorem 6.1 in §6.
 
 \hypertarget{e.1-setup}{%
-\subsection{E.1 Setup}\label{e.1-setup}}
+\subsection{Setup}\label{e.1-setup}}
 
 The native rule of \(6174\) at \(d_F = 4\) is the classical Kaprekar
 rule \(K_0\): \(\pi = (3, 2, 1, 0)\), \(\sigma = (0, 1, 2, 3)\),
@@ -5129,10 +5121,10 @@ positions \(0, 1, 2, 3\) and freely assign \(\pi, \sigma\) at positions
 \[5! \cdot D_5 = 120 \cdot 44 = 5{,}280.\]
 
 \hypertarget{e.2-audit-results}{%
-\subsection{E.2 Audit results}\label{e.2-audit-results}}
+\subsection{Audit results}\label{e.2-audit-results}}
 
 \hypertarget{e.2.1-at-d-8}{%
-\subsection{\texorpdfstring{E.2.1 At \(d = 8\)}{E.2.1 At d = 8}}\label{e.2.1-at-d-8}}
+\subsection{\texorpdfstring{At \(d = 8\)}{At d = 8}}\label{e.2.1-at-d-8}}
 
 Exhaustive audit of all \(216\) coefficient-preserving liftings at
 \(d = 8\), each tested against all \(24{,}210\) admissible multisets
@@ -5167,7 +5159,7 @@ Verification:
 \(\checkmark\)
 
 \hypertarget{e.2.2-escape-characterization-at-d-8}{%
-\subsection{\texorpdfstring{E.2.2 Escape characterization at \(d = 8\)}{E.2.2 Escape characterization at d = 8}}\label{e.2.2-escape-characterization-at-d-8}}
+\subsection{\texorpdfstring{Escape characterization at \(d = 8\)}{Escape characterization at d = 8}}\label{e.2.2-escape-characterization-at-d-8}}
 
 For the best lifting, exactly \(45\) admissible multisets fail to reach
 \(6174\). All \(45\) have the form of \textbf{two four-of-a-kind
@@ -5212,7 +5204,7 @@ liftings. Every coefficient-preserving lifting at \(d = 8\) maps every
 four-of-a-kind-paired multiset to \(0\).
 
 \hypertarget{e.2.3-at-d-9}{%
-\subsection{\texorpdfstring{E.2.3 At \(d = 9\)}{E.2.3 At d = 9}}\label{e.2.3-at-d-9}}
+\subsection{\texorpdfstring{At \(d = 9\)}{At d = 9}}\label{e.2.3-at-d-9}}
 
 Exhaustive audit of all \(5{,}280\) coefficient-preserving liftings at
 \(d = 9\), each tested against all \(48{,}520\) admissible multisets
@@ -5233,7 +5225,7 @@ Best basin & \(0.999073\) \\
 Runtime: approximately \(60\) minutes on commodity hardware.
 
 \hypertarget{e.2.4-escape-characterization-at-d-9}{%
-\subsection{\texorpdfstring{E.2.4 Escape characterization at \(d = 9\)}{E.2.4 Escape characterization at d = 9}}\label{e.2.4-escape-characterization-at-d-9}}
+\subsection{\texorpdfstring{Escape characterization at \(d = 9\)}{Escape characterization at d = 9}}\label{e.2.4-escape-characterization-at-d-9}}
 
 For the best lifting at \(d = 9\), the \(45\) escape multisets have the
 same structural form as at \(d = 8\), extended with trailing zeros.
@@ -5247,7 +5239,7 @@ continue at \(d \geq 10\): at higher \(d\), the escape multisets are
 obtained by appending trailing zeros to the \(d = 8\) escape forms.
 
 \hypertarget{e.3-asymptotic-behavior}{%
-\subsection{E.3 Asymptotic behavior}\label{e.3-asymptotic-behavior}}
+\subsection{Asymptotic behavior}\label{e.3-asymptotic-behavior}}
 
 \textbf{Basin growth.} The escape count at \(d = 8, 9\) is fixed at
 \(45\). The admissible multiset count grows with \(d\):
@@ -5298,7 +5290,7 @@ on the native and appended coefficients, and appears in every
 coefficient-preserving lifting.
 
 \hypertarget{e.4-conjectural-extension}{%
-\subsection{E.4 Conjectural extension}\label{e.4-conjectural-extension}}
+\subsection{Conjectural extension}\label{e.4-conjectural-extension}}
 
 \textbf{Conjecture E.1.} \emph{For every \(d \geq 8\), the
 \(45\)-multiset escape class persists at \(6174\)'s
@@ -5336,7 +5328,7 @@ future revision of the main paper, and whether the reported \(d = 7\)
 counts extend to higher \(d\), are explicitly left open in §F.6.}
 
 \hypertarget{f.1-purpose}{%
-\subsection{F.1 Purpose}\label{f.1-purpose}}
+\subsection{Purpose}\label{f.1-purpose}}
 
 The main paper establishes that \(60714\) is a universal full-variable
 fixed point at every digit length \(d \geq 5\) under the
@@ -5364,7 +5356,7 @@ Kaprekar constants \(6174\) and \(1746\) acquire strict-anchor status at
 cross-dimensional pattern of \(6174\) described in §6.
 
 \hypertarget{f.2-the-strict-d-criterion}{%
-\subsection{\texorpdfstring{F.2 The strict-\(d\) criterion}{F.2 The strict-d criterion}}\label{f.2-the-strict-d-criterion}}
+\subsection{\texorpdfstring{The strict-\(d\) criterion}{The strict-d criterion}}\label{f.2-the-strict-d-criterion}}
 
 Let \(K = K_{\pi, \sigma}\) be a universal full-variable rule for \(F\)
 at digit length \(d\), with coefficient vector
@@ -5396,7 +5388,7 @@ the subset of universal fps for which the universality is not achieved
 purely by zero-sum-pair extension on equal-digit positions of \(F\).
 
 \hypertarget{f.3-the-7641-thread-under-strict-d}{%
-\subsection{\texorpdfstring{F.3 The \{7,6,4,1\}-thread under strict-\(d\)}{F.3 The \{7,6,4,1\}-thread under strict-d}}\label{f.3-the-7641-thread-under-strict-d}}
+\subsection{\texorpdfstring{The \{7,6,4,1\}-thread under strict-\(d\)}{The \{7,6,4,1\}-thread under strict-d}}\label{f.3-the-7641-thread-under-strict-d}}
 
 We applied the strict-\(d\) criterion exhaustively at digit lengths
 \(d = 5, 6, 7\) to all universal full-variable fps in the relevant
@@ -5445,7 +5437,7 @@ sets where checked. Source code and JSON outputs are provided as
 supplementary material.
 
 \hypertarget{f.4-the-non-monotone-strict-anchor-pattern}{%
-\subsection{F.4 The non-monotone strict-anchor pattern}\label{f.4-the-non-monotone-strict-anchor-pattern}}
+\subsection{The non-monotone strict-anchor pattern}\label{f.4-the-non-monotone-strict-anchor-pattern}}
 
 \textbf{\emph{Observation F.2}} \emph{(non-monotone strict-anchor
 pattern of \(6174\) and \(1746\)).} The classical Kaprekar fixed points
@@ -5505,7 +5497,7 @@ Definition F.2; the genuinely \(d\)-dimensional dynamics of \(60714\)
 live at \(d = 5\) and \(d = 6\).
 
 \hypertarget{f.5-pure-duplication-extensions}{%
-\subsection{F.5 Pure-duplication extensions}\label{f.5-pure-duplication-extensions}}
+\subsection{Pure-duplication extensions}\label{f.5-pure-duplication-extensions}}
 
 The main paper considers only zero-padded extensions of multisets across
 \(d\). We tested the alternative --- \emph{pure-duplication extension},
@@ -5547,7 +5539,7 @@ of this appendix is withdrawn; the correct scope is
 \(d \in \{5, 6, 7\}\).
 
 \hypertarget{f.6-open-questions}{%
-\subsection{F.6 Open questions}\label{f.6-open-questions}}
+\subsection{Open questions}\label{f.6-open-questions}}
 
 This appendix reports observations; it does not settle them.
 
@@ -5602,7 +5594,7 @@ This appendix reports observations; it does not settle them.
 \end{enumerate}
 
 \hypertarget{f.7-reproducibility-note}{%
-\subsection{F.7 Reproducibility note}\label{f.7-reproducibility-note}}
+\subsection{Reproducibility note}\label{f.7-reproducibility-note}}
 
 The results of this appendix are reproducible from the supplementary
 scripts. The main scanner is \texttt{universality\_scan\_v3.py}; the
@@ -5634,7 +5626,7 @@ a refinement of the conjecture's lift mechanism.}
 They strengthen and extend them.}
 
 \hypertarget{g.1-purpose}{%
-\subsection{G.1 Purpose}\label{g.1-purpose}}
+\subsection{Purpose}\label{g.1-purpose}}
 
 The original verifier in this paper tested universality against an
 \(S\)-restricted input basin --- that is, the set of non-repdigit
@@ -5656,7 +5648,7 @@ results under the corrected definition, and (c) reports new empirical
 results that extend the cycle thread to \(m = 4\).
 
 \hypertarget{g.2-strict-k-rules-and-classical-universality}{%
-\subsection{\texorpdfstring{G.2 Strict \(K\)-rules and classical universality}{G.2 Strict K-rules and classical universality}}\label{g.2-strict-k-rules-and-classical-universality}}
+\subsection{\texorpdfstring{Strict \(K\)-rules and classical universality}{Strict K-rules and classical universality}}\label{g.2-strict-k-rules-and-classical-universality}}
 
 Throughout the paper, a \(K\)-rule at dimension \(d\) is a pair
 \((\pi, \sigma)\) of permutations of \(\{0, 1, \ldots, d-1\}\) giving
@@ -5698,7 +5690,7 @@ a strict universal may be genuinely \(S\)-only. The two notions agree at
 documented below.
 
 \hypertarget{g.3-re-verification-of-v1.2.1-results-under-classical-scope}{%
-\subsection{G.3 Re-verification of v1.2.1 results under classical scope}\label{g.3-re-verification-of-v1.2.1-results-under-classical-scope}}
+\subsection{Re-verification of v1.2.1 results under classical scope}\label{g.3-re-verification-of-v1.2.1-results-under-classical-scope}}
 
 A classical-scope verifier (described in §G.7 below) was applied to the
 strict universals catalogued in the paper. The results are summarized in
@@ -5759,7 +5751,7 @@ correction. All \(60714\) ladder universals are classical-universal at
 every tested \(d \in \{5, 6, 7, 8, 9, 10, 11\}\).
 
 \hypertarget{g.4-confirmation-of-the-cycle-thread-at-m-4}{%
-\subsection{\texorpdfstring{G.4 Confirmation of the cycle thread at \(m = 4\)}{G.4 Confirmation of the cycle thread at m = 4}}\label{g.4-confirmation-of-the-cycle-thread-at-m-4}}
+\subsection{\texorpdfstring{Confirmation of the cycle thread at \(m = 4\)}{Confirmation of the cycle thread at m = 4}}\label{g.4-confirmation-of-the-cycle-thread-at-m-4}}
 
 A search at \(d = 16\), \(m = 4\) (multiset \(\{7^4, 6^4, 4^4, 1^4\}\))
 was conducted using the candidates predicted by inserting a
@@ -5799,7 +5791,7 @@ confirms that the cycle thread \(\{7^m, 6^m, 4^m, 1^m, 0^k\}\) at
 \(m \in \{1, 2, 3, 4\}\).
 
 \hypertarget{g.5-asymmetric-lift-behavior}{%
-\subsection{G.5 Asymmetric lift behavior}\label{g.5-asymmetric-lift-behavior}}
+\subsection{Asymmetric lift behavior}\label{g.5-asymmetric-lift-behavior}}
 
 Two cross-dimensional lift mechanisms were tested at the
 \(d = 15 \to d = 16\) and \(d = 12 \to d = 16\) transitions. The
@@ -5834,7 +5826,7 @@ successes at lower dimensions (e.g., the \(60714\) ladder) succeed via
 coefficient-preserving algebra, not via simple structural insertion.
 
 \hypertarget{g.6-distribution-alternation-as-a-candidate-filter}{%
-\subsection{G.6 Distribution-alternation as a candidate filter}\label{g.6-distribution-alternation-as-a-candidate-filter}}
+\subsection{Distribution-alternation as a candidate filter}\label{g.6-distribution-alternation-as-a-candidate-filter}}
 
 The distribution-alternation conjecture (paper §F.5) states that
 universal \(F\) values satisfy specific alternation patterns in their
@@ -5893,7 +5885,7 @@ The conjecture's existence claim is supported. The conjecture's
 predictive content for individual \(F\) values requires further work.
 
 \hypertarget{g.7-methods-note-classical-scope-verification}{%
-\subsection{G.7 Methods note: classical-scope verification}\label{g.7-methods-note-classical-scope-verification}}
+\subsection{Methods note: classical-scope verification}\label{g.7-methods-note-classical-scope-verification}}
 
 Three scripts were developed for the corrected verification:
 
@@ -5922,7 +5914,7 @@ reproducible. They are deposited at the project's GitHub repository
 alongside the released paper.
 
 \hypertarget{g.8-open-questions-raised-by-this-appendix}{%
-\subsection{G.8 Open questions raised by this appendix}\label{g.8-open-questions-raised-by-this-appendix}}
+\subsection{Open questions raised by this appendix}\label{g.8-open-questions-raised-by-this-appendix}}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -5960,7 +5952,7 @@ alongside the released paper.
 \end{enumerate}
 
 \hypertarget{g.9-acknowledgments}{%
-\subsection{G.9 Acknowledgments}\label{g.9-acknowledgments}}
+\subsection{Acknowledgments}\label{g.9-acknowledgments}}
 
 The classical-scope correction was identified during ongoing work in
 2026-05. The scope error and the corrected definitions are reported here
