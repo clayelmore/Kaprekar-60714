@@ -449,3 +449,70 @@ Candidate heavier tools for the missing piece:
 3. **A bounded-reaching-time argument without zeros** — show T_m is actually bounded (the 14,32,39
    data may be plateauing; needs m=5 to tell) and build the absorbing reduction on a non-zero
    invariant (e.g. a fixed digit-sum shell).
+
+---
+
+# MULTI-AGENT PROOF ASSAULT — Results (2026-06-04)
+
+A 33-agent workflow (5 strategies × deep work + adversarial verification of every claim +
+synthesis; ~1.95M tokens) attacked the acyclicity proof. 19 claims survived adversarial
+verification. Headline: **routes definitively closed, obstruction localized, two of my own
+prior claims corrected — but no proof.**
+
+## CORRECTION (verified directly): Fact B is FALSE
+"Monotone ⟹ unique fixed point" is **false**. The interleaved monotone rule at d=12 (all
+C_j ≥ 0) has **two** fixed points: 617461746174 (= M_3, the 6174-triple) and 535549955994
+(multiset {3,4²,5⁵,9⁴}). My earlier "verified zero exceptions" only checked monotone rules
+*drawn from the universal search* — a biased sample. General monotone rules can have multiple
+fixed points.
+**Impact:** the shortcut "for monotone rules, universal ⟺ acyclic" is not valid. The correct
+statement remains **Lemma A: universal ⟺ unique-fp ∧ acyclic** — but monotonicity buys *neither*
+condition for free. The acyclic⟹universal bridge needs unique-fp re-established independently.
+
+## Newly CONFIRMED (adversarially verified)
+- **Block-state reduction (rigorous):** on block states (aᵐbᵐcᵐdᵐ), *every* monotone
+  pair-symmetric rule equals the classical d=4 Kaprekar map K = P·((a−b)+(c−d)) + Q·(b−c),
+  P=C_{m−1}, Q=C_{2m−1} — a faithful change of basis of 999(a−d)+90(b−c). The interleaved rule
+  literally outputs "K₄(a,b,c,d) repeated m times" (verified m=1..6).
+- **Pivot symmetry C_{m−1}=C_{3m−1} is structural** (block coeffs are antisymmetric [B0,B1,−B1,−B0]).
+- **Every period-≥2 cycle lives strictly OUTSIDE the {1,4,6,7} alphabet** (d=16: all 55 cycle
+  members; d=12: exhaustive over 67,970 monotone rules, zero in-alphabet cycles — not a mod-9
+  triviality). So the obstruction to universality is entirely alphabet-external.
+- **"Every {1,4,6,7}-alphabet multiset reaches F" is a necessary, ~2117× cheaper proxy** for
+  universality (965 vs 2,042,965 states), exact except 3/46 rare external 2-cycle false positives.
+- **The 15 monotone-universal d=16 rules are NOT block-closed; all share an identical 180-state
+  block-escape set** — the deviation from block-closure is what breaks the cycles that trap the
+  block-closed interleaved rule (which gets only 14.86% to F).
+- **T_m reaching time is BOUNDED** (measured separately): T = 14, 32, 39, 42 for m=2,3,4,5 —
+  increments 18,7,3 → plateauing near ~44. (Positive for a finite-reaching-time argument.)
+
+## DEFINITIVELY RULED OUT (real progress — do not re-pursue)
+- **Modular / p-adic tower for cycle exclusion**: K induces no well-defined residue map except
+  trivially mod 9; exhaustive moduli 2–300 — none separates F's basin from cycles.
+- **Low-degree Lyapunov / monovariant**: LP-infeasible for digit-counts, a 69-dim quadratic
+  feature set, and {value, ds, ds², |ds−72|}. No single scalar feature is non-increasing on all
+  edges (≥17% violations), so greedy-lexicographic can't start.
+- **Coefficient-space separation**: the 15 acyclic and 46 cyclic d=16 rules are linearly
+  inseparable in coefficient space (LP-infeasible). Acyclicity is genuinely global.
+- **All uniform/closed-form families**: round-robin (cyclic m=3), stride (cyclic m=3..6),
+  24 residue-block permutations (none universal at both d=8,12), block-closed rules (force
+  m parallel Kaprekars the sort couples into cycles). A purely periodic family cannot be acyclic
+  at all m.
+
+## The single promising LEAD (concrete next step)
+**Block-reduction + finite-deviation.** On block states every monotone rule is classical Kaprekar
+(acyclic). Universal rules deviate from block-closure on a finite, m-stable, alphabet-external
+cycle family (~10 cycle types at d=16; one 4-cycle covers 30 of 46 cyclic rules). For each cycle
+member Z, "rule does not admit Z" is a finite set of *linear inequalities on the coefficient
+vector c*. The lever is the **intra-block ordering freedom (~(m!)⁴ per partition)**, previously
+overlooked. Concrete program: write the obstruction cycles as explicit m-indexed digit-count
+vectors, and construct — for every m — a monotone M_m-fixing rule that (i) sends every alphabet
+multiset to M_m (cheap 965-state check) and (ii) satisfies the finite linear inequalities
+excluding the obstruction family. Whether this is simultaneously satisfiable at *all* m is the
+open question.
+
+## Blunt judgment
+Not close to a proof. The existence half is settled (monotonicity is free); the obstruction is
+now *localized and finite* rather than diffuse; two attack families are *definitively* dead; and
+T_m looks bounded. But no construction/induction valid for all m exists, and a load-bearing
+premise (Fact B) just failed. We have a much sharper map of the wall, not a way through.
