@@ -403,3 +403,49 @@ monovariant argument but a **finite-state enumeration** of the reachable gap-set
 (à la Kaprekar d=4 and Paper 2 §8): find an **m-independent quotient** of the dynamics on the
 absorbing image and verify convergence on it. Finding that quotient — not another monovariant —
 is the remaining mathematical work, and it is genuinely research-grade.
+
+---
+
+# AMPED-UP ATTEMPT: Adapting Paper 2's Theorem 5.x (60714 all-d proof)
+
+Read Paper 2's actual universality proof and mapped its machinery onto the multiplicity chain.
+
+## Paper 2's two ingredients
+1. **Core non-negativity** (Lemma 5.3): on sorted-descending inputs the native-core contribution
+   is ≥ 0, eliminating borrow interference.
+2. **Absorbing set + bounded reaching time** (Lemmas 5.1–5.2): the tail-two-zeros set $T_d$ is
+   closed, $K^{(d)}$ acts on it as $K^{(d-2)}$, and every orbit reaches $T_d$ in ≤1–2 steps —
+   proved by **counting the zero digits** the rule produces.
+
+## The mapping
+| ingredient | status for {1,4,6,7}^m |
+|---|---|
+| core non-negativity | **HAVE IT** — exactly our monotonicity $C_j \ge 0$ |
+| zero-absorbing set + bounded reaching time | **LACK IT** — no zeros to count |
+
+## The precise obstruction (now identified)
+Paper 2's absorbing set is *built from zero digits*; its reaching-time bound *counts zeros*.
+The multiplicity chain has **no zero digits**, so:
+- the tail-zeros absorbing set does not exist, and
+- the reaching time is **not bounded** — measured T_m = 14, 32, 39 for m = 2,3,4 (growing),
+  versus Paper 2's bounded ≤8→≤1.
+
+The growth of T_m is the signature that there is no zero-style absorbing reduction. So Paper 2's
+specific technique **does not transfer** — for a structural reason (zeros), not a superficial one.
+
+## What remains — a sharper open problem
+We have core-non-negativity (monotonicity) for free. The missing half is:
+
+> **Find a non-zero absorbing structure on the multiplicity chain that (i) is reached in bounded
+> time and (ii) reduces the m-dynamics to (m−1).**
+
+The image of K is absorbing (125× collapse, closed) but does **not** give an m→(m−1) reduction.
+Candidate heavier tools for the missing piece:
+1. **Modular tower.** The image is constrained mod 9 and mod 99 (multiples of 9); analyze the
+   dynamics in the $(10^4-1)=9999$ structure natural to 4-digit blocks.
+2. **Computer-assisted inductive certificate.** Rigorously enumerate the functional graph at
+   m=1..5, and machine-search for an inductive invariant certifying acyclicity that provably
+   lifts m→m+1.
+3. **A bounded-reaching-time argument without zeros** — show T_m is actually bounded (the 14,32,39
+   data may be plateauing; needs m=5 to tell) and build the absorbing reduction on a non-zero
+   invariant (e.g. a fixed digit-sum shell).
