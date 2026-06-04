@@ -22,6 +22,21 @@ If the user hasn't asked you to update this file, but you've made changes that f
 distinct from the 60714 zero-padding axis. Goal evolved from "do universals exist at high m?"
 to "prove they exist at all m."
 
+
+**ADDENDUM (same day) — Flavor-1 predictor RESOLVED.** Treating "which digit-sets are fertile"
+as a code-cracking exercise (per user's idea to test golden ratio / π / Fibonacci — all
+falsified) yielded a clean, verified predictor:
+
+> A 4-digit set is fertile ⟺ (desc − asc = 6174) AND (digit-sum ≡ 0 mod 9). Exactly two sets:
+> {1,4,6,7} and {2,3,5,8}.
+
+mod-9 is PROVEN necessary; desc-asc=6174 is the empirical discriminator (12 sets generate 6174,
+only 2 are mod-9). Verified on 7 cases (2 fertile, 5 extinct), 0 exceptions — including NEW
+runs: {2,3,5,8} fertile at d=12 (3 universals, 100% basin), {0,3,6,9} extinct at d=12 (0
+candidates). Both fertile sets induce identical coefficients (6,2) = the 6174 signature, so
+the chain is 6174-SPECIFIC. See multiplicity_chain/FERTILITY_PREDICTOR.md. This resolves the
+"Flavor-1 classification: open" item flagged in the 2026-05-18 corrections above.
+
 **What was done.**
 - Established (computationally) classical universals exist at m=1..6: counts 2, 481, 42, 341,
   ≥2 (d=20), ≥1 (d=24). The d=16 (341) and d=24 results are NEW this session; d=20 found 2
