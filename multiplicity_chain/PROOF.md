@@ -350,3 +350,30 @@ The universal/monotone-acyclic rules are **not** reachable by any elementary con
 2. a **deeper finite-state / transfer-operator** argument analogous to — but harder than — Paper 2's Theorem 8.1 (which had a zero-padding absorbing set this problem lacks).
 
 The session's durable contribution is the **reduction** (Lemma A + the monotone–acyclic decomposition + Fact B), which turns an opaque dynamical conjecture into the sharp, classically-grounded question: *does a monotone acyclic multiset-preserving rule exist at every $m$?*
+
+---
+
+# CORRECTION + New Handle: The Image of K is an Absorbing Set (2026-06-03)
+
+An earlier section claimed "Paper 2's technique doesn't transfer (no absorbing set)." **This is
+wrong** and is retracted. Direct measurement on a universal d=16 rule:
+
+- **One step collapses the state space 125×**: |X| = 2,042,965 → |K(X)| = 16,276.
+- **K(X) is closed under K** (absorbing): 0 escapes in sampling. So Image(K) is exactly the
+  kind of absorbing set Paper 2's eventual-image argument uses.
+- **Modular structure of Image(K)**: every value ≡ 0 (mod 9); mod 99 they are exactly the
+  multiples of 9 (residues {0,9,18,27,36,54,63,72,81,90}); digit-sums lie in {36,45,…,90}.
+- Subsequent collapse is slow-tailed: |K^t(X)| = 16276, 3165, 1069, 466, 257, 164, … → 1.
+
+**Revised proof outlook.** The eventual-image / transfer-operator route is viable after all:
+1. (TRUE) K(X) ⊆ Image(K), absorbing.
+2. (open) Characterize Image(K) m-independently — it is *not* size-bounded in m (16k at m=4),
+   so this needs a structural description (e.g. via the mod-9 / mod-99 constraints + the (6,2)
+   coefficient form), not enumeration.
+3. (open) Show the dynamics on Image(K) converges to the unique fixed point F.
+
+This is still open, but it is the **same shape** as the (solved) Paper 2 §8 argument and the
+(solved) classical Kaprekar d=4 argument — not a fundamentally new kind of problem. The
+remaining work is the m-independent characterization of the absorbing image, now aided by:
+(a) everything reducing to the single (6,2)/6174 system (FERTILITY_PREDICTOR.md), and
+(b) the proven mod-9 / observed mod-99 multiple-of-9 structure of the image.
