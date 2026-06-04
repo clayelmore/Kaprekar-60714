@@ -31,7 +31,7 @@ falsified) yielded a clean, verified predictor:
 > {1,4,6,7} and {2,3,5,8}.
 
 mod-9 is PROVEN necessary; desc-asc=6174 is the empirical discriminator (12 sets generate 6174,
-only 2 are mod-9). Verified on 7 cases (2 fertile, 5 extinct), 0 exceptions — including NEW
+only 2 are mod-9). Verified EXHAUSTIVELY on all 24 mod-9 sets (2 fertile, 22 extinct), 0 exceptions — including NEW
 runs: {2,3,5,8} fertile at d=12 (3 universals, 100% basin), {0,3,6,9} extinct at d=12 (0
 candidates). Both fertile sets induce identical coefficients (6,2) = the 6174 signature, so
 the chain is 6174-SPECIFIC. See multiplicity_chain/FERTILITY_PREDICTOR.md. This resolves the
