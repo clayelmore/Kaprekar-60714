@@ -58,21 +58,23 @@ Classical universal fixed points on {1,4,6,7}^m at d=4m:
   d=4 solution, not universal for m≥3 (dynamically isolated).
 - **Lemma A** (finiteness): For any rule, F is universal ⟺ F is the unique fixed point AND
   the dynamics is acyclic (no cycles of period ≥2). Fully proven.
-- **The decomposition** (verified d=12, d=16, zero exceptions): for *monotone* pair-symmetric
-  rules, **Universal ⟺ Acyclic**. "Monotone" = cumulative coefficient sums C_j = c_0+…+c_j ≥ 0
-  (a non-negative lattice path; classical Kaprekar d=4 has it). "Acyclic" = the *same*
-  obstruction that makes Kaprekar d=4 work and d=5 fail.
+- **Lemma A is the only valid decomposition**: universal ⟺ unique-fp ∧ acyclic. (An earlier
+  shortcut "for monotone rules, universal ⟺ acyclic" is INVALID because Fact B is false —
+  monotone gives neither unique-fp nor acyclic for free.) Monotone = cumulative sums C_j ≥ 0
+  (classical Kaprekar d=4 has it). All period-≥2 cycles live outside the {1,4,6,7} alphabet.
 - **Fact B is FALSE** (corrected 2026-06-04): monotone does NOT imply unique fixed point (interleaved d=12 rule has 2 fps). The decomposition needs Lemma As unique-fp condition, which monotonicity does not provide. See PROOF.md multi-agent assault section.
 
 ### The central open problem (sharp form)
 > For every m ≥ 1, does there exist a pair-symmetric, **monotone**, {1,4,6,7}^m-preserving rule
 > with **no nontrivial cycle**?
 
-By Lemma A + Fact B this is *equivalent* to "a universal exists at every m." Monotonicity is
-free (even classical Kaprekar has it); the crux is acyclicity. The block construction
-(=classical Kaprekar) is monotone but changes the multiset; the interleaved construction is
-monotone + multiset-preserving but cyclic for m≥3. The 15 rules that satisfy all three at d=16
-are scrambled with no known closed form → the existence proof is likely **non-constructive**.
+Monotonicity is free (even classical Kaprekar has it); the crux is **acyclicity + unique-fp**
+(Lemma A). Block construction (=classical Kaprekar on block states) is monotone but cyclic on
+non-block states; interleaved is monotone but has multiple fixed points AND cycles. The 15
+universal d=16 rules are not block-closed (identical 180-state escape set). Ruled out: modular
+tower, low-degree Lyapunov, all uniform families. Lead: the obstruction is a finite,
+alphabet-external cycle family expressible as linear constraints on c; T_m is bounded (14,32,39,42).
+See PROOF.md 'Multi-Agent Proof Assault' for the full, adversarially-verified state.
 
 ### Key method note
 At d ≥ 20, universal-witnessing rules are far too rare for F-first random search (~10⁻⁸/sample);
