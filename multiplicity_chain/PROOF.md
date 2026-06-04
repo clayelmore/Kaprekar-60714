@@ -377,3 +377,29 @@ This is still open, but it is the **same shape** as the (solved) Paper 2 §8 arg
 remaining work is the m-independent characterization of the absorbing image, now aided by:
 (a) everything reducing to the single (6,2)/6174 system (FERTILITY_PREDICTOR.md), and
 (b) the proven mod-9 / observed mod-99 multiple-of-9 structure of the image.
+
+---
+
+# Acyclicity: monovariant route exhausted (2026-06-03)
+
+Further attempts to find a Lyapunov function for the dynamics *on the absorbing image* (where a
+monovariant has the best chance):
+
+- **Single monovariants** (on-image, post-transient): digit-sum-distance to F is non-increasing
+  88% of steps but **mostly because digit-sum is conserved** (~70% of steps unchanged); it
+  strictly decreases only ~18%. Not a monovariant. (spread, |K−F|, #distinct, max-digit all
+  worse.)
+- **Lexicographic (primary digit-sum-distance + secondary)**: on the steps where digit-sum
+  distance fails to decrease, no candidate secondary (value, #distinct, spread, freq-L1)
+  strictly decreases more than 67% of the time. **No lexicographic Lyapunov exists** among
+  these.
+
+**Conclusion.** The convergence is real but is *not* witnessed by any elementary potential
+function. The digit-sum performs a weakly-F-biased walk on $9\cdot\{4,\dots,10\}$; the actual
+contraction is finer-grained. This matches classical Kaprekar, whose d=4 proof is **not** a
+monovariant argument but a **finite-state enumeration** of the reachable gap-set.
+
+**Implication for the proof.** The viable route is the finite-state / eventual-image argument
+(à la Kaprekar d=4 and Paper 2 §8): find an **m-independent quotient** of the dynamics on the
+absorbing image and verify convergence on it. Finding that quotient — not another monovariant —
+is the remaining mathematical work, and it is genuinely research-grade.
