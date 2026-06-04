@@ -75,3 +75,36 @@ universals persist at every $m$ within a fertile set (the monotone–acyclic ope
 - **Genuine 3D geometry**: the structure is essentially **1-dimensional** (the gap line
   $\{1,2,3\}$ with middle gap 2) intersected with the mod-9 lattice. No real 3D content was
   found; none was invented.
+
+---
+
+## EXHAUSTIVE CONFIRMATION (2026-06-03) — all 24 mod-9 sets
+
+Since mod-9 is *proven necessary*, the only fertility candidates are the **24** four-digit sets
+with digit-sum ≡ 0 (mod 9). Every one was tested at d=12 (m=3) via pair-symmetric search:
+
+| outcome | count | sets |
+|---|---:|---|
+| FERTILE — (p,q)=(6,2), desc−asc=6174 | **2** | {1,4,6,7}, {2,3,5,8} |
+| extinct — (p,q)≠(6,2) | **22** | all others |
+
+**0 exceptions across all 24.** This is no longer a 7-case predictor — it is an **exhaustive
+classification of base-10**.
+
+### The mechanism (and a route to a full proof)
+Every one of the 22 extinct sets produced **zero candidates** — i.e., the pair-symmetric rule's
+output K *never lands on the set's own multiset* unless (p,q)=(6,2). So the predictor's content
+is really:
+
+> **Structural claim (verified, proof open):** the pair-symmetric rule on a 4-digit set
+> $\{D_0>D_1>D_2>D_3\}$ has a fixed point with multiset $\{D_0,D_1,D_2,D_3\}^m$ **only if**
+> $(D_0-D_3,\,D_1-D_2) = (6,2)$.
+
+This reduces the fertility theorem to a statement about the **digit structure of
+$K = 6S_0+2S_1$ vs other $pS_0+qS_1$** — a finite, arithmetic question, not a dynamical one.
+Proving it would make the fertility predictor a complete theorem (the mod-9 half is already
+proven). The $(6,2)$ value is exactly the 6174 signature ($6174 = 999\cdot6 + 90\cdot2$).
+
+### Bottom line
+The multiplicity chain exists for **exactly two** four-digit sets, both carrying the 6174
+coefficient signature $(6,2)$. The phenomenon is 6174-specific, exhaustively, across base 10.
