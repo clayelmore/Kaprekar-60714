@@ -23,7 +23,9 @@ distinct from the 60714 zero-padding axis. Goal evolved from "do universals exis
 to "prove they exist at all m."
 
 
-**ADDENDUM (same day) — Flavor-1 predictor RESOLVED.** Treating "which digit-sets are fertile"
+**ADDENDUM (same day) — Flavor-1 predictor: CORRECTED, NOT resolved.** (An earlier same-day claim that fertility ⟺ desc−asc=6174 was FALSE — {0,4,5,9} is fertile (152 universals) but fails it. The correct narrower result: (6,2) ⟺ admits the PAIR-SYMMETRIC construction, exhaustively verified. General fertility stays OPEN. See FERTILITY_PREDICTOR.md correction header.)
+
+_Original (now-corrected) claim follows:_ **Flavor-1 predictor attempt.** Treating "which digit-sets are fertile"
 as a code-cracking exercise (per user's idea to test golden ratio / π / Fibonacci — all
 falsified) yielded a clean, verified predictor:
 

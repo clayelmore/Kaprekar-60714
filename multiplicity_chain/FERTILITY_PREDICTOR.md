@@ -1,3 +1,30 @@
+# ⚠️ CORRECTION (2026-06-03, same day) — READ FIRST
+
+**The claim below that "fertile ⟺ desc−asc=6174 ∧ mod-9" is FALSE as a statement about
+general fertility.** Counterexample: **{0,4,5,9}** has **152 universals** (76 classical + 76
+S-only) at d=12 m=3 — it is highly fertile — yet desc−asc(9540−0459)=9081 ≠ 6174.
+
+The error: {0,4,5,9} was mis-labeled "extinct" by trusting a **stale (May 18) session-log
+note** that predated the {0,4,5,9} m=3 run (which completed May 29 with 152 universals).
+
+**What is actually true (the corrected, narrower, exhaustively-verified claim):**
+
+> A 4-digit set admits the **pair-symmetric universal *construction*** (σ pair-swaps π's
+> digit-blocks) **⟺ (D₀−D₃, D₁−D₂) = (6,2) ⟺ desc−asc = 6174 ∧ mod-9 ⟺ {1,4,6,7} or {2,3,5,8}.**
+> Verified exhaustively over all 24 mod-9 sets.
+
+This explains **why the pair-symmetric search only worked for {1,4,6,7}/{2,3,5,8}** — it does
+NOT characterize general fertility. Sets like {0,4,5,9} are fertile via **non-pair-symmetric**
+rules (found by general search, not the pair-symmetric construction).
+
+**The general "Flavor-1" fertility question — which sets host *any* universals at all m —
+REMAINS OPEN.** This document resolves only the pair-symmetric sub-question.
+
+Everything below should be read with "fertile" replaced by "admits the pair-symmetric
+construction."
+
+---
+
 # The Fertility Predictor — Which Digit-Sets Host a Multiplicity Chain
 
 *Resolves the "Flavor-1 predictor" question left open in the session log. Found 2026-06-03
