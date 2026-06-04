@@ -62,7 +62,7 @@ Classical universal fixed points on {1,4,6,7}^m at d=4m:
   rules, **Universal ⟺ Acyclic**. "Monotone" = cumulative coefficient sums C_j = c_0+…+c_j ≥ 0
   (a non-negative lattice path; classical Kaprekar d=4 has it). "Acyclic" = the *same*
   obstruction that makes Kaprekar d=4 work and d=5 fail.
-- **Fact B** (verified, full 2M-multiset scan): monotone ⟹ unique fixed point.
+- **Fact B is FALSE** (corrected 2026-06-04): monotone does NOT imply unique fixed point (interleaved d=12 rule has 2 fps). The decomposition needs Lemma As unique-fp condition, which monotonicity does not provide. See PROOF.md multi-agent assault section.
 
 ### The central open problem (sharp form)
 > For every m ≥ 1, does there exist a pair-symmetric, **monotone**, {1,4,6,7}^m-preserving rule
