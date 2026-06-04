@@ -317,3 +317,36 @@ Since monotonicity is free and uniqueness holds, the entire problem is:
 > Equivalently (by Lemma A + Fact B): does the multiplicity chain admit a "Kaprekar-acyclic" rule at every dimension, as it does at $d=4$?
 
 This is the cleanest possible statement of the universality conjecture — and it is manifestly the direct generalization of "the classical $d=4$ Kaprekar map is acyclic."
+
+---
+
+# Elementary Proof Attacks — Ruled Out (2026-06-03)
+
+A sustained attempt on the three proof steps. All elementary approaches were tested and **fail**; recording them so future work doesn't repeat them.
+
+## #1 — Monotone ⟹ unique fixed point: no monovariant found
+Verified by **full 2M-multiset scan** (every monotone rule has exactly one fixed point). But the natural Lyapunov candidates are **not** monovariants along trajectories of a monotone universal rule:
+- **digit-spread** ($\max - \min$ digit): non-monotone (e.g. 9→8→8→6→6→**8**→…).
+- **$|K(n) - F|$** (distance to F in the K-coordinate): decreases only **61.2%** of steps — not a monovariant.
+
+So uniqueness is true but resists an elementary potential-function proof; it must use finer structure of the gap map.
+
+## #2 — Acyclicity: no simple characterizer
+Among monotone rules, acyclic (15) vs cyclic (46) at d=16 is **not** separated by:
+- pivot cumulative sums (both classes share $C_{m-1}=C_{3m-1}$, overlapping magnitudes),
+- DFT/spectral magnitude of the partition indicators,
+- positions-mod-4 signatures,
+- number/position of negative cumulative sums.
+
+Acyclicity is a genuinely global dynamical property here — exactly as the cycle structure is in classical Kaprekar (where d=4 acyclic, d=5 cyclic, with no shortcut characterization).
+
+## #3 — Construction / lifting: fails
+- **Clean constructions fail**: block (=classical Kaprekar) is monotone but changes the multiset; interleaved is monotone + multiset-preserving but cyclic for $m\geq3$.
+- **m→m+1 lifting fails**: appending one new position per block to a d=16 universal rule and re-pairing gives, across all $4!\times 2$ natural assignments, **only 4 valid-multiset lifts, none universal** (best basin 3.07%). Universals do **not** lift by naive position insertion.
+
+## Consequence
+The universal/monotone-acyclic rules are **not** reachable by any elementary construction, monovariant, or lifting tried. This is consistent with the working rules being "scrambled" with no closed form, and points to either:
+1. a **non-constructive existence** proof (show the monotone ∩ acyclic ∩ multiset-preserving set is nonempty at every m without exhibiting an element), or
+2. a **deeper finite-state / transfer-operator** argument analogous to — but harder than — Paper 2's Theorem 8.1 (which had a zero-padding absorbing set this problem lacks).
+
+The session's durable contribution is the **reduction** (Lemma A + the monotone–acyclic decomposition + Fact B), which turns an opaque dynamical conjecture into the sharp, classically-grounded question: *does a monotone acyclic multiset-preserving rule exist at every $m$?*
