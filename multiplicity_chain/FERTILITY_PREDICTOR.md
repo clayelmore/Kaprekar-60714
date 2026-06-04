@@ -135,3 +135,31 @@ proven). The $(6,2)$ value is exactly the 6174 signature ($6174 = 999\cdot6 + 90
 ### Bottom line
 The multiplicity chain exists for **exactly two** four-digit sets, both carrying the 6174
 coefficient signature $(6,2)$. The phenomenon is 6174-specific, exhaustively, across base 10.
+
+---
+
+## ACCURATE FERTILITY GROUND TRUTH (2026-06-03, from completed runs only)
+
+Replacing all earlier "fertile/extinct" labels (which mixed in stale session-log guesses) with
+**only what completed runs on disk actually show**:
+
+| set | (p,q) | m=3 (d=12) result | status |
+|---|---|---|---|
+| {1,4,6,7} | (6,2) | 32 classical + 10 S-only = 42 | **FERTILE** (verified) |
+| {0,4,5,9} | (9,1) | 76 classical + 76 S-only = 152 | **FERTILE** (verified) |
+| {2,3,5,8} | (6,2) | ≥3 classical | **FERTILE** (verified) |
+| {1,3,6,8} | (5,3) | — no d=12 run — | **UNKNOWN** |
+| {0,1,8,9} | (7,1) | — no d=12 run — | **UNKNOWN** |
+| other 19 mod-9 | various | — no d=12 full run — | **UNKNOWN** |
+
+(d=8/m=2 data is NOT discriminating — many sets host universals at m=2 but the question is
+survival at m≥3.)
+
+**Key correction:** fertility is **not** (6,2)-restricted. Confirmed-fertile sets include
+(9,1) = {0,4,5,9}. The exhaustive d=12 sweep that found "only (6,2) sets have candidates"
+was restricted to **pair-symmetric** rules; {0,4,5,9}'s 152 universals use other rule families.
+
+**The general Flavor-1 fertility predictor is OPEN.** To make progress one must run full
+(not pair-symmetric) d=12 searches on the untested mod-9 sets. The only solid result here is:
+*(6,2) characterizes the pair-symmetric construction*, which is why that specific search method
+only succeeded on {1,4,6,7} and {2,3,5,8}.
