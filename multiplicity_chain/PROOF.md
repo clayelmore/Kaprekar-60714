@@ -516,3 +516,46 @@ Not close to a proof. The existence half is settled (monotonicity is free); the 
 now *localized and finite* rather than diffuse; two attack families are *definitively* dead; and
 T_m looks bounded. But no construction/induction valid for all m exists, and a load-bearing
 premise (Fact B) just failed. We have a much sharper map of the wall, not a way through.
+
+---
+
+# MULTI-AGENT ASSAULT #2 — Finite-Obstruction-Exclusion (2026-06-08)
+
+Focused workflow on the one remaining lead: exclude the finite alphabet-external cycle family at
+every m. Memory-safe (no d=20 basin built; m=5 via 1767-state alphabet proxy). Every claim
+adversarially re-verified from scratch. **Decisive: the lead is dead. No proof.**
+
+## What the COMPLETE enumeration established (m=3, not a sample)
+- The monotone, M_3-fixing pair-symmetric rules number **exactly 43,200**. Of these, **3,000 are
+  acyclic** — and **all 3,000 have a unique fixed point, hence are universal** (Lemma A). So at
+  m=3 there are *exactly* 3,000 universal monotone rules.
+- The m=3 obstruction has **14 distinct cycle signatures**, periods {2,5,6,7,8,10,12,13,14,19,20,31};
+  one period-7 cycle covers 29,040 of 40,200 cyclic rules. All 80 cycle members are
+  alphabet-external (Fact #2 re-confirmed exhaustively).
+- m=4: 46 cyclic rules, 10 signatures, one 4-cycle covers 30 (re-confirmed).
+
+## Per-m universal witnesses — CONFIRMED (adversarial, from scratch)
+- **m=3 (d=12): full-basin proof** — explicit monotone rule, basin 293920/293920, unique fp, 0 cycles.
+- **m=4 (d=16): full-basin proof** — basin 2042965/2042965, unique fp, 0 cycles.
+- **m=5 (d=20): proxy witness** — passes 1767-state alphabet proxy + 300k external-seed cycle scan
+  (NOT a full-basin proof; memory rule respected).
+
+## The lead is DISPROVEN (the decisive negatives)
+1. **A uniform recipe exists but breaks.** The clean m-parametrized "v1" construction (A7 contiguous
+   at top, monotone & M_m-fixing for all m — classical Kaprekar is its m=1 case) is full-basin
+   **universal at m=3 and m=4** but **provably non-universal at m=2 AND m=5** (m=5 falls into
+   period-8 and period-16 cycles). Not universal-at-every-m.
+2. **The obstruction is NOT a single m-indexed family.** New, higher-period, alphabet-external
+   cycles appear at each m that lower-m families don't predict (m=5's killer period-8/16 cycles
+   don't exist at m=3,4). Excluding the m-indexed family is *necessary but nowhere near
+   sufficient*. → no clean linear m→m+1 lift; **the induction does not survive scrutiny.**
+3. **The universalizable partition structure itself changes with m.** m=3,4 universal partitions
+   put A7 contiguous at top; the verified m=5 winner has A7 spread out. An 11.3M-sample search for
+   A7-at-top universalizable partitions at m=5 found zero. The three per-m winners are structurally
+   unrelated independent solutions, not instances of one formula.
+
+## Honest bottom line
+**Universality is now rigorously witnessed up to m=5** (m≤4 full-basin, m=5 by strong proxy), but
+the all-m goal **remains open** — and the finite-obstruction-exclusion + induction route is
+**closed**: the obstruction grows genuinely new families at every m. A proof, if it exists, needs
+an idea that handles an m-growing obstruction set, not the finite/linear exclusion we hoped for.
