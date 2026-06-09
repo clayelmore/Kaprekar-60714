@@ -14,6 +14,13 @@ program extends 6174 along **two orthogonal axes**:
 
 Both axes are generalizations of the same d=4 / 6174 base case.
 
+**NEW (2026-06-09):** a third document, PAPER_FIXED_POINT_HIERARCHY.md (repo root), outlines a
+planned *structural* paper classifying ALL fixed points by a ladder L0–L5 (degenerate "everything
+zeros out" 45/495 → full-variable universal 6174 → dimension-transcendent 60714 and {1,4,6,7}^m).
+The multiplicity-chain PROOF program has CONCLUDED as an open problem: existence robustly supported
+(witness count exploding), every standard proof route closed, root-caused to the base case having no
+low-degree Lyapunov certificate. See multiplicity_chain/PROOF.md final sections.
+
 ---
 
 ## How to use the session log (the practice that keeps this project coherent)
@@ -34,7 +41,7 @@ chat ends, even if not asked.
 
 ---
 
-## Current State (as of 2026-06-03)
+## Current State (as of 2026-06-09)
 
 ### Two-axis structure
 - **60714 paper** (zero-padding axis): complete. See `paper.md`. Don't disturb unless asked.

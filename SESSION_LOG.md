@@ -89,6 +89,49 @@ the chain is 6174-SPECIFIC. See multiplicity_chain/FERTILITY_PREDICTOR.md. This 
 
 ---
 
+## 2026-06-04→09 — Multiplicity-chain proof program concluded; NEW paper: the fixed-point hierarchy
+
+**Arc.** Took the {1,4,6,7}^m universality question from "open past m=4" to a fully-mapped frontier,
+then pivoted to a new paper concept.
+
+**Settled this stretch (all in multiplicity_chain/PROOF.md):**
+- Existence of universals at every m: robustly supported — explicit witnesses to m=5, and the
+  *witness count explodes* (≈3,000 → 18M → 250M for m=3,4,5). The survivor *fraction* is erratic
+  (7%/28%/0.04%) but that is just the rule-space d! growing faster; the COUNT grows.
+- Proven: Lemma A (universal ⟺ unique-fp ∧ acyclic); Theorem 1 (6174-repeated is a fixed point at
+  all m, but it is the "cheat" — dynamically isolated for m≥3); the (6,2) characterization of the
+  pair-symmetric CONSTRUCTION (exhaustive over 24 mod-9 sets — only {1,4,6,7},{2,3,5,8}); complete
+  m=3 enumeration (exactly 3,000 of 43,200 monotone rules universal).
+- Two multi-agent assaults (33 + 8 agents) + the analyst pass closed every standard route:
+  modular tower, low-degree Lyapunov, uniform construction, m→m+1 induction, finite-obstruction
+  exclusion, counting-by-structure. Root cause: NO m-uniform structure (survivor characterization
+  shifts with m).
+- DEEPEST result: classical d=4 Kaprekar (54-state gap system) has NO polynomial Lyapunov function
+  below degree 9 (LP-proven) — its convergence has no low-complexity mechanism. You cannot lift a
+  base-case mechanism that does not exist. This is why the all-m proof resists.
+- Crisp open problem handed forward: a closed-form, m-uniform absorbing filtration WITHOUT zeros
+  (the zero-free analogue of Paper 1's 60714 argument).
+
+**Corrections made this stretch (trust data, not notes):** fertility predictor RETRACTED
+({0,4,5,9} is fertile — 152 universals — not extinct); Fact B (monotone ⟹ unique-fp) is FALSE
+(interleaved d=12 has 2 fps); plus a premature fraction-trend read. All fixed in the record.
+
+**NEW PAPER (per user, 2026-06-09):** non-narrative, structural — a HIERARCHY of fixed points L0–L5,
+from the degenerate floor ("everything zeros out", 45/495 with sv_F<d) up to dimension-transcendent
+universals, placing 6174 (L4 root), 60714 (L5a, proven, zero-padding) and the {1,4,6,7}^m universals
+incl. 61746174 (L5b, conjectured, multiplicity) at their rungs. Full skeleton:
+PAPER_FIXED_POINT_HIERARCHY.md (repo root).
+
+**Files produced this stretch:** PAPER_FIXED_POINT_HIERARCHY.md (new paper outline);
+multiplicity_chain/{PROOF.md (extensively extended), FERTILITY_PREDICTOR.md (+correction),
+CAMPAIGN_FINDINGS.md, THEORY_AND_RULES.md, data/*}; numerous analysis scripts and JSON under
+~/Downloads/d16_1467_test/.
+
+**Pending / next session.** Draft the hierarchy paper from PAPER_FIXED_POINT_HIERARCHY.md. The proof
+of the all-m conjecture is a genuine open problem (new idea required) — not a compute task.
+
+---
+
 ## Current State (as of 2026-05-15 — see 2026-05-13/14/15 entry below for full context)
 
 ### 2026-05-18 mid-session corrections — read THESE before the 2026-05-15 deltas
