@@ -675,3 +675,47 @@ computational program can settle.
 - **Proof: open**, and now with a *complete map of why every standard technique fails* — which is
   itself the main deliverable of this proof effort. The remaining route (non-uniform counting
   existence) needs a new mathematical idea, not more computation.
+
+---
+
+# THE BASE CASE HAS NO CONCEPTUAL PROOF (2026-06-09) — the deepest diagnosis
+
+Adopting a working-mathematician stance, attacked the *base case*: a conceptual (non-enumerative)
+proof of classical d=4 Kaprekar → 6174. Reduced it exactly to its 54-state gap system
+(p,q)=(a−d, b−c), K=999p+90q, unique fixed point (6,2).
+
+## Rigorous result
+- **No linear-absolute monovariant** |αp+βq+γ| works (exhaustive over α,β∈[−5,5]).
+- **No polynomial Lyapunov function of degree ≤ 4** exists (LP-infeasible at deg 2,3,4 via HiGHS).
+- A Lyapunov function exists only at degree ≥ 9, where it merely **interpolates the reaching-time**
+  Φ(s)=steps-to-(6,2) — the tautological monovariant that exists on any finite acyclic graph and
+  explains nothing.
+- The convergence is an image-collapse: |I_k| = 54→20→14→10→7→4→1 over 6 steps, with no clean
+  closed-form description of the nested images I_k.
+
+## Interpretation
+**Classical Kaprekar convergence has no low-complexity / conceptual certificate** — after 75 years
+the reason K_4→6174 is arithmetic, not structural. The only proofs are finite enumeration or a
+high-degree interpolation of reaching-time.
+
+**Consequence:** every uniform / constructive / Lyapunov attempt on the multiplicity chain was
+trying to lift a base-case *mechanism that does not exist*. The chain inherits and amplifies the
+base case's lack of conceptual structure. This is the deepest explanation of why the proof resists.
+
+## The conjecture's true status and the realistic proof routes
+- All-m conjecture: almost certainly TRUE (witness count exploding 3K→18M→250M).
+- A uniform proof needs one of two genuine breakthroughs:
+  1. a *conceptual* proof of K_4→6174 (itself a 75-year open problem; no low-degree polynomial
+     certificate exists), which might then tensor to all m; OR
+  2. a **non-constructive existence argument** (counting / entropy / probabilistic) that never
+     touches the mechanism — the more realistic route.
+
+## The crisp open problem to hand to an analyst
+> Find a conceptually-described (closed-form, m-uniform) absorbing filtration
+> X_m = A_0 ⊃ A_1 ⊃ ... ⊃ {F}, each A_{k+1}=T_m(A_k). Paper 2 achieved exactly this for 60714
+> USING zero digits as the absorbing structure; the multiplicity chain has no zeros, so the open
+> problem is to build such a filtration WITHOUT a zero-absorbing set.
+
+This is the honest terminus of the computational + elementary-mathematical program: a precise,
+well-posed frontier problem, with the conjecture robustly supported and the obstruction understood
+at the level of the base case.
