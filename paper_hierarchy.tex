@@ -102,7 +102,7 @@
 
 \section{1. Introduction}\label{introduction}
 
-In 1949 Kaprekar noticed that subtracting the ascending digit arrangement of a four-digit number from its descending arrangement, and repeating, sends every input other than the repdigits to 6174 within seven steps. At three digits the same procedure reaches 495; at five it reaches nothing, the orbits settling into cycles instead. These three facts are usually presented as a numerical curiosity of base ten. They are better read as three data points about a single map, and the map is one point in a large family.
+In 1949 Kaprekar noticed that subtracting the ascending digit arrangement of a four-digit number from its descending arrangement, and repeating, sends every input other than the repdigits to 6174 within seven steps {[}Kaprekar 1955{]}. At three digits the same procedure reaches 495 {[}Trigg 1974{]}; at five it reaches nothing, the orbits settling into cycles instead {[}Prichett 1981{]}. These three facts are usually presented as a numerical curiosity of base ten. They are better read as three data points about a single map, and the map is one point in a large family.
 
 Fix a digit length \(d\). Sorting the digits of an integer into descending order and then rearranging them by a permutation produces another integer; the difference of two such rearrangements is a generalized Kaprekar routine. The classical map takes the two rearrangements to be the descending and ascending orders. Allowing the two permutations to be arbitrary gives a family of \(d!\,(d!-1)\) maps at each digit length, of which the classical map is one. Within this family 6174 is no longer exceptional: it is one of several numbers fixed by some map at \(d=4\), and the question of which integers are fixed, and how strongly, has a clean answer that the classical map alone obscures.
 
@@ -220,13 +220,30 @@ Imposing \(\mathrm{sv}_F = d\) removes the embedded low-rank solutions and leave
 
 \textbf{Definition.} \(F\) is a \emph{full universal} (L4) if it is universal for a rule with \(\mathrm{sv}_F(K) = d\).
 
-The first is 6174, with \(c = (999, 90, -90, -999)\) and both gaps active. Exhaustive classification gives the full universals at small length: two at \(d = 4\), none reachable by the classical map at \(d = 5\), but thirty-three under other full-variable rules there, and five hundred and seven at \(d = 6\). The count is not the point; the existence of full universals at \(d = 5\), where the classical map has none, is. It shows that the failure at five digits is a failure of the classical rule, not of the digit length.
+The first is 6174, with \(c = (999, 90, -90, -999)\) and both gaps active. Exhaustive classification gives the full universals at small length.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\(d\) & full universals & examples \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+3 & 0 & --- (the \(d=3\) universals are degenerate, \(\mathrm{sv}=2\)) \\
+4 & 4 & \(6174,\ 1746,\ 2538,\ 5382\) \\
+5 & 33 & \(60714,\ 60417\) \\
+6 & 506 & \(60714\) and liftings \\
+\end{longtable}
+}
+
+The count is not the point; the existence of full universals at \(d = 5\), where the classical map has none, is. It shows that the failure at five digits is a failure of the classical rule, not of the digit length.
 
 Among the thirty-three at \(d = 5\), one is distinguished by what happens above it. Write \(60714\) for the fixed point of the rule with coefficient vector \((9900, 9, 90, -9000, -999)\).
 
 \textbf{Theorem 6.1 (zero-padding transcendence).} \emph{There is an explicit family of full-variable rules, one at each \(d \geq 5\), related by a coefficient-preserving lifting, under which \(60714\) is a universal fixed point at every \(d \geq 5\).}
 
-This is proven in {[}Paper 1{]} and we only recall the mechanism, because the mechanism is what the next section lacks. The lifting appends a zero-sum pair of coefficients at the top two positions, padding \(F\) with two trailing zeros. The padded zeros form an absorbing set: once an orbit's sorted form ends in two zeros, the rule acts on the remaining digits as the rule two lengths down, and the question reduces. Two facts close the argument --- that this absorbing set is invariant, and that every orbit reaches it in a bounded number of steps --- and the second is established by a digit-counting argument that turns on the appended pair producing zeros. The zeros are not incidental. They are the structure that makes the induction run.
+This is proven in {[}Elmore 2026{]} and we only recall the mechanism, because the mechanism is what the next section lacks. The lifting appends a zero-sum pair of coefficients at the top two positions, padding \(F\) with two trailing zeros. The padded zeros form an absorbing set: once an orbit's sorted form ends in two zeros, the rule acts on the remaining digits as the rule two lengths down, and the question reduces. Two facts close the argument --- that this absorbing set is invariant, and that every orbit reaches it in a bounded number of steps --- and the second is established by a digit-counting argument that turns on the appended pair producing zeros. The zeros are not incidental. They are the structure that makes the induction run.
 
 By contrast \(6174\) itself is transcendent only intermittently along this axis: it is universal at \(d = 4\) and again at \(d = 7\), under a zero-sum lifting, but not at \(d = 5\) or \(d = 6\). The cross-dimensional behavior of a fixed point is a property of the lifting available to it, and 60714 is the integer for which the zero-padding lifting succeeds uniformly.
 
@@ -236,9 +253,26 @@ Zero-padding is one way to raise the dimension of a fixed point. Duplicating its
 
 Fix the multiset \(M_m = \{1,4,6,7\}^m\) at \(d = 4m\). Section 4 produced one fixed point of this multiset, \(F_m\), and showed it bare for \(m \geq 3\). The multiset carries others. Among the rules fixing some arrangement of \(M_m\), certain ones are universal, and they are not the rule of Proposition 4.1.
 
-\textbf{Computational result 7.1.} \emph{Full universal fixed points of multiset \(M_m\) exist at \(m = 1, 2, 3, 4, 5\), in numbers \(2,\ 481,\ 42,\ 341,\ \geq 1\). For \(m \geq 3\) no universal arrangement decomposes into blocks; the universal arrangements are necessarily scrambled.}
+\textbf{Computational result 7.1.} \emph{Full universal fixed points of multiset \(M_m\) exist at \(m = 1, 2, 3, 4, 5, 6\). For \(m \geq 3\) no universal arrangement decomposes into blocks; the universal arrangements are necessarily scrambled.}
 
-The case \(m = 2\) gives \(61746174\) and four hundred eighty others. From \(m = 3\) on, the clean block-structured candidate \(F_m\) is not among the universals --- its basin is the \(14.9\%\) of Proposition 4.2 --- and the universal arrangements have no block decomposition at all. Whether the family continues was the question we could not settle by construction, and the reason is worth stating precisely, because the obstruction is sharper than ``the search got hard.''
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+\(m\) & \(d\) & universals & a verified witness \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 4 & \(2\) & \(6174\) \\
+2 & 8 & \(465\) & \(61746174\) \\
+3 & 12 & \(46\) & \(666141417774\) \\
+4 & 16 & \(\geq 313\) & \(6614617774614174\) \\
+5 & 20 & \(\geq 1\) & \(14617461774617461746\) \\
+6 & 24 & \(\geq 1\) & \(666174141466617777741414\) \\
+\end{longtable}
+}
+
+The counts at \(m = 1, 2\) are exhaustive over all full-variable rules; at \(m = 3\) exhaustive within the pair-symmetric family; at \(m = 4\) a verified lower bound from a structured search covering roughly a third of the rule space; at \(m = 5, 6\) the witnesses were found by targeted search. Every witness in the table was checked to be a genuine full-variable fixed point. The basins at \(m = 1, 3, 4, 6\) were confirmed to be the entire admissible input set --- \(\binom{d+9}{9} - 10\) digit multisets --- by direct enumeration; at \(m = 6\) this is all \(38{,}567{,}090\) admissible inputs at \(d = 24\). At \(m = 5\) the admissible set exceeds ten million multisets and full enumeration is impractical, so universality there was checked on a reduced alphabet-proxy rather than the complete input set. The case \(m = 2\) gives \(61746174\) and four hundred sixty-four others. From \(m = 3\) on, the clean block-structured candidate \(F_m\) is not among the universals --- its basin is the \(14.9\%\) of Proposition 4.2 --- and the universal arrangements have no block decomposition at all. Whether the family continues was the question we could not settle by construction, and the reason is worth stating precisely, because the obstruction is sharper than ``the search got hard.''
 
 Restrict to the rules natural to this multiset --- the pair-symmetric rules, in which the swapped arrangement pairs the outer digit blocks and the inner digit blocks --- and to those whose coefficient partial sums are nonnegative, a monotonicity that the classical four-digit rule already satisfies. For these,
 
@@ -264,9 +298,43 @@ The statement is a finite linear feasibility problem and it is infeasible at deg
 
 So the convergence of the classical map, the seventy-five-year-old fact underneath everything here, has no low-complexity certificate. It is established by enumeration or by an interpolation of its own reaching time, and neither generalizes. The zero-padding transcendence of Section 6 evades this because it does not lift a mechanism through the dynamics; it builds an absorbing set out of zeros and reduces the length directly. The multiplicity chain has no zeros and no absorbing set, so it has no route around the base case. A proof of Conjecture 7.3, if there is one, will not come from the dynamics of any single length. It will come either from a genuine structural reason for the four-digit convergence --- which would be a result in its own right --- or from an existence argument that counts the universal rules without describing them, of the kind the witness-count growth invites.
 
-\section{Acknowledgments}\label{acknowledgments}
+\appendix
+
+\section{Proof of the universality criterion}\label{proof-of-the-universality-criterion}
+
+Let \(T\) be the map \(n \mapsto \mathrm{sort}_\downarrow|K(n)|\) acting on the finite set \(X\) of non-repdigit \(d\)-digit multisets, and let \(F \in X\) be a fixed point, \(T(F) = F\). We prove Lemma 7.2 in the form: \(F\) is universal --- meaning \(T^k(x) = F\) for some \(k\), for every \(x \in X\) --- if and only if \(F\) is the only fixed point of \(T\) and \(T\) has no periodic orbit of period at least two. The argument uses only finiteness of \(X\) and applies to every rule, not merely the pair-symmetric monotone ones of Section 7.
+
+Suppose first that \(F\) is universal. If \(G \neq F\) were a second fixed point, then \(T^k(G) = G \neq F\) for all \(k\), so \(G\) never reaches \(F\), contradicting universality; hence \(F\) is the unique fixed point. If \(C\) were a periodic orbit of period \(p \geq 2\), then for any \(x \in C\) the iterates \(T^k(x)\) cycle through \(C\) and return to \(x\), never leaving \(C\); since \(F \notin C\) (a fixed point is its own orbit, of period one), no point of \(C\) reaches \(F\), again contradicting universality. So neither a second fixed point nor a long cycle can exist.
+
+Conversely, suppose \(F\) is the unique fixed point and \(T\) has no periodic orbit of period \(\geq 2\). Fix any \(x \in X\). Because \(X\) is finite, the forward orbit \(x, T(x), T^2(x), \dots\) cannot be injective, so \(T^a(x) = T^{a+p}(x)\) for some \(a \geq 0\) and \(p \geq 1\). The set \(\{T^a(x), T^{a+1}(x), \dots, T^{a+p-1}(x)\}\) is then a periodic orbit; by hypothesis it has period one, so \(T^a(x)\) is a fixed point, and by uniqueness \(T^a(x) = F\). Thus \(x\) reaches \(F\), and \(F\) is universal. \(\qquad\blacksquare\)
+
+The two conditions are independent --- a rule may have a unique fixed point yet trap part of its space in a cycle, and the d=12 interleaved monotone rule cited in Section 7 has two competing fixed points with no long cycle --- so both must be checked. Each is a finite search over \(X\), which is what makes universality decidable in principle; the open problem of Section 7 is that one of the two searches, the exclusion of cycles, has no answer uniform in the length.
+
+\section{The four-digit gap system admits no low-degree certificate}\label{the-four-digit-gap-system-admits-no-low-degree-certificate}
+
+In the gap coordinates of Section 8 the classical four-digit map is a self-map \(G\) of the fifty-four-element set \(\Delta = \{(p,q) : 1 \leq p \leq 9,\ 0 \leq q \leq p\}\) with unique fixed point \((6,2)\). A polynomial Lyapunov function is a \(\Phi(p,q)\) that strictly decreases along every nonstationary step,
+\[\Phi(G(p,q)) < \Phi(p,q) \quad \text{for all } (p,q) \in \Delta \setminus \{(6,2)\}. \tag{$\ast$}\]
+Fix a degree bound \(D\) and expand \(\Phi = \sum_{i+j \leq D} w_{ij}\,p^i q^j\). Each of the fifty-three inequalities in \((\ast)\) is linear in the coefficient vector \(w\): writing \(\mathbf{m}(p,q)\) for the vector of monomials \(p^i q^j\) evaluated at \((p,q)\), the inequality at state \((p,q)\) reads \(w \cdot \bigl(\mathbf{m}(G(p,q)) - \mathbf{m}(p,q)\bigr) \leq -1\), where the right-hand margin \(-1\) fixes the scale, any strict certificate being rescalable to unit margin. The existence of a degree-\(\leq D\) Lyapunov function is therefore exactly the feasibility of a linear program in the \(\binom{D+2}{2}\) unknowns \(w_{ij}\) subject to these fifty-three constraints, with the exact integer transition data of \(G\) as input.
+
+\textbf{Proposition 8.1.} \emph{This linear program is infeasible for \(D = 2, 3, 4\); no polynomial Lyapunov function of degree at most four certifies \((\ast)\).}
+
+Infeasibility of a rational linear program is itself a finite, exact certificate --- a nonnegative combination of the constraints summing to the contradiction \(0 \leq -1\) exists by Farkas's lemma, and is verifiable in integer arithmetic independent of any floating-point solver. At \(D = 9\) the program becomes feasible, but vacuously: the monomials of degree \(\leq 9\) number \(\binom{11}{2} = 55 > 54 = |\Delta|\), so they span the full space of real functions on \(\Delta\), and one may take \(\Phi\) to interpolate the reaching time \(\rho(p,q) = \min\{k : G^k(p,q) = (6,2)\}\). This \(\rho\) decreases by exactly one along every step by its definition and so satisfies \((\ast)\) --- but it certifies convergence of \emph{any} finite map whose functional graph is a tree rooted at its fixed point, encoding the conclusion rather than explaining it. The content of Proposition 8.1 is the gap between degree four and this interpolation threshold: no certificate of bounded complexity below it exists, which is why no mechanism at \(d = 4\) presents itself for lifting.
+
+\section*{Acknowledgments}\label{acknowledgments}
+\addcontentsline{toc}{section}{Acknowledgments}
 
 The computational census, the structured rule searches, the adversarial verification of every dynamical claim, and the development and testing of the structural conjectures were carried out in collaboration with Anthropic's Claude, used as a research instrument for code generation, large-scale enumeration, and iterative hypothesis testing. The mathematical direction, the choice of questions, and responsibility for the results are the author's. Several intermediate claims were retracted after verification contradicted them; the corrections are reflected in the final statements.
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+{[}Elmore 2026{]} C. Elmore, ``A dimension-transcendent universal fixed point of a generalized Kaprekar routine,'' companion paper, 2026.
+
+{[}Kaprekar 1955{]} D. R. Kaprekar, ``An interesting property of the number 6174,'' \emph{Scripta Mathematica}, vol.~15, pp.~244--245, 1955.
+
+{[}Trigg 1974{]} C. W. Trigg, ``All three-digit integers lead to 495,'' \emph{The Mathematics Teacher}, vol.~67, pp.~41--45, 1974.
+
+{[}Prichett 1981{]} G. D. Prichett, A. L. Ludington, and J. F. Lapenta, ``The determination of all decadic Kaprekar constants,'' \emph{The Fibonacci Quarterly}, vol.~19, pp.~45--52, 1981. (Precursor: G. D. Prichett, ``Kaprekar's routine with five-digit integers,'' \emph{The Fibonacci Quarterly}, vol.~17, pp.~154--159, 1979.)
 
 
 \end{document}
