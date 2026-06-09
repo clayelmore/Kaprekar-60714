@@ -2,3 +2,5 @@
 *_log.txt
 *.output
 __pycache__/
+
+build_*/

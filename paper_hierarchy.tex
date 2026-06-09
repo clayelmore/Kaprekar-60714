@@ -1,0 +1,272 @@
+\documentclass[11pt,letterpaper]{article}
+
+% --- Encoding & fonts ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% Prefer lmodern (Type 1 vector with full ec-lm coverage); fall back silently
+% to the default Computer Modern when lmodern.sty isn't installed (some
+% container builds). On Debian/Ubuntu, cm-super (texlive-fonts-extra) is an
+% acceptable Type 1 substitute when lmodern is unavailable.
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage[expansion=false,protrusion=false]{microtype}
+\usepackage{textcomp}                 % needed by some Unicode passthroughs
+
+% --- Math ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+% --- Tables (pandoc emits longtable) ---
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+
+% --- Lists ---
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*,topsep=2pt}
+
+% --- Layout ---
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{parskip}                  % paragraph spacing rather than indent
+
+% --- Pandoc compatibility helpers ---
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+% pandoc 3.x emits `\def\LTcaptype{none}` for uncaptioned longtables;
+% newer longtable expects `none` to be a real counter. Declare it.
+\makeatletter
+\@ifundefined{c@none}{\newcounter{none}}{}
+\makeatother
+
+% --- Hyperlinks (last among style packages) ---
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% --- Theorem environments ---
+% The source carries its own theorem numbers (e.g. "Theorem 5.2",
+% "Lemma C.10"). Use a custom theoremstyle that places the qualifier
+% inline as the head note, and \newtheorem*{...} so amsthm doesn't add
+% its own counter-based number.
+%
+% The default amsthm rendering of `\begin{theorem*}[Foo]` is "Theorem (Foo)."
+% with the qualifier in parens. The source's qualifiers are like "5.2" or
+% "5.2 (Dimension-transcendence)" — so the parens nest: "Theorem (5.2
+% (Dimension-transcendence))." which reads badly. Use a custom theoremstyle
+% to render the qualifier with a leading space and a period: "Theorem 5.2."
+% or "Theorem 5.2 (Dimension-transcendence)."
+\newtheoremstyle{paperstyle}%   name
+  {\topsep}%                    spaceabove
+  {\topsep}%                    spacebelow
+  {\itshape}%                   bodyfont
+  {0pt}%                        indent
+  {\bfseries}%                  headfont
+  {.}%                          headpunct
+  { }%                          headspace
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}% headspec  -> "Kind <num> <note>"
+
+\newtheoremstyle{paperstyledef}%
+  {\topsep}{\topsep}{\normalfont}{0pt}{\bfseries}{.}{ }%
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}
+
+\newtheoremstyle{paperstylerem}%
+  {\topsep}{\topsep}{\normalfont}{0pt}{\itshape}{.}{ }%
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}
+
+\theoremstyle{paperstyle}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{conjecture}{Conjecture}
+
+\theoremstyle{paperstyledef}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+
+\theoremstyle{paperstylerem}
+\newtheorem*{remark}{Remark}
+\newtheorem*{observation}{Observation}
+
+% --- Title metadata ---
+\title{Fixed Points of Generalized Kaprekar Routines: A Hierarchy}
+\author{Clay Elmore}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+
+
+\section{1. Introduction}\label{introduction}
+
+In 1949 Kaprekar noticed that subtracting the ascending digit arrangement of a four-digit number from its descending arrangement, and repeating, sends every input other than the repdigits to 6174 within seven steps. At three digits the same procedure reaches 495; at five it reaches nothing, the orbits settling into cycles instead. These three facts are usually presented as a numerical curiosity of base ten. They are better read as three data points about a single map, and the map is one point in a large family.
+
+Fix a digit length \(d\). Sorting the digits of an integer into descending order and then rearranging them by a permutation produces another integer; the difference of two such rearrangements is a generalized Kaprekar routine. The classical map takes the two rearrangements to be the descending and ascending orders. Allowing the two permutations to be arbitrary gives a family of \(d!\,(d!-1)\) maps at each digit length, of which the classical map is one. Within this family 6174 is no longer exceptional: it is one of several numbers fixed by some map at \(d=4\), and the question of which integers are fixed, and how strongly, has a clean answer that the classical map alone obscures.
+
+This paper organizes that answer. Every integer fixed by some generalized Kaprekar routine sits at one of six levels, ordered by how much of the dynamics it controls. At the bottom a fixed point governs nothing --- the map collapses almost everything to zero, or fixes the point in name only, with no orbit flowing to it. At the top a single integer is the global attractor of an appropriate map at \emph{every} sufficiently large digit length, the maps linked by an explicit rule for passing from one length to the next. The classical constants occupy the middle: 495 and its relatives are universal but degenerate, fixed by maps that secretly act in fewer dimensions than they appear to; 6174 is the first genuinely full-dimensional universal attractor. Above 6174 the hierarchy splits into two ways of climbing in dimension, and the two best-understood inhabitants of the top level --- 60714 and the family generated by 6174 under digit duplication --- realize the two ways.
+
+We make the levels precise in Section 3 and populate them in Sections 4 through 7. The two organizing invariants, defined next, are the rank of a map and the rank it exhibits at a given fixed point; the gap between them is what separates degenerate universality from the real thing.
+
+\section{2. Rules and coefficients}\label{rules-and-coefficients}
+
+Throughout, \(d \geq 2\) is a fixed digit length and integers are padded to \(d\) digits with leading zeros. For an integer \(n\) write \(\mathrm{sort}_\downarrow(n) = (s_0, s_1, \dots, s_{d-1})\) for its digits in descending order, \(s_0 \geq s_1 \geq \cdots \geq s_{d-1}\).
+
+\textbf{Definition 2.1.} For an ordered pair of permutations \((\pi, \sigma) \in S_d \times S_d\) with \(\pi \neq \sigma\), the \emph{rule} \(K_{\pi,\sigma}\) acts on \(n\) by
+\[K_{\pi,\sigma}(n) = \Big|\, \pi\!\cdot\!\mathrm{sort}_\downarrow(n) - \sigma\!\cdot\!\mathrm{sort}_\downarrow(n) \,\Big|,\]
+where \(\tau \cdot (s_0, \dots, s_{d-1})\) denotes the integer \(\sum_i 10^{\,d-1-i}\, s_{\tau(i)}\). The classical Kaprekar map is \(K_{\mathrm{id},\,\mathrm{rev}}\).
+
+Because a rule reads its input only through the sorted digit vector, it is a function of the digit multiset alone, and the orbit of \(n\) depends only on that multiset. Expanding the difference shows that \(K_{\pi,\sigma}\) is linear in the sorted digits up to the absolute value:
+\[K_{\pi,\sigma}(n) = \Big|\, \sum_{i=0}^{d-1} c_i\, s_i \,\Big|, \qquad c_i = 10^{\,d-1-\pi^{-1}(i)} - 10^{\,d-1-\sigma^{-1}(i)},\]
+and the coefficients sum to zero. The vector \(c = (c_0, \dots, c_{d-1})\) determines the rule's action on every multiset, so it is the right object to track.
+
+\textbf{Definition 2.2.} The \emph{surviving-variable count} of a rule is \(\mathrm{sv}(K) = \#\{ i : c_i \neq 0 \}\). The rule is \emph{full-variable} when \(\mathrm{sv}(K) = d\), that is, when every sorted position contributes to the output.
+
+The classical map is full-variable at \(d=4\), where \(c = (999, 90, -90, -999)\), but not at odd lengths: at \(d=3\) the descending-minus-ascending borrow chain forces the middle coefficient to vanish, \(c = (99, 0, -99)\), and the map reads only the outer two digits. The same cancellation occurs at every odd length, which is the structural reason the classical map fails to converge at \(d=5\) --- there it has rank four, not five, and is not the object one should be asking about.
+
+A second count refines the first at a fixed point. Write \(F\) for an integer fixed by \(K\), with sorted digits \((f_0, \dots, f_{d-1})\).
+
+\textbf{Definition 2.3.} The \emph{effective rank} of \(K\) at \(F\) is \(\mathrm{sv}_F(K) = \#\{ i : c_i \neq 0 \text{ and } f_i \neq 0 \}\).
+
+Always \(\mathrm{sv}_F(K) \leq \mathrm{sv}(K)\), with equality exactly when \(F\) has no zero digit in a surviving position. When \(F\) carries zeros, a rule can be full-variable as an algebraic object yet act at \(F\) through strictly fewer coordinates. This gap is invisible to the fixed-point equation \(K(F) = F\) and decisive for everything that follows.
+
+\textbf{Definition 2.4.} A rule \(K\) is \emph{universal for \(F\)} at length \(d\) if every non-repdigit \(d\)-digit input reaches \(F\) under iteration. We then call \(F\) a \emph{universal fixed point} of \(K\).
+
+Repdigits map to zero under every rule and are excluded throughout, as are the near-repdigit degeneracies standard in the literature.
+
+\section{3. The hierarchy}\label{the-hierarchy}
+
+Six conditions on a fixed point \(F\), each strictly stronger than the last, organize the rest of the paper. We state them first and inhabit them afterward.
+
+\textbf{(L0) Collapse.} The rule sends every non-repdigit input to \(0\). Nothing is fixed except trivially, and there is no dynamics to speak of. Collapse is the floor against which the other levels are measured.
+
+\textbf{(L1) Bare fixed point.} \(K(F) = F\), but the basin of \(F\) is trivial: no non-repdigit input other than \(F\) itself reaches \(F\). Being fixed is a local algebraic accident and carries no dynamical weight. Section 4 exhibits an infinite family of bare fixed points that look substantial and are not.
+
+\textbf{(L2) Attractor.} \(K(F) = F\) and a positive proportion of inputs reach \(F\), but not all of them. This is the generic situation and the bulk of the census.
+
+\textbf{(L3) Degenerate universal.} \(F\) is universal for \(K\), but \(\mathrm{sv}_F(K) < d\): the universality is produced by a rule acting at \(F\) through fewer than \(d\) coordinates. The classical small-length constants live here.
+
+\textbf{(L4) Full universal.} \(F\) is universal for a rule with \(\mathrm{sv}_F(K) = d\). Every coordinate participates, and \(F\) cannot be obtained by embedding a shorter solution. This is the first level at which universality reflects genuine \(d\)-dimensional structure.
+
+\textbf{(L5) Dimension-transcendent.} A single integer, or an explicitly described family, is a full universal fixed point at infinitely many digit lengths, the rules at successive lengths connected by a fixed lifting recipe. Two distinct liftings populate this level, and they meet at 6174.
+
+The levels are nested: L4 implies L3's universality with the rank condition strengthened, L3 implies L2 with the basin filled, and so on down. The content of the paper is that each level is nonempty, that the named classical objects fall where one would hope, and that the top level admits exactly the two constructions described in Sections 6 and 7. The following table fixes the picture; the entries are justified in the sections indicated.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Level
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Condition on \(F\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Representative
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Section
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+L0 & \(K \equiv 0\) off repdigits & --- & 3 \\
+L1 & fixed, trivial basin & \(6174\) repeated \(m\) times, \(m\geq 3\) & 4 \\
+L2 & positive but partial basin & generic & 4 \\
+L3 & universal, \(\mathrm{sv}_F < d\) & \(45,\ 450,\ 495\) & 5 \\
+L4 & universal, \(\mathrm{sv}_F = d\) & \(6174\) & 6 \\
+L5 & full universal at infinitely many \(d\) & \(60714\); the \(\{1,4,6,7\}^m\) family & 6--7 \\
+\end{longtable}
+}
+
+\section{4. Bare fixed points and attractors}\label{bare-fixed-points-and-attractors}
+
+A fixed point need not pull anything toward itself. The cleanest illustration is an infinite family that looks like a generalization of 6174 and behaves like nothing of the sort.
+
+Let \(M_m = \{1,4,6,7\}^m\) be the multiset with each of \(1,4,6,7\) repeated \(m\) times, a length \(d = 4m\). Write
+\[F_m = \underbrace{6174\,6174\cdots 6174}_{m} = 6174 \cdot R(m), \qquad R(m) = \sum_{k=0}^{m-1} 10^{4k}.\]
+
+\textbf{Proposition 4.1.} For every \(m \geq 1\), \(F_m\) is a fixed point of a full-variable rule at \(d = 4m\), and \(F_m\) has digit multiset \(M_m\).
+
+\emph{Proof.} Take the rule that, on the sorted input \((7^m, 6^m, 4^m, 1^m)\), places the seven-ranks, six-ranks, four-ranks, and one-ranks into the position classes congruent to \(0,1,2,3 \bmod 4\) respectively, and forms the difference against the pairwise-swapped arrangement. The two arrangements read \(7641\) repeated \(m\) times and \(1467\) repeated \(m\) times, so
+\[K(F_m) = \big| 7641 \cdot R(m) - 1467 \cdot R(m) \big| = (7641 - 1467) \cdot R(m) = 6174 \cdot R(m) = F_m.\]
+The output is \(6174\) written \(m\) times, with multiset \(M_m\), and the rule is full-variable. \(\square\)
+
+The identity is the four-digit fact \(7641 - 1467 = 6174\) carried across \(m\) disjoint blocks by the geometric factor \(R(m)\). It is also the entire content: the construction copies the \(d=4\) solution and does nothing else.
+
+\textbf{Proposition 4.2.} The basin of \(F_m\) under the rule of Proposition 4.1 is the whole space at \(m = 1, 2\) and a strict, erratic fraction of it for \(m \geq 3\): the coverage is \(100\%, 100\%, 14.9\%, 99.7\%, 9.5\%\) at \(m = 1, \dots, 5\).
+
+At \(m = 2\) the rule acts as two copies of the classical four-digit map on the even and odd position classes, which do not interact, so universality is inherited from \(d = 4\). At \(m \geq 3\) the sorting step mixes the blocks before each subtraction, the copies cease to be independent, and the constructed fixed point is left dynamically isolated --- fixed, but reached from almost nothing. \(F_m\) is a bare fixed point (L1) for every \(m \geq 3\), and the appearance of a pattern generalizing 6174 is an artifact of the algebra, not a feature of the dynamics.
+
+Between the bare points and the universal ones lies the generic case (L2): a fixed point with a positive but incomplete basin. These are abundant. A search of the \(63{,}063{,}000\) arrangements of \(M_4\) at \(d = 16\) turns up fixed points at every basin fraction from a handful of multisets up to \(99.9\%\), the overwhelming majority of them partial. Partiality is the default; universality is the exception the rest of the paper is about.
+
+\section{5. Degenerate universals}\label{degenerate-universals}
+
+The smallest universal fixed points are universal for a reason that does not survive inspection: the rule fixing them acts in fewer dimensions than its length advertises.
+
+At \(d = 3\) the classical map has coefficient vector \((99, 0, -99)\). Writing the sorted digits as \(a \geq b \geq c\), it computes \(99(a - c)\) and never reads \(b\). Its output depends on a single gap, and the three-digit routine accordingly drives every non-repdigit input to 495, the fixed point with \(a - c = 5\). The numbers \(45\) and \(450\) arise the same way from the two other universal rules at \(d = 3\); all three have \(\mathrm{sv} = 2\).
+
+\textbf{Definition.} Call \(F\) a \emph{degenerate universal} (L3) if \(F\) is universal for some rule \(K\) with \(\mathrm{sv}_F(K) < d\).
+
+The three-digit constants are the prototypes. Their universality is real --- every input does reach them --- but it is the universality of a rank-two map embedded in three coordinates, and the embedding is what lets them recur at larger lengths without acquiring new structure. A degenerate universal at length \(d\) extends to \(d + 1\) by padding with a coordinate the rule ignores; the extension fixes the same number for the same reason. This stability across length is not transcendence. It is the absence of dimensional content, and Definition 2.3 is what tells the two apart: a degenerate universal has \(\mathrm{sv}_F < d\) at every length where it appears, while the objects of the next two sections have \(\mathrm{sv}_F = d\).
+
+\section{6. Full universals and transcendence by zero-padding}\label{full-universals-and-transcendence-by-zero-padding}
+
+Imposing \(\mathrm{sv}_F = d\) removes the embedded low-rank solutions and leaves the fixed points that use their full length.
+
+\textbf{Definition.} \(F\) is a \emph{full universal} (L4) if it is universal for a rule with \(\mathrm{sv}_F(K) = d\).
+
+The first is 6174, with \(c = (999, 90, -90, -999)\) and both gaps active. Exhaustive classification gives the full universals at small length: two at \(d = 4\), none reachable by the classical map at \(d = 5\), but thirty-three under other full-variable rules there, and five hundred and seven at \(d = 6\). The count is not the point; the existence of full universals at \(d = 5\), where the classical map has none, is. It shows that the failure at five digits is a failure of the classical rule, not of the digit length.
+
+Among the thirty-three at \(d = 5\), one is distinguished by what happens above it. Write \(60714\) for the fixed point of the rule with coefficient vector \((9900, 9, 90, -9000, -999)\).
+
+\textbf{Theorem 6.1 (zero-padding transcendence).} \emph{There is an explicit family of full-variable rules, one at each \(d \geq 5\), related by a coefficient-preserving lifting, under which \(60714\) is a universal fixed point at every \(d \geq 5\).}
+
+This is proven in {[}Paper 1{]} and we only recall the mechanism, because the mechanism is what the next section lacks. The lifting appends a zero-sum pair of coefficients at the top two positions, padding \(F\) with two trailing zeros. The padded zeros form an absorbing set: once an orbit's sorted form ends in two zeros, the rule acts on the remaining digits as the rule two lengths down, and the question reduces. Two facts close the argument --- that this absorbing set is invariant, and that every orbit reaches it in a bounded number of steps --- and the second is established by a digit-counting argument that turns on the appended pair producing zeros. The zeros are not incidental. They are the structure that makes the induction run.
+
+By contrast \(6174\) itself is transcendent only intermittently along this axis: it is universal at \(d = 4\) and again at \(d = 7\), under a zero-sum lifting, but not at \(d = 5\) or \(d = 6\). The cross-dimensional behavior of a fixed point is a property of the lifting available to it, and 60714 is the integer for which the zero-padding lifting succeeds uniformly.
+
+\section{7. Transcendence by duplication}\label{transcendence-by-duplication}
+
+Zero-padding is one way to raise the dimension of a fixed point. Duplicating its digits is another, and it leads to the family of Section 4 --- but to the universal members, not the bare ones.
+
+Fix the multiset \(M_m = \{1,4,6,7\}^m\) at \(d = 4m\). Section 4 produced one fixed point of this multiset, \(F_m\), and showed it bare for \(m \geq 3\). The multiset carries others. Among the rules fixing some arrangement of \(M_m\), certain ones are universal, and they are not the rule of Proposition 4.1.
+
+\textbf{Computational result 7.1.} \emph{Full universal fixed points of multiset \(M_m\) exist at \(m = 1, 2, 3, 4, 5\), in numbers \(2,\ 481,\ 42,\ 341,\ \geq 1\). For \(m \geq 3\) no universal arrangement decomposes into blocks; the universal arrangements are necessarily scrambled.}
+
+The case \(m = 2\) gives \(61746174\) and four hundred eighty others. From \(m = 3\) on, the clean block-structured candidate \(F_m\) is not among the universals --- its basin is the \(14.9\%\) of Proposition 4.2 --- and the universal arrangements have no block decomposition at all. Whether the family continues was the question we could not settle by construction, and the reason is worth stating precisely, because the obstruction is sharper than ``the search got hard.''
+
+Restrict to the rules natural to this multiset --- the pair-symmetric rules, in which the swapped arrangement pairs the outer digit blocks and the inner digit blocks --- and to those whose coefficient partial sums are nonnegative, a monotonicity that the classical four-digit rule already satisfies. For these,
+
+\textbf{Lemma 7.2.} \emph{A rule is universal if and only if its dynamics has a unique fixed point and no cycle of period at least two.}
+
+This is a finite-state fact: in a finite space every orbit ends at a fixed point or a cycle, so the absence of competing fixed points and of cycles is exactly global convergence. It reduces universality to the exclusion of cycles, and the cycles can be read off. Every cycle of every such rule lives outside the four-digit alphabet --- its members carry digits other than \(1,4,6,7\) --- and at each length the cycles fall into finitely many families. The difficulty is that the families do not stabilize: the cycles obstructing universality at \(d = 20\) have periods and digit-profiles absent at \(d = 12\) and \(d = 16\), and the partition data that characterizes the universal rules at \(m = 3\) and \(m = 4\) fails to characterize them at \(m = 5\). There is no description of the universal rules uniform in \(m\).
+
+What does hold uniformly is abundance. The number of universal rules, estimated by sampling against the exact count at \(m = 3\), grows as roughly \(3 \times 10^3,\ 2 \times 10^7,\ 3 \times 10^8\) at \(m = 3, 4, 5\); the universal \emph{fraction} falls only because the rule count grows faster. The witnesses are not becoming scarce. They are becoming unstructured.
+
+\textbf{Conjecture 7.3.} \emph{Multiset \(\{1,4,6,7\}^m\) admits a full universal fixed point at every \(m \geq 1\).}
+
+The evidence is the growth of Result 7.1 and the witness count. What is missing is any of the structures that prove such statements --- a uniform construction, an inductive lifting, an invariant separating universal rules from the rest --- and the next section locates why none has been found.
+
+\section{8. The base case has no conceptual certificate}\label{the-base-case-has-no-conceptual-certificate}
+
+The multiplicity conjecture asks for convergence at every length in a family whose first member is the classical four-digit map. One would prove it by exhibiting a mechanism at \(d = 4\) and lifting it. The obstruction is that the four-digit map has no such mechanism to lift.
+
+Reduce the classical map to its gaps. For sorted digits \(a \geq b \geq c \geq d\), the map computes \(999(a - d) + 90(b - c)\) and so depends only on \(p = a - d\) and \(q = b - c\), with \(1 \leq p \leq 9\) and \(0 \leq q \leq p\). This is a map on fifty-four states, with unique fixed point \((p, q) = (6, 2)\), and convergence to 6174 is convergence of this finite system. The question is whether the convergence has a certificate simpler than tracing the states.
+
+\textbf{Proposition 8.1.} \emph{The fifty-four-state gap system admits no polynomial Lyapunov function of degree at most four: there is no polynomial \(\Phi\) of degree \(\leq 4\) with \(\Phi(\text{next state}) < \Phi(\text{state})\) off the fixed point.}
+
+The statement is a finite linear feasibility problem and it is infeasible at degrees two, three, and four. A Lyapunov function does exist at degree nine, but only because nine is the degree at which a polynomial can interpolate fifty-four prescribed values, and the values it interpolates are the number of steps each state takes to reach \((6,2)\) --- the reaching time, which decreases by one along every orbit by definition and certifies convergence on any finite acyclic system whatever. It is not a reason. It is the dynamics rewritten as a polynomial.
+
+So the convergence of the classical map, the seventy-five-year-old fact underneath everything here, has no low-complexity certificate. It is established by enumeration or by an interpolation of its own reaching time, and neither generalizes. The zero-padding transcendence of Section 6 evades this because it does not lift a mechanism through the dynamics; it builds an absorbing set out of zeros and reduces the length directly. The multiplicity chain has no zeros and no absorbing set, so it has no route around the base case. A proof of Conjecture 7.3, if there is one, will not come from the dynamics of any single length. It will come either from a genuine structural reason for the four-digit convergence --- which would be a result in its own right --- or from an existence argument that counts the universal rules without describing them, of the kind the witness-count growth invites.
+
+\section{Acknowledgments}\label{acknowledgments}
+
+The computational census, the structured rule searches, the adversarial verification of every dynamical claim, and the development and testing of the structural conjectures were carried out in collaboration with Anthropic's Claude, used as a research instrument for code generation, large-scale enumeration, and iterative hypothesis testing. The mathematical direction, the choice of questions, and responsibility for the results are the author's. Several intermediate claims were retracted after verification contradicted them; the corrections are reflected in the final statements.
+
+
+\end{document}
