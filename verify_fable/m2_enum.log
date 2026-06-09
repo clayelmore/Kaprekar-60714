@@ -1,0 +1,6 @@
+partitions: 2520, M_2-fixing partitions: 36
+universal pair-symmetric rules: 312 (19s)
+distinct universal fixed-point arrangements: 12
+fixed points by rule count (top 12): [(14617746, 48), (17461746, 48), (17746146, 48), (61461774, 32), (61746174, 32), (61774614, 32), (14177466, 16), (17417466, 16), (17741466, 16), (14661774, 8), (17466174, 8), (17746614, 8)]
+monotone universal rules: 24
+saved m2_pairsym_universals.json

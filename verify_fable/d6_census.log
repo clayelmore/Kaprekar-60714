@@ -1,0 +1,5 @@
+d=6: admissible=4905, fv rules=190800, universal fps=506 (21s)
+zero-count strata: {0: 205, 1: 240, 2: 53, 3: 8}
+digit-sum strata: {9: 8, 18: 156, 27: 244, 36: 96, 45: 2}
+all digit sums div by 9: True
+60714 padded present: True
