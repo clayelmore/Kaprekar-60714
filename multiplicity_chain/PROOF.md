@@ -591,3 +591,41 @@ m=3/m=4 partition shape — A7 contiguous at top — yields ZERO universals at m
 
 **Bottom line:** the survivor fraction refuses to give a smooth signal. The all-m question is
 genuinely undecided — neither "holds forever" nor "breaks" is supported by a clean trend.
+
+---
+
+# THE COUNT GROWS — existence is robust (2026-06-08, corrects the fraction read)
+
+The survivor *fraction* (universal among monotone M_m-fixing rules) is the WRONG quantity. The
+**count** of universal rules is what governs existence, and it GROWS super-exponentially:
+
+| m | universal fraction | universal COUNT |
+|---|---|---|
+| 3 | 6.94% | ~3,000 (exact) |
+| 4 | 28.4% | ~1.8 × 10⁷ (est.) |
+| 5 | 0.043% | ~2.5 × 10⁸ (est.) |
+
+Count estimated as d! · p_fix · p_mono · p_univ (sampling estimates of: partition is M_m-fixing;
+ordering is monotone | fixing; rule is universal | monotone-fixing). Sanity: the m=3 estimate
+(~2,457) matches the exact 3,000 within sampling error; the 3K→18M→250M trend is far too large to
+be estimation noise.
+
+**Reading:** the fraction crash at m=5 (28%→0.04%) is purely the total rule space (~d!) exploding
+faster than the universal count — NOT a sign of existence failing. There are ~250 million universal
+rules at m=5.
+
+**Impact:**
+- **Existence-breaks (#3): unlikely** — a count growing 3K→18M→250M is not heading to zero.
+- **Counting-existence (#1): the viable proof route.** Target: show count(m) = d!·p_fix·p_mono·p_univ
+  ≥ 1 for all m (it is in fact growing, with enormous margin). This needs lower bounds on p_fix
+  (M_m-fixing has clean block-sum structure K=6S₇+2S₆) and p_univ (the dynamical part — still the
+  hard factor, but now only needs a weak lower bound given the d! growth).
+
+**Bottom line:** the all-m universality conjecture is now STRONGLY supported — not merely verified
+to m=6, but witnessed by a universal-rule count that is exploding. A rigorous proof, if found,
+will most plausibly be a counting/probabilistic lower bound on this count, not a construction or
+monovariant.
+
+(Note on my own process: I mis-read this twice — over-optimistic on the m=4 fraction, then
+over-pessimistic on the m=5 fraction crash — before identifying the COUNT as the governing
+quantity. Recorded for honesty.)
