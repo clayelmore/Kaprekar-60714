@@ -1,0 +1,8 @@
+=== alphabet proxy (digits of F, all multisets, non-repdigit) ===
+  F=1746: fold_2^2 fixes 1746174617461746; proxy over 965 alphabet states: PASS
+  F=2538: fold_2^2 fixes 2538253825382538; proxy over 965 alphabet states: FAIL
+  F=5382: fold_2^2 fixes 5382538253825382; proxy over 965 alphabet states: FAIL
+  F=6174: fold_2^2 fixes 6174617461746174; proxy over 965 alphabet states: FAIL
+
+=== FULL basin at d=16 for proxy passers ===
+  F4=1746: basin of 1746174617461746 = 2042965/2042965 = 1.000000 (9s)  *** UNIVERSAL ***

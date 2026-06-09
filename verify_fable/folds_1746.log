@@ -1,0 +1,13 @@
+=== fold_k(1746) proxy + seeds, k=2..8 ===
+  k=2 (d=8): proxy 161/161 PASS; seeds 200000/200000
+  k=3 (d=12): proxy 112/451 FAIL (definitive: not universal)
+  k=4 (d=16): proxy 965/965 PASS; seeds 200000/200000
+  k=5 (d=20): proxy 1767/1767 PASS; seeds 200000/200000
+  k=6 (d=24): proxy 523/2921 FAIL (definitive: not universal)
+  k=7 (d=28): proxy 1382/4491 FAIL (definitive: not universal)
+  k=8 (d=32): proxy 6533/6541 FAIL (definitive: not universal)
+proxy+seed passers: k in [2, 4, 5]
+
+FULL basin fold_4(1746) at d=16: 2,042,965/2,042,965 *** UNIVERSAL *** (17s)
+
+FULL basin fold_5(1746) at d=20: 10,014,995/10,014,995 *** UNIVERSAL *** (112s)
