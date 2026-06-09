@@ -66,3 +66,88 @@ The levels are nested: L4 implies L3's universality with the rank condition stre
 | L3 | universal, $\mathrm{sv}_F < d$ | $45,\ 450,\ 495$ | 5 |
 | L4 | universal, $\mathrm{sv}_F = d$ | $6174$ | 6 |
 | L5 | full universal at infinitely many $d$ | $60714$; the $\{1,4,6,7\}^m$ family | 6–7 |
+
+## 4. Bare fixed points and attractors
+
+A fixed point need not pull anything toward itself. The cleanest illustration is an infinite family that looks like a generalization of 6174 and behaves like nothing of the sort.
+
+Let $M_m = \{1,4,6,7\}^m$ be the multiset with each of $1,4,6,7$ repeated $m$ times, a length $d = 4m$. Write
+$$F_m = \underbrace{6174\,6174\cdots 6174}_{m} = 6174 \cdot R(m), \qquad R(m) = \sum_{k=0}^{m-1} 10^{4k}.$$
+
+**Proposition 4.1.** For every $m \geq 1$, $F_m$ is a fixed point of a full-variable rule at $d = 4m$, and $F_m$ has digit multiset $M_m$.
+
+*Proof.* Take the rule that, on the sorted input $(7^m, 6^m, 4^m, 1^m)$, places the seven-ranks, six-ranks, four-ranks, and one-ranks into the position classes congruent to $0,1,2,3 \bmod 4$ respectively, and forms the difference against the pairwise-swapped arrangement. The two arrangements read $7641$ repeated $m$ times and $1467$ repeated $m$ times, so
+$$K(F_m) = \big| 7641 \cdot R(m) - 1467 \cdot R(m) \big| = (7641 - 1467) \cdot R(m) = 6174 \cdot R(m) = F_m.$$
+The output is $6174$ written $m$ times, with multiset $M_m$, and the rule is full-variable. $\square$
+
+The identity is the four-digit fact $7641 - 1467 = 6174$ carried across $m$ disjoint blocks by the geometric factor $R(m)$. It is also the entire content: the construction copies the $d=4$ solution and does nothing else.
+
+**Proposition 4.2.** The basin of $F_m$ under the rule of Proposition 4.1 is the whole space at $m = 1, 2$ and a strict, erratic fraction of it for $m \geq 3$: the coverage is $100\%, 100\%, 14.9\%, 99.7\%, 9.5\%$ at $m = 1, \dots, 5$.
+
+At $m = 2$ the rule acts as two copies of the classical four-digit map on the even and odd position classes, which do not interact, so universality is inherited from $d = 4$. At $m \geq 3$ the sorting step mixes the blocks before each subtraction, the copies cease to be independent, and the constructed fixed point is left dynamically isolated — fixed, but reached from almost nothing. $F_m$ is a bare fixed point (L1) for every $m \geq 3$, and the appearance of a pattern generalizing 6174 is an artifact of the algebra, not a feature of the dynamics.
+
+Between the bare points and the universal ones lies the generic case (L2): a fixed point with a positive but incomplete basin. These are abundant. A search of the $63{,}063{,}000$ arrangements of $M_4$ at $d = 16$ turns up fixed points at every basin fraction from a handful of multisets up to $99.9\%$, the overwhelming majority of them partial. Partiality is the default; universality is the exception the rest of the paper is about.
+
+## 5. Degenerate universals
+
+The smallest universal fixed points are universal for a reason that does not survive inspection: the rule fixing them acts in fewer dimensions than its length advertises.
+
+At $d = 3$ the classical map has coefficient vector $(99, 0, -99)$. Writing the sorted digits as $a \geq b \geq c$, it computes $99(a - c)$ and never reads $b$. Its output depends on a single gap, and the three-digit routine accordingly drives every non-repdigit input to 495, the fixed point with $a - c = 5$. The numbers $45$ and $450$ arise the same way from the two other universal rules at $d = 3$; all three have $\mathrm{sv} = 2$.
+
+**Definition.** Call $F$ a *degenerate universal* (L3) if $F$ is universal for some rule $K$ with $\mathrm{sv}_F(K) < d$.
+
+The three-digit constants are the prototypes. Their universality is real — every input does reach them — but it is the universality of a rank-two map embedded in three coordinates, and the embedding is what lets them recur at larger lengths without acquiring new structure. A degenerate universal at length $d$ extends to $d + 1$ by padding with a coordinate the rule ignores; the extension fixes the same number for the same reason. This stability across length is not transcendence. It is the absence of dimensional content, and Definition 2.3 is what tells the two apart: a degenerate universal has $\mathrm{sv}_F < d$ at every length where it appears, while the objects of the next two sections have $\mathrm{sv}_F = d$.
+
+## 6. Full universals and transcendence by zero-padding
+
+Imposing $\mathrm{sv}_F = d$ removes the embedded low-rank solutions and leaves the fixed points that use their full length.
+
+**Definition.** $F$ is a *full universal* (L4) if it is universal for a rule with $\mathrm{sv}_F(K) = d$.
+
+The first is 6174, with $c = (999, 90, -90, -999)$ and both gaps active. Exhaustive classification gives the full universals at small length: two at $d = 4$, none reachable by the classical map at $d = 5$, but thirty-three under other full-variable rules there, and five hundred and seven at $d = 6$. The count is not the point; the existence of full universals at $d = 5$, where the classical map has none, is. It shows that the failure at five digits is a failure of the classical rule, not of the digit length.
+
+Among the thirty-three at $d = 5$, one is distinguished by what happens above it. Write $60714$ for the fixed point of the rule with coefficient vector $(9900, 9, 90, -9000, -999)$.
+
+**Theorem 6.1 (zero-padding transcendence).** *There is an explicit family of full-variable rules, one at each $d \geq 5$, related by a coefficient-preserving lifting, under which $60714$ is a universal fixed point at every $d \geq 5$.*
+
+This is proven in [Paper 1] and we only recall the mechanism, because the mechanism is what the next section lacks. The lifting appends a zero-sum pair of coefficients at the top two positions, padding $F$ with two trailing zeros. The padded zeros form an absorbing set: once an orbit's sorted form ends in two zeros, the rule acts on the remaining digits as the rule two lengths down, and the question reduces. Two facts close the argument — that this absorbing set is invariant, and that every orbit reaches it in a bounded number of steps — and the second is established by a digit-counting argument that turns on the appended pair producing zeros. The zeros are not incidental. They are the structure that makes the induction run.
+
+By contrast $6174$ itself is transcendent only intermittently along this axis: it is universal at $d = 4$ and again at $d = 7$, under a zero-sum lifting, but not at $d = 5$ or $d = 6$. The cross-dimensional behavior of a fixed point is a property of the lifting available to it, and 60714 is the integer for which the zero-padding lifting succeeds uniformly.
+
+## 7. Transcendence by duplication
+
+Zero-padding is one way to raise the dimension of a fixed point. Duplicating its digits is another, and it leads to the family of Section 4 — but to the universal members, not the bare ones.
+
+Fix the multiset $M_m = \{1,4,6,7\}^m$ at $d = 4m$. Section 4 produced one fixed point of this multiset, $F_m$, and showed it bare for $m \geq 3$. The multiset carries others. Among the rules fixing some arrangement of $M_m$, certain ones are universal, and they are not the rule of Proposition 4.1.
+
+**Computational result 7.1.** *Full universal fixed points of multiset $M_m$ exist at $m = 1, 2, 3, 4, 5$, in numbers $2,\ 481,\ 42,\ 341,\ \geq 1$. For $m \geq 3$ no universal arrangement decomposes into blocks; the universal arrangements are necessarily scrambled.*
+
+The case $m = 2$ gives $61746174$ and four hundred eighty others. From $m = 3$ on, the clean block-structured candidate $F_m$ is not among the universals — its basin is the $14.9\%$ of Proposition 4.2 — and the universal arrangements have no block decomposition at all. Whether the family continues was the question we could not settle by construction, and the reason is worth stating precisely, because the obstruction is sharper than "the search got hard."
+
+Restrict to the rules natural to this multiset — the pair-symmetric rules, in which the swapped arrangement pairs the outer digit blocks and the inner digit blocks — and to those whose coefficient partial sums are nonnegative, a monotonicity that the classical four-digit rule already satisfies. For these,
+
+**Lemma 7.2.** *A rule is universal if and only if its dynamics has a unique fixed point and no cycle of period at least two.*
+
+This is a finite-state fact: in a finite space every orbit ends at a fixed point or a cycle, so the absence of competing fixed points and of cycles is exactly global convergence. It reduces universality to the exclusion of cycles, and the cycles can be read off. Every cycle of every such rule lives outside the four-digit alphabet — its members carry digits other than $1,4,6,7$ — and at each length the cycles fall into finitely many families. The difficulty is that the families do not stabilize: the cycles obstructing universality at $d = 20$ have periods and digit-profiles absent at $d = 12$ and $d = 16$, and the partition data that characterizes the universal rules at $m = 3$ and $m = 4$ fails to characterize them at $m = 5$. There is no description of the universal rules uniform in $m$.
+
+What does hold uniformly is abundance. The number of universal rules, estimated by sampling against the exact count at $m = 3$, grows as roughly $3 \times 10^3,\ 2 \times 10^7,\ 3 \times 10^8$ at $m = 3, 4, 5$; the universal *fraction* falls only because the rule count grows faster. The witnesses are not becoming scarce. They are becoming unstructured.
+
+**Conjecture 7.3.** *Multiset $\{1,4,6,7\}^m$ admits a full universal fixed point at every $m \geq 1$.*
+
+The evidence is the growth of Result 7.1 and the witness count. What is missing is any of the structures that prove such statements — a uniform construction, an inductive lifting, an invariant separating universal rules from the rest — and the next section locates why none has been found.
+
+## 8. The base case has no conceptual certificate
+
+The multiplicity conjecture asks for convergence at every length in a family whose first member is the classical four-digit map. One would prove it by exhibiting a mechanism at $d = 4$ and lifting it. The obstruction is that the four-digit map has no such mechanism to lift.
+
+Reduce the classical map to its gaps. For sorted digits $a \geq b \geq c \geq d$, the map computes $999(a - d) + 90(b - c)$ and so depends only on $p = a - d$ and $q = b - c$, with $1 \leq p \leq 9$ and $0 \leq q \leq p$. This is a map on fifty-four states, with unique fixed point $(p, q) = (6, 2)$, and convergence to 6174 is convergence of this finite system. The question is whether the convergence has a certificate simpler than tracing the states.
+
+**Proposition 8.1.** *The fifty-four-state gap system admits no polynomial Lyapunov function of degree at most four: there is no polynomial $\Phi$ of degree $\leq 4$ with $\Phi(\text{next state}) < \Phi(\text{state})$ off the fixed point.*
+
+The statement is a finite linear feasibility problem and it is infeasible at degrees two, three, and four. A Lyapunov function does exist at degree nine, but only because nine is the degree at which a polynomial can interpolate fifty-four prescribed values, and the values it interpolates are the number of steps each state takes to reach $(6,2)$ — the reaching time, which decreases by one along every orbit by definition and certifies convergence on any finite acyclic system whatever. It is not a reason. It is the dynamics rewritten as a polynomial.
+
+So the convergence of the classical map, the seventy-five-year-old fact underneath everything here, has no low-complexity certificate. It is established by enumeration or by an interpolation of its own reaching time, and neither generalizes. The zero-padding transcendence of Section 6 evades this because it does not lift a mechanism through the dynamics; it builds an absorbing set out of zeros and reduces the length directly. The multiplicity chain has no zeros and no absorbing set, so it has no route around the base case. A proof of Conjecture 7.3, if there is one, will not come from the dynamics of any single length. It will come either from a genuine structural reason for the four-digit convergence — which would be a result in its own right — or from an existence argument that counts the universal rules without describing them, of the kind the witness-count growth invites.
+
+## Acknowledgments
+
+The computational census, the structured rule searches, the adversarial verification of every dynamical claim, and the development and testing of the structural conjectures were carried out in collaboration with Anthropic's Claude, used as a research instrument for code generation, large-scale enumeration, and iterative hypothesis testing. The mathematical direction, the choice of questions, and responsibility for the results are the author's. Several intermediate claims were retracted after verification contradicted them; the corrections are reflected in the final statements.
