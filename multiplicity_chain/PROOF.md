@@ -559,3 +559,35 @@ adversarially re-verified from scratch. **Decisive: the lead is dead. No proof.*
 the all-m goal **remains open** — and the finite-obstruction-exclusion + induction route is
 **closed**: the obstruction grows genuinely new families at every m. A proof, if it exists, needs
 an idea that handles an m-growing obstruction set, not the finite/linear exclusion we hoped for.
+
+---
+
+# SURVIVOR-FRACTION MEASUREMENT (2026-06-08) — the fraction is ERRATIC
+
+To test whether a non-constructive counting-existence argument is viable, measured the fraction of
+*monotone M_m-fixing pair-symmetric rules that are universal*:
+
+| m | survivor fraction | source |
+|---|---|---|
+| 3 | **6.94%** | exact (3,000 / 43,200, complete enumeration) |
+| 4 | **28.4%** | random sample, n=95 (monotone-fixing rules ~5/million) |
+| 5 | **~0%** | random sample, 0/13 passed the necessary alphabet proxy |
+
+**The fraction is non-monotone and crashes** — 7% → 28% → ~0% — mirroring the erratic universal
+*counts* (2, 481, 42, 341, …). An initial two-point read (7%→28%) wrongly suggested a safe growing
+trend; adding m=5 corrected it.
+
+**Caveat:** universals DO exist at m=5 (the assault-#2 workflow built one by targeted cycle-exclusion
+search). So the true m=5 fraction is small-but-nonzero; random sampling missed it because m=5
+universalizable rules are rare AND structurally specific (an 11.3M-sample search showed the
+m=3/m=4 partition shape — A7 contiguous at top — yields ZERO universals at m=5).
+
+**Impact on proof routes:**
+- Counting-existence (#1) is **weakened**: no clean positive lower bound on the fraction to prove;
+  it swings wildly.
+- "Existence may break" (#3) is **strengthened but unresolved**: the fraction crashing toward ~0%
+  at m=5 is the kind of signal that could reach literal zero at larger m — but m=5 still has a
+  witness, so it has not broken.
+
+**Bottom line:** the survivor fraction refuses to give a smooth signal. The all-m question is
+genuinely undecided — neither "holds forever" nor "breaks" is supported by a clean trend.
