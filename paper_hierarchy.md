@@ -119,7 +119,7 @@ Among the thirty-three at $d = 5$, one is distinguished by what happens above it
 
 **Theorem 6.1 (zero-padding transcendence).** *There is an explicit family of full-variable rules, one at each $d \geq 5$, related by a coefficient-preserving lifting, under which $60714$ is a universal fixed point at every $d \geq 5$.*
 
-This is proven in [Elmore 2026] and we only recall the mechanism, because the mechanism is what the next section lacks. The lifting appends a zero-sum pair of coefficients at the top two positions, padding $F$ with two trailing zeros. The padded zeros form an absorbing set: once an orbit's sorted form ends in two zeros, the rule acts on the remaining digits as the rule two lengths down, and the question reduces. Two facts close the argument — that this absorbing set is invariant, and that every orbit reaches it in a bounded number of steps — and the second is established by a digit-counting argument that turns on the appended pair producing zeros. The zeros are not incidental. They are the structure that makes the induction run.
+The proof is by a zero-padding lifting argument; we recall only the mechanism here, because the mechanism is what the next section lacks. The lifting appends a zero-sum pair of coefficients at the top two positions, padding $F$ with two trailing zeros. The padded zeros form an absorbing set: once an orbit's sorted form ends in two zeros, the rule acts on the remaining digits as the rule two lengths down, and the question reduces. Two facts close the argument — that this absorbing set is invariant, and that every orbit reaches it in a bounded number of steps — and the second is established by a digit-counting argument that turns on the appended pair producing zeros. The zeros are not incidental. They are the structure that makes the induction run.
 
 By contrast $6174$ itself is transcendent only intermittently along this axis: it is universal at $d = 4$ and again at $d = 7$, under a zero-sum lifting, but not at $d = 5$ or $d = 6$. The cross-dimensional behavior of a fixed point is a property of the lifting available to it, and 60714 is the integer for which the zero-padding lifting succeeds uniformly.
 
@@ -195,8 +195,6 @@ Infeasibility of a rational linear program is itself a finite, exact certificate
 The computational census, the structured rule searches, the adversarial verification of every dynamical claim, and the development and testing of the structural conjectures were carried out in collaboration with Anthropic's Claude, used as a research instrument for code generation, large-scale enumeration, and iterative hypothesis testing. The mathematical direction, the choice of questions, and responsibility for the results are the author's. Several intermediate claims were retracted after verification contradicted them; the corrections are reflected in the final statements.
 
 ## References {.unnumbered}
-
-[Elmore 2026] C. Elmore, "A dimension-transcendent universal fixed point of a generalized Kaprekar routine," companion paper, 2026.
 
 [Kaprekar 1955] D. R. Kaprekar, "An interesting property of the number 6174," *Scripta Mathematica*, vol. 15, pp. 244–245, 1955.
 
