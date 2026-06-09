@@ -629,3 +629,49 @@ monovariant.
 (Note on my own process: I mis-read this twice — over-optimistic on the m=4 fraction, then
 over-pessimistic on the m=5 fraction crash — before identifying the COUNT as the governing
 quantity. Recorded for honesty.)
+
+---
+
+# WHY THE COUNTING ARGUMENT IS ALSO HARD — the survivor structure shifts with m (2026-06-08)
+
+Pushed on the counting/structural route using the complete m=3 data (3,000 universal / 43,200).
+
+## What the m=3 survivors look like
+- All 3,000 universals live in just **20 of 70 partitions**.
+- Clean sufficient condition at m=3: **A7 = {0,1,2} (the +6 block at the top) ⟹ the partition hosts
+  universal orderings** — true for 0% of non-hosting partitions. (Each such partition has ~260/1296
+  universal orderings.)
+
+## Why it does not give a proof
+**The survivor structure is not m-uniform.** The same A7-at-top condition that is sufficient at m=3
+(and m=4) **fails completely at m=5**: an 11.3M-sample search of A7-at-top M_5-fixing partitions
+found ZERO universalizable (the verified m=5 winner instead has A7 spread out, {0,4,10,13,16}). So
+the structural property characterizing survivors *changes with m*.
+
+## The complete difficulty map (every natural route, with its specific obstruction)
+| approach | why it fails |
+|---|---|
+| Uniform construction / m→m+1 induction | survivor structure changes with m; new cycle families appear |
+| Monovariant / Lyapunov (any low degree) | none exists (LP-infeasible through degree 2; non-monotone) |
+| Modular / p-adic invariant | none separates basin from cycles (moduli 2–300) |
+| Union bound / Lovász Local Lemma on cycles | dominant cycle alone kills ~67% — far too dense |
+| Structural characterization of survivors | the characterizing property shifts with m |
+
+**Common root cause:** the problem has **no m-uniform structure**. Universal rules exist abundantly
+(count grows 3K→18M→250M) but their *characterization* changes at every m, which simultaneously
+defeats construction, induction, local/probabilistic bounds, and fixed structural invariants.
+
+## What a proof would therefore need
+A genuinely **non-constructive, non-uniform existence argument** — one that shows the universal
+count is ≥ 1 (it is in fact growing) *without* characterizing or constructing the survivors and
+*without* a uniform structural property. Candidates: a second-moment / variance-controlled
+probabilistic argument on the universal-count random variable; or an asymptotic/analytic argument
+treating m as a continuous parameter. Both are research-grade and beyond what the present
+computational program can settle.
+
+## Honest final status of the all-m question
+- **Existence: robustly supported** (explicit witnesses to m=5; universal count growing
+  super-exponentially).
+- **Proof: open**, and now with a *complete map of why every standard technique fails* — which is
+  itself the main deliverable of this proof effort. The remaining route (non-uniform counting
+  existence) needs a new mathematical idea, not more computation.
