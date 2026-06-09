@@ -4,7 +4,7 @@ author: "Clay Elmore"
 date: "2026"
 ---
 
-## 1. Introduction
+## Introduction
 
 In 1949 Kaprekar noticed that subtracting the ascending digit arrangement of a four-digit number from its descending arrangement, and repeating, sends every input other than the repdigits to 6174 within seven steps [Kaprekar 1955]. At three digits the same procedure reaches 495 [Trigg 1974]; at five it reaches nothing, the orbits settling into cycles instead [Prichett 1981]. These three facts are usually presented as a numerical curiosity of base ten. They are better read as three data points about a single map, and the map is one point in a large family.
 
@@ -14,7 +14,7 @@ This paper organizes that answer. Every integer fixed by some generalized Kaprek
 
 We make the levels precise in Section 3 and populate them in Sections 4 through 7. The two organizing invariants, defined next, are the rank of a map and the rank it exhibits at a given fixed point; the gap between them is what separates degenerate universality from the real thing.
 
-## 2. Rules and coefficients
+## Rules and coefficients
 
 Throughout, $d \geq 2$ is a fixed digit length and integers are padded to $d$ digits with leading zeros. For an integer $n$ write $\mathrm{sort}_\downarrow(n) = (s_0, s_1, \dots, s_{d-1})$ for its digits in descending order, $s_0 \geq s_1 \geq \cdots \geq s_{d-1}$.
 
@@ -40,7 +40,7 @@ Always $\mathrm{sv}_F(K) \leq \mathrm{sv}(K)$, with equality exactly when $F$ ha
 
 Repdigits map to zero under every rule and are excluded throughout, as are the near-repdigit degeneracies standard in the literature.
 
-## 3. The hierarchy
+## The hierarchy
 
 Six conditions on a fixed point $F$, each strictly stronger than the last, organize the rest of the paper. We state them first and inhabit them afterward.
 
@@ -67,7 +67,7 @@ The levels are nested: L4 implies L3's universality with the rank condition stre
 | L4 | universal, $\mathrm{sv}_F = d$ | $6174$ | 6 |
 | L5 | full universal at infinitely many $d$ | $60714$; the $\{1,4,6,7\}^m$ family | 6–7 |
 
-## 4. Bare fixed points and attractors
+## Bare fixed points and attractors
 
 A fixed point need not pull anything toward itself. The cleanest illustration is an infinite family that looks like a generalization of 6174 and behaves like nothing of the sort.
 
@@ -88,7 +88,7 @@ At $m = 2$ the rule acts as two copies of the classical four-digit map on the ev
 
 Between the bare points and the universal ones lies the generic case (L2): a fixed point with a positive but incomplete basin. These are abundant. A search of the $63{,}063{,}000$ arrangements of $M_4$ at $d = 16$ turns up fixed points at every basin fraction from a handful of multisets up to $99.9\%$, the overwhelming majority of them partial. Partiality is the default; universality is the exception the rest of the paper is about.
 
-## 5. Degenerate universals
+## Degenerate universals
 
 The smallest universal fixed points are universal for a reason that does not survive inspection: the rule fixing them acts in fewer dimensions than its length advertises.
 
@@ -98,7 +98,7 @@ At $d = 3$ the classical map has coefficient vector $(99, 0, -99)$. Writing the 
 
 The three-digit constants are the prototypes. Their universality is real — every input does reach them — but it is the universality of a rank-two map embedded in three coordinates, and the embedding is what lets them recur at larger lengths without acquiring new structure. A degenerate universal at length $d$ extends to $d + 1$ by padding with a coordinate the rule ignores; the extension fixes the same number for the same reason. This stability across length is not transcendence. It is the absence of dimensional content, and Definition 2.3 is what tells the two apart: a degenerate universal has $\mathrm{sv}_F < d$ at every length where it appears, while the objects of the next two sections have $\mathrm{sv}_F = d$.
 
-## 6. Full universals and transcendence by zero-padding
+## Full universals and transcendence by zero-padding
 
 Imposing $\mathrm{sv}_F = d$ removes the embedded low-rank solutions and leaves the fixed points that use their full length.
 
@@ -117,13 +117,13 @@ The count is not the point; the existence of full universals at $d = 5$, where t
 
 Among the thirty-three at $d = 5$, one is distinguished by what happens above it. Write $60714$ for the fixed point of the rule with coefficient vector $(9900, 9, 90, -9000, -999)$.
 
-**Theorem 6.1 (zero-padding transcendence).** *There is an explicit family of full-variable rules, one at each $d \geq 5$, related by a coefficient-preserving lifting, under which $60714$ is a universal fixed point at every $d \geq 5$.*
+**Theorem 6.1 (zero-padding transcendence).** *An explicit family of full-variable rules, one at each $d \geq 5$ and related by a coefficient-preserving lifting, fixes $60714$ at every length. Under it $60714$ is universal at $d = 5$ and $d = 6$, and universal on $A_d \setminus E_d$ at every $d \geq 7$, where $E_d$ is a structurally characterized escape class whose orbits collapse to $0$ — exactly as the classical map's escape inputs collapse at $d = 3, 4$. The proof is in Appendix D.*
 
 The proof is by a zero-padding lifting argument; we recall only the mechanism here, because the mechanism is what the next section lacks. The lifting appends a zero-sum pair of coefficients at the top two positions, padding $F$ with two trailing zeros. The padded zeros form an absorbing set: once an orbit's sorted form ends in two zeros, the rule acts on the remaining digits as the rule two lengths down, and the question reduces. Two facts close the argument — that this absorbing set is invariant, and that every orbit reaches it in a bounded number of steps — and the second is established by a digit-counting argument that turns on the appended pair producing zeros. The zeros are not incidental. They are the structure that makes the induction run.
 
 By contrast $6174$ itself is transcendent only intermittently along this axis: it is universal at $d = 4$ and again at $d = 7$, under a zero-sum lifting, but not at $d = 5$ or $d = 6$. The cross-dimensional behavior of a fixed point is a property of the lifting available to it, and 60714 is the integer for which the zero-padding lifting succeeds uniformly.
 
-## 7. Transcendence by duplication
+## Transcendence by duplication
 
 Zero-padding is one way to raise the dimension of a fixed point. Duplicating its digits is another, and it leads to the family of Section 4 — but to the universal members, not the bare ones.
 
@@ -154,7 +154,7 @@ What does hold uniformly is abundance. The number of universal rules, estimated 
 
 The evidence is the growth of Result 7.1 and the witness count. What is missing is any of the structures that prove such statements — a uniform construction, an inductive lifting, an invariant separating universal rules from the rest — and the next section locates why none has been found.
 
-## 8. The base case has no conceptual certificate
+## The base case has no conceptual certificate
 
 The multiplicity conjecture asks for convergence at every length in a family whose first member is the classical four-digit map. One would prove it by exhibiting a mechanism at $d = 4$ and lifting it. The obstruction is that the four-digit map has no such mechanism to lift.
 
@@ -189,6 +189,75 @@ Fix a degree bound $D$ and expand $\Phi = \sum_{i+j \leq D} w_{ij}\,p^i q^j$. Ea
 **Proposition 8.1.** *This linear program is infeasible for $D = 2, 3, 4$; no polynomial Lyapunov function of degree at most four certifies $(\ast)$.*
 
 Infeasibility of a rational linear program is itself a finite, exact certificate — a nonnegative combination of the constraints summing to the contradiction $0 \leq -1$ exists by Farkas's lemma, and is verifiable in integer arithmetic independent of any floating-point solver. At $D = 9$ the program becomes feasible, but vacuously: the monomials of degree $\leq 9$ number $\binom{11}{2} = 55 > 54 = |\Delta|$, so they span the full space of real functions on $\Delta$, and one may take $\Phi$ to interpolate the reaching time $\rho(p,q) = \min\{k : G^k(p,q) = (6,2)\}$. This $\rho$ decreases by exactly one along every step by its definition and so satisfies $(\ast)$ — but it certifies convergence of *any* finite map whose functional graph is a tree rooted at its fixed point, encoding the conclusion rather than explaining it. The content of Proposition 8.1 is the gap between degree four and this interpolation threshold: no certificate of bounded complexity below it exists, which is why no mechanism at $d = 4$ presents itself for lifting.
+
+## Full universals at length $d \leq 6$
+
+The census of Section 6 rests on an exhaustive classification. At each length $d \leq 6$ every full-variable rule — every pair $(\pi, \sigma)$ whose coefficient vector has no zero entry — is iterated from every admissible digit multiset, and a fixed point is recorded as universal when its basin is all of $A_d$. A rule depends only on the sorted digit vector, so the search runs over multisets rather than integers, and that is what keeps $d = 6$ in reach. The number of full-variable rules is $d!\,D_d$ with $D_d$ the derangement count ($216$, $5{,}280$, $190{,}800$ at $d = 4, 5, 6$), and the number of admissible multisets is $\binom{d+9}{9}$ less the ten repdigits and the ninety near-repdigits ($615$, $1{,}902$, $4{,}905$ at $d = 4, 5, 6$).
+
+**Theorem C.1.** *The numbers of universal full-variable fixed points at $d = 3, 4, 5, 6$ are $0, 4, 33, 506$. At $d = 4$ they are $1746, 2538, 5382, 6174$, splitting into the anagram clusters $\{1,4,6,7\}$ ($6174, 1746$) and $\{2,3,5,8\}$ ($2538, 5382$); all four have digit sum $\equiv 0 \pmod 9$.*
+
+**Proof.** Exhaustive enumeration. At $d = 3$ the twelve full-variable rules each leave some admissible input in a cycle or at a non-universal fixed point, so none has full basin — the genuine three-digit universals $45, 450, 495$ are not full-variable, their rules reading only two of the three positions ($\mathrm{sv} = 2$). At $d = 4, 5, 6$ each full-variable rule is iterated against every admissible multiset and basin coverage of $A_d$ is checked directly; the universal fixed points are those with full basin. The counts are as stated. $\qquad\blacksquare$
+
+**Theorem C.2 (cross-dimensional selection).** *Of the $33$ universal full-variable fixed points at $d = 5$, exactly one — $60714$ — is again a universal full-variable fixed point under some rule at $d = 6$. The other $32$ are dimension-locked: no full-variable rule at $d = 6$ is universal for any of them.*
+
+**Proof.** For each of the $33$ fixed points $F$, enumerate the full-variable rules at $d = 6$ that fix the zero-padded $F$ and test each for universality. For $32$ of them either no full-variable rule fixes the padded form (algebraic obstruction) or every rule that does has basin below the whole of $A_6$ (dynamic obstruction). For $F = 60714$ exactly two rules at $d = 6$ are universal, and they form a sign-flip pair. $\qquad\blacksquare$
+
+This selection is what singles out $60714$: it is chosen not for its digits but as the unique survivor of the $d = 5 \to d = 6$ test, and the next appendix shows the survivor extends to every length.
+
+## The zero-padding transcendence of $60714$
+
+This appendix proves Theorem 6.1. Throughout, $F$ is a universal fixed point at a native length $d_F$ with a universal rule of coefficient vector $c^{(d_F)}$, and $N = \{i : f_i \neq 0\}$ is the set of nonzero-digit positions of $F$'s sorted form.
+
+**Definition D.1.** A rule at length $d > d_F$ with coefficient vector $\tilde c$ is a *coefficient-preserving lifting* of the native rule if $\tilde c_i = c_i^{(d_F)}$ for every $i \in N$ — the coefficients at $F$'s nonzero-digit positions are copied verbatim.
+
+**Proposition D.2 (fixed-point preservation).** *A coefficient-preserving lifting fixes $F$ zero-padded to $d$ digits.*
+
+**Proof.** The sorted form of the padded $F$ is $f$ followed by $d - d_F$ zeros. In $\bigl|\sum_i \tilde c_i f_i\bigr|$ every term with $i \notin N$ multiplies a zero digit, so only the $N$-terms survive, and there $\tilde c_i = c_i^{(d_F)}$. The sum is therefore $\bigl|\sum_{i \in N} c_i^{(d_F)} f_i\bigr| = K^{(d_F)}(F) = F$. $\qquad\blacksquare$
+
+The fixed-point equation is thus free: all content of a lifting lives at $F$'s zero-digit positions, where it cannot disturb $K(F) = F$. What is not free is universality, and that is the rest of the appendix.
+
+**The two ladders.** At $d_F = 5$ the native rule for $60714$ has $c^{(5)} = (9900, 9, 90, -9000, -999)$ and sorted form $(7,6,4,1,0)$, so $N = \{0,1,2,3\}$ with the one zero at position $4$. The lifting appends, two positions at a time, a *zero-sum pair* $(+9\cdot 10^{d},\, -9\cdot 10^{d})$ at the two new top positions, padding $F$ with two further zeros. This yields an odd ladder ($d = 5, 7, 9, \dots$) rooted at $c^{(5)}$ and an even ladder ($d = 6, 8, \dots$) rooted at the split lifting $c^{(6)} = (9900, 9, 90, -9000, 99000, -99999)$, where the native $-999$ is carried by two coefficients $99000 + (-99999) = -999$ at the two zero positions. By Proposition D.2 every rule on both ladders fixes $60714$.
+
+**Definition D.3.** The *tail-two-zeros set* $T_d \subseteq A_d$ is the admissible inputs whose sorted form ends in two zeros, $s_{d-1} = s_{d-2} = 0$.
+
+**Lemma D.4 (structural closure).** *For $d \geq 7$ on either ladder and every $n \in T_d$ with sorted form $(s_0, \dots, s_{d-3}, 0, 0)$,*
+$$K^{(d)}(n) = K^{(d-2)}\big((s_0, \dots, s_{d-3})\big) \in T_d.$$
+
+**Proof.** The appended pair occupies the last two positions, which carry $s_{d-2} = s_{d-1} = 0$, so it contributes nothing and $K^{(d)}(n) = \bigl|\sum_{i=0}^{d-3} c_i^{(d-2)} s_i\bigr| = K^{(d-2)}\big((s_0,\dots,s_{d-3})\big)$. The output of a rule at $d-2$ is below $10^{d-2}$, hence has at most $d-2$ digits; padded to $d$ digits it carries at least two leading zeros, which sort to the tail, so the image lies in $T_d$. $\qquad\blacksquare$
+
+The proof uses only the zero-sum pair structure and holds for any such lifting. With closure in hand the theorem reduces to one dynamical fact.
+
+**Lemma D.5 (bounded reaching time).** *For $d \geq 7$ on either ladder, every admissible $n \in A_d \setminus E_d$ reaches $T_d$ in a bounded number of steps, with $E_d$ the escape class defined below.*
+
+Granting Lemmas D.4 and D.5, Theorem 6.1 follows by induction in steps of two along each ladder. The roots $d = 5, 6$ are universal by Appendix C. For $d \geq 7$, an orbit reaches $T_d$ by Lemma D.5, and there it acts as the rule at $d-2$ by Lemma D.4, which reaches $60714$ by induction.
+
+**Reaching time: the algebra.** Split the output into the *core* — the five native positions — plus the appended pairs, writing $\mathrm{core}(s) = 9900 s_0 + 9 s_1 + 90 s_2 - 9000 s_3 - 999 s_4$.
+
+**Lemma D.6 (core bounds).** *For every sorted-descending $s$, $\,0 \leq \mathrm{core}(s) \leq 89{,}991 < 10^5$.*
+
+**Proof.** Upper bound: the negative terms are $\leq 0$, so $\mathrm{core}(s) \leq 9900\cdot 9 + 9\cdot 9 + 90\cdot 9 = 89{,}991$. Lower bound, by cases on $(s_3, s_4)$. If $s_3 = s_4 = 0$, the core is a sum of non-negative terms. If $s_3 \geq 1,\ s_4 = 0$, then $\mathrm{core}(s) = 9000(s_0 - s_3) + 900 s_0 + 9 s_1 + 90 s_2 \geq 0$. If $s_3, s_4 \geq 1$, apply $s_2 \geq s_3$, then $s_1 \geq s_4$, then $s_4 \leq s_3 \leq s_0$:
+$$\mathrm{core}(s) \geq 9900 s_0 + 90 s_3 + 9 s_4 - 9000 s_3 - 999 s_4 \geq 9900 s_0 - 8910 s_3 - 990 s_4 \geq 9900(s_0 - s_3) \geq 0.$$
+The remaining case $s_3 = 0,\ s_4 \geq 1$ is excluded by sorting. $\qquad\blacksquare$
+
+Each appended pair $k$ contributes $p_k \delta_k$ with $p_k = 9\cdot 10^{3+2k}$ and $\delta_k = s_{3+2k} - s_{4+2k} \in \{0,\dots,9\}$.
+
+**Lemma D.7 (cliff-sum bound).** *$\sum_{k=1}^{M} \delta_k \leq 9$, where $M$ is the number of appended pairs.*
+
+**Proof.** The $\delta_k$ are disjoint non-negative adjacent differences within the sorted sequence, so their sum is at most the telescoping total $s_3 - s_{d-1} \leq 9$. $\qquad\blacksquare$
+
+By Lemma D.6 the core is non-negative and below $10^5$, so the argument of the absolute value is non-negative and
+$$K^{(d)}(n) = \mathrm{core}(s) + \sum_{k=1}^{M} 9 \cdot 10^{3+2k}\, \delta_k.$$
+Read off the decimal blocks: a pair with $\delta_k = 0$ writes two zero digits, $\delta_k = 1$ writes one, $\delta_k \geq 2$ none. Since $\sum_k \delta_k \leq 9$, at most nine of the $M$ blocks fail to contribute a zero, so the output carries at least $2M - 9$ zero digits in the block region. On the odd ladder at $d \geq 15$ (so $M \geq 5$) this leaves at least one block-region zero, which together with a zero forced by the sub-$10^5$ core gives the two trailing zeros of $T_d$ — one-step closure. The even ladder gives the same conclusion within two steps at $d \geq 16$. The finitely many lower lengths are closed by enumeration.
+
+**Proposition D.8 (finite-state verification).** *For each $d \in \{7, 8, \dots, 16\}$ and each ladder's rule, every admissible input reaches $T_d$ within at most eight steps.*
+
+**Proof.** Direct enumeration over all admissible multisets at each $d$ — from $11{,}340$ at $d = 7$ to $2{,}042{,}875$ at $d = 16$, about twenty-five million in all — iterating until two trailing zeros appear. The maximum step count is eight at $d = 7$ and falls to one by $d = 15$, with no exceptions. $\qquad\blacksquare$
+
+Proposition D.8 and the algebraic argument together prove Lemma D.5.
+
+**The escape class.** The reduction is exact except on inputs the rule sends to $0$. The *block-aligned* multisets — constant on the native block and on each appended pair — die in one step, since the native coefficients sum to zero and each pair sees equal digits; call this set $B_d$. The escape class $E_d$ is the backward orbit of $B_d$ under the rule. It is empty at $d = 5, 6$, and at $d \geq 7$ its step-one part $B_d \cap A_d$ has the closed-form size $\binom{9+k}{k} - 10$ with $k$ the number of blocks ($45$ at $d = 7, 8$, matching exhaustive enumeration). Every $E_d$ orbit reaches $0$, just as the classical map sends its own block-aligned inputs — the repdigits at $d = 3$, the multiples of $1111$ at $d = 4$ — to $0$ rather than to the constant. What is proven is universal convergence on $A_d \setminus E_d$; a bound on $|E_d|$ uniform in $d$ is not, and is the one part of the picture left open.
+
+**Conclusion.** Lemmas D.4–D.7 and Proposition D.8 establish, with no conjectural step, that $60714$ is universal at $d = 5, 6$ and universal on $A_d \setminus E_d$ at every $d \geq 7$ under the lifting family. This is Theorem 6.1. The zeros do the work: they are the absorbing structure on which the length drops by two. The multiplicity chain of Section 7, having no zeros, has nothing to absorb into — which is the contrast Section 8 turns on.
 
 ## Acknowledgments {.unnumbered}
 
