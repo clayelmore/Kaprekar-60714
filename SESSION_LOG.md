@@ -2200,3 +2200,14 @@ For history before this session log existed, see:
 - Memory summaries in any new chat's `userMemories` block — these capture the rough arc but lag actual state.
 
 The pivot from "54 / dimension-locked" to "60714 / dimension-transcendent" happened in late April 2026 across multiple sessions. The current paper is fundamentally a different paper than what `handoff_to_next_claude.md` describes.
+
+## 2026-06-09 (late): sign-coherence discovery — the fold absorbing structure
+- Slice decomposition of 1746-folds: K = |Σ 10^{4(k−1−j)} V(slice_j)|, no carries.
+- Discriminator (full enum): fold₂ coherent ≤3 steps (24,210), fold₄ ≤5 steps (2,042,875, 0 fail);
+  fold₃ has never-coherent orbits → incoherent SECOND FIXED POINT 655444440000, signs (+,+,−).
+- T* (max invariant coherent subset, fold₂): 15,524 states, contains FP, entry ≤6 — both
+  60714-proof lemmas hold.
+- PAIR QUOTIENT: coherent dynamics factors exactly through (|V₀|,|V₁|): 1,446 reachable pairs,
+  1,198 good, funnel to unique fixed pair (1746,1746), no cycles — the d=4→54-state gap
+  reduction reproduced one level up. Recorded in multiplicity_chain/PROOF.md.
+- Tower element (c8)⊗2 at d=16: universality + super-coherence quotient running in background.

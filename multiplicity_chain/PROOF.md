@@ -719,3 +719,56 @@ base case's lack of conceptual structure. This is the deepest explanation of why
 This is the honest terminus of the computational + elementary-mathematical program: a precise,
 well-posed frontier problem, with the conjecture robustly supported and the obstruction understood
 at the level of the base case.
+
+---
+
+# 2026-06-09 (evening): The absorbing structure exists — sign-coherence and the pair quotient
+
+The "crisp open problem" above asked for an absorbing filtration without zeros. Today's session
+found its candidate, and the evidence is strong enough to reorganize the proof program around it.
+
+## The slice decomposition
+For the k-fold of the 1746 rule (base coefficients c = (9, −900, 900, −9), base form
+V(t) = 9t₀ − 900t₁ + 900t₂ − 9t₃ on a sorted 4-tuple), the linear form splits exactly:
+    K(x) = | Σ_j 10^{4(k−1−j)} · V(slice_j) |,   slice_j = (x_j, x_{k+j}, x_{2k+j}, x_{3k+j}).
+Each slice is sorted-descending, |V| ≤ 8100 < 10⁴, so the slice values occupy disjoint decimal
+blocks — no carries. Call a state SIGN-COHERENT when all nonzero slice values share a sign.
+
+## Finding 1: sign-coherence discriminates fold survival (verified by full enumeration)
+- fold₂ (d=8, UNIVERSAL): every one of 24,210 admissible states becomes coherent in ≤ 3 steps.
+- fold₄ (d=16, UNIVERSAL): every one of 2,042,875 admissible states coherent in ≤ 5 steps, 0 fail.
+- fold₃ (d=12, FAILS): states exist that NEVER become coherent. Witness (9⁸,5,4,4,4) → falls into
+  655444440000, which is a SECOND FIXED POINT of the 3-fold rule, outside the {1,4,6,7} alphabet,
+  with slice signs (+, +, −). The failure mode of the fold is literally an incoherent fixed point.
+
+## Finding 2: the maximal invariant coherent set T* satisfies both 60714-style lemmas (fold₂)
+T* (largest subset of the coherent states with K(T*) ⊆ T*) has 15,524 of 24,210 states (64.1%),
+contains the fixed point 17461746, and every admissible orbit enters T* within 6 steps.
+Invariance + bounded entry — the exact two-lemma skeleton of the Paper-2 (60714) proof.
+
+## Finding 3 (the structural prize): the coherent dynamics factors through a small pair system
+For every coherent state (zero violations over the full enumeration):
+    image integer = 10⁴|V₀| + |V₁|,  image digit multiset = digits₄(|V₀|) ⊎ digits₄(|V₁|).
+So on coherent states the future depends ONLY on the pair (|V₀|, |V₁|). The reachable pair
+system, closed under transitions, has exactly 1,446 states. 248 eventually exit coherence;
+the 1,198 GOOD pairs (forward orbit never exits) form a FUNNEL: unique fixed pair (1746, 1746),
+no cycles of length > 1. This is the precise analogue, one level up, of the classical d=4
+reduction to the 54-state gap system (p,q) with K = 999p + 90q and funnel to (6,2):
+    d=4 classical:  615 multisets  → 54 gap states     → funnel to (6,2)
+    d=8 fold₂:    24,210 multisets → 1,446 pair states → funnel to (1746,1746)
+T* now has an algebraic characterization: coherent AND pair ∈ the good set of a finite graph.
+
+## What a uniform proof of the dyadic tower now requires
+1. Entry lemma, uniform in tower level: every admissible state becomes coherent in O(1) steps
+   (verified: 3 at k=2, 5 at k=4; tower element at d=16 in progress).
+2. Funnel lemma, uniform in level: the pair quotient at level j+1 is built from level-j values
+   (V₈ of super-slices at d=16 = the fold₂ form — the recursion is syntactic); prove the good-pair
+   funnel inductively up the tower.
+The remaining gap to a theorem is replacing the two finite checks by m-uniform arguments. This is
+the first time the duplication chain has had a concrete absorbing structure rather than a missing idea.
+
+Caveat (honesty): prime multiplicities are NOT addressed — folding reaches only composite m from
+proper divisors; m = 7, 11, 13 still need independent witnesses. The all-m conjecture in full
+remains open even if the dyadic tower is proven.
+
+Scripts: /tmp/kap60714/proofs_runs/ (tower_d16.py and the inline session transcripts).
