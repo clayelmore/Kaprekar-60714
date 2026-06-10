@@ -811,3 +811,9 @@ this is the remaining mathematical content. Both quotient systems are committed 
 
 Scripts and raw results: proofs_runs/tower_d16.py, tower_d16_results.json,
 fold5_d20_sample.py, fold5_sample_results.json.
+
+Convention note: the quotient counts above (1,446 pairs / 1,198 good; 235,194 / 184,201) are over
+admissible (non-repdigit, non-near-repdigit) starting states. In the paper's duplication-chain
+convention (non-repdigit only) the near-repdigit states — all coherent at step 0, all convergent —
+contribute 18 further initial pairs at level 1, giving 1,464 / 1,202 (level 1) and
+235,212 / 184,219 (level 2). Funnels and fixed pairs unchanged. The paper quotes the latter.
