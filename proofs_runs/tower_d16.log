@@ -1,0 +1,7 @@
+A done {'states': 2042875, 'max_entry': 5, 'never': 0, 'sec': 16}
+B done {'violations': 0, 'pairs': 173166, 'good': 119859, 'fixed': [(1746, 1746, 1746, 1746)], 'long_cycles': 0, 'sec': 35}
+tower fixes FP? True
+C done {'states': 2042875, 'failures': 0, 'sample_fail': '[]', 'sec': 78}
+D done {'max_entry': 3, 'never': 0, 'sec': 11}
+E done {'violations': 0, 'pairs': 235194, 'good': 184201, 'fixed': [(17461746, 17461746)], 'long_cycles': 0, 'sec': 30}
+ALL DONE 170 sec total
