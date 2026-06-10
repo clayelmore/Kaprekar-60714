@@ -122,6 +122,8 @@ Fix \(d \geq 2\). For an integer \(n\) with at most \(d\) digits, write \(\mathr
 \[K_{\pi,\sigma}(n) \;=\; \bigl|\, \pi \cdot \mathrm{sort}_\downarrow(n) \;-\; \sigma \cdot \mathrm{sort}_\downarrow(n) \,\bigr|.\]
 \emph{The classical Kaprekar map is the pair (identity, reversal).}
 
+A rule is conveniently displayed by labelling the sorted positions \(a = s_0,\ b = s_1,\ c = s_2, \dots\) and writing the two rearrangements as letter-strings. The classical map at \(d = 4\) is \(\mathtt{abcd} - \mathtt{dcba}\): on the digits of \(6174\), sorted to \((a,b,c,d) = (7,6,4,1)\), it computes \(7641 - 1467 = 6174\). Rules quoted in the appendices use this notation.
+
 Since the rule reads \(n\) only through its sorted digits, orbits live on digit multisets, and all state counts below are multiset counts. Expanding the difference,
 \[K_{\pi,\sigma}(n) = \Bigl|\, \sum_{i=0}^{d-1} c_i\, s_i \,\Bigr|, \qquad c_i = 10^{\,d-1-\pi^{-1}(i)} - 10^{\,d-1-\sigma^{-1}(i)}, \qquad \sum_i c_i = 0.\]
 The coefficient vector \(c\) determines the dynamics completely and is how rules are specified below; note that \(c\) and \(-c\) induce the same map, so rules come in sign pairs with identical dynamics.
@@ -464,6 +466,39 @@ The twelve-digit universal rule (Computed 5.6, \(m = 3\); re-verified here over 
 and fixed point \(666141417774\); it is pair-symmetric and is not itself a fold. Its \(2\)-fold (Definition 5.1, \(d_0 = 12\), \(k = 2\)) is the \(d = 24\) rule of Computed 6.5. The \(k\)-folds of the \(1746\) rule are fully determined by Definition 5.1 from \(c = (9, -900, 900, -9)\): rank \(5i + j\) of the \(5\)-fold at \(d = 20\) carries \(c_i \cdot 10^{\,16 - 4j}\), giving
 \[\bigl(9\cdot 10^{16}, 9\cdot 10^{12}, 9\cdot 10^{8}, 9\cdot 10^{4}, 9,\ -900\cdot 10^{16}, \dots, -900,\ 900\cdot 10^{16}, \dots, 900,\ -9\cdot 10^{16}, \dots, -9\bigr),\]
 with fixed point \(1746\) written five times. The iterated dyadic tower at \(d = 32\) is \(\bigl((c^{\otimes 2})^{\otimes 2}\bigr)^{\otimes 2}\), which differs from \(c^{\otimes 8}\) in the within-block assignment of equal-magnitude coefficients to ranks; the former passes all feasible universality tests at \(d=32\), the latter fails the alphabet test (Computed 6.3).
+
+In the letter notation of Section 2 the folds are visible to the eye. Label the sorted positions \(a, b, c, \dots\); at \(d = 4m\) the ranks fall into four blocks of \(m\) equal digits, and copy \(j\) of base rank \(i\) is the \(j\)-th letter of block \(i\). The \(1746\) rule and its first two surviving folds read:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedleft\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedleft
+\(m\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedleft
+\(d\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\pi\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\sigma\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(\pi\!\cdot\!s - \sigma\!\cdot\!s\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1 & 4 & \texttt{cbad} & \texttt{bcda} & \(4671 - 6417\) \\
+2 & 8 & \texttt{ecag\ fdbh} & \texttt{cega\ dfhb} & \(46714671 - 64176417\) \\
+5 & 20 & \texttt{kfap\ lgbq\ mhcr\ nids\ ojet} & \texttt{fkpa\ glqb\ hmrc\ insd\ jote} & \(4671\cdots - 6417\cdots\) \\
+\end{longtable}
+}
+
+(Spaces are cosmetic.) Each four-letter group is the base pattern \(\mathtt{cbad}\) (respectively \(\mathtt{bcda}\)) written in the letters of successive copies, so the two rearrangements evaluate to \(4671\) and \(6417\) repeated \(m\) times, and the subtraction is the base subtraction \(4671 - 6417 = -1746\) carried out blockwise: the pattern \(\mathtt{cbad}\,\mathtt{cbad}\cdots - \mathtt{bcda}\,\mathtt{bcda}\cdots\), in exact analogy with the classical \(\mathtt{abcd} - \mathtt{dcba}\). Every row was machine-checked to fix \(1746\) written \(m\) times (Computed). The same notation for the \(60714\) zero-padding ladder appears in the final appendix; there the rungs grow by prepended letter-pairs instead of repeated blocks, which is the two liftings' difference made typographic.
 
 \section{The reaching-time bound in full}\label{the-reaching-time-bound-in-full}
 
