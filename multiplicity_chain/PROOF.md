@@ -772,3 +772,42 @@ proper divisors; m = 7, 11, 13 still need independent witnesses. The all-m conje
 remains open even if the dyadic tower is proven.
 
 Scripts: /tmp/kap60714/proofs_runs/ (tower_d16.py and the inline session transcripts).
+
+## Addendum (same evening): the tower recursion verified at level 2 — full results
+
+All background passes complete. The dyadic tower (1746 under iterated doubling) now has, at both
+verifiable levels, the complete two-lemma structure plus exact self-similar quotients:
+
+| level | d | rule | universal? | entry to pair-coherence | quotient pairs | good | funnel fixed pair | cycles |
+|---|---|---|---|---|---|---|---|---|
+| 1 | 8  | c^⊗2       | YES (24,210, complete)    | ≤ 3 | 1,446   | 1,198   | (1746, 1746)         | none |
+| 2 | 16 | (c^⊗2)^⊗2  | YES (2,042,875, complete) | ≤ 3 | 235,194 | 184,201 | (17461746, 17461746) | none |
+
+- NEW: the tower element (c^⊗2)^⊗2 at d=16 is universal by complete enumeration (previously only
+  the flat fold c^⊗4 had been checked; both are universal).
+- Factorization exact at both levels (0 violations): on super-coherent states the dynamics factors
+  through pairs of V-values of the previous level's form; image = 10^{d/2}|V_hi| + |V_lo|,
+  image digit multiset = digits(|V_hi|) ⊎ digits(|V_lo|).
+- ENTRY IS LEVEL-CONSTANT SO FAR: ≤3 steps at level 1 and level 2 (the flat 4-slice version needs
+  ≤5; the nested pair version needs ≤3 — the tower's pairing is the right decomposition).
+- Self-similar funnel: the fixed pair at level j is (F_{j−1}, F_{j−1}), the previous level's fixed
+  point doubled. No cycles at either level.
+- fold₅ at d=20 (sampled, 300,000 admissible): coherence entry ≤ 4, zero failures — the
+  discriminator law's third data point.
+- Negative probe: no simple algebraic separation of good vs bad pairs at level 1 (overlapping
+  ranges, x≥y ~50/50 both classes; exits cluster at zero-heavy images). Consistent with the
+  certificate-cost theorem: each level's funnel boundary is intricate; the uniformity must come
+  from the LEVEL RECURSION, not from a per-level formula.
+
+### The theorem this points at, and what is missing
+Conjecture (dyadic tower, sharpened): for every j ≥ 1 the tower rule at d = 2^j·4 is universal
+for 1746 repeated 2^j times. A proof now requires exactly two m-uniform lemmas:
+  (E) Entry: every admissible state becomes super-coherent within ≤ C steps (C = 3 observed).
+  (F) Funnel: the level-j pair quotient has unique fixed pair and no cycles.
+(E) is a carry/block argument one level up from Paper 2's Lemma 5.2 and looks genuinely
+attackable. (F) is verified at j = 1, 2 by enumeration; the quotient grows (1,446 → 235,194),
+so j ≥ 3 needs a structural argument relating the level-(j+1) pair system to level-j dynamics —
+this is the remaining mathematical content. Both quotient systems are committed for study.
+
+Scripts and raw results: proofs_runs/tower_d16.py, tower_d16_results.json,
+fold5_d20_sample.py, fold5_sample_results.json.

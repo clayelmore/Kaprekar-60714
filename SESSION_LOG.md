@@ -2211,3 +2211,8 @@ The pivot from "54 / dimension-locked" to "60714 / dimension-transcendent" happe
   1,198 good, funnel to unique fixed pair (1746,1746), no cycles — the d=4→54-state gap
   reduction reproduced one level up. Recorded in multiplicity_chain/PROOF.md.
 - Tower element (c8)⊗2 at d=16: universality + super-coherence quotient running in background.
+- TOWER RECURSION VERIFIED AT LEVEL 2: (c⊗2)⊗2 at d=16 UNIVERSAL by complete enumeration (NEW);
+  super-coherence entry ≤3 (level-constant!); pair quotient 235,194 states, funnel to
+  (17461746,17461746), no cycles, 0 factorization violations. fold₅ d=20 sampled: entry ≤4,
+  0 fail. No simple good/bad pair separation — uniformity must come from the level recursion.
+  Sharpened dyadic-tower conjecture + the two missing lemmas (E),(F) recorded in PROOF.md.
