@@ -6,7 +6,7 @@ abstract: |
   Sorting the digits of a $d$-digit integer and subtracting one rearrangement from another defines a family of $d!\,(d!-1)$ maps at each length, of which Kaprekar's descending-minus-ascending routine is one. We study the integers these maps fix, with the emphasis on what can be proved. A finite-state criterion reduces universality — every admissible input iterates to the fixed point — to the conjunction of fixed-point uniqueness and acyclicity, and an exhaustive census locates all universal full-variable fixed points at lengths $d \leq 6$: there are $0$, $4$, $33$, and $506$ of them, and exactly one of the thirty-three at $d=5$, the integer $60714$, is again universal at $d=6$. Two liftings raise universality across dimension. Zero-padding extends $60714$ to every length $d \geq 5$, with a proof that runs on an absorbing set built from its zero digits. Digit duplication, formalized here as a folding operation on rules, governs the multisets $\{1,4,6,7\}^m$: folding provably preserves the fixed-point equation at every multiplicity, and complete enumerations show it preserves universality often — all eight universal rules at $d=4$ double universally to $d=8$, and $144$ of the $312$ universal pair-symmetric rules at $d=8$ double universally to $d=16$. The folds of a single four-digit rule, the one fixing $1746$, give universal fixed points at multiplicities $2$, $4$, and $5$, the last a complete enumeration of all $10{,}014{,}995$ multisets at $d=20$, where only proxy evidence existed before; a folded twelve-digit rule is universal at $d=24$ ($38{,}567{,}090$ multisets). Whether $\{1,4,6,7\}^m$ carries a universal fixed point at every $m$ remains open; we prove that the obstruction begins at the base of the chain, where the classical four-digit convergence admits no polynomial Lyapunov function of degree six or less — though, correcting a natural first reading, one of degree exactly seven exists. The paper closes with a map of the proof strategies that fail, and why.
 ---
 
-## 1. Introduction
+## Introduction
 
 Kaprekar observed in 1949 that the map which sorts the digits of a four-digit integer into descending and ascending order and subtracts sends every input with at least two distinct digits to $6174$, in at most seven steps [Kaprekar 1955]. The three-digit analogue converges to $495$ [Trigg 1974]; the five-digit analogue converges to nothing, every orbit falling into one of three cycles [Prichett 1981]. For seventy-five years these facts have been verified the same way they were discovered, by finite enumeration, and the absence of any other proof is not an accident of neglect. Part of the purpose of this paper is to make that absence precise.
 
@@ -18,7 +18,7 @@ The second phenomenon is *duplication*. The multiset $\{1,4,6,7\}$ of the digits
 
 Throughout, claims carry one of four labels. **Proven** means a mathematical proof appears here. **Computed** means a finite exhaustive enumeration, machine-verified; unless marked otherwise, every such enumeration was re-run independently for this paper (Section 8 details the few exceptions, marked [S], which are taken from the project's computational log). **Evidence** means a claim that passes every feasible test but whose state space exceeds exhaustive reach. **Conjectured** means exactly that.
 
-## 2. Rules, coefficients, and the universality criterion
+## Rules, coefficients, and the universality criterion
 
 Fix $d \geq 2$. For an integer $n$ with at most $d$ digits, write $\mathrm{sort}_\downarrow(n) = (s_0, \dots, s_{d-1})$ for its digits padded to length $d$ and sorted descending. For a permutation $\tau \in S_d$ let $\tau \cdot s$ denote the integer $\sum_k 10^{\,d-1-k} s_{\tau(k)}$.
 
@@ -46,7 +46,7 @@ Everything in the paper passes through one elementary fact.
 
 The two conditions are independent: Section 5 exhibits a rule with two fixed points and a rule with one fixed point plus cycles. The criterion makes universality decidable by finite search and splits its failure into the two modes — a competing fixed point, or a cycle — that recur throughout.
 
-## 3. The spectrum at small lengths
+## The spectrum at small lengths
 
 A fixed point can command anything from nothing to everything. It is useful to fix the scale before populating it.
 
@@ -76,13 +76,15 @@ The count matters less than what sits inside it. The classical map is not full-v
 
 This was verified directly for this paper by intersecting the full $d=5$ and $d=6$ censuses. The selection is the right way to meet $60714$: it is not chosen for its digits, it is the unique survivor of an exhaustive test. The next section shows the survivor goes on forever, and why.
 
-## 4. Lifting by zeros: $60714$ at every length
+## Lifting by zeros: $60714$ at every length
 
-**Theorem 4.1 (zero-padding transcendence).** *(Proven, with a finite-state component as stated below.) There is an explicit family of full-variable rules, one at each $d \geq 5$, related by a coefficient-preserving lifting, under which $60714$ is a fixed point at every $d \geq 5$ (Proven), universal at $d = 5$ and $d = 6$ (Computed, exhaustive), and universal on $A_d \setminus E_d$ at every $d \geq 7$, where $A_d$ is the admissible set and $E_d$ is the escape class of Definition 4.6, whose orbits collapse to $0$. The reaching-time bound underlying the induction is proven algebraically for $d \geq 17$ and closed by complete enumeration for $7 \leq d \leq 16$ (about $25$ million multisets [S]; re-verified here in full at $d = 7, 8$).*
+**Theorem 4.1 (zero-padding transcendence).** *(Proven, with a finite-state component as stated below.) There is an explicit family of full-variable rules, one at each $d \geq 5$, related by a coefficient-preserving lifting, under which $60714$ is a fixed point at every $d \geq 5$ (Proven), universal at $d = 5$ and $d = 6$ (Computed, exhaustive), and universal on $A_d \setminus E_d$ at every $d \geq 7$, where $A_d$ is the admissible set and $E_d$ is the escape class of Definition 4.6, whose orbits collapse to $0$. The reaching-time bound underlying the induction is proven algebraically for odd $d \geq 15$ and even $d \geq 18$ (Appendix E) and closed by complete enumeration for $7 \leq d \leq 16$ — about $25$ million multisets, re-run in full for this paper.*
 
 The construction and the proof skeleton follow; the point of including them is that every step leans on the zeros.
 
-**The ladders.** The native rule has $c^{(5)} = (9900, 9, 90, -9000, -999)$ and acts on sorted form $(7,6,4,1,0)$. For $d \geq 7$ odd, define $c^{(d)}$ by appending to $c^{(d-2)}$ the zero-sum pair $(+9 \cdot 10^{d-2},\, -9\cdot 10^{d-2})$ at the two new bottom ranks. The even ladder is rooted at $c^{(6)} = (9900, 9, 90, -9000, 99000, -99999)$ — the native $-999$ split across the two zero positions, $99000 - 99999 = -999$ — and lifts the same way. Both ladders preserve the four coefficients at $60714$'s nonzero digits verbatim.
+**The ladders.** The native rule has $c^{(5)} = (9900, 9, 90, -9000, -999)$ and acts on sorted form $(7,6,4,1,0)$. For $d \geq 7$ odd, define $c^{(d)}$ by appending to $c^{(d-2)}$ the zero-sum pair $(+9 \cdot 10^{d-2},\, -9\cdot 10^{d-2})$ at the two new bottom ranks. The even ladder lifts the same way from the root
+$$c^{(6)} = (9900,\ 9,\ 90,\ -9000,\ 99000,\ -99999),$$
+the native $-999$ split across the two zero positions, $99000 - 99999 = -999$. Both ladders preserve the four coefficients at $60714$'s nonzero digits verbatim.
 
 **Proposition 4.2 (fixedness is free).** *(Proven.) Every rule on either ladder fixes $60714$.*
 
@@ -102,11 +104,11 @@ $$\mathrm{core}(s) \;\geq\; 9900 s_0 + 9 s_4 + 90 s_3 - 9000 s_3 - 999 s_4 \;=\;
 
 The even ladder's six-coefficient root obeys the same bounds one decimal place higher: expanding $99000 s_4 - 99999 s_5 = -999 s_4 + 99999(s_4 - s_5)$ gives $\mathrm{core}_6(s) = \mathrm{core}(s_0, \dots, s_4) + 99999\,(s_4 - s_5)$, and since $0 \leq s_4 - s_5 \leq 9$, also $0 \leq \mathrm{core}_6(s) \leq 989{,}982 < 10^6$.
 
-**Lemma 4.5 (zeros are produced).** *(Proven.) Each appended pair contributes $9 \cdot 10^{e_k}\, \delta_k$ with $\delta_k \geq 0$ a digit gap and the place $e_k$ two higher than the previous pair's; the $\delta_k$ are disjoint adjacent differences in a sorted string, so $\sum_k \delta_k \leq 9$. By Lemma 4.4 and its even-ladder extension the absolute value is never active and the output decomposes, without carries, into two-digit blocks (the digits of $9\delta_k$) sitting above a five-digit core (odd ladder) or six-digit core (even ladder). A block contributes two zero digits if $\delta_k = 0$, one if $\delta_k = 1$, none if $\delta_k \geq 2$; since $2\,\#\{\delta_k \geq 2\} + \#\{\delta_k = 1\} \leq \sum_k \delta_k \leq 9$, the output has at least $2M - 9$ zeros, $M$ the number of pairs. For $M \geq 6$ — that is, $d \geq 17$ on the odd ladder, $d \geq 18$ on the even — this is at least two zeros: every orbit enters $T_d$ in one step.*
+**Lemma 4.5 (zeros are produced).** *(Proven.) Each appended pair contributes $9 \cdot 10^{e_k}\, \delta_k$ with $\delta_k \geq 0$ a digit gap and the place $e_k$ two higher than the previous pair's; the $\delta_k$ are disjoint adjacent differences in a sorted string, so $\sum_k \delta_k \leq 9$. By Lemma 4.4 and its even-ladder extension the absolute value is never active and the output decomposes, without carries, into two-digit blocks (the digits of $9\delta_k$) sitting above a five-digit core (odd ladder) or six-digit core (even ladder). A block contributes two zero digits if $\delta_k = 0$, one if $\delta_k = 1$, none if $\delta_k \geq 2$; since $2\,\#\{\delta_k \geq 2\} + \#\{\delta_k = 1\} \leq \sum_k \delta_k \leq 9$, the output has at least $2M - 9$ zeros, $M$ the number of pairs. For $M \geq 6$ — that is, $d \geq 17$ on the odd ladder, $d \geq 18$ on the even — this is at least two zeros: every orbit enters $T_d$ in one step. A refined case analysis lowers the odd-ladder threshold to $d \geq 15$; it and the even ladder's full argument are in Appendix E.*
 
-For $7 \leq d \leq 16$ the same conclusion (entry into $T_d$ within at most eight steps) was established by complete enumeration over all admissible multisets [S]; the present paper re-ran the full classification at $d = 7$ ($11{,}340$ multisets) and $d = 8$ ($24{,}210$), confirming it. Induction along each ladder then proves Theorem 4.1: orbits fall into $T_d$, where Lemma 4.3 reduces the length by two, and the roots $d = 5, 6$ are universal by the census.
+For $7 \leq d \leq 16$ the same conclusion (entry into $T_d$ within at most eight steps) holds by complete enumeration over all admissible multisets, every length re-run in full for this paper; the table is in Appendix E. One detail of the induction deserves its own lemma. When Lemma 4.3 drops an orbit to length $d - 2$, the projected multiset can fail admissibility there: a repdigit projection is block-aligned and belongs to the escape class, while a near-repdigit projection recovers admissibility within two further steps (Appendix E, projection lemma). Induction along each ladder then proves Theorem 4.1: orbits fall into $T_d$, where Lemma 4.3 reduces the length by two, the projection lemma hands the reduced orbit to the inductive hypothesis, and the roots $d = 5, 6$ are universal by the census. The ladder rules themselves are written out through $d = 20$, with the $d = 100$ instance, in Appendix F.
 
-**Definition 4.6 (escape class).** The *block-aligned* multisets — constant on the native block and on each appended pair — are sent to $0$ in one step, because the native coefficients sum to zero and each pair sees equal digits. $E_d$ is the backward orbit of this set. At $d = 5, 6$ it is empty (the censuses show full universality there). At $d = 7$ the one-step part is the $45$ multisets $(x^5, y^2)$, $x > y$, and the full classification run for this paper found $|E_7| = 81$ of $11{,}340$ admissible multisets collapsing to $0$ with all other $11{,}259$ reaching $60714$; at $d = 8$, $|E_8| = 137$ of $24{,}210$ (Computed). The classical map has the same structure at its own small lengths — the multiples of $1111$ at $d=4$ collapse to $0$ — so the escape class is a continuation of a classical phenomenon, not a new defect.
+**Definition 4.6 (escape class).** The *block-aligned* multisets — constant on the native block and on each appended pair — are sent to $0$ in one step, because the native coefficients sum to zero and each pair sees equal digits. $E_d$ is the backward orbit of this set. At $d = 5, 6$ it is empty (the censuses show full universality there). At $d = 7$ the one-step part is the $45$ multisets $(x^5, y^2)$, $x > y$, and the full classification run for this paper found $|E_7| = 81$ of $11{,}340$ admissible multisets collapsing to $0$ with all other $11{,}259$ reaching $60714$; at $d = 8$, $|E_8| = 137$ of $24{,}210$ (Computed). The one-step part has a closed form: the admissible block-aligned multisets number $\binom{9+k}{k} - 10$, $k$ the number of blocks, which is $45$ at both $d = 7$ and $d = 8$ — confirmed by direct count of the inputs with $K(n) = 0$ at each (Computed). The classical map has the same structure at its own small lengths — the multiples of $1111$ at $d=4$ collapse to $0$ — so the escape class is a continuation of a classical phenomenon, not a new defect.
 
 **The contrast: $6174$ does not climb.** The classical constant admits the same kind of coefficient-preserving lifting — keep $(999, 90, -90, -999)$ on the nonzero digits of $(7,6,4,1,0,\dots)$, append zero-sum pairs — and it never regains universality.
 
@@ -114,7 +116,7 @@ For $7 \leq d \leq 16$ the same conclusion (entry into $T_d$ within at most eigh
 
 The structural diagnosis is short. $60714$'s native rule lands its largest coefficient, $-999$, on its zero digit: the zero positions, where lifting must do its work, already carry the rule's weight, and the absorbing set of Lemma 4.3 catches the escape candidates. $6174$ has no zero digit at its native length, so its lifts pad with zeros *outside* the native coefficients; the $(X^4, Y^4)$ inputs never meet the absorbing structure and survive as a permanent escape class. Where a fixed point keeps its zeros relative to its coefficients decides its fate across dimension. That is the lesson of the chain that works, and the standing problem of the chain that follows is that it has no zeros at all.
 
-## 5. Lifting by duplication: folding
+## Lifting by duplication: folding
 
 Let $M_m = \{1,4,6,7\}^m$, a multiset of length $d = 4m$ with sorted form $\mathbf{s}_m = (7^m, 6^m, 4^m, 1^m)$. The duplication question asks for universal fixed points with this digit content at every $m$. The right algebraic tool is an operation on rules.
 
@@ -166,7 +168,7 @@ Part (c) reduces the *fixing* question to explicit arithmetic over partitions �
 | 3 | 12 | $293{,}920$ | $666141417774$ | the project's $m=3$ rule, re-verified |
 | 4 | 16 | $2{,}042{,}965$ | $1746174617461746$ | $(9,-900,900,-9)^{\otimes 4}$ |
 | 5 | 20 | $10{,}014{,}995$ | $17461746174617461746$ | $(9,-900,900,-9)^{\otimes 5}$ |
-| 6 | 24 | $38{,}567{,}090$ | $666141417774\,666141417774$ | the $m=3$ rule, $2$-folded |
+| 6 | 24 | $38{,}567{,}090$ | $666141417774$ written twice | the $m=3$ rule, $2$-folded |
 
 *The $d = 20$ row is, to the author's knowledge, the first complete-enumeration universality verification at $m = 5$; the project's previous $m=5$ witness ($14617461774617461746$) rested on a necessary-condition proxy [S]. The $d=24$ row gives a second verified universal arrangement at $m = 6$ alongside the project's $666174141466617777741414$ [S].*
 
@@ -174,9 +176,9 @@ Part (c) reduces the *fixing* question to explicit arithmetic over partitions �
 
 The evidence now includes six consecutive multiplicities with full-basin witnesses, and witness-count estimates that grow like $3\cdot 10^3$, $2 \cdot 10^7$, $3\cdot 10^8$ at $m = 3, 4, 5$ [S, sampling estimates calibrated against the exact $m=3$ enumeration]. What it does not include is any uniform description: the universal arrangements for $m \geq 3$ are scrambled, and the structural features that characterize them at one multiplicity provably fail at the next (Section 7). The table's most interesting column is the last one, and it is the subject of the next section: four of the six witnesses are folds.
 
-## 6. When folding preserves universality
+## When folding preserves universality
 
-Proposition 5.2 transports the fixed point along $m \mapsto km$ for free; it says nothing about the basin off the folded subspace. The experiments reported here measure exactly that. All "universal" verdicts below are complete enumerations; all "fails" verdicts are definitive, because the witness of failure is an admissible input (a multiset over $\{1,4,6,7\}$) that demonstrably does not reach the fixed point.
+Proposition 5.2 transports the fixed point along $m \mapsto km$ for free; it says nothing about the basin off the folded subspace. The experiments reported here measure exactly that. All "universal" verdicts below are complete enumerations; all "fails" verdicts are definitive, because the witness of failure is an admissible input (a multiset over $\{1,4,6,7\}$) that demonstrably does not reach the fixed point. The rules used are written out in Appendix D.
 
 **Computed 6.1 (first doubling: everything survives at $d=4$).** *The $2$-folds of all eight universal full-variable rules at $d = 4$ (Theorem 3.2) are universal at $d = 8$, each verified over all $24{,}300$ multisets. In particular the $2$-fold of the classical rule is the interleaved $m=2$ rule, whose universality is the $m = 2$ row of Computed 5.4. This is a property of the four-digit bases, not a law: the $2$-fold of $60714$'s native five-digit rule fixes $6071460714$ at $d = 10$ with basin $53.34\%$ of the $92{,}368$ non-repdigit multisets — the chain that climbs perfectly by zero-padding does not climb by doubling.*
 
@@ -214,7 +216,7 @@ This is the sharpest available subconjecture of Conjecture 5.7: a single explici
 
 A remark on what folding cannot do even in principle. A fold realizes multiplicity $m$ only from a universal base at some $m_0$ properly dividing $m$, so folds from the verified bases $m_0 \leq 6$ can at best reach the $m$ whose least prime factor is at most $5$ — and reach them only when the particular fold survives, which Computed 6.3 shows is not for free. The multiplicities with least prime factor $\geq 7$, beginning with $m = 7, 11, 13$, need witnesses of their own at the bottom of their divisor chains. Folding reorganizes the conjecture around its prime levels; it does not exhaust it.
 
-## 7. The cost of a certificate
+## The cost of a certificate
 
 Every universality statement in this paper is, by Lemma 2.4, the statement that a finite functional graph has one root and no cycles. Such statements always have proofs — trace the graph — and the question that separates Section 4 from Section 6 is whether they have proofs *smaller than the graph*. For the zero-padding chain they do: Lemmas 4.3–4.5 are a certificate of total size independent of $d$. This section measures the same question at the base of the duplication chain and finds the answer sharply different.
 
@@ -244,17 +246,21 @@ It is worth closing the circle with Section 4. The zero-padding proof never conf
 
 **Open Problem 7.3.** *Prove any lower bound on the number of universal rules for $M_m$ that is positive for infinitely many $m$.*
 
-## 8. Methods and provenance
+## Methods and provenance
 
 All computations are over digit multisets; a rule's orbit depends only on the sorted digit vector, which is what makes complete enumeration feasible — $\binom{d+9}{9}$ states minus exclusions, against $10^d$ integers. Conventions: the censuses of Section 3 and the $60714$ chain exclude repdigits and near-repdigits ($615$, $1{,}902$, $4{,}905$, $11{,}340$, $24{,}210$ admissible multisets at $d = 4, \dots, 8$); the duplication chain excludes repdigits only ($24{,}300$; $293{,}920$; $2{,}042{,}965$; $10{,}014{,}995$; $38{,}567{,}090$ at $d = 8, 12, 16, 20, 24$). Basins were computed by orbit tracing with terminal memoization; the $d = 20, 24$ enumerations use a combinatorial ranking of multisets into a flat byte array (at most $\binom{d+9}{9}$ bytes of state), which is what brings the previously "infeasible" $d = 20$ complete basin (Computed 5.6) to under two minutes in an interpreted language. The Lyapunov LPs of Theorem 7.1 were solved with an exterior solver and then *re-verified in exact rational arithmetic*: the infeasibility certificates are nonnegative rational vectors checked to annihilate the constraint matrix over $\mathbb{Q}$, and the degree-$7$ function was rationalized and its $53$ strict decreases checked exactly.
 
-Results marked [S] are quoted from the project's computational log and were not re-executed for this paper; they comprise the $d \leq 16$ reaching-time enumeration behind Theorem 4.1 (re-verified here at $d = 7, 8$), the $6174$ lifting basins at $d = 7, 8, 9$, the duplication-chain counts at $m \geq 3$ and their witness-count estimates, the $m = 3$ complete pair-symmetric enumeration ($3{,}000$ universal rules among $43{,}200$ monotone fixing rules), the obstruction-cycle and no-go analyses summarized in Section 7's table, and the $m = 6$ witness $666174141466617777741414$. Everything else — the full censuses at $d \leq 6$ with the collapse counts and the selection theorem, the $60714$ ladder checks through $d = 100$ and full classifications at $d = 7, 8$, the five interleaved basins, the two-fixed-point inventory at $d = 12$, the $m=2$ pair-symmetric enumeration, every fold verdict in Section 6 — including the $144$ complete $d=16$ basin enumerations of Computed 6.4 and the complete enumerations at $d = 8, 20, 24$ — and both directions of Theorem 7.1 — was computed afresh for this paper from the engine, and the verification scripts accompany the manuscript.
+Results marked [S] are quoted from the project's computational log and were not re-executed for this paper; they comprise the $6174$ lifting basins at $d = 7, 8, 9$, the exhaustive one-step closure confirmations at $d = 17, 18, 20$ and the Case-2 reaching-time maxima through $d = 30$ cited in Appendix E, the duplication-chain counts at $m \geq 3$ and their witness-count estimates, the $m = 3$ complete pair-symmetric enumeration ($3{,}000$ universal rules among $43{,}200$ monotone fixing rules), the obstruction-cycle and no-go analyses summarized in Section 7's table, and the $m = 6$ witness $666174141466617777741414$. The $d \leq 16$ reaching-time enumeration behind Theorem 4.1 — about $25$ million multisets — was re-run in full for this paper (Appendix E.3), as were the one-step escape counts at $d = 7, 8$ and the $d = 6$ census lists of Appendix A. Everything else — the full censuses at $d \leq 6$ with the collapse counts and the selection theorem, the $60714$ ladder checks through $d = 100$ and full classifications at $d = 7, 8$, the five interleaved basins, the two-fixed-point inventory at $d = 12$, the $m=2$ pair-symmetric enumeration, every fold verdict in Section 6 — including the $144$ complete $d=16$ basin enumerations of Computed 6.4 and the complete enumerations at $d = 8, 20, 24$ — and both directions of Theorem 7.1 — was computed afresh for this paper from the engine, and the verification scripts accompany the manuscript.
 
 ## Acknowledgments {.unnumbered}
 
 The enumerations, searches, and verification harness were built and run in collaboration with Anthropic's Claude, used as a research instrument; several of the project's intermediate claims (a uniqueness hypothesis for monotone rules; a first reading of the Lyapunov threshold) were retracted or corrected when verification contradicted them, and the corrected statements appear above. The questions, the direction, and the responsibility for the results are the author's.
 
-## Appendix A. The thirty-three universal full-variable fixed points at $d = 5$
+```{=latex}
+\appendix
+```
+
+## The census lists
 
 $$54,\ 3753,\ 12456,\ 14562,\ 15642,\ 16524,\ 16578,\ 16758,\ 17685,\ 18342,\ 21456,$$
 $$21834,\ 24156,\ 24183,\ 24561,\ 28539,\ 37584,\ 37854,\ 38754,\ 41562,\ 41832,\ 42183,$$
@@ -262,20 +268,31 @@ $$43758,\ 43785,\ 43875,\ 45612,\ 45621,\ 53928,\ 58239,\ 60417,\ 60714,\ 65781,
 
 All thirty-three were found by exhaustive enumeration of the $5{,}280$ full-variable rules against the $1{,}902$ admissible multisets. The two with $\mathrm{sv}_F < 5$ are $54$ ($\mathrm{sv}_F = 2$) and $3753$ ($\mathrm{sv}_F = 4$); these are the five-digit analogues of the degenerate three-digit constants and, like the other thirty-one except $60714$, do not survive to $d = 6$ (Theorem 3.3).
 
-## Appendix B. The degree-4 Farkas certificate
+At $d = 6$, the high-zero strata of the $506$ — where cross-dimensional behavior concentrates — are small enough to list, and both lists below were checked against this paper's recomputed census. The eight fixed points with three zero digits are all arrangements of the single multiset $\{0,0,0,2,2,5\}$:
+$$252,\ 2520,\ 20025,\ 25200,\ 200025,\ 200250,\ 250200,\ 252000.$$
+The fifty-three with two zero digits fall into eight multiset clusters, of sizes $32$ ($\{9,9,8,1,0,0\}$), $7$ ($\{5,5,4,4,0,0\}$), $5$ ($\{9,7,1,1,0,0\}$), $4$ ($\{7,6,4,1,0,0\}$ — the thread of Theorem 3.3: $60714$, $146070$, $170460$, $607140$), $2$ ($\{7,7,3,1,0,0\}$), and three singletons ($9225$, $67023$, $52605$). The full sorted list:
+$$4545,\ 7191,\ 8919,\ 8991,\ 9189,\ 9225,\ 10899,\ 17019,\ 37017,\ 44505,\ 52605,\ 54450,$$
+$$60714,\ 67023,\ 80919,\ 80991,\ 81099,\ 89019,\ 90819,\ 90918,\ 91809,\ 98091,\ 100899,$$
+$$108099,\ 109809,\ 146070,\ 170460,\ 180909,\ 189009,\ 190089,\ 190809,\ 445005,$$
+$$445050,\ 504450,\ 544500,\ 607140,\ 700191,\ 701901,\ 707130,\ 719100,\ 809091,$$
+$$809109,\ 810909,\ 890091,\ 900891,\ 901890,\ 908091,\ 908109,\ 908190,\ 908901,$$
+$$909081,\ 910089,\ 910809.$$
+The remaining $445$ fixed points ($205$ with no zero digit, $240$ with one) are in the repository's census file.
+
+## The degree-4 Farkas certificate
 
 For $D = 4$ the Lyapunov LP has $15$ unknowns and $53$ constraints, one per non-fixed gap state $(p,q)$, each of the form $w \cdot \bigl(\mathbf{m}(G(p,q)) - \mathbf{m}(p,q)\bigr) \leq -1$ with $\mathbf{m}$ the monomial vector of degree $\leq 4$ and $G$ the gap map. The exact infeasibility certificate found and verified for Theorem 7.1 is a rational vector $y \geq 0$, supported on the fifteen states
 $$(1,0),\ (2,0),\ (4,2),\ (4,3),\ (5,1),\ (5,3),\ (5,5),\ (6,0),\ (6,3),\ (7,1),\ (7,3),\ (8,0),\ (9,2),\ (9,6),\ (9,9),$$
 with common denominator $10{,}885{,}528{,}810$, satisfying $\sum_s y_s \bigl(\mathbf{m}(G(s)) - \mathbf{m}(s)\bigr) = 0$ exactly and $\sum_s y_s = 1$: any $\Phi$ of degree $\leq 4$ would have to decrease along a nonnegative combination of transitions that exactly cancels, which is absurd. Certificates for $D = 2, 3, 5, 6$ have supports of sizes $6$, $10$, $21$, $28$ and were verified the same way. The degree-$7$ Lyapunov function has $36$ rational coefficients and worst strict-decrease margin $-0.979$ after rationalization; its coefficient vector is in the accompanying repository.
 
-## Appendix C. The pair-symmetric universal rules at $m = 2$
+## The pair-symmetric universal rules at $m = 2$
 
 Exhaustive enumeration for this paper: $2{,}520$ ordered partitions of the eight positions into the four blocks, of which $36$ fix an arrangement of $M_2$ (Proposition 5.5(c)); $64$ within-block coefficient assignments each; $312$ of the resulting rules are universal over all $24{,}300$ non-repdigit multisets, fixing $12$ distinct arrangements with multiplicities
 $$14617746,\ 17461746,\ 17746146\ (48\ \text{rules each}); \quad 61461774,\ 61746174,\ 61774614\ (32);$$
 $$14177466,\ 17417466,\ 17741466\ (16); \quad 14661774,\ 17466174,\ 17746614\ (8).$$
 Twenty-four of the $312$ are monotone. The fold experiments of Computed 6.4 take this set as their base.
 
-## Appendix D. Rules used in Section 6
+## Rules used in Section 6
 
 The twelve-digit universal rule (Computed 5.6, $m = 3$; re-verified here over all $293{,}920$ multisets) has coefficient vector
 $$c = (99999999999,\ 9990000000,\ 999900000,\ 99999000,\ 999900,\ 9990,$$
@@ -283,6 +300,82 @@ $$\ -99999000,\ -999900,\ -9990,\ -99999999999,\ -9990000000,\ -999900000)$$
 and fixed point $666141417774$; it is pair-symmetric and is not itself a fold. Its $2$-fold (Definition 5.1, $d_0 = 12$, $k = 2$) is the $d = 24$ rule of Computed 6.5. The $k$-folds of the $1746$ rule are fully determined by Definition 5.1 from $c = (9, -900, 900, -9)$: rank $5i + j$ of the $5$-fold at $d = 20$ carries $c_i \cdot 10^{\,16 - 4j}$, giving
 $$\bigl(9\cdot 10^{16}, 9\cdot 10^{12}, 9\cdot 10^{8}, 9\cdot 10^{4}, 9,\ -900\cdot 10^{16}, \dots, -900,\ 900\cdot 10^{16}, \dots, 900,\ -9\cdot 10^{16}, \dots, -9\bigr),$$
 with fixed point $1746$ written five times. The iterated dyadic tower at $d = 32$ is $\bigl((c^{\otimes 2})^{\otimes 2}\bigr)^{\otimes 2}$, which differs from $c^{\otimes 8}$ in the within-block assignment of equal-magnitude coefficients to ranks; the former passes all feasible universality tests at $d=32$, the latter fails the alphabet test (Computed 6.3).
+
+## The reaching-time bound in full
+
+This appendix proves the reaching-time half of Theorem 4.1 at full rigor: every admissible orbit enters the absorbing set $T_d$ within a bounded number of steps, the bound being one step for odd $d \geq 15$ and even $d \geq 18$, and at most eight steps for $7 \leq d \leq 16$ by complete enumeration. It closes with the projection lemma that the induction of Section 4 quietly uses.
+
+**The decomposition.** By Lemmas 4.4 and 4.5 the absolute value in $K^{(d)}$ is never active, and the output splits without carries into a core plus disjoint two-digit blocks:
+$$K^{(d)}(x) \;=\; \mathrm{core}(x) + \sum_{k=1}^{M} 9 \cdot 10^{e_k}\, \delta_k, \qquad \delta_k = x_{e_k - 2} - x_{e_k - 1} \in \{0, \dots, 9\},$$
+with $M$ pairs at places $e_k$ ascending by two. Writing $9\delta_k = 10u_k + v_k$, the block at places $(e_k, e_k + 1)$ carries digits $(v_k, u_k)$: two zeros if $\delta_k = 0$, one zero ($u_k = 0$) if $\delta_k = 1$, none if $\delta_k \geq 2$, since $9\delta_k \in \{18, 27, \dots, 81\}$ then has both digits nonzero. Each block value is at most $81 < 100$, so blocks never carry into one another; the core is below $10^5$ (odd) or $10^6$ (even) and at most one carry enters the lowest block, where the combined value $9\delta_1 + 1 \leq 82$ still occupies two digits.
+
+**E.1 (odd ladder, $d \geq 15$).** *(Proven.) For odd $d \geq 15$, every admissible input satisfies $K^{(d)}(x) \in T_d$.*
+
+*Proof.* Let $Z_0, Z_1, Z_{2+}$ count the pairs with $\delta_k = 0$, $1$, $\geq 2$. The blocks contribute $2Z_0 + Z_1$ zero digits, and from $2Z_{2+} + Z_1 \leq \sum_k \delta_k \leq 9$ (Lemma 4.5),
+$$2Z_0 + Z_1 \;=\; 2M - Z_1 - 2Z_{2+} \;\geq\; 2M - 9.$$
+For odd $d \geq 17$, $M = (d-5)/2 \geq 6$ and the block region alone has $\geq 3$ zeros. At $d = 15$, $M = 5$ gives only $\geq 1$, and the second zero comes from a case split on $x_4$:
+
+*Case $x_4 = 0$.* Sorting forces $x_5 = \cdots = x_{14} = 0$, every $\delta_k = 0$, and the block region is ten zeros.
+
+*Case $1 \leq x_4 \leq 7$.* The five $\delta_k$ are alternate adjacent differences among positions $5, \dots, 14$, so their sum telescopes below $x_5 - x_{14} \leq x_5 \leq x_4 \leq 7$, whence $2Z_0 + Z_1 \geq 10 - 7 = 3$.
+
+*Case $x_4 \in \{8, 9\}$.* Sorting forces $x_0, \dots, x_3 \in \{8, 9\}$, and a direct check of the two subcases $x_0 = x_3$ and $x_0 = x_3 + 1$ gives $\mathrm{core}(x) \leq 999$ and $\mathrm{core}(x) \leq 9999$ respectively — in both, $\mathrm{core}(x) < 10^4$, so decimal place $4$ of the output is zero, joining the $\geq 1$ block zero. $\blacksquare$
+
+**E.2 (even ladder, $d \geq 18$).** *(Proven.) For even $d \geq 18$, every admissible input satisfies $K^{(d)}(x) \in T_d$.*
+
+*Proof.* The even core $\mathrm{core}_6$ occupies places $0$–$5$ (its exact maximum over the $5{,}005$ sorted $6$-tuples is $899{,}991 < 10^6$, attained at $(9,9,9,9,9,0)$), and the first appended pair sits at places $(7, 8)$: place $6$ belongs to neither core nor any block, so it is identically zero in the output. With $M' = (d-6)/2$ pairs the block count gives $2Z_0 + Z_1 \geq 2M' - 9$ as before, and the free zero at place $6$ makes the total $\geq 2M' - 8$, which is $\geq 4$ once $M' \geq 6$, that is $d \geq 18$. $\blacksquare$
+
+**E.3 (the enumerated range).** *(Computed; every row re-run in full for this paper.) For $7 \leq d \leq 16$, the maximum number of steps for an admissible orbit to enter $T_d$, over all admissible multisets on the appropriate ladder, is*
+
+| $d$ | admissible multisets | max steps to $T_d$ |
+|---:|---:|---:|
+| $7$ | $11{,}340$ | $8$ |
+| $8$ | $24{,}210$ | $6$ |
+| $9$ | $48{,}520$ | $3$ |
+| $10$ | $92{,}278$ | $3$ |
+| $11$ | $167{,}860$ | $2$ |
+| $12$ | $293{,}830$ | $2$ |
+| $13$ | $497{,}320$ | $2$ |
+| $14$ | $817{,}090$ | $2$ |
+| $15$ | $1{,}307{,}404$ | $1$ |
+| $16$ | $2{,}042{,}875$ | $1$ |
+
+*The $d = 15, 16$ rows confirm one-step closure where E.1 applies and just below the even threshold; exhaustive one-step confirmations at $d = 17$ ($3{,}124{,}450$ multisets), $d = 18$ ($4{,}686{,}725$), and $d = 20$ ($10{,}014{,}905$) are in the project log [S].*
+
+E.1–E.3 together give a uniform reaching-time bound at every $d \geq 7$, which is Lemma 4.5's role in the induction. One gap remains: when an orbit lands in $T_d$ and Lemma 4.3 projects it to length $d - 2$, the projected multiset may not be admissible there.
+
+**E.4 (projection lemma).** *For $n \in A_d \cap T_d$ with sorted form $(x_0, \dots, x_{d-3}, 0, 0)$, write $m$ for the length-$(d-2)$ projection. Exactly three things can happen. If $m$ is admissible, the inductive hypothesis applies. If $m$ is a repdigit $(v, \dots, v)$, then $n$ is block-aligned, $K^{(d)}(n) = 0$, and $n \in E_d$. If $m$ is a near-repdigit, the orbit recovers an admissible projection within two further steps and the induction proceeds.*
+
+*Proof of the recovery claim.* The admissible Case-2 inputs at $d$ have sorted form $(v^{d-3}, w, 0, 0)$ with $v \neq 0$, $w \neq v$ — eighty-one $(v, w)$ pairs. For $w < v$ and $d - 2 \geq 7$ the projected value has the closed form $K^{(d-2)}(m) = 9(v - w) \cdot 10^{d-3}$: if $v - w \geq 2$ this has two distinct nonzero digits and $d - 4$ zeros, an admissible multiset at $d-2$, and the induction resumes after one step. If $v - w = 1$ the value is $9 \cdot 10^{d-3}$, whose projection $(9, 0, \dots, 0)$ is again near-repdigit; one further step gives $K^{(d-2)} = 9 \cdot 9900 = 89{,}100$, with projection $(9, 8, 1, 0, \dots, 0)$ — admissible. The $w > v$ cases and the ladder roots $d - 2 \in \{5, 6\}$, where the closed form does not apply, were checked by direct enumeration: at every $7 \leq d \leq 20$, all eighty-one Case-2 multisets reach $60714$, seventy-two recovering in one step and nine in two ($81$/$0$ at $d = 7$), with total reaching time at most $27$ steps on the odd ladder and $15$ on the even, the maxima stable in $d$ through $d = 30$ [S]. $\blacksquare$
+
+## The ladder, explicitly
+
+Labelling sorted positions $a = s_0, b = s_1, c = s_2, \dots$ in descending order, a rule is two letter-strings whose $k$-th letter names the position feeding decimal place $10^{d-1-k}$ of the respective rearrangement. The ladder of Theorem 4.1 reads:
+
+| $d$ | ladder | $\pi$ | $\sigma$ |
+|---:|:---|:---|:---|
+| 5 | odd (root) | `adcbe` | `deacb` |
+| 6 | even (root) | `eadcbf` | `fdeacb` |
+| 7 | odd | `fgadcbe` | `gfdeacb` |
+| 8 | even | `hgeadcbf` | `ghfdeacb` |
+| 9 | odd | `hifgadcbe` | `ihgfdeacb` |
+| 10 | even | `jihgeadcbf` | `ijghfdeacb` |
+| 11 | odd | `jkhifgadcbe` | `kjihgfdeacb` |
+| 12 | even | `lkjihgeadcbf` | `klijghfdeacb` |
+| 13 | odd | `lmjkhifgadcbe` | `mlkjihgfdeacb` |
+| 14 | even | `nmlkjihgeadcbf` | `mnklijghfdeacb` |
+| 15 | odd | `nolmjkhifgadcbe` | `onmlkjihgfdeacb` |
+| 16 | even | `ponmlkjihgeadcbf` | `opmnklijghfdeacb` |
+| 17 | odd | `pqnolmjkhifgadcbe` | `qponmlkjihgfdeacb` |
+| 18 | even | `rqponmlkjihgeadcbf` | `qropmnklijghfdeacb` |
+| 19 | odd | `rspqnolmjkhifgadcbe` | `srqponmlkjihgfdeacb` |
+| 20 | even | `tsrqponmlkjihgeadcbf` | `stqropmnklijghfdeacb` |
+
+Each rung extends the rung two above by one prepended letter-pair — the appended zero-sum coefficients $(\pm 9 \cdot 10^{d-2}, \mp 9 \cdot 10^{d-2})$, the two ladders differing only in the pair's sign convention — and the four coefficients $(9900, 9, 90, -9000)$ at $60714$'s nonzero digits recur verbatim in every row. Under the fixed-point assignment $a = 7$, $b = 6$, $c = 4$, $d = 1$, all later letters zero, every row evaluates to $\pi \cdot s = 71460$ and $\sigma \cdot s = 10746$, so $K = |71460 - 10746| = 60714$; each row of the table was machine-checked (Computed).
+
+The recipe is mechanical at any length. At $d = 100$ (even ladder): positions $0$–$3$ carry the locked coefficients $(9900, 9, 90, -9000)$, positions $4$–$5$ the split pair $(99000, -99999)$, and positions $6$–$99$ carry forty-seven appended zero-sum pairs $(\mp 9 \cdot 10^{2k+6}, \pm 9 \cdot 10^{2k+6})$. Every coefficient from position $4$ on multiplies a zero digit of the padded fixed point, and
+$$K(60714) \;=\; |\,9900 \cdot 7 + 9 \cdot 6 + 90 \cdot 4 - 9000 \cdot 1\,| \;=\; |69300 + 54 + 360 - 9000| \;=\; 60714,$$
+the same five-term arithmetic at every length (machine-checked at $d = 100$). What is engineered here is only the fixed-point equation; the basin, which is the theorem, is Section 4 and Appendix E.
 
 ## References {.unnumbered}
 
