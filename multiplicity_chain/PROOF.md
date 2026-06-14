@@ -817,3 +817,52 @@ admissible (non-repdigit, non-near-repdigit) starting states. In the paper's dup
 convention (non-repdigit only) the near-repdigit states — all coherent at step 0, all convergent —
 contribute 18 further initial pairs at level 1, giving 1,464 / 1,202 (level 1) and
 235,212 / 184,219 (level 2). Funnels and fixed pairs unchanged. The paper quotes the latter.
+
+---
+
+# 2026-06-14: The m=7 frontier — fold near-misses, the 4995/5355 cycle, and zeros do not dissolve it
+
+m=7 (d=28) is the first prime multiplicity the doubling tower cannot reach; the only fold into it
+is the 7-fold of an m=1 base. Tested all four m=1 universal bases (each 7-folded, canonical
+within-block assignment), against the d=28 alphabet (4,491 multisets) and a 200k general sample:
+
+| base | 7-fold general basin | alphabet cycles | verdict |
+|------|----------------------|-----------------|---------|
+| 1746 | ~31%                 | 3,109 / 4,491   | catastrophic |
+| 6174 | 99.9995% (1/200k)    | 8               | near-miss |
+| 2538 | 99.999% (2/200k)     | 8 (same 8)      | near-miss |
+| 5382 | ~99.99%              | 8               | near-miss |
+
+KEY FACTS:
+- The "best base" depends on k: 1746 wins the doubling tower (k=2,4,5,8); 6174 wins at k=7.
+- The 8 alphabet exceptions for the 6174 7-fold are CYCLES, not escapes-to-0. All 8 funnel into ONE
+  period-2 cycle:
+      4995599449955994599461744176  <->  5355535553555175517581728172
+  Its members carry digits {2,3,5,8,9} — OUTSIDE the {1,4,6,7} alphabet. It is the SAME 495/4995
+  cycle family that breaks the classical doubling at m=2 (paper Computed 6.2). Recurring enemy.
+- This matters because ->0 would be the benign 60714 escape class ("universal on A_d \ E_d", counts
+  as a witness); ->CYCLE is the genuine obstruction (Lemma 2.4). So the fold does NOT count.
+
+WITHIN-BLOCK SCRAMBLES do not help: 600 random per-block place-value permutations of the 6174
+7-fold all scored >=3,914 alphabet fails (vs 8 canonical). The canonical monotone assignment is
+near-optimal; the cycle is robust to scrambling.
+
+ZEROS DO NOT DISSOLVE THE CYCLE (tested d=29,30,31,32 = m=7 + 1,2,3,4 zeros, 60714-style absorbing
+pairs): the d=28 cycle persists at every length, lifted verbatim with trailing zeros (orbit head
+4995.../5355... unchanged), while general samples (40-60k) all reach F. Mechanism: the absorbing
+set (Lemma 4.3) REDUCES a length-(d+2) orbit to the length-d base; if the base collapses an input
+to 0 the zeros make it benign (the 60714 escape class), but if the base CYCLES the reduction hands
+the orbit straight back to the cycling base and the cycle re-emerges two zeros longer. Zeros
+neutralize collapses, not competing cycles. (Consistent with the earlier test that zeros did not
+rescue the broken 3-fold.)
+
+CORRECTION to a hypothesis floated this session: zeros do NOT localize the m=7 problem to the pure
+d=28 — the 4995/5355 cycle is present at d=28..32 alike. Zeros solve the cross-LENGTH axis only by
+carrying a WORKING base upward; they cannot manufacture a base, and they cannot kill a cycle.
+
+STATUS: the all-m conjecture is NOT refuted (a native non-fold arrangement of {1,4,6,7}^7 avoiding
+the 4995/5355 cycle may exist; the cycle's basin is vanishing, suggesting it is dodgeable by a
+different rule). But every cheap construction — fold, fold+scramble, fold+zeros — hits it. The
+remaining route to settle m=7 is a structured native (pair-symmetric monotone) search for a rule
+whose dynamics excludes the 4995/5355 cycle. Scripts: /tmp/m7_fold_search.py, m7_verify.py,
+m7_scramble.py, m7_zeros.py, m7_zeros2.py.
