@@ -1,0 +1,12 @@
+{
+  "multiplicity": 7,
+  "d": 28,
+  "multiset": "{1,4,6,7}^7",
+  "fixed_point": "6174617461746174617461746174",
+  "fixed_point_form": "6174 repeated 7 times",
+  "construction": "pair-symmetric, full-variable, monotone; within-block place-value perms of the 6174 partition",
+  "block_place_value_perms": [[3,5,1,2,4,0,6],[5,0,4,6,2,1,3],[0,5,6,4,2,3,1],[2,4,5,6,1,3,0]],
+  "verification": "complete alphabet 4491/4491 reach F; 500,000/500,000 general random admissible reach F; the 4995/5355 obstruction cycle explicitly killed",
+  "standard": "Evidence (alphabet-complete + half-million sample); full d=28 basin (~124M multisets) beyond exhaustive reach",
+  "note": "abundant: multiple such rules found in the first ~8500 monotone cycle-killing candidates"
+}
