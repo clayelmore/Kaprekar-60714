@@ -899,3 +899,76 @@ CONSEQUENCES:
   - This is strong evidence the conjecture is TRUE at all primes: the obstruction cycle has a
     vanishing basin and is dodged by a positive-density family of rules (abundant hits).
 Rule saved: multiplicity_chain/m7_witness.json. Scripts: /tmp/m7_native.py, m7_final.py.
+
+---
+
+# 2026-06-15: Clean-6174-repeat universality map, the m=3 dissection, and the death of every clean pattern
+
+This session probed a sharp sub-question: is the *tidy* arrangement F_m = 6174 written m times
+itself universal? — distinct from the main conjecture (does *some* arrangement of {1,4,6,7}^m
+universalize). The answer is arrangement- and m-dependent, and the investigation closed several
+appealing structural hypotheses by direct test.
+
+## Clean-6174xm universality map (is the block-repeated arrangement universal?)
+| m | d  | clean 6174xm universal? | basis |
+|---|----|-------------------------|-------|
+| 1 | 4  | YES        | proven (classical, full enum) |
+| 2 | 8  | YES        | proven (full enum) |
+| 3 | 12 | **NO**     | proven (full d=12 enum; best rule 99.98%, 48 leaks) |
+| 4 | 16 | YES        | proven (full d=16 enum; universal under non-interleaved fold rules) |
+| 5 | 20 | yes        | EVIDENCE (alphabet + 60k sample; scramble found ~try 92) |
+| 6 | 24 | yes        | EVIDENCE (alphabet + 40-60k sample) |
+| 7 | 28 | yes        | EVIDENCE (alphabet + 500k sample; candidate-1, m7_witness.json) |
+
+KEY: "6174 repeated" is NOT automatically universal. m=3 is the unique m<=7 where the tidy repeat
+is provably NOT universal under any rule -- the universal m=3 arrangements are SCRAMBLED (e.g.
+666141417774, 100% basin). At m=4,5,6,7 the clean repeat IS universal but only under non-obvious
+within-block-scrambled rules. m<=4 are full enumeration (proven); m=5,6,7 are EVIDENCE only.
+
+## The m=3 dissection -- the obstruction is the {4,5,9}-"shadow" family
+Across all 24 near-universal clean-6174x3 rules (full d=12 basin), the dominant competitor is:
+  - a period-1 FIXED POINT in ~6/24 rules -- SIX distinct {4,5,9} fixed points:
+    535549955994, 499553555994, 535559944995, 499559945355, 599453554995, 599449955355.
+  - a period-3 CYCLE in ~17/24 rules -- every one distinct.
+So the {4,5,9} shadow appears as a MIX of fixed points and cycles, all different. (Dominant
+obstruction is period-2 at m=4 and m=7, period-3 at m=5, period-2 at m=6 -- no stable period.)
+The shadow is the family of the paper's 549945 / the m=7 4995/5355 cycle.
+
+## Five clean structural hypotheses PROPOSED AND DEBUNKED this session
+1. "m=3 has a single parasitic fixed point 535549955994" -> FALSE (cherry-picked one rule; across
+   24 rules it is 6 distinct fixed points + 17 distinct period-3 cycles).
+2. "1,2,4,7 = lazy-caterer sequence of working m" -> FALSE (m=5,6 work too; real set is
+   {1,2,4,5,6,7}, fail only 3).
+3. "the shadow scales with a fixed 4-digit-block alphabet {5355,5175,8172}" -> FALSE (m=5,6 bring
+   in new blocks 7173/7083/6354/7443/8352/4086/5085/8082/5265...). Alphabet mutates.
+4. "the dominant obstruction is one stable rival" -> FALSE (m=4 alone has hundreds of distinct
+   competing attractors across rules; the shadow is only the single most common).
+5. "the m=3 rival is uniquely a fixed point while m>=4 are cycles" -> FALSE (m=3 is mostly
+   period-3 cycles, 17/24).
+
+## What IS stable (the only robust facts found)
+- Every obstruction decomposes into clean 4-DIGIT BLOCKS -- the d=4m dynamics organizes in
+  4-digit-block space. (Structural; robust; a real reduction for future analysis.)
+- The rival is always the {4,5,9}-SHADOW FAMILY -- every competitor, fp or cycle, is {4,5,9}-
+  flavored. The enemy *family* is stable.
+- Below the family: nothing is stable -- not the specific rival, not its form (fp vs cycle), not
+  the block alphabet, not the period.
+
+## Methodological note (carry forward)
+The ALPHABET TEST IS NECESSARY BUT NOT SUFFICIENT. At m=3, 24 reorderings pass the {1,4,6,7}-
+alphabet test yet ALL leak on full enumeration (best 99.98%) -- the competing attractors live
+OUTSIDE the alphabet. So the m=5,6,7 "Evidence-universal" verdicts rest on the general SAMPLE,
+not the alphabet test, and stay genuinely unproven. m=3 (full-enumerable, and it FAILED despite
+alphabet-cleanliness) is the standing proof that samples can miss the truth.
+
+## Honest conclusion
+ONE stable rival family ({4,5,9}-shadow) but NO stable rival object, form, or scaling law. Every
+sharper pattern dissolved under m=5,6 / multi-rule testing. This is not bad luck -- it is the
+certificate-cost theorem made concrete: the phenomenon is genuinely irregular at this resolution,
+with no compressible structural reason. "Why is m=3 the exception" has no clean answer beyond:
+its 1,296 within-block reorderings happen to contain ZERO that dodge its particular {4,5,9}-shadow
+zoo, while larger m have exponentially more rules and some dodge everything. The 0%-(m=3)-vs-
+~6%-(m=4) universal-rule rate is arithmetic happenstance at d=12, not a law.
+
+Scripts: multiplicity_chain/session_2026-06-15/ (dissect_m3, dissect_m4, clean_m3b, clean_m56,
+clean_m6b, shadow_check, shadow_scale, why_m3, why_m3b, m7_native, m7_uniform, m7_zeros).
