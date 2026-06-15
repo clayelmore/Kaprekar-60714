@@ -16,6 +16,24 @@ If the user hasn't asked you to update this file, but you've made changes that f
 
 ---
 
+## 2026-06-15 — Clean-6174-repeat universality, m=3 dissection, every clean pattern debunked
+
+**Context.** Multiplicity axis. The user pushed a sharp sub-question: is the *tidy* arrangement "6174 repeated m times" itself universal (vs the main conjecture's "*some* arrangement universalizes")?
+
+**Found.**
+- **Native m=7 search SUCCEEDED**: candidate-1, a monotone pair-symmetric within-block-scrambled rule, makes 6174×7 (d=28) EVIDENCE-universal (kills the 4995/5355 cycle; full {1,4,6,7}-alphabet + 500k random sample clean). The canonical 6174 7-fold near-missed (8 alphabet cycles → the 4995/5355 2-cycle); within-block scrambling fixes it; ALL 5040 uniform within-block orders keep the cycle (so the coherence-funnel proof route is closed at m=7). Saved `multiplicity_chain/m7_witness.json`. NB: this is EVIDENCE (sample), not proven — the "m=7 base FOUND" commit title overstates; PROOF.md body is correct.
+- **Clean-6174×m map**: m=1,2,4 proven universal; **m=3 proven NOT universal** (full d=12 enum, best 99.98%; the universal m=3 arrangements are SCRAMBLED, e.g. 666141417774); m=5,6,7 evidence-universal under scrambles. "6174 repeated" is NOT automatically universal — m=3 is the lone exception ≤7.
+- **m=3 dissection**: obstruction = {4,5,9}-shadow family; across 24 near-universal rules it is a MIX of ~6 distinct period-1 fixed points + ~17 distinct period-3 cycles. No single rival.
+- **Five clean hypotheses proposed and DEBUNKED**: m=3-single-fixed-point; 1,2,4,7-lazy-caterer; fixed-block-alphabet shadow; one-stable-rival; m=3-rival-uniquely-a-fixed-point — all falsified by m=5,6 / multi-rule testing (one corrected the very next turn).
+- **Stable facts**: 4-digit-block structure; {4,5,9}-shadow as the rival *family*. Nothing below the family is stable — reaffirms the certificate-cost "no compressible reason." The strangeness of "every m but 3" has no clean reason; it is genuine irregularity.
+- **Method caution recorded**: alphabet test necessary-not-sufficient.
+
+**Honesty note.** Several appealing clean patterns were proposed mid-session and then falsified by deeper checks. The robust net finding is *negative*: there is no clean structural pattern; the irregularity is the answer.
+
+**Files produced this session.** `multiplicity_chain/m7_witness.json` (m=7 evidence witness rule); `multiplicity_chain/session_2026-06-15/*.py` (dissection + search scripts); PROOF.md 2026-06-15 entry; this log entry; CLAUDE.md Current-State update.
+
+---
+
 ## 2026-06-03 — Multiplicity-chain universality: proofs + the monotone–acyclic decomposition
 
 **Context.** This session worked the *multiplicity-duplication axis* ({1,4,6,7}^m at d=4m),

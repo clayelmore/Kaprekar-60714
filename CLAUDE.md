@@ -41,7 +41,7 @@ chat ends, even if not asked.
 
 ---
 
-## Current State (as of 2026-06-09)
+## Current State (as of 2026-06-15)
 
 ### Two-axis structure
 - **60714 paper** (zero-padding axis): complete. See `paper.md`. Don't disturb unless asked.
@@ -58,6 +58,7 @@ Classical universal fixed points on {1,4,6,7}^m at d=4m:
 | 4 | 16 | 341 | pair-symmetric structured search |
 | 5 | 20 | ≥2 | F=17461746146174617746, F=14617461774617461746 |
 | 6 | 24 | ≥1 | F=666174141466617777741414 |
+| 7 | 28 | ≥1 | F=6174×7 — EVIDENCE (candidate-1; see m7_witness.json) |
 
 ### Multiplicity-chain results (proven)
 - **Theorem 1**: "6174" repeated m times is a fixed point of an explicit (interleaved
@@ -82,6 +83,16 @@ universal d=16 rules are not block-closed (identical 180-state escape set). Rule
 tower, low-degree Lyapunov, all uniform families. Lead: the obstruction is a finite,
 alphabet-external cycle family expressible as linear constraints on c; T_m is bounded (14,32,39,42).
 See PROOF.md 'Multi-Agent Proof Assault' for the full, adversarially-verified state.
+
+### Update 2026-06-15 — clean-repeat map, m=3 dissection, no clean pattern
+Keep two questions distinct:
+- **Main conjecture**: does *some* arrangement of {1,4,6,7}^m universalize? (table above — proven m≤4, evidence m=5,6,7).
+- **Clean-repeat question**: is the *tidy* "6174 repeated m times" itself universal? Arrangement/m-dependent: **m=1,2,4 YES (proven, full enum); m=3 NO (proven — best rule 99.98%; the universal m=3 arrangements are SCRAMBLED, e.g. 666141417774); m=5,6,7 yes (EVIDENCE, under non-obvious within-block-scrambled rules).** So "6174 repeated" is NOT automatically universal — m=3 is the unique m≤7 where the tidy repeat fails.
+- **Why m=3 fails / the dissection**: the obstruction is the {4,5,9}-"shadow" family (relatives of 549945 / the 4995/5355 cycle). Across 24 near-universal clean-6174×3 rules it is a MIX — ~6 distinct period-1 fixed points + ~17 distinct period-3 cycles. No single rival, form, or period.
+- **DEBUNKED this session (do NOT revive):** "m=3 has one parasitic fixed point"; "1,2,4,7 = lazy-caterer sequence"; "shadow scales with a fixed 4-digit-block alphabet"; "one stable rival"; "m=3 rival is uniquely a fixed point." All died under m=5,6 / multi-rule testing.
+- **Stable facts:** obstructions always decompose into 4-DIGIT BLOCKS; the rival is always the {4,5,9}-shadow FAMILY. Below the family nothing is stable — consistent with the certificate-cost theorem (no compressible reason). m=3's 0%-universal-rule rate vs m=4's ~6% appears to be arithmetic happenstance at d=12, not a law.
+- **Method caution:** the alphabet test is NECESSARY-NOT-SUFFICIENT — at m=3, 24 alphabet-clean rules ALL leak on full enumeration. The m=5,6,7 "evidence" rests on the general sample, not the alphabet test.
+See `multiplicity_chain/PROOF.md` (2026-06-15 entry) and `multiplicity_chain/session_2026-06-15/` for scripts.
 
 ### Key method note
 At d ≥ 20, universal-witnessing rules are far too rare for F-first random search (~10⁻⁸/sample);
