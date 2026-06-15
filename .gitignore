@@ -5,3 +5,4 @@ __pycache__/
 
 build_*/
 build_fable/
+*.png
