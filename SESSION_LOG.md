@@ -16,6 +16,27 @@ If the user hasn't asked you to update this file, but you've made changes that f
 
 ---
 
+## 2026-06-22 — Definitive paper written: paper_hierarchy.md (merge + full lemma re-audit)
+
+**Context.** User: "tighten everything, clean up the story, write the new version of the paper assuming nothing has been done before — look at Paper 1 too, pull in all new stuff, check all lemmas and proofs, make it bullet-proof and compelling." Produced the single definitive paper `paper_hierarchy.md` (22 pp), merging Paper 1 (`paper.md`, the 60714 zero-padding axis) with the L0–L5 hierarchy synthesis and the 2026-06-15 multiplicity findings. This is now THE paper ("the only one people will see"); maintain it, not the older drafts.
+
+**Verification first (3 parallel agents + 1 referee).** Agent A: every numerical claim re-confirmed (2 footnote caveats). Agent B: Lyapunov certificate-cost independently confirmed (exact-rational Farkas certs deg 2–6 infeasible + explicit deg-7 witness; gap cascade 54,20,14,10,7,4,1). Agent C: Paper 1 inventory + reconciliations + the curated 11-ref bibliography. Referee agent: line-by-line written-proof audit — computational theorems all SOUND and honestly labeled; flagged 5 real soft spots, all fixed.
+
+**Corrections (bullet-proofing).**
+- **sv_F / degeneracy (the headline).** 60714 (and 60417) are DEGENERATE: sv_F=4, one zero digit drops out of the effective rank. FOUR of the 33 d=5 universals are degenerate (54, 3753, 60417, 60714), not two. Reframed L5 transcendence as ORTHOGONAL to the L3/L4 rank axis — proven-transcendent 60714 is degenerate, the conjectural duplication chain is full-rank; the zero is both transcendence-engine and degeneracy-cause. Now the paper's central unifying point.
+- **App E.4 projection lemma**: replaced the enumerate-to-d=30 [S] argument with PROVEN closed forms for both branches — w<v: 9(v−w)·10^(d−4) (fixes a 10^(d−3) typo); w>v: 9900(w−v), identical on both ladders — closing the reaching-time induction uniformly in d. Reconfirmed afresh to d=401.
+- **Lemma 2.4** (universality criterion): adjoined the absorbing state 0 (escape orbits were silently leaving the admissible domain); escape mode now ties to the d≥7 escape class.
+- **App E.2**: removed the false "place 6 is identically zero" step (first even appended pair is at places (6,7), per App F); d≥18 holds on the block count alone.
+- **Even-core bound**: noted true max 899,991 (989,982 additive estimate is loose).
+
+**Honesty.** Abstract/intro now carry Theorem 4.1's escape-class caveat. Did NOT present "m=1,2,4,7" as a clean sequence (mirage — the 1746-repeat works at 5,6). Dropped the Iwasaki ref (Kaprekar *numbers* ≠ the *routine*).
+
+**Synthesis added.** Named the {4,5,9} "anti-Kaprekar" shadow (549945 + relatives) as the recurring obstruction — m=3 second fixed point, classical double-double 2-cycle, k=3 incoherent fixed point — honestly as a family that refuses to stabilize (= exactly why induction to exclude it fails). Added a related-work paragraph + the full 11-ref bibliography (Nuez; Kay & Downes-Ward; Devlin & Zeng; Dahl; Peterson; Prichett 1979).
+
+**Files produced this session.** `paper_hierarchy.md` (rewritten, ~12.4k words); `paper_hierarchy.pdf` (22 pp); `build_hierarchy/` (build artifacts). Commit `41187ba` on main, pushed; CLAUDE.md + this log updated.
+
+---
+
 ## 2026-06-15 — Clean-6174-repeat universality, m=3 dissection, every clean pattern debunked
 
 **Context.** Multiplicity axis. The user pushed a sharp sub-question: is the *tidy* arrangement "6174 repeated m times" itself universal (vs the main conjecture's "*some* arrangement universalizes")?

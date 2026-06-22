@@ -21,6 +21,25 @@ The multiplicity-chain PROOF program has CONCLUDED as an open problem: existence
 (witness count exploding), every standard proof route closed, root-caused to the base case having no
 low-degree Lyapunov certificate. See multiplicity_chain/PROOF.md final sections.
 
+**NEW (2026-06-22) — the definitive single paper.** `paper_hierarchy.md` / `paper_hierarchy.pdf`
+(repo root, 22 pp) is now THE paper: the merge of Paper 1 (the 60714 zero-padding paper, `paper.md`)
+with the L0–L5 hierarchy synthesis, re-audited lemma by lemma. This is "the only paper people will
+see" — maintain it, not the older drafts, going forward. Two things future-you MUST know:
+- **60714 is DEGENERATE, not full-rank.** sv_F(60714) = 4 — its single zero digit drops out of the
+  effective rank. FOUR of the 33 d=5 universals are degenerate (54, 3753, 60417, 60714), not two. So
+  the line just above ("dimension-transcendent 60714") is misleading: **transcendence (L5) is
+  ORTHOGONAL to the L3/L4 rank axis.** 60714 is transcendent-DEGENERATE — its zero is both the
+  absorbing engine of its transcendence AND the cause of its rank-deficiency; the duplication chain
+  {1,4,6,7}^m is full-rank, conjecturally transcendent. This is now the paper's central unifying point.
+- **Proof upgrades over paper.md.** App E.4 (reaching-time projection lemma) now has PROVEN closed
+  forms for both branches — w<v: 9(v−w)·10^(d−4); w>v: 9900(w−v), identical on both ladders — closing
+  the induction uniformly in d (was enumerate-to-d=30 [S]; reconfirmed afresh to d=401). Lemma 2.4
+  (universality criterion) now adjoins the absorbing state 0 so escape orbits register. Abstract/intro
+  carry the honest escape-class caveat (60714 is universal off an explicit collapsing escape class for
+  d ≥ 7). Bibliography is the 11-ref set (Iwasaki dropped — that's Kaprekar *numbers*, not the *routine*).
+  Re-verified arrangement counts live in Computed 5.6 (e.g. m=3 = 46 universal arrangements under the
+  repdigit-only convention); the older counts in the table below may use a different exclusion convention.
+
 ---
 
 ## How to use the session log (the practice that keeps this project coherent)
