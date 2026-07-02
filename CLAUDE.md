@@ -2,6 +2,10 @@
 
 **For the next Claude working in this repo. Read this first.**
 
+**LOCATION (2026-06-23): the repo lives at `~/Kaprekar-60714`. Do NOT clone or work in
+`/tmp` — /tmp is wiped on every reboot and this project lost its working copy three times
+that way. If you find yourself re-cloning from GitHub, clone to the home directory.**
+
 This repo holds a research program generalizing Kaprekar's 1949 result (every 4-digit
 non-repdigit number reaches **6174** under sort-descending-minus-sort-ascending). The
 program extends 6174 along **two orthogonal axes**:
