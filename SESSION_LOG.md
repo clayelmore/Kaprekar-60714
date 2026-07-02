@@ -16,6 +16,20 @@ If the user hasn't asked you to update this file, but you've made changes that f
 
 ---
 
+## 2026-06-23 (later) — Adversarial audit round 2: every number reproduced; three real errors found and fixed
+
+**Context.** Independent hostile-referee agent audited the whole paper at cfa7e1c, re-deriving every proof and re-running every computation it could. Verdict: all computational claims reproduced exactly (census 33, sv_F quartet, |E7|/|E8|, E.3 rows, core6 max, 1,464/235,212 funnels, 810-family, 251,940); new tower results (Lemma 6.9 / Prop 6.10 / Thm 6.11 / Computed 6.12) all SOUND; old OP 7.2 hole independently confirmed. Three REAL errors found; all fixed this session:
+
+1. **Appendix F even-ladder sign error (the big one).** The letter table's even rungs had the appended pair's letters CROSSED between π and σ — flipping every appended sign, a genuinely different map (|E8|=45 vs 137; E.2 false for it at d=18 with 40,300 violations). Both maps fix 60714 (appended coeffs sit on zeros), which is why fixed-point checks never caught it. FIXED: corrected all 7 even rows (d=8..20), each now expands to exactly Section 4's coefficient vector (new `verify_ladder_letters.py` guards this); added a cautionary note in App F. Lesson recorded: the fixed-point equation certifies nothing about a ladder beyond the fixed point.
+2. **Lemma 2.4 state space.** "Adjoining 0 makes T a self-map" was false — orbits pass through near-repdigits (the ladder sends {9^5,8,7}→900000 at d=7) and even nonzero repdigits from generic inputs (962−629=333 at d=3 — NB the auditor said d=6 was smallest; own re-check found d=3, auditor's d≤5 sweep was wrong; d=4,5 provably clean by mod 9 + size). FIXED: T now defined on ALL d-digit multisets, admissibility restricts starting states only.
+3. **L5 vs Theorem 4.1 mismatch.** L5 said "universal at infinitely many lengths" but 60714 is universal-off-E_d for d≥7. FIXED: L5 now reads "universal — or universal off an explicitly characterized escape class — at infinitely many lengths"; intro sentence, §3 closer, Def 4.6's classical analogy (repdigits vs admissible inputs — the "multiples of 1111" analogy was retired from the abstract) all aligned.
+
+Smaller repairs, all applied: E.4's blanket justification was right-formula-wrong-reason for w<v (bottom gap fires the final appended pair, not "image equals core"); E.4's root case now cites a direct check (81 near-repdigits reach 60714 in ≤29/≤15 steps at d−2=5/6 — the censuses exclude near-repdigits so could not be cited); Computed 6.7's "second fixed point 655444440000" relabeled (that's the sorted string; the fixed integer is 5,400,446,445); Lemma 6.9 dominance sentence tightened; Prop 6.10 gcd(d,9)=1 caveat added; Thm 6.11's excursion-ending-at-repdigit case attributed to fixed-pair uniqueness; "provably cannot climb" softened to the measured claim; Methods provenance expanded (d=18 full closure re-run: 4,686,725 multisets, 0 violations — done fresh this session; window probe; root checks; App-F expansion). verify_tower.py expanded to 13 checks incl. 60k+50k level-3 and the 1,710/921 window probe — ALL PASS. PDF now 25 pp.
+
+**Also this session:** the Mac's disk hit 100% full mid-pass (ENOSPC, all write tools bricked); user freed space manually (DerivedData); ~2.9 GB more reclaimed via simulator/DeviceSupport/package caches. Remaining big items outside ~: ~60 GB system-side, plus user dirs timedmath (2 GB), PLUed (987 MB) — not touched.
+
+---
+
 ## 2026-06-23 — Proof assault on Conjecture 6.6: sign lemma, entry proven at j≤2, OP 7.2 gap found and repaired
 
 **Context.** User: "review all work done, check out proofs, and try to prove the m^x" (= the dyadic tower, Conjecture 6.6). Attacked via Open Problem 7.2. Session ran on Fable 5.

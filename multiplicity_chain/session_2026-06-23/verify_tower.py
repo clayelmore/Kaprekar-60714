@@ -98,7 +98,7 @@ for jt, Fv in [(1,1746),(2,17461746)]:
 # --- level-3 evidence: constructed plateau states, entry <= 3 ---
 random.seed(1746); c3=tower_c(3); c2s=tower_c(2)
 worst=0; ok=True
-for i in range(20000):
+for i in range(60000):
     if i%2==0:
         v=random.randint(1,9)
         s=tuple(sorted([random.randint(v,9) for _ in range(8)]+[v]*9+[random.randint(0,v-1) for _ in range(15)],reverse=True))
@@ -110,5 +110,39 @@ for i in range(20000):
     if V(c2s,e)*V(c2s,o)>=0: continue
     st=entry(s,3,cap=12)
     ok &= st is not None; worst = max(worst, 99 if st is None else st)
-check(f"level-3 evidence: constructed incoherent d=32 states enter within {worst} steps", ok and worst<=3)
+check(f"level-3 evidence: 60k constructed incoherent d=32 states enter within {worst} steps", ok and worst<=3)
+worst_r=0; okr=True
+for _ in range(50000):
+    s=tuple(sorted((random.randint(0,9) for _ in range(32)),reverse=True))
+    if len(set(s))==1: continue
+    st=entry(s,3,cap=12)
+    okr &= st is not None; worst_r=max(worst_r, 99 if st is None else st)
+check(f"level-3 evidence: 50k random d=32 states enter within {worst_r} steps", okr and worst_r<=3)
+
+# leading-window dependence probe (the negative result): 1,710 coarse classes, 921 mixed
+c1=tower_c(1); c2=tower_c(2)
+def entry2(s,cap=10):
+    for k in range(cap+1):
+        if len(set(s))==1: return None
+        e,o=slices(s)
+        if V(c1,e)*V(c1,o)>=0: return k
+        s=K_step(c2,s,16)
+    return None
+groups={}
+for e0 in range(10):
+    for e1 in range(10):
+        for e2 in range(0,e1+1):
+            Aval=9*e0*10**4+9*e1-900*e2
+            if Aval<=0: continue
+            for f0 in range(10):
+                for f1 in range(1,f0+1):
+                    for f2 in range(10):
+                        for f3 in range(0,f2+1):
+                            Bval=10**4*(9*f0-900*f1)+9*f2-900*f3
+                            if Bval>=0: continue
+                            st=entry2(sdesc_val(10**8*Aval+Bval,16))
+                            groups.setdefault(((Aval-1)//10**4,(10**8+Bval)//10**4),set()).add(st)
+mixed=sum(1 for v in groups.values() if len(v)>1)
+check(f"window probe: {len(groups)} coarse classes, {mixed} mixed (negative result: leading windows do not determine entry)",
+      len(groups)==1710 and mixed==921)
 print("\nALL CHECKS PASS")
