@@ -16,6 +16,31 @@ If the user hasn't asked you to update this file, but you've made changes that f
 
 ---
 
+## 2026-06-23 — Proof assault on Conjecture 6.6: sign lemma, entry proven at j≤2, OP 7.2 gap found and repaired
+
+**Context.** User: "review all work done, check out proofs, and try to prove the m^x" (= the dyadic tower, Conjecture 6.6). Attacked via Open Problem 7.2. Session ran on Fable 5.
+
+**PROVEN (new, all in the paper now as Lemma 6.9 / Prop 6.10 / Theorem 6.11 / Computed 6.12).**
+- **Sign Lemma 6.9(a)**: for the level-j tower form, V_j < 0 ⟺ x[2^j] > x[2^(j+1)]; = 0 ⟺ repdigit; > 0 otherwise. Induction using max|V_j| ≤ 10^(d_j)−1. Verified 0 violations over ALL states at levels 0–2 (715 + 24,310 + 2,042,975) + 120k adversarial at level 3. The sign of a 2^(j+2)-digit form is a two-digit comparison.
+- **Plateau 6.9(b)**: incoherence ⟺ a critical plateau — a run of 2^(j+1)+1 equal digits at ranks [a,b] or [a+1,b+1] (a=2^(j+1), b=2^(j+2)) with a strict drop/rise at the prescribed end. The fold's failure mode has a shape.
+- **Prop 6.10 (entry, bound three, j=1,2)**: an incoherent state's image is a closed form in 3 gaps (level 1: 810-member abstract family) / 7 gaps (level 2: 2,494,800) — formulas matched ALL 6,006 + 251,940 actual incoherent states with 0 mismatches — and every family member re-enters coherence within 2 steps, never meeting a repdigit (mod-9 + size argument). Bound 3, sharp, proven at both levels.
+- **THE BIG ONE — OP 7.2's reduction had a hole**: (E)+(F) as previously stated do NOT imply Conjecture 6.6 — a cycle weaving through coherent AND incoherent states is excluded by neither ((F) was only verified on the 1,202 never-exiting pairs). **Repair = Theorem 6.11 (return-map reduction)**: a coherent state's future is a function of its pair, so define T̂(pair) = pair of next coherent state; (E′)+(F̂ over T̂) ⟹ universal, proven, uniform in level. **Computed 6.12**: T̂ total on ALL 1,464 pairs (level 1, the 262 exiting pairs included) and ALL 235,212 (level 2), 0 repdigit excursions, unique fixed pairs (1746,1746)/(17461746,17461746), acyclic. Gives an independent quotient-route proof of universality at j=1,2.
+
+**EVIDENCE.** Level 3 (d=32): 60k incoherent states constructed directly from the plateau shape + 50k random — all enter coherence within 3 steps (same bound). Conjecture: entry ≤ 3 at EVERY level.
+
+**NEGATIVE (honest).**
+- Window reduction fails: image coherence at level 2 depends on LOW-order gaps too (921/1,710 coarse classes mixed) → the gap-certificate cannot climb to j≥3 (~10^13 members). Uniform (E′) needs a real carry-and-block argument.
+- 4 natural monovariants on T̂ all fail massively (445–787 violations at level 1; tens of thousands at level 2) — the certificate-cost wall now sits exactly on T̂'s funnel property.
+- Grace note: the slowest-entering level-1 states descend from images 445545/445554 (pure {4,5}) — the {4,5,9}-shadow appearing inside the entry dynamics.
+
+**Net: Conjecture 6.6 still open**, but now equivalent to two uniformities over a PROVEN reduction (previously the reduction itself was broken); entry half proven at both enumerable levels with the obstruction to climbing measured.
+
+**Paper updated** (Section 6: new Lemma 6.9, Prop 6.10, Theorem 6.11, Computed 6.12; §6 closing + OP 7.2 restated; abstract/intro/provenance). Rebuilt: 24 pp, clean.
+
+**Files produced this session.** `multiplicity_chain/session_2026-06-23/`: `TOWER_RESULTS.md` (full write-up), `verify_tower.py` (reproduces every new computation, ~40s, ALL CHECKS PASS), `tower_lib.py`, `probe_fhat.py`. NB: /tmp/kap60714 was wiped again (reboot) and re-cloned; an independent adversarial audit agent of the whole paper was launched and had not reported by session end — check its verdict next session if no note follows this one.
+
+---
+
 ## 2026-06-22 — Definitive paper written: paper_hierarchy.md (merge + full lemma re-audit)
 
 **Context.** User: "tighten everything, clean up the story, write the new version of the paper assuming nothing has been done before — look at Paper 1 too, pull in all new stuff, check all lemmas and proofs, make it bullet-proof and compelling." Produced the single definitive paper `paper_hierarchy.md` (22 pp), merging Paper 1 (`paper.md`, the 60714 zero-padding axis) with the L0–L5 hierarchy synthesis and the 2026-06-15 multiplicity findings. This is now THE paper ("the only one people will see"); maintain it, not the older drafts.

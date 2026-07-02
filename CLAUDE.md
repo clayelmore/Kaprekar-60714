@@ -40,6 +40,17 @@ see" — maintain it, not the older drafts, going forward. Two things future-you
   Re-verified arrangement counts live in Computed 5.6 (e.g. m=3 = 46 universal arrangements under the
   repdigit-only convention); the older counts in the table below may use a different exclusion convention.
 
+**NEW (2026-06-23) — proof assault on the dyadic tower (Conjecture 6.6).** Paper now 24 pp with new
+§6 material: **Lemma 6.9** (sign of V_j = a two-digit comparison, x[2^j] vs x[2^(j+1)]; incoherence =
+critical plateau — both PROVEN for all levels), **Prop 6.10** (coherence entry within 3 steps, PROVEN
+at tower levels 1–2 via abstract gap families, sharp), **Theorem 6.11** (return-map reduction — NB the
+OLD Open Problem 7.2 claim "(E)+(F) imply 6.6" had a genuine hole (mixed cycles); the return-map
+quotient T̂ repairs it), **Computed 6.12** (T̂ funnels on ALL pairs at levels 1–2, exits included).
+Conjecture 6.6 remains OPEN: what's left is (E′) uniform in level (evidence: bound 3 holds at level 3,
+60k constructed plateau states) and (F̂) for j≥3 (pair systems outgrow enumeration; 4 natural
+monovariants fail; gap-certificates provably can't climb — window-dependence negative, 921/1710 mixed).
+Reproduce everything: `python3 multiplicity_chain/session_2026-06-23/verify_tower.py` (ALL CHECKS PASS).
+
 ---
 
 ## How to use the session log (the practice that keeps this project coherent)
