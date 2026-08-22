@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The five-digit cousin of 6174 — A plain-English explainer</title>
+<title>The five-digit cousin of 6174: a plain-English explainer</title>
 <meta name="description" content="A plain-English companion to the technical paper on 60714. Why Kaprekar's classic four-digit routine has a five-digit cousin nobody had cataloged.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -253,7 +253,7 @@
   <header>
     <div class="eyebrow">A plain-English explainer</div>
     <h1>The five-digit cousin of 6174</h1>
-    <p class="deck">In 1949, an Indian schoolteacher noticed something beautiful about four-digit numbers — a clean routine that always lands on the same answer. It worked at three digits too. At five digits, his rule didn't lead to a single landing spot, and that's been the story for seventy-five years. There's a different question you can ask alongside his. This is what I found when I asked it.</p>
+    <p class="deck">In 1949, an Indian schoolteacher noticed a curious thing about four-digit numbers: a clean routine that always lands on the same answer. It worked at three digits too. At five digits, his rule didn't lead to a single landing spot, and that's been the story for seventy-five years. There's a different question you can ask alongside his. This is what I found when I asked it.</p>
     <div class="byline">
       <span>By Clay Elmore</span>
       <span>April 2026</span>
@@ -263,7 +263,7 @@
 
   <article>
 
-    <p class="dropcap">Pick a four-digit number — any one will do, as long as it has at least two different digits in it. <strong>1729</strong> works. <strong>2024</strong> works. <strong>9876</strong> works. Now do this:</p>
+    <p class="dropcap">Pick any four-digit number, as long as it has at least two different digits in it. <strong>1729</strong> works. <strong>2024</strong> works. <strong>9876</strong> works. Now do this:</p>
 
     <ol style="margin: 0 0 1.4rem 1.5rem;">
       <li>Put the digits in order from biggest to smallest.</li>
@@ -288,7 +288,7 @@
 
     <p>Pick any other four-digit number, follow the same steps, and the same thing happens. You land on 6174. Always within seven steps. Always.</p>
 
-    <p>This routine was discovered in 1949 by an Indian schoolteacher named D.R. Kaprekar. The number 6174 is sometimes called Kaprekar's constant. The routine is famous because of how clean it is: one simple rule, one number every four-digit input ends up at, and a short proof you can almost do in your head. That's the kind of result mathematicians love. Elegant. Math teachers have been showing it to kids for seventy-five years.</p>
+    <p>This routine was discovered in 1949 by an Indian schoolteacher named D.R. Kaprekar. The number 6174 is sometimes called Kaprekar's constant. The routine is famous because of how clean it is: one simple rule, one number every four-digit input ends up at, and a short proof you can almost do in your head. That's the kind of result mathematicians love. Math teachers have been showing it to kids for seventy-five years.</p>
 
     <h2>What about five digits?</h2>
 
@@ -296,18 +296,18 @@
 
     <div class="tryit">
       <span class="tryit-label">Try it yourself</span>
-      The <a href="kaprekar_calculator.html">classic Kaprekar calculator</a> lets you type any 3- or 4-digit number and watch it walk to 495 or 6174 — the same way 1729 walked to 6174 above. Type a number. Watch it move. Try another one.
+      The <a href="kaprekar_calculator.html">classic Kaprekar calculator</a> lets you type any 3- or 4-digit number and watch it walk to 495 or 6174, the same way 1729 walked to 6174 above. Type a number. Watch it move. Try another one.
     </div>
 
     <p>But try the same routine with five digits and there's no constant to land on. You don't reach a fixed number; you bounce around in a small loop forever.</p>
 
-    <p>For a long time, that was the end of it. Kaprekar's routine is what it is — beautiful at three and four digits, doesn't reach a single number at five. Different digit lengths just behave differently, and that's the story.</p>
+    <p>For a long time, that was the end of it. Kaprekar's routine is what it is: it works at three and four digits, and it doesn't reach a single number at five. Different digit lengths just behave differently, and that's the story.</p>
 
     <p>I kept wondering if there was more to say.</p>
 
     <h2>Another way of asking the question</h2>
 
-    <p>Kaprekar's routine uses one specific way to mix up the digits before subtracting: sort them one way, sort them the other way, subtract. That's the rule. It's a really good rule. It's elegant exactly because it's simple. But it's not the <em>only</em> way you could mix the digits. You could shuffle them in lots of other orders before subtracting and still ask the same kind of question — does any starting number always land on the same final number?</p>
+    <p>Kaprekar's routine uses one specific way to mix up the digits before subtracting: sort them one way, sort them the other way, subtract. That's the rule. It's a really good rule, and a big part of why is that it's so simple. But it's not the <em>only</em> way you could mix the digits. You could shuffle them in lots of other orders before subtracting and still ask the same kind of question: does any starting number always land on the same final number?</p>
 
     <p>How many other shuffles are there?</p>
 
@@ -317,18 +317,18 @@
 
     <p>So a different question from the classic one is: among all those shuffles, are there any other "land here forever" numbers? And if there are, do any of them keep working as you stretch the routine to longer numbers?</p>
 
-    <p>This is the question I kept thinking about. It's not the question Kaprekar was asking — his question was about his beautiful single rule, and his answer was complete on its own. This is just a different question, sitting next to his.</p>
+    <p>This is the question I kept thinking about. It's not the question Kaprekar was asking. His question was about his one rule, and his answer was complete on its own. This is just a different question, sitting next to his.</p>
 
     <p>Answering it takes more bookkeeping than answering Kaprekar's. To check just the five-digit case you have to test 5,280 different shuffles against 99,540 different starting numbers, follow each one until it either lands somewhere or starts looping, and keep track of all the results. That's about half a billion subtractions. A modern laptop crunches the numbers in seconds. The harder part is making sense of what comes out the other side.</p>
 
     <div class="tryit">
       <span class="tryit-label">Try it yourself</span>
-      The <a href="60714_calculator.html">60714 calculator</a> lets you watch any number — five digits or twenty — walk to 60714, the same way 1729 walked to 6174 above. Type a number. Watch it move. Try another one.
+      The <a href="60714_calculator.html">60714 calculator</a> lets you watch any number, five digits or twenty, walk to 60714, the same way 1729 walked to 6174 above. Type a number. Watch it move. Try another one.
     </div>
 
     <h2>What turned up</h2>
 
-    <p>At five digits, there are exactly <strong>33</strong> numbers that act like 6174 — each under one of those other shuffles. Land there, and you stay there.</p>
+    <p>At five digits, there are exactly <strong>33</strong> numbers that act like 6174, each under one of those other shuffles. Land there, and you stay there.</p>
 
     <p>One of the 33 is <strong class="num-accent">60714</strong>.</p>
 
@@ -338,15 +338,15 @@
 
     <p class="pullquote">"60714 is the only five-digit number whose Kaprekar-style behavior keeps working at six digits, and seven, and eight, and every digit length above."</p>
 
-    <p>The shuffle changes a little each time you add a digit — it has to, to fit the longer number — but there's a clean recipe for how it changes. And that recipe holds up. Not just up to some limit a computer can check, but provably, all the way up. As far as anyone has shown, 60714 is the first number that does this.</p>
+    <p>The shuffle changes a little each time you add a digit (it has to, to fit the longer number), but there's a clean recipe for how it changes. And that recipe holds up. Not just up to some limit a computer can check, but provably, all the way up. As far as anyone has shown, 60714 is the first number that does this.</p>
 
     <h2>So what's it good for?</h2>
 
-    <p>I'm not going to oversell this. 60714 isn't going to make your phone faster or unlock some secret code. It's a small new fact about how numbers behave when you shuffle their digits in a certain way. That's all.</p>
+    <p>I'm not going to oversell this. 60714 isn't going to make your phone faster or break any codes. It's a small new fact about how numbers behave when you shuffle their digits in a certain way. That's all.</p>
 
     <p>Even so, I wouldn't say it's good for nothing. Math like this has a long history of being useful in ways nobody saw coming, sometimes years later. Closer to today, the routine has the right shape for a daily online puzzle, a school competition, a classroom example for kids learning about numbers, or a starting point for someone else's project. A few of those ideas are already on my list.</p>
 
-    <p>What I'd really say is this. The kind of math that started Kaprekar's work — and the kind of math that produced 60714 — is the kind anyone curious can pick up and play with. Kaprekar himself was a high-school teacher in a small town in India. He wasn't a famous professor. He just kept noticing things and writing them down.</p>
+    <p>What I'd really say is this. The kind of math that started Kaprekar's work, and the kind that produced 60714, is the kind anyone curious can pick up and play with. Kaprekar himself was a high-school teacher in a small town in India. He wasn't a famous professor. He just kept noticing things and writing them down.</p>
 
     <p>The result here is in the same spirit. It's a small, real fact. You can pick it up and play with it.</p>
 
