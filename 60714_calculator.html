@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>60714 — A Universal Attractor</title>
+<title>60714: A Universal Attractor</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -587,8 +587,8 @@
     <div class="subtitle">A universal attractor at every digit length d ≥ 5 (with one structural family of exceptions)</div>
 
     <div class="lede">
-      <p>Pick any number with at least five digits. Apply the right rule. Watch it converge — almost always — to <em>60714</em>.</p>
-      <p>The rule depends on the input's digit length: there is one rule at <em>d = 5</em>, another at <em>d = 6</em>, and a uniform recipe extending to every higher dimension. At <em>d = 5</em> and <em>d = 6</em>, every admissible input reaches 60714. At <em>d ≥ 7</em>, almost every input does — but a small, exactly-characterized class of inputs collapses to zero instead. The calculator recognizes both cases.</p>
+      <p>Pick any number with at least five digits. Apply the right rule. Watch it converge, almost always, to <em>60714</em>.</p>
+      <p>The rule depends on the input's digit length: there is one rule at <em>d = 5</em>, another at <em>d = 6</em>, and a uniform recipe extending to every higher dimension. At <em>d = 5</em> and <em>d = 6</em>, every admissible input reaches 60714. At <em>d ≥ 7</em>, almost every input does, but a small, exactly characterized class of inputs collapses to zero instead. The calculator recognizes both cases.</p>
     </div>
   </header>
 
@@ -606,7 +606,7 @@
       <button class="secondary" type="button" id="random">random</button>
       <button class="escape-try" type="button" id="doomed">try a doomed input</button>
     </div>
-    <div class="hint" id="hint">5 digits or more. Most inputs reach 60714 — try the "doomed input" button to see one that doesn't.</div>
+    <div class="hint" id="hint">5 digits or more. Most inputs reach 60714. Try the "doomed input" button to see one that doesn't.</div>
   </section>
 
   <div class="trajectory" id="trajectory"></div>
@@ -614,9 +614,9 @@
   <div class="about">
     <p>The number <strong>60714</strong> is a fixed point of an explicit family of permutation-pair rules built from its native rule at <em>d = 5</em>, with the family extending to every higher digit length by appending pairs of coefficients that sum to zero. The fixed-point equation K(60714) = 60714 holds at every d ≥ 5.</p>
 
-    <p>The dynamics are <strong>strict-universal at d = 5 and d = 6</strong>: every admissible input reaches 60714. At <strong>d ≥ 7</strong>, the rule is <em>near-universal</em>: every admissible input outside a small structural class — the <strong>escape class</strong> of <strong>block-aligned multisets</strong> and their backward orbits — reaches 60714. Inputs in the escape class collapse to zero. The escape class has a closed-form description and at d ≤ 11 the escape orbits all reach zero within four iterations.</p>
+    <p>The dynamics are <strong>strict-universal at d = 5 and d = 6</strong>: every admissible input reaches 60714. At <strong>d ≥ 7</strong>, the rule is <em>near-universal</em>: every admissible input outside a small structural class (the <strong>escape class</strong> of <strong>block-aligned multisets</strong> and their backward orbits) reaches 60714. Inputs in the escape class collapse to zero. The escape class has a closed-form description and at d ≤ 11 the escape orbits all reach zero within four iterations.</p>
 
-    <p>This is a strict generalization of Kaprekar's classical 1949 result. Kaprekar's constant 6174 is universal at d = 4; the routine "stops working" at d = 5 if you keep his rule fixed. The result extended here is that if you let the rule itself vary with d (specifically, by appending zero-sum coefficient pairs), there is a distinguished fixed point — 60714, sharing 6174's digit multiset plus a zero — whose universality persists across infinitely many dimensions, modulo a structurally characterized escape class.</p>
+    <p>This is a strict generalization of Kaprekar's classical 1949 result. Kaprekar's constant 6174 is universal at d = 4; the routine "stops working" at d = 5 if you keep his rule fixed. The result extended here is that if you let the rule itself vary with d (specifically, by appending zero-sum coefficient pairs), there is a distinguished fixed point, 60714 (sharing 6174's digit multiset plus a zero), whose universality persists across infinitely many dimensions, apart from a structurally characterized escape class.</p>
 
     <p style="font-style: italic; font-size: 0.85em; color: var(--soft); margin-top: 0.5em;">This calculator is a pedagogical companion to the paper, not a formal verifier. It demonstrates the iteration on individual inputs; the formal claims of the paper are established by the Python scripts and proofs in the repository.</p>
 
@@ -709,7 +709,7 @@ function getLetterStrings(d) {
       const lo = dPrime - 2;
       const hi = dPrime - 1;
       // odd-ladder: prepend (hi, lo) to π, (lo, hi) to σ
-      // Wait — checking against Table B.1: d=7 π = "fgadcbe"
+      // Check against Table B.1: d=7 π = "fgadcbe"
       // If d=5 base π = "adcbe" and d=7 = "fgadcbe", then "fg" was prepended.
       // f = 5, g = 6. dPrime=7 gives lo=5, hi=6. So prepend [lo, hi] = [5,6] = "fg". ✓
       // d=7 σ = "gfdeacb", d=5 σ = "deacb", prepended "gf" = [6,5] = [hi, lo]. ✓
@@ -833,8 +833,8 @@ function iterate(input) {
   if (!cleaned) return { error: 'enter a number, please.' };
   if (cleaned.length < 5) return { error: 'needs at least 5 digits.' };
   if (cleaned.length > 20) return { error: 'keep it under 20 digits for now.' };
-  if (isRepdigit(cleaned)) return { error: 'repdigits (like 11111) collapse to zero — try a number with at least two different digits.' };
-  if (isNearRepdigit(cleaned)) return { error: 'this is a near-repdigit (almost all digits the same) — Kaprekar\'s classical exclusion. Try something with more digit variety.' };
+  if (isRepdigit(cleaned)) return { error: 'repdigits (like 11111) collapse to zero. Try a number with at least two different digits.' };
+  if (isNearRepdigit(cleaned)) return { error: 'this is a near-repdigit (almost all digits the same), which falls under Kaprekar\'s classical exclusion. Try something with more digit variety.' };
 
   const d = cleaned.length;
   const useBig = d > 15;
@@ -921,7 +921,7 @@ function render(result) {
   }
 
   if (result.isEscape) {
-    hintEl.textContent = 'digit length d = ' + result.d + ', this input belongs to the escape class — see explanation below';
+    hintEl.textContent = 'digit length d = ' + result.d + ', this input belongs to the escape class; see explanation below';
     hintEl.classList.add('escape');
   } else {
     const stepCount = result.trail.length - 1;
@@ -1026,7 +1026,7 @@ function render(result) {
               '</div><div class="coef-note">Each coefficient is <em>c<sub>i</sub> = 10<sup>π<sub>i</sub></sup> − 10<sup>σ<sub>i</sub></sup></em>, derived from the position assignments above. The two views describe the same operation.</div></div></details>';
 
       if (t.isBlockAligned) {
-        html += '<div class="note">⚠ this multiset is <strong>block-aligned</strong> — the rule annihilates it on the next step.</div>';
+        html += '<div class="note">⚠ this multiset is <strong>block-aligned</strong>: the rule annihilates it on the next step.</div>';
       }
     } else if (t.next === target) {
       html += '<div class="note">fixed point reached. K(60714) = 60714.</div>';
@@ -1139,9 +1139,9 @@ document.getElementById('random').addEventListener('click', () => {
   go();
 });
 
-/* "Try a doomed input" — picks a curated block-aligned multiset.
+/* "Try a doomed input" picks a curated block-aligned multiset.
    The top-block digit (the digit repeated d_0 times at the start)
-   is drawn from {1,2,3,4,5,7,8,9} — avoiding 6, which would create
+   is drawn from {1,2,3,4,5,7,8,9}, avoiding 6, which would create
    visual collision with 60714's leading digit.
    All examples below are verified block-aligned and verified to
    collapse to 0 under the constructed rule. */
@@ -1172,7 +1172,7 @@ document.getElementById('doomed').addEventListener('click', () => {
 
 inputEl.addEventListener('input', () => {
   hintEl.classList.remove('error', 'escape');
-  hintEl.textContent = '5 digits or more. Most inputs reach 60714 — try the "doomed input" button to see one that doesn\'t.';
+  hintEl.textContent = '5 digits or more. Most inputs reach 60714. Try the "doomed input" button to see one that doesn\'t.';
 });
 
 inputEl.value = '12345';
