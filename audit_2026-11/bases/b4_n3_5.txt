@@ -1,0 +1,1 @@
+DONE N=3 base=4 AD=9 shard=5 cores=2 A=0 B=0

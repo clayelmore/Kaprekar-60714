@@ -1,0 +1,38 @@
+b=  3 multisets=       28 max_steps= 3 bound=11.5 OK argmax_sorted=243
+b=  4 multisets=       84 max_steps= 3 bound=12.0 OK argmax_sorted=1024
+b=  5 multisets=      210 max_steps= 3 bound=12.5 OK argmax_sorted=3125
+b=  6 multisets=      462 max_steps= 4 bound=13.0 OK argmax_sorted=35496
+b=  7 multisets=      924 max_steps= 5 bound=13.5 OK argmax_sorted=58408
+b=  8 multisets=     1716 max_steps= 5 bound=14.0 OK argmax_sorted=111744
+b=  9 multisets=     3003 max_steps= 5 bound=14.5 OK argmax_sorted=198450
+b= 10 multisets=     5005 max_steps= 6 bound=15.0 OK argmax_sorted=553300
+b= 11 multisets=     8008 max_steps= 6 bound=15.5 OK argmax_sorted=1043867
+b= 12 multisets=    12376 max_steps= 6 bound=16.0 OK argmax_sorted=1623024
+b= 13 multisets=    18564 max_steps= 6 bound=16.5 OK argmax_sorted=2777515
+b= 14 multisets=    27132 max_steps= 6 bound=17.0 OK argmax_sorted=4042500
+b= 15 multisets=    38760 max_steps= 7 bound=17.5 OK argmax_sorted=5684400
+b= 16 multisets=    54264 max_steps= 7 bound=18.0 OK argmax_sorted=7816192
+b= 17 multisets=    74613 max_steps= 7 bound=18.5 OK argmax_sorted=10544454
+b= 18 multisets=   100947 max_steps= 8 bound=19.0 OK argmax_sorted=17981676
+b= 19 multisets=   134596 max_steps= 8 bound=19.5 OK argmax_sorted=25969979
+b= 20 multisets=   177100 max_steps= 8 bound=20.0 OK argmax_sorted=33642000
+b= 21 multisets=   230230 max_steps= 8 bound=20.5 OK argmax_sorted=46918431
+b= 22 multisets=   296010 max_steps= 8 bound=21.0 OK argmax_sorted=59322428
+b= 23 multisets=   376740 max_steps= 8 bound=21.5 OK argmax_sorted=80377847
+b= 24 multisets=   475020 max_steps= 8 bound=22.0 OK argmax_sorted=99604800
+b= 25 multisets=   593775 max_steps= 8 bound=22.5 OK argmax_sorted=131721875
+b= 26 multisets=   736281 max_steps= 8 bound=23.0 OK argmax_sorted=160489836
+b= 27 multisets=   906192 max_steps= 8 bound=23.5 OK argmax_sorted=207895491
+b= 28 multisets=  1107568 max_steps= 8 bound=24.0 OK argmax_sorted=249664016
+b= 29 multisets=  1344904 max_steps= 8 bound=24.5 OK argmax_sorted=317695319
+b= 30 multisets=  1623160 max_steps= 8 bound=25.0 OK argmax_sorted=376789500
+b= 31 multisets=  1947792 max_steps= 9 bound=25.5 OK argmax_sorted=443536096
+b= 32 multisets=  2324784 max_steps= 9 bound=26.0 OK argmax_sorted=519315456
+b= 33 multisets=  2760681 max_steps= 9 bound=26.5 OK argmax_sorted=605115918
+b= 34 multisets=  3262623 max_steps=10 bound=27.0 OK argmax_sorted=795484060
+b= 35 multisets=  3838380 max_steps=10 bound=27.5 OK argmax_sorted=971301275
+b= 36 multisets=  4496388 max_steps=10 bound=28.0 OK argmax_sorted=1119055824
+b= 37 multisets=  5245786 max_steps=10 bound=28.5 OK argmax_sorted=1351738279
+b= 38 multisets=  6096454 max_steps=10 bound=29.0 OK argmax_sorted=1545592620
+b= 39 multisets=  7059052 max_steps=10 bound=29.5 OK argmax_sorted=1848986919
+b= 40 multisets=  8145060 max_steps=10 bound=30.0 OK argmax_sorted=2099790400

@@ -1,0 +1,9 @@
+CORE N=4 a=0,1,2,3 b=3,2,1,0 A=1 B=1 endpointA=3021 target=321 maxsteps=7 maxsize=10 base=4
+CORE N=4 a=0,1,3,2 b=2,3,1,0 A=1 B=1 endpointA=2211 target=2211 maxsteps=6 maxsize=10 base=4
+CORE N=4 a=0,2,1,3 b=3,1,2,0 A=1 B=1 endpointA=2301 target=321 maxsteps=5 maxsize=10 base=4
+CORE N=4 a=1,0,2,3 b=3,2,1,0 A=1 B=1 endpointA=3012 target=321 maxsteps=7 maxsize=10 base=4
+CORE N=4 a=1,2,3,0 b=2,3,0,1 A=1 B=1 endpointA=1020 target=21 maxsteps=8 maxsize=10 base=4
+CORE N=4 a=2,0,1,3 b=0,3,2,1 A=1 B=1 endpointA=201 target=21 maxsteps=8 maxsize=10 base=4
+CORE N=4 a=3,0,1,2 b=2,3,0,1 A=1 B=1 endpointA=201 target=21 maxsteps=7 maxsize=10 base=4
+CORE N=4 a=3,1,0,2 b=2,3,1,0 A=1 B=1 endpointA=210 target=21 maxsteps=7 maxsize=10 base=4
+DONE N=4 base=4 AD=10 shard=2 cores=36 A=8 B=8

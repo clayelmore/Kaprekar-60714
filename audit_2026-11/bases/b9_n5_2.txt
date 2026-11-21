@@ -1,0 +1,10 @@
+CORE N=5 a=0,2,1,4,3 b=1,3,4,2,0 A=1 B=1 endpointA=1063275 target=765321 maxsteps=27 maxsize=17 base=9
+CORE N=5 a=0,2,3,1,4 b=4,0,1,3,2 A=1 B=1 endpointA=11284 target=84211 maxsteps=22 maxsize=17 base=9
+CORE N=5 a=0,3,1,4,2 b=1,0,2,3,4 A=1 B=1 endpointA=103561 target=65311 maxsteps=16 maxsize=17 base=9
+CORE N=5 a=0,3,4,1,2 b=2,0,1,4,3 A=1 B=1 endpointA=112084 target=84211 maxsteps=19 maxsize=17 base=9
+CORE N=5 a=1,0,3,2,4 b=4,3,0,1,2 A=1 B=1 endpointA=80718 target=8871 maxsteps=15 maxsize=17 base=9
+CORE N=5 a=1,4,0,2,3 b=3,1,2,0,4 A=1 B=1 endpointA=120841 target=84211 maxsteps=18 maxsize=17 base=9
+CORE N=5 a=1,4,2,0,3 b=2,1,3,4,0 A=1 B=1 endpointA=135610 target=65311 maxsteps=15 maxsize=17 base=9
+CORE N=5 a=3,0,4,1,2 b=2,4,1,0,3 A=1 B=1 endpointA=21805 target=8521 maxsteps=27 maxsize=17 base=9
+CORE N=5 a=3,2,4,0,1 b=1,4,0,2,3 A=1 B=1 endpointA=20581 target=8521 maxsteps=23 maxsize=17 base=9
+DONE N=5 base=9 AD=11 shard=2 cores=880 A=9 B=9

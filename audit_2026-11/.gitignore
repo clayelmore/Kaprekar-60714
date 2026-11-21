@@ -26,3 +26,6 @@ census_out/n8_*
 catalog_n7.tsv
 shapes_d6.svg
 shapes_d8.svg
+bases/cb_*
+bases/one_*
+referee_allbase/ref_d6
