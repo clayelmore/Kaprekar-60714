@@ -1,0 +1,17 @@
+UNIV base=4 n=2 pairs=C-E,A-D Q=B endpoint=11322 m=12 maxsteps=4
+UNIV base=4 n=2 pairs=B-D,A-E Q=C endpoint=11322 m=12 maxsteps=4
+UNIV base=4 n=2 pairs=C-D,A-E Q=B endpoint=11322 m=12 maxsteps=4
+UNIV base=4 n=2 pairs=D-B,A-E Q=C endpoint=10323 m=11 maxsteps=3
+UNIV base=4 n=2 pairs=A-E,B-D Q=C endpoint=31302 m=32 maxsteps=3
+UNIV base=4 n=2 pairs=E-A,B-D Q=C endpoint=12321 m=13 maxsteps=4
+UNIV base=4 n=2 pairs=E-A,C-D Q=B endpoint=12321 m=13 maxsteps=4
+UNIV base=4 n=2 pairs=D-A,C-E Q=B endpoint=12321 m=13 maxsteps=4
+UNIV base=4 n=2 pairs=E-C,D-A Q=B endpoint=11322 m=12 maxsteps=4
+UNIV base=4 n=2 pairs=A-E,D-B Q=C endpoint=12321 m=13 maxsteps=4
+UNIV base=4 n=2 pairs=E-A,D-B Q=C endpoint=31302 m=32 maxsteps=3
+UNIV base=4 n=2 pairs=A-E,D-C Q=B endpoint=12321 m=13 maxsteps=4
+UNIV base=4 n=2 pairs=B-D,E-A Q=C endpoint=10323 m=11 maxsteps=3
+UNIV base=4 n=2 pairs=D-B,E-A Q=C endpoint=11322 m=12 maxsteps=4
+UNIV base=4 n=2 pairs=D-C,E-A Q=B endpoint=11322 m=12 maxsteps=4
+UNIV base=4 n=2 pairs=A-D,E-C Q=B endpoint=12321 m=13 maxsteps=4
+DONE base=4 n=2 shard=0 rules=120 universal=16

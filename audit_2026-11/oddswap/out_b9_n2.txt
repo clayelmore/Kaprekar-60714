@@ -1,0 +1,4 @@
+UNIV base=9 n=2 rule=BDC,A-E endpoint=23551 m=238 maxsteps=8
+UNIV base=9 n=2 rule=BDC,E-A endpoint=20581 m=208 maxsteps=10
+UNIV base=9 n=2 rule=DBC,E-A endpoint=13552 m=137 maxsteps=8
+DONE base=9 n=2 shard=0 rules=120 universal=3

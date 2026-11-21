@@ -1,0 +1,5 @@
+UNIV base=6 n=2 rule=ABD,E-C endpoint=23514 m=242 maxsteps=8
+UNIV base=6 n=2 rule=CBD,E-A endpoint=2134 m=22 maxsteps=4
+UNIV base=6 n=2 rule=CDB,A-E endpoint=2134 m=22 maxsteps=6
+UNIV base=6 n=2 rule=DEB,C-A endpoint=22524 m=232 maxsteps=7
+DONE base=6 n=2 shard=0 rules=120 universal=4

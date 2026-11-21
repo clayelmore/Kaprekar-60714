@@ -1,0 +1,5 @@
+UNIV base=5 n=2 pairs=B-C,A-E Q=D endpoint=12432 m=13 maxsteps=6
+UNIV base=5 n=2 pairs=E-A,B-C Q=D endpoint=23421 m=24 maxsteps=6
+UNIV base=5 n=2 pairs=A-E,C-B Q=D endpoint=23421 m=24 maxsteps=6
+UNIV base=5 n=2 pairs=C-B,E-A Q=D endpoint=12432 m=13 maxsteps=6
+DONE base=5 n=2 shard=0 rules=120 universal=4

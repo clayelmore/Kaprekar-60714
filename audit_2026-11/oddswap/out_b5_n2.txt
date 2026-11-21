@@ -1,0 +1,11 @@
+UNIV base=5 n=2 rule=ABE,C-D endpoint=40332 m=413 maxsteps=4
+UNIV base=5 n=2 rule=ACE,B-D endpoint=40332 m=413 maxsteps=6
+UNIV base=5 n=2 rule=ACE,D-B endpoint=33402 m=343 maxsteps=5
+UNIV base=5 n=2 rule=AED,B-C endpoint=41030 m=420 maxsteps=3
+UNIV base=5 n=2 rule=BCE,A-D endpoint=21324 m=221 maxsteps=5
+UNIV base=5 n=2 rule=BDE,C-A endpoint=23403 m=242 maxsteps=6
+UNIV base=5 n=2 rule=DAE,C-B endpoint=1034 m=11 maxsteps=4
+UNIV base=5 n=2 rule=DCA,E-B endpoint=21423 m=222 maxsteps=4
+UNIV base=5 n=2 rule=EAD,C-B endpoint=1034 m=11 maxsteps=3
+UNIV base=5 n=2 rule=ECA,B-D endpoint=33204 m=341 maxsteps=5
+DONE base=5 n=2 shard=0 rules=120 universal=10

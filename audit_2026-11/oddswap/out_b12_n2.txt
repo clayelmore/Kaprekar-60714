@@ -1,0 +1,2 @@
+UNIV base=12 n=2 rule=BCE,A-D endpoint=4585B m=461 maxsteps=14
+DONE base=12 n=2 shard=0 rules=120 universal=1

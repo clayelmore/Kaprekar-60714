@@ -1,0 +1,2 @@
+UNIV base=16 n=2 rule=DCB,E-A endpoint=66D8C m=674 maxsteps=25
+DONE base=16 n=2 shard=0 rules=120 universal=1

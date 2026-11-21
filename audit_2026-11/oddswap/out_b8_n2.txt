@@ -1,0 +1,5 @@
+UNIV base=8 n=2 rule=AEC,D-B endpoint=25421 m=257 maxsteps=9
+UNIV base=8 n=2 rule=AED,C-B endpoint=25421 m=257 maxsteps=15
+UNIV base=8 n=2 rule=CAE,B-D endpoint=12254 m=124 maxsteps=9
+UNIV base=8 n=2 rule=DAE,B-C endpoint=12254 m=124 maxsteps=15
+DONE base=8 n=2 shard=0 rules=120 universal=4

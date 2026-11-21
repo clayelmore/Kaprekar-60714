@@ -1,0 +1,12 @@
+n=4 b=300 H=149 [sample] states=200000 maxbadrun=144 (bound 296) max 1+steps=147 (bound 302) violations=0
+n=4 b=301 H=150 [sample] states=200000 maxbadrun=140 (bound 298) max 1+steps=143 (bound 303) violations=0
+n=5 b=300 H=149 [sample] states=200000 maxbadrun=4 (bound 147) max 1+steps=8 (bound 153.0) violations=0
+n=5 b=301 H=150 [sample] states=200000 maxbadrun=4 (bound 148) max 1+steps=8 (bound 153.5) violations=0
+n=6 b=300 H=149 [sample] states=200000 maxbadrun=5 (bound 149) max 1+steps=9 (bound 155.0) violations=0
+n=6 b=301 H=150 [sample] states=200000 maxbadrun=5 (bound 150) max 1+steps=9 (bound 155.5) violations=0
+n=7 b=300 H=149 [sample] states=100000 maxbadrun=3 (bound 147) max 1+steps=7 (bound 153.0) violations=0
+n=7 b=301 H=150 [sample] states=100000 maxbadrun=3 (bound 148) max 1+steps=7 (bound 153.5) violations=0
+n=8 b=300 H=149 [sample] states=100000 maxbadrun=3 (bound 149) max 1+steps=7 (bound 155.0) violations=0
+n=8 b=301 H=150 [sample] states=100000 maxbadrun=3 (bound 150) max 1+steps=7 (bound 155.5) violations=0
+n=4 b=120 H=59 [all] states=595665 maxbadrun=58 (bound 116) max 1+steps=61 (bound 122) violations=0
+n=4 b=121 H=60 [all] states=635376 maxbadrun=60 (bound 118) max 1+steps=63 (bound 123) violations=0

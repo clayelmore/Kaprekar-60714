@@ -33,3 +33,7 @@ halfswap/hs_*
 halfswap/hs1_*
 halfswap/out_b*_n5_*.txt
 referee_halfswap/ref_hs
+midfix/mf_*
+oddswap/os_*
+midfix/out_b*_n4.txt
+oddswap/out_b*_n4.txt

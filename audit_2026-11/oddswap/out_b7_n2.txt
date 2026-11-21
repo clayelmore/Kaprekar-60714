@@ -1,0 +1,3 @@
+UNIV base=7 n=2 rule=BEA,D-C endpoint=21153 m=214 maxsteps=6
+UNIV base=7 n=2 rule=EAB,C-D endpoint=15312 m=155 maxsteps=6
+DONE base=7 n=2 shard=0 rules=120 universal=2
