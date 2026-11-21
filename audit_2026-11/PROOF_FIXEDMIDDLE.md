@@ -10,7 +10,7 @@ combined theorem.
 Fix a base b >= 3 and a length L >= 6. Put h = ceil(L/2). Write the L digits (leading zeros allowed) sorted
 descending as letters s_0 >= s_1 >= ... . Both words of the subtraction are arrangements of the letters, and
 
-    every place q is exchanged with the place q + h.
+    place q is exchanged with place q + h, for every q with q + h < L.
 
 * L = 2h (even): all places are paired. This is the half-swap rule R_h of `PROOF_HALFSWAP.md`.
 * L = 2h - 1 (odd): the middle place h-1 has no partner (h-1+h = L is not a place). The letter put there stays
@@ -198,7 +198,11 @@ rho_2 = 0 (3.3) unless already there; at most 2 steps to tau (3.2); one step to 
 
 ## Remarks
 
-* The fixed letter s_1 never affects the result. This is the same feature as the middle digit of Kaprekar's
+* The value of the fixed letter s_1 cancels, while its sorted rank stays fixed. (Changing an input digit can
+  change which digit is second largest, and so can change the output.) An outside review (2026-11-21, separate
+  session, own code: all 112 pairs L = 6..13, b = 3..16, 145,346,906 non-repdigit multisets; reduced maps on
+  105,531,098 states) returned "sound" with these two wording clarifications only.
+* Stated plainly: This is the same feature as the middle digit of Kaprekar's
   odd-length routine, and by the parity argument above it (or a longer rotation) cannot be avoided.
 * Fixing the largest letter s_0 instead would make the odd reduced map identical to the even one, but then
   strings whose other 2n digits are all equal (for example 9111111) would map to 0. Fixing s_1 avoids that.

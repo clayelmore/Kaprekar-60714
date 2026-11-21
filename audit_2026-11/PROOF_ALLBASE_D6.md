@@ -104,4 +104,10 @@ closing coefficient. For this rule that gives, with h = s5 - s_{d-1},
 
 which is no longer a multiple of b^3 - 1, so the argument above does not apply. Evidence for d >= 7: the
 all-lengths check passes in bases 4..10, and brute force finds no failure in bases 3, 11, 13-17, 19, 24, 36 at
-lengths up to 8-22 (`bases/verify20_b*.txt`). Universality at every length in every base is a conjecture.
+lengths up to 8-22 (`bases/verify20_b*.txt`).
+
+**Correction, 2026-11-21 (later the same day).** The extension is NOT universal in every base. At length 8 in base
+50 it has a 4-cycle: digit sets (48,45,29,21,2,1,1,0) -> (49,47,34,31,18,16,1,0) -> (37,37,33,14,13,12,1,0) ->
+(49,46,25,12,10,4,1,0) -> back. The same happens in bases 55, 60, 65, 160 and 640 (`bigbase_stress.py`,
+`bases7/stress.txt`). The earlier tests stopped at base 36. The six-digit theorem above is unaffected: it
+concerns length 6 only.

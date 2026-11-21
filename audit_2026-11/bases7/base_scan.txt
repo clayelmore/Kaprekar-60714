@@ -1,0 +1,50 @@
+49 rules scanned; 36 with no failure in bases 21-120
+   6:DBFECA - ECADBF no failure
+   6:BDFCEA - CEABDF no failure
+   6:CEBFAD - BDCAFE FAILS first at length 8, base 24 (cycle)
+   6:BDCAFE - CEBFAD no failure
+   6:BADFCE - CFEABD no failure
+   6:CFEABD - BADFCE FAILS first at length 8, base 30 (cycle)
+   6:DABEFC - EFCDAB no failure
+   6:CFEBAD - BADCFE FAILS first at length 8, base 30 (cycle)
+   6:EFCDAB - DABEFC FAILS first at length 8, base 31 (cycle)
+   6:AFEBDC - FADCEB no failure
+   6:DCFEBA - EBADCF no failure
+   6:BEFCDA - CDABEF no failure
+   6:DCFEAB - EBADFC no failure
+   6:FBEADC - ACDFEB FAILS first at length 8, base 21 (cycle)
+   6:BFECDA - CADBEF no failure
+   6:DFCEAB - EABDFC no failure
+   6:BFECAD - CADBFE no failure
+   6:CADBFE - BFECAD FAILS first at length 8, base 26 (cycle)
+   6:ADFCEB - FEABDC no failure
+   6:FEABDC - ADFCEB FAILS first at length 8, base 45 (cycle)
+   6:ABEFCD - FCDABE no failure
+   6:FEBADC - ADCFEB FAILS first at length 8, base 37 (cycle)
+   6:ABEFDC - FCDAEB no failure
+   6:ADBFEC - FECADB no failure
+   6:ABDFCE - FCEABD no failure
+   6:FECADB - ADBFEC FAILS first at length 8, base 31 (cycle)
+   6:FCEABD - ABDFCE FAILS first at length 8, base 30 (cycle)
+   6:FECDAB - ADBEFC FAILS first at length 8, base 31 (cycle)
+   6:DFEBAC - EADCFB no failure
+   6:EBFADC - DCAFEB FAILS first at length 8, base 37 (cycle)
+   6:DCAFEB - EBFADC no failure
+   7:1,2,5,0,6,3,4 4,5,2,3,0,1,6 no failure
+   7:0,5,2,6,1,3,4 4,2,5,3,6,0,1 no failure
+   7:0,5,2,1,6,4,3 3,2,5,4,1,0,6 no failure
+   7:0,6,3,2,5,1,4 3,4,2,6,1,5,0 no failure
+   7:1,5,2,0,6,3,4 4,2,5,3,0,1,6 no failure
+   7:1,5,2,6,0,3,4 4,2,5,3,6,1,0 no failure
+   7:0,4,1,6,5,2,3 3,1,4,2,6,0,5 no failure
+   7:5,6,1,3,4,0,2 2,1,3,5,0,4,6 no failure
+   7:1,5,2,6,0,4,3 4,2,5,3,6,0,1 no failure
+   7:6,3,0,4,5,1,2 2,0,3,1,4,6,5 no failure
+   7:6,3,0,5,4,2,1 1,0,3,2,5,6,4 no failure
+   7:0,1,4,5,2,6,3 3,4,0,2,5,1,6 FAILS first at length 8, base 26 (cycle)
+   7:0,4,1,5,6,3,2 3,1,4,2,5,6,0 no failure
+   7:2,1,4,3,6,0,5 5,4,1,0,3,2,6 no failure
+   7:1,5,2,0,6,4,3 4,2,5,3,0,6,1 no failure
+   7:0,4,1,5,6,2,3 3,1,4,2,5,0,6 no failure
+   7:0,5,2,6,1,4,3 4,2,5,3,6,1,0 no failure
+   7:6,5,2,1,4,0,3 2,3,1,5,0,4,6 no failure

@@ -1,0 +1,160 @@
+6: 45 rules; 31 with no failure found
+   6:CEABDF - BDFCEA FAILS at (length, base): (11,40) cycle, (11,97) cycle, (11,160) cycle, (11,640) cycle
+   6:DBFECA - ECADBF OK max steps 32
+   6:BDFCEA - CEABDF OK max steps 31
+   6:CEBFAD - BDCAFE OK max steps 96
+   6:BDCAFE - CEBFAD OK max steps 42
+   6:CAEBFD - BFDCAE FAILS at (length, base): (6,40) cycle, (6,97) cycle, (6,160) cycle, (6,640) cycle
+   6:BADFCE - CFEABD OK max steps 31
+   6:CFEABD - BADFCE OK max steps 66
+   6:DABEFC - EFCDAB OK max steps 33
+   6:CFEBAD - BADCFE OK max steps 66
+   6:EFCDAB - DABEFC OK max steps 63
+   6:FADCEB - AFEBDC FAILS at (length, base): (8,97) cycle, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   6:AFEBDC - FADCEB OK max steps 42
+   6:DCFEBA - EBADCF OK max steps 31
+   6:BEFCDA - CDABEF OK max steps 32
+   6:DCFEBA - EBADFC FAILS at (length, base): (6,40) cycle, (6,97) cycle, (6,160) cycle, (6,640) cycle
+   6:DCFEAB - EBADFC OK max steps 31
+   6:EBADFC - DCFEAB FAILS at (length, base): (8,160) cycle, (8,640) cycle
+   6:FBEADC - ACDFEB OK max steps 80
+   6:AEBFDC - FDCAEB FAILS at (length, base): (6,40) cycle, (6,97) cycle, (6,160) cycle, (6,640) cycle
+   6:FBEACD - ACDFBE FAILS at (length, base): (6,40) cycle, (6,97) cycle, (6,160) cycle, (6,640) cycle
+   6:DFCEBA - FABDCE FAILS at (length, base): (6,40) cycle, (6,97) cycle, (6,160) cycle, (6,640) cycle
+   6:BFECDA - CADBEF OK max steps 33
+   6:EABDFC - DECFAB FAILS at (length, base): (6,160) cycle, (6,640) cycle, (6,2500) cycle, (7,40) cycle
+   6:EABDFC - DFCEAB FAILS at (length, base): (8,160) cycle, (8,640) cycle
+   6:DFCEAB - EABDFC OK max steps 31
+   6:BFECAD - CADBFE OK max steps 33
+   6:CADBFE - BFECAD OK max steps 55
+   6:ADFCEB - FEABDC OK max steps 31
+   6:FEABDC - ADFCEB OK max steps 65
+   6:AEBDCF - FDCEBA FAILS at (length, base): (6,40) cycle, (6,97) cycle, (6,160) cycle, (6,640) cycle
+   6:ABEFCD - FCDABE OK max steps 33
+   6:FCDABE - ABEFCD FAILS at (length, base): (8,640) cycle
+   6:FEBADC - ADCFEB OK max steps 57
+   6:ABEFDC - FCDAEB OK max steps 40
+   6:ADBFEC - FECADB OK max steps 32
+   6:ABDFCE - FCEABD OK max steps 31
+   6:FECADB - ADBFEC OK max steps 66
+   6:FCEABD - ABDFCE OK max steps 66
+   6:ADBFEC - FECBDA FAILS at (length, base): (6,40) cycle, (6,97) cycle, (6,160) cycle, (6,640) cycle
+   6:FECDAB - ADBEFC OK max steps 66
+   6:DFEBAC - EADCFB OK max steps 39
+   6:EBFADC - DCAFEB OK max steps 74
+   6:DCAFEB - EBFADC OK max steps 42
+   6:DCAEBF - EBFDCA FAILS at (length, base): (6,40) cycle, (6,97) cycle, (6,160) cycle, (6,640) cycle
+7: 27 rules; 18 with no failure found
+   7:0,5,2,4,1,6,3 3,2,5,1,0,4,6 FAILS at (length, base): (7,97) cycle, (7,160) cycle, (7,640) cycle, (7,2500) cycle
+   7:0,1,3,5,2,6,4 4,3,0,2,5,1,6 FAILS at (length, base): (8,97) cycle, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   7:1,2,5,0,6,3,4 4,5,2,3,0,1,6 OK max steps 78
+   7:6,5,2,4,1,0,3 3,2,5,1,6,4,0 FAILS at (length, base): (7,97) cycle, (7,160) cycle, (7,640) cycle, (7,2500) cycle
+   7:0,4,2,6,3,1,5 5,2,4,3,0,6,1 FAILS at (length, base): (8,160) cycle
+   7:0,5,2,6,1,3,4 4,2,5,3,6,0,1 OK max steps 361
+   7:0,5,2,1,6,4,3 3,2,5,4,1,0,6 OK max steps 150
+   7:3,2,5,4,1,0,6 0,5,2,1,6,4,3 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7:0,6,3,2,5,1,4 3,4,2,6,1,5,0 OK max steps 576
+   7:1,5,2,0,6,3,4 4,2,5,3,0,1,6 OK max steps 721
+   7:1,5,2,6,0,3,4 4,2,5,3,6,1,0 OK max steps 361
+   7:5,4,1,3,0,6,2 2,1,4,0,5,3,6 FAILS at (length, base): (7,97) cycle, (7,160) cycle, (7,640) cycle, (7,2500) cycle
+   7:4,2,5,3,6,0,1 1,5,2,0,4,3,6 FAILS at (length, base): (7,40) cycle
+   7:1,6,3,5,2,0,4 4,3,6,2,1,5,0 FAILS at (length, base): (7,97) cycle, (7,160) cycle, (7,640) cycle, (7,2500) cycle
+   7:1,5,2,0,4,3,6 4,2,5,3,0,6,1 FAILS at (length, base): (8,97) cycle, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   7:0,4,1,6,5,2,3 3,1,4,2,6,0,5 OK max steps 722
+   7:5,6,1,3,4,0,2 2,1,3,5,0,4,6 OK max steps 561
+   7:1,5,2,6,0,4,3 4,2,5,3,6,0,1 OK max steps 1253
+   7:6,3,0,4,5,1,2 2,0,3,1,4,6,5 OK max steps 361
+   7:6,3,0,5,4,2,1 1,0,3,2,5,6,4 OK max steps 71
+   7:0,1,4,5,2,6,3 3,4,0,2,5,1,6 OK max steps 139
+   7:0,4,1,5,6,3,2 3,1,4,2,5,6,0 OK max steps 1253
+   7:2,1,4,3,6,0,5 5,4,1,0,3,2,6 OK max steps 1250
+   7:1,5,2,0,6,4,3 4,2,5,3,0,6,1 OK max steps 610
+   7:0,4,1,5,6,2,3 3,1,4,2,5,0,6 OK max steps 361
+   7:0,5,2,6,1,4,3 4,2,5,3,6,1,0 OK max steps 1250
+   7:6,5,2,1,4,0,3 2,3,1,5,0,4,6 OK max steps 576
+7g4: 85 rules; 60 with no failure found
+   7g4:4,3,0,6,2,5,1 1,0,3,2,6,4,5 OK max steps 33
+   7g4:1,4,6,2,0,3,5 4,5,2,6,3,0,1 OK max steps 27
+   7g4:0,4,1,6,5,2,3 3,1,4,2,6,5,0 OK max steps 842
+   7g4:1,5,2,0,6,3,4 4,2,5,3,0,6,1 OK max steps 837
+   7g4:4,2,5,3,6,0,1 1,5,2,6,0,3,4 FAILS at (length, base): (8,40) cycle, (8,160) cycle, (8,640) cycle, (9,40) cycle
+   7g4:4,3,0,5,2,6,1 1,0,3,2,5,4,6 OK max steps 33
+   7g4:6,3,5,1,4,0,2 3,2,1,5,0,4,6 OK max steps 25
+   7g4:5,4,1,0,3,6,2 2,1,4,3,6,0,5 FAILS at (length, base): (8,160) cycle, (9,97) cycle, (9,640) cycle, (9,2500) cycle
+   7g4:6,3,4,0,5,1,2 3,2,0,4,1,5,6 OK max steps 27
+   7g4:2,3,0,1,4,6,5 5,0,3,4,1,2,6 OK max steps 61
+   7g4:5,3,0,4,1,6,2 2,0,3,1,4,5,6 OK max steps 33
+   7g4:2,1,4,3,0,6,5 5,4,1,0,3,2,6 FAILS at (length, base): (8,640) cycle
+   7g4:2,4,0,1,3,6,5 5,0,4,3,1,2,6 OK max steps 83
+   7g4:4,2,5,3,0,6,1 1,5,2,0,6,3,4 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7g4:0,4,1,5,6,2,3 3,1,4,2,5,6,0 OK max steps 1666
+   7g4:6,4,1,0,5,2,3 3,1,4,2,0,5,6 OK max steps 841
+   7g4:2,1,4,3,0,5,6 5,4,1,0,3,6,2 FAILS at (length, base): (8,97) cycle, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   7g4:0,6,2,4,1,5,3 3,2,6,1,4,0,5 OK max steps 31
+   7g4:2,0,3,1,4,6,5 5,3,0,4,1,2,6 OK max steps 58
+   7g4:5,6,1,3,4,0,2 2,1,3,6,0,4,5 OK max steps 582
+   7g4:6,0,2,4,1,5,3 3,2,0,1,4,6,5 OK max steps 31
+   7g4:6,0,2,3,5,1,4 4,2,3,0,1,5,6 OK max steps 582
+   7g4:2,0,4,6,3,1,5 5,4,0,3,6,2,1 OK max steps 31
+   7g4:1,0,3,2,6,4,5 5,3,0,6,4,2,1 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,640) cycle, (8,2500) cycle
+   7g4:3,1,4,2,5,0,6 0,4,1,5,2,6,3 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7g4:1,5,2,0,3,4,6 4,2,5,3,0,6,1 FAILS at (length, base): (8,40) two endpoints, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   7g4:3,2,5,4,1,0,6 0,5,2,1,4,6,3 FAILS at (length, base): (8,97) cycle, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   7g4:6,4,1,0,5,3,2 2,1,4,3,0,5,6 OK max steps 133
+   7g4:2,1,3,5,0,4,6 6,5,1,3,4,0,2 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7g4:5,3,0,6,4,2,1 1,0,3,2,6,4,5 OK max steps 133
+   7g4:0,6,2,3,5,1,4 4,2,3,6,1,5,0 OK max steps 840
+   7g4:6,2,5,1,0,3,4 2,4,1,5,3,0,6 OK max steps 28
+   7g4:1,2,0,5,3,6,4 4,0,2,3,5,1,6 OK max steps 40
+   7g4:0,5,2,4,1,6,3 3,2,5,1,4,0,6 OK max steps 31
+   7g4:5,4,1,0,3,6,2 2,1,4,3,0,5,6 OK max steps 33
+   7g4:5,6,1,3,0,4,2 2,1,6,0,3,5,4 OK max steps 31
+   7g4:5,6,1,2,4,0,3 3,1,2,6,0,4,5 OK max steps 582
+   7g4:6,5,0,1,4,2,3 3,0,5,4,1,6,2 OK max steps 37
+   7g4:3,2,5,4,6,0,1 0,5,2,6,4,1,3 FAILS at (length, base): (8,97) cycle, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   7g4:2,1,4,3,0,5,6 6,4,1,0,5,3,2 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,2500) cycle
+   7g4:1,0,3,5,2,6,4 4,3,0,2,5,1,6 OK max steps 31
+   7g4:1,5,2,6,0,3,4 4,2,5,3,6,0,1 OK max steps 1667
+   7g4:5,3,0,4,1,6,2 2,0,3,1,6,4,5 FAILS at (length, base): (7,640) cycle, (7,2500) cycle, (8,40) cycle, (8,640) cycle
+   7g4:6,0,2,4,5,1,3 3,2,4,0,1,5,6 OK max steps 582
+   7g4:1,5,2,6,3,0,4 4,2,5,3,6,1,0 OK max steps 34
+   7g4:0,6,3,2,5,1,4 4,3,2,6,1,5,0 OK max steps 1665
+   7g4:6,5,2,0,4,1,3 3,2,5,4,0,6,1 OK max steps 33
+   7g4:4,2,5,3,0,6,1 1,5,2,0,3,4,6 OK max steps 56
+   7g4:0,3,6,2,5,1,4 3,4,2,6,1,5,0 OK max steps 24
+   7g4:3,2,5,4,0,6,1 6,5,2,0,4,1,3 FAILS at (length, base): (8,97) cycle, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   7g4:1,6,3,5,2,0,4 4,3,6,2,5,1,0 OK max steps 31
+   7g4:0,1,4,5,2,6,3 3,4,1,2,5,0,6 OK max steps 31
+   7g4:5,1,4,0,6,2,3 1,3,0,4,2,6,5 OK max steps 28
+   7g4:2,0,3,1,6,4,5 5,3,0,6,4,1,2 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,640) cycle, (8,2500) cycle
+   7g4:3,1,4,2,5,6,0 0,4,1,5,6,2,3 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7g4:0,3,5,1,6,2,4 3,4,1,5,2,6,0 OK max steps 26
+   7g4:1,5,2,3,0,4,6 4,2,5,0,3,6,1 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7g4:0,5,2,1,4,6,3 3,2,5,4,1,0,6 OK max steps 32
+   7g4:6,5,1,2,4,0,3 3,1,5,4,2,6,0 OK max steps 40
+   7g4:4,3,0,2,5,6,1 1,0,3,5,2,4,6 FAILS at (length, base): (8,160) cycle, (8,640) cycle
+   7g4:3,2,5,1,4,6,0 0,5,2,4,1,3,6 FAILS at (length, base): (9,40) cycle, (9,97) cycle, (9,160) cycle, (9,640) cycle
+   7g4:2,0,3,1,6,4,5 5,3,0,4,1,6,2 FAILS at (length, base): (7,640) cycle, (7,2500) cycle, (9,40) cycle, (12,40) cycle
+   7g4:6,5,2,1,4,0,3 3,2,5,4,1,6,0 OK max steps 33
+   7g4:3,2,5,4,1,6,0 0,5,2,1,4,3,6 FAILS at (length, base): (8,97) cycle, (8,160) cycle, (8,640) cycle, (8,2500) cycle
+   7g4:3,2,5,0,1,4,6 6,3,0,5,4,1,2 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7g4:2,1,4,3,6,0,5 5,4,1,0,3,6,2 OK max steps 1250
+   7g4:0,5,2,1,6,4,3 3,2,5,4,1,6,0 OK max steps 134
+   7g4:1,2,5,0,3,6,4 4,5,2,3,0,1,6 OK max steps 72
+   7g4:1,5,2,0,3,6,4 4,2,5,3,0,1,6 OK max steps 33
+   7g4:4,5,0,3,2,6,1 1,0,5,2,6,3,4 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7g4:6,5,1,3,4,0,2 2,1,3,5,0,4,6 OK max steps 839
+   7g4:0,4,1,5,2,6,3 3,1,4,2,5,0,6 OK max steps 33
+   7g4:3,2,5,6,1,4,0 0,5,2,1,6,3,4 OK max steps 36
+   7g4:5,4,0,1,3,6,2 2,0,4,3,1,5,6 OK max steps 40
+   7g4:5,3,0,6,4,1,2 2,0,3,1,6,4,5 OK max steps 841
+   7g4:3,1,4,2,0,5,6 6,4,1,0,5,2,3 FAILS at (length, base): (8,40) cycle, (8,97) cycle, (8,160) cycle, (8,640) cycle
+   7g4:6,5,2,4,1,0,3 3,2,5,1,4,6,0 OK max steps 31
+   7g4:2,1,4,0,3,6,5 5,4,1,3,0,2,6 OK max steps 69
+   7g4:6,5,2,3,0,4,1 1,2,5,0,3,6,4 OK max steps 31
+   7g4:5,4,1,6,3,0,2 2,1,4,3,6,5,0 OK max steps 33
+   7g4:5,4,1,3,0,6,2 2,1,4,0,3,5,6 OK max steps 31
+   7g4:0,5,2,6,4,1,3 3,2,5,4,6,0,1 OK max steps 32
+   7g4:1,0,3,2,5,6,4 4,3,0,5,2,1,6 OK max steps 60
+   7g4:6,4,1,5,2,0,3 3,1,4,2,5,6,0 OK max steps 33
+   7g4:3,4,2,6,1,5,0 0,3,6,2,5,1,4 FAILS at (length, base): (8,40) two endpoints, (8,97) cycle, (8,160) cycle, (8,640) cycle
