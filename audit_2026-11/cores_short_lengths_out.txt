@@ -1,0 +1,323 @@
+551 cores pass the all-lengths check; 57 digit families
+
+family 9981+zeros: 100 cores; universal at every length 7..20: 83; max nonzero digits visited 21; endpoints: 39
+   ADFCEB - CEABDF  endpoint 100899  core steps<= 16  fails at lengths none
+   BDFCEA - CEABDF  endpoint 100899  core steps<= 9  fails at lengths none
+   BDFCEA - CFABDE  endpoint 100899  core steps<= 21  fails at lengths none
+   CEABDF - ADFCEB  endpoint 100899  core steps<= 24  fails at lengths none
+   CEABDF - BDFCEA  endpoint 100899  core steps<= 23  fails at lengths none
+   DBFECA - ECADBF  endpoint 100899  core steps<= 11  fails at lengths none
+
+family 743211+zeros: 89 cores; universal at every length 7..20: 5; max nonzero digits visited 21; endpoints: 72
+   DFBAEC - FACDBE  endpoint 1031472  core steps<= 22  fails at lengths [6, 7]
+   DFCAEB - FAEDBC  endpoint 1032471  core steps<= 22  fails at lengths [6, 7]
+   DFAEBC - FADBCE  endpoint 1034712  core steps<= 22  fails at lengths [6, 7]
+   DFAECB - FADBEC  endpoint 1034721  core steps<= 22  fails at lengths [6, 7]
+   DEBCAF - FBCEDA  endpoint 1071243  core steps<= 22  fails at lengths [6, 7]
+   DEBAFC - FBCDAE  endpoint 1071432  core steps<= 22  fails at lengths [6, 7]
+
+family 84321+zeros: 36 cores; universal at every length 7..20: 22; max nonzero digits visited 20; endpoints: 35
+   DCFBEA - EDAFCB  endpoint 102384  core steps<= 18  fails at lengths none
+   DCFABE - EDABFC  endpoint 102438  core steps<= 23  fails at lengths none
+   BDEACF - CEABFD  endpoint 103428  core steps<= 24  fails at lengths [6]
+   EDCFAB - DCEBFA  endpoint 108324  core steps<= 23  fails at lengths [7]
+   DBFCEA - EFADCB  endpoint 132084  core steps<= 20  fails at lengths [6]
+   CBAFED - DECAFB  endpoint 134208  core steps<= 30  fails at lengths [6, 7]
+
+family 95544+zeros: 32 cores; universal at every length 7..20: 2; max nonzero digits visited 21; endpoints: 20
+   DAECBF - ADFECB  endpoint 445905  core steps<= 38  fails at lengths [6, 7]
+   FABEDC - CEDABF  endpoint 449505  core steps<= 30  fails at lengths [6, 8]
+   FACEDB - CEDABF  endpoint 449505  core steps<= 47  fails at lengths [6, 7]
+   FCBEDA - CFDABE  endpoint 449505  core steps<= 29  fails at lengths [6, 7, 8]
+   DEACBF - EADBFC  endpoint 44955  core steps<= 27  fails at lengths [6, 7]
+   DFACBE - ECDBFA  endpoint 44955  core steps<= 26  fails at lengths [6, 7]
+
+family 8654211+zeros: 30 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 30
+   CBFADE - DFAECB  endpoint 10142586  core steps<= 20  fails at lengths [6, 7, 8]
+   CBEADF - DFBECA  endpoint 10146582  core steps<= 20  fails at lengths [6, 7, 8]
+   CBDFAE - DFCAEB  endpoint 10148256  core steps<= 21  fails at lengths [6, 7, 8]
+   CBDEAF - DFCBEA  endpoint 10148652  core steps<= 20  fails at lengths [6, 7, 8]
+   CAFBDE - DEAFCB  endpoint 10152486  core steps<= 21  fails at lengths [6, 7, 8]
+   CAEBDF - DEBFCA  endpoint 10156482  core steps<= 26  fails at lengths [6, 7, 8]
+
+family 843111+zeros: 24 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 24
+   DBCFEA - FCEDAB  endpoint 1011834  core steps<= 20  fails at lengths [6, 7]
+   DBACFE - FCBEDA  endpoint 1014183  core steps<= 22  fails at lengths [6, 7]
+   DCFEBA - FEDACB  endpoint 1018314  core steps<= 20  fails at lengths [6, 7]
+   DCFEAB - FEDABC  endpoint 1018341  core steps<= 20  fails at lengths [6, 7]
+   DABCFE - FBCEDA  endpoint 1041183  core steps<= 22  fails at lengths [6, 7]
+   DACFEB - FBEDAC  endpoint 1041831  core steps<= 21  fails at lengths [6, 7]
+
+family 98721+zeros: 17 cores; universal at every length 7..20: 5; max nonzero digits visited 21; endpoints: 17
+   DBEAFC - ECAFDB  endpoint 102879  core steps<= 21  fails at lengths [6]
+   DBFCAE - ECDBFA  endpoint 107982  core steps<= 19  fails at lengths [6]
+   DEBCFA - FACBED  endpoint 120897  core steps<= 40  fails at lengths [6, 7]
+   DEABCF - FADCBE  endpoint 127089  core steps<= 40  fails at lengths [6, 7]
+   DCEBFA - FBACED  endpoint 182097  core steps<= 40  fails at lengths [6, 7, 8]
+   DCEABF - FBADCE  endpoint 182709  core steps<= 40  fails at lengths [6, 7, 8]
+
+family 75321+zeros: 16 cores; universal at every length 7..20: 13; max nonzero digits visited 21; endpoints: 16
+   ECFBAD - FDACEB  endpoint 103257  core steps<= 25  fails at lengths [6]
+   ECFADB - FDAEBC  endpoint 103572  core steps<= 25  fails at lengths [6, 7]
+   ECDBAF - FDBCEA  endpoint 107253  core steps<= 33  fails at lengths [6, 7]
+   ECDAFB - FDBEAC  endpoint 107532  core steps<= 28  fails at lengths [6, 7]
+   CFEBAD - DAFCEB  endpoint 31257  core steps<= 29  fails at lengths [6]
+   CFEADB - DAFEBC  endpoint 31572  core steps<= 30  fails at lengths [6]
+
+family 876321+zeros: 15 cores; universal at every length 7..20: 7; max nonzero digits visited 20; endpoints: 15
+   EFBCDA - FADBCE  endpoint 1023876  core steps<= 26  fails at lengths [6, 7]
+   EDBCFA - FCDBAE  endpoint 1073826  core steps<= 40  fails at lengths [6, 7]
+   ECDBFA - FBCDAE  endpoint 1087326  core steps<= 24  fails at lengths [6, 7]
+   BFECDA - DAFBCE  endpoint 1320876  core steps<= 19  fails at lengths [6, 7]
+   BCEFDA - DAFBCE  endpoint 1380276  core steps<= 37  fails at lengths [6, 7, 8]
+   BCFEDA - DBAFCE  endpoint 1382076  core steps<= 23  fails at lengths [6, 7]
+
+family 7422111+zeros: 15 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 10
+   CDBAFE - EFCBDA  endpoint 10112274  core steps<= 24  fails at lengths [6, 7]
+   DCBAFE - FECBDA  endpoint 10112274  core steps<= 25  fails at lengths [6, 7]
+   CDAFEB - EFBDAC  endpoint 10112742  core steps<= 30  fails at lengths [6, 7]
+   DCAFEB - FEBDAC  endpoint 10112742  core steps<= 24  fails at lengths [6, 7]
+   CBAFED - ECBDAF  endpoint 10122741  core steps<= 26  fails at lengths [6, 7]
+   DBAFEC - FCBDAE  endpoint 10122741  core steps<= 23  fails at lengths [6, 7]
+
+family 8554311+zeros: 12 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 12
+   CBDFAE - DFABEC  endpoint 10135548  core steps<= 31  fails at lengths [6, 7, 8]
+   CBEADF - DFCEAB  endpoint 10138455  core steps<= 32  fails at lengths [6, 7, 8]
+   CADFBE - DEABFC  endpoint 10145538  core steps<= 27  fails at lengths [6, 7, 8]
+   CAEBDF - DECFAB  endpoint 10148355  core steps<= 31  fails at lengths [6, 7, 8]
+   BDFCAE - FABDEC  endpoint 10355148  core steps<= 31  fails at lengths [6, 7, 8]
+   BDFAEC - FABECD  endpoint 10355481  core steps<= 31  fails at lengths [6, 7, 8]
+
+family 65421+zeros: 12 cores; universal at every length 7..20: 3; max nonzero digits visited 20; endpoints: 12
+   ECBAFD - FDEBCA  endpoint 124056  core steps<= 28  fails at lengths [6, 7]
+   EBAFDC - FEBCAD  endpoint 140562  core steps<= 28  fails at lengths [6, 7]
+   CEBAFD - DFEBCA  endpoint 214056  core steps<= 28  fails at lengths [6, 7]
+   CBAFDE - DEBCAF  endpoint 240561  core steps<= 28  fails at lengths [6, 7]
+   BAFDEC - EBCAFD  endpoint 405612  core steps<= 28  fails at lengths [6, 7]
+   BAFDCE - EBCADF  endpoint 405621  core steps<= 28  fails at lengths [6, 7]
+
+family 875421+zeros: 12 cores; universal at every length 7..20: 2; max nonzero digits visited 20; endpoints: 12
+   FEDABC - ACEDFB  endpoint 172458  core steps<= 45  fails at lengths [6, 7]
+   FEADBC - ACDEFB  endpoint 174258  core steps<= 45  fails at lengths [6, 7]
+   FBDAEC - ACBEDF  endpoint 217584  core steps<= 42  fails at lengths [6]
+   FBEADC - ACDEBF  endpoint 218574  core steps<= 41  fails at lengths [6]
+   EBFDCA - ADCEBF  endpoint 425187  core steps<= 50  fails at lengths [6, 7, 8]
+   FDCBEA - CEBDAF  endpoint 518247  core steps<= 48  fails at lengths [6, 7, 8]
+
+family 842211+zeros: 11 cores; universal at every length 7..20: 11; max nonzero digits visited 20; endpoints: 9
+   CEFDBA - EDAFCB  endpoint 1082124  core steps<= 21  fails at lengths [6]
+   CEFDAB - EDAFBC  endpoint 1082142  core steps<= 21  fails at lengths [6]
+   CEFBDA - EDACFB  endpoint 1082214  core steps<= 21  fails at lengths [6]
+   CEFBAD - EDACBF  endpoint 1082241  core steps<= 24  fails at lengths [6]
+   CEFADB - EDABFC  endpoint 1082412  core steps<= 21  fails at lengths [6]
+   CEFABD - EDABCF  endpoint 1082421  core steps<= 24  fails at lengths [6]
+
+family 9752211+zeros: 10 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 10
+   FDACEB - AFBECD  endpoint 9112275  core steps<= 49  fails at lengths [6, 7]
+   FDCEAB - AFECBD  endpoint 9112725  core steps<= 46  fails at lengths [6, 7]
+   FADCEB - ABFECD  endpoint 9121275  core steps<= 49  fails at lengths [6, 7]
+   FACEDB - ABECFD  endpoint 9122715  core steps<= 47  fails at lengths [6, 7]
+   FCEDAB - AECFBD  endpoint 9127125  core steps<= 46  fails at lengths [6, 7]
+   FCEADB - AECBFD  endpoint 9127215  core steps<= 47  fails at lengths [6, 7]
+
+family 7653321+zeros: 8 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 4
+   EDFABC - ABDCEF  endpoint 10567233  core steps<= 39  fails at lengths [6, 7, 8, 9]
+   EDFACB - ABDCFE  endpoint 10567233  core steps<= 37  fails at lengths [6, 7, 8, 9]
+   EDFBAC - ABDECF  endpoint 10567323  core steps<= 39  fails at lengths [6, 7, 8, 9]
+   EDFCAB - ABDFCE  endpoint 10567323  core steps<= 37  fails at lengths [6, 7, 8, 9]
+   DEFABC - BADCEF  endpoint 10657233  core steps<= 39  fails at lengths [6, 7, 8, 9]
+   DEFACB - BADCFE  endpoint 10657233  core steps<= 37  fails at lengths [6, 7, 8, 9]
+
+family 554211+zeros: 6 cores; universal at every length 7..20: 6; max nonzero digits visited 20; endpoints: 6
+   DEFBCA - FBACDE  endpoint 1055124  core steps<= 23  fails at lengths [6]
+   DEFBAC - FBACED  endpoint 1055142  core steps<= 23  fails at lengths [6]
+   DEFCBA - FBADCE  endpoint 1055214  core steps<= 23  fails at lengths [6]
+   DEFCAB - FBADEC  endpoint 1055241  core steps<= 23  fails at lengths [6]
+   DEFABC - FBAECD  endpoint 1055412  core steps<= 23  fails at lengths [6]
+   DEFACB - FBAEDC  endpoint 1055421  core steps<= 23  fails at lengths [6]
+
+family 9544311+zeros: 6 cores; universal at every length 7..20: 0; max nonzero digits visited 21; endpoints: 6
+   DBCFAE - EFABCD  endpoint 10134549  core steps<= 26  fails at lengths [6, 7]
+   DAEBCF - ECDFAB  endpoint 10149345  core steps<= 27  fails at lengths [6, 7]
+   BCFDAE - FABECD  endpoint 10345149  core steps<= 29  fails at lengths [6, 7]
+   BCFAED - FABCDE  endpoint 10345491  core steps<= 26  fails at lengths [6, 7]
+   AEDBCF - CDEFAB  endpoint 10491345  core steps<= 27  fails at lengths [6, 7]
+   AEBCFD - CDFABE  endpoint 10493451  core steps<= 27  fails at lengths [6, 7]
+
+family 9876411+zeros: 6 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 6
+   DFABEC - EDFACB  endpoint 10147869  core steps<= 31  fails at lengths [6, 7, 8]
+   DBFAEC - EADFCB  endpoint 10184769  core steps<= 29  fails at lengths [6, 7, 8]
+   FBCAED - ACFEDB  endpoint 9116478  core steps<= 56  fails at lengths [6, 7, 8, 9]
+   FCBAED - AFCEDB  endpoint 9161478  core steps<= 56  fails at lengths [6, 7, 8, 9]
+   EFADCB - DAEBFC  endpoint 9714861  core steps<= 66  fails at lengths [6, 7, 8, 9]
+   DAEFCB - BEDAFC  endpoint 9847161  core steps<= 64  fails at lengths [6, 7, 8, 9]
+
+family 9643311+zeros: 6 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 6
+   CBFEDA - EFBACD  endpoint 10143396  core steps<= 35  fails at lengths [6, 7, 8]
+   CABFED - EDFBAC  endpoint 10164339  core steps<= 35  fails at lengths [6, 7, 8]
+   BFEDCA - FBACED  endpoint 10433916  core steps<= 34  fails at lengths [6, 7, 8]
+   BFEDAC - FBACDE  endpoint 10433961  core steps<= 34  fails at lengths [6, 7, 8]
+   ACBFED - DEFBAC  endpoint 10614339  core steps<= 35  fails at lengths [6, 7, 8]
+   ABFEDC - DFBACE  endpoint 10643391  core steps<= 35  fails at lengths [6, 7, 8]
+
+family 8753211+zeros: 6 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 6
+   DBCAFE - FDBEAC  endpoint 10238517  core steps<= 22  fails at lengths [6, 7]
+   DAFEBC - FEACDB  endpoint 10251738  core steps<= 22  fails at lengths [6, 7]
+   BCDAFE - DBFEAC  endpoint 10382517  core steps<= 22  fails at lengths [6, 7]
+   BCAFED - DBEACF  endpoint 10385172  core steps<= 23  fails at lengths [6, 7]
+   AFEDBC - EACFDB  endpoint 10517238  core steps<= 22  fails at lengths [6, 7]
+   AFEBCD - EACDBF  endpoint 10517382  core steps<= 22  fails at lengths [6, 7]
+
+family 876411+zeros: 5 cores; universal at every length 7..20: 1; max nonzero digits visited 20; endpoints: 5
+   BDACFE - CAFDEB  endpoint 1067184  core steps<= 44  fails at lengths [6, 7, 8]
+   BFEACD - CEBFDA  endpoint 1084716  core steps<= 44  fails at lengths [6, 7, 8]
+   ACDBFE - FDACEB  endpoint 1716084  core steps<= 36  fails at lengths [6, 7, 8]
+   ACFDBE - FDEACB  endpoint 1718604  core steps<= 35  fails at lengths [6, 7, 8]
+   DBCFEA - CFDABE  endpoint 861147  core steps<= 32  fails at lengths [6]
+
+family 984321+zeros: 5 cores; universal at every length 7..20: 2; max nonzero digits visited 21; endpoints: 5
+   CFAEBD - DECBAF  endpoint 1084392  core steps<= 29  fails at lengths [6, 7]
+   AEBDCF - CBAFDE  endpoint 1439208  core steps<= 33  fails at lengths [6, 7]
+   DBEACF - ACDFEB  endpoint 439812  core steps<= 43  fails at lengths [6]
+   DABEFC - CBDAEF  endpoint 914283  core steps<= 36  fails at lengths [6]
+   DBEFAC - CDAEBF  endpoint 942813  core steps<= 31  fails at lengths [6, 7]
+
+family 874431+zeros: 4 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 2
+   FEDABC - ADBCEF  endpoint 187443  core steps<= 32  fails at lengths [6, 7]
+   FEDBAC - ADBECF  endpoint 187443  core steps<= 32  fails at lengths [6, 7]
+   EFDABC - DABCEF  endpoint 817443  core steps<= 35  fails at lengths [6, 7]
+   EFDBAC - DABECF  endpoint 817443  core steps<= 35  fails at lengths [6, 7]
+
+family 974331+zeros: 4 cores; universal at every length 7..20: 1; max nonzero digits visited 20; endpoints: 4
+   BDAECF - DCFAEB  endpoint 1397403  core steps<= 26  fails at lengths [6, 7]
+   AECFBD - FAEBDC  endpoint 1740339  core steps<= 24  fails at lengths [6, 7]
+   DAFCBE - ABEFDC  endpoint 417339  core steps<= 54  fails at lengths [6, 8, 9]
+   EDBCAF - DACFBE  endpoint 943317  core steps<= 31  fails at lengths [6]
+
+family 97632+zeros: 4 cores; universal at every length 7..20: 4; max nonzero digits visited 20; endpoints: 4
+   EACBFD - FEBDAC  endpoint 269307  core steps<= 23  fails at lengths [6]
+   ACBFDE - EBDACF  endpoint 693072  core steps<= 23  fails at lengths [6]
+   FCADEB - ABECFD  endpoint 903276  core steps<= 32  fails at lengths [6]
+   FCEADB - ABFECD  endpoint 907326  core steps<= 32  fails at lengths [6]
+
+family 6432111+zeros: 4 cores; universal at every length 7..20: 0; max nonzero digits visited 21; endpoints: 4
+   DCABEF - FECDAB  endpoint 10123146  core steps<= 35  fails at lengths [6, 7, 8]
+   DABEFC - FCDABE  endpoint 10131462  core steps<= 24  fails at lengths [6, 7, 8]
+   CDABEF - EFCDAB  endpoint 10213146  core steps<= 23  fails at lengths [6, 7, 8]
+   CABEFD - ECDABF  endpoint 10231461  core steps<= 30  fails at lengths [6, 7, 8]
+
+family 8653221+zeros: 4 cores; universal at every length 7..20: 0; max nonzero digits visited 21; endpoints: 4
+   DAEBFC - ACBDEF  endpoint 10526283  core steps<= 60  fails at lengths [6, 7, 8]
+   DCAEBF - AFCBDE  endpoint 10532628  core steps<= 49  fails at lengths [6, 7, 8]
+   EBDAFC - BDACEF  endpoint 10625283  core steps<= 60  fails at lengths [6, 7, 8]
+   EBDCAF - BDAFCE  endpoint 10625328  core steps<= 49  fails at lengths [6, 7, 8]
+
+family 96552+zeros: 4 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 4
+   CBFEAD - BEACDF  endpoint 69255  core steps<= 27  fails at lengths [6, 7]
+   FCBEAD - ABECDF  endpoint 906255  core steps<= 42  fails at lengths [6, 7]
+   FEABCD - ACDEBF  endpoint 925605  core steps<= 44  fails at lengths [6, 7]
+   FEBCAD - ACEBDF  endpoint 926055  core steps<= 44  fails at lengths [6, 7]
+
+family 942111+zeros: 4 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 4
+   CDAEFB - DEBFAC  endpoint 1104912  core steps<= 19  fails at lengths [6, 9]
+   CBDAEF - DCEBFA  endpoint 1120491  core steps<= 18  fails at lengths [6, 9]
+   BDAEFC - CEBFAD  endpoint 1204911  core steps<= 20  fails at lengths [6, 9]
+   BCDAEF - CDEBFA  endpoint 1210491  core steps<= 18  fails at lengths [6, 9]
+
+family 99954+zeros: 3 cores; universal at every length 7..20: 3; max nonzero digits visited 20; endpoints: 2
+   FABCDE - DFCBEA  endpoint 409995  core steps<= 34  fails at lengths [6]
+   ADCBFE - EFBCAD  endpoint 549909  core steps<= 25  fails at lengths [6]
+   EFBCAD - ADCBFE  endpoint 549909  core steps<= 27  fails at lengths [6]
+
+family 965421+zeros: 3 cores; universal at every length 7..20: 2; max nonzero digits visited 20; endpoints: 3
+   AFECDB - BDFACE  endpoint 1260594  core steps<= 43  fails at lengths [6, 7]
+   FDABCE - CEDABF  endpoint 524691  core steps<= 23  fails at lengths [6]
+   BFDACE - ACEDBF  endpoint 652491  core steps<= 33  fails at lengths [6]
+
+family 98743221+zeros: 3 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 3
+   ECADBF - BACFDE  endpoint 109482237  core steps<= 60  fails at lengths [6, 7, 8]
+   FADBEC - ECFDBA  endpoint 109722348  core steps<= 57  fails at lengths [6, 7, 8]
+   CADBEF - ACFDBE  endpoint 109822347  core steps<= 59  fails at lengths [6, 7, 8]
+
+family 987651+zeros: 3 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 3
+   EBDCAF - ADCBFE  endpoint 618975  core steps<= 66  fails at lengths [6, 7, 8, 9]
+   DEAFBC - BDCEFA  endpoint 791568  core steps<= 67  fails at lengths [6, 7]
+   EDFCAB - DBEFCA  endpoint 875619  core steps<= 43  fails at lengths [6, 7]
+
+family 87651+zeros: 3 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 3
+   FDEBAC - EFACDB  endpoint 56871  core steps<= 38  fails at lengths [6, 7]
+   ECDFAB - FACDBE  endpoint 78516  core steps<= 36  fails at lengths [6, 7]
+   EDCFAB - FCADBE  endpoint 87516  core steps<= 36  fails at lengths [6, 7]
+
+family 954+zeros: 2 cores; universal at every length 7..20: 2; max nonzero digits visited 20; endpoints: 2
+   FEDCBA - ADEBFC  endpoint 900045  core steps<= 29  fails at lengths [6]
+   EDFCBA - DEABFC  endpoint 9045  core steps<= 22  fails at lengths [6]
+
+family 55521+zeros: 2 cores; universal at every length 7..20: 1; max nonzero digits visited 20; endpoints: 2
+   FCDBAE - BACEFD  endpoint 502551  core steps<= 37  fails at lengths [6]
+   CFDBAE - ABCEFD  endpoint 52551  core steps<= 54  fails at lengths [6, 7]
+
+family 97443+zeros: 2 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 2
+   BDFEAC - EFACDB  endpoint 430947  core steps<= 24  fails at lengths [6, 7]
+   ACBDFE - DBEFAC  endpoint 474309  core steps<= 26  fails at lengths [6, 7]
+
+family 866421+zeros: 2 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 2
+   ECDBAF - BDCEFA  endpoint 618462  core steps<= 47  fails at lengths [6, 7]
+   EBCDAF - BEDCFA  endpoint 641862  core steps<= 47  fails at lengths [6, 7]
+
+family 998622+zeros: 2 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 2
+   CABFED - DEABFC  endpoint 2269098  core steps<= 30  fails at lengths [6, 7]
+   ABFEDC - EABFCD  endpoint 2690982  core steps<= 30  fails at lengths [6, 7]
+
+family 96444+zeros: 2 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 2
+   FDEACB - CEABDF  endpoint 404694  core steps<= 26  fails at lengths [6, 7]
+   FDECAB - CEADBF  endpoint 404964  core steps<= 26  fails at lengths [6, 7]
+
+family 988641+zeros: 2 cores; universal at every length 7..20: 1; max nonzero digits visited 20; endpoints: 2
+   BCFEAD - AFCDEB  endpoint 961848  core steps<= 44  fails at lengths [6, 7]
+   CFABED - BEFDAC  endpoint 968148  core steps<= 50  fails at lengths [6]
+
+family 75411+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   BCADFE - AFCEDB  endpoint 157014  core steps<= 73  fails at lengths [6, 7, 8]
+
+family 97641+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   CBDAEF - BDAEFC  endpoint 74196  core steps<= 58  fails at lengths [6, 8]
+
+family 976311+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   BDCAEF - CBDEFA  endpoint 1063791  core steps<= 27  fails at lengths [6, 7]
+
+family 9743211+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   DBEAFC - ACFBDE  endpoint 9431172  core steps<= 39  fails at lengths [6, 7]
+
+family 87642+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   BDEFAC - AEDBCF  endpoint 82674  core steps<= 30  fails at lengths [6, 7]
+
+family 9876321+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 21; endpoints: 1
+   DBCEFA - CAEDBF  endpoint 10893627  core steps<= 59  fails at lengths [6, 7]
+
+family 87543+zeros: 1 cores; universal at every length 7..20: 1; max nonzero digits visited 20; endpoints: 1
+   BEDFCA - AFBCDE  endpoint 73485  core steps<= 40  fails at lengths [6]
+
+family 985311+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   CFBEAD - EBAFDC  endpoint 1319058  core steps<= 47  fails at lengths [6, 7]
+
+family 86652+zeros: 1 cores; universal at every length 7..20: 1; max nonzero digits visited 20; endpoints: 1
+   DCFAEB - BECDFA  endpoint 65682  core steps<= 42  fails at lengths [6]
+
+family 965331+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   DFBAEC - ACEDFB  endpoint 353619  core steps<= 30  fails at lengths [6, 7]
+
+family 644211+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   DCBEFA - FBECAD  endpoint 1102644  core steps<= 36  fails at lengths [6, 7, 8]
+
+family 99711+zeros: 1 cores; universal at every length 7..20: 1; max nonzero digits visited 20; endpoints: 1
+   AEBDCF - FDCEBA  endpoint 901971  core steps<= 19  fails at lengths [6]
+
+family 98775+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   CBFADE - BDACEF  endpoint 98775  core steps<= 49  fails at lengths [6, 7]
+
+family 955431+zeros: 1 cores; universal at every length 7..20: 0; max nonzero digits visited 20; endpoints: 1
+   DFABCE - EBCFAD  endpoint 1054359  core steps<= 26  fails at lengths [6, 7]
+
+family 7641+zeros: 1 cores; universal at every length 7..20: 1; max nonzero digits visited 20; endpoints: 1
+   BFADCE - CBDEAF  endpoint 146070  core steps<= 41  fails at lengths none

@@ -1,0 +1,2 @@
+seeds=2941883 fail=0 maxsteps=41 maxsize=20 states=2942592 fails=[]
+python3 t2_py.py > t2_py.out 2>&1  17.42s user 0.19s system 99% cpu 17.650 total

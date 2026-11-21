@@ -1,0 +1,26 @@
+CORE N=6 a=0,1,4,5,2,3 b=2,0,1,3,4,5 A=1 B=1 endpointA=1018314 target=843111 maxsteps=20 maxsize=20
+CORE N=6 a=0,1,4,5,2,3 b=3,4,0,2,5,1 A=1 B=1 endpointA=80991 target=9981 maxsteps=17 maxsize=20
+CORE N=6 a=0,2,4,5,1,3 b=3,0,1,4,5,2 A=1 B=1 endpointA=102384 target=84321 maxsteps=18 maxsize=20
+CORE N=6 a=0,3,4,5,2,1 b=1,4,2,0,3,5 A=1 B=1 endpointA=1102644 target=644211 maxsteps=36 maxsize=20
+CORE N=6 a=0,5,1,2,3,4 b=3,4,2,0,1,5 A=1 B=1 endpointA=10433916 target=9643311 maxsteps=34 maxsize=20
+CORE N=6 a=0,5,2,3,4,1 b=1,0,4,2,3,5 A=1 B=1 endpointA=381024 target=84321 maxsteps=27 maxsize=20
+CORE N=6 a=0,5,3,1,2,4 b=4,2,0,3,5,1 A=1 B=1 endpointA=1230714 target=743211 maxsteps=27 maxsize=20
+CORE N=6 a=1,0,3,4,5,2 b=2,1,5,0,3,4 A=1 B=1 endpointA=9712125 target=9752211 maxsteps=29 maxsize=20
+CORE N=6 a=1,0,4,3,5,2 b=5,2,1,4,3,0 A=1 B=1 endpointA=490455 target=95544 maxsteps=42 maxsize=20
+CORE N=6 a=1,0,5,2,3,4 b=3,1,0,4,5,2 A=1 B=1 endpointA=1183041 target=843111 maxsteps=21 maxsize=20
+CORE N=6 a=1,4,3,2,5,0 b=0,5,2,3,4,1 A=1 B=1 endpointA=641862 target=866421 maxsteps=47 maxsize=20
+CORE N=6 a=1,4,5,3,2,0 b=0,2,4,1,5,3 A=1 B=1 endpointA=1210743 target=743211 maxsteps=25 maxsize=20
+CORE N=6 a=1,5,3,0,2,4 b=4,1,2,3,0,5 A=1 B=1 endpointA=320841 target=84321 maxsteps=20 maxsize=20
+CORE N=6 a=2,1,0,4,5,3 b=5,4,2,3,1,0 A=1 B=1 endpointA=10567233 target=7653321 maxsteps=39 maxsize=20
+CORE N=6 a=2,1,5,0,3,4 b=4,5,1,3,0,2 A=1 B=1 endpointA=190089 target=9981 maxsteps=12 maxsize=20
+CORE N=6 a=3,1,2,0,4,5 b=1,5,0,2,3,4 A=1 B=1 endpointA=316287 target=876321 maxsteps=23 maxsize=20
+CORE N=6 a=3,4,5,0,1,2 b=2,0,3,5,4,1 A=1 B=1 endpointA=134208 target=84321 maxsteps=30 maxsize=20
+CORE N=6 a=4,0,5,1,2,3 b=3,1,2,0,4,5 A=1 B=1 endpointA=10451682 target=8654211 maxsteps=40 maxsize=20
+CORE N=6 a=4,1,5,0,2,3 b=2,4,1,3,5,0 A=1 B=1 endpointA=10127421 target=7422111 maxsteps=24 maxsize=20
+CORE N=6 a=4,3,0,5,2,1 b=2,4,5,3,1,0 A=1 B=1 endpointA=914283 target=984321 maxsteps=36 maxsize=21
+CORE N=6 a=5,0,1,2,3,4 b=4,2,5,1,0,3 A=1 B=1 endpointA=420813 target=84321 maxsteps=30 maxsize=20
+CORE N=6 a=5,2,4,3,0,1 b=3,0,2,4,1,5 A=1 B=1 endpointA=1716084 target=876411 maxsteps=36 maxsize=20
+CORE N=6 a=5,3,0,2,1,4 b=4,1,2,0,5,3 A=1 B=1 endpointA=10524861 target=8654211 maxsteps=21 maxsize=20
+CORE N=6 a=5,3,1,2,4,0 b=0,1,3,4,2,5 A=1 B=1 endpointA=901971 target=99711 maxsteps=19 maxsize=20
+CORE N=6 a=5,4,2,1,3,0 b=0,2,4,3,1,5 A=1 B=1 endpointA=908901 target=9981 maxsteps=28 maxsize=20
+DONE N=6 AD=12 shard=5 cores=11925 A=25 B=25

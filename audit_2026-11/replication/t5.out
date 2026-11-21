@@ -1,0 +1,3 @@
+d=25 tested=34359 (skipped repdigits=1641) failures=0 maxsteps=41 maxsteps_seed=('nearrep', '8777777777777777777777777') distinct_endpoints=1 fail_examples=[]
+d=40 tested=34524 (skipped repdigits=1476) failures=0 maxsteps=41 maxsteps_seed=('nearrep', '3222222222222222222222222222222222222222') distinct_endpoints=1 fail_examples=[]
+d=100 tested=34630 (skipped repdigits=1370) failures=0 maxsteps=52 maxsteps_seed=('nearrep', '7777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777631') distinct_endpoints=1 fail_examples=[]

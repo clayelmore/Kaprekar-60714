@@ -1,0 +1,3 @@
+CORE N=5 a=1,0,3,2,4 b=2,4,1,3,0 A=1 B=1 endpointA=51624 target=65421 maxsteps=34 maxsize=18
+CORE N=5 a=3,4,0,1,2 b=1,3,2,0,4 A=1 B=1 endpointA=140562 target=65421 maxsteps=28 maxsize=18
+DONE N=5 AD=11 shard=3 cores=377 A=2 B=2

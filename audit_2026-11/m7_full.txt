@@ -1,0 +1,4 @@
+d=28 states=124403620 nonrep=124403610 strict=124403520 terminals=2
+  FIX len=1 val=0 basin=0 strict=0 maxsteps=0
+  FIX len=1 val=6174617461746174617461746174 basin=124403610 strict=124403520 maxsteps=61
+

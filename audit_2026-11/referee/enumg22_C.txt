@@ -1,0 +1,1 @@
+d=22 a=541230 b=314502 nonrep=20160065 nonconverging=0 maxsteps=42 fixed: 702189(x20160065)

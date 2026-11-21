@@ -1,0 +1,40 @@
+6174 base                          d= 4 nonrep=       705 top=FIX 6174 basin=705 (100.0000%) maxsteps=5 nonzero_fixed=1 cycles=0  UNIVERSAL
+1746 base                          d= 4 nonrep=       705 top=FIX 1746 basin=705 (100.0000%) maxsteps=5 nonzero_fixed=1 cycles=0  UNIVERSAL
+2538 base                          d= 4 nonrep=       705 top=FIX 2538 basin=705 (100.0000%) maxsteps=5 nonzero_fixed=1 cycles=0  UNIVERSAL
+5382 base                          d= 4 nonrep=       705 top=FIX 5382 basin=705 (100.0000%) maxsteps=5 nonzero_fixed=1 cycles=0  UNIVERSAL
+6174 2-fold                        d= 8 nonrep=     24300 top=FIX 61746174 basin=24300 (100.0000%) maxsteps=210 nonzero_fixed=1 cycles=0  UNIVERSAL
+1746 2-fold                        d= 8 nonrep=     24300 top=FIX 17461746 basin=24300 (100.0000%) maxsteps=210 nonzero_fixed=1 cycles=0  UNIVERSAL
+2538 2-fold                        d= 8 nonrep=     24300 top=FIX 25382538 basin=24300 (100.0000%) maxsteps=210 nonzero_fixed=1 cycles=0  UNIVERSAL
+5382 2-fold                        d= 8 nonrep=     24300 top=FIX 53825382 basin=24300 (100.0000%) maxsteps=210 nonzero_fixed=1 cycles=0  UNIVERSAL
+interleaved 6174 3-fold            d=12 nonrep=    293920 top=CYC 735363546444 basin=249084 (84.7455%) maxsteps=9012 nonzero_fixed=2 cycles=2
+      fixed 617461746174 basin=43672
+      fixed 535549955994 basin=100
+interleaved 6174 4-fold            d=16 nonrep=   2042965 top=FIX 6174617461746174 basin=2036653 (99.6910%) maxsteps=36563 nonzero_fixed=1 cycles=1
+interleaved 6174 5-fold            d=20 nonrep=  10014995 top=CYC 60846084617460846084 basin=4017611 (40.1160%) maxsteps=17575 nonzero_fixed=1 cycles=3
+1746 3-fold                        d=12 nonrep=    293920 top=CYC 85517460855 basin=157239 (53.4972%) maxsteps=7221 nonzero_fixed=2 cycles=3
+      fixed 174617461746 basin=45491
+      fixed 5400446445 basin=56
+1746 4-fold                        d=16 nonrep=   2042965 top=FIX 1746174617461746 basin=2042965 (100.0000%) maxsteps=42875 nonzero_fixed=1 cycles=0  UNIVERSAL
+1746 5-fold                        d=20 nonrep=  10014995 top=FIX 17461746174617461746 basin=10014995 (100.0000%) maxsteps=014905 nonzero_fixed=1 cycles=0  UNIVERSAL
+1746 6-fold                        d=24 nonrep=  38567090 top=CYC 263726371746174626372637 basin=32302034 (83.7554%) maxsteps=301962 nonzero_fixed=2 cycles=2
+      fixed 174617461746174617461746 basin=6244101
+      fixed 5400540045004464446445 basin=196
+6174 double-double                 d=16 nonrep=   2042965 top=FIX 6174617461746174 basin=2036653 (99.6910%) maxsteps=36563 nonzero_fixed=1 cycles=1
+1746 double-double                 d=16 nonrep=   2042965 top=FIX 1746174617461746 basin=2042965 (100.0000%) maxsteps=42875 nonzero_fixed=1 cycles=0  UNIVERSAL
+2538 double-double                 d=16 nonrep=   2042965 top=FIX 2538253825382538 basin=2036653 (99.6910%) maxsteps=36563 nonzero_fixed=1 cycles=1
+5382 double-double                 d=16 nonrep=   2042965 top=FIX 5382538253825382 basin=2036653 (99.6910%) maxsteps=36563 nonzero_fixed=1 cycles=1
+2538 3-fold                        d=12 nonrep=    293920 top=CYC 353736274626 basin=249198 (84.7843%) maxsteps=9108 nonzero_fixed=2 cycles=2
+      fixed 253825382538 basin=43558
+      fixed 54004504446 basin=100
+2538 5-fold                        d=20 nonrep=  10014995 top=CYC 15391539253815391539 basin=4017647 (40.1163%) maxsteps=17611 nonzero_fixed=1 cycles=3
+5382 3-fold                        d=12 nonrep=    293920 top=CYC 537362736264 basin=249198 (84.7843%) maxsteps=9108 nonzero_fixed=2 cycles=2
+      fixed 538253825382 basin=43558
+      fixed 540045004464 basin=100
+5382 5-fold                        d=20 nonrep=  10014995 top=CYC 53915391538253915391 basin=4017647 (40.1163%) maxsteps=17611 nonzero_fixed=1 cycles=3
+60714 native 2-fold                d=10 nonrep=     92368 top=FIX 6071460714 basin=49266 (53.3367%) maxsteps=230 nonzero_fixed=1 cycles=2
+m=3 rule (666141417774)            d=12 nonrep=    293920 top=FIX 666141417774 basin=293920 (100.0000%) maxsteps=3830 nonzero_fixed=1 cycles=0  UNIVERSAL
+m=3 rule 2-fold                    d=24 nonrep=  38567090 top=FIX 666141417774666141417774 basin=38567090 (100.0000%) maxsteps=567000 nonzero_fixed=1 cycles=0  UNIVERSAL
+1746 2-fold then 3-fold            d=24 nonrep=  38567090 top=CYC 85499640855085499640855 basin=21983708 (57.0012%) maxsteps=983708 nonzero_fixed=1 cycles=3
+1746 7-fold                        d=28 nonrep= 124403610 top=CYC 837083708369928083708370837 basin=68574960 (55.1230%) maxsteps=574924 nonzero_fixed=1 cycles=2
+1746 8-fold (direct)               d=32 nonrep= 350343555 top=FIX 17461746174617461746174617461746 basin=350282534 (99.9826%) maxsteps=0282444 nonzero_fixed=1 cycles=1
+1746 tower level 3                 d=32 nonrep= 350343555 top=FIX 17461746174617461746174617461746 basin=350343555 (100.0000%) maxsteps=0343465 nonzero_fixed=1 cycles=0  UNIVERSAL

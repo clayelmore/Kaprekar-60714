@@ -1,0 +1,95 @@
+<title>Kaprekar Ladder Findings</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* layout: single reading column, findings as a ledger; digits set in mono like a worked subtraction */
+:root{--bg:#f7f8f6;--surface:#ffffff;--fg:#17201c;--muted:#5a665f;--line:#d9dfda;--accent:#0b6b57;--accent-soft:#e2f1ec;--warn:#9a5b00;--warn-soft:#fbf0dc;
+  --display:"Space Grotesk",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111614;--surface:#19201d;--fg:#e8eeea;--muted:#9aa8a0;--line:#2b3531;--accent:#5fd0b3;--accent-soft:#17332c;--warn:#f0b65a;--warn-soft:#33280f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111614;--surface:#19201d;--fg:#e8eeea;--muted:#9aa8a0;--line:#2b3531;--accent:#5fd0b3;--accent-soft:#17332c;--warn:#f0b65a;--warn-soft:#33280f;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+h1{font-family:var(--display);font-size:1.9rem;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:1.2rem;margin:0 0 10px;text-wrap:balance}
+p{margin:0 0 10px}p:last-child{margin-bottom:0}
+.sub{color:var(--muted);margin-top:8px}
+.rule{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.sum{font-family:var(--mono);font-size:1.35rem;font-weight:600;letter-spacing:.04em;overflow-wrap:anywhere}
+.sum small{font-size:.85rem;font-weight:400;color:var(--muted);letter-spacing:0}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:6px}
+.tag.w{background:var(--warn-soft);color:var(--warn)}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.note{color:var(--muted);font-size:.9rem}
+</style>
+<div class="wrap">
+<header>
+  <h1>Kaprekar Ladder Findings</h1>
+  <p class="sub">Session of November 19, 2026. Audit of the 60714 paper, plus what turned up when we stopped insisting on the digits 1, 4, 6, 7.</p>
+</header>
+
+<section class="rule">
+  <span><span class="tag">One rule, every length</span></span>
+  <div class="sum">BFADCE − CBDEAF <small>sort digits largest to smallest as A…F, subtract, drop the sign</small></div>
+  <div class="sum">607140 − 461070 = 146070</div>
+  <p>For longer numbers the extra digits go in front in reverse order, offset by one, so each front place leaves only the gap between two neighboring digits. Every number that is not a repdigit ends at 146070.</p>
+  <p class="note">Checked by complete enumeration at lengths 6 to 24 and by a computer-assisted proof for all longer lengths. The proof passed two independent AI checks (an adversarial referee and a blind reimplementation). No human mathematician has reviewed it yet.</p>
+</section>
+
+<section>
+  <h2>What popped out of the unbiased census</h2>
+  <p>We tested all 190,800 six-letter rules with the same "reverse the extras in front" extension, without assuming any digits. <strong>551 rules pass the all-lengths check, on 57 different digit sets.</strong></p>
+  <ul>
+    <li><strong>The only 3-digit set that works is 9, 5, 4</strong>: the digits of 495, the classical 3-digit Kaprekar constant. Endpoint 9045.</li>
+    <li><strong>Only two 4-digit sets work: 7, 6, 4, 1 and 9, 9, 8, 1.</strong> The first is 6174's digits (endpoint 146070, a single rule). The second matches the digits of 10989, the relative of 1089 from the reverse-and-subtract trick (100 rules).</li>
+    <li>So the smallest digit sets that survive are exactly the ones already famous from classical digit puzzles. Nothing in the test knew about them.</li>
+    <li>The other 54 sets have 5 to 8 nonzero digits and no obvious story yet.</li>
+  </ul>
+  <p style="margin-top:10px"><strong>All 551 are now confirmed.</strong> Complete enumeration of lengths 6 to 20 (and 21 where needed) shows each one reaches its single endpoint at every length from a starting length onward: 75 rules from 6 digits, 105 from 7, 256 from 8, 97 from 9, 18 from 10. The rules for 495's digits work from 7 digits on.</p>
+  <p class="note">Caution: this covers one extension recipe starting from 6-letter rules, and the all-lengths argument has been checked by AI reviewers only, not by a human mathematician.</p>
+</section>
+
+<section>
+  <h2>Largest families</h2>
+  <div class="scroll"><table>
+    <tr><th>Nonzero digits</th><th>Rules</th><th>Example</th><th>Endpoint</th></tr>
+    <tr><td class="n">9 9 8 1</td><td class="n">100</td><td class="n">BFECDA − CADBEF</td><td class="n">8919</td></tr>
+    <tr><td class="n">7 4 3 2 1 1</td><td class="n">89</td><td class="n">FECDAB − ABDECF</td><td class="n">271143</td></tr>
+    <tr><td class="n">8 4 3 2 1</td><td class="n">36</td><td class="n">CFDABE − DAEBFC</td><td class="n">21438</td></tr>
+    <tr><td class="n">9 5 5 4 4</td><td class="n">32</td><td class="n">DEACBF − EADBFC</td><td class="n">44955</td></tr>
+    <tr><td class="n">8 6 5 4 2 1 1</td><td class="n">30</td><td class="n">CBFADE − DFAECB</td><td class="n">10142586</td></tr>
+    <tr><td class="n">9 5 4</td><td class="n">2</td><td class="n">EDFCBA − DEABFC</td><td class="n">9045</td></tr>
+    <tr><td class="n">7 6 4 1</td><td class="n">1</td><td class="n">BFADCE − CBDEAF</td><td class="n">146070</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Audit of the existing paper</h2>
+  <ul>
+    <li><span class="tag">Holds</span>Every computed result reproduces with fresh code: the 0 / 4 / 33 / 506 census, the selection of 60714, the fold verdicts, the Lyapunov degree-7 theorem.</li>
+    <li><span class="tag">Stronger</span>Dyadic tower at 32 digits and the m = 7 case at 28 digits are now complete enumerations (350,343,555 and 124,403,610 digit sets), not samples.</li>
+    <li><span class="tag w">Weak</span>60714's ladder never cycles, but the share of numbers that collapse to 0 grows with length: 3% at 12 digits, 18% at 20, 24% at 24. "Universal at every length" overstates it.</li>
+    <li><span class="tag w">Fix</span>Four citations have wrong details, one count (481) does not reproduce, and the rule family was already defined by Peterson and Pulapaka in 2008.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Are we cheating?</h2>
+  <p>Picking a new rule at each length is close to cheating: by 8 digits, 12 of 30 random digit sets had a universal endpoint under some rule. That is why the mixed chain (lengths 4 to 18) is real but not special.</p>
+  <p>Fixing one recipe and asking whether it works at every length is not cheating. Only 551 of 190,800 rules pass that test.</p>
+</section>
+
+<section>
+  <h2>Where things stand</h2>
+  <ul>
+    <li>Nothing is committed to GitHub and the paper is unchanged.</li>
+    <li>Programs, proof, and audit report are in <span class="mono">audit_2026-11/</span> in the repo folder.</li>
+    <li>A classical Kaprekar constant at other lengths is ruled out by a 1981 theorem (only 495 and 6174), which is what makes a constant at every length under one modified rule worth stating.</li>
+  </ul>
+</section>
+</div>

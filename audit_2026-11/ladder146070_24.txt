@@ -1,0 +1,20 @@
+d=6 nonrep=4995 | FIX len=1 val=146070 basin=4995 strict=4905 maxsteps=28
+d=7 nonrep=11430 | FIX len=1 val=146070 basin=11430 strict=11340 maxsteps=24
+d=8 nonrep=24300 | FIX len=1 val=146070 basin=24300 strict=24210 maxsteps=41
+d=9 nonrep=48610 | FIX len=1 val=146070 basin=48610 strict=48520 maxsteps=41
+d=10 nonrep=92368 | FIX len=1 val=146070 basin=92368 strict=92278 maxsteps=41
+d=11 nonrep=167950 | FIX len=1 val=146070 basin=167950 strict=167860 maxsteps=41
+d=12 nonrep=293920 | FIX len=1 val=146070 basin=293920 strict=293830 maxsteps=41
+d=13 nonrep=497410 | FIX len=1 val=146070 basin=497410 strict=497320 maxsteps=41
+d=14 nonrep=817180 | FIX len=1 val=146070 basin=817180 strict=817090 maxsteps=41
+d=15 nonrep=1307494 | FIX len=1 val=146070 basin=1307494 strict=1307404 maxsteps=41
+d=16 nonrep=2042965 | FIX len=1 val=146070 basin=2042965 strict=2042875 maxsteps=41
+d=17 nonrep=3124540 | FIX len=1 val=146070 basin=3124540 strict=3124450 maxsteps=41
+d=18 nonrep=4686815 | FIX len=1 val=146070 basin=4686815 strict=4686725 maxsteps=41
+d=19 nonrep=6906890 | FIX len=1 val=146070 basin=6906890 strict=6906800 maxsteps=41
+d=20 nonrep=10014995 | FIX len=1 val=146070 basin=10014995 strict=10014905 maxsteps=41
+d=21 nonrep=14307140 | FIX len=1 val=146070 basin=14307140 strict=14307050 maxsteps=41
+d=22 nonrep=20160065 | FIX len=1 val=146070 basin=20160065 strict=20159975 maxsteps=41
+d=23 nonrep=28048790 | FIX len=1 val=146070 basin=28048790 strict=28048700 maxsteps=41
+d=24 nonrep=38567090 | FIX len=1 val=146070 basin=38567090 strict=38567000 maxsteps=41
+coefficients at d=10: [990, 90000, -99990, -900, -99, 999999, 9000000, 90000000, 900000000, -999990000]

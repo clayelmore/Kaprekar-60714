@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" font-family="Helvetica,Arial,sans-serif"><rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="80" y1="460" x2="960" y2="460" stroke="#e5e7eb"/><text x="72" y="465" font-size="14" text-anchor="end" fill="#111827">1</text>
+<line x1="80" y1="385" x2="960" y2="385" stroke="#e5e7eb"/><text x="72" y="390" font-size="14" text-anchor="end" fill="#111827">10</text>
+<line x1="80" y1="310" x2="960" y2="310" stroke="#e5e7eb"/><text x="72" y="315" font-size="14" text-anchor="end" fill="#111827">100</text>
+<line x1="80" y1="235" x2="960" y2="235" stroke="#e5e7eb"/><text x="72" y="240" font-size="14" text-anchor="end" fill="#111827">1,000</text>
+<line x1="80" y1="160" x2="960" y2="160" stroke="#e5e7eb"/><text x="72" y="165" font-size="14" text-anchor="end" fill="#111827">10,000</text>
+<text x="80" y="482" font-size="14" text-anchor="middle" fill="#111827">0</text>
+<text x="187" y="482" font-size="14" text-anchor="middle" fill="#111827">5</text>
+<text x="295" y="482" font-size="14" text-anchor="middle" fill="#111827">10</text>
+<text x="402" y="482" font-size="14" text-anchor="middle" fill="#111827">15</text>
+<text x="509" y="482" font-size="14" text-anchor="middle" fill="#111827">20</text>
+<text x="617" y="482" font-size="14" text-anchor="middle" fill="#111827">25</text>
+<text x="724" y="482" font-size="14" text-anchor="middle" fill="#111827">30</text>
+<text x="831" y="482" font-size="14" text-anchor="middle" fill="#111827">35</text>
+<text x="939" y="482" font-size="14" text-anchor="middle" fill="#111827">40</text>
+<line x1="80" y1="85" x2="960" y2="85" stroke="#e5e7eb"/><text x="72" y="90" font-size="14" text-anchor="end" fill="#111827">100,000</text>
+<polyline points="80.0,50.0 101.5,233.6 122.9,269.1 144.4,288.3 165.9,302.3 187.3,313.1 208.8,323.1 230.2,332.0 251.7,340.7 273.2,348.2 294.6,353.9 316.1,359.3 337.6,365.9 359.0,374.1 380.5,381.9 402.0,392.3 423.4,407.6 444.9,414.9 466.3,424.2 487.8,437.4" fill="none" stroke="#1e3a8a" stroke-width="3"/>
+<line x1="640" y1="70" x2="670" y2="70" stroke="#1e3a8a" stroke-width="3"/><text x="678" y="75" font-size="15" fill="#111827">60714 (two endpoints: 60714 and 0)</text>
+<polyline points="80.0,50.0 101.5,236.6 122.9,280.3 144.4,298.4 165.9,309.1 187.3,318.1 208.8,325.6 230.2,330.1 251.7,333.3 273.2,336.0 294.6,338.3 316.1,339.9 337.6,341.6 359.0,343.3 380.5,345.2 402.0,347.1 423.4,349.2 444.9,351.5 466.3,353.9 487.8,356.5 509.3,359.3 530.7,360.9 552.2,362.5 573.7,364.1 595.1,365.9 616.6,367.7 638.0,369.7 659.5,371.8 681.0,374.1 702.4,376.5 723.9,379.1 745.4,381.9 766.8,385.0 788.3,388.5 809.8,392.3 831.2,396.6 852.7,401.7 874.1,407.6 895.6,414.9 917.1,424.2 938.5,437.4 960.0,460.0" fill="none" stroke="#0d9488" stroke-width="3"/>
+<line x1="640" y1="94" x2="670" y2="94" stroke="#0d9488" stroke-width="3"/><text x="678" y="99" font-size="15" fill="#111827">146070</text>
+<text x="80" y="28" font-size="18" font-weight="bold" fill="#111827">How fast 12-digit numbers merge (log scale)</text>
+<text x="520" y="508" font-size="15" text-anchor="middle" fill="#111827">steps taken</text><text x="20" y="230" font-size="15" text-anchor="middle" fill="#111827" transform="rotate(-90 20 230)">different numbers still in play</text></svg>

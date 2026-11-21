@@ -1,0 +1,8 @@
+d=6 states=5005 universal=True attractor_multiset=764100 attractor_value=146070 maxsteps=28 fixed_point_values=['000000', '146070'] ncycles=0 endpoints=
+d=7 states=11440 universal=True attractor_multiset=7641000 attractor_value=0146070 maxsteps=24 fixed_point_values=['0000000', '0146070'] ncycles=0 endpoints=
+d=8 states=24310 universal=True attractor_multiset=76410000 attractor_value=00146070 maxsteps=41 fixed_point_values=['00000000', '00146070'] ncycles=0 endpoints=
+d=9 states=48620 universal=True attractor_multiset=764100000 attractor_value=000146070 maxsteps=41 fixed_point_values=['000000000', '000146070'] ncycles=0 endpoints=
+d=10 states=92378 universal=True attractor_multiset=7641000000 attractor_value=0000146070 maxsteps=41 fixed_point_values=['0000000000', '0000146070'] ncycles=0 endpoints=
+d=11 states=167960 universal=True attractor_multiset=76410000000 attractor_value=00000146070 maxsteps=41 fixed_point_values=['00000000000', '00000146070'] ncycles=0 endpoints=
+d=12 states=293930 universal=True attractor_multiset=764100000000 attractor_value=000000146070 maxsteps=41 fixed_point_values=['000000000000', '000000146070'] ncycles=0 endpoints=
+d=13 states=497420 universal=True attractor_multiset=7641000000000 attractor_value=0000000146070 maxsteps=41 fixed_point_values=['0000000000000', '0000000146070'] ncycles=0 endpoints=
