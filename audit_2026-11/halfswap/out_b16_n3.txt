@@ -1,0 +1,25 @@
+UNIV base=16 n=3 pairs=E-D,B-C,A-F endpoint=E0F1F m=E1 maxsteps=5
+UNIV base=16 n=3 pairs=E-D,C-B,A-F endpoint=100EFF m=101 maxsteps=5
+UNIV base=16 n=3 pairs=C-B,D-E,A-F endpoint=E0F1F m=E1 maxsteps=5
+UNIV base=16 n=3 pairs=C-B,E-D,A-F endpoint=100EFF m=101 maxsteps=5
+UNIV base=16 n=3 pairs=D-E,A-F,B-C endpoint=1F0E0F m=1F1 maxsteps=5
+UNIV base=16 n=3 pairs=E-D,A-F,B-C endpoint=EFF1 m=F maxsteps=5
+UNIV base=16 n=3 pairs=A-F,D-E,B-C endpoint=F100EF m=F11 maxsteps=5
+UNIV base=16 n=3 pairs=F-A,E-D,B-C endpoint=F0E0F1 m=F0F maxsteps=5
+UNIV base=16 n=3 pairs=A-F,D-E,C-B endpoint=F0E0F1 m=F0F maxsteps=5
+UNIV base=16 n=3 pairs=F-A,E-D,C-B endpoint=F100EF m=F11 maxsteps=5
+UNIV base=16 n=3 pairs=D-E,F-A,C-B endpoint=EFF1 m=F maxsteps=5
+UNIV base=16 n=3 pairs=E-D,F-A,C-B endpoint=1F0E0F m=1F1 maxsteps=5
+UNIV base=16 n=3 pairs=B-C,A-F,D-E endpoint=1F0E0F m=1F1 maxsteps=5
+UNIV base=16 n=3 pairs=C-B,A-F,D-E endpoint=EFF1 m=F maxsteps=5
+UNIV base=16 n=3 pairs=A-F,B-C,D-E endpoint=F100EF m=F11 maxsteps=5
+UNIV base=16 n=3 pairs=F-A,C-B,D-E endpoint=F0E0F1 m=F0F maxsteps=5
+UNIV base=16 n=3 pairs=A-F,B-C,E-D endpoint=F0E0F1 m=F0F maxsteps=5
+UNIV base=16 n=3 pairs=F-A,C-B,E-D endpoint=F100EF m=F11 maxsteps=5
+UNIV base=16 n=3 pairs=B-C,F-A,E-D endpoint=EFF1 m=F maxsteps=5
+UNIV base=16 n=3 pairs=C-B,F-A,E-D endpoint=1F0E0F m=1F1 maxsteps=5
+UNIV base=16 n=3 pairs=D-E,B-C,F-A endpoint=100EFF m=101 maxsteps=5
+UNIV base=16 n=3 pairs=D-E,C-B,F-A endpoint=E0F1F m=E1 maxsteps=5
+UNIV base=16 n=3 pairs=B-C,D-E,F-A endpoint=100EFF m=101 maxsteps=5
+UNIV base=16 n=3 pairs=B-C,E-D,F-A endpoint=E0F1F m=E1 maxsteps=5
+DONE base=16 n=3 shard=0 rules=720 universal=24

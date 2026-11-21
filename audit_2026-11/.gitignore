@@ -29,3 +29,7 @@ shapes_d8.svg
 bases/cb_*
 bases/one_*
 referee_allbase/ref_d6
+halfswap/hs_*
+halfswap/hs1_*
+halfswap/out_b*_n5_*.txt
+referee_halfswap/ref_hs

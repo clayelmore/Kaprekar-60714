@@ -1,0 +1,13 @@
+UNIV base=12 n=2 pairs=B-D,A-C endpoint=4378 m=44 maxsteps=5
+UNIV base=12 n=2 pairs=D-B,A-C endpoint=3784 m=38 maxsteps=5
+UNIV base=12 n=2 pairs=B-C,A-D endpoint=3487 m=35 maxsteps=5
+UNIV base=12 n=2 pairs=D-A,B-C endpoint=4873 m=49 maxsteps=5
+UNIV base=12 n=2 pairs=A-C,B-D endpoint=4378 m=44 maxsteps=5
+UNIV base=12 n=2 pairs=C-A,B-D endpoint=3784 m=38 maxsteps=5
+UNIV base=12 n=2 pairs=B-D,C-A endpoint=3784 m=38 maxsteps=5
+UNIV base=12 n=2 pairs=D-B,C-A endpoint=4378 m=44 maxsteps=5
+UNIV base=12 n=2 pairs=A-D,C-B endpoint=4873 m=49 maxsteps=5
+UNIV base=12 n=2 pairs=C-B,D-A endpoint=3487 m=35 maxsteps=5
+UNIV base=12 n=2 pairs=A-C,D-B endpoint=3784 m=38 maxsteps=5
+UNIV base=12 n=2 pairs=C-A,D-B endpoint=4378 m=44 maxsteps=5
+DONE base=12 n=2 shard=0 rules=24 universal=12

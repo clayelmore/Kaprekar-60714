@@ -1,0 +1,5 @@
+UNIV base=3 n=2 pairs=C-B,A-D endpoint=121 m=2 maxsteps=3
+UNIV base=3 n=2 pairs=A-D,B-C endpoint=1210 m=20 maxsteps=3
+UNIV base=3 n=2 pairs=D-A,C-B endpoint=1210 m=20 maxsteps=3
+UNIV base=3 n=2 pairs=B-C,D-A endpoint=121 m=2 maxsteps=3
+DONE base=3 n=2 shard=0 rules=24 universal=4

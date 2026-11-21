@@ -1,0 +1,25 @@
+UNIV base=11 n=3 pairs=E-D,B-C,A-F endpoint=90A1A m=91 maxsteps=3
+UNIV base=11 n=3 pairs=E-D,C-B,A-F endpoint=1009AA m=101 maxsteps=3
+UNIV base=11 n=3 pairs=C-B,D-E,A-F endpoint=90A1A m=91 maxsteps=3
+UNIV base=11 n=3 pairs=C-B,E-D,A-F endpoint=1009AA m=101 maxsteps=3
+UNIV base=11 n=3 pairs=D-E,A-F,B-C endpoint=1A090A m=1A1 maxsteps=3
+UNIV base=11 n=3 pairs=E-D,A-F,B-C endpoint=9AA1 m=A maxsteps=3
+UNIV base=11 n=3 pairs=A-F,D-E,B-C endpoint=A1009A m=A11 maxsteps=3
+UNIV base=11 n=3 pairs=F-A,E-D,B-C endpoint=A090A1 m=A0A maxsteps=3
+UNIV base=11 n=3 pairs=A-F,D-E,C-B endpoint=A090A1 m=A0A maxsteps=3
+UNIV base=11 n=3 pairs=F-A,E-D,C-B endpoint=A1009A m=A11 maxsteps=3
+UNIV base=11 n=3 pairs=D-E,F-A,C-B endpoint=9AA1 m=A maxsteps=3
+UNIV base=11 n=3 pairs=E-D,F-A,C-B endpoint=1A090A m=1A1 maxsteps=3
+UNIV base=11 n=3 pairs=B-C,A-F,D-E endpoint=1A090A m=1A1 maxsteps=3
+UNIV base=11 n=3 pairs=C-B,A-F,D-E endpoint=9AA1 m=A maxsteps=3
+UNIV base=11 n=3 pairs=A-F,B-C,D-E endpoint=A1009A m=A11 maxsteps=3
+UNIV base=11 n=3 pairs=F-A,C-B,D-E endpoint=A090A1 m=A0A maxsteps=3
+UNIV base=11 n=3 pairs=A-F,B-C,E-D endpoint=A090A1 m=A0A maxsteps=3
+UNIV base=11 n=3 pairs=F-A,C-B,E-D endpoint=A1009A m=A11 maxsteps=3
+UNIV base=11 n=3 pairs=B-C,F-A,E-D endpoint=9AA1 m=A maxsteps=3
+UNIV base=11 n=3 pairs=C-B,F-A,E-D endpoint=1A090A m=1A1 maxsteps=3
+UNIV base=11 n=3 pairs=D-E,B-C,F-A endpoint=1009AA m=101 maxsteps=3
+UNIV base=11 n=3 pairs=D-E,C-B,F-A endpoint=90A1A m=91 maxsteps=3
+UNIV base=11 n=3 pairs=B-C,D-E,F-A endpoint=1009AA m=101 maxsteps=3
+UNIV base=11 n=3 pairs=B-C,E-D,F-A endpoint=90A1A m=91 maxsteps=3
+DONE base=11 n=3 shard=0 rules=720 universal=24

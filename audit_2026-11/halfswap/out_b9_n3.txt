@@ -1,0 +1,25 @@
+UNIV base=9 n=3 pairs=E-D,B-C,A-F endpoint=70818 m=71 maxsteps=3
+UNIV base=9 n=3 pairs=E-D,C-B,A-F endpoint=100788 m=101 maxsteps=3
+UNIV base=9 n=3 pairs=C-B,D-E,A-F endpoint=70818 m=71 maxsteps=3
+UNIV base=9 n=3 pairs=C-B,E-D,A-F endpoint=100788 m=101 maxsteps=3
+UNIV base=9 n=3 pairs=D-E,A-F,B-C endpoint=180708 m=181 maxsteps=3
+UNIV base=9 n=3 pairs=E-D,A-F,B-C endpoint=7881 m=8 maxsteps=3
+UNIV base=9 n=3 pairs=A-F,D-E,B-C endpoint=810078 m=811 maxsteps=3
+UNIV base=9 n=3 pairs=F-A,E-D,B-C endpoint=807081 m=808 maxsteps=3
+UNIV base=9 n=3 pairs=A-F,D-E,C-B endpoint=807081 m=808 maxsteps=3
+UNIV base=9 n=3 pairs=F-A,E-D,C-B endpoint=810078 m=811 maxsteps=3
+UNIV base=9 n=3 pairs=D-E,F-A,C-B endpoint=7881 m=8 maxsteps=3
+UNIV base=9 n=3 pairs=E-D,F-A,C-B endpoint=180708 m=181 maxsteps=3
+UNIV base=9 n=3 pairs=B-C,A-F,D-E endpoint=180708 m=181 maxsteps=3
+UNIV base=9 n=3 pairs=C-B,A-F,D-E endpoint=7881 m=8 maxsteps=3
+UNIV base=9 n=3 pairs=A-F,B-C,D-E endpoint=810078 m=811 maxsteps=3
+UNIV base=9 n=3 pairs=F-A,C-B,D-E endpoint=807081 m=808 maxsteps=3
+UNIV base=9 n=3 pairs=A-F,B-C,E-D endpoint=807081 m=808 maxsteps=3
+UNIV base=9 n=3 pairs=F-A,C-B,E-D endpoint=810078 m=811 maxsteps=3
+UNIV base=9 n=3 pairs=B-C,F-A,E-D endpoint=7881 m=8 maxsteps=3
+UNIV base=9 n=3 pairs=C-B,F-A,E-D endpoint=180708 m=181 maxsteps=3
+UNIV base=9 n=3 pairs=D-E,B-C,F-A endpoint=100788 m=101 maxsteps=3
+UNIV base=9 n=3 pairs=D-E,C-B,F-A endpoint=70818 m=71 maxsteps=3
+UNIV base=9 n=3 pairs=B-C,D-E,F-A endpoint=100788 m=101 maxsteps=3
+UNIV base=9 n=3 pairs=B-C,E-D,F-A endpoint=70818 m=71 maxsteps=3
+DONE base=9 n=3 shard=0 rules=720 universal=24

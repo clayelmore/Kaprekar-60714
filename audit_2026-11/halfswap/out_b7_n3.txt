@@ -1,0 +1,25 @@
+UNIV base=7 n=3 pairs=E-D,B-C,A-F endpoint=50616 m=51 maxsteps=3
+UNIV base=7 n=3 pairs=E-D,C-B,A-F endpoint=100566 m=101 maxsteps=3
+UNIV base=7 n=3 pairs=C-B,D-E,A-F endpoint=50616 m=51 maxsteps=3
+UNIV base=7 n=3 pairs=C-B,E-D,A-F endpoint=100566 m=101 maxsteps=3
+UNIV base=7 n=3 pairs=D-E,A-F,B-C endpoint=160506 m=161 maxsteps=3
+UNIV base=7 n=3 pairs=E-D,A-F,B-C endpoint=5661 m=6 maxsteps=3
+UNIV base=7 n=3 pairs=A-F,D-E,B-C endpoint=610056 m=611 maxsteps=3
+UNIV base=7 n=3 pairs=F-A,E-D,B-C endpoint=605061 m=606 maxsteps=3
+UNIV base=7 n=3 pairs=A-F,D-E,C-B endpoint=605061 m=606 maxsteps=3
+UNIV base=7 n=3 pairs=F-A,E-D,C-B endpoint=610056 m=611 maxsteps=3
+UNIV base=7 n=3 pairs=D-E,F-A,C-B endpoint=5661 m=6 maxsteps=3
+UNIV base=7 n=3 pairs=E-D,F-A,C-B endpoint=160506 m=161 maxsteps=3
+UNIV base=7 n=3 pairs=B-C,A-F,D-E endpoint=160506 m=161 maxsteps=3
+UNIV base=7 n=3 pairs=C-B,A-F,D-E endpoint=5661 m=6 maxsteps=3
+UNIV base=7 n=3 pairs=A-F,B-C,D-E endpoint=610056 m=611 maxsteps=3
+UNIV base=7 n=3 pairs=F-A,C-B,D-E endpoint=605061 m=606 maxsteps=3
+UNIV base=7 n=3 pairs=A-F,B-C,E-D endpoint=605061 m=606 maxsteps=3
+UNIV base=7 n=3 pairs=F-A,C-B,E-D endpoint=610056 m=611 maxsteps=3
+UNIV base=7 n=3 pairs=B-C,F-A,E-D endpoint=5661 m=6 maxsteps=3
+UNIV base=7 n=3 pairs=C-B,F-A,E-D endpoint=160506 m=161 maxsteps=3
+UNIV base=7 n=3 pairs=D-E,B-C,F-A endpoint=100566 m=101 maxsteps=3
+UNIV base=7 n=3 pairs=D-E,C-B,F-A endpoint=50616 m=51 maxsteps=3
+UNIV base=7 n=3 pairs=B-C,D-E,F-A endpoint=100566 m=101 maxsteps=3
+UNIV base=7 n=3 pairs=B-C,E-D,F-A endpoint=50616 m=51 maxsteps=3
+DONE base=7 n=3 shard=0 rules=720 universal=24

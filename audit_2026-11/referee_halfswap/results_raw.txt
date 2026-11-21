@@ -1,0 +1,171 @@
+n=3 b=4 multisets=84 repdigits=4 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 3 49 28
+n=3 b=3 multisets=28 repdigits=3 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 1 12 12
+n=3 b=5 multisets=210 repdigits=5 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 6 97 102
+n=3 b=6 multisets=462 repdigits=6 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 10 189 251 6
+n=3 b=7 multisets=924 repdigits=7 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 15 311 563 20 8
+n=3 b=9 multisets=3003 repdigits=9 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 28 754 2000 107 105
+n=3 b=8 multisets=1716 repdigits=8 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 21 506 1101 47 33
+n=3 b=10 multisets=5005 repdigits=10 fail=0 repdigit_first_images=0 maxsteps=6 hist: 0 36 1110 3370 211 257 11
+n=3 b=11 multisets=8008 repdigits=11 fail=0 repdigit_first_images=0 maxsteps=6 hist: 0 45 1548 5411 399 561 33
+n=3 b=12 multisets=12376 repdigits=12 fail=0 repdigit_first_images=0 maxsteps=6 hist: 0 55 2135 8290 697 1095 92
+n=3 b=13 multisets=18564 repdigits=13 fail=0 repdigit_first_images=0 maxsteps=6 hist: 0 66 2839 12284 1161 1999 202
+n=3 b=14 multisets=27132 repdigits=14 fail=0 repdigit_first_images=0 maxsteps=6 hist: 0 78 3739 17629 1841 3423 408
+n=3 b=15 multisets=38760 repdigits=15 fail=0 repdigit_first_images=0 maxsteps=7 hist: 0 91 4797 24691 2817 5591 742 16
+n=3 b=16 multisets=54264 repdigits=16 fail=0 repdigit_first_images=0 maxsteps=7 hist: 0 105 6104 33787 4157 8741 1289 65
+n=3 b=18 multisets=100947 repdigits=18 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 136 9436 59892 8366 19457 3298 325 19
+n=3 b=19 multisets=134596 repdigits=19 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 153 11514 77891 11470 27942 4974 576 57
+n=3 b=17 multisets=74613 repdigits=17 fail=0 repdigit_first_images=0 maxsteps=7 hist: 0 120 7616 45384 5975 13248 2103 150
+n=3 b=20 multisets=177100 repdigits=20 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 171 13965 99896 15420 39192 7278 1002 156
+n=3 b=21 multisets=230230 repdigits=21 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 190 16733 126612 20392 53971 10364 1631 316
+n=3 b=22 multisets=296010 repdigits=22 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 210 19945 158671 26547 72952 14439 2618 606
+n=3 b=23 multisets=376740 repdigits=23 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 231 23539 196915 34109 97245 19719 3933 1026
+n=3 b=25 multisets=593775 repdigits=25 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 276 32222 295232 54314 165826 35031 8293 2556
+n=3 b=24 multisets=475020 repdigits=24 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 253 27654 242105 43278 127693 26479 5858 1676
+n=3 b=26 multisets=736281 repdigits=26 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 300 37394 357198 67469 212700 45726 11667 3801
+n=3 b=27 multisets=906192 repdigits=27 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 325 43096 429155 83051 270189 58984 15954 5411
+n=3 b=28 multisets=1107568 repdigits=28 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 351 49491 512158 101350 339657 75269 21704 7560
+n=3 b=29 multisets=1344904 repdigits=29 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 378 56499 607532 122736 423624 95091 28737 10278
+n=3 b=30 multisets=1623160 repdigits=30 fail=0 repdigit_first_images=0 maxsteps=8 hist: 0 406 64295 716497 147550 523669 119039 37892 13782
+n=3 b=32 multisets=2324784 repdigits=32 fail=0 repdigit_first_images=0 maxsteps=9 hist: 0 465 82180 981127 209117 783642 181959 62529 23604 129
+n=3 b=31 multisets=1947792 repdigits=31 fail=0 repdigit_first_images=0 maxsteps=9 hist: 0 435 72793 840563 176208 643062 147753 48779 18136 32
+n=3 b=33 multisets=2760681 repdigits=33 fail=0 repdigit_first_images=0 maxsteps=9 hist: 0 496 92364 1139896 246753 949229 222439 78889 30288 294
+n=3 b=34 multisets=3262623 repdigits=34 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 528 103544 1318456 289571 1142118 270103 99137 38468 629 35
+n=3 b=35 multisets=3838380 repdigits=35 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 561 115622 1518723 338123 1367199 325887 122733 48288 1104 105
+n=3 b=36 multisets=4496388 repdigits=36 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 595 128809 1742484 392927 1626990 390864 151420 60081 1898 284
+n=3 b=37 multisets=5245786 repdigits=37 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 630 143001 1991876 454591 1927589 466285 184335 73926 2944 572
+n=3 b=38 multisets=6096454 repdigits=38 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 666 158421 2268899 523713 2271780 553365 223734 90246 4506 1086
+n=3 b=39 multisets=7059052 repdigits=39 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 703 174959 2575923 600973 2666473 653501 268935 109244 6476 1826
+n=3 b=40 multisets=8145060 repdigits=40 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 741 192850 2915173 687027 3115076 768251 322446 131289 9211 2956
+n=3 b=41 multisets=9366819 repdigits=41 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 780 211978 3289264 782645 3626136 899211 383055 156675 12558 4476
+n=3 b=42 multisets=10737573 repdigits=42 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 820 232590 3700658 888558 4203236 1048187 454074 185832 16975 6601
+n=3 b=43 multisets=12271512 repdigits=43 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 861 254564 4152227 1005602 4856736 1217027 533705 219156 22260 9331
+n=3 b=44 multisets=13983816 repdigits=44 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 903 278159 4646682 1134602 5590431 1407933 626136 257010 28980 12936
+n=3 b=45 multisets=15890700 repdigits=45 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 946 303247 5187164 1276478 6415815 1622981 729788 299940 36880 17416
+n=4 b=3 multisets=45 repdigits=3 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 1 21 20
+n=4 b=4 multisets=165 repdigits=4 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 3 65 87 6
+n=4 b=5 multisets=495 repdigits=5 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 6 212 254 18
+n=4 b=6 multisets=1287 repdigits=6 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 10 462 695 114
+n=4 b=7 multisets=3003 repdigits=7 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 15 992 1566 354 69
+n=4 b=8 multisets=6435 repdigits=8 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 21 1759 3413 976 258
+n=4 b=9 multisets=12870 repdigits=9 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 28 3134 6428 2475 796
+n=4 b=10 multisets=24310 repdigits=10 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 36 4968 12041 5457 1798
+n=4 b=11 multisets=43758 repdigits=11 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 45 7921 20267 11182 4332
+n=4 b=12 multisets=75582 repdigits=12 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 55 11667 34357 20917 8574
+n=4 b=13 multisets=125970 repdigits=13 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 66 17268 53407 38855 16361
+n=4 b=14 multisets=203490 repdigits=14 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 78 24132 84281 67011 27974
+n=4 b=15 multisets=319770 repdigits=15 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 91 33854 123696 112755 49359
+n=4 b=16 multisets=490314 repdigits=16 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 105 45469 185068 179244 80412
+n=4 b=17 multisets=735471 repdigits=17 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 120 61254 259813 286647 127620
+n=4 b=18 multisets=1081575 repdigits=18 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 136 79746 372713 437016 191946
+n=3 b=46 multisets=18009460 repdigits=46 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 990 330099 5776645 1432123 7337491 1864612 849244 348466 46644 23100
+n=4 b=19 multisets=1562275 repdigits=19 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 153 104071 505364 658161 294507
+n=4 b=20 multisets=2220075 repdigits=20 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 171 132125 701118 954091 432550
+n=4 b=21 multisets=3108105 repdigits=21 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 190 168068 923929 1393356 622541
+n=3 b=47 multisets=20358520 repdigits=47 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1035 358581 6418547 1602561 8369319 2135322 982044 403116 57960 29988
+n=4 b=22 multisets=4292145 repdigits=22 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 210 208994 1246667 1968386 867866
+n=3 b=48 multisets=22957480 repdigits=48 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1081 388976 7116115 1788772 9515954 2437855 1134043 464527 71637 38472
+n=3 b=49 multisets=25827165 repdigits=49 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1128 421144 7873064 1991856 10793840 2775449 1301820 532961 87302 48552
+n=4 b=23 multisets=5852925 repdigits=23 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 231 260300 1604963 2760527 1226881
+n=4 b=24 multisets=7888725 repdigits=24 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 253 318099 2116090 3765153 1689106
+n=3 b=50 multisets=28989675 repdigits=50 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1176 455380 8692924 2212901 12207711 3150780 1492602 609567 105897 60687
+n=3 b=51 multisets=32468436 repdigits=51 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1225 491538 9579715 2453103 13775531 3567473 1703215 694724 126984 74877
+n=4 b=25 multisets=10518300 repdigits=25 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 276 389246 2670722 5175085 2282946
+n=3 b=52 multisets=36288252 repdigits=52 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1275 529925 10537264 2713628 15503038 4028926 1941466 789380 151646 91652
+n=5 b=3 multisets=66 repdigits=3 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 1 32 30
+n=5 b=4 multisets=286 repdigits=4 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 5 158 119
+n=5 b=5 multisets=1001 repdigits=5 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 15 474 507
+n=5 b=6 multisets=3003 repdigits=6 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 35 1305 1657
+n=5 b=7 multisets=8008 repdigits=7 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 70 2973 4958
+n=5 b=8 multisets=19448 repdigits=8 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 126 6396 12918
+n=5 b=9 multisets=43758 repdigits=9 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 210 12627 30827 85
+n=5 b=10 multisets=92378 repdigits=10 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 330 23734 67879 425
+n=5 b=11 multisets=184756 repdigits=11 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 495 42285 140351 1614
+n=5 b=12 multisets=352716 repdigits=12 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 715 72484 274715 4777 13
+n=4 b=26 multisets=13884156 repdigits=26 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 300 468676 3452126 6938492 3024536
+n=5 b=13 multisets=646646 repdigits=13 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 1001 119611 513593 12349 79
+n=5 b=14 multisets=1144066 repdigits=14 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 1365 191414 922387 28546 340
+n=5 b=15 multisets=1961256 repdigits=15 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 1820 297585 1599432 61188 1216
+n=3 b=53 multisets=40475358 repdigits=53 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1326 570389 11569908 2995790 17411472 4538916 2202663 894294 179535 111012
+n=5 b=16 multisets=3268760 repdigits=16 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 2380 451408 2688449 122779 3728
+n=3 b=54 multisets=45057474 repdigits=54 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1378 613249 12681783 3300854 19506406 5101403 2496498 1010401 211886 133562
+n=4 b=27 multisets=18156204 repdigits=27 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 325 564941 4284404 9257684 4048823
+n=5 b=17 multisets=5311735 repdigits=17 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 3060 669268 4395221 233987 10182
+n=3 b=55 multisets=50063860 repdigits=55 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1431 658347 13877555 3630220 21812620 5720587 2816909 1138653 248181 159302
+n=6 b=3 multisets=91 repdigits=3 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 1 44 43
+n=6 b=4 multisets=455 repdigits=4 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 5 171 275
+n=6 b=5 multisets=1820 repdigits=5 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 15 716 1084
+n=6 b=6 multisets=6188 repdigits=6 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 35 2076 4071
+n=6 b=7 multisets=18564 repdigits=7 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 70 5615 12664 208
+n=6 b=8 multisets=50388 repdigits=8 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 126 13020 36213 1021
+n=6 b=9 multisets=125970 repdigits=9 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 210 29465 91823 4463
+n=6 b=10 multisets=293930 repdigits=10 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 330 60150 218962 14478
+n=5 b=18 multisets=8436285 repdigits=18 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 3876 972555 7008455 426281 25100
+n=6 b=11 multisets=646646 repdigits=11 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 495 119971 482972 43197
+n=4 b=28 multisets=23535820 repdigits=28 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 351 671583 5444703 12091919 5327236
+n=6 b=12 multisets=1352078 repdigits=12 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 715 222228 1017116 111935 72
+n=6 b=13 multisets=2704156 repdigits=13 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 1001 402870 2026476 273250 546
+n=3 b=56 multisets=55525372 repdigits=56 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1485 706014 15161681 3985275 24335535 6401301 3175446 1279689 289974 188916
+n=5 b=19 multisets=13123110 repdigits=19 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 4845 1387299 10925736 748231 56980
+n=6 b=14 multisets=5200300 repdigits=14 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 1365 690751 3895230 610210 2730
+n=7 b=3 multisets=120 repdigits=3 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 1 59 57
+n=7 b=4 multisets=680 repdigits=4 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 7 356 313
+n=7 b=5 multisets=3060 repdigits=5 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 28 1413 1614
+n=7 b=6 multisets=11628 repdigits=6 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 84 4978 6560
+n=7 b=7 multisets=38760 repdigits=7 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 210 14409 24127 7
+n=7 b=8 multisets=116280 repdigits=8 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 462 38776 76977 57
+n=7 b=9 multisets=319770 repdigits=9 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 924 95554 222748 535
+n=7 b=10 multisets=817190 repdigits=10 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 1716 221121 591405 2938
+n=4 b=29 multisets=30260340 repdigits=29 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 378 799108 6659302 15908169 6893354
+n=3 b=57 multisets=61474519 repdigits=57 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1540 756086 16539168 4367527 27101905 7147745 3566413 1435109 336565 222404
+n=7 b=11 multisets=1961256 repdigits=11 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 3003 482200 1463674 12368
+n=6 b=15 multisets=9657700 repdigits=15 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 1820 1162574 7179261 1303155 10875
+n=8 b=3 multisets=153 repdigits=3 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 1 74 75
+n=8 b=4 multisets=969 repdigits=4 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 7 361 597
+n=8 b=5 multisets=4845 repdigits=5 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 28 1871 2941
+n=8 b=6 multisets=20349 repdigits=6 fail=0 repdigit_first_images=0 maxsteps=3 hist: 0 84 6807 13452
+n=8 b=7 multisets=74613 repdigits=7 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 210 22494 51399 503
+n=3 b=58 multisets=67945521 repdigits=58 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1596 808906 18014806 4778451 30118359 7965273 4001997 1605695 389847 260533
+n=8 b=8 multisets=245157 repdigits=8 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 462 64845 177072 2770
+n=8 b=9 multisets=735471 repdigits=9 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 924 177770 543148 13620
+n=7 b=12 multisets=4457400 repdigits=12 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 5005 1001013 3408753 42617
+n=3 b=100 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 11 (m=202041)
+n=5 b=20 multisets=20030010 repdigits=20 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 5985 1946330 16686413 1270656 120606
+n=4 b=30 multisets=38608020 repdigits=30 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 406 939432 8337549 20528251 8802352
+n=8 b=10 multisets=2042975 repdigits=10 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 1716 443774 1547750 49725
+n=3 b=59 multisets=74974368 repdigits=59 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1653 864304 19593955 5219687 33416037 8858931 4474632 1792881 448926 303303
+n=3 b=150 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 11 (m=453041)
+n=7 b=13 multisets=9657700 repdigits=13 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 8008 1986949 7535239 127491
+n=8 b=11 multisets=5311735 repdigits=11 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 3003 1059232 4082698 166791
+n=6 b=16 multisets=17383860 repdigits=16 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 2380 1873750 12857184 2614865 35665
+n=3 b=60 multisets=82598880 repdigits=60 fail=0 repdigit_first_images=0 maxsteps=10 hist: 0 1711 922635 21281750 5692821 37001073 9834328 4998990 1997890 516054 351568
+n=4 b=40 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 4 (m=1644)
+n=4 b=31 multisets=48903492 repdigits=31 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 435 1105290 10069226 26397877 11330633
+n=5 b=21 multisets=30045015 repdigits=21 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 7315 2689024 25010321 2097502 240832
+n=3 b=200 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 11 (m=804041)
+n=4 b=50 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 4 (m=2554)
+n=4 b=32 multisets=61523748 repdigits=32 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 465 1286721 12443741 33374697 14418092
+m=4882813 does not reach F
+n=5 b=25 allm: m in 1..b^n-1, not reaching F=1, max steps from (b^n-1)m = 5 (m=1222008)
+n=7 b=14 multisets=20058300 repdigits=14 fail=0 repdigit_first_images=0 maxsteps=4 hist: 0 12376 3790970 15913457 341483
+n=5 b=22 multisets=44352165 repdigits=22 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 8855 3663719 36846964 3375147 457458
+n=6 b=17 multisets=30421755 repdigits=17 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 3060 2973552 22272994 5067741 104391
+n=4 b=64 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 4 (m=4164)
+m=8290688 does not reach F
+n=3 b=255 allm: m in 1..b^n-1, not reaching F=1, max steps from (b^n-1)m = 13 (m=4047485)
+n=5 b=30 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 6 (m=3355455)
+n=6 b=18 multisets=51895935 repdigits=18 fail=0 repdigit_first_images=0 maxsteps=5 hist: 0 3876 4558975 37684563 9376634 271869
+m=15820313 does not reach F
+n=4 b=75 allm: m in 1..b^n-1, not reaching F=1, max steps from (b^n-1)m = 4 (m=5704)
+n=3 b=300 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 13 (m=5779329)
+m=23522941 does not reach F
+n=6 b=19 allm: m in 1..b^n-1, not reaching F=1, max steps from (b^n-1)m = 4 (m=138326)
+m=18463019 does not reach F
+n=3 b=333 allm: m in 1..b^n-1, not reaching F=1, max steps from (b^n-1)m = 13 (m=7118337)
+n=4 b=90 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 4 (m=8194)
+m=34671979 does not reach F
+n=5 b=37 allm: m in 1..b^n-1, not reaching F=1, max steps from (b^n-1)m = 6 (m=7710519)
+n=6 b=20 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 4 (m=169266)
+m=42883061 does not reach F
+n=6 b=21 allm: m in 1..b^n-1, not reaching F=1, max steps from (b^n-1)m = 4 (m=205134)
+n=5 b=40 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 6 (m=10509135)
+n=3 b=400 allm: m in 1..b^n-1, not reaching F=0, max steps from (b^n-1)m = 13 (m=10265729)

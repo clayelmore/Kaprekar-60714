@@ -1,0 +1,1 @@
+DONE base=9 n=2 shard=0 rules=24 universal=0

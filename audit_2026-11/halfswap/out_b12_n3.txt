@@ -1,0 +1,25 @@
+UNIV base=12 n=3 pairs=E-D,B-C,A-F endpoint=A0B1B m=A1 maxsteps=3
+UNIV base=12 n=3 pairs=E-D,C-B,A-F endpoint=100ABB m=101 maxsteps=3
+UNIV base=12 n=3 pairs=C-B,D-E,A-F endpoint=A0B1B m=A1 maxsteps=3
+UNIV base=12 n=3 pairs=C-B,E-D,A-F endpoint=100ABB m=101 maxsteps=3
+UNIV base=12 n=3 pairs=D-E,A-F,B-C endpoint=1B0A0B m=1B1 maxsteps=3
+UNIV base=12 n=3 pairs=E-D,A-F,B-C endpoint=ABB1 m=B maxsteps=3
+UNIV base=12 n=3 pairs=A-F,D-E,B-C endpoint=B100AB m=B11 maxsteps=3
+UNIV base=12 n=3 pairs=F-A,E-D,B-C endpoint=B0A0B1 m=B0B maxsteps=3
+UNIV base=12 n=3 pairs=A-F,D-E,C-B endpoint=B0A0B1 m=B0B maxsteps=3
+UNIV base=12 n=3 pairs=F-A,E-D,C-B endpoint=B100AB m=B11 maxsteps=3
+UNIV base=12 n=3 pairs=D-E,F-A,C-B endpoint=ABB1 m=B maxsteps=3
+UNIV base=12 n=3 pairs=E-D,F-A,C-B endpoint=1B0A0B m=1B1 maxsteps=3
+UNIV base=12 n=3 pairs=B-C,A-F,D-E endpoint=1B0A0B m=1B1 maxsteps=3
+UNIV base=12 n=3 pairs=C-B,A-F,D-E endpoint=ABB1 m=B maxsteps=3
+UNIV base=12 n=3 pairs=A-F,B-C,D-E endpoint=B100AB m=B11 maxsteps=3
+UNIV base=12 n=3 pairs=F-A,C-B,D-E endpoint=B0A0B1 m=B0B maxsteps=3
+UNIV base=12 n=3 pairs=A-F,B-C,E-D endpoint=B0A0B1 m=B0B maxsteps=3
+UNIV base=12 n=3 pairs=F-A,C-B,E-D endpoint=B100AB m=B11 maxsteps=3
+UNIV base=12 n=3 pairs=B-C,F-A,E-D endpoint=ABB1 m=B maxsteps=3
+UNIV base=12 n=3 pairs=C-B,F-A,E-D endpoint=1B0A0B m=1B1 maxsteps=3
+UNIV base=12 n=3 pairs=D-E,B-C,F-A endpoint=100ABB m=101 maxsteps=3
+UNIV base=12 n=3 pairs=D-E,C-B,F-A endpoint=A0B1B m=A1 maxsteps=3
+UNIV base=12 n=3 pairs=B-C,D-E,F-A endpoint=100ABB m=101 maxsteps=3
+UNIV base=12 n=3 pairs=B-C,E-D,F-A endpoint=A0B1B m=A1 maxsteps=3
+DONE base=12 n=3 shard=0 rules=720 universal=24

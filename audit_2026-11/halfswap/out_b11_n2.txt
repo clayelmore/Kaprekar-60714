@@ -1,0 +1,5 @@
+UNIV base=11 n=2 pairs=C-B,A-D endpoint=307A m=31 maxsteps=5
+UNIV base=11 n=2 pairs=A-D,B-C endpoint=A307 m=A4 maxsteps=5
+UNIV base=11 n=2 pairs=D-A,C-B endpoint=A307 m=A4 maxsteps=5
+UNIV base=11 n=2 pairs=B-C,D-A endpoint=307A m=31 maxsteps=5
+DONE base=11 n=2 shard=0 rules=24 universal=4
