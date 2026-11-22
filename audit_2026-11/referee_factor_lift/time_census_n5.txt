@@ -1,0 +1,1 @@
+/usr/bin/python3 census.py 10 5 > out_census_n5.txt 2>&1  17.72s user 0.25s system 99% cpu 18.108 total

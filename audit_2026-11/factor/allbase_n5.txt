@@ -1,0 +1,9 @@
+base 7: universal 128130; still universal in all bases so far: 128130
+base 8: universal 97560; still universal in all bases so far: 35540
+base 9: universal 71980; still universal in all bases so far: 28130
+base 10: universal 71390; still universal in all bases so far: 27230
+base 11: universal 61300; still universal in all bases so far: 26660
+base 12: universal 51010; still universal in all bases so far: 26200
+base 13: universal 44390; still universal in all bases so far: 25890
+base 16: universal 36950; still universal in all bases so far: 25350
+base 22: survivors 24370

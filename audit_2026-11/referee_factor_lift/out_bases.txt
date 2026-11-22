@@ -1,0 +1,28 @@
+base 2 n 2 rules scanned 12 class C 8 of which NOT covering every gap 0
+   tested seeds 8 enumeration runs 56 failures 0
+base 2 n 3 rules scanned 360 class C 360 of which NOT covering every gap 120
+   tested seeds 45 enumeration runs 315 failures 0
+base 4 n 2 rules scanned 12 class C 0 of which NOT covering every gap 0
+   tested seeds 0 enumeration runs 0 failures 0
+base 4 n 3 rules scanned 360 class C 76 of which NOT covering every gap 34
+   tested seeds 81 enumeration runs 567 failures 0
+base 4 n 4 rules scanned 20160 class C 4664 of which NOT covering every gap 1052
+   tested seeds 65 enumeration runs 455 failures 0
+base 6 n 2 rules scanned 12 class C 0 of which NOT covering every gap 0
+   tested seeds 0 enumeration runs 0 failures 0
+base 6 n 3 rules scanned 360 class C 10 of which NOT covering every gap 4
+   tested seeds 14 enumeration runs 98 failures 0
+base 6 n 4 rules scanned 20160 class C 1648 of which NOT covering every gap 640
+   tested seeds 45 enumeration runs 315 failures 0
+base 8 n 2 rules scanned 12 class C 0 of which NOT covering every gap 0
+   tested seeds 0 enumeration runs 0 failures 0
+base 8 n 3 rules scanned 360 class C 6 of which NOT covering every gap 6
+   tested seeds 11 enumeration runs 77 failures 0
+base 8 n 4 rules scanned 20160 class C 248 of which NOT covering every gap 136
+   tested seeds 35 enumeration runs 105 failures 0
+base 12 n 3 rules scanned 360 class C 0 of which NOT covering every gap 0
+   tested seeds 0 enumeration runs 0 failures 0
+base 4 n 5 rules scanned 60000 class C 13615 of which NOT covering every gap 3050
+   tested seeds 30 enumeration runs 90 failures 0
+base 6 n 5 rules scanned 150000 class C 11121 of which NOT covering every gap 2714
+   tested seeds 17 enumeration runs 51 failures 0

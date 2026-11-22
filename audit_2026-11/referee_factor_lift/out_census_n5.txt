@@ -1,0 +1,2 @@
+base 10 length 10 states 126 {'rules': 1814400, 'cov': 1355520, 'univ': 71390, 'C': 10862, 'Ccov': 5590, 'nilp': 0}
+ m fixed by some gap-covering rule 35020 | by any rule 39039 | m with universal rule 9524 | class C endpoints (gap-covering) 688 | class C endpoints (any) 1364
