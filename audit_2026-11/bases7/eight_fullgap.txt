@@ -1,0 +1,4 @@
+cores so far: 106349 gaps seen: {4: 360, 5: 4352, 6: 18082, 7: 83555}
+full-gap: 83555 ; pass base 50 quick test: 8 ; fail reasons: {'cycle': 83535, 'two endpoints': 12}
+pass nine-base scan: 0
+first failures: {(50, 10): 8}

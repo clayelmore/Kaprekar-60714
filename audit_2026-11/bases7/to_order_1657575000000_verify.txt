@@ -1,0 +1,7 @@
+20 candidates listed; 1 move every letter
+BACEGFJIMHLKD - CGHBDAFLKIMJE | every letter moves | UNIVERSAL endpoint 1657575000000, max steps 45, mean 14.3, gaps 12/12
+BACDGFHLEKMJI - CGHBDAFJEILMK | has a fixed letter | fails complete enumeration
+BACDGFMKEILHJ - CGIBDAFLEKJHM | has a fixed letter | fails complete enumeration
+BACFGDLKJMHIE - CGHADBFKJLMIE | has a fixed letter | fails complete enumeration
+BACFGDLEHKIMJ - CGLADBFEKHIMJ | has a fixed letter | fails complete enumeration
+BACEGFLIDJMKH - CGKBFAEIDLMJH | has a fixed letter | fails complete enumeration

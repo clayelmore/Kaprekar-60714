@@ -1,0 +1,301 @@
+target	pairs	rules	distinct	zeros	outcome	tested	screened	rule	every_letter_moves
+358641	0	0	6	0	no pair				
+708975	2	8	5	1	none	8	0		
+416079	2	2	6	1	none	2	0		
+962298	0	0	4	0	no pair				
+860697	0	0	5	1	no pair				
+170514	0	0	5	1	no pair				
+401103	0	0	4	2	no pair				
+325269	0	0	5	0	no pair				
+496548	0	0	5	0	no pair				
+742437	0	0	4	0	no pair				
+119340	0	0	5	1	no pair				
+321750	6	6	6	1	none	6	0		
+074241	0	0	5	1	no pair				
+500427	4	16	5	2	none	16	0		
+172296	0	0	5	0	no pair				
+698985	0	0	4	0	no pair				
+958347	0	0	6	0	no pair				
+044505	2	128	3	2	found	73	1	DAFECB - DFBACE	False
+430533	0	0	4	1	no pair				
+475245	0	0	4	0	no pair				
+566514	0	0	4	0	no pair				
+924723	0	0	5	0	no pair				
+327078	0	0	5	1	no pair				
+957411	0	0	5	0	no pair				
+442188	0	0	4	0	no pair				
+921420	0	0	5	1	no pair				
+160776	0	0	4	1	no pair				
+375885	0	0	4	0	no pair				
+406827	0	0	6	1	no pair				
+388782	0	0	4	0	no pair				
+705933	2	8	5	1	none	8	0		
+200970	0	0	4	3	no pair				
+766818	0	0	4	0	no pair				
+514269	0	0	6	0	no pair				
+690084	0	0	5	2	no pair				
+668790	0	0	5	1	no pair				
+631071	0	0	5	1	no pair				
+627696	0	0	4	0	no pair				
+682470	0	0	6	1	no pair				
+267651	0	0	5	0	no pair				
+114876	0	0	5	0	no pair				
+070164	2	8	5	2	none	8	0		
+694818	0	0	5	0	no pair				
+558774	0	0	4	0	no pair				
+440478	0	0	4	1	no pair				
+792423	0	0	5	0	no pair				
+712179	0	0	4	0	no pair				
+699768	0	0	4	0	no pair				
+225999	0	0	3	0	no pair				
+762948	0	0	6	0	no pair				
+215271	0	0	4	0	no pair				
+885996	0	0	4	0	no pair				
+797832	0	0	5	0	no pair				
+818568	0	0	4	0	no pair				
+913833	0	0	4	0	no pair				
+762138	0	0	6	0	no pair				
+917118	0	0	4	0	no pair				
+328419	0	0	6	0	no pair				
+871965	0	0	6	0	no pair				
+122904	0	0	5	1	no pair				
+775971	0	0	4	0	no pair				
+533718	1	4	5	0	none	4	0		
+477567	0	0	4	0	no pair				
+093699	0	0	4	1	no pair				
+772596	0	0	5	0	no pair				
+079677	0	0	4	1	no pair				
+149409	0	0	4	1	no pair				
+015885	0	0	4	1	no pair				
+606087	0	0	4	2	no pair				
+365157	0	0	5	0	no pair				
+079488	0	0	5	1	no pair				
+571527	0	0	4	0	no pair				
+134244	0	0	4	0	no pair				
+883026	0	0	5	1	no pair				
+428931	6	6	6	0	none	6	2		
+219987	0	0	5	0	no pair				
+686925	0	0	5	0	no pair				
+242910	2	8	5	1	none	8	0		
+058662	0	0	5	1	no pair				
+096138	8	8	6	1	none	8	0		
+718632	0	0	6	0	no pair				
+492606	0	0	5	1	no pair				
+672912	0	0	5	0	no pair				
+497601	4	4	6	1	none	4	0		
+956799	0	0	4	0	no pair				
+051345	0	0	5	1	no pair				
+342774	0	0	4	0	no pair				
+253503	0	0	4	1	no pair				
+003888	0	0	3	2	no pair				
+473850	4	4	6	1	none	4	0		
+231408	2	2	6	1	none	2	0		
+690561	0	0	5	1	no pair				
+711783	0	0	4	0	no pair				
+464643	0	0	3	0	no pair				
+772983	0	0	5	0	no pair				
+836019	0	0	6	1	no pair				
+364833	0	0	4	0	no pair				
+325872	0	0	5	0	no pair				
+154872	0	0	6	0	no pair				
+867087	0	0	4	1	no pair				
+403407	0	0	4	2	no pair				
+675567	0	0	3	0	no pair				
+577530	0	0	4	1	no pair				
+998703	0	0	5	1	no pair				
+266481	0	0	5	0	no pair				
+264807	0	0	6	1	no pair				
+831555	0	0	4	0	no pair				
+000126	0	0	4	3	no pair				
+845892	0	0	5	0	no pair				
+349443	0	0	3	0	no pair				
+285597	0	0	5	0	no pair				
+730827	0	0	5	1	no pair				
+296910	4	16	5	1	none	16	0		
+495108	4	4	6	1	found	1	1	CDEFBA - FDCABE	False
+523566	0	0	4	0	no pair				
+066276	0	0	4	1	no pair				
+630936	0	0	4	1	no pair				
+040005	1	576	3	4	none	576	0		
+765198	1	1	6	0	none	1	0		
+791838	0	0	5	0	no pair				
+523287	0	0	5	0	no pair				
+042867	0	0	6	1	no pair				
+563427	0	0	6	0	no pair				
+649314	0	0	5	0	no pair				
+622449	0	0	4	0	no pair				
+190503	1	4	5	2	none	4	0		
+060282	0	0	4	2	no pair				
+399636	0	0	3	0	no pair				
+323559	0	0	4	0	no pair				
+003546	5	20	5	2	none	20	2		
+634698	2	8	5	0	none	8	0		
+871992	0	0	5	0	no pair				
+906903	0	0	4	2	no pair				
+128844	0	0	4	0	no pair				
+010917	1	16	4	2	none	16	0		
+702144	0	0	5	1	no pair				
+450225	0	0	4	1	no pair				
+277596	0	0	5	0	no pair				
+591219	0	0	4	0	no pair				
+430182	8	8	6	1	none	8	0		
+937836	0	0	5	0	no pair				
+077661	0	0	4	1	no pair				
+542394	0	0	5	0	no pair				
+578610	2	2	6	1	none	2	0		
+415170	0	0	5	1	no pair				
+970200	0	0	4	3	no pair				
+787131	0	0	4	0	no pair				
+345123	0	0	5	0	no pair				
+639783	0	0	5	0	no pair				
+910503	1	4	5	2	none	4	0		
+811683	0	0	4	0	no pair				
+736362	0	0	4	0	no pair				
+180513	0	0	5	1	no pair				
+486333	0	0	4	0	no pair				
+979830	0	0	5	1	no pair				
+889164	0	0	5	0	no pair				
+692424	0	0	4	0	no pair				
+490374	0	0	5	1	no pair				
+944694	0	0	3	0	no pair				
+831735	0	0	5	0	no pair				
+273717	0	0	4	0	no pair				
+397359	0	0	4	0	no pair				
+364860	1	4	5	1	none	4	0		
+927126	0	0	5	0	no pair				
+167094	3	3	6	1	none	3	0		
+799326	0	0	5	0	no pair				
+355023	0	0	4	1	no pair				
+066708	0	0	4	2	no pair				
+996129	0	0	4	0	no pair				
+437103	0	0	5	1	no pair				
+743508	0	0	6	1	no pair				
+739152	5	5	6	0	none	5	0		
+284913	0	0	6	0	no pair				
+788724	0	0	4	0	no pair				
+833229	0	0	4	0	no pair				
+518040	0	0	5	2	no pair				
+638730	0	0	5	1	no pair				
+998721	0	0	5	0	no pair				
+851292	0	0	5	0	no pair				
+790443	0	0	5	1	no pair				
+730278	0	0	5	1	no pair				
+804843	0	0	4	1	no pair				
+061479	6	6	6	1	none	6	0		
+549549	1	64	3	0	none	64	0		
+359235	0	0	4	0	no pair				
+044064	0	0	3	2	no pair				
+906993	0	0	4	1	no pair				
+647001	0	0	5	2	no pair				
+349875	4	4	6	0	none	4	0		
+146970	15	15	6	1	none	15	0		
+827235	0	0	5	0	no pair				
+356823	0	0	5	0	no pair				
+272070	0	0	3	2	no pair				
+248931	6	6	6	0	none	6	1		
+008586	0	0	4	2	no pair				
+584730	0	0	6	1	no pair				
+092025	0	0	4	2	no pair				
+956088	0	0	5	1	no pair				
+570852	0	0	5	1	no pair				
+965898	0	0	4	0	no pair				
+823095	2	2	6	1	none	2	0		
+483471	0	0	5	0	no pair				
+957024	0	0	6	1	no pair				
+828360	0	0	5	1	no pair				
+074412	0	0	5	1	no pair				
+959904	0	0	4	1	no pair				
+530352	0	0	4	1	no pair				
+118836	0	0	4	0	no pair				
+463041	0	0	5	1	no pair				
+149418	0	0	4	0	no pair				
+667440	0	0	4	1	no pair				
+106713	0	0	5	1	no pair				
+069264	1	4	5	1	none	4	0		
+338778	0	0	3	0	no pair				
+323505	0	0	4	1	no pair				
+540576	0	0	5	1	no pair				
+586890	0	0	5	1	no pair				
+431181	0	0	4	0	no pair				
+324351	0	0	5	0	no pair				
+864585	0	0	4	0	no pair				
+510489	0	0	6	1	no pair				
+310635	0	0	5	1	no pair				
+743454	0	0	4	0	no pair				
+013860	2	8	5	2	none	8	0		
+639999	0	0	3	0	no pair				
+930951	0	0	5	1	no pair				
+129870	8	8	6	1	none	8	0		
+298440	0	0	5	1	no pair				
+100089	4	144	4	3	none	144	0		
+642087	0	0	6	1	no pair				
+245583	0	0	5	0	no pair				
+329715	0	0	6	0	no pair				
+463698	0	0	5	0	no pair				
+351792	4	4	6	0	none	4	0		
+250677	0	0	5	1	no pair				
+059472	0	0	6	1	no pair				
+163611	0	0	3	0	no pair				
+652032	0	0	5	1	no pair				
+477261	0	0	5	0	no pair				
+170919	0	0	4	1	no pair				
+988857	0	0	4	0	no pair				
+332676	0	0	4	0	no pair				
+344907	2	8	5	1	none	8	0		
+209988	2	32	4	1	none	32	0		
+427581	0	0	6	0	no pair				
+043182	8	8	6	1	none	8	0		
+473724	0	0	4	0	no pair				
+922941	0	0	4	0	no pair				
+490554	2	32	4	1	none	32	0		
+156528	0	0	5	0	no pair				
+466902	0	0	5	1	no pair				
+475830	3	3	6	1	none	3	1		
+648459	0	0	5	0	no pair				
+055323	0	0	4	1	no pair				
+799902	0	0	4	1	no pair				
+468108	0	0	5	1	no pair				
+388449	0	0	4	0	no pair				
+901197	0	0	4	1	no pair				
+310329	0	0	5	1	no pair				
+635994	2	8	5	0	none	8	0		
+274590	8	8	6	1	none	8	0		
+258588	0	0	3	0	no pair				
+778464	0	0	4	0	no pair				
+633537	0	0	4	0	no pair				
+147798	0	0	5	0	no pair				
+222147	0	0	4	0	no pair				
+336159	0	0	5	0	no pair				
+904743	0	0	5	1	no pair				
+257643	0	0	6	0	no pair				
+586521	0	0	5	0	no pair				
+868473	0	0	5	0	no pair				
+325971	1	1	6	0	none	1	0		
+623628	0	0	4	0	no pair				
+545877	0	0	4	0	no pair				
+065601	0	0	4	2	no pair				
+326079	2	2	6	1	none	2	0		
+762426	0	0	4	0	no pair				
+992313	0	0	4	0	no pair				
+085113	0	0	5	1	no pair				
+087129	8	8	6	1	none	8	0		
+192159	0	0	4	0	no pair				
+134820	8	8	6	1	none	8	0		
+288207	0	0	4	1	no pair				
+340749	0	0	5	1	no pair				
+660519	0	0	5	1	no pair				
+598392	0	0	5	0	no pair				
+578646	0	0	5	0	no pair				
+827901	4	4	6	1	none	4	0		
+499959	1	576	3	0	none	576	0		
+025857	0	0	5	1	no pair				
+664029	0	0	5	1	no pair				
+368190	0	0	6	1	no pair				
+992799	0	0	3	0	no pair				
+677727	0	0	3	0	no pair				
+683793	0	0	5	0	no pair				
+093870	0	0	5	2	no pair				
+003978	2	8	5	2	none	8	0		
+983970	0	0	5	1	no pair				
+406215	4	4	6	1	none	4	0		
+517617	0	0	4	0	no pair				

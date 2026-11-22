@@ -1,0 +1,301 @@
+target	pairs	rules	distinct	zeros	outcome	tested	screened	rule	every_letter_moves
+9262053	0	0	6	1	no pair				
+6127425	0	0	6	0	no pair				
+5290965	0	0	5	1	no pair				
+5936058	5	20	6	1	found	16	1	ADGEBCF - FDCABGE	False
+6970959	0	0	5	1	no pair				
+9293940	0	0	5	1	no pair				
+7260480	5	20	6	2	found	1	1	AGEFBCD - GBCFEAD	False
+6086592	5	20	6	1	found	5	1	BEADFCG - FEGADCB	False
+7683453	0	0	6	0	no pair				
+8451333	0	0	5	0	no pair				
+8158707	0	0	5	1	no pair				
+0812340	8	32	6	2	none	32	4		
+3346875	4	16	6	0	found	1	1	CBAGEDF - GEFCDBA	True
+4618377	1	4	6	0	none	4	0		
+4935294	3	48	5	0	none	48	1		
+1769310	9	36	6	1	none	36	0		
+8952858	0	0	4	0	no pair				
+0522441	0	0	5	1	no pair				
+4720374	0	0	5	1	no pair				
+6135336	0	0	4	0	no pair				
+3145680	17	17	7	1	none	17	0		
+3861243	1	4	6	0	none	4	0		
+0786123	12	12	7	1	none	12	1		
+4802139	15	15	7	1	none	15	1		
+4875750	0	0	5	1	no pair				
+4709214	1	4	6	1	found	2	1	ADEFBGC - CBFEDAG	True
+4221828	0	0	4	0	no pair				
+3932829	0	0	4	0	no pair				
+8821548	0	0	5	0	no pair				
+8782749	0	0	5	0	no pair				
+4984209	2	32	5	1	none	32	0		
+2311182	0	0	4	0	no pair				
+3011949	0	0	5	1	no pair				
+9976419	0	0	5	0	no pair				
+1623906	3	12	6	1	none	12	0		
+4106358	3	3	7	1	none	3	0		
+0365958	6	24	6	1	none	24	0		
+4567743	0	0	5	0	no pair				
+7398801	6	24	6	1	none	24	0		
+5307714	2	8	6	1	none	8	0		
+2751066	0	0	6	1	no pair				
+2992086	0	0	5	1	no pair				
+4988511	0	0	5	0	no pair				
+7012863	6	6	7	1	none	6	0		
+8721513	0	0	6	0	no pair				
+6103053	0	0	5	2	no pair				
+6643044	0	0	4	1	no pair				
+7135524	0	0	6	0	no pair				
+0120897	25	100	6	2	none	100	0		
+3536991	0	0	5	0	no pair				
+1206666	0	0	4	1	no pair				
+4379499	0	0	4	0	no pair				
+1541520	0	0	5	1	no pair				
+9261063	0	0	6	1	no pair				
+0520137	18	72	6	2	none	72	2		
+4978179	0	0	5	0	no pair				
+3015945	9	36	6	1	none	36	3		
+8423892	0	0	5	0	no pair				
+2397699	3	108	5	0	none	108	0		
+7556454	0	0	4	0	no pair				
+5233887	0	0	5	0	no pair				
+7205103	6	24	6	2	none	24	0		
+3148299	6	24	6	0	none	24	1		
+7621443	0	0	6	0	no pair				
+4578858	0	0	4	0	no pair				
+6197760	0	0	5	1	no pair				
+6107094	5	20	6	2	none	20	0		
+3275829	0	0	6	0	no pair				
+7237872	0	0	4	0	no pair				
+6515775	0	0	4	0	no pair				
+3941001	2	32	5	2	none	32	0		
+0653985	9	36	6	1	none	36	1		
+9218583	0	0	6	0	no pair				
+9030294	0	0	5	2	no pair				
+9594018	0	0	6	1	no pair				
+8209593	2	8	6	1	none	8	0		
+2326383	0	0	4	0	no pair				
+8422137	0	0	6	0	no pair				
+7056630	4	64	5	2	none	64	0		
+5743854	0	0	5	0	no pair				
+6757281	0	0	6	0	no pair				
+7375806	0	0	6	1	no pair				
+7897905	0	0	5	1	no pair				
+9952731	0	0	6	0	no pair				
+4783833	0	0	4	0	no pair				
+9327618	0	0	7	0	no pair				
+3427740	2	32	5	1	none	32	0		
+2367585	2	8	6	0	found	4	1	BCDFGEA - DGAECBF	True
+7042365	0	0	7	1	no pair				
+1194516	0	0	5	0	no pair				
+6580017	0	0	6	2	no pair				
+5799645	0	0	5	0	no pair				
+5747589	0	0	5	0	no pair				
+3163365	0	0	4	0	no pair				
+2967669	1	144	4	0	none	144	0		
+7527258	0	0	4	0	no pair				
+7170480	0	0	5	2	no pair				
+5934924	2	32	5	0	found	1	1	BEGADCF - FEBDCGA	False
+2203686	0	0	5	1	no pair				
+2106261	0	0	4	1	no pair				
+3440340	0	0	3	2	no pair				
+7951689	4	16	6	0	none	16	0		
+4967334	2	32	5	0	none	32	0		
+1074609	6	24	6	2	none	24	0		
+1267434	2	8	6	0	none	8	0		
+9713097	0	0	5	1	no pair				
+7675776	0	0	3	0	no pair				
+6626754	0	0	5	0	no pair				
+3062907	15	60	6	2	none	60	0		
+7219080	20	80	6	2	none	80	0		
+3785958	0	0	5	0	no pair				
+8380107	0	0	5	2	no pair				
+9371187	0	0	5	0	no pair				
+6822099	1	16	5	1	none	16	0		
+0594504	3	192	4	2	none	192	0		
+3494475	0	0	5	0	no pair				
+6257691	1	4	6	0	none	4	0		
+3835404	0	0	5	1	no pair				
+8693010	1	4	6	2	none	4	0		
+6681879	0	0	5	0	no pair				
+9191232	0	0	4	0	no pair				
+0918747	4	16	6	1	none	16	0		
+7926642	0	0	5	0	no pair				
+8029980	6	384	4	2	none	384	0		
+1462725	4	16	6	0	none	16	0		
+7841691	1	4	6	0	found	3	1	AEDFGCB - GDFAEBC	True
+5905611	0	0	5	1	no pair				
+5448834	0	0	4	0	no pair				
+6571521	0	0	5	0	no pair				
+3174966	6	24	6	0	none	24	0		
+9029178	3	12	6	1	none	12	0		
+3227868	0	0	5	0	no pair				
+8951859	0	0	4	0	no pair				
+3348324	0	0	4	0	no pair				
+3401091	0	0	5	2	no pair				
+8491815	0	0	5	0	no pair				
+1082826	0	0	5	1	no pair				
+2775969	0	0	5	0	no pair				
+1219167	0	0	5	0	no pair				
+0425403	0	0	5	2	no pair				
+0982557	4	16	6	1	none	16	0		
+7847055	0	0	5	1	no pair				
+3041982	10	10	7	1	none	10	0		
+2010240	0	0	4	3	no pair				
+7197813	4	64	5	0	none	64	0		
+0751761	0	0	5	1	no pair				
+6170805	0	0	6	2	no pair				
+6526557	0	0	4	0	no pair				
+9295821	0	0	5	0	no pair				
+3708585	0	0	5	1	no pair				
+0197694	12	48	6	1	none	48	0		
+9950670	0	0	5	2	no pair				
+4916727	1	4	6	0	none	4	0		
+8612433	0	0	6	0	no pair				
+8577918	0	0	5	0	no pair				
+6468849	0	0	4	0	no pair				
+1635570	7	28	6	1	none	28	0		
+3055347	0	0	5	1	no pair				
+6175503	2	8	6	1	none	8	0		
+6703038	1	16	5	2	none	16	0		
+7526511	0	0	5	0	no pair				
+1679319	1	16	5	0	none	16	0		
+4467069	0	0	5	1	no pair				
+5504823	0	0	6	1	no pair				
+0655830	0	0	5	2	no pair				
+1901223	0	0	5	1	no pair				
+5502933	4	64	5	1	found	7	1	AGEDBFC - DCEGBAF	False
+7076817	0	0	5	1	no pair				
+5538267	0	0	6	0	no pair				
+8337492	0	0	6	0	no pair				
+1218663	0	0	5	0	no pair				
+3637062	0	0	5	1	no pair				
+4744035	0	0	5	1	no pair				
+5186997	0	0	6	0	no pair				
+5074119	3	12	6	1	none	12	0		
+4658040	0	0	5	2	no pair				
+6799653	0	0	5	0	no pair				
+6711066	0	0	4	1	no pair				
+6484860	0	0	4	1	no pair				
+7678449	0	0	5	0	no pair				
+5319684	11	11	7	0	found	9	1	AGCDBEF - FBECGDA	True
+7755039	0	0	5	1	no pair				
+9660645	0	0	5	1	no pair				
+4402764	2	72	5	1	none	72	0		
+7948341	3	12	6	0	none	12	0		
+7672284	0	0	5	0	no pair				
+9906993	0	0	4	1	no pair				
+6805809	0	0	5	2	no pair				
+5824224	0	0	4	0	no pair				
+1070235	8	32	6	2	none	32	3		
+8981424	0	0	5	0	no pair				
+8761329	0	0	7	0	no pair				
+0966240	0	0	5	2	no pair				
+0506646	0	0	4	2	no pair				
+1844847	0	0	4	0	no pair				
+5133717	0	0	4	0	no pair				
+0360657	1	16	5	2	none	16	0		
+9817182	0	0	5	0	no pair				
+5034060	2	72	5	3	none	72	0		
+1625751	2	32	5	0	none	32	0		
+0797751	2	72	5	1	found	25	1	BADECGF - DFCBAEG	True
+4834710	0	0	6	1	no pair				
+1795959	0	0	4	0	no pair				
+1577997	0	0	4	0	no pair				
+0404271	2	32	5	2	none	32	1		
+8472285	0	0	5	0	no pair				
+0352827	13	52	6	1	found	11	1	ECADBGF - FEDGABC	True
+0751833	6	24	6	1	none	24	0		
+9227241	0	0	5	0	no pair				
+8912223	0	0	5	0	no pair				
+0400815	0	0	5	3	no pair				
+1067139	2	8	6	1	none	8	0		
+0513189	0	0	6	1	no pair				
+8719191	1	144	4	0	none	144	0		
+9232191	0	0	4	0	no pair				
+1788165	0	0	5	0	no pair				
+3403386	0	0	5	1	no pair				
+8320563	0	0	6	1	no pair				
+3604239	2	8	6	1	none	8	0		
+5963112	2	8	6	0	none	8	0		
+7290792	0	0	4	1	no pair				
+9099333	0	0	3	1	no pair				
+9182601	0	0	6	1	no pair				
+3864267	4	16	6	0	none	16	0		
+5463999	2	72	5	0	none	72	0		
+9640593	0	0	6	1	no pair				
+1284840	1	16	5	1	none	16	0		
+1038924	30	30	7	1	none	30	0		
+4474656	0	0	4	0	no pair				
+5255586	0	0	4	0	no pair				
+2331504	0	0	6	1	no pair				
+1171116	0	0	3	0	no pair				
+1417878	0	0	4	0	no pair				
+2171997	0	0	4	0	no pair				
+1645749	1	4	6	0	none	4	0		
+8107389	4	16	6	1	none	16	0		
+1636110	0	0	4	1	no pair				
+5522265	0	0	3	0	no pair				
+0208440	0	0	4	3	no pair				
+2755944	0	0	5	0	no pair				
+0765846	0	0	6	1	no pair				
+6740784	0	0	5	1	no pair				
+6272793	0	0	5	0	no pair				
+3952647	8	8	7	0	found	8	1	AEGCDBF - DEBFAGC	False
+6279723	0	0	5	0	no pair				
+2176803	0	0	7	1	no pair				
+7539066	2	8	6	1	none	8	0		
+6827805	0	0	6	1	no pair				
+5542020	0	0	4	2	no pair				
+3155913	0	0	4	0	no pair				
+5440968	0	0	6	1	no pair				
+2176938	3	3	7	0	none	3	0		
+7030746	0	0	5	2	no pair				
+1243431	0	0	4	0	no pair				
+6275799	0	0	5	0	no pair				
+0723006	3	108	5	3	none	108	0		
+1659771	1	16	5	0	none	16	0		
+1485324	0	0	6	0	no pair				
+9924804	0	0	5	1	no pair				
+2268567	0	0	5	0	no pair				
+7459056	0	0	6	1	no pair				
+0620829	0	0	5	2	no pair				
+3384225	0	0	5	0	no pair				
+7906239	2	8	6	1	none	8	0		
+1477980	0	0	6	1	no pair				
+7706952	0	0	6	1	no pair				
+2585088	0	0	4	1	no pair				
+9407988	0	0	5	1	no pair				
+5180256	0	0	6	1	no pair				
+3449691	3	48	5	0	none	48	0		
+0624879	13	13	7	1	none	13	0		
+3981834	0	0	5	0	no pair				
+1465308	17	17	7	1	none	17	0		
+6701265	0	0	6	1	no pair				
+6018660	0	0	4	2	no pair				
+1437453	0	0	5	0	no pair				
+7236765	0	0	5	0	no pair				
+1027215	0	0	5	1	no pair				
+8330976	1	4	6	1	none	4	0		
+9937818	0	0	5	0	no pair				
+4306158	7	7	7	1	none	7	0		
+8616753	0	0	6	0	no pair				
+8926902	0	0	5	1	no pair				
+7918731	0	0	5	0	no pair				
+1645020	20	80	6	2	none	80	1		
+0072495	21	84	6	2	none	84	0		
+2793519	2	8	6	0	none	8	0		
+0841671	4	16	6	1	none	16	0		
+4399704	12	192	5	1	none	192	0		
+3988044	0	0	5	1	no pair				
+9056169	0	0	5	1	no pair				
+4767822	0	0	5	0	no pair				
+5262381	3	12	6	0	none	12	0		
+9123768	0	0	7	0	no pair				
+5995683	6	96	5	0	none	96	0		
+8881326	0	0	5	0	no pair				
+7506720	0	0	5	2	no pair				
+0600903	0	0	4	4	no pair				
+6301026	0	0	5	2	no pair				
+5176179	1	16	5	0	none	16	0		
