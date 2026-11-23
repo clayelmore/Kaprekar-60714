@@ -1,0 +1,88 @@
+base 37: fixed points 1; cycles 0
+base 38: fixed points 1; cycles 0
+base 39: fixed points 1; cycles 0
+base 40: fixed points 1; cycles 0
+base 41: fixed points 1; cycles 0
+base 42: fixed points 1; cycles 0
+base 43: fixed points 1; cycles 0
+base 44: fixed points 1; cycles 0
+base 45: fixed points 1; cycles 0
+base 46: fixed points 1; cycles 0
+base 47: fixed points 1; cycles 0
+base 48: fixed points 1; cycles 0
+base 49: fixed points 1; cycles 0
+base 50: fixed points 1; cycles 1
+    period 4 hits 3/4000  (37, 37, 33, 14, 13, 12, 1, 0)  /(b-1): 0.755 0.755 0.673 0.286 0.265 0.245 0.020 0.000
+base 51: fixed points 1; cycles 0
+base 52: fixed points 1; cycles 0
+base 53: fixed points 1; cycles 0
+base 54: fixed points 1; cycles 0
+base 55: fixed points 1; cycles 1
+    period 4 hits 11/4000  (41, 40, 36, 16, 15, 13, 1, 0)  /(b-1): 0.759 0.741 0.667 0.296 0.278 0.241 0.019 0.000
+base 56: fixed points 1; cycles 0
+base 57: fixed points 1; cycles 0
+base 58: fixed points 1; cycles 0
+base 59: fixed points 1; cycles 0
+base 60: fixed points 1; cycles 1
+    period 4 hits 4/4000  (45, 43, 39, 18, 17, 14, 1, 0)  /(b-1): 0.763 0.729 0.661 0.305 0.288 0.237 0.017 0.000
+base 61: fixed points 1; cycles 0
+base 62: fixed points 1; cycles 0
+base 63: fixed points 1; cycles 0
+base 64: fixed points 1; cycles 0
+base 65: fixed points 1; cycles 1
+    period 4 hits 1/4000  (49, 46, 42, 20, 19, 15, 1, 0)  /(b-1): 0.766 0.719 0.656 0.312 0.297 0.234 0.016 0.000
+base 66: fixed points 1; cycles 0
+base 67: fixed points 1; cycles 0
+base 68: fixed points 1; cycles 0
+base 69: fixed points 1; cycles 0
+base 70: fixed points 1; cycles 1
+    period 4 hits 1/4000  (53, 49, 45, 22, 21, 16, 1, 0)  /(b-1): 0.768 0.710 0.652 0.319 0.304 0.232 0.014 0.000
+base 71: fixed points 1; cycles 0
+base 72: fixed points 1; cycles 0
+base 73: fixed points 1; cycles 0
+base 74: fixed points 1; cycles 0
+base 75: fixed points 1; cycles 1
+    period 4 hits 2/4000  (57, 52, 48, 24, 23, 17, 1, 0)  /(b-1): 0.770 0.703 0.649 0.324 0.311 0.230 0.014 0.000
+base 76: fixed points 1; cycles 0
+base 77: fixed points 1; cycles 0
+base 78: fixed points 1; cycles 0
+base 79: fixed points 1; cycles 0
+base 80: fixed points 1; cycles 1
+    period 4 hits 2/4000  (61, 55, 51, 26, 25, 18, 1, 0)  /(b-1): 0.772 0.696 0.646 0.329 0.316 0.228 0.013 0.000
+base 81: fixed points 1; cycles 0
+base 82: fixed points 1; cycles 0
+base 83: fixed points 1; cycles 0
+base 84: fixed points 1; cycles 0
+base 85: fixed points 1; cycles 1
+    period 4 hits 1/4000  (65, 58, 54, 28, 27, 19, 1, 0)  /(b-1): 0.774 0.690 0.643 0.333 0.321 0.226 0.012 0.000
+base 86: fixed points 1; cycles 0
+base 87: fixed points 1; cycles 0
+base 88: fixed points 1; cycles 0
+base 89: fixed points 1; cycles 0
+base 90: fixed points 1; cycles 1
+    period 4 hits 1/4000  (69, 61, 57, 30, 29, 20, 1, 0)  /(b-1): 0.775 0.685 0.640 0.337 0.326 0.225 0.011 0.000
+base 91: fixed points 1; cycles 1
+    period 6 hits 1/4000  (72, 71, 61, 23, 19, 19, 3, 2)  /(b-1): 0.800 0.789 0.678 0.256 0.211 0.211 0.033 0.022
+base 92: fixed points 1; cycles 0
+base 93: fixed points 1; cycles 0
+base 94: fixed points 1; cycles 0
+base 95: fixed points 1; cycles 1
+    period 4 hits 2/4000  (73, 64, 60, 32, 31, 21, 1, 0)  /(b-1): 0.777 0.681 0.638 0.340 0.330 0.223 0.011 0.000
+base 96: fixed points 1; cycles 0
+base 97: fixed points 1; cycles 0
+base 98: fixed points 1; cycles 0
+base 99: fixed points 1; cycles 0
+base 100: fixed points 1; cycles 1
+    period 4 hits 4/4000  (77, 67, 63, 34, 33, 22, 1, 0)  /(b-1): 0.778 0.677 0.636 0.343 0.333 0.222 0.010 0.000
+base 101: fixed points 1; cycles 0
+base 102: fixed points 1; cycles 0
+base 103: fixed points 1; cycles 0
+base 104: fixed points 1; cycles 0
+base 105: fixed points 1; cycles 1
+    period 4 hits 1/4000  (81, 70, 66, 36, 35, 23, 1, 0)  /(b-1): 0.779 0.673 0.635 0.346 0.337 0.221 0.010 0.000
+base 106: fixed points 1; cycles 0
+base 107: fixed points 1; cycles 0
+base 108: fixed points 1; cycles 0
+base 109: fixed points 1; cycles 0
+base 110: fixed points 1; cycles 1
+    period 4 hits 2/4000  (85, 73, 69, 38, 37, 24, 1, 0)  /(b-1): 0.780 0.670 0.633 0.349 0.339 0.220 0.009 0.000
