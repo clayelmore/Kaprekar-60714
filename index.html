@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>60714: Universal Full-Variable Fixed Points Under Coefficient-Preserving Liftings</title>
-<meta name="description" content="A five-digit number that is a fixed point of an explicit Kaprekar-type lifting at every digit length d ≥ 5, with strict-universal dynamics at d = 5, 6 and near-universal dynamics at d ≥ 7. By Clay Elmore.">
+<title>60714: The Digits of 6174 at Every Length</title>
+<meta name="description" content="60714 is a fixed point of an explicit Kaprekar-type rule at every digit length d ≥ 5. At 5 and 6 digits every input that is not one repeated digit reaches it; at 7 or more digits every input reaches 60714 or 0. By Clay Elmore.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -493,29 +493,28 @@
   <!-- ═══════════ HERO ═══════════ -->
   <section class="hero">
     <div class="hero-eyebrow">A Generalized Kaprekar Phenomenon</div>
-    <div class="integer" id="integer" title="Click to copy">60714</div>
-    <p class="hero-subtitle">A five-digit number that is a universal attractor at every digit length <em>d ≥ 5</em>, under an explicit family of generalized Kaprekar rules.</p>
+    <div class="integer" id="integer" title="Click to copy" role="button" tabindex="0" aria-label="60714, click to copy">60714</div>
+    <p class="hero-subtitle">A five-digit number reached by every input at 5 and 6 digits; at 7 or more digits every input reaches it or collapses to 0, and the share collapsing to 0 grows with length.</p>
     <div class="hero-meta">
       <span>Clay Elmore</span>
-      <span>April 2026</span>
-      <span id="status-meta">Preprint forthcoming</span>
+      <span>November 2026</span>
     </div>
   </section>
 
   <!-- ═══════════ ABSTRACT ═══════════ -->
   <section class="abstract">
-    <p>Kaprekar's classical process fixes <em>6174</em> at four digits and <em>495</em> at three. The natural question, whether the phenomenon extends to higher digit lengths, has resisted a clean answer because the classical rule, applied at <em>d = 5</em>, has rank deficiency and no full-variable fixed point.</p>
-    <p>This paper introduces a <em>coefficient-preserving lifting</em> framework that classifies universal full-variable fixed points across digit lengths. At <em>d = 5</em>, exhaustive enumeration over all 5,280 full-variable rules yields 33 such fixed points; at <em>d = 6</em>, 506. Of the 33 candidates at <em>d = 5</em>, exactly one, <em>60714</em>, survives the lifting test to <em>d = 6</em> and beyond.</p>
-    <p>The main theorem establishes that <em>60714</em> is a fixed point of an explicit lifting at every <em>d ≥ 5</em>, with strict-universal dynamics at <em>d = 5, 6</em> and near-universal dynamics at <em>d ≥ 7</em> on a structurally characterized escape class. The proof closes by induction along two ladders (odd and even <em>d</em>), with the inductive step verified algebraically at large <em>d</em> and exhaustively at low <em>d</em>.</p>
+    <p>Kaprekar's classical process fixes <em>6174</em> at four digits and <em>495</em> at three. The classical rule, applied at <em>d = 5</em>, falls into one of three cycles and has no fixed endpoint.</p>
+    <p>The paper allows any rule that sorts the digits and subtracts one rearrangement from another. At <em>d = 5</em>, exhaustive enumeration over all 5,280 full-variable rules yields 33 universal fixed points; at <em>d = 6</em>, 506. Of the 33 at <em>d = 5</em>, exactly one, <em>60714</em>, is universal again at <em>d = 6</em> (among full-variable rules; allowing a letter to stay in place gives 54, of which 22 recur).</p>
+    <p>Proved: <em>60714</em> is a fixed point of an explicit rule at every <em>d ≥ 5</em>. At <em>d = 5, 6</em> every input that is not one repeated digit reaches it (at five digits: 99,990 of 100,000 strings, in at most 30 steps). At <em>d ≥ 7</em> every input reaches 60714 or 0. The inputs that reach 0 form an exactly characterized escape class, and its share grows with length: 0.56% of digit collections at 8 digits, about 12% at 24 digits (computed). The proof runs by induction along two ladders (odd and even <em>d</em>), algebraic at large <em>d</em> and by complete enumeration at small <em>d</em>. The paper also studies the repetition direction, the digits of 6174 written <em>m</em> times; there the question for every <em>m</em> is open.</p>
   </section>
 
   <!-- ═══════════ MAIN RESULT ═══════════ -->
   <section>
     <h2>Main Result</h2>
     <div class="result">
-      <strong>Theorem 5.2.</strong> The integer <em>60714</em> is a fixed point of an explicit coefficient-preserving lifting <em>K<sup>(d)</sup></em> at every digit length <em>d ≥ 5</em>. The lifted dynamics are strict-universal at <em>d = 5, 6</em> (every admissible input reaches <em>60714</em>) and near-universal at <em>d ≥ 7</em> (every admissible input outside a structurally characterized escape class <em>E<sub>d</sub></em> reaches <em>60714</em>; every input in <em>E<sub>d</sub></em> reaches <em>0</em>).
+      <strong>Theorem 4.1.</strong> The integer <em>60714</em> is a fixed point of an explicit coefficient-preserving lifting <em>K<sup>(d)</sup></em> at every digit length <em>d ≥ 5</em>. At <em>d = 5, 6</em> every admissible input reaches <em>60714</em>. At <em>d ≥ 7</em> every admissible input outside an exactly characterized escape class <em>E<sub>d</sub></em> reaches <em>60714</em>, and every input in <em>E<sub>d</sub></em> reaches <em>0</em>.
     </div>
-    <p>The escape class <em>E<sub>d</sub></em> has step-1 component of size <em>|E<sub>d</sub><sup>(1)</sup>| = C(⌊(d−3)/2⌋ + 9, 9) − 10</em>, growing polynomially in <em>d</em>; the basin density <em>1 − |E<sub>d</sub>|/|A<sub>d</sub>|</em> is conjectured to approach 1 (Conjecture 7.6, the Basin Density Conjecture).</p>
+    <p>The inputs that the rule sends to 0 in one step number <em>C(⌊(d−3)/2⌋ + 9, 9) − 10</em>. The whole escape class is larger: the share of inputs that collapse to 0 grows with length, from 0.56% of digit collections at 8 digits to about 12% at 24 digits (computed, November 2026).</p>
   </section>
 
   <!-- ═══════════ THE RULE ═══════════ -->
@@ -527,7 +526,7 @@
       <div class="rule-formula">K(n) = | adcbe − deacb |</div>
     </div>
 
-    <p>Both <em>adcbe</em> and <em>deacb</em> are five-digit integers built by reading <em>a, b, c, d, e</em> in the indicated order. The classical Kaprekar process at four digits uses descending minus ascending, <em>abcd − dcba</em>; that simple recipe has no full-variable fixed point at five digits. The interleaved rule <em>adcbe − deacb</em> is the rule the framework selects, and 60714 is its unique cross-dimensional fixed point.</p>
+    <p>Both <em>adcbe</em> and <em>deacb</em> are five-digit integers built by reading <em>a, b, c, d, e</em> in the indicated order. The classical Kaprekar process at four digits uses descending minus ascending, <em>abcd − dcba</em>; that simple recipe has no full-variable fixed point at five digits. The interleaved rule <em>adcbe − deacb</em> fixes 60714, and every five-digit input that is not one repeated digit reaches 60714 under it.</p>
 
     <p>Applied to 60714 itself: digits sorted descending are <em>(7, 6, 4, 1, 0)</em>, so <em>adcbe</em> = 71460 and <em>deacb</em> = 10746, and 71460 − 10746 = <strong>60714</strong>. ✓</p>
   </section>
@@ -620,21 +619,21 @@
       <a class="artifact" href="60714_calculator.html">
         <div class="artifact-label">Interactive</div>
         <div class="artifact-title">The 60714 Calculator</div>
-        <div class="artifact-desc">Type any number with at least five digits. Watch the lifted Kaprekar process iterate to 60714 (or its padded form) in finitely many steps.</div>
+        <div class="artifact-desc">Type a number with 5 to 20 digits and follow each step. At 5 and 6 digits it reaches 60714; at 7 or more digits it reaches 60714 or collapses to 0.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="kaprekar_calculator.html">
         <div class="artifact-label">Interactive</div>
         <div class="artifact-title">Kaprekar's Classic Routine</div>
-        <div class="artifact-desc">The original 1949 routine. Type any 3- or 4-digit number and watch it walk to 495 (at three digits) or 6174 (at four). The result that started it all.</div>
+        <div class="artifact-desc">The original 1949 routine. Type any 3- or 4-digit number and watch it walk to 495 (at three digits) or 6174 (at four).</div>
         <span class="artifact-arrow">→</span>
       </a>
 
-      <a class="artifact" href="paper.pdf">
+      <a class="artifact" href="paper_hierarchy.pdf">
         <div class="artifact-label">Paper · PDF</div>
-        <div class="artifact-title">Full Paper (compiled)</div>
-        <div class="artifact-desc">76 pages. Sections 1–7, Appendices A–F, References. Compiled from LaTeX; this is the canonical reading version. Updated April 30, 2026. Appendix F (added April 29; §F.5 revised April 30) is a preliminary working note on a strengthened strict-<em>d</em> criterion.</div>
+        <div class="artifact-title">The Digits of 6174 at Every Length</div>
+        <div class="artifact-desc">Two Liftings of a Universal Kaprekar Fixed Point. November 2026. The current paper.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
@@ -645,88 +644,91 @@
         <span class="artifact-arrow">→</span>
       </a>
 
+      <a class="artifact" href="paper_hierarchy.md">
+        <div class="artifact-label">Paper · Markdown</div>
+        <div class="artifact-title">Source (Markdown)</div>
+        <div class="artifact-desc">The current paper as Markdown, readable on GitHub.</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
+      <a class="artifact" href="paper.pdf">
+        <div class="artifact-label">Older version · PDF</div>
+        <div class="artifact-title">Older version (April 2026, 80 pages)</div>
+        <div class="artifact-desc">The first, longer paper on 60714. Kept for reference; the paper above replaces it. Its numbering differs, and later computation does not support its basin density conjecture (the share collapsing to 0 grows through 24 digits).</div>
+        <span class="artifact-arrow">→</span>
+      </a>
+
       <a class="artifact" href="paper.tex">
-        <div class="artifact-label">Paper · LaTeX</div>
-        <div class="artifact-title">Source (TeX)</div>
-        <div class="artifact-desc">Standalone LaTeX source. Compiles to the PDF above with pdflatex. Used for arXiv submission.</div>
-        <span class="artifact-arrow">→</span>
-      </a>
-
-      <a class="artifact" id="arxiv-link" href="#" aria-disabled="true" onclick="return false;">
-        <div class="artifact-label">Preprint · arXiv</div>
-        <div class="artifact-title">arXiv:PENDING</div>
-        <div class="artifact-desc">Forthcoming. The arXiv preprint will provide the canonical citable version with DOI.</div>
-        <span class="artifact-arrow">→</span>
-      </a>
-
-      <a class="artifact" id="oeis-link" href="#" aria-disabled="true" onclick="return false;">
-        <div class="artifact-label">Sequence · OEIS</div>
-        <div class="artifact-title">|E<sub>d</sub><sup>(1)</sup>|: 45, 210, 705, 1992, …</div>
-        <div class="artifact-desc">Forthcoming OEIS submission for the step-1 escape class size, with closed form C(k+9, 9) − 10.</div>
+        <div class="artifact-label">Older version · LaTeX</div>
+        <div class="artifact-title">Source of the April version (TeX)</div>
+        <div class="artifact-desc">LaTeX source of the older April 2026 version. Compiles with pdflatex.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
     </div>
+    <p class="note">An arXiv preprint and an OEIS entry are planned; neither has been submitted yet.</p>
+    <p>Work continued after 60714. The paper's final section, "Further directions (November 2026)", and the folder <a href="https://github.com/clayelmore/Kaprekar-60714/tree/main/audit_2026-11">audit_2026-11/</a> in the repository record it: a constant at every length in every base, a check that the sorting step is needed at 4 and 5 digits, and the general problem (choose an endpoint, get a rule with a proof), which is open.</p>
   </section>
 
   <!-- ═══════════ STRUCTURE ═══════════ -->
   <section>
     <h2>Paper Structure</h2>
+    <p>The current paper is one document: read it as <a href="paper_hierarchy.pdf">PDF</a> or as <a href="paper_hierarchy.md">Markdown</a>. The section files below belong to the older April 2026 version and use its numbering.</p>
     <div class="artifacts">
 
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/01_introduction.md">
-        <div class="artifact-label">§1</div>
+        <div class="artifact-label">April version · §1</div>
         <div class="artifact-title">Introduction</div>
         <div class="artifact-desc">Background, the rank-4 reframing, and the framework selection of 60714.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/02_framework.md">
-        <div class="artifact-label">§2</div>
+        <div class="artifact-label">April version · §2</div>
         <div class="artifact-title">Framework</div>
         <div class="artifact-desc">Universal full-variable fixed points; admissibility and the rule space.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/03_classifications.md">
-        <div class="artifact-label">§3</div>
+        <div class="artifact-label">April version · §3</div>
         <div class="artifact-title">Classifications at d ≤ 6</div>
         <div class="artifact-desc">The 0, 4, 33, 506 catalog. Exhaustive enumeration over all full-variable rules.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/04_cross_check.md">
-        <div class="artifact-label">§4</div>
+        <div class="artifact-label">April version · §4</div>
         <div class="artifact-title">Cross-check d = 5 → d = 6</div>
-        <div class="artifact-desc">Theorem 4.1: of 33 candidates at d=5, exactly one (60714) lifts to d=6.</div>
+        <div class="artifact-desc">Of the 33 full-variable fixed points at d=5, exactly one (60714) is universal again at d=6.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/05_theorem_60714.md">
-        <div class="artifact-label">§5</div>
-        <div class="artifact-title">Theorem 5.2</div>
-        <div class="artifact-desc">60714 universal at every d ≥ 5. Two-ladder induction; structural closure of T<sub>d</sub>.</div>
+        <div class="artifact-label">April version · §5</div>
+        <div class="artifact-title">The 60714 theorem</div>
+        <div class="artifact-desc">60714 at every d ≥ 5: reached by every input at d = 5, 6; at d ≥ 7, reached or a collapse to 0. Two-ladder induction; closure of T<sub>d</sub>.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/06_thread_7641.md">
-        <div class="artifact-label">§6</div>
+        <div class="artifact-label">April version · §6</div>
         <div class="artifact-title">The {7,6,4,1}-thread</div>
         <div class="artifact-desc">6174, 60714, and 60417 unified through their digit multiset.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/07_open_questions.md">
-        <div class="artifact-label">§7</div>
+        <div class="artifact-label">April version · §7</div>
         <div class="artifact-title">Open Questions</div>
-        <div class="artifact-desc">The Basin Density Conjecture and five further open problems.</div>
+        <div class="artifact-desc">Open problems as of April 2026. The November 2026 computation does not support its basin density conjecture.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/C_support_lemmas.md">
-        <div class="artifact-label">App. C</div>
+        <div class="artifact-label">April version · App. C</div>
         <div class="artifact-title">Support Lemmas</div>
-        <div class="artifact-desc">The proof's heavy lifting: closure of T<sub>d</sub>, Lemmas C.3–C.10.</div>
+        <div class="artifact-desc">Closure of T<sub>d</sub>, Lemmas C.3–C.10.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
@@ -736,12 +738,12 @@
   <!-- ═══════════ CODE ═══════════ -->
   <section>
     <h2>Reproducibility</h2>
-    <p>Every numerical claim in the paper is reproducible from the verification scripts. The full bundle (paper, sections, scripts, supplementary data) is in the public repository.</p>
+    <p>The verification scripts and data are in the public repository. The scripts in <code>scripts/</code> reproduce the claims of the older April version; the November 2026 recomputation used for the current paper is in <code>audit_2026-11/</code>, and the repetition-direction checks are in <code>multiplicity_chain/</code>.</p>
     <div class="artifacts">
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/tree/main/scripts/">
         <div class="artifact-label">Code · Python 3</div>
         <div class="artifact-title">Verification Scripts</div>
-        <div class="artifact-desc">Eight scripts, ~5 to ~30 minutes each on consumer hardware. Includes the d=18 even-ladder exhaustive run (4.69M admissibles, 0 stuck).</div>
+        <div class="artifact-desc">Python scripts for the older version's exhaustive claims, a few seconds to about an hour each on a laptop. Includes the d=18 even-ladder exhaustive run (4.69M admissibles, 0 stuck).</div>
         <span class="artifact-arrow">→</span>
       </a>
 
@@ -757,23 +759,23 @@
   <!-- ═══════════ CITE ═══════════ -->
   <section>
     <h2>Cite</h2>
-    <p>While the arXiv preprint is forthcoming, the paper can be cited as:</p>
-    <div class="citation">@unpublished{elmore2026kaprekar60714,
+    <p>The paper can be cited as:</p>
+    <div class="citation">@unpublished{elmore2026digits6174,
   author = {Elmore, Clay},
-  title  = {Universal Full-Variable Fixed Points
-            Under Coefficient-Preserving Liftings:
-            Classification at $d \leq 6$ and the
-            Cross-Dimensional Survivor 60714},
+  title  = {The Digits of 6174 at Every Length:
+            Two Liftings of a Universal
+            Kaprekar Fixed Point},
   year   = {2026},
-  note   = {Preprint forthcoming on arXiv.
-            See https://github.com/clayelmore/Kaprekar-60714}
+  month  = nov,
+  note   = {Unpublished manuscript.
+            https://github.com/clayelmore/Kaprekar-60714}
 }</div>
-    <p class="note">This BibTeX entry will be updated to <code>@article</code> with arXiv ID once the preprint is posted.</p>
   </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
   <footer>
     <p>By Clay Elmore · <a href="https://github.com/clayelmore/Kaprekar-60714">github</a></p>
+    <p style="margin-top: 0.5rem;">The questions and the direction are ours. The computation, checking, and drafting were done with AI models, Anthropic's Claude and OpenAI's ChatGPT, used as research tools. No human mathematician has refereed the results.</p>
     <p style="margin-top: 0.5rem; opacity: 0.7;">Set in EB Garamond &amp; JetBrains Mono.</p>
   </footer>
 
@@ -783,6 +785,9 @@
   // Click-to-copy on the integer
   const integer = document.getElementById('integer');
   if (integer) {
+    integer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); integer.click(); }
+    });
     integer.addEventListener('click', () => {
       navigator.clipboard.writeText('60714').then(() => {
         const original = integer.textContent;

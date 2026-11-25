@@ -1,0 +1,74 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: 'Outfit', sans-serif; color: #f4f4f0; }
+    .bg { position: absolute; inset: 0;
+      background: #000; }
+    .layer { position: absolute; inset: 0; }
+    .hl { position: absolute; left: 192px; top: 104px; font-weight: 700; font-size: 68px; letter-spacing: -0.01em; white-space: nowrap; }
+    .note { position: absolute; font-weight: 600; font-size: 36px; color: #b9b9b2; white-space: nowrap; }
+    .pi { position: absolute; width: 150px; height: 150px; }
+    .pi-face { position: relative; width: 100%; height: 100%; background: linear-gradient(170deg, #fff08a 0%, #ffe14d 100%);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 100px; color: #1c1810; }
+    .pi-l { position: absolute; left: 10px; top: 2px; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 40px; line-height: 44px; color: #8a6508; }
+    .minus { position: absolute; font-weight: 800; font-size: 110px; line-height: 150px; width: 90px; text-align: center; }
+    .bar { position: absolute; height: 7px; border-radius: 4px; background: #f4f4f0; }
+    .res { position: absolute; width: 150px; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 112px; line-height: 130px; }
+    .formula { position: absolute; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 56px; white-space: nowrap; }
+    .num { position: absolute; width: 240px; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; white-space: nowrap; }
+    .big { position: absolute; text-align: center; font-weight: 700; white-space: nowrap; }
+    .red { color: #ff6b5e; } .green { color: #5fd68a; }
+  </style>
+  <div id="root" data-composition-id="four" data-width="1920" data-height="1080">
+    <div class="bg"></div>
+    <svg class="logo" data-layout-ignore viewBox="1 7 62 82" fill="none" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:1734px;top:934px;width:66px;height:88px">
+      <path d="M4 60 H60" stroke="#8FC6E8" stroke-width="1.6"/>
+      <g stroke="#EFF3EE" stroke-width="2.5"><path d="M32 60 C32 44 32 30 32 16 l5 0 l0 -6 l-9 0 l0 7 l5 0"/><path d="M32 60 C30 46 22 36 14 28 l6 -1 l-2 -6 l-8 3 l2 5"/><path d="M32 60 C34 46 42 36 50 28 l-6 -1 l2 -6 l8 3 l-2 5"/><path d="M32 60 C29 50 20 46 10 44 l5 -3 l-4 -5 l-7 5 l3 4"/><path d="M32 60 C35 50 44 46 54 44 l-5 -3 l4 -5 l7 5 l-3 4"/></g>
+      <g stroke="#EFF3EE" stroke-width="2.5" opacity="0.5" transform="translate(0,60) scale(1,-0.52) translate(0,-60)"><path d="M32 60 C32 44 32 30 32 16 l5 0 l0 -6 l-9 0 l0 7 l5 0"/><path d="M32 60 C30 46 22 36 14 28 l6 -1 l-2 -6 l-8 3 l2 5"/><path d="M32 60 C34 46 42 36 50 28 l-6 -1 l2 -6 l8 3 l-2 5"/><path d="M32 60 C29 50 20 46 10 44 l5 -3 l-4 -5 l-7 5 l3 4"/><path d="M32 60 C35 50 44 46 54 44 l-5 -3 l4 -5 l7 5 l-3 4"/></g>
+    </svg>
+    <div id="four-hl" class="clip layer" data-start="0" data-duration="20.79" data-track-index="1"><div class="hl" id="four-hl-t">Four digits. Biggest minus smallest.</div></div>
+    <div id="four-board" class="clip layer" data-start="0" data-duration="20.79" data-track-index="2">
+      <div id="four-t0" class="pi" style="left:200px;top:280px"><div class="pi-face" style="transform:rotate(-3deg)"><span class="pi-l">A</span>7</div></div>
+      <div id="four-t1" class="pi" style="left:370px;top:280px"><div class="pi-face" style="transform:rotate(2deg)"><span class="pi-l">B</span>6</div></div>
+      <div id="four-t2" class="pi" style="left:540px;top:280px"><div class="pi-face" style="transform:rotate(-1.5deg)"><span class="pi-l">C</span>4</div></div>
+      <div id="four-t3" class="pi" style="left:710px;top:280px"><div class="pi-face" style="transform:rotate(3deg)"><span class="pi-l">D</span>1</div></div>
+      <div id="four-b0" class="pi" style="left:200px;top:460px"><div class="pi-face" style="transform:rotate(1.5deg)"><span class="pi-l">D</span>1</div></div>
+      <div id="four-b1" class="pi" style="left:370px;top:460px"><div class="pi-face" style="transform:rotate(-2.5deg)"><span class="pi-l">C</span>4</div></div>
+      <div id="four-b2" class="pi" style="left:540px;top:460px"><div class="pi-face" style="transform:rotate(2.5deg)"><span class="pi-l">B</span>6</div></div>
+      <div id="four-b3" class="pi" style="left:710px;top:460px"><div class="pi-face" style="transform:rotate(-1deg)"><span class="pi-l">A</span>7</div></div>
+      <div class="minus" id="four-minus" style="left:100px;top:460px">&minus;</div>
+      <div class="bar" id="four-bar" style="left:190px;top:636px;width:680px"></div>
+      <span class="res four-res" style="left:200px;top:660px">6</span>
+      <span class="res four-res" style="left:370px;top:660px">1</span>
+      <span class="res four-res" style="left:540px;top:660px">7</span>
+      <span class="res four-res" style="left:710px;top:660px">4</span>
+      <div class="formula" id="four-formula" style="left:190px;top:830px;width:680px">ABCD &minus; DCBA</div>
+    </div>
+    <div id="four-side" class="clip layer" data-start="0" data-duration="20.79" data-track-index="3">
+      <div class="big" id="four-s1" style="left:1010px;top:330px;width:720px;font-size:60px">Start with any four digits.</div>
+      <div class="big" id="four-s2" style="left:1010px;top:440px;width:720px;font-size:60px">Repeat. You always end at</div>
+      <div class="big green" id="four-s3" style="left:1010px;top:540px;width:720px;font-size:170px;font-family:'Space Mono',monospace">6174</div>
+      <div class="note" id="four-s4" style="left:1010px;top:770px;width:720px;text-align:center">(unless all four digits match)</div>
+      <div class="big" id="four-s5" style="left:1010px;top:850px;width:720px;font-size:44px">Kaprekar's constant<br><span id="four-s6" style="display:inline-block;font-weight:500;font-size:38px;color:#b9b9b2">D. R. Kaprekar, 1949</span></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    const show = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 24 }, { opacity: 1, y: 0, duration: o.d ?? 0.4, ease: "power3.out", stagger: o.s ?? 0 }, t);
+    const pop = (sel, t, s = 0.09) => tl.fromTo(sel, { opacity: 0, y: -70, scale: 1.18 }, { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "back.out(1.6)", stagger: s }, t);
+    const hide = (sel, t, d = 0.3) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power2.in", immediateRender: false }, t);
+
+    const F = 19.5918;
+    pop("#four-t0,#four-t1,#four-t2,#four-t3", 0.10 * F);
+    pop("#four-b0,#four-b1,#four-b2,#four-b3", 0.26 * F);
+    show("#four-formula", 0.30 * F);
+    show("#four-minus,#four-bar", 0.36 * F, { y: 0 });
+    show(".four-res", 0.40 * F, { s: 0.08, y: 30 });
+    show("#four-s1", 0.44 * F); show("#four-s2", 0.50 * F);
+    tl.fromTo("#four-s3", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.8)" }, 0.57 * F);
+    show("#four-s4", 0.62 * F);
+    show("#four-s5", 0.68 * F); show("#four-s6", 0.84 * F);
+    window.__timelines["four"] = tl;
+  </script>
+</template>

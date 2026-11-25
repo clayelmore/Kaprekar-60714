@@ -1,0 +1,58 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: 'Outfit', sans-serif; color: #f4f4f0; }
+    .bg { position: absolute; inset: 0;
+      background: #000; }
+    .layer { position: absolute; inset: 0; }
+    .hl { position: absolute; left: 192px; top: 104px; font-weight: 700; font-size: 68px; letter-spacing: -0.01em; white-space: nowrap; }
+    .note { position: absolute; font-weight: 600; font-size: 36px; color: #b9b9b2; white-space: nowrap; }
+    .pi { position: absolute; width: 150px; height: 150px; }
+    .pi-face { position: relative; width: 100%; height: 100%; background: linear-gradient(170deg, #fff08a 0%, #ffe14d 100%);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 100px; color: #1c1810; }
+    .pi-l { position: absolute; left: 10px; top: 2px; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 40px; line-height: 44px; color: #8a6508; }
+    .minus { position: absolute; font-weight: 800; font-size: 110px; line-height: 150px; width: 90px; text-align: center; }
+    .bar { position: absolute; height: 7px; border-radius: 4px; background: #f4f4f0; }
+    .res { position: absolute; width: 150px; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 112px; line-height: 130px; }
+    .formula { position: absolute; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 56px; white-space: nowrap; }
+    .num { position: absolute; width: 240px; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; white-space: nowrap; }
+    .big { position: absolute; text-align: center; font-weight: 700; white-space: nowrap; }
+    .red { color: #ff6b5e; } .green { color: #5fd68a; }
+  </style>
+  <div id="root" data-composition-id="claim" data-width="1920" data-height="1080">
+    <div class="bg"></div>
+    <svg class="logo" data-layout-ignore viewBox="1 7 62 82" fill="none" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:1734px;top:934px;width:66px;height:88px">
+      <path d="M4 60 H60" stroke="#8FC6E8" stroke-width="1.6"/>
+      <g stroke="#EFF3EE" stroke-width="2.5"><path d="M32 60 C32 44 32 30 32 16 l5 0 l0 -6 l-9 0 l0 7 l5 0"/><path d="M32 60 C30 46 22 36 14 28 l6 -1 l-2 -6 l-8 3 l2 5"/><path d="M32 60 C34 46 42 36 50 28 l-6 -1 l2 -6 l8 3 l-2 5"/><path d="M32 60 C29 50 20 46 10 44 l5 -3 l-4 -5 l-7 5 l3 4"/><path d="M32 60 C35 50 44 46 54 44 l-5 -3 l4 -5 l7 5 l-3 4"/></g>
+      <g stroke="#EFF3EE" stroke-width="2.5" opacity="0.5" transform="translate(0,60) scale(1,-0.52) translate(0,-60)"><path d="M32 60 C32 44 32 30 32 16 l5 0 l0 -6 l-9 0 l0 7 l5 0"/><path d="M32 60 C30 46 22 36 14 28 l6 -1 l-2 -6 l-8 3 l2 5"/><path d="M32 60 C34 46 42 36 50 28 l-6 -1 l2 -6 l8 3 l-2 5"/><path d="M32 60 C29 50 20 46 10 44 l5 -3 l-4 -5 l-7 5 l3 4"/><path d="M32 60 C35 50 44 46 54 44 l-5 -3 l4 -5 l7 5 l-3 4"/></g>
+    </svg>
+    <div id="claim-hl" class="clip layer" data-start="0" data-duration="34.71" data-track-index="1"><div class="hl" id="claim-hl-t" style="left:192px;width:1536px;text-align:center">Every five-digit start lands on 60714.</div></div>
+    <div id="claim-board" class="clip layer" data-start="0" data-duration="34.71" data-track-index="2">
+      <div id="claim-p0" class="pi" style="left:545px;top:270px"><div class="pi-face" style="transform:rotate(-3deg)"><span class="pi-l"></span>6</div></div>
+      <div id="claim-p1" class="pi" style="left:715px;top:270px"><div class="pi-face" style="transform:rotate(2deg)"><span class="pi-l"></span>0</div></div>
+      <div id="claim-p2" class="pi" style="left:885px;top:270px"><div class="pi-face" style="transform:rotate(-1.5deg)"><span class="pi-l"></span>7</div></div>
+      <div id="claim-p3" class="pi" style="left:1055px;top:270px"><div class="pi-face" style="transform:rotate(3deg)"><span class="pi-l"></span>1</div></div>
+      <div id="claim-p4" class="pi" style="left:1225px;top:270px"><div class="pi-face" style="transform:rotate(-2deg)"><span class="pi-l"></span>4</div></div>
+      <div class="note" id="claim-tag" style="left:192px;top:452px;width:1536px;text-align:center;font-size:42px">the digits of 6174, plus a zero</div>
+      <div class="big" id="claim-l1" style="left:192px;top:565px;width:1536px;font-size:48px">Checked by computer: all 99,990 starts with at least two different digits.</div>
+      <div class="big" style="left:192px;top:640px;width:1536px;font-size:48px"><span id="claim-l2" style="display:inline-block">Longest trip: 30 steps.</span> <span id="claim-l2b" style="display:inline-block">Left out: the ten repeats, like 11111.</span></div>
+      <div class="big" id="claim-l3" style="left:192px;top:725px;width:1536px;font-size:48px">Not Kaprekar's rule. Same idea, new order: <span class="green" style="font-family:'Space Mono',monospace">ADCBE &minus; DEACB</span></div>
+      <div class="big" id="claim-l5" style="left:192px;top:815px;width:1536px;font-size:44px">We asked the questions. Claude and ChatGPT did the heavy lifting.</div>
+      <div class="note" id="claim-l4" style="left:192px;top:895px;width:1536px;text-align:center;font-size:40px">Paper and code: link in the description</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    const show = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 24 }, { opacity: 1, y: 0, duration: o.d ?? 0.4, ease: "power3.out", stagger: o.s ?? 0 }, t);
+    const pop = (sel, t, s = 0.09) => tl.fromTo(sel, { opacity: 0, y: -70, scale: 1.18 }, { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "back.out(1.6)", stagger: s }, t);
+    const hide = (sel, t, d = 0.3) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power2.in", immediateRender: false }, t);
+
+    const M = 32.9143;
+    show("#claim-hl-t", 0.15);
+    pop("#claim-p0,#claim-p1,#claim-p2,#claim-p3,#claim-p4", 0.5);
+    show("#claim-l1", 0.10 * M); show("#claim-tag", 0.22 * M);
+    show("#claim-l2", 0.36 * M); show("#claim-l2b", 0.50 * M); show("#claim-l3", 0.62 * M); show("#claim-l5", 0.78 * M); show("#claim-l4", 0.93 * M);
+    window.__timelines["claim"] = tl;
+  </script>
+</template>

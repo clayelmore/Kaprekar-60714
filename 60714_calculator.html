@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>60714: A Universal Attractor</title>
+<title>60714: a Kaprekar fixed point at every length</title>
+<meta name="description" content="Interactive calculator for the lifted Kaprekar rules that fix 60714 at every digit length from 5 up. At 5 and 6 digits every input that is not one repeated digit reaches 60714; at 7 or more digits some inputs collapse to 0 instead.">
+
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -584,11 +587,11 @@
   <header>
     <div class="eyebrow">an interactive companion</div>
     <h1>The Number <span class="num">60714</span></h1>
-    <div class="subtitle">A universal attractor at every digit length d ≥ 5 (with one structural family of exceptions)</div>
+    <div class="subtitle">A Kaprekar fixed point at every digit length d ≥ 5. At 7 or more digits, some inputs collapse to 0 instead.</div>
 
     <div class="lede">
-      <p>Pick any number with at least five digits. Apply the right rule. Watch it converge, almost always, to <em>60714</em>.</p>
-      <p>The rule depends on the input's digit length: there is one rule at <em>d = 5</em>, another at <em>d = 6</em>, and a uniform recipe extending to every higher dimension. At <em>d = 5</em> and <em>d = 6</em>, every admissible input reaches 60714. At <em>d ≥ 7</em>, almost every input does, but a small, exactly characterized class of inputs collapses to zero instead. The calculator recognizes both cases.</p>
+      <p>Pick any number with at least five digits. Apply the rule for its length. Watch where it goes.</p>
+      <p>The rule depends on the input's digit length: there is one rule at <em>d = 5</em>, another at <em>d = 6</em>, and a recipe that extends them to every longer length. At <em>d = 5</em> and <em>d = 6</em>, every input that is not one repeated digit reaches 60714 (at five digits: 99,990 of 100,000 strings, in at most 30 steps). At <em>d ≥ 7</em>, every input reaches either 60714 or 0. The share that collapses to 0 grows with length: 0.56% of digit collections at 8 digits, about 12% at 24 digits. The calculator shows both outcomes.</p>
     </div>
   </header>
 
@@ -606,7 +609,7 @@
       <button class="secondary" type="button" id="random">random</button>
       <button class="escape-try" type="button" id="doomed">try a doomed input</button>
     </div>
-    <div class="hint" id="hint">5 digits or more. Most inputs reach 60714. Try the "doomed input" button to see one that doesn't.</div>
+    <div class="hint" id="hint">5 to 20 digits. Try the "doomed input" button to see an input that collapses to 0.</div>
   </section>
 
   <div class="trajectory" id="trajectory"></div>
@@ -614,13 +617,13 @@
   <div class="about">
     <p>The number <strong>60714</strong> is a fixed point of an explicit family of permutation-pair rules built from its native rule at <em>d = 5</em>, with the family extending to every higher digit length by appending pairs of coefficients that sum to zero. The fixed-point equation K(60714) = 60714 holds at every d ≥ 5.</p>
 
-    <p>The dynamics are <strong>strict-universal at d = 5 and d = 6</strong>: every admissible input reaches 60714. At <strong>d ≥ 7</strong>, the rule is <em>near-universal</em>: every admissible input outside a small structural class (the <strong>escape class</strong> of <strong>block-aligned multisets</strong> and their backward orbits) reaches 60714. Inputs in the escape class collapse to zero. The escape class has a closed-form description and at d ≤ 11 the escape orbits all reach zero within four iterations.</p>
+    <p><strong>What is proved.</strong> At <strong>d = 5 and d = 6</strong>, every input that is not one repeated digit reaches 60714. At <strong>d ≥ 7</strong>, every input reaches 60714 or 0. The inputs that reach 0 form the <strong>escape class</strong>: the <strong>block-aligned multisets</strong>, which the rule sends to 0 in one step, and the inputs whose orbits land on them. The escape class is characterized exactly, but it is not small: its share grows with length, from 0.56% of digit collections at 8 digits to about 12% at 24 digits (computed).</p>
 
-    <p>This is a strict generalization of Kaprekar's classical 1949 result. Kaprekar's constant 6174 is universal at d = 4; the routine "stops working" at d = 5 if you keep his rule fixed. The result extended here is that if you let the rule itself vary with d (specifically, by appending zero-sum coefficient pairs), there is a distinguished fixed point, 60714 (sharing 6174's digit multiset plus a zero), whose universality persists across infinitely many dimensions, apart from a structurally characterized escape class.</p>
+    <p>Kaprekar's constant 6174 is reached from every 4-digit input that is not one repeated digit; his rule has no fixed endpoint at 5 digits. If the rule is allowed to change with the length (here, by appending pairs of coefficients that sum to zero), 60714, the digits of 6174 plus a zero, stays a fixed point at every length, with the escape class above at 7 digits and more.</p>
 
     <p style="font-style: italic; font-size: 0.85em; color: var(--soft); margin-top: 0.5em;">This calculator is a pedagogical companion to the paper, not a formal verifier. It demonstrates the iteration on individual inputs; the formal claims of the paper are established by the Python scripts and proofs in the repository.</p>
 
-    <p>Full paper, the proof, the 506-fixed-point classification at d = 6, the closed-form description of the escape class, and reproducibility scripts: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
+    <p>The paper: <a href="paper_hierarchy.pdf">The Digits of 6174 at Every Length (PDF)</a> (Theorem 4.1 and Definition 4.6). Scripts and data: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
   </div>
 
   <div class="ornament">⁂</div>
@@ -635,12 +638,15 @@ function getCoefs(d) {
   if (d === 5) return [9900, 9, 90, -9000, -999];
   if (d === 6) return [9900, 9, 90, -9000, 99000, -99999];
 
-  // Coefficient-preserving lifted rule per Tables B.1/B.2 of the paper.
-  // Two ladders, each with its own appended-pair convention:
+  // Coefficient-preserving lifted rule per Section 4 and Appendix F
+  // ("The ladder, explicitly") of paper_hierarchy.md.
+  // Both ladders use the SAME appended-pair convention:
   //   Odd  ladder (d = 7, 9, 11, ...): pair appended at length d' is
   //                                    (+9*10^(d'-2), -9*10^(d'-2)).
   //   Even ladder (d = 8, 10, 12, ...): pair appended at length d' is
-  //                                    (-9*10^(d'-2), +9*10^(d'-2)).
+  //                                    (+9*10^(d'-2), -9*10^(d'-2)).
+  // (An earlier version crossed the even-ladder signs; that is a different
+  // map, with |E_8| = 45 instead of the paper's 137.)
   // The exponent is d' - 2, where d' is the digit length AT THE STEP
   // the pair is appended. NOT d' itself.
   const useBig = d > 15;
@@ -672,8 +678,8 @@ function getCoefs(d) {
     for (let dPrime = 8; dPrime <= d; dPrime += 2) {
       const k = dPrime - 2;
       const tenK = pow(TEN, k);
-      base.push(-NINE * tenK);   // -9*10^(d'-2) first on even ladder
-      base.push(NINE * tenK);
+      base.push(NINE * tenK);    // +9*10^(d'-2) first on even ladder too
+      base.push(-NINE * tenK);
     }
   }
   return base;
@@ -684,14 +690,13 @@ function getCoefs(d) {
 // Mirrors the inductive structure of getCoefs(), so the two representations
 // stay synchronized.
 //
-// Base cases match Table B.1:
+// Base cases match the ladder table in Appendix F of paper_hierarchy.md:
 //   d=5 (odd root):  π = adcbe = [0,3,2,1,4], σ = deacb = [3,4,0,2,1]
 //   d=6 (even root): π = eadcbf = [4,0,3,2,1,5], σ = fdeacb = [5,3,4,0,2,1]
 //
-// Inductive step (d → d+2): PREPEND two letters to each string, in the
-// order that mirrors the appended-pair sign convention:
-//   odd ladder:  prepend (d+1, d) to π, prepend (d, d+1) to σ
-//   even ladder: prepend (d, d+1) to π, prepend (d+1, d) to σ
+// Inductive step (d → d+2): PREPEND two letters to each string, the same
+// way on both ladders: the lower-rank letter leads in π and trails in σ.
+//   prepend (lo, hi) to π, prepend (hi, lo) to σ
 //
 // (At d → d+2, the string length grows by 2; the new highest letters
 // appear on the LEFT because the leftmost digit holds the highest place
@@ -723,10 +728,10 @@ function getLetterStrings(d) {
     for (let dPrime = 8; dPrime <= d; dPrime += 2) {
       const lo = dPrime - 2;
       const hi = dPrime - 1;
-      // even-ladder: d=8 π = "hgeadcbf", d=6 π = "eadcbf", prepended "hg" = [7,6] = [hi, lo]
-      // d=8 σ = "ghfdeacb", d=6 σ = "fdeacb", prepended "gh" = [6,7] = [lo, hi]
-      piVar    = [hi, lo].concat(piVar);
-      sigmaVar = [lo, hi].concat(sigmaVar);
+      // even-ladder: d=8 π = "gheadcbf", d=6 π = "eadcbf", prepended "gh" = [6,7] = [lo, hi]
+      // d=8 σ = "hgfdeacb", d=6 σ = "fdeacb", prepended "hg" = [7,6] = [hi, lo]
+      piVar    = [lo, hi].concat(piVar);
+      sigmaVar = [hi, lo].concat(sigmaVar);
     }
   }
   return { piVar, sigmaVar };
@@ -739,7 +744,7 @@ function posToLetter(p) {
 
 function isBigArr(arr) { return arr.length > 0 && typeof arr[0] === 'bigint'; }
 
-/* Block-aligned detection (Definition 5.2) */
+/* Block-aligned detection (Definition 4.6 of paper_hierarchy.md) */
 function isBlockAligned(sortedDescStr, d) {
   const digits = sortedDescStr.split('').map(c => parseInt(c, 10));
   if (digits.length !== d) return false;
@@ -792,7 +797,7 @@ function step(value, d) {
 
   // For every d ≥ 5, build the rule's display in letter form (π, σ as
   // permutations of sorted-descending positions). The same construction
-  // works at every d via the inductive recipe in §B.3 / Table B.1.
+  // works at every d via the inductive recipe in Appendix F of the paper.
   // No coefficient-form fallback needed; the letter form is the rule.
   const letters = getLetterStrings(d);
   let piStr = null, sigmaStr = null, piVarStr = null, sigmaVarStr = null;
@@ -821,20 +826,12 @@ function isRepdigit(s) {
   return /^(.)\1*$/.test(s);
 }
 
-function isNearRepdigit(s) {
-  const d = s.length;
-  const counts = {};
-  for (const c of s) counts[c] = (counts[c] || 0) + 1;
-  return Object.values(counts).some(v => v >= d - 1);
-}
-
 function iterate(input) {
   const cleaned = input.replace(/\D/g, '');
   if (!cleaned) return { error: 'enter a number, please.' };
   if (cleaned.length < 5) return { error: 'needs at least 5 digits.' };
-  if (cleaned.length > 20) return { error: 'keep it under 20 digits for now.' };
-  if (isRepdigit(cleaned)) return { error: 'repdigits (like 11111) collapse to zero. Try a number with at least two different digits.' };
-  if (isNearRepdigit(cleaned)) return { error: 'this is a near-repdigit (almost all digits the same), which falls under Kaprekar\'s classical exclusion. Try something with more digit variety.' };
+  if (cleaned.length > 20) return { error: 'use at most 20 digits.' };
+  if (isRepdigit(cleaned)) return { error: 'a number made of one repeated digit (like 11111) goes to 0 in one step. Try a number with at least two different digits.' };
 
   const d = cleaned.length;
   const useBig = d > 15;
@@ -1042,7 +1039,7 @@ function render(result) {
     const banner = document.createElement('div');
     banner.className = 'fixed-banner';
     banner.style.animationDelay = (result.trail.length * 0.06) + 's';
-    banner.innerHTML = 'Theorem 5.2 in action: this input reaches 60714 at d = ' + result.d + '.';
+    banner.innerHTML = 'This input reaches 60714 at d = ' + result.d + ' (Theorem 4.1 of the paper).';
     trajectoryEl.appendChild(banner);
   } else if (result.isEscape) {
     const explainer = document.createElement('div');
@@ -1076,13 +1073,13 @@ function render(result) {
 
     explainer.innerHTML =
       '<h3>Why this input goes to zero</h3>' +
-      '<p>At digit length d = ' + d + ', the rule sends a small structural class of admissible inputs to zero instead of 60714. ' +
+      '<p>At digit length d = ' + d + ', the rule sends a class of inputs to zero instead of 60714, and that class grows as a share of all inputs as d grows. ' +
       (baStep && baStep.stepNum > 0 ? 'Your input\'s orbit landed on one of them.' : 'Your input is one of them.') +
       '</p>' +
       baExplanation +
       ruleExplanation +
       '<p>The rule is built from a base of <strong>' + d_0 + ' coefficients summing to zero</strong>, plus ' + numPairs + ' appended ' + (numPairs === 1 ? 'pair' : 'pairs') + ' each summing to zero. When all ' + d_0 + ' top digits are equal AND each pair has equal digits, every coefficient pairs with a digit-equal partner, every contribution cancels, and the result is exactly zero.</p>' +
-      '<p style="font-style: italic; font-size: 0.88em; margin-top: 0.8rem;">This is a <strong>block-aligned multiset</strong> (Definition 5.2 in the paper). At d = ' + d + ' there are exactly ' + e1 + ' such multisets that collapse in one step, plus a small number of inputs whose orbits land on one of them.</p>';
+      '<p style="font-style: italic; font-size: 0.88em; margin-top: 0.8rem;">This is a <strong>block-aligned multiset</strong> (Definition 4.6 in the paper). At d = ' + d + ' there are exactly ' + e1 + ' such multisets that collapse in one step, plus the inputs whose orbits land on one of them.</p>';
     trajectoryEl.appendChild(explainer);
   }
 }
@@ -1134,7 +1131,7 @@ document.getElementById('random').addEventListener('click', () => {
     s = '';
     s += String(1 + Math.floor(Math.random() * 9));
     for (let i = 1; i < len; i++) s += String(Math.floor(Math.random() * 10));
-  } while (isRepdigit(s) || isNearRepdigit(s));
+  } while (isRepdigit(s));
   inputEl.value = s;
   go();
 });
@@ -1172,7 +1169,7 @@ document.getElementById('doomed').addEventListener('click', () => {
 
 inputEl.addEventListener('input', () => {
   hintEl.classList.remove('error', 'escape');
-  hintEl.textContent = '5 digits or more. Most inputs reach 60714. Try the "doomed input" button to see one that doesn\'t.';
+  hintEl.textContent = '5 to 20 digits. Try the "doomed input" button to see an input that collapses to 0.';
 });
 
 inputEl.value = '12345';

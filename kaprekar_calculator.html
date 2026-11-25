@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kaprekar's Classic Routine: 495 and 6174</title>
+<meta name="description" content="Interactive calculator for Kaprekar's classic routine: sort the digits descending and ascending, subtract, repeat. Three-digit inputs reach 495 and four-digit inputs reach 6174.">
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -509,7 +511,7 @@
 
     <p>The routine is famous because of how clean it is: one simple rule, one number every input ends up at, and a short proof you can almost do in your head. Try it with five-digit numbers, though, and the routine stops working: you bounce around in a small loop forever instead of reaching a fixed number. For a long time, that was the end of the story.</p>
 
-    <p>The companion <a href="60714_calculator.html">60714 calculator</a> picks up where this one leaves off. It iterates a slightly different rule that <em>does</em> have a five-digit fixed point. Unlike Kaprekar's original, the new rule keeps reaching a fixed point at six digits, seven digits, and every length above.</p>
+    <p>The companion <a href="60714_calculator.html">60714 calculator</a> picks up where this one leaves off. It iterates a slightly different rule that <em>does</em> have a five-digit fixed point, 60714, with a version of the rule for every longer length. At five and six digits every input that is not one repeated digit reaches 60714. At seven digits and more, every input reaches 60714 or 0, and the share that collapses to 0 grows with length (about 12% of digit collections at 24 digits).</p>
 
     <p>Full paper, the proof, and reproducibility scripts: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
   </div>
