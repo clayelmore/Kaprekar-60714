@@ -1,6 +1,6 @@
 # Text for the upload and the comment (draft)
 
-Replace `[60714 PAGE LINK]` and `[VIDEO LINK]` before posting.
+The page address is filled in. Nothing else needs replacing before posting.
 
 ## Video title (Arbolinea channel)
 
@@ -20,7 +20,7 @@ Why sort first? We also tried skipping the sort and just shuffling the digits as
 
 How it was made: we asked the questions and set the direction; AI models (Anthropic's Claude and OpenAI's ChatGPT) did the heavy lifting on the computation and checking.
 
-Paper and details: [60714 PAGE LINK]
+Paper and details: https://clayelmore.github.io/Kaprekar-60714/
 
 ## Comment for the Numberphile 6174 video
 
