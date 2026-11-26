@@ -17,3 +17,13 @@ voice.local.json
 *.npy
 node_modules/
 *.inner.svg
+
+# private working notes: kept locally, not published
+/SESSION_LOG.md
+/CLAUDE.md
+/venue_selection.md
+/oeis_submission_draft.md
+/PAPER_FIXED_POINT_HIERARCHY.md
+audit_2026-11/HANDOFF_*.md
+audit_2026-11/video_60714/film/CLAUDE.md
+audit_2026-11/video_60714/film/AGENTS.md
