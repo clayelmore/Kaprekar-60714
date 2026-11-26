@@ -27,3 +27,7 @@ Paper and details: https://clayelmore.github.io/Kaprekar-60714/
 Five digits does have an answer if you change the order of the subtraction. Sort the digits biggest to smallest as A, B, C, D, E, then compute ADCBE − DEACB (take the positive difference, keep leading zeros) and repeat. Every five-digit number that is not a single repeated digit ends at 60714, the digits of 6174 plus a zero. Example: 58196 → 43713 → 41607 → 60714. This is a different rule from Kaprekar's, and it is a complete computer check of all 99,990 such starts (longest trip 30 steps), not a hand proof. Short video on the Arbolinea channel: "6174 has a five-digit cousin: 60714".
 
 Note: YouTube often hides comments that contain links, so the comment names the video instead of linking it.
+
+## Published
+
+Uploaded to the Arbolinea channel on 2026-11-25, public: https://youtu.be/8B35aQmRqBg

@@ -26,8 +26,8 @@
       <g stroke="#EFF3EE" stroke-width="2.5"><path d="M32 60 C32 44 32 30 32 16 l5 0 l0 -6 l-9 0 l0 7 l5 0"/><path d="M32 60 C30 46 22 36 14 28 l6 -1 l-2 -6 l-8 3 l2 5"/><path d="M32 60 C34 46 42 36 50 28 l-6 -1 l2 -6 l8 3 l-2 5"/><path d="M32 60 C29 50 20 46 10 44 l5 -3 l-4 -5 l-7 5 l3 4"/><path d="M32 60 C35 50 44 46 54 44 l-5 -3 l4 -5 l7 5 l-3 4"/></g>
       <g stroke="#EFF3EE" stroke-width="2.5" opacity="0.5" transform="translate(0,60) scale(1,-0.52) translate(0,-60)"><path d="M32 60 C32 44 32 30 32 16 l5 0 l0 -6 l-9 0 l0 7 l5 0"/><path d="M32 60 C30 46 22 36 14 28 l6 -1 l-2 -6 l-8 3 l2 5"/><path d="M32 60 C34 46 42 36 50 28 l-6 -1 l2 -6 l8 3 l-2 5"/><path d="M32 60 C29 50 20 46 10 44 l5 -3 l-4 -5 l-7 5 l3 4"/><path d="M32 60 C35 50 44 46 54 44 l-5 -3 l4 -5 l7 5 l-3 4"/></g>
     </svg>
-    <div id="claim-hl" class="clip layer" data-start="0" data-duration="34.71" data-track-index="1"><div class="hl" id="claim-hl-t" style="left:192px;width:1536px;text-align:center">Every five-digit start lands on 60714.</div></div>
-    <div id="claim-board" class="clip layer" data-start="0" data-duration="34.71" data-track-index="2">
+    <div id="claim-hl" class="clip layer" data-start="0" data-duration="36.15" data-track-index="1"><div class="hl" id="claim-hl-t" style="left:192px;width:1536px;text-align:center">Every five-digit start lands on 60714.</div></div>
+    <div id="claim-board" class="clip layer" data-start="0" data-duration="36.15" data-track-index="2">
       <div id="claim-p0" class="pi" style="left:545px;top:270px"><div class="pi-face" style="transform:rotate(-3deg)"><span class="pi-l"></span>6</div></div>
       <div id="claim-p1" class="pi" style="left:715px;top:270px"><div class="pi-face" style="transform:rotate(2deg)"><span class="pi-l"></span>0</div></div>
       <div id="claim-p2" class="pi" style="left:885px;top:270px"><div class="pi-face" style="transform:rotate(-1.5deg)"><span class="pi-l"></span>7</div></div>
@@ -48,7 +48,7 @@
     const pop = (sel, t, s = 0.09) => tl.fromTo(sel, { opacity: 0, y: -70, scale: 1.18 }, { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "back.out(1.6)", stagger: s }, t);
     const hide = (sel, t, d = 0.3) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power2.in", immediateRender: false }, t);
 
-    const M = 32.9143;
+    const M = 34.351;
     show("#claim-hl-t", 0.15);
     pop("#claim-p0,#claim-p1,#claim-p2,#claim-p3,#claim-p4", 0.5);
     show("#claim-l1", 0.10 * M); show("#claim-tag", 0.22 * M);

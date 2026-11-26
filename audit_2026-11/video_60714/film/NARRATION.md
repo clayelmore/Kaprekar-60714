@@ -23,6 +23,9 @@ Record or generate each take as its own file with the name shown. Numbers are wr
    `05c_count.wav`
    And in our rule, every digit counts. There are shortcuts. This rule sends every five digit start to forty-five thousand. But two of its letters never move, so two of the five digits are simply ignored. In ours, every letter moves. No digit is ignored.
 
+   `05d_only.wav`
+   And it isn't the only one. With every digit counting, there are thirty-three numbers like this at five digits. But only one of them is still the answer when you add a sixth digit. Sixty thousand, seven hundred fourteen. And look at its digits. They are the digits of Kaprekar's own sixty-one seventy-four, with a zero added.
+
 6. `06_run.wav`
    Try any other start. Say, fifty-eight thousand, one hundred ninety-six. Sort the digits, biggest first, and call them A to E. The top row becomes A, D, C, B, E. The bottom row becomes D, E, A, C, B. Then subtract.
 
@@ -36,4 +39,4 @@ Record or generate each take as its own file with the name shown. Numbers are wr
    Here is every five digit start at once. Each line is one step. They all flow into the same place.
 
 9. `09_claim.wav`
-   We checked every five digit start by computer. Leave out the ten repeats, like eleven thousand, one hundred eleven, which drop to zero, and that is ninety-nine thousand, nine hundred ninety starts. Every one ends at sixty thousand, seven hundred fourteen. The longest trip is thirty steps. It is not Kaprekar's rule. It is the same idea, in a new order. We asked the questions. A I models, Claude and Chat G P T, did the heavy lifting. The paper is linked below.
+   We checked every five digit start by computer. Leave out the ten repeats, like eleven thousand, one hundred eleven, which drop to zero, and that is ninety-nine thousand, nine hundred ninety starts. Every one ends at sixty thousand, seven hundred fourteen. The longest trip is thirty steps. It is not Kaprekar's rule. It is the same idea, in a new order. We asked the questions. AI models, Claude and ChatGPT, did the heavy lifting. The paper is linked below.

@@ -1,0 +1,88 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: 'Outfit', sans-serif; color: #f4f4f0; }
+    .bg { position: absolute; inset: 0;
+      background: #000; }
+    .layer { position: absolute; inset: 0; }
+    .hl { position: absolute; left: 192px; top: 104px; font-weight: 700; font-size: 68px; letter-spacing: -0.01em; white-space: nowrap; }
+    .note { position: absolute; font-weight: 600; font-size: 36px; color: #b9b9b2; white-space: nowrap; }
+    .pi { position: absolute; width: 150px; height: 150px; }
+    .pi-face { position: relative; width: 100%; height: 100%; background: linear-gradient(170deg, #fff08a 0%, #ffe14d 100%);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 100px; color: #1c1810; }
+    .pi-l { position: absolute; left: 10px; top: 2px; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 40px; line-height: 44px; color: #8a6508; }
+    .minus { position: absolute; font-weight: 800; font-size: 110px; line-height: 150px; width: 90px; text-align: center; }
+    .bar { position: absolute; height: 7px; border-radius: 4px; background: #f4f4f0; }
+    .res { position: absolute; width: 150px; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 112px; line-height: 130px; }
+    .formula { position: absolute; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 56px; white-space: nowrap; }
+    .num { position: absolute; width: 240px; text-align: center; font-family: 'Space Mono', monospace; font-weight: 700; white-space: nowrap; }
+    .big { position: absolute; text-align: center; font-weight: 700; white-space: nowrap; }
+    .red { color: #ff6b5e; } .green { color: #5fd68a; }
+  </style>
+  <div id="root" data-composition-id="only" data-width="1920" data-height="1080">
+    <div class="bg"></div>
+    <svg class="logo" data-layout-ignore viewBox="1 7 62 82" fill="none" stroke-linecap="round" stroke-linejoin="round" style="position:absolute;left:1734px;top:934px;width:66px;height:88px">
+      <path d="M4 60 H60" stroke="#8FC6E8" stroke-width="1.6"/>
+      <g stroke="#EFF3EE" stroke-width="2.5"><path d="M32 60 C32 44 32 30 32 16 l5 0 l0 -6 l-9 0 l0 7 l5 0"/><path d="M32 60 C30 46 22 36 14 28 l6 -1 l-2 -6 l-8 3 l2 5"/><path d="M32 60 C34 46 42 36 50 28 l-6 -1 l2 -6 l8 3 l-2 5"/><path d="M32 60 C29 50 20 46 10 44 l5 -3 l-4 -5 l-7 5 l3 4"/><path d="M32 60 C35 50 44 46 54 44 l-5 -3 l4 -5 l7 5 l-3 4"/></g>
+      <g stroke="#EFF3EE" stroke-width="2.5" opacity="0.5" transform="translate(0,60) scale(1,-0.52) translate(0,-60)"><path d="M32 60 C32 44 32 30 32 16 l5 0 l0 -6 l-9 0 l0 7 l5 0"/><path d="M32 60 C30 46 22 36 14 28 l6 -1 l-2 -6 l-8 3 l2 5"/><path d="M32 60 C34 46 42 36 50 28 l-6 -1 l2 -6 l8 3 l-2 5"/><path d="M32 60 C29 50 20 46 10 44 l5 -3 l-4 -5 l-7 5 l3 4"/><path d="M32 60 C35 50 44 46 54 44 l-5 -3 l4 -5 l7 5 l-3 4"/></g>
+    </svg>
+    <div id="only-hl" class="clip layer" data-start="0" data-duration="24.55" data-track-index="1"><div class="hl" id="only-hl-t">Is it the only one? No.</div></div>
+    <div id="only-board" class="clip layer" data-start="0" data-duration="24.55" data-track-index="2">
+      <div class="num only-n" style="left:201px;top:230px;width:138px;font-size:36px;line-height:60px">00054</div>
+      <div class="num only-n" style="left:339px;top:230px;width:138px;font-size:36px;line-height:60px">03753</div>
+      <div class="num only-n" style="left:477px;top:230px;width:138px;font-size:36px;line-height:60px">12456</div>
+      <div class="num only-n" style="left:615px;top:230px;width:138px;font-size:36px;line-height:60px">14562</div>
+      <div class="num only-n" style="left:753px;top:230px;width:138px;font-size:36px;line-height:60px">15642</div>
+      <div class="num only-n" style="left:891px;top:230px;width:138px;font-size:36px;line-height:60px">16524</div>
+      <div class="num only-n" style="left:1029px;top:230px;width:138px;font-size:36px;line-height:60px">16578</div>
+      <div class="num only-n" style="left:1167px;top:230px;width:138px;font-size:36px;line-height:60px">16758</div>
+      <div class="num only-n" style="left:1305px;top:230px;width:138px;font-size:36px;line-height:60px">17685</div>
+      <div class="num only-n" style="left:1443px;top:230px;width:138px;font-size:36px;line-height:60px">18342</div>
+      <div class="num only-n" style="left:1581px;top:230px;width:138px;font-size:36px;line-height:60px">21456</div>
+      <div class="num only-n" style="left:201px;top:308px;width:138px;font-size:36px;line-height:60px">21834</div>
+      <div class="num only-n" style="left:339px;top:308px;width:138px;font-size:36px;line-height:60px">24156</div>
+      <div class="num only-n" style="left:477px;top:308px;width:138px;font-size:36px;line-height:60px">24183</div>
+      <div class="num only-n" style="left:615px;top:308px;width:138px;font-size:36px;line-height:60px">24561</div>
+      <div class="num only-n" style="left:753px;top:308px;width:138px;font-size:36px;line-height:60px">28539</div>
+      <div class="num only-n" style="left:891px;top:308px;width:138px;font-size:36px;line-height:60px">37584</div>
+      <div class="num only-n" style="left:1029px;top:308px;width:138px;font-size:36px;line-height:60px">37854</div>
+      <div class="num only-n" style="left:1167px;top:308px;width:138px;font-size:36px;line-height:60px">38754</div>
+      <div class="num only-n" style="left:1305px;top:308px;width:138px;font-size:36px;line-height:60px">41562</div>
+      <div class="num only-n" style="left:1443px;top:308px;width:138px;font-size:36px;line-height:60px">41832</div>
+      <div class="num only-n" style="left:1581px;top:308px;width:138px;font-size:36px;line-height:60px">42183</div>
+      <div class="num only-n" style="left:201px;top:386px;width:138px;font-size:36px;line-height:60px">43758</div>
+      <div class="num only-n" style="left:339px;top:386px;width:138px;font-size:36px;line-height:60px">43785</div>
+      <div class="num only-n" style="left:477px;top:386px;width:138px;font-size:36px;line-height:60px">43875</div>
+      <div class="num only-n" style="left:615px;top:386px;width:138px;font-size:36px;line-height:60px">45612</div>
+      <div class="num only-n" style="left:753px;top:386px;width:138px;font-size:36px;line-height:60px">45621</div>
+      <div class="num only-n" style="left:891px;top:386px;width:138px;font-size:36px;line-height:60px">53928</div>
+      <div class="num only-n" style="left:1029px;top:386px;width:138px;font-size:36px;line-height:60px">58239</div>
+      <div class="num only-n" style="left:1167px;top:386px;width:138px;font-size:36px;line-height:60px">60417</div>
+      <div class="num only-n only-hit" id="only-hit" data-layout-allow-overlap style="left:1305px;top:386px;width:138px;font-size:36px;line-height:60px">60714</div>
+      <div class="num only-n" style="left:1443px;top:386px;width:138px;font-size:36px;line-height:60px">65781</div>
+      <div class="num only-n" style="left:1581px;top:386px;width:138px;font-size:36px;line-height:60px">67581</div>
+      <div class="note" id="only-l1b" style="left:192px;top:470px;width:1536px;text-align:center;font-size:44px">33 endpoints at five digits, with every digit counting</div>
+      <div class="big green" id="only-l2" style="left:192px;top:585px;width:1536px;font-size:72px">Only one is the same number at six digits.</div>
+      <div class="big" id="only-l4" style="left:192px;top:725px;width:1536px;font-size:54px">Its digits are Kaprekar's own 6174, plus a zero.</div>
+      <div class="note" id="only-l3" style="left:192px;top:860px;width:1536px;text-align:center;font-size:38px">six-digit rule: EADCBF &minus; FDEACB</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    const show = (sel, t, o = {}) => tl.fromTo(sel, { opacity: 0, y: o.y ?? 24 }, { opacity: 1, y: 0, duration: o.d ?? 0.4, ease: "power3.out", stagger: o.s ?? 0 }, t);
+    const pop = (sel, t, s = 0.09) => tl.fromTo(sel, { opacity: 0, y: -70, scale: 1.18 }, { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "back.out(1.6)", stagger: s }, t);
+    const hide = (sel, t, d = 0.3) => tl.fromTo(sel, { opacity: 1 }, { opacity: 0, duration: d, ease: "power2.in", immediateRender: false }, t);
+
+    const ON = 23.3535;
+    show("#only-hl-t", 0.15);
+    tl.fromTo(".only-n", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.8)", stagger: 0.045 }, 0.10 * ON);
+    show("#only-l1b", 0.20 * ON);
+    // 60714 pops out, the other 32 fall back
+    tl.fromTo(".only-n:not(.only-hit)", { opacity: 1 }, { opacity: 0.28, duration: 0.5, ease: "power2.out", immediateRender: false }, 0.36 * ON);
+    tl.fromTo("#only-hit", { scale: 1, color: "#f4f4f0" }, { scale: 1.2, color: "#5fd68a", duration: 0.5, ease: "back.out(2.2)", immediateRender: false }, 0.36 * ON);
+    show("#only-l2", 0.40 * ON);
+    show("#only-l3", 0.58 * ON); show("#only-l4", 0.72 * ON);
+    window.__timelines["only"] = tl;
+  </script>
+</template>

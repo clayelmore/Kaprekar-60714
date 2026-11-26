@@ -5,14 +5,14 @@ import re, subprocess
 def dur(name):
     out = subprocess.run(["afinfo", "assets/vo/" + name], capture_output=True, text=True).stdout
     return float(re.search(r"estimated duration: ([\d.]+)", out).group(1))
-VO = ["01_four", "02_five", "03_loop", "04_bulb", "05_stays", "05b_why", "05c_count", "06_run", "07_again", "08_last", "08b_tree", "09_claim"]
+VO = ["01_four", "02_five", "03_loop", "04_bulb", "05_stays", "05b_why", "05c_count", "05d_only", "06_run", "07_again", "08_last", "08b_tree", "09_claim"]
 EXT = {v: next(e for e in ("mp3", "wav", "m4a") if __import__("os").path.exists("assets/vo/%s.%s" % (v, e))) for v in VO}
-F, A, B, C, Dd, Y, CT, R0, R1, R2, TR, M = (dur("%s.%s" % (v, EXT[v])) for v in VO)
+F, A, B, C, Dd, Y, CT, ON, R0, R1, R2, TR, M = (dur("%s.%s" % (v, EXT[v])) for v in VO)
 G = 0.35                                  # pause between takes
 r2 = lambda x: round(x, 2)
 FOUR = r2(F + 1.2)
 TB = r2(A + G); TC = r2(TB + B + G); TD = r2(TC + C + G); RULE = r2(TD + Dd + 1.2)
-WHY = r2(Y + 1.0); COUNT = r2(CT + 1.0); TREE = r2(TR + 1.5); T1 = r2(R0 + G); T2 = r2(T1 + R1 + G); RUN = r2(T2 + R2 + 1.3); CLAIM = r2(M + 1.8)
+WHY = r2(Y + 1.0); COUNT = r2(CT + 1.0); ONLY = r2(ON + 1.2); TREE = r2(TR + 1.5); T1 = r2(R0 + G); T2 = r2(T1 + R1 + G); RUN = r2(T2 + R2 + 1.3); CLAIM = r2(M + 1.8)
 CSS = r"""
     #root { position: absolute; inset: 0; font-family: 'Outfit', sans-serif; color: #f4f4f0; }
     .bg { position: absolute; inset: 0;
@@ -239,6 +239,32 @@ js = JS_HELPERS + r"""
     show("#count-z", 0.88 * CT);""".replace("__CT__", "%g" % CT)
 open("compositions/count.html", "w").write(scene("count", body, js))
 
+# ---------- scene 2d: all 33 endpoints, and the one that carries over ----------
+# the 33 five-digit endpoints of rules in which every letter moves, read from the census (../census_d5.tsv)
+ENDS = sorted({l.split()[0] for l in open("../census_d5.tsv") if all(x != y for x, y in zip(l.split()[1], l.split()[2]))})
+assert len(ENDS) == 33 and "60714" in ENDS
+cells = "\n".join('      <div class="num only-n%s" %sstyle="left:%dpx;top:%dpx;width:138px;font-size:36px;line-height:60px">%s</div>'
+                  % ("" if e != "60714" else " only-hit", 'id="only-hit" data-layout-allow-overlap ' if e == "60714" else "", 201 + (i % 11) * 138, 230 + (i // 11) * 78, e) for i, e in enumerate(ENDS))
+body = f"""    <div id="only-hl" class="clip layer" data-start="0" data-duration="{ONLY}" data-track-index="1"><div class="hl" id="only-hl-t">Is it the only one? No.</div></div>
+    <div id="only-board" class="clip layer" data-start="0" data-duration="{ONLY}" data-track-index="2">
+{cells}
+      <div class="note" id="only-l1b" style="left:192px;top:470px;width:1536px;text-align:center;font-size:44px">33 endpoints at five digits, with every digit counting</div>
+      <div class="big green" id="only-l2" style="left:192px;top:585px;width:1536px;font-size:72px">Only one is the same number at six digits.</div>
+      <div class="big" id="only-l4" style="left:192px;top:725px;width:1536px;font-size:54px">Its digits are Kaprekar's own 6174, plus a zero.</div>
+      <div class="note" id="only-l3" style="left:192px;top:860px;width:1536px;text-align:center;font-size:38px">six-digit rule: EADCBF &minus; FDEACB</div>
+    </div>"""
+js = JS_HELPERS + r"""
+    const ON = __ON__;
+    show("#only-hl-t", 0.15);
+    tl.fromTo(".only-n", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.8)", stagger: 0.045 }, 0.10 * ON);
+    show("#only-l1b", 0.20 * ON);
+    // 60714 pops out, the other 32 fall back
+    tl.fromTo(".only-n:not(.only-hit)", { opacity: 1 }, { opacity: 0.28, duration: 0.5, ease: "power2.out", immediateRender: false }, 0.36 * ON);
+    tl.fromTo("#only-hit", { scale: 1, color: "#f4f4f0" }, { scale: 1.2, color: "#5fd68a", duration: 0.5, ease: "back.out(2.2)", immediateRender: false }, 0.36 * ON);
+    show("#only-l2", 0.40 * ON);
+    show("#only-l3", 0.58 * ON); show("#only-l4", 0.72 * ON);""".replace("__ON__", "%g" % ON)
+open("compositions/only.html", "w").write(scene("only", body, js))
+
 # ---------- scene 3b: the tree of every start ----------
 tree_inner = open("../tree_60714_d5.inner.svg").read()
 DMAX = max(int(x) for x in re.findall(r'class="ring r(\d+)"', tree_inner))
@@ -378,12 +404,12 @@ open("compositions/claim.html", "w").write(scene("claim", body, js))
 # ---------- root ----------
 hosts, t = [], 0.0
 starts = {}
-for sid, dur in [("four", FOUR), ("rule", RULE), ("why", WHY), ("count", COUNT), ("run", RUN), ("tree", TREE), ("claim", CLAIM)]:
+for sid, dur in [("four", FOUR), ("rule", RULE), ("why", WHY), ("count", COUNT), ("run", RUN), ("tree", TREE), ("only", ONLY), ("claim", CLAIM)]:
     starts[sid] = t
     hosts.append('      <div id="%s" data-composition-id="%s" data-composition-src="compositions/%s.html" data-start="%g" data-duration="%g" data-track-index="1" data-track-kind="graphics" data-width="1920" data-height="1080"></div>' % (sid, sid, sid, t, dur))
     t += dur
-vo_at = [starts["four"], starts["rule"], starts["rule"] + TB, starts["rule"] + TC, starts["rule"] + TD, starts["why"], starts["count"], starts["run"], starts["run"] + T1, starts["run"] + T2, starts["tree"], starts["claim"]]
-audio = ['      <audio id="vo-%s" class="clip" src="assets/vo/%s.%s" data-start="%g" data-duration="%g" data-track-index="2" data-volume="1"></audio>' % (v.split("_")[0], v, EXT[v], r2(at + 0.1), r2(d)) for v, at, d in zip(VO, vo_at, (F, A, B, C, Dd, Y, CT, R0, R1, R2, TR, M))]
+vo_at = [starts["four"], starts["rule"], starts["rule"] + TB, starts["rule"] + TC, starts["rule"] + TD, starts["why"], starts["count"], starts["only"], starts["run"], starts["run"] + T1, starts["run"] + T2, starts["tree"], starts["claim"]]
+audio = ['      <audio id="vo-%s" class="clip" src="assets/vo/%s.%s" data-start="%g" data-duration="%g" data-track-index="2" data-volume="1"></audio>' % (v.split("_")[0], v, EXT[v], r2(at + 0.1), r2(d)) for v, at, d in zip(VO, vo_at, (F, A, B, C, Dd, Y, CT, ON, R0, R1, R2, TR, M))]
 open("index.html", "w").write("""<!doctype html>
 <html lang="en">
   <head>
