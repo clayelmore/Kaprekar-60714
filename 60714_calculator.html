@@ -201,6 +201,47 @@
     flex-wrap: wrap;
   }
 
+  /* Which number to chase: 60714 (the paper's rules) or 146070 (the companion). */
+  .mode-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.1rem;
+  }
+  .mode-label {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--soft);
+  }
+  button.mode-btn {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    font-style: normal;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    letter-spacing: 0.08em;
+    font-size: 1rem;
+    min-height: 2.6rem;
+    padding: 0 1.1rem;
+  }
+  button.mode-btn:hover { background: var(--paper); color: var(--hot); }
+  button.mode-btn[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+  button:focus-visible { outline: 2px solid var(--hot); outline-offset: 2px; }
+  .rule-line {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--ink);
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+  .rule-line strong { display: block; font-weight: 600; letter-spacing: 0.1em; }
+  .rule-line .nw { white-space: nowrap; }
+  [hidden] { display: none !important; }
+
   .hint {
     font-style: italic;
     font-size: 0.85rem;
@@ -258,6 +299,7 @@
     line-height: 1;
     margin-bottom: 0.5rem;
     letter-spacing: 0.05em;
+    overflow-wrap: anywhere;   /* a 20-digit number can be wider than a 380px screen */
   }
 
   .step.fixed .step-current { color: var(--hot); }
@@ -575,6 +617,7 @@
     button { padding: 0.7rem 1rem; }
     .step-current { font-size: 1.6rem; }
     .arithmetic { font-size: 0.92rem; }
+    .mode-label { flex-basis: 100%; text-align: center; }
   }
 </style>
 </head>
@@ -587,6 +630,7 @@
 
   <header>
     <div class="eyebrow">an interactive companion</div>
+    <div data-mode="60714">
     <h1>The Number <span class="num">60714</span></h1>
     <div class="subtitle">A Kaprekar fixed point at every digit length d ≥ 5. At 7 or more digits, some inputs collapse to 0 instead.</div>
 
@@ -594,28 +638,49 @@
       <p>Pick any number with at least five digits. Apply the rule for its length. Watch where it goes.</p>
       <p>The rule depends on the input's digit length: there is one rule at <em>d = 5</em>, another at <em>d = 6</em>, and a recipe that extends them to every longer length. At <em>d = 5</em> and <em>d = 6</em>, every input that is not one repeated digit reaches 60714 (at five digits: 99,990 of 100,000 strings, in at most 30 steps). At <em>d ≥ 7</em>, every input reaches either 60714 or 0. The share that collapses to 0 grows with length: 0.56% of digit collections at 8 digits, about 12% at 24 digits. The calculator shows both outcomes.</p>
     </div>
+    </div>
+
+    <div data-mode="146070" hidden>
+    <h1>The Number <span class="num">146070</span></h1>
+    <div class="subtitle">A companion to 60714. Every start reaches it, at every length checked.</div>
+
+    <div class="lede">
+      <p>Pick any number with at least six digits. Apply the rule for its length. Watch where it goes.</p>
+      <p>At <em>d = 6</em> the rule is BFADCE - CBDEAF: sort the digits from biggest to smallest, call them A to F, write those two numbers and subtract. Each longer length has its own rule, built the same way. A complete computer check of every length from 6 to 30 digits found that every input that is not one repeated digit reaches 146070. None goes to 0 and none falls into a loop. The longest trip is 29 steps at six digits, 25 at seven, and 42 at every length from 8 to 30.</p>
+    </div>
+    </div>
   </header>
 
   <section class="panel">
     <div class="panel-label">Try it</div>
+    <div class="mode-row" role="group" aria-labelledby="mode-label">
+      <span class="mode-label" id="mode-label">Number to chase:</span>
+      <button class="mode-btn" type="button" data-set-mode="60714" aria-pressed="true">60714</button>
+      <button class="mode-btn" type="button" data-set-mode="146070" aria-pressed="false">146070</button>
+    </div>
     <div class="input-row">
       <input type="text" id="numinput" placeholder="enter a number with 5+ digits" inputmode="numeric" maxlength="20" autocomplete="off">
       <button id="go" type="button">iterate</button>
     </div>
     <div class="controls">
-      <button class="secondary" type="button" data-example="12345">12345</button>
-      <button class="secondary" type="button" data-example="98765">98765</button>
-      <button class="secondary" type="button" data-example="142857">142857</button>
-      <button class="secondary" type="button" data-example="3141592">3141592</button>
+      <button class="secondary" type="button" data-example="12345" data-mode="60714">12345</button>
+      <button class="secondary" type="button" data-example="98765" data-mode="60714">98765</button>
+      <button class="secondary" type="button" data-example="142857" data-mode="60714">142857</button>
+      <button class="secondary" type="button" data-example="3141592" data-mode="60714">3141592</button>
+      <button class="secondary" type="button" data-example="124598" data-mode="146070" hidden>124598</button>
+      <button class="secondary" type="button" data-example="987654" data-mode="146070" hidden>987654</button>
+      <button class="secondary" type="button" data-example="3141592" data-mode="146070" hidden>3141592</button>
+      <button class="secondary" type="button" data-example="27182818" data-mode="146070" hidden>27182818</button>
       <button class="secondary" type="button" id="random">random</button>
-      <button class="escape-try" type="button" id="doomed">try a doomed input</button>
+      <button class="escape-try" type="button" id="doomed" data-mode="60714">try a doomed input</button>
     </div>
     <div class="hint" id="hint">5 to 20 digits. Try the "doomed input" button to see an input that collapses to 0.</div>
+    <div class="rule-line" id="ruleline" data-mode="146070" hidden></div>
   </section>
 
   <div class="trajectory" id="trajectory"></div>
 
-  <div class="about">
+  <div class="about" data-mode="60714">
     <p>The number <strong>60714</strong> is a fixed point of an explicit family of permutation-pair rules built from its native rule at <em>d = 5</em>, with the family extending to every higher digit length by appending pairs of coefficients that sum to zero. The fixed-point equation K(60714) = 60714 holds at every d ≥ 5.</p>
 
     <p><strong>What is shown.</strong> At <strong>d = 5 and d = 6</strong>, every input that is not one repeated digit reaches 60714. At <strong>d ≥ 7</strong>, every input reaches 60714 or 0. The inputs that reach 0 form the <strong>escape class</strong>: the <strong>block-aligned multisets</strong>, which the rule sends to 0 in one step, and the inputs whose orbits land on them. The escape class is characterized exactly, but it is not small: its share grows overall with length, though not at every step, from 0.56% of digit collections at 8 digits to about 12% at 24 digits (computed).</p>
@@ -625,6 +690,16 @@
     <p style="font-style: italic; font-size: 0.85em; color: var(--soft); margin-top: 0.5em;">This calculator is a pedagogical companion to the paper, not a formal verifier. It demonstrates the iteration on individual inputs; the paper's counts come from the scripts in the repository.</p>
 
     <p>The paper: <a href="paper_hierarchy.pdf">The Digits of 6174 at Every Length (PDF)</a> (Theorem 4.1 and Definition 4.6): a fixed point at every length; reached by every start only at five and six digits. More about the result: <a href="https://arbolinea.com/60714/">arbolinea.com/60714</a>. Scripts and data: <a href="https://github.com/clayelmore/Kaprekar-60714">github.com/clayelmore/Kaprekar-60714</a>.</p>
+  </div>
+
+  <div class="about" data-mode="146070" hidden>
+    <p>The number <strong>146070</strong> is built from the same digits as 60714 with one more zero: 7, 6, 4, 1, the digits of Kaprekar's 6174, plus two zeros. At six digits its rule is <strong>BFADCE - CBDEAF</strong>. At each longer length the rule keeps the first five coefficients and adds new ones, so that 146070 stays a fixed point.</p>
+
+    <p><strong>What is shown.</strong> At every length from 6 to 30 digits, a complete computer check found that every input that is not one repeated digit reaches 146070. Nothing goes to 0 and nothing falls into a loop, so there is no escape class here. An argument that this holds at every length from six digits up is written out with the source code. It has been reviewed by AI only, not by a human referee.</p>
+
+    <p style="font-style: italic; font-size: 0.85em; color: var(--soft); margin-top: 0.5em;">This calculator is a pedagogical companion to the paper, not a formal verifier. It demonstrates the iteration on individual inputs; the counts come from the scripts in the repository.</p>
+
+    <p>More about the result: <a href="https://arbolinea.com/60714/">arbolinea.com/60714</a>. Scripts and data: <a href="https://github.com/clayelmore/Kaprekar-60714">github.com/clayelmore/Kaprekar-60714</a>.</p>
   </div>
 
   <div class="ornament">⁂</div>
@@ -640,7 +715,7 @@ function getCoefs(d) {
   if (d === 6) return [9900, 9, 90, -9000, 99000, -99999];
 
   // Coefficient-preserving lifted rule per Section 4 and Appendix F
-  // ("The ladder, explicitly") of paper_hierarchy.md.
+  // ("The ladder, explicitly") of the paper (paper_hierarchy.pdf).
   // Both ladders use the SAME appended-pair convention:
   //   Odd  ladder (d = 7, 9, 11, ...): pair appended at length d' is
   //                                    (+9*10^(d'-2), -9*10^(d'-2)).
@@ -691,7 +766,7 @@ function getCoefs(d) {
 // Mirrors the inductive structure of getCoefs(), so the two representations
 // stay synchronized.
 //
-// Base cases match the ladder table in Appendix F of paper_hierarchy.md:
+// Base cases match the ladder table in Appendix F of the paper (paper_hierarchy.pdf):
 //   d=5 (odd root):  π = adcbe = [0,3,2,1,4], σ = deacb = [3,4,0,2,1]
 //   d=6 (even root): π = eadcbf = [4,0,3,2,1,5], σ = fdeacb = [5,3,4,0,2,1]
 //
@@ -741,7 +816,7 @@ function posToLetter(p) {
 
 function isBigArr(arr) { return arr.length > 0 && typeof arr[0] === 'bigint'; }
 
-/* Block-aligned detection (Definition 4.6 of paper_hierarchy.md) */
+/* Block-aligned detection (Definition 4.6 of the paper (paper_hierarchy.pdf)) */
 function isBlockAligned(sortedDescStr, d) {
   const digits = sortedDescStr.split('').map(c => parseInt(c, 10));
   if (digits.length !== d) return false;
@@ -900,6 +975,136 @@ function iterate(input) {
   };
 }
 
+/* ===================================================================== */
+/* 146070: the companion number. Separate from the 60714 code above,     */
+/* which is unchanged.                                                    */
+/* ===================================================================== */
+const TARGET_146070 = 146070n;
+
+// Coefficients on the sorted digits s_0 >= s_1 >= ... >= s_{d-1}, all BigInt.
+//   d = 6:  (990, 90000, -99990, -900, -99, 9999)            BFADCE - CBDEAF
+//   d >= 7: (990, 90000, -99990, -900, -99, 999999,
+//            9*10^6, 9*10^7, ..., 9*10^(d-2), 10^4 - 10^(d-1))
+//   (the entry 9*10^j sits on s_j for 6 <= j <= d-2). Each list sums to 0.
+function getCoefs146070(d) {
+  if (d < 6) return null;
+  const c = [990n, 90000n, -99990n, -900n, -99n];
+  if (d === 6) { c.push(9999n); return c; }
+  c.push(999999n);
+  for (let j = 6; j <= d - 2; j++) c.push(9n * 10n ** BigInt(j));
+  c.push(10n ** 4n - 10n ** BigInt(d - 1));
+  return c;
+}
+
+// Read the letter form off a coefficient list. Each coefficient must be
+// 10^p - 10^q with p != q: the digit it multiplies sits at place p (counting
+// from the right, starting at 0) in the first number and at place q in the
+// second. Returns position indices (0 = a = largest digit) read left to right,
+// in the same shape as getLetterStrings().
+const letterFormCache146070 = {};
+function letterFormFromCoefs(coefs) {
+  const d = coefs.length;
+  const piVar = new Array(d).fill(-1), sigmaVar = new Array(d).fill(-1);
+  for (let i = 0; i < d; i++) {
+    const c = coefs[i];
+    const neg = c < 0n;
+    let a = neg ? -c : c, low = 0, nines = 0;
+    if (a === 0n) throw new Error('coefficient ' + i + ' is 0');
+    while (a % 10n === 0n) { a /= 10n; low++; }
+    while (a > 0n) {
+      if (a % 10n !== 9n) throw new Error('coefficient ' + i + ' is not 10^p - 10^q');
+      a /= 10n; nines++;
+    }
+    const high = low + nines;
+    const p = neg ? low : high, q = neg ? high : low;
+    if (p >= d || q >= d || piVar[d - 1 - p] !== -1 || sigmaVar[d - 1 - q] !== -1) {
+      throw new Error('coefficients do not form two arrangements');
+    }
+    piVar[d - 1 - p] = i;
+    sigmaVar[d - 1 - q] = i;
+  }
+  return { piVar, sigmaVar };
+}
+function getLetterStrings146070(d) {
+  if (!letterFormCache146070[d]) letterFormCache146070[d] = letterFormFromCoefs(getCoefs146070(d));
+  return letterFormCache146070[d];
+}
+function ruleText146070(d) {
+  const L = getLetterStrings146070(d);
+  const up = (arr) => arr.map(p => posToLetter(p).toUpperCase()).join('');
+  return up(L.piVar) + ' - ' + up(L.sigmaVar);
+}
+
+function step146070(value, d) {
+  const padded = value.toString().padStart(d, '0');
+  const digits = padded.split('').map(c => parseInt(c, 10));
+  const desc = [...digits].sort((a, b) => b - a);
+  const asc  = [...digits].sort((a, b) => a - b);
+  const coefs = getCoefs146070(d);
+  let acc = 0n;
+  for (let i = 0; i < d; i++) acc += coefs[i] * BigInt(desc[i]);
+  const total = acc < 0n ? -acc : acc;
+  const letters = getLetterStrings146070(d);
+  return {
+    descArr: desc,
+    ascArr: asc,
+    descStr: desc.map(String).join(''),
+    ascStr: asc.map(String).join(''),
+    next: total,
+    piStr: letters.piVar.map(p => desc[p]).join(''),
+    sigmaStr: letters.sigmaVar.map(p => desc[p]).join(''),
+    piVarStr: letters.piVar.map(posToLetter).join(' '),
+    sigmaVarStr: letters.sigmaVar.map(posToLetter).join(' '),
+    coefs: coefs
+  };
+}
+
+function iterate146070(input) {
+  const cleaned = input.replace(/\D/g, '');
+  if (!cleaned) return { error: 'enter a number, please.' };
+  if (cleaned.length < 6) return { error: 'needs at least 6 digits to chase 146070.' };
+  if (cleaned.length > 20) return { error: 'use at most 20 digits.' };
+  if (isRepdigit(cleaned)) return { error: 'a number made of one repeated digit (like 111111) goes to 0 in one step. Try a number with at least two different digits.' };
+
+  const d = cleaned.length;
+  let cur = BigInt(cleaned);
+  const trail = [];
+  const MAX = 80;
+  for (let i = 0; i < MAX; i++) {
+    const r = step146070(cur, d);
+    const reachedFixed = r.next === cur;
+    trail.push({
+      stepNum: i,
+      currentStr: cur.toString().padStart(d, '0'),
+      descStr: r.descStr,
+      ascStr: r.ascStr,
+      next: r.next,
+      isFixed: reachedFixed,
+      isBlockAligned: false,
+      goesToZero: false,
+      piStr: r.piStr,
+      sigmaStr: r.sigmaStr,
+      piVarStr: r.piVarStr,
+      sigmaVarStr: r.sigmaVarStr,
+      coefs: r.coefs
+    });
+    if (reachedFixed || r.next === 0n) break;
+    cur = r.next;
+  }
+  const last = trail[trail.length - 1];
+  if (!(last.isFixed && last.next === TARGET_146070)) {
+    return { error: 'this input did not reach 146070 within ' + MAX + ' steps. That would contradict the computer check, so please report it.' };
+  }
+  return {
+    mode: '146070',
+    target: TARGET_146070,
+    trail,
+    d,
+    finalIsTarget: true,
+    isEscape: false
+  };
+}
+
 const trajectoryEl = document.getElementById('trajectory');
 const hintEl = document.getElementById('hint');
 const inputEl = document.getElementById('numinput');
@@ -914,7 +1119,10 @@ function render(result) {
     return;
   }
 
-  if (result.isEscape) {
+  if (result.mode === '146070') {
+    const stepCount = result.trail.length - 1;
+    hintEl.textContent = 'digit length d = ' + result.d + ', ' + stepCount + ' iteration' + (stepCount === 1 ? '' : 's') + ' to reach 146070';
+  } else if (result.isEscape) {
     hintEl.textContent = 'digit length d = ' + result.d + ', this input belongs to the escape class; see explanation below';
     hintEl.classList.add('escape');
   } else {
@@ -922,7 +1130,8 @@ function render(result) {
     hintEl.textContent = 'digit length d = ' + result.d + ', ' + stepCount + ' iteration' + (stepCount === 1 ? '' : 's') + ' to converge';
   }
 
-  const target = result.d > 15 ? 60714n : 60714;
+  const target = result.mode === '146070' ? result.target : (result.d > 15 ? 60714n : 60714);
+  const targetStr = target.toString();
 
   result.trail.forEach((t, idx) => {
     const div = document.createElement('div');
@@ -1023,7 +1232,7 @@ function render(result) {
         html += '<div class="note">⚠ this multiset is <strong>block-aligned</strong>: the rule annihilates it on the next step.</div>';
       }
     } else if (t.next === target) {
-      html += '<div class="note">fixed point reached. K(60714) = 60714.</div>';
+      html += '<div class="note">fixed point reached. K(' + targetStr + ') = ' + targetStr + '.</div>';
     } else if (t.goesToZero) {
       html += '<div class="note">absorbed at zero. The rule\'s coefficients cancel completely on this input.</div>';
     }
@@ -1032,7 +1241,13 @@ function render(result) {
     trajectoryEl.appendChild(div);
   });
 
-  if (result.finalIs60714) {
+  if (result.mode === '146070') {
+    const banner = document.createElement('div');
+    banner.className = 'fixed-banner';
+    banner.style.animationDelay = (result.trail.length * 0.06) + 's';
+    banner.innerHTML = 'This input reaches 146070 at d = ' + result.d + ', as every input that is not one repeated digit does at lengths 6 to 30 (complete computer check).';
+    trajectoryEl.appendChild(banner);
+  } else if (result.finalIs60714) {
     const banner = document.createElement('div');
     banner.className = 'fixed-banner';
     banner.style.animationDelay = (result.trail.length * 0.06) + 's';
@@ -1103,10 +1318,52 @@ function formatNumber(s) {
   return grouped.reverse().join('');
 }
 
+let mode = '60714';
+const ruleEl = document.getElementById('ruleline');
+const HINTS = {
+  '60714': '5 to 20 digits. Try the "doomed input" button to see an input that collapses to 0.',
+  '146070': '6 to 20 digits. Every input that is not one repeated digit reaches 146070.'
+};
+const PLACEHOLDERS = {
+  '60714': 'enter a number with 5+ digits',
+  '146070': 'enter a number with 6+ digits'
+};
+
 function go() {
+  if (mode === '146070') {
+    const result = iterate146070(inputEl.value);
+    render(result);
+    if (!result.error) {
+      const halves = ruleText146070(result.d).split(' - ');
+      ruleEl.innerHTML = 'The rule at d = ' + result.d + ': <strong><span class="nw">' + halves[0] + '</span> - <span class="nw">' + halves[1] + '</span></strong>';
+    } else {
+      ruleEl.textContent = '';
+    }
+    return;
+  }
   const result = iterate(inputEl.value);
   render(result);
 }
+
+function setMode(m, example) {
+  mode = m;
+  document.querySelectorAll('[data-mode]').forEach(e => { e.hidden = e.dataset.mode !== m; });
+  document.querySelectorAll('button[data-set-mode]').forEach(b => {
+    b.setAttribute('aria-pressed', b.dataset.setMode === m ? 'true' : 'false');
+  });
+  inputEl.placeholder = PLACEHOLDERS[m];
+  hintEl.classList.remove('error', 'escape');
+  hintEl.textContent = HINTS[m];
+  ruleEl.textContent = '';
+  inputEl.value = example;
+  go();
+}
+
+document.querySelectorAll('button[data-set-mode]').forEach(b => {
+  b.addEventListener('click', () => {
+    if (b.dataset.setMode !== mode) setMode(b.dataset.setMode, b.dataset.setMode === '146070' ? '124598' : '12345');
+  });
+});
 
 document.getElementById('go').addEventListener('click', go);
 
@@ -1122,7 +1379,7 @@ document.querySelectorAll('button[data-example]').forEach(btn => {
 });
 
 document.getElementById('random').addEventListener('click', () => {
-  const len = 5 + Math.floor(Math.random() * 5);
+  const len = mode === '146070' ? 6 + Math.floor(Math.random() * 7) : 5 + Math.floor(Math.random() * 5);
   let s;
   do {
     s = '';
@@ -1166,11 +1423,16 @@ document.getElementById('doomed').addEventListener('click', () => {
 
 inputEl.addEventListener('input', () => {
   hintEl.classList.remove('error', 'escape');
-  hintEl.textContent = '5 to 20 digits. Try the "doomed input" button to see an input that collapses to 0.';
+  hintEl.textContent = HINTS[mode];
 });
 
-inputEl.value = '12345';
-go();
+// calculator.html?n=146070 opens on 146070; anything else opens on 60714.
+if (/[?&]n=146070(&|$)/.test(window.location.search)) {
+  setMode('146070', '124598');
+} else {
+  inputEl.value = '12345';
+  go();
+}
 
 </script>
 
