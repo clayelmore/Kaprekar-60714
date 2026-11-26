@@ -1,5 +1,5 @@
 """
-verifier_strict_d.py — independent verifier for strict-d anchors at d=5,6,7.
+verifier_strict_d.py - independent verifier for strict-d anchors at d=5,6,7.
 
 Companion script to Appendix F of the paper. This is a from-scratch
 implementation distinct from `universality_scan_v3.py`: where v3 iterates

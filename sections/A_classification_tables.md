@@ -72,7 +72,7 @@ $$60714,\ 65781,\ 67581.$$
 
 (Coefficient vectors are recoverable as $`c_i = 10^{\pi_i} - 10^{\sigma_i}`$: $`(9900, 9, 90, -9000, -999)`$ for $`60714`$ and $`(9999, -90, -9, -9000, -900)`$ for $`60417`$.)
 
-**Note on $`54`$.** The fixed point $`54`$ appears in the $`d = 5`$ full-variable classification under the rule $`\pi = (1, 2, 4, 3, 0)`$, $`\sigma = (2, 0, 3, 4, 1)`$ with coefficient vector $`(-90, 99, 9000, -9000, -9)`$. This rule is algebraically full-variable at $`d = 5`$ ($`\mathrm{sv} = 5`$), but its effective rank at $`F = 54`$ is only $`2`$ — three of the five coefficients land on zero digits of $`F`$'s sorted-descending form $`(5, 4, 0, 0, 0)`$ and do not contribute to $`K(F) = F`$. Thus $`\mathrm{sv}_F(K_{54}) = 2 < 5 = \mathrm{sv}(K_{54})`$. This is structurally analogous to the $`495`$ phenomenon at $`d = 3`$ (§1.1), occurring at higher digit length within a genuinely full-variable rule.
+**Note on $`54`$.** The fixed point $`54`$ appears in the $`d = 5`$ full-variable classification under the rule $`\pi = (1, 2, 4, 3, 0)`$, $`\sigma = (2, 0, 3, 4, 1)`$ with coefficient vector $`(-90, 99, 9000, -9000, -9)`$. This rule is algebraically full-variable at $`d = 5`$ ($`\mathrm{sv} = 5`$), but its effective rank at $`F = 54`$ is only $`2`$ - three of the five coefficients land on zero digits of $`F`$'s sorted-descending form $`(5, 4, 0, 0, 0)`$ and do not contribute to $`K(F) = F`$. Thus $`\mathrm{sv}_F(K_{54}) = 2 < 5 = \mathrm{sv}(K_{54})`$. This is structurally analogous to the $`495`$ phenomenon at $`d = 3`$ (§1.1), occurring at higher digit length within a genuinely full-variable rule.
 
 **Note on $`3753`$.** Similarly, $`3753`$ has sorted-descending form $`(7, 5, 3, 3, 0)`$ at $`d = 5`$ with one zero digit. Its effective rank under its native rule is $`\mathrm{sv}_F = 4 < 5`$.
 
@@ -129,7 +129,7 @@ Of particular relevance to §5 (the $`60714`$ theorem) and §6 (the $`\{7, 6, 4,
 
 $$252,\ \ 2520,\ \ 20025,\ \ 25200,\ \ 200025,\ \ 200250,\ \ 250200,\ \ 252000.$$
 
-That all eight 3-zero fps belong to a single multiset is a notable structural fact — at higher zero-count strata, the multiset diversity drops sharply.
+That all eight 3-zero fps belong to a single multiset is a notable structural fact - at higher zero-count strata, the multiset diversity drops sharply.
 
 **The $`53`$ fps with $`2`$ zero digits**, grouped by digit multiset:
 
@@ -153,7 +153,7 @@ $$445050, 504450, 544500, 607140, 700191, 701901, 707130, 719100, 809091,$$
 $$809109, 810909, 890091, 900891, 901890, 908091, 908109, 908190, 908901,$$
 $$909081, 910089, 910809.$$
 
-**The $`\{7, 6, 4, 1, 0, 0\}`$ multiset cluster.** The four fps in this cluster — $`60714, 146070, 170460, 607140`$ — share the multiset structure of the central object of §5 (60714 padded to $`d = 6`$). They are precisely the universal full-variable fps in this multiset at $`d = 6`$, and the cross-dimensional behavior of all four is documented at §6 and in Appendix D.
+**The $`\{7, 6, 4, 1, 0, 0\}`$ multiset cluster.** The four fps in this cluster - $`60714, 146070, 170460, 607140`$ - share the multiset structure of the central object of §5 (60714 padded to $`d = 6`$). They are precisely the universal full-variable fps in this multiset at $`d = 6`$, and the cross-dimensional behavior of all four is documented at §6 and in Appendix D.
 
 **Note on the unique $`4`$-zero fp.** §A.4.1 records one universal full-variable fp at $`d = 6`$ with $`4`$ zero digits. Its identity is recorded in `d6_fps.txt` in the supplementary materials but is not analyzed individually in this paper.
 

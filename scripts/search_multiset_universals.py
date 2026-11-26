@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-search_multiset_universals.py — Search a digit multiset cell for classical
+search_multiset_universals.py - Search a digit multiset cell for classical
 universals.
 
 Given a digit multiset (e.g., (8,8,5,5,3,3,2,2)) and dimension d, this script:
@@ -19,10 +19,10 @@ USAGE:
     # Search d=4 with {2,3,5,8}
     python3 search_multiset_universals.py --multiset "8,5,3,2" --d 4
 
-    # Search d=8 with {8,8,5,5,3,3,2,2} (medium — ~5-15 minutes)
+    # Search d=8 with {8,8,5,5,3,3,2,2} (medium - ~5-15 minutes)
     python3 search_multiset_universals.py --multiset "8,8,5,5,3,3,2,2" --d 8 --out d8_2358_universals.json
 
-    # Search d=12 with {8,8,8,5,5,5,3,3,3,2,2,2} (long — Mac-only, hours)
+    # Search d=12 with {8,8,8,5,5,5,3,3,3,2,2,2} (long - Mac-only, hours)
     python3 search_multiset_universals.py --multiset "8,8,8,5,5,5,3,3,3,2,2,2" --d 12 --out d12_2358_universals.json
 
 OUTPUT JSON STRUCTURE:
@@ -48,7 +48,7 @@ from pathlib import Path
 
 
 # ============================================================================
-# CORE PRIMITIVES (self-contained — no external deps)
+# CORE PRIMITIVES (self-contained - no external deps)
 # ============================================================================
 
 def all_non_repdigit_multisets(d):

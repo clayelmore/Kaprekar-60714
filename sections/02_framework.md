@@ -28,7 +28,7 @@ Thus $`\tau \cdot x`$ is the integer obtained by placing the sorted-descending d
 
 **The classical rule.** The classical Kaprekar rule $`K_0`$ at digit length $`d`$ corresponds to $`\pi = (d-1, d-2, \ldots, 1, 0)`$ (descending) and $`\sigma = (0, 1, \ldots, d-2, d-1)`$ (ascending). At $`d = 4`$, $`K_0(n) = \alpha(n) - \beta(n)`$ with $`\alpha(n) = \pi \cdot x(n) = \sum_i 10^{d-1-i} x_i`$ arranging sorted-descending digits in their own order, and $`\beta(n) = \sigma \cdot x(n) = \sum_i 10^i x_i`$ arranging them in reverse.
 
-**Coefficient expansion.** Let $`r(i) = \tau^{-1}(i)`$ denote the preimage of place $`i`$ under a permutation $`\tau`$ — that is, the sorted-descending position that contributes to the $`10^i`$ place of $`\tau \cdot x`$. Then
+**Coefficient expansion.** Let $`r(i) = \tau^{-1}(i)`$ denote the preimage of place $`i`$ under a permutation $`\tau`$ - that is, the sorted-descending position that contributes to the $`10^i`$ place of $`\tau \cdot x`$. Then
 
 $$\tau \cdot x \;=\; \sum_{i = 0}^{d-1} 10^i \, x_{\tau^{-1}(i)}.$$
 
@@ -66,11 +66,11 @@ The **algebraic rank** (or **surviving-variable count**) of a rule $`K_{\pi, \si
 
 $$\mathrm{sv}(K_{\pi, \sigma}) \;=\; \bigl|\{\,i : c_i \neq 0\,\}\bigr| \;=\; \bigl|\{\,i : \pi_i \neq \sigma_i\,\}\bigr|.$$
 
-The rule is **full-variable** at digit length $`d`$ if $`\mathrm{sv} = d`$ — equivalently, if the map $`i \mapsto (\pi_i, \sigma_i)`$ has $`\pi_i \neq \sigma_i`$ for every $`i`$.
+The rule is **full-variable** at digit length $`d`$ if $`\mathrm{sv} = d`$ - equivalently, if the map $`i \mapsto (\pi_i, \sigma_i)`$ has $`\pi_i \neq \sigma_i`$ for every $`i`$.
 
 **Proposition 2.1 (derangement characterization of full-variable).** *A rule $`K_{\pi, \sigma}`$ at digit length $`d`$ is full-variable if and only if $`\sigma \circ \pi^{-1}`$ is a derangement of $`\{0, 1, \ldots, d-1\}`$.*
 
-**Proof.** $`\mathrm{sv} = d`$ means $`\pi_i \neq \sigma_i`$ for all $`i`$. Equivalently, setting $`j = \pi_i`$ and $`\rho = \sigma \circ \pi^{-1}`$, this says $`\rho(j) \neq j`$ for all $`j`$ — precisely that $`\rho`$ is a derangement. $`\square`$
+**Proof.** $`\mathrm{sv} = d`$ means $`\pi_i \neq \sigma_i`$ for all $`i`$. Equivalently, setting $`j = \pi_i`$ and $`\rho = \sigma \circ \pi^{-1}`$, this says $`\rho(j) \neq j`$ for all $`j`$ - precisely that $`\rho`$ is a derangement. $`\square`$
 
 **Rule counts by rank.** The total number of ordered pairs $`(\pi, \sigma)`$ with $`\pi \neq \sigma`$ is $`d! \, (d! - 1)`$. The number of full-variable rules is $`d! \, D_d`$, where $`D_d`$ is the number of derangements of $`d`$ elements. For small $`d`$:
 
@@ -88,7 +88,7 @@ A **fixed point** of $`K_{\pi, \sigma}`$ at length $`d`$ is an integer $`F \in A
 
 **Example (classical).** The classical rule $`K_0`$ at $`d = 4`$ is universal for $`F = 6174`$ [Kaprekar 1955]. It reaches $`6174`$ within at most seven iterations for every admissible input.
 
-**Example (dimension-agnostic).** At $`d = 3`$, the classical rule $`K_0`$ has coefficient vector $`(99, \, 0, \, -99)`$ — the middle coefficient vanishes by the forced borrow chain of §1.1 — so $`\mathrm{sv}(K_0) = 2`$. The classical rule at $`d = 3`$ is *not* full-variable. It is universal for $`F = 495`$, but $`495`$ is a fixed point of a rank-$`2`$ rule, not a rank-$`3`$ rule.
+**Example (dimension-agnostic).** At $`d = 3`$, the classical rule $`K_0`$ has coefficient vector $`(99, \, 0, \, -99)`$ - the middle coefficient vanishes by the forced borrow chain of §1.1 - so $`\mathrm{sv}(K_0) = 2`$. The classical rule at $`d = 3`$ is *not* full-variable. It is universal for $`F = 495`$, but $`495`$ is a fixed point of a rank-$`2`$ rule, not a rank-$`3`$ rule.
 
 ## 2.5 Native digit length
 
@@ -98,7 +98,7 @@ For an integer $`F`$, its **native digit length** $`d_F`$ is the smallest $`d`$ 
 
 **Dimension-agnostic fixed points.** Integers such as $`45`$ (universal at every $`d \geq 2`$ under low-rank rules derived from classical reverse-pair structure), $`495`$ (universal at $`d = 3`$ under $`K_0`$), and $`450`$ (universal at $`d = 3`$ under a cousin of the classical rule) are *not* in our full-variable classification because their rules have $`\mathrm{sv} < d`$ at every $`d`$ where they appear. These integers are fixed points of *rank-reducing* rules, where forced borrow chains or structural cancellations reduce the effective input count below $`d`$. They persist across digit lengths through this dimensional reduction.
 
-Our full-variable classification excludes these by design: we study only rules with $`\mathrm{sv} = d`$, where every sorted-descending position contributes nontrivially. This restriction is principled rather than definitional. Rank-reducing rules are those whose coefficient vector has at least one zero — equivalently, whose action depends on strictly fewer than $`d`$ inputs. Such rules describe a $`(d-k)`$-dimensional dynamical system embedded in a $`d`$-dimensional input space; their fixed points and convergence behavior are determined by the lower-dimensional projection, not by the digit-length $`d`$ at which the rule happens to be expressed. Including them in the cross-dimensional question would conflate persistence-by-projection (a structural artifact) with persistence-by-genuine-extension (the phenomenon of interest). The classical rule at $`d = 5`$ is itself such a rank-reducer (sv $`= 4`$, not $`5`$), which is why classical Kaprekar fails at five digits — not because Kaprekar dynamics has no five-digit attractor, but because the classical rule is rank-$`4`$ when viewed at $`d = 5`$. The dimension-agnostic family ($`45, 495, 450`$, etc.) deserves independent study but is outside the scope of this paper. See §1.1 for the structural derivation of the middle-digit cancellation that produces $`495`$'s rank-$`2`$ status.
+Our full-variable classification excludes these by design: we study only rules with $`\mathrm{sv} = d`$, where every sorted-descending position contributes nontrivially. This restriction is principled rather than definitional. Rank-reducing rules are those whose coefficient vector has at least one zero - equivalently, whose action depends on strictly fewer than $`d`$ inputs. Such rules describe a $`(d-k)`$-dimensional dynamical system embedded in a $`d`$-dimensional input space; their fixed points and convergence behavior are determined by the lower-dimensional projection, not by the digit-length $`d`$ at which the rule happens to be expressed. Including them in the cross-dimensional question would conflate persistence-by-projection (a structural artifact) with persistence-by-genuine-extension (the phenomenon of interest). The classical rule at $`d = 5`$ is itself such a rank-reducer (sv $`= 4`$, not $`5`$), which is why classical Kaprekar fails at five digits - not because Kaprekar dynamics has no five-digit attractor, but because the classical rule is rank-$`4`$ when viewed at $`d = 5`$. The dimension-agnostic family ($`45, 495, 450`$, etc.) deserves independent study but is outside the scope of this paper. See §1.1 for the structural derivation of the middle-digit cancellation that produces $`495`$'s rank-$`2`$ status.
 
 ## 2.6 Effective rank at a fixed point
 

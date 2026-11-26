@@ -1,8 +1,8 @@
-# ⚠️ CORRECTION (2026-06-03, same day) — READ FIRST
+# ⚠️ CORRECTION (2026-06-03, same day) - READ FIRST
 
 **The claim below that "fertile ⟺ desc−asc=6174 ∧ mod-9" is FALSE as a statement about
 general fertility.** Counterexample: **{0,4,5,9}** has **152 universals** (76 classical + 76
-S-only) at d=12 m=3 — it is highly fertile — yet desc−asc(9540−0459)=9081 ≠ 6174.
+S-only) at d=12 m=3 - it is highly fertile - yet desc−asc(9540−0459)=9081 ≠ 6174.
 
 The error: {0,4,5,9} was mis-labeled "extinct" by trusting a **stale (May 18) session-log
 note** that predated the {0,4,5,9} m=3 run (which completed May 29 with 152 universals).
@@ -13,11 +13,11 @@ note** that predated the {0,4,5,9} m=3 run (which completed May 29 with 152 univ
 > digit-blocks) **⟺ (D₀−D₃, D₁−D₂) = (6,2) ⟺ desc−asc = 6174 ∧ mod-9 ⟺ {1,4,6,7} or {2,3,5,8}.**
 > Verified exhaustively over all 24 mod-9 sets.
 
-This explains **why the pair-symmetric search only worked for {1,4,6,7}/{2,3,5,8}** — it does
+This explains **why the pair-symmetric search only worked for {1,4,6,7}/{2,3,5,8}** - it does
 NOT characterize general fertility. Sets like {0,4,5,9} are fertile via **non-pair-symmetric**
 rules (found by general search, not the pair-symmetric construction).
 
-**The general "Flavor-1" fertility question — which sets host *any* universals at all m —
+**The general "Flavor-1" fertility question - which sets host *any* universals at all m -
 REMAINS OPEN.** This document resolves only the pair-symmetric sub-question.
 
 Everything below should be read with "fertile" replaced by "admits the pair-symmetric
@@ -25,11 +25,11 @@ construction."
 
 ---
 
-# The Fertility Predictor — Which Digit-Sets Host a Multiplicity Chain
+# The Fertility Predictor - Which Digit-Sets Host a Multiplicity Chain
 
 *Resolves the "Flavor-1 predictor" question left open in the session log. Found 2026-06-03
 by treating the problem as a code-cracking / use-all-examples exercise (the golden-ratio, π,
-and Fibonacci-rotation hypotheses were tested and **falsified** — see bottom).*
+and Fibonacci-rotation hypotheses were tested and **falsified** - see bottom).*
 
 ---
 
@@ -57,28 +57,28 @@ and Fibonacci-rotation hypotheses were tested and **falsified** — see bottom).
 |---|---:|:---:|---|---|
 | {1,4,6,7} | 6174 | ✓ | fertile | fertile (m=1..6) |
 | {2,3,5,8} | 6174 | ✓ | fertile | **fertile** (d=12: 3 universals, 100% basin) |
-| {0,4,5,9} | — | ✓ | extinct | extinct (near at m=3) |
-| {1,3,6,8} | — | ✓ | extinct | extinct |
-| {0,1,8,9} | — | ✓ | extinct | extinct |
+| {0,4,5,9} | - | ✓ | extinct | extinct (near at m=3) |
+| {1,3,6,8} | - | ✓ | extinct | extinct |
+| {0,1,8,9} | - | ✓ | extinct | extinct |
 | {0,3,6,9} | 9261 | ✓ | extinct | **extinct** (d=12: 0 candidates) |
-| (210−… non-mod-9) | — | ✗ | extinct | (no fixed points possible) |
+| (210−… non-mod-9) | - | ✗ | extinct | (no fixed points possible) |
 
 Note all three previously-known extinct sets {0,4,5,9}, {1,3,6,8}, {0,1,8,9} satisfy mod-9
-(digit-sum 18) yet fail condition 1 — so **condition 1 is exactly what discriminates fertile
+(digit-sum 18) yet fail condition 1 - so **condition 1 is exactly what discriminates fertile
 from extinct among the mod-9 sets.**
 
-## Why it works — the (6,2) coefficient signature
+## Why it works - the (6,2) coefficient signature
 
 The pair-symmetric rule on a sorted set $D_0>D_1>D_2>D_3$ (pairing $D_0\!\leftrightarrow\!D_3$,
 $D_1\!\leftrightarrow\!D_2$) has block-sum form
 $$K = (D_0-D_3)\,S_0 + (D_1-D_2)\,S_1.$$
 - {1,4,6,7}: $(D_0-D_3,\,D_1-D_2) = (7-1,\,6-4) = (6,2)$.
-- {2,3,5,8}: $(8-2,\,5-3) = (6,2)$ — **identical**.
+- {2,3,5,8}: $(8-2,\,5-3) = (6,2)$ - **identical**.
 
 Both fertile sets induce the *same* coefficient pair $(6,2)$, which is exactly the 6174
 signature: $6174 = 999\cdot 6 + 90\cdot 2$. So the two fertile threads are the **same
 dynamical system** (relabel the digits), and proving universality for one proves it for both.
-A set is fertile iff its $(D_0-D_3, D_1-D_2)$ equals $(6,2)$ **and** it is mod-9 — i.e. iff it
+A set is fertile iff its $(D_0-D_3, D_1-D_2)$ equals $(6,2)$ **and** it is mod-9 - i.e. iff it
 is a mod-9 "6174-generator."
 
 **Consequence:** the entire multiplicity-chain universality phenomenon is **6174-specific**.
@@ -105,21 +105,21 @@ universals persist at every $m$ within a fertile set (the monotone–acyclic ope
 
 ---
 
-## EXHAUSTIVE CONFIRMATION (2026-06-03) — all 24 mod-9 sets
+## EXHAUSTIVE CONFIRMATION (2026-06-03) - all 24 mod-9 sets
 
 Since mod-9 is *proven necessary*, the only fertility candidates are the **24** four-digit sets
 with digit-sum ≡ 0 (mod 9). Every one was tested at d=12 (m=3) via pair-symmetric search:
 
 | outcome | count | sets |
 |---|---:|---|
-| FERTILE — (p,q)=(6,2), desc−asc=6174 | **2** | {1,4,6,7}, {2,3,5,8} |
-| extinct — (p,q)≠(6,2) | **22** | all others |
+| FERTILE - (p,q)=(6,2), desc−asc=6174 | **2** | {1,4,6,7}, {2,3,5,8} |
+| extinct - (p,q)≠(6,2) | **22** | all others |
 
-**0 exceptions across all 24.** This is no longer a 7-case predictor — it is an **exhaustive
+**0 exceptions across all 24.** This is no longer a 7-case predictor - it is an **exhaustive
 classification of base-10**.
 
 ### The mechanism (and a route to a full proof)
-Every one of the 22 extinct sets produced **zero candidates** — i.e., the pair-symmetric rule's
+Every one of the 22 extinct sets produced **zero candidates** - i.e., the pair-symmetric rule's
 output K *never lands on the set's own multiset* unless (p,q)=(6,2). So the predictor's content
 is really:
 
@@ -128,7 +128,7 @@ is really:
 > $(D_0-D_3,\,D_1-D_2) = (6,2)$.
 
 This reduces the fertility theorem to a statement about the **digit structure of
-$K = 6S_0+2S_1$ vs other $pS_0+qS_1$** — a finite, arithmetic question, not a dynamical one.
+$K = 6S_0+2S_1$ vs other $pS_0+qS_1$** - a finite, arithmetic question, not a dynamical one.
 Proving it would make the fertility predictor a complete theorem (the mod-9 half is already
 proven). The $(6,2)$ value is exactly the 6174 signature ($6174 = 999\cdot6 + 90\cdot2$).
 
@@ -148,11 +148,11 @@ Replacing all earlier "fertile/extinct" labels (which mixed in stale session-log
 | {1,4,6,7} | (6,2) | 32 classical + 10 S-only = 42 | **FERTILE** (verified) |
 | {0,4,5,9} | (9,1) | 76 classical + 76 S-only = 152 | **FERTILE** (verified) |
 | {2,3,5,8} | (6,2) | ≥3 classical | **FERTILE** (verified) |
-| {1,3,6,8} | (5,3) | — no d=12 run — | **UNKNOWN** |
-| {0,1,8,9} | (7,1) | — no d=12 run — | **UNKNOWN** |
-| other 19 mod-9 | various | — no d=12 full run — | **UNKNOWN** |
+| {1,3,6,8} | (5,3) | - no d=12 run - | **UNKNOWN** |
+| {0,1,8,9} | (7,1) | - no d=12 run - | **UNKNOWN** |
+| other 19 mod-9 | various | - no d=12 full run - | **UNKNOWN** |
 
-(d=8/m=2 data is NOT discriminating — many sets host universals at m=2 but the question is
+(d=8/m=2 data is NOT discriminating - many sets host universals at m=2 but the question is
 survival at m≥3.)
 
 **Key correction:** fertility is **not** (6,2)-restricted. Confirmed-fertile sets include

@@ -130,7 +130,7 @@ def main():
         elapsed = time.time() - t0
         
         # Predict Type A LOCK if zsp_count == 0 AND fixing rules exist
-        # If no fixing rules at all (algebraic obstruction), it's not Type A — different category.
+        # If no fixing rules at all (algebraic obstruction), it's not Type A - different category.
         if n_total == 0:
             pred = 'ALG_OBSTR'
         elif n_zsp == 0:
@@ -144,7 +144,7 @@ def main():
         # Type A LOCK predictor consistent if:
         #   pred == 'TYPE_A_LOCK' AND expected == 'LOCK'  (true positive)
         #   pred == 'NOT_TYPE_A' AND expected != 'LOCK'   (true negative)
-        #   pred == 'NOT_TYPE_A' AND expected == 'LOCK'   (TYPE B LOCK — predictor stays silent)
+        #   pred == 'NOT_TYPE_A' AND expected == 'LOCK'   (TYPE B LOCK - predictor stays silent)
         #   pred == 'ALG_OBSTR' AND expected == 'ALGEBRAIC_OBSTRUCTION'  (correct different category)
         # Inconsistent if pred predicts Type A but actual was TRANS/NEAR.
         if pred == 'TYPE_A_LOCK' and expected != 'LOCK':

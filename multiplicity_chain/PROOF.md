@@ -8,9 +8,9 @@
 
 | Statement | Status |
 |---|---|
-| **Theorem 1** — Fixed-point existence at all m | **PROVEN** (rigorous, dimension-independent) |
-| **Theorem 2** — Universality at m ∈ {1,2,3,4,5,6} | **VERIFIED** (computational) |
-| **Conjecture 3** — Universality at all m ≥ 1 | **OPEN** (no general proof) |
+| **Theorem 1** - Fixed-point existence at all m | **PROVEN** (rigorous, dimension-independent) |
+| **Theorem 2** - Universality at m ∈ {1,2,3,4,5,6} | **VERIFIED** (computational) |
+| **Conjecture 3** - Universality at all m ≥ 1 | **OPEN** (no general proof) |
 
 The fixed-point theorem is complete and rigorous. The universality result is computational, and a general proof is identified as a substantial open problem with a precisely stated obstruction.
 
@@ -36,7 +36,7 @@ Define $(\pi, \sigma)$ so that
 
 ---
 
-## 2. Theorem 1 (Fixed-Point Existence) — PROVEN
+## 2. Theorem 1 (Fixed-Point Existence) - PROVEN
 
 > **Theorem 1.** For every integer $m \geq 1$, the integer
 > $$F_m = 6174 \cdot R(m), \qquad R(m) = \sum_{k=0}^{m-1} 10^{4k} = \underbrace{1\,0001\,0001\cdots0001}_{m \text{ ones}}$$
@@ -52,7 +52,7 @@ $$\beta = \underbrace{1467\,1467\cdots1467}_{m}.$$
 Therefore, on the sorted-descending input $\mathbf{s}$,
 $$K(\mathbf{s}) = |\alpha - \beta| = \left| \sum_{k=0}^{m-1} 7641 \cdot 10^{4k} - \sum_{k=0}^{m-1} 1467 \cdot 10^{4k} \right| = (7641 - 1467) \cdot R(m) = 6174 \cdot R(m).$$
 
-Now $6174 \cdot R(m)$ is precisely the string "6174" repeated $m$ times, which has exactly $m$ each of the digits $1, 4, 6, 7$ — i.e., multiset $M_m$. Since the sorted-descending form of $F_m$ is again $\mathbf{s}$, we have $K(F_m) = K(\mathbf{s}) = F_m$. Hence $F_m$ is a fixed point. $\blacksquare$
+Now $6174 \cdot R(m)$ is precisely the string "6174" repeated $m$ times, which has exactly $m$ each of the digits $1, 4, 6, 7$ - i.e., multiset $M_m$. Since the sorted-descending form of $F_m$ is again $\mathbf{s}$, we have $K(F_m) = K(\mathbf{s}) = F_m$. Hence $F_m$ is a fixed point. $\blacksquare$
 
 ### Verification (computational confirmation)
 
@@ -65,7 +65,7 @@ Now $6174 \cdot R(m)$ is precisely the string "6174" repeated $m$ times, which h
 | 5 | 61746174617461746174 | ✓ | ✓ |
 | 6 | 617461746174617461746174 | ✓ | ✓ |
 
-This theorem alone establishes that the **set of fixed points is non-empty at every $m$** — a clean, dimension-independent result generalizing the appearance of 6174.
+This theorem alone establishes that the **set of fixed points is non-empty at every $m$** - a clean, dimension-independent result generalizing the appearance of 6174.
 
 ---
 
@@ -95,15 +95,15 @@ At $m = 2$, the interleaved rule produces $\alpha = 76417641$ and $\beta = 14671
 
 ### 3.3 The universals at $m \geq 3$ are "scrambled"
 
-Computationally, universals **do** exist at $m = 3, 4, 5, 6$ — but they are *not* $F_m$, and their rules are not the interleaved rule. They are scrambled arrangements with scrambled within-block orderings. Key facts:
+Computationally, universals **do** exist at $m = 3, 4, 5, 6$ - but they are *not* $F_m$, and their rules are not the interleaved rule. They are scrambled arrangements with scrambled within-block orderings. Key facts:
 
 - At $m = 3$ (d=12), the full search found **42** universal arrangements; $F_3 = 617461746174$ is **not** among them.
-- At $m = 4$ (d=16), **341** universals were found; remarkably, $F_4 = 6174617461746174$ **is** among them — but under a *different* within-block ordering than interleaved (the interleaved ordering gives only 99.69%, while a specific scrambled ordering gives 100%).
-- The within-block ordering of $\pi$ and $\sigma$ — invisible to the fixed-point value — is decisive for universality.
+- At $m = 4$ (d=16), **341** universals were found; remarkably, $F_4 = 6174617461746174$ **is** among them - but under a *different* within-block ordering than interleaved (the interleaved ordering gives only 99.69%, while a specific scrambled ordering gives 100%).
+- The within-block ordering of $\pi$ and $\sigma$ - invisible to the fixed-point value - is decisive for universality.
 
 ---
 
-## 4. Theorem 2 (Computational Universality) — VERIFIED
+## 4. Theorem 2 (Computational Universality) - VERIFIED
 
 > **Theorem 2.** For each $m \in \{1, 2, 3, 4, 5, 6\}$, there exists a pair-symmetric (7↔1, 6↔4) rule at $d = 4m$ that is classically universal on $M_m$.
 
@@ -122,21 +122,21 @@ Each is a verified classical universal (basin = entire non-repdigit multiset spa
 
 ---
 
-## 5. Conjecture 3 (Universality at all m) — OPEN
+## 5. Conjecture 3 (Universality at all m) - OPEN
 
 > **Conjecture 3.** For every $m \geq 1$, there exists a classically universal pair-symmetric rule at $d = 4m$ on $M_m$.
 
 ### 5.1 The obstruction to a proof
 
-A proof of Conjecture 3 requires a **dynamical** argument — showing that some rule's basin covers the entire ($\sim 10^{m}$-sized) multiset space. The fixed-point algebra of §2 does not touch this. The natural proof techniques and their obstructions:
+A proof of Conjecture 3 requires a **dynamical** argument - showing that some rule's basin covers the entire ($\sim 10^{m}$-sized) multiset space. The fixed-point algebra of §2 does not touch this. The natural proof techniques and their obstructions:
 
-**(a) Parallel decomposition** — works at $m \leq 2$, *provably fails* at $m \geq 3$ because sorting mixes the copies (§3.2). Eliminated.
+**(a) Parallel decomposition** - works at $m \leq 2$, *provably fails* at $m \geq 3$ because sorting mixes the copies (§3.2). Eliminated.
 
-**(b) Self-similar renormalization** (reduce $m$-dynamics to $(m{-}1)$-dynamics) — the erratic interleaved basins (14.86%, 99.69%, 9.52%) show there is *no* clean self-similarity along the $F_m$ family. Would require a different invariant.
+**(b) Self-similar renormalization** (reduce $m$-dynamics to $(m{-}1)$-dynamics) - the erratic interleaved basins (14.86%, 99.69%, 9.52%) show there is *no* clean self-similarity along the $F_m$ family. Would require a different invariant.
 
-**(c) Lyapunov / monovariant** — construct a function $\Phi$ with $\Phi(K(n)) < \Phi(n)$ for $n \neq F$, minimized at $F$. None is known for this rule family; constructing one is the crux.
+**(c) Lyapunov / monovariant** - construct a function $\Phi$ with $\Phi(K(n)) < \Phi(n)$ for $n \neq F$, minimized at $F$. None is known for this rule family; constructing one is the crux.
 
-**(d) Kaprekar-style eventual-image finiteness** — show $K^{(T)}(\cdot)$ has image a small set $\{F\}$ for some bounded $T$. This is exactly the technique of Paper 2's Theorem 8.1, which succeeded for **one** fixed point (60714) via multiple structural lemmas (closure + finite reaching time + a $d$-independent core-nonnegativity argument). Extending it to a **family across all $m$** is a substantial research project.
+**(d) Kaprekar-style eventual-image finiteness** - show $K^{(T)}(\cdot)$ has image a small set $\{F\}$ for some bounded $T$. This is exactly the technique of Paper 2's Theorem 8.1, which succeeded for **one** fixed point (60714) via multiple structural lemmas (closure + finite reaching time + a $d$-independent core-nonnegativity argument). Extending it to a **family across all $m$** is a substantial research project.
 
 ### 5.2 Honest status
 
@@ -145,7 +145,7 @@ The conjecture is supported by:
 - An explicit, proven fixed-point family (Theorem 1)
 - Consistent cross-dimensional positional structure (lead ∈ {1,6}, tail ∈ {4,6}, position $d{-}1 \in A_7 \cup A_1$)
 
-But **no general proof of universality is currently available**, and obtaining one is comparable in difficulty to — or harder than — the dimension-transcendence theorem of Paper 2.
+But **no general proof of universality is currently available**, and obtaining one is comparable in difficulty to - or harder than - the dimension-transcendence theorem of Paper 2.
 
 ---
 
@@ -199,17 +199,17 @@ verified with **zero exceptions** at both d=12 and d=16:
 
 **Monotone**: the cumulative coefficient sums $C_j = c_0 + c_1 + \cdots + c_j$ satisfy $C_j \geq 0$ for all $j$, with $C_{d-1} = 0$. Equivalently, the coefficient sequence is a **non-negative lattice path** (Dyck-type). Writing $K$ in gap coordinates $g_j = s_j - s_{j+1} \geq 0$:
 $$K(\mathbf{s}) = \sum_{j=0}^{d-1} C_j \, g_j,$$
-so monotone $\iff$ $K$ is a **non-negative combination of digit-gaps** — i.e., $K$ is order-preserving in the gaps.
+so monotone $\iff$ $K$ is a **non-negative combination of digit-gaps** - i.e., $K$ is order-preserving in the gaps.
 
 **The classical d=4 Kaprekar rule is monotone**: $c = (999, 90, -90, -999)$ gives $C = (999, 1089, 999, 0) \geq 0$.
 
-**Acyclic**: the dynamics has no nontrivial cycle. This is *exactly* the obstruction in classical Kaprekar theory — d=4 is acyclic (converges to 6174), d=5 is cyclic (no universal fixed point).
+**Acyclic**: the dynamics has no nontrivial cycle. This is *exactly* the obstruction in classical Kaprekar theory - d=4 is acyclic (converges to 6174), d=5 is cyclic (no universal fixed point).
 
 ## Why this is the right decomposition
 
 It separates the two genuinely different difficulties:
 
-1. **Monotonicity** is *algebraic and checkable* — a positivity condition on partial sums of the coefficient vector. A construction can target it directly.
+1. **Monotonicity** is *algebraic and checkable* - a positivity condition on partial sums of the coefficient vector. A construction can target it directly.
 
 2. **Acyclicity** is *dynamical*, but it is the **same problem class as the classical Kaprekar convergence theorem**, which is solved at d=4. The multiplicity chain inherits the identical cycle-exclusion structure.
 
@@ -219,31 +219,31 @@ Monotone + Acyclic $\Rightarrow$ Universal is then near-immediate by finiteness:
 
 > **To prove a universal exists at every $m \geq 1$:**
 >
-> **Step 1 (Construction — algebraic).** Exhibit, for each $d = 4m$, a pair-symmetric partition whose coefficient vector has all cumulative sums $C_j \geq 0$ (a non-negative lattice path). *This is a concrete combinatorial construction problem, not a dynamical one.*
+> **Step 1 (Construction - algebraic).** Exhibit, for each $d = 4m$, a pair-symmetric partition whose coefficient vector has all cumulative sums $C_j \geq 0$ (a non-negative lattice path). *This is a concrete combinatorial construction problem, not a dynamical one.*
 >
-> **Step 2 (Acyclicity — the crux).** Prove that this monotone rule has no nontrivial cycle. *This is the multiplicity-chain analogue of Kaprekar's classical d=4 convergence theorem.*
+> **Step 2 (Acyclicity - the crux).** Prove that this monotone rule has no nontrivial cycle. *This is the multiplicity-chain analogue of Kaprekar's classical d=4 convergence theorem.*
 >
 > **Step 3 (Conclude).** Monotone + acyclic + finite state $\Rightarrow$ unique fixed point is globally attracting $\Rightarrow$ universal.
 
-Steps 1 and 3 appear tractable. **Step 2 is the heart of the remaining work** — but it is now a *sharply posed, classically-grounded* problem ("show this explicit monotone rule is cycle-free at every m"), rather than the diffuse "prove universality."
+Steps 1 and 3 appear tractable. **Step 2 is the heart of the remaining work** - but it is now a *sharply posed, classically-grounded* problem ("show this explicit monotone rule is cycle-free at every m"), rather than the diffuse "prove universality."
 
 ## Why earlier approaches failed, in this light
 
-- **6174-repeated (the cheat)** is a fixed point but its interleaved rule is *not monotone-acyclic* for $m \geq 3$ — it has cycles, hence not universal.
+- **6174-repeated (the cheat)** is a fixed point but its interleaved rule is *not monotone-acyclic* for $m \geq 3$ - it has cycles, hence not universal.
 - **Random monovariant search** failed because universality is not monotone in *digit-spread*; the correct monovariant lives in *gap/cumulative-coefficient coordinates* (the $C_j$).
-- **Paper 2's zero-padding technique** doesn't transfer (no zeros) — but the monotone-acyclic decomposition is a *different* and more intrinsic handle that does not require an absorbing set.
+- **Paper 2's zero-padding technique** doesn't transfer (no zeros) - but the monotone-acyclic decomposition is a *different* and more intrinsic handle that does not require an absorbing set.
 
 ## Status
 
 - **Decomposition theorem (monotone ⇒ [universal ⟺ acyclic])**: verified at d=12, d=16 with zero exceptions. Strongly supported; a short finiteness proof of "monotone+acyclic ⇒ universal" should be writable.
 - **Existence of monotone rules at each m**: confirmed computationally (m=3: ≥2, m=4: ≥15). A general construction is the open Step 1.
-- **Acyclicity of a constructed monotone rule at all m**: open (Step 2) — the central remaining problem, now classically grounded.
+- **Acyclicity of a constructed monotone rule at all m**: open (Step 2) - the central remaining problem, now classically grounded.
 
 ---
 
 # RIGOROUS CORE: The Finiteness Criterion + Monotone Uniqueness
 
-## Lemma A (Finite-State Universality Criterion) — PROVEN
+## Lemma A (Finite-State Universality Criterion) - PROVEN
 
 > **Lemma A.** Let $T : X \to X$ be any map on a *finite* set $X$, and let $F \in X$ satisfy $T(F) = F$. Then the following are equivalent:
 > 1. $F$ is **universal**: for every $x \in X$ there is $k \geq 0$ with $T^k(x) = F$.
@@ -254,19 +254,19 @@ Steps 1 and 3 appear tractable. **Step 2 is the heart of the remaining work** �
 
 *(2 ⟹ 1).* Fix any $x \in X$. Since $X$ is finite, the orbit $x, T(x), T^2(x), \ldots$ must repeat: there exist $a \geq 0$, $p \geq 1$ with $T^{a}(x) = T^{a+p}(x)$. Then $\{T^{a}(x), \ldots, T^{a+p-1}(x)\}$ is a periodic orbit of period $p$. By hypothesis there is no period $\geq 2$ orbit, so $p = 1$; that is, $T^{a}(x)$ is a fixed point. By uniqueness, $T^{a}(x) = F$. Hence $x$ reaches $F$. $\blacksquare$
 
-Here $X$ = non-repdigit $d$-digit multisets and $T(n) = \mathrm{sort\_desc}\,|c \cdot \mathbf{s}(n)|$. Lemma A is the rigorous backbone of Step 3: **universality $\iff$ (unique fixed point) $\wedge$ (acyclic)** — *unconditionally, for every rule.*
+Here $X$ = non-repdigit $d$-digit multisets and $T(n) = \mathrm{sort\_desc}\,|c \cdot \mathbf{s}(n)|$. Lemma A is the rigorous backbone of Step 3: **universality $\iff$ (unique fixed point) $\wedge$ (acyclic)** - *unconditionally, for every rule.*
 
-## Fact B (Monotone ⟹ Unique Fixed Point) — VERIFIED
+## Fact B (Monotone ⟹ Unique Fixed Point) - VERIFIED
 
-Across **all 61** monotone pair-symmetric rules at d=16 (and all monotone rules at d=12), **every one has a unique fixed point** $F$ — including the 46 *cyclic* (non-universal) ones, whose failure is due solely to cycles, never to a competing fixed point.
+Across **all 61** monotone pair-symmetric rules at d=16 (and all monotone rules at d=12), **every one has a unique fixed point** $F$ - including the 46 *cyclic* (non-universal) ones, whose failure is due solely to cycles, never to a competing fixed point.
 
 Combined with Lemma A this yields the operational statement:
 
 > **For monotone pair-symmetric rules: Universal $\iff$ Acyclic.**
 
-(Fact B itself — a rigorous proof that monotonicity forces a unique fixed point — is the one remaining gap in making this an unconditional theorem; it is verified but not yet proven.)
+(Fact B itself - a rigorous proof that monotonicity forces a unique fixed point - is the one remaining gap in making this an unconditional theorem; it is verified but not yet proven.)
 
-## Fact C (Pivot Symmetry) — structural, verified
+## Fact C (Pivot Symmetry) - structural, verified
 
 For every monotone pair-symmetric rule, the cumulative sums at the three gap positions of $\mathbf{s}$ (positions $m{-}1, 2m{-}1, 3m{-}1$) satisfy
 $$C_{m-1} = C_{3m-1},$$
@@ -281,9 +281,9 @@ recovering the block-sum formula $K = 6 S_7 + 2 S_6$. This is the pair-swap (7�
 | Lemma A (universal ⟺ unique-fp ∧ acyclic) | **PROVEN** (finiteness) |
 | Fact B (monotone ⟹ unique-fp) | verified d=12,16; proof open |
 | Construction of a monotone rule at each m | verified m=3 (≥2), m=4 (≥15); general construction open |
-| **Step 2: acyclicity of a monotone rule at all m** | **OPEN — the crux** |
+| **Step 2: acyclicity of a monotone rule at all m** | **OPEN - the crux** |
 
-The acyclic-vs-cyclic split among monotone rules is **not** captured by the pivot sums (both classes share $C_{m-1}=C_{3m-1}$ and overlapping magnitudes) — confirming acyclicity is a genuinely dynamical condition requiring a cycle-exclusion argument, exactly as in classical Kaprekar.
+The acyclic-vs-cyclic split among monotone rules is **not** captured by the pivot sums (both classes share $C_{m-1}=C_{3m-1}$ and overlapping magnitudes) - confirming acyclicity is a genuinely dynamical condition requiring a cycle-exclusion argument, exactly as in classical Kaprekar.
 
 ---
 
@@ -298,15 +298,15 @@ Two clean constructions, each failing one requirement:
 
 | construction | monotone? | preserves $\{1,4,6,7\}^m$? | result |
 |---|:---:|:---:|---|
-| **Block** = descending − ascending (generalized classical Kaprekar) | ✓ (all m) | ✗ | F gains digits 2,3,5,8,9 — wrong multiset |
+| **Block** = descending − ascending (generalized classical Kaprekar) | ✓ (all m) | ✗ | F gains digits 2,3,5,8,9 - wrong multiset |
 | **Interleaved** | ✓ (all m) | ✓ (gives 6174-repeated) | **cyclic** for $m\geq3$ (not universal) |
 
 So:
-- **Monotonicity is easy** — both clean constructions achieve it at every m. (Indeed the *classical Kaprekar* construction is the monotone prototype.)
+- **Monotonicity is easy** - both clean constructions achieve it at every m. (Indeed the *classical Kaprekar* construction is the monotone prototype.)
 - **The hard constraint is achieving monotone + multiset-preserving + acyclic simultaneously.** The block rule is monotone but leaves the multiset; the interleaved rule is monotone and multiset-preserving but cyclic.
-- The 15 rules that satisfy all three at d=16 have **scrambled within-block orderings** with no evident closed form (e.g. $A_7$ orders $[9,0,1,13], [0,8,4,9], [1,11,7,0], \ldots$ — irregular).
+- The 15 rules that satisfy all three at d=16 have **scrambled within-block orderings** with no evident closed form (e.g. $A_7$ orders $[9,0,1,13], [0,8,4,9], [1,11,7,0], \ldots$ - irregular).
 
-**Interpretation.** The monotone-acyclic universal rules are not given by any obvious symmetric construction; they sit at a non-trivial intersection of three conditions. This explains why a clean "formula for the universal rule at every m" has been elusive — and suggests the right existence proof is **non-constructive** (show the intersection is non-empty) rather than an explicit formula.
+**Interpretation.** The monotone-acyclic universal rules are not given by any obvious symmetric construction; they sit at a non-trivial intersection of three conditions. This explains why a clean "formula for the universal rule at every m" has been elusive - and suggests the right existence proof is **non-constructive** (show the intersection is non-empty) rather than an explicit formula.
 
 ## Revised Step 2 (the crux), sharpened
 
@@ -316,38 +316,38 @@ Since monotonicity is free and uniqueness holds, the entire problem is:
 >
 > Equivalently (by Lemma A + Fact B): does the multiplicity chain admit a "Kaprekar-acyclic" rule at every dimension, as it does at $d=4$?
 
-This is the cleanest possible statement of the universality conjecture — and it is manifestly the direct generalization of "the classical $d=4$ Kaprekar map is acyclic."
+This is the cleanest possible statement of the universality conjecture - and it is manifestly the direct generalization of "the classical $d=4$ Kaprekar map is acyclic."
 
 ---
 
-# Elementary Proof Attacks — Ruled Out (2026-06-03)
+# Elementary Proof Attacks - Ruled Out (2026-06-03)
 
 A sustained attempt on the three proof steps. All elementary approaches were tested and **fail**; recording them so future work doesn't repeat them.
 
-## #1 — Monotone ⟹ unique fixed point: no monovariant found
+## #1 - Monotone ⟹ unique fixed point: no monovariant found
 Verified by **full 2M-multiset scan** (every monotone rule has exactly one fixed point). But the natural Lyapunov candidates are **not** monovariants along trajectories of a monotone universal rule:
 - **digit-spread** ($\max - \min$ digit): non-monotone (e.g. 9→8→8→6→6→**8**→…).
-- **$|K(n) - F|$** (distance to F in the K-coordinate): decreases only **61.2%** of steps — not a monovariant.
+- **$|K(n) - F|$** (distance to F in the K-coordinate): decreases only **61.2%** of steps - not a monovariant.
 
 So uniqueness is true but resists an elementary potential-function proof; it must use finer structure of the gap map.
 
-## #2 — Acyclicity: no simple characterizer
+## #2 - Acyclicity: no simple characterizer
 Among monotone rules, acyclic (15) vs cyclic (46) at d=16 is **not** separated by:
 - pivot cumulative sums (both classes share $C_{m-1}=C_{3m-1}$, overlapping magnitudes),
 - DFT/spectral magnitude of the partition indicators,
 - positions-mod-4 signatures,
 - number/position of negative cumulative sums.
 
-Acyclicity is a genuinely global dynamical property here — exactly as the cycle structure is in classical Kaprekar (where d=4 acyclic, d=5 cyclic, with no shortcut characterization).
+Acyclicity is a genuinely global dynamical property here - exactly as the cycle structure is in classical Kaprekar (where d=4 acyclic, d=5 cyclic, with no shortcut characterization).
 
-## #3 — Construction / lifting: fails
+## #3 - Construction / lifting: fails
 - **Clean constructions fail**: block (=classical Kaprekar) is monotone but changes the multiset; interleaved is monotone + multiset-preserving but cyclic for $m\geq3$.
 - **m→m+1 lifting fails**: appending one new position per block to a d=16 universal rule and re-pairing gives, across all $4!\times 2$ natural assignments, **only 4 valid-multiset lifts, none universal** (best basin 3.07%). Universals do **not** lift by naive position insertion.
 
 ## Consequence
 The universal/monotone-acyclic rules are **not** reachable by any elementary construction, monovariant, or lifting tried. This is consistent with the working rules being "scrambled" with no closed form, and points to either:
 1. a **non-constructive existence** proof (show the monotone ∩ acyclic ∩ multiset-preserving set is nonempty at every m without exhibiting an element), or
-2. a **deeper finite-state / transfer-operator** argument analogous to — but harder than — Paper 2's Theorem 8.1 (which had a zero-padding absorbing set this problem lacks).
+2. a **deeper finite-state / transfer-operator** argument analogous to - but harder than - Paper 2's Theorem 8.1 (which had a zero-padding absorbing set this problem lacks).
 
 The session's durable contribution is the **reduction** (Lemma A + the monotone–acyclic decomposition + Fact B), which turns an opaque dynamical conjecture into the sharp, classically-grounded question: *does a monotone acyclic multiset-preserving rule exist at every $m$?*
 
@@ -367,13 +367,13 @@ wrong** and is retracted. Direct measurement on a universal d=16 rule:
 
 **Revised proof outlook.** The eventual-image / transfer-operator route is viable after all:
 1. (TRUE) K(X) ⊆ Image(K), absorbing.
-2. (open) Characterize Image(K) m-independently — it is *not* size-bounded in m (16k at m=4),
+2. (open) Characterize Image(K) m-independently - it is *not* size-bounded in m (16k at m=4),
    so this needs a structural description (e.g. via the mod-9 / mod-99 constraints + the (6,2)
    coefficient form), not enumeration.
 3. (open) Show the dynamics on Image(K) converges to the unique fixed point F.
 
 This is still open, but it is the **same shape** as the (solved) Paper 2 §8 argument and the
-(solved) classical Kaprekar d=4 argument — not a fundamentally new kind of problem. The
+(solved) classical Kaprekar d=4 argument - not a fundamentally new kind of problem. The
 remaining work is the m-independent characterization of the absorbing image, now aided by:
 (a) everything reducing to the single (6,2)/6174 system (FERTILITY_PREDICTOR.md), and
 (b) the proven mod-9 / observed mod-99 multiple-of-9 structure of the image.
@@ -401,7 +401,7 @@ monovariant argument but a **finite-state enumeration** of the reachable gap-set
 
 **Implication for the proof.** The viable route is the finite-state / eventual-image argument
 (à la Kaprekar d=4 and Paper 2 §8): find an **m-independent quotient** of the dynamics on the
-absorbing image and verify convergence on it. Finding that quotient — not another monovariant —
+absorbing image and verify convergence on it. Finding that quotient - not another monovariant -
 is the remaining mathematical work, and it is genuinely research-grade.
 
 ---
@@ -414,26 +414,26 @@ Read Paper 2's actual universality proof and mapped its machinery onto the multi
 1. **Core non-negativity** (Lemma 5.3): on sorted-descending inputs the native-core contribution
    is ≥ 0, eliminating borrow interference.
 2. **Absorbing set + bounded reaching time** (Lemmas 5.1–5.2): the tail-two-zeros set $T_d$ is
-   closed, $K^{(d)}$ acts on it as $K^{(d-2)}$, and every orbit reaches $T_d$ in ≤1–2 steps —
+   closed, $K^{(d)}$ acts on it as $K^{(d-2)}$, and every orbit reaches $T_d$ in ≤1–2 steps -
    proved by **counting the zero digits** the rule produces.
 
 ## The mapping
 | ingredient | status for {1,4,6,7}^m |
 |---|---|
-| core non-negativity | **HAVE IT** — exactly our monotonicity $C_j \ge 0$ |
-| zero-absorbing set + bounded reaching time | **LACK IT** — no zeros to count |
+| core non-negativity | **HAVE IT** - exactly our monotonicity $C_j \ge 0$ |
+| zero-absorbing set + bounded reaching time | **LACK IT** - no zeros to count |
 
 ## The precise obstruction (now identified)
 Paper 2's absorbing set is *built from zero digits*; its reaching-time bound *counts zeros*.
 The multiplicity chain has **no zero digits**, so:
 - the tail-zeros absorbing set does not exist, and
-- the reaching time is **not bounded** — measured T_m = 14, 32, 39 for m = 2,3,4 (growing),
+- the reaching time is **not bounded** - measured T_m = 14, 32, 39 for m = 2,3,4 (growing),
   versus Paper 2's bounded ≤8→≤1.
 
 The growth of T_m is the signature that there is no zero-style absorbing reduction. So Paper 2's
-specific technique **does not transfer** — for a structural reason (zeros), not a superficial one.
+specific technique **does not transfer** - for a structural reason (zeros), not a superficial one.
 
-## What remains — a sharper open problem
+## What remains - a sharper open problem
 We have core-non-negativity (monotonicity) for free. The missing half is:
 
 > **Find a non-zero absorbing structure on the multiplicity chain that (i) is reached in bounded
@@ -446,49 +446,49 @@ Candidate heavier tools for the missing piece:
 2. **Computer-assisted inductive certificate.** Rigorously enumerate the functional graph at
    m=1..5, and machine-search for an inductive invariant certifying acyclicity that provably
    lifts m→m+1.
-3. **A bounded-reaching-time argument without zeros** — show T_m is actually bounded (the 14,32,39
+3. **A bounded-reaching-time argument without zeros** - show T_m is actually bounded (the 14,32,39
    data may be plateauing; needs m=5 to tell) and build the absorbing reduction on a non-zero
    invariant (e.g. a fixed digit-sum shell).
 
 ---
 
-# MULTI-AGENT PROOF ASSAULT — Results (2026-06-04)
+# MULTI-AGENT PROOF ASSAULT - Results (2026-06-04)
 
 A 33-agent workflow (5 strategies × deep work + adversarial verification of every claim +
 synthesis; ~1.95M tokens) attacked the acyclicity proof. 19 claims survived adversarial
 verification. Headline: **routes definitively closed, obstruction localized, two of my own
-prior claims corrected — but no proof.**
+prior claims corrected - but no proof.**
 
 ## CORRECTION (verified directly): Fact B is FALSE
 "Monotone ⟹ unique fixed point" is **false**. The interleaved monotone rule at d=12 (all
 C_j ≥ 0) has **two** fixed points: 617461746174 (= M_3, the 6174-triple) and 535549955994
 (multiset {3,4²,5⁵,9⁴}). My earlier "verified zero exceptions" only checked monotone rules
-*drawn from the universal search* — a biased sample. General monotone rules can have multiple
+*drawn from the universal search* - a biased sample. General monotone rules can have multiple
 fixed points.
 **Impact:** the shortcut "for monotone rules, universal ⟺ acyclic" is not valid. The correct
-statement remains **Lemma A: universal ⟺ unique-fp ∧ acyclic** — but monotonicity buys *neither*
+statement remains **Lemma A: universal ⟺ unique-fp ∧ acyclic** - but monotonicity buys *neither*
 condition for free. The acyclic⟹universal bridge needs unique-fp re-established independently.
 
 ## Newly CONFIRMED (adversarially verified)
 - **Block-state reduction (rigorous):** on block states (aᵐbᵐcᵐdᵐ), *every* monotone
   pair-symmetric rule equals the classical d=4 Kaprekar map K = P·((a−b)+(c−d)) + Q·(b−c),
-  P=C_{m−1}, Q=C_{2m−1} — a faithful change of basis of 999(a−d)+90(b−c). The interleaved rule
+  P=C_{m−1}, Q=C_{2m−1} - a faithful change of basis of 999(a−d)+90(b−c). The interleaved rule
   literally outputs "K₄(a,b,c,d) repeated m times" (verified m=1..6).
 - **Pivot symmetry C_{m−1}=C_{3m−1} is structural** (block coeffs are antisymmetric [B0,B1,−B1,−B0]).
 - **Every period-≥2 cycle lives strictly OUTSIDE the {1,4,6,7} alphabet** (d=16: all 55 cycle
-  members; d=12: exhaustive over 67,970 monotone rules, zero in-alphabet cycles — not a mod-9
+  members; d=12: exhaustive over 67,970 monotone rules, zero in-alphabet cycles - not a mod-9
   triviality). So the obstruction to universality is entirely alphabet-external.
 - **"Every {1,4,6,7}-alphabet multiset reaches F" is a necessary, ~2117× cheaper proxy** for
   universality (965 vs 2,042,965 states), exact except 3/46 rare external 2-cycle false positives.
 - **The 15 monotone-universal d=16 rules are NOT block-closed; all share an identical 180-state
-  block-escape set** — the deviation from block-closure is what breaks the cycles that trap the
+  block-escape set** - the deviation from block-closure is what breaks the cycles that trap the
   block-closed interleaved rule (which gets only 14.86% to F).
-- **T_m reaching time is BOUNDED** (measured separately): T = 14, 32, 39, 42 for m=2,3,4,5 —
+- **T_m reaching time is BOUNDED** (measured separately): T = 14, 32, 39, 42 for m=2,3,4,5 -
   increments 18,7,3 → plateauing near ~44. (Positive for a finite-reaching-time argument.)
 
-## DEFINITIVELY RULED OUT (real progress — do not re-pursue)
+## DEFINITIVELY RULED OUT (real progress - do not re-pursue)
 - **Modular / p-adic tower for cycle exclusion**: K induces no well-defined residue map except
-  trivially mod 9; exhaustive moduli 2–300 — none separates F's basin from cycles.
+  trivially mod 9; exhaustive moduli 2–300 - none separates F's basin from cycles.
 - **Low-degree Lyapunov / monovariant**: LP-infeasible for digit-counts, a 69-dim quadratic
   feature set, and {value, ds, ds², |ds−72|}. No single scalar feature is non-increasing on all
   edges (≥17% violations), so greedy-lexicographic can't start.
@@ -506,7 +506,7 @@ cycle family (~10 cycle types at d=16; one 4-cycle covers 30 of 46 cyclic rules)
 member Z, "rule does not admit Z" is a finite set of *linear inequalities on the coefficient
 vector c*. The lever is the **intra-block ordering freedom (~(m!)⁴ per partition)**, previously
 overlooked. Concrete program: write the obstruction cycles as explicit m-indexed digit-count
-vectors, and construct — for every m — a monotone M_m-fixing rule that (i) sends every alphabet
+vectors, and construct - for every m - a monotone M_m-fixing rule that (i) sends every alphabet
 multiset to M_m (cheap 965-state check) and (ii) satisfies the finite linear inequalities
 excluding the obstruction family. Whether this is simultaneously satisfiable at *all* m is the
 open question.
@@ -519,7 +519,7 @@ premise (Fact B) just failed. We have a much sharper map of the wall, not a way 
 
 ---
 
-# MULTI-AGENT ASSAULT #2 — Finite-Obstruction-Exclusion (2026-06-08)
+# MULTI-AGENT ASSAULT #2 - Finite-Obstruction-Exclusion (2026-06-08)
 
 Focused workflow on the one remaining lead: exclude the finite alphabet-external cycle family at
 every m. Memory-safe (no d=20 basin built; m=5 via 1767-state alphabet proxy). Every claim
@@ -527,22 +527,22 @@ adversarially re-verified from scratch. **Decisive: the lead is dead. No proof.*
 
 ## What the COMPLETE enumeration established (m=3, not a sample)
 - The monotone, M_3-fixing pair-symmetric rules number **exactly 43,200**. Of these, **3,000 are
-  acyclic** — and **all 3,000 have a unique fixed point, hence are universal** (Lemma A). So at
+  acyclic** - and **all 3,000 have a unique fixed point, hence are universal** (Lemma A). So at
   m=3 there are *exactly* 3,000 universal monotone rules.
 - The m=3 obstruction has **14 distinct cycle signatures**, periods {2,5,6,7,8,10,12,13,14,19,20,31};
   one period-7 cycle covers 29,040 of 40,200 cyclic rules. All 80 cycle members are
   alphabet-external (Fact #2 re-confirmed exhaustively).
 - m=4: 46 cyclic rules, 10 signatures, one 4-cycle covers 30 (re-confirmed).
 
-## Per-m universal witnesses — CONFIRMED (adversarial, from scratch)
-- **m=3 (d=12): full-basin proof** — explicit monotone rule, basin 293920/293920, unique fp, 0 cycles.
-- **m=4 (d=16): full-basin proof** — basin 2042965/2042965, unique fp, 0 cycles.
-- **m=5 (d=20): proxy witness** — passes 1767-state alphabet proxy + 300k external-seed cycle scan
+## Per-m universal witnesses - CONFIRMED (adversarial, from scratch)
+- **m=3 (d=12): full-basin proof** - explicit monotone rule, basin 293920/293920, unique fp, 0 cycles.
+- **m=4 (d=16): full-basin proof** - basin 2042965/2042965, unique fp, 0 cycles.
+- **m=5 (d=20): proxy witness** - passes 1767-state alphabet proxy + 300k external-seed cycle scan
   (NOT a full-basin proof; memory rule respected).
 
 ## The lead is DISPROVEN (the decisive negatives)
 1. **A uniform recipe exists but breaks.** The clean m-parametrized "v1" construction (A7 contiguous
-   at top, monotone & M_m-fixing for all m — classical Kaprekar is its m=1 case) is full-basin
+   at top, monotone & M_m-fixing for all m - classical Kaprekar is its m=1 case) is full-basin
    **universal at m=3 and m=4** but **provably non-universal at m=2 AND m=5** (m=5 falls into
    period-8 and period-16 cycles). Not universal-at-every-m.
 2. **The obstruction is NOT a single m-indexed family.** New, higher-period, alphabet-external
@@ -556,13 +556,13 @@ adversarially re-verified from scratch. **Decisive: the lead is dead. No proof.*
 
 ## Honest bottom line
 **Universality is now rigorously witnessed up to m=5** (m≤4 full-basin, m=5 by strong proxy), but
-the all-m goal **remains open** — and the finite-obstruction-exclusion + induction route is
+the all-m goal **remains open** - and the finite-obstruction-exclusion + induction route is
 **closed**: the obstruction grows genuinely new families at every m. A proof, if it exists, needs
 an idea that handles an m-growing obstruction set, not the finite/linear exclusion we hoped for.
 
 ---
 
-# SURVIVOR-FRACTION MEASUREMENT (2026-06-08) — the fraction is ERRATIC
+# SURVIVOR-FRACTION MEASUREMENT (2026-06-08) - the fraction is ERRATIC
 
 To test whether a non-constructive counting-existence argument is viable, measured the fraction of
 *monotone M_m-fixing pair-symmetric rules that are universal*:
@@ -573,28 +573,28 @@ To test whether a non-constructive counting-existence argument is viable, measur
 | 4 | **28.4%** | random sample, n=95 (monotone-fixing rules ~5/million) |
 | 5 | **~0%** | random sample, 0/13 passed the necessary alphabet proxy |
 
-**The fraction is non-monotone and crashes** — 7% → 28% → ~0% — mirroring the erratic universal
+**The fraction is non-monotone and crashes** - 7% → 28% → ~0% - mirroring the erratic universal
 *counts* (2, 481, 42, 341, …). An initial two-point read (7%→28%) wrongly suggested a safe growing
 trend; adding m=5 corrected it.
 
 **Caveat:** universals DO exist at m=5 (the assault-#2 workflow built one by targeted cycle-exclusion
 search). So the true m=5 fraction is small-but-nonzero; random sampling missed it because m=5
 universalizable rules are rare AND structurally specific (an 11.3M-sample search showed the
-m=3/m=4 partition shape — A7 contiguous at top — yields ZERO universals at m=5).
+m=3/m=4 partition shape - A7 contiguous at top - yields ZERO universals at m=5).
 
 **Impact on proof routes:**
 - Counting-existence (#1) is **weakened**: no clean positive lower bound on the fraction to prove;
   it swings wildly.
 - "Existence may break" (#3) is **strengthened but unresolved**: the fraction crashing toward ~0%
-  at m=5 is the kind of signal that could reach literal zero at larger m — but m=5 still has a
+  at m=5 is the kind of signal that could reach literal zero at larger m - but m=5 still has a
   witness, so it has not broken.
 
 **Bottom line:** the survivor fraction refuses to give a smooth signal. The all-m question is
-genuinely undecided — neither "holds forever" nor "breaks" is supported by a clean trend.
+genuinely undecided - neither "holds forever" nor "breaks" is supported by a clean trend.
 
 ---
 
-# THE COUNT GROWS — existence is robust (2026-06-08, corrects the fraction read)
+# THE COUNT GROWS - existence is robust (2026-06-08, corrects the fraction read)
 
 The survivor *fraction* (universal among monotone M_m-fixing rules) is the WRONG quantity. The
 **count** of universal rules is what governs existence, and it GROWS super-exponentially:
@@ -611,35 +611,35 @@ ordering is monotone | fixing; rule is universal | monotone-fixing). Sanity: the
 be estimation noise.
 
 **Reading:** the fraction crash at m=5 (28%→0.04%) is purely the total rule space (~d!) exploding
-faster than the universal count — NOT a sign of existence failing. There are ~250 million universal
+faster than the universal count - NOT a sign of existence failing. There are ~250 million universal
 rules at m=5.
 
 **Impact:**
-- **Existence-breaks (#3): unlikely** — a count growing 3K→18M→250M is not heading to zero.
+- **Existence-breaks (#3): unlikely** - a count growing 3K→18M→250M is not heading to zero.
 - **Counting-existence (#1): the viable proof route.** Target: show count(m) = d!·p_fix·p_mono·p_univ
   ≥ 1 for all m (it is in fact growing, with enormous margin). This needs lower bounds on p_fix
-  (M_m-fixing has clean block-sum structure K=6S₇+2S₆) and p_univ (the dynamical part — still the
+  (M_m-fixing has clean block-sum structure K=6S₇+2S₆) and p_univ (the dynamical part - still the
   hard factor, but now only needs a weak lower bound given the d! growth).
 
-**Bottom line:** the all-m universality conjecture is now STRONGLY supported — not merely verified
+**Bottom line:** the all-m universality conjecture is now STRONGLY supported - not merely verified
 to m=6, but witnessed by a universal-rule count that is exploding. A rigorous proof, if found,
 will most plausibly be a counting/probabilistic lower bound on this count, not a construction or
 monovariant.
 
-(Note on my own process: I mis-read this twice — over-optimistic on the m=4 fraction, then
-over-pessimistic on the m=5 fraction crash — before identifying the COUNT as the governing
+(Note on my own process: I mis-read this twice - over-optimistic on the m=4 fraction, then
+over-pessimistic on the m=5 fraction crash - before identifying the COUNT as the governing
 quantity. Recorded for honesty.)
 
 ---
 
-# WHY THE COUNTING ARGUMENT IS ALSO HARD — the survivor structure shifts with m (2026-06-08)
+# WHY THE COUNTING ARGUMENT IS ALSO HARD - the survivor structure shifts with m (2026-06-08)
 
 Pushed on the counting/structural route using the complete m=3 data (3,000 universal / 43,200).
 
 ## What the m=3 survivors look like
 - All 3,000 universals live in just **20 of 70 partitions**.
 - Clean sufficient condition at m=3: **A7 = {0,1,2} (the +6 block at the top) ⟹ the partition hosts
-  universal orderings** — true for 0% of non-hosting partitions. (Each such partition has ~260/1296
+  universal orderings** - true for 0% of non-hosting partitions. (Each such partition has ~260/1296
   universal orderings.)
 
 ## Why it does not give a proof
@@ -654,7 +654,7 @@ the structural property characterizing survivors *changes with m*.
 | Uniform construction / m→m+1 induction | survivor structure changes with m; new cycle families appear |
 | Monovariant / Lyapunov (any low degree) | none exists (LP-infeasible through degree 2; non-monotone) |
 | Modular / p-adic invariant | none separates basin from cycles (moduli 2–300) |
-| Union bound / Lovász Local Lemma on cycles | dominant cycle alone kills ~67% — far too dense |
+| Union bound / Lovász Local Lemma on cycles | dominant cycle alone kills ~67% - far too dense |
 | Structural characterization of survivors | the characterizing property shifts with m |
 
 **Common root cause:** the problem has **no m-uniform structure**. Universal rules exist abundantly
@@ -662,7 +662,7 @@ the structural property characterizing survivors *changes with m*.
 defeats construction, induction, local/probabilistic bounds, and fixed structural invariants.
 
 ## What a proof would therefore need
-A genuinely **non-constructive, non-uniform existence argument** — one that shows the universal
+A genuinely **non-constructive, non-uniform existence argument** - one that shows the universal
 count is ≥ 1 (it is in fact growing) *without* characterizing or constructing the survivors and
 *without* a uniform structural property. Candidates: a second-moment / variance-controlled
 probabilistic argument on the universal-count random variable; or an asymptotic/analytic argument
@@ -672,13 +672,13 @@ computational program can settle.
 ## Honest final status of the all-m question
 - **Existence: robustly supported** (explicit witnesses to m=5; universal count growing
   super-exponentially).
-- **Proof: open**, and now with a *complete map of why every standard technique fails* — which is
+- **Proof: open**, and now with a *complete map of why every standard technique fails* - which is
   itself the main deliverable of this proof effort. The remaining route (non-uniform counting
   existence) needs a new mathematical idea, not more computation.
 
 ---
 
-# THE BASE CASE HAS NO CONCEPTUAL PROOF (2026-06-09) — the deepest diagnosis
+# THE BASE CASE HAS NO CONCEPTUAL PROOF (2026-06-09) - the deepest diagnosis
 
 Adopting a working-mathematician stance, attacked the *base case*: a conceptual (non-enumerative)
 proof of classical d=4 Kaprekar → 6174. Reduced it exactly to its 54-state gap system
@@ -688,13 +688,13 @@ proof of classical d=4 Kaprekar → 6174. Reduced it exactly to its 54-state gap
 - **No linear-absolute monovariant** |αp+βq+γ| works (exhaustive over α,β∈[−5,5]).
 - **No polynomial Lyapunov function of degree ≤ 4** exists (LP-infeasible at deg 2,3,4 via HiGHS).
 - A Lyapunov function exists only at degree ≥ 9, where it merely **interpolates the reaching-time**
-  Φ(s)=steps-to-(6,2) — the tautological monovariant that exists on any finite acyclic graph and
+  Φ(s)=steps-to-(6,2) - the tautological monovariant that exists on any finite acyclic graph and
   explains nothing.
 - The convergence is an image-collapse: |I_k| = 54→20→14→10→7→4→1 over 6 steps, with no clean
   closed-form description of the nested images I_k.
 
 ## Interpretation
-**Classical Kaprekar convergence has no low-complexity / conceptual certificate** — after 75 years
+**Classical Kaprekar convergence has no low-complexity / conceptual certificate** - after 75 years
 the reason K_4→6174 is arithmetic, not structural. The only proofs are finite enumeration or a
 high-degree interpolation of reaching-time.
 
@@ -708,7 +708,7 @@ base case's lack of conceptual structure. This is the deepest explanation of why
   1. a *conceptual* proof of K_4→6174 (itself a 75-year open problem; no low-degree polynomial
      certificate exists), which might then tensor to all m; OR
   2. a **non-constructive existence argument** (counting / entropy / probabilistic) that never
-     touches the mechanism — the more realistic route.
+     touches the mechanism - the more realistic route.
 
 ## The crisp open problem to hand to an analyst
 > Find a conceptually-described (closed-form, m-uniform) absorbing filtration
@@ -722,7 +722,7 @@ at the level of the base case.
 
 ---
 
-# 2026-06-09 (evening): The absorbing structure exists — sign-coherence and the pair quotient
+# 2026-06-09 (evening): The absorbing structure exists - sign-coherence and the pair quotient
 
 The "crisp open problem" above asked for an absorbing filtration without zeros. Today's session
 found its candidate, and the evidence is strong enough to reorganize the proof program around it.
@@ -732,7 +732,7 @@ For the k-fold of the 1746 rule (base coefficients c = (9, −900, 900, −9), b
 V(t) = 9t₀ − 900t₁ + 900t₂ − 9t₃ on a sorted 4-tuple), the linear form splits exactly:
     K(x) = | Σ_j 10^{4(k−1−j)} · V(slice_j) |,   slice_j = (x_j, x_{k+j}, x_{2k+j}, x_{3k+j}).
 Each slice is sorted-descending, |V| ≤ 8100 < 10⁴, so the slice values occupy disjoint decimal
-blocks — no carries. Call a state SIGN-COHERENT when all nonzero slice values share a sign.
+blocks - no carries. Call a state SIGN-COHERENT when all nonzero slice values share a sign.
 
 ## Finding 1: sign-coherence discriminates fold survival (verified by full enumeration)
 - fold₂ (d=8, UNIVERSAL): every one of 24,210 admissible states becomes coherent in ≤ 3 steps.
@@ -744,7 +744,7 @@ blocks — no carries. Call a state SIGN-COHERENT when all nonzero slice values 
 ## Finding 2: the maximal invariant coherent set T* satisfies both 60714-style lemmas (fold₂)
 T* (largest subset of the coherent states with K(T*) ⊆ T*) has 15,524 of 24,210 states (64.1%),
 contains the fixed point 17461746, and every admissible orbit enters T* within 6 steps.
-Invariance + bounded entry — the exact two-lemma skeleton of the Paper-2 (60714) proof.
+Invariance + bounded entry - the exact two-lemma skeleton of the Paper-2 (60714) proof.
 
 ## Finding 3 (the structural prize): the coherent dynamics factors through a small pair system
 For every coherent state (zero violations over the full enumeration):
@@ -762,18 +762,18 @@ T* now has an algebraic characterization: coherent AND pair ∈ the good set of 
 1. Entry lemma, uniform in tower level: every admissible state becomes coherent in O(1) steps
    (verified: 3 at k=2, 5 at k=4; tower element at d=16 in progress).
 2. Funnel lemma, uniform in level: the pair quotient at level j+1 is built from level-j values
-   (V₈ of super-slices at d=16 = the fold₂ form — the recursion is syntactic); prove the good-pair
+   (V₈ of super-slices at d=16 = the fold₂ form - the recursion is syntactic); prove the good-pair
    funnel inductively up the tower.
 The remaining gap to a theorem is replacing the two finite checks by m-uniform arguments. This is
 the first time the duplication chain has had a concrete absorbing structure rather than a missing idea.
 
-Caveat (honesty): prime multiplicities are NOT addressed — folding reaches only composite m from
+Caveat (honesty): prime multiplicities are NOT addressed - folding reaches only composite m from
 proper divisors; m = 7, 11, 13 still need independent witnesses. The all-m conjecture in full
 remains open even if the dyadic tower is proven.
 
 Scripts: /tmp/kap60714/proofs_runs/ (tower_d16.py and the inline session transcripts).
 
-## Addendum (same evening): the tower recursion verified at level 2 — full results
+## Addendum (same evening): the tower recursion verified at level 2 - full results
 
 All background passes complete. The dyadic tower (1746 under iterated doubling) now has, at both
 verifiable levels, the complete two-lemma structure plus exact self-similar quotients:
@@ -789,10 +789,10 @@ verifiable levels, the complete two-lemma structure plus exact self-similar quot
   through pairs of V-values of the previous level's form; image = 10^{d/2}|V_hi| + |V_lo|,
   image digit multiset = digits(|V_hi|) ⊎ digits(|V_lo|).
 - ENTRY IS LEVEL-CONSTANT SO FAR: ≤3 steps at level 1 and level 2 (the flat 4-slice version needs
-  ≤5; the nested pair version needs ≤3 — the tower's pairing is the right decomposition).
+  ≤5; the nested pair version needs ≤3 - the tower's pairing is the right decomposition).
 - Self-similar funnel: the fixed pair at level j is (F_{j−1}, F_{j−1}), the previous level's fixed
   point doubled. No cycles at either level.
-- fold₅ at d=20 (sampled, 300,000 admissible): coherence entry ≤ 4, zero failures — the
+- fold₅ at d=20 (sampled, 300,000 admissible): coherence entry ≤ 4, zero failures - the
   discriminator law's third data point.
 - Negative probe: no simple algebraic separation of good vs bad pairs at level 1 (overlapping
   ranges, x≥y ~50/50 both classes; exits cluster at zero-heavy images). Consistent with the
@@ -806,7 +806,7 @@ for 1746 repeated 2^j times. A proof now requires exactly two m-uniform lemmas:
   (F) Funnel: the level-j pair quotient has unique fixed pair and no cycles.
 (E) is a carry/block argument one level up from Paper 2's Lemma 5.2 and looks genuinely
 attackable. (F) is verified at j = 1, 2 by enumeration; the quotient grows (1,446 → 235,194),
-so j ≥ 3 needs a structural argument relating the level-(j+1) pair system to level-j dynamics —
+so j ≥ 3 needs a structural argument relating the level-(j+1) pair system to level-j dynamics -
 this is the remaining mathematical content. Both quotient systems are committed for study.
 
 Scripts and raw results: proofs_runs/tower_d16.py, tower_d16_results.json,
@@ -814,13 +814,13 @@ fold5_d20_sample.py, fold5_sample_results.json.
 
 Convention note: the quotient counts above (1,446 pairs / 1,198 good; 235,194 / 184,201) are over
 admissible (non-repdigit, non-near-repdigit) starting states. In the paper's duplication-chain
-convention (non-repdigit only) the near-repdigit states — all coherent at step 0, all convergent —
+convention (non-repdigit only) the near-repdigit states - all coherent at step 0, all convergent -
 contribute 18 further initial pairs at level 1, giving 1,464 / 1,202 (level 1) and
 235,212 / 184,219 (level 2). Funnels and fixed pairs unchanged. The paper quotes the latter.
 
 ---
 
-# 2026-06-14: The m=7 frontier — fold near-misses, the 4995/5355 cycle, and zeros do not dissolve it
+# 2026-06-14: The m=7 frontier - fold near-misses, the 4995/5355 cycle, and zeros do not dissolve it
 
 m=7 (d=28) is the first prime multiplicity the doubling tower cannot reach; the only fold into it
 is the 7-fold of an m=1 base. Tested all four m=1 universal bases (each 7-folded, canonical
@@ -838,7 +838,7 @@ KEY FACTS:
 - The 8 alphabet exceptions for the 6174 7-fold are CYCLES, not escapes-to-0. All 8 funnel into ONE
   period-2 cycle:
       4995599449955994599461744176  <->  5355535553555175517581728172
-  Its members carry digits {2,3,5,8,9} — OUTSIDE the {1,4,6,7} alphabet. It is the SAME 495/4995
+  Its members carry digits {2,3,5,8,9} - OUTSIDE the {1,4,6,7} alphabet. It is the SAME 495/4995
   cycle family that breaks the classical doubling at m=2 (paper Computed 6.2). Recurring enemy.
 - This matters because ->0 would be the benign 60714 escape class ("universal on A_d \ E_d", counts
   as a witness); ->CYCLE is the genuine obstruction (Lemma 2.4). So the fold does NOT count.
@@ -857,23 +857,23 @@ neutralize collapses, not competing cycles. (Consistent with the earlier test th
 rescue the broken 3-fold.)
 
 CORRECTION to a hypothesis floated this session: zeros do NOT localize the m=7 problem to the pure
-d=28 — the 4995/5355 cycle is present at d=28..32 alike. Zeros solve the cross-LENGTH axis only by
+d=28 - the 4995/5355 cycle is present at d=28..32 alike. Zeros solve the cross-LENGTH axis only by
 carrying a WORKING base upward; they cannot manufacture a base, and they cannot kill a cycle.
 
 STATUS: the all-m conjecture is NOT refuted (a native non-fold arrangement of {1,4,6,7}^7 avoiding
 the 4995/5355 cycle may exist; the cycle's basin is vanishing, suggesting it is dodgeable by a
-different rule). But every cheap construction — fold, fold+scramble, fold+zeros — hits it. The
+different rule). But every cheap construction - fold, fold+scramble, fold+zeros - hits it. The
 remaining route to settle m=7 is a structured native (pair-symmetric monotone) search for a rule
 whose dynamics excludes the 4995/5355 cycle. Scripts: /tmp/m7_fold_search.py, m7_verify.py,
 m7_scramble.py, m7_zeros.py, m7_zeros2.py.
 
 ---
 
-# 2026-06-14 (cont.): m=7 BASE FOUND — the first prime is not a counterexample
+# 2026-06-14 (cont.): m=7 BASE FOUND - the first prime is not a counterexample
 
 The 4995/5355 cycle that breaks every fold of 6174 at m=7 is DODGEABLE. A structured native search
-over pair-symmetric monotone rules on {1,4,6,7}^7 — within-block place-value reorderings of the
-6174 partition, filtered monotone, filtered to kill the 4995/5355 cycle — found universal bases
+over pair-symmetric monotone rules on {1,4,6,7}^7 - within-block place-value reorderings of the
+6174 partition, filtered monotone, filtered to kill the 4995/5355 cycle - found universal bases
 ABUNDANTLY: multiple clean hits in the first ~8,500 candidates.
 
 Witness (candidate 1):
@@ -905,7 +905,7 @@ Rule saved: multiplicity_chain/m7_witness.json. Scripts: /tmp/m7_native.py, m7_f
 # 2026-06-15: Clean-6174-repeat universality map, the m=3 dissection, and the death of every clean pattern
 
 This session probed a sharp sub-question: is the *tidy* arrangement F_m = 6174 written m times
-itself universal? — distinct from the main conjecture (does *some* arrangement of {1,4,6,7}^m
+itself universal? - distinct from the main conjecture (does *some* arrangement of {1,4,6,7}^m
 universalize). The answer is arrangement- and m-dependent, and the investigation closed several
 appealing structural hypotheses by direct test.
 

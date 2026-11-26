@@ -8,13 +8,13 @@
 
 ## 4.1 The question, formally
 
-Let $`F_5 = \{F^{(1)}, \ldots, F^{(33)}\}`$ be the set of universal full-variable fixed points at $`d = 5`$ (Theorem 3.3). For each $`F^{(k)} \in F_5`$, consider the padded integer $`F^{(k)}_{(6)}`$ — that is, $`F^{(k)}`$ interpreted as a six-digit integer by prepending a zero. Let $`\overline{F^{(k)}}`$ denote its sorted-descending form at length $`6`$: this is the sorted-descending form at length $`5`$ with a zero appended, since padding adds a zero that sorts to the smallest position.
+Let $`F_5 = \{F^{(1)}, \ldots, F^{(33)}\}`$ be the set of universal full-variable fixed points at $`d = 5`$ (Theorem 3.3). For each $`F^{(k)} \in F_5`$, consider the padded integer $`F^{(k)}_{(6)}`$ - that is, $`F^{(k)}`$ interpreted as a six-digit integer by prepending a zero. Let $`\overline{F^{(k)}}`$ denote its sorted-descending form at length $`6`$: this is the sorted-descending form at length $`5`$ with a zero appended, since padding adds a zero that sorts to the smallest position.
 
 We ask two questions for each $`F^{(k)}`$:
 
 **Question A (algebraic).** Does any full-variable rule $`K_{\pi, \sigma}`$ at $`d = 6`$ satisfy $`K(F^{(k)}_{(6)}) = F^{(k)}`$? That is, does the fixed-point equation admit any full-variable solution at $`d = 6`$?
 
-**Question B (dynamic).** If yes, is any such rule universal for $`F^{(k)}`$ at $`d = 6`$ — meaning every input in $`A_6`$ iterates to $`F^{(k)}`$?
+**Question B (dynamic).** If yes, is any such rule universal for $`F^{(k)}`$ at $`d = 6`$ - meaning every input in $`A_6`$ iterates to $`F^{(k)}`$?
 
 A positive answer to both questions constitutes **coefficient-lifting success** from $`d = 5`$ to $`d = 6`$: the fixed point $`F^{(k)}`$ is a universal full-variable fixed point at both digit lengths. A negative answer to Question A is **algebraic obstruction** (no rule even fixes $`F^{(k)}`$ at $`d = 6`$). A negative answer to Question B despite a positive answer to A is **dynamic obstruction** (rules fix $`F^{(k)}`$ but none is universal).
 
@@ -39,7 +39,7 @@ A positive answer to both questions constitutes **coefficient-lifting success** 
 
 For $`15`$ of the $`16`$ fixed points with algebraic solutions, every fixed-point-satisfying rule has basin $`< 1`$. The best basins are tabulated below.
 
-For $`1`$ fixed point — $`F = 60714`$ — exactly two of the four full-variable rules satisfying the fixed-point equation are universal (basin $`= 1.0`$); the other two have basin substantially less than $`1`$.
+For $`1`$ fixed point - $`F = 60714`$ - exactly two of the four full-variable rules satisfying the fixed-point equation are universal (basin $`= 1.0`$); the other two have basin substantially less than $`1`$.
 
 The computation is implemented as a two-stage enumeration: first a fast enumeration over $`(\pi, \sigma) \in S_6 \times S_6`$ with derangement filtering, producing the algebraic-solution set; then a basin test on each surviving candidate. Total runtime on commodity hardware: a few minutes for the algebraic part, several hours for the dynamic part. Full enumeration logs and per-fixed-point data are in Appendix A.4. $`\square`$
 
@@ -67,7 +67,7 @@ The computation is implemented as a two-stage enumeration: first a fast enumerat
 | $`65781`$ | $`\{1, 5, 6, 7, 8\}`$ |
 | $`67581`$ | $`\{1, 5, 6, 7, 8\}`$ |
 
-*All $`17`$ fixed points share a structural feature: their multisets at $`d = 5`$ contain at most one zero digit, so padding to $`d = 6`$ gives at most two absorbing positions — typically insufficient for any full-variable sv$`=6`$ rule to satisfy $`K(F_{(6)}) = F_{(6)}`$.*
+*All $`17`$ fixed points share a structural feature: their multisets at $`d = 5`$ contain at most one zero digit, so padding to $`d = 6`$ gives at most two absorbing positions - typically insufficient for any full-variable sv$`=6`$ rule to satisfy $`K(F_{(6)}) = F_{(6)}`$.*
 
 **Table 4.2.** *The $`15`$ fixed points at $`d = 5`$ with dynamic obstruction at $`d = 6`$.*
 
@@ -91,9 +91,9 @@ For these $`15`$ fixed points, full-variable rules satisfying $`K(F_{(6)}) = F_{
 | $`37854`$   | $`2`$   | $`0.0245`$ |
 | $`17685`$   | $`2`$   | $`0.0049`$ |
 
-*The basins range from $`0.0049`$ to $`0.9631`$; no rule is universal. For most fixed points, competing attractors (the rule's other fixed points or short cycles) draw off substantial fractions of input space. Notably, $`54`$ and $`60417`$ achieve basins very close to $`1`$ (respectively $`0.9631`$ and $`0.9598`$) but remain dynamically obstructed — they are "near misses" in a precise sense, and were among the candidates investigated in detail before $`60714`$ was identified as the unique transcendent fp at $`d = 5`$.*
+*The basins range from $`0.0049`$ to $`0.9631`$; no rule is universal. For most fixed points, competing attractors (the rule's other fixed points or short cycles) draw off substantial fractions of input space. Notably, $`54`$ and $`60417`$ achieve basins very close to $`1`$ (respectively $`0.9631`$ and $`0.9598`$) but remain dynamically obstructed - they are "near misses" in a precise sense, and were among the candidates investigated in detail before $`60714`$ was identified as the unique transcendent fp at $`d = 5`$.*
 
-**Observation 4.1 (zero-digit count predicts algebraic solvability at $`d = 6`$).** *Among the $`33`$ fixed points at $`d = 5`$, those with one zero digit at $`d = 5`$ (so two zero digits when padded to $`d = 6`$) are candidates for coefficient-preserving lifting with two absorbing positions. Those with no zero digits have only one absorbing position after padding, and empirically none admits a full-variable sv=$`6`$ rule fixing them. This pattern — more zero digits $`\Rightarrow`$ more absorbing capacity $`\Rightarrow`$ more algebraic solutions — is developed further at §5 and §6.*
+**Observation 4.1 (zero-digit count predicts algebraic solvability at $`d = 6`$).** *Among the $`33`$ fixed points at $`d = 5`$, those with one zero digit at $`d = 5`$ (so two zero digits when padded to $`d = 6`$) are candidates for coefficient-preserving lifting with two absorbing positions. Those with no zero digits have only one absorbing position after padding, and empirically none admits a full-variable sv=$`6`$ rule fixing them. This pattern - more zero digits $`\Rightarrow`$ more absorbing capacity $`\Rightarrow`$ more algebraic solutions - is developed further at §5 and §6.*
 
 ## 4.4 The unique success case: $`F = 60714`$
 
@@ -134,13 +134,13 @@ This lifting structure is explicit, and its generalization to $`d = 7, 8, 9, \ld
 Theorem 4.1 is the central cross-dimensional result at the $`d = 5 \to d = 6`$ boundary. It establishes:
 
 1. **Cross-dimensional universality is rare at this boundary.** Only $`1`$ of $`33`$ fixed points succeeds.
-2. **The distinction is structural, not incidental.** $`60714`$'s native rule has a specific algebraic structure — the split-lifting structure — that admits extension to $`d = 6`$. The other $`32`$ fixed points' native rules do not.
+2. **The distinction is structural, not incidental.** $`60714`$'s native rule has a specific algebraic structure - the split-lifting structure - that admits extension to $`d = 6`$. The other $`32`$ fixed points' native rules do not.
 3. **The mechanism generalizes.** The coefficient-preserving lifting that works at $`d = 5 \to d = 6`$ can be iterated to $`d = 6 \to d = 7 \to d = 8 \to \cdots`$ for $`60714`$. This is the content of §5.
 4. **The uniqueness of $`60714`$ is proven.** No other $`d = 5`$ universal full-variable fixed point extends to $`d = 6`$. Future results about $`60714`$'s cross-dimensional behavior rest on this uniqueness, which is established here by exhaustion.
 
-**Remark on Conjecture 1 (informal statement).** For a universal full-variable fixed point $`F`$ at native digit length $`d_F`$, define its *dimension-locking spectrum* as the set of $`d > d_F`$ at which $`F`$ is also a universal full-variable fixed point. Theorem 4.1 establishes that $`32`$ of $`33`$ fixed points at $`d = 5`$ have empty dimension-locking spectrum extension to $`d = 6`$, and that one — $`60714`$ — has $`d = 6`$ in its spectrum. Theorem 5.2 of the next section extends this: $`60714`$'s dimension-locking spectrum contains every $`d \geq 5`$. The other $`32`$ fixed points' spectra at $`d > 6`$ are addressed individually at the appendix level, but no systematic characterization of which fixed points have unbounded dimension-locking spectra is presently known beyond the case of $`60714`$.
+**Remark on Conjecture 1 (informal statement).** For a universal full-variable fixed point $`F`$ at native digit length $`d_F`$, define its *dimension-locking spectrum* as the set of $`d > d_F`$ at which $`F`$ is also a universal full-variable fixed point. Theorem 4.1 establishes that $`32`$ of $`33`$ fixed points at $`d = 5`$ have empty dimension-locking spectrum extension to $`d = 6`$, and that one - $`60714`$ - has $`d = 6`$ in its spectrum. Theorem 5.2 of the next section extends this: $`60714`$'s dimension-locking spectrum contains every $`d \geq 5`$. The other $`32`$ fixed points' spectra at $`d > 6`$ are addressed individually at the appendix level, but no systematic characterization of which fixed points have unbounded dimension-locking spectra is presently known beyond the case of $`60714`$.
 
-A formal conjecture — that every full-variable fixed point with unbounded dimension-locking spectrum admits a coefficient-preserving lifting similar to $`60714`$'s — is stated as Conjecture 7.1.
+A formal conjecture - that every full-variable fixed point with unbounded dimension-locking spectrum admits a coefficient-preserving lifting similar to $`60714`$'s - is stated as Conjecture 7.1.
 
 ---
 

@@ -1,14 +1,14 @@
-# d7_audit — d=7 verification package for the Kaprekar-60714 paper
+# d7_audit - d=7 verification package for the Kaprekar-60714 paper
 
 This package runs four complementary jobs:
 
-- **Run A** (`audit_60714_d7.py`) — Quick (~3 sec) audit of 60714's coefficient-preserving lifting at d=7 (odd ladder). Confirms basin density, escape-class size, max reaching time. Empirically validates Theorem 5.2 at d=7.
+- **Run A** (`audit_60714_d7.py`) - Quick (~3 sec) audit of 60714's coefficient-preserving lifting at d=7 (odd ladder). Confirms basin density, escape-class size, max reaching time. Empirically validates Theorem 5.2 at d=7.
 
-- **Run A2** (`audit_60714_d8.py`) — Quick (~2 sec) audit at d=8 (even ladder). Same scope as Run A but along the complementary ladder. Gives basin/escape data at d=8 for ladder-decay analysis.
+- **Run A2** (`audit_60714_d8.py`) - Quick (~2 sec) audit at d=8 (even ladder). Same scope as Run A but along the complementary ladder. Gives basin/escape data at d=8 for ladder-decay analysis.
 
-- **Run B** (`classify_d7_full.py`) — Sound exhaustive enumeration over all 9,344,160 sv=7 rules to find every universal full-variable fixed point at d=7. Closes the gap that Appendix D currently labels "non-exhaustive."
+- **Run B** (`classify_d7_full.py`) - Sound exhaustive enumeration over all 9,344,160 sv=7 rules to find every universal full-variable fixed point at d=7. Closes the gap that Appendix D currently labels "non-exhaustive."
 
-- **Run C** (`d7_outcome_verifier.py`) — For each of the 53 two-zero d=6 universal fps (Appendix A.4.3), enumerates all sv=7 rules that fix it, computes exact basin, and classifies TRANS / NEAR / LOCK at d=7.
+- **Run C** (`d7_outcome_verifier.py`) - For each of the 53 two-zero d=6 universal fps (Appendix A.4.3), enumerates all sv=7 rules that fix it, computes exact basin, and classifies TRANS / NEAR / LOCK at d=7.
 
 ## Setup
 
@@ -75,15 +75,15 @@ All four classifications match expectations. The exact best-basin numbers are in
 
 ## TRANS / NEAR / LOCK thresholds
 
-- **TRANS**: best basin ≥ 0.99 — universal modulo small escape class
-- **NEAR**: best basin in [0.95, 0.99) — near-universal with substantial competing attractor
-- **LOCK**: best basin < 0.95 — substantially sub-universal, dimension-locked
+- **TRANS**: best basin ≥ 0.99 - universal modulo small escape class
+- **NEAR**: best basin in [0.95, 0.99) - near-universal with substantial competing attractor
+- **LOCK**: best basin < 0.95 - substantially sub-universal, dimension-locked
 
 These thresholds match the empirical groupings used in the paper.
 
 ## Architecture
 
-`kaprekar_core.py` — shared infrastructure. Numba-accelerated `step_encoded` (one K iteration on encoded multisets), pure-Python `trace_python` (used by audit_60714_d7), full-variable rule enumerator, cycle-signature computation, 60714 ladder rule construction.
+`kaprekar_core.py` - shared infrastructure. Numba-accelerated `step_encoded` (one K iteration on encoded multisets), pure-Python `trace_python` (used by audit_60714_d7), full-variable rule enumerator, cycle-signature computation, 60714 ladder rule construction.
 
 The performance trick in Runs B and C is **multiset memoization**: every admissible multiset is encoded as a base-10 int64, and a flat 10^7-slot lookup table maps encoded multisets to compact admissible indices. Within each rule's basin computation, the fate of each multiset visited is cached, so repeated traces collapse into a single connected-components walk. Combined with Numba JIT, this gives ~0.03 ms per rule on average for Run B (early-out on non-universal rules) and a few milliseconds per F-fixing rule for Run C.
 

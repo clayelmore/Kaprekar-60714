@@ -12,7 +12,7 @@ The native rule of $`6174`$ at $`d_F = 4`$ is the classical Kaprekar rule $`K_0`
 
 When we pad $`6174`$ to $`d = 8`$, the sorted-descending form becomes $`(7, 6, 4, 1, 0, 0, 0, 0)`$. The four zero positions (indices $`4, 5, 6, 7`$) become the "absorbing" positions for coefficient-preserving lifting: new coefficients at these positions multiply zero digits and do not affect $`K(F) = F`$.
 
-**Coefficient-preserving lifting at $`d = 8`$.** A rule $`K`$ at $`d = 8`$ with coefficient vector $`c = (c_0, c_1, c_2, c_3, c_4, c_5, c_6, c_7)`$ is a coefficient-preserving lifting of $`K_0`$ if $`c_i = c_i^{(4)}`$ for $`i \in \{0, 1, 2, 3\}`$ — that is, if the first four coefficients are exactly $`(999, 90, -90, -999)`$. By Proposition 5.1, any such rule satisfies $`K(6174_{(8)}) = 6174`$.
+**Coefficient-preserving lifting at $`d = 8`$.** A rule $`K`$ at $`d = 8`$ with coefficient vector $`c = (c_0, c_1, c_2, c_3, c_4, c_5, c_6, c_7)`$ is a coefficient-preserving lifting of $`K_0`$ if $`c_i = c_i^{(4)}`$ for $`i \in \{0, 1, 2, 3\}`$ - that is, if the first four coefficients are exactly $`(999, 90, -90, -999)`$. By Proposition 5.1, any such rule satisfies $`K(6174_{(8)}) = 6174`$.
 
 Given the native constraint $`c_i = c_i^{(4)}`$ at positions $`0, 1, 2, 3`$, the permutations $`\pi`$ and $`\sigma`$ are forced at those positions: $`\pi_0 = 3, \sigma_0 = 0`$, $`\pi_1 = 2, \sigma_1 = 1`$, $`\pi_2 = 1, \sigma_2 = 2`$, $`\pi_3 = 0, \sigma_3 = 3`$. The remaining positions $`4, 5, 6, 7`$ are freely assignable, subject to:
 
@@ -59,13 +59,13 @@ There are exactly $`\binom{10}{2} = 45`$ such digit pairs $`(X, Y)`$ with $`X > 
 
 **Complete list of escape multisets at $`d = 8`$** (listed as sorted-descending tuples):
 
-$`(1, 1, 1, 1, 0, 0, 0, 0), \; (2, 2, 2, 2, 0, 0, 0, 0), \; \ldots, \; (9, 9, 9, 9, 0, 0, 0, 0)`$ — the $`9`$ multisets with $`Y = 0`$.
+$`(1, 1, 1, 1, 0, 0, 0, 0), \; (2, 2, 2, 2, 0, 0, 0, 0), \; \ldots, \; (9, 9, 9, 9, 0, 0, 0, 0)`$ - the $`9`$ multisets with $`Y = 0`$.
 
-$`(2, 2, 2, 2, 1, 1, 1, 1), \; (3, 3, 3, 3, 1, 1, 1, 1), \; \ldots, \; (9, 9, 9, 9, 1, 1, 1, 1)`$ — the $`8`$ multisets with $`Y = 1`$.
+$`(2, 2, 2, 2, 1, 1, 1, 1), \; (3, 3, 3, 3, 1, 1, 1, 1), \; \ldots, \; (9, 9, 9, 9, 1, 1, 1, 1)`$ - the $`8`$ multisets with $`Y = 1`$.
 
 $`\vdots`$
 
-$`(9, 9, 9, 9, 8, 8, 8, 8)`$ — the $`1`$ multiset with $`Y = 8`$.
+$`(9, 9, 9, 9, 8, 8, 8, 8)`$ - the $`1`$ multiset with $`Y = 8`$.
 
 **Total: $`9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 45`$ multisets.**
 
@@ -78,7 +78,7 @@ $$= |0 \cdot X + 0 \cdot Y| = 0.$$
 
 The first four coefficients sum to $`0`$ (since $`K_0`$ has sum-zero structure), and the last four coefficients sum to $`0`$ (by the coefficient-preserving lifting construction). When the input has only two distinct values, the rule's action collapses algebraically to zero.
 
-This is not a feature of the specific best lifting — it is a structural consequence of sum-zero constraints on coefficient-preserving liftings. Every coefficient-preserving lifting at $`d = 8`$ maps every four-of-a-kind-paired multiset to $`0`$.
+This is not a feature of the specific best lifting - it is a structural consequence of sum-zero constraints on coefficient-preserving liftings. Every coefficient-preserving lifting at $`d = 8`$ maps every four-of-a-kind-paired multiset to $`0`$.
 
 ## E.2.3 At $`d = 9`$
 

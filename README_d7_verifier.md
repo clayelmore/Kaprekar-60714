@@ -1,6 +1,6 @@
 # d7 Outcome Verifier
 
-> **Status (April 28, 2026):** Run C is complete. All 53 two-zero d=6 fps were verified at d=7; results are recorded in `d7_verified_outcomes.json` and tabulated in Appendix D of the paper. This document is preserved as the methodology specification — the "what / how / why" for the verifier — written before the run; the planning notes about pre-Run-C confirmed counts and unverified buckets reflect that planning state.
+> **Status (April 28, 2026):** Run C is complete. All 53 two-zero d=6 fps were verified at d=7; results are recorded in `d7_verified_outcomes.json` and tabulated in Appendix D of the paper. This document is preserved as the methodology specification - the "what / how / why" for the verifier - written before the run; the planning notes about pre-Run-C confirmed counts and unverified buckets reflect that planning state.
 
 Purpose: determine the exact d=7 transcendence outcome (TRANS / NEAR / LOCK) for every two-zero d=6 universal sv=6 fixed point.
 
@@ -8,14 +8,14 @@ Purpose: determine the exact d=7 transcendence outcome (TRANS / NEAR / LOCK) for
 
 For each of the 53 two-zero d=6 universal fps, the script:
 
-1. **Enumerates every valid sv=7 rule** — all (pi, sigma) permutation pairs at d=7 such that K(F_padded) = F and the coefficient vector has no zero entries. Uses an optimized backtracking enumerator that finds all valid rules in well under a second per fp (vs. minutes for brute-force enumeration).
+1. **Enumerates every valid sv=7 rule** - all (pi, sigma) permutation pairs at d=7 such that K(F_padded) = F and the coefficient vector has no zero entries. Uses an optimized backtracking enumerator that finds all valid rules in well under a second per fp (vs. minutes for brute-force enumeration).
 
-2. **Computes the exact basin fraction** for every valid rule — no sampling. Uses multiset-memoization: trace every non-repdigit multiset (~11,430 of them at d=7) to its fate, then weight-aggregate. This gives the true basin fraction to full precision, across all 9,999,990 non-repdigit 7-digit inputs.
+2. **Computes the exact basin fraction** for every valid rule - no sampling. Uses multiset-memoization: trace every non-repdigit multiset (~11,430 of them at d=7) to its fate, then weight-aggregate. This gives the true basin fraction to full precision, across all 9,999,990 non-repdigit 7-digit inputs.
 
 3. **Classifies the fp** based on the best basin observed:
    - **TRANS**: at least one rule achieves basin ≥ 0.99 (universal modulo quasi-repdigit escapes)
-   - **NEAR**: best basin in [0.95, 0.99) — near-universal with a small competing attractor
-   - **LOCK**: best basin < 0.95 — substantially sub-universal, dimension-locked
+   - **NEAR**: best basin in [0.95, 0.99) - near-universal with a small competing attractor
+   - **LOCK**: best basin < 0.95 - substantially sub-universal, dimension-locked
 
 These thresholds match the paper's empirical groupings.
 
@@ -39,9 +39,9 @@ The script saves progress incrementally to `d7_verified_partial.json` after ever
 
 ## Outputs
 
-- **`d7_verified_outcomes.json`** — complete per-fp data (best basin, best rule coefs, all statistics)
-- **`d7_summary.txt`** — one-line-per-fp summary
-- **`d7_classifier_analysis.txt`** — cross-tab of cycle-length signatures vs verified outcomes, testing the partial classifier we identified
+- **`d7_verified_outcomes.json`** - complete per-fp data (best basin, best rule coefs, all statistics)
+- **`d7_summary.txt`** - one-line-per-fp summary
+- **`d7_classifier_analysis.txt`** - cross-tab of cycle-length signatures vs verified outcomes, testing the partial classifier we identified
 
 ## Pre-check
 
@@ -61,7 +61,7 @@ No arguments, no flags. Writes everything to the current directory. Progress pri
 
 After the run completes, we'll have:
 
-1. **Verified outcomes for all 53 two-zero d=6 fps** — eliminating the current gap where only 27 are individually confirmed and 25 are inferred from paper totals.
+1. **Verified outcomes for all 53 two-zero d=6 fps** - eliminating the current gap where only 27 are individually confirmed and 25 are inferred from paper totals.
 
 2. **Full picture of the long-cycle bucket.** The partial classifier says "cycle signature with all lengths ≤ 3 at d=6 ⇒ LOCK" (verified 12-for-12). The remaining 40 fps (four signatures: (2,4), (6,), (3,4), plus any surprise others) split TRANS/LOCK. We'll see the exact split and can then hunt within it for second-order discriminators that weren't visible in the noisy 27-fp sample.
 

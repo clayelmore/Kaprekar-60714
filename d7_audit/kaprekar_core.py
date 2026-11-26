@@ -234,7 +234,7 @@ def enumerate_full_variable_rules(d):
     """
     for pi in permutations(range(d)):
         for sigma in permutations(range(d)):
-            # Full-variable check (Proposition 2.1 — sigma o pi^{-1} is a derangement)
+            # Full-variable check (Proposition 2.1 - sigma o pi^{-1} is a derangement)
             ok = True
             for i in range(d):
                 if pi[i] == sigma[i]:
@@ -246,7 +246,7 @@ def enumerate_full_variable_rules(d):
 
 
 def coefs_array_from_perms_numba(pi, sigma, d):
-    """int64 numpy coefs vector for (pi, sigma) — for Numba consumption."""
+    """int64 numpy coefs vector for (pi, sigma) - for Numba consumption."""
     arr = np.empty(d, dtype=np.int64)
     for i in range(d):
         arr[i] = 10 ** pi[i] - 10 ** sigma[i]
@@ -254,7 +254,7 @@ def coefs_array_from_perms_numba(pi, sigma, d):
 
 
 # ---------------------------------------------------------------------------
-# Cycle signature of (pi, sigma) — for paper §6 and Appendix D analysis
+# Cycle signature of (pi, sigma) - for paper §6 and Appendix D analysis
 # ---------------------------------------------------------------------------
 
 def cycle_signature(pi, sigma):

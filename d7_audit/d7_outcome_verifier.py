@@ -26,10 +26,10 @@ Validated against four fps with known outcomes:
   - F = 607140 -> TRANS (best basin 0.999370)
 
 Output:
-  - d7_verified_outcomes.json  — complete per-fp data
-  - d7_summary.txt             — one-line-per-fp summary
-  - d7_classifier_analysis.txt — cycle-signature cross-tab (paper §6 invariant)
-  - d7_verified_partial.json   — checkpoint after every fp (crash-resume)
+  - d7_verified_outcomes.json - complete per-fp data
+  - d7_summary.txt - one-line-per-fp summary
+  - d7_classifier_analysis.txt - cycle-signature cross-tab (paper §6 invariant)
+  - d7_verified_partial.json - checkpoint after every fp (crash-resume)
 
 Runtime: estimated 1-3 hours on a modern laptop (52 fps; per-fp cost
 varies from a few seconds to several minutes depending on # valid rules).
@@ -125,7 +125,7 @@ def basin_for_rule(coefs, d, admissibles_enc, n_adm,
                    enc_to_idx, idx_table_size, F_value, max_steps):
     """Compute the exact basin fraction of F under the given rule.
 
-    Returns: (n_reach_F, n_total) — fraction = n_reach_F / n_total.
+    Returns: (n_reach_F, n_total) - fraction = n_reach_F / n_total.
     Uses multiset memoization for speed.
     """
     fate = np.full(n_adm, -2, dtype=np.int64)
@@ -273,7 +273,7 @@ def main():
         target_fps = list(TWO_ZERO_D6_FPS)
 
     print("=" * 60)
-    print(f"d7_outcome_verifier.py — Run C")
+    print(f"d7_outcome_verifier.py - Run C")
     print(f"  Verifying outcomes for {len(target_fps)} d=6 fps at d=7")
     print(f"  TRANS threshold: basin >= {TRANS_THRESHOLD}")
     print(f"  NEAR threshold:  {NEAR_THRESHOLD} <= basin < {TRANS_THRESHOLD}")
@@ -384,7 +384,7 @@ def finalize(results, elapsed):
 
     # Summary text
     with open(SUMMARY_PATH, 'w') as f:
-        f.write(f"# d7_summary.txt — d=7 outcome for two-zero d=6 fps\n")
+        f.write(f"# d7_summary.txt - d=7 outcome for two-zero d=6 fps\n")
         f.write(f"# Total: {len(results)} fps verified\n")
         f.write(f"# TRANS (basin >= {TRANS_THRESHOLD}): {outcome_counts.get('TRANS', 0)}\n")
         f.write(f"# NEAR  ({NEAR_THRESHOLD} <= basin < {TRANS_THRESHOLD}): {outcome_counts.get('NEAR', 0)}\n")

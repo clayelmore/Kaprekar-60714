@@ -1,4 +1,4 @@
-# d7_summary.txt — d=7 outcome for two-zero d=6 fps
+# d7_summary.txt - d=7 outcome for two-zero d=6 fps
 # Total: 53 fps verified
 # TRANS (basin >= 0.99): 43
 # NEAR  (0.95 <= basin < 0.99): 2

@@ -89,7 +89,7 @@ def reaching_time(ms_desc, coefs, d, budget=20):
         if in_Td(nxt):
             return t
         if nxt == cur:
-            return -1  # fixed point not in T_d — orbit stuck
+            return -1  # fixed point not in T_d - orbit stuck
         cur = nxt
     return -1
 

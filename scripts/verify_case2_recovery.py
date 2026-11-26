@@ -12,7 +12,7 @@ What this verifies:
   For every d in the tested range, every Case 2 input n at d (i.e., a sorted-
   descending multiset of the form (v, ..., v, w, 0, 0) with d-3 copies of v,
   one digit w != v, and two zeros) reaches 60714. Moreover, after at most 2
-  iterations of K^(d), the state has an admissible-at-(d-2) projection — at
+  iterations of K^(d), the state has an admissible-at-(d-2) projection - at
   which point the inductive hypothesis of Theorem 5.2 takes over.
 
 The script reports:

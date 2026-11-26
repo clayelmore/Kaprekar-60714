@@ -16,7 +16,7 @@ The script is exhaustive at d ∈ {18, 20} and uses random sampling at higher d
 (where exhaustive enumeration becomes impractical on commodity hardware).
 
 Note: at low even d ∈ {8, 10, 12, 14, 16}, one-step closure does NOT hold
-universally — those cases are handled by Proposition 5.2's finite-state
+universally - those cases are handled by Proposition 5.2's finite-state
 enumeration (see paper Table 5.1, max reaching time ≤ 8). The threshold
 d ≥ 18 for one-step closure is established in Lemma C.4 via the cliff-sum
 bound and block-structure argument.
@@ -106,7 +106,7 @@ def verify_exhaustive(d):
 
         val, next_ms = step(ms_desc, d, coefs)
         if val == 0:
-            # Falls into 0 — vacuously in T_d (zero has only zero digits)
+            # Falls into 0 - vacuously in T_d (zero has only zero digits)
             n_one_step += 1
             continue
         if in_T_d(next_ms):
@@ -192,7 +192,7 @@ def verify_sampled(d, sample_size, seed=42):
 
     if n_two_plus == 0:
         print(f"✓ No counterexamples found in {n_tested:,} samples at d={d}.")
-        print(f"  (Sampled, not exhaustive — for d > 20, full enumeration is impractical.)")
+        print(f"  (Sampled, not exhaustive - for d > 20, full enumeration is impractical.)")
     else:
         print(f"✗ Sampled counterexamples found: {n_two_plus} of {n_tested:,}.")
         for ms, val, nxt in two_plus_examples:

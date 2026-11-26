@@ -1,7 +1,7 @@
 # Appendix F. Strict-$`d`$ Anchors and the $`\{7, 6, 4, 1\}`$-Thread Tower
 
 *Status: Preliminary working notes added April 29, 2026 (revised April 30, 2026
-to correct §F.5 — see "Note (added in revision)" below). The classifications and
+to correct §F.5 - see "Note (added in revision)" below). The classifications and
 counts in §F.3 and §F.4 are computational findings established by two
 independent enumerations: the original `universality_scan_v3.py` run and a
 fresh from-scratch verifier (`verifier_v2.py`, fp-first traversal with direct
@@ -26,13 +26,13 @@ structurally characterized escape class of §5 (Lemma 5.1, Lemma 5.2). The
 present appendix makes this convention explicit and uses the abbreviation
 **F-or-0 universality** when the distinction matters.
 
-This appendix introduces a strengthened criterion — *strict at $`d`$* — that
+This appendix introduces a strengthened criterion - *strict at $`d`$* - that
 distinguishes rules whose dynamics genuinely involve all $`d`$ coefficient
 positions on $`F`$ from rules that are zero-sum-pair extensions of
 lower-dimensional rules. Under the strict criterion, the cross-dimensional
 structure of the $`\{7, 6, 4, 1\}`$-thread is substantially richer than
 reported in the main paper, and the classical Kaprekar constants $`6174`$ and
-$`1746`$ acquire strict-anchor status at $`d = 7`$ — a finding consistent
+$`1746`$ acquire strict-anchor status at $`d = 7`$ - a finding consistent
 with, but sharper than, the cross-dimensional pattern of $`6174`$ described in
 §6.
 
@@ -121,7 +121,7 @@ fingerprint* of $`6174`$ (universal at $`d = 4`$ and near-universal at
 $`d \geq 7`$, obstructed at $`d = 5, 6`$), but stated in terms of universality
 rather than strict anchorhood. The strict-$`d`$ criterion sharpens the
 observation: $`6174`$'s reappearance at $`d = 7`$ is not a quirk of a
-particular lifting family but a structural feature — $`6174`$ is a
+particular lifting family but a structural feature - $`6174`$ is a
 strict-$`d`$ anchor at $`d = 7`$ in the same sense it is at $`d = 4`$.
 
 ***Observation F.3*** *(strict-anchor status of $`60714`$ and $`60417`$ at
@@ -140,7 +140,7 @@ zero positions of the sorted-descending form
 $`\mathrm{sort\_desc}(60714) = (7, 6, 4, 1, 0, 0, 0)`$. Both positions hold
 digit $`0`$, so the pair contributes zero on $`F`$, and the fixed-point
 equation is reproduced by the five-coefficient sub-rule at indices
-$`\{0, 1, 2, 3, 4\}`$ — which is precisely the $`d = 5`$ rule.
+$`\{0, 1, 2, 3, 4\}`$ - which is precisely the $`d = 5`$ rule.
 
 This observation is consistent with the main paper's Theorem 3: $`60714`$ is
 a universal full-variable fp at every $`d \geq 5`$. The strengthening is that
@@ -150,7 +150,7 @@ $`d`$-dimensional dynamics of $`60714`$ live at $`d = 5`$ and $`d = 6`$.
 ## F.5 Pure-duplication extensions
 
 The main paper considers only zero-padded extensions of multisets across
-$`d`$. We tested the alternative — *pure-duplication extension*, where the
+$`d`$. We tested the alternative - *pure-duplication extension*, where the
 digits added at $`d > 4`$ are drawn from the classical core itself (e.g.,
 $`\{7, 7, 6, 4, 1\}`$ at $`d = 5`$).
 
@@ -161,24 +161,24 @@ drawn from $`M`$ has digit sum $`18 + |S| \cdot \bar{m}`$ where $`\bar{m}`$
 ranges over averages of multisets of $`M`$. No such sum is divisible by $`9`$
 for $`|S| \in \{1, 2\}`$; consequently no universal fp exists in these
 multisets at $`d = 5, 6`$. For $`d = 7`$, four pure-duplication multisets are
-admissible by digit sum — namely
+admissible by digit sum - namely
 $`\{7,7,7,6,4,4,1\}`$, $`\{7,7,6,4,1,1,1\}`$,
 $`\{7,6,6,6,6,4,1\}`$, $`\{7,6,4,4,4,1,1\}`$
-— and exhaustive enumeration over all sv$`\geq 2`$ rules at $`d = 7`$
+ - and exhaustive enumeration over all sv$`\geq 2`$ rules at $`d = 7`$
 produces zero rule-fp pairs satisfying $`K(F) = F`$ in any of the four. The
 same result holds for $`\{8, 5, 3, 2\}`$ at $`d = 5, 6, 7`$.
 
 ***Note (added in revision).*** A subsequent investigation extended this
 inquiry to $`d = 8`$. At $`d = 8`$ in the $`\{7, 6, 4, 1\}`$-thread, three of
-the four admissible pure-duplication multisets — $`\{7,7,7,7,6,6,4,1\}`$,
-$`\{7,6,6,4,4,4,4,1\}`$, $`\{7,6,6,4,1,1,1,1\}`$ — remain empty of universal
+the four admissible pure-duplication multisets - $`\{7,7,7,7,6,6,4,1\}`$,
+$`\{7,6,6,4,4,4,4,1\}`$, $`\{7,6,6,4,1,1,1,1\}`$ - remain empty of universal
 sv$`= 8`$ fps, but the *symmetric*-duplication multiset
 $`\{7,7,6,6,4,4,1,1\}`$ (each core digit doubled exactly twice) admits
 universal full-variable rules. Pure-duplication extensions are therefore not
 uniformly empty across all $`d > 4`$, and zero-padding is not the unique
 viable extension mechanism. The pattern by which symmetric duplications
-break the empty-pure-duplication property at $`d = 8`$ — and whether this
-extends to higher even $`d`$ or to the $`\{8, 5, 3, 2\}`$-thread — is open.
+break the empty-pure-duplication property at $`d = 8`$ - and whether this
+extends to higher even $`d`$ or to the $`\{8, 5, 3, 2\}`$-thread - is open.
 
 The empirical pattern at $`d \in \{5, 6, 7\}`$ remains: zero-padding is the
 viable extension mechanism for the strict-$`d`$ tower at those digit lengths.
@@ -205,7 +205,7 @@ This appendix reports observations; it does not settle them.
    not accommodate. A precise statement and proof are open.
 
 3. *Strict-anchor count at $`d = 8, 9, \ldots`$?* The $`d = 7`$ count is
-   $`11`$ — substantially larger than the $`d = 6`$ count of $`4`$. A
+   $`11`$ - substantially larger than the $`d = 6`$ count of $`4`$. A
    subsequent $`d = 8`$ scan in the canonical zero-padded multiset
    $`\{7, 6, 4, 1, 0^4\}`$ produced $`89`$ strict anchors, and the symmetric
    pure-duplication multiset $`\{7, 7, 6, 6, 4, 4, 1, 1\}`$ produced $`465`$.
@@ -228,9 +228,9 @@ This appendix reports observations; it does not settle them.
    universal at every $`d \geq 5`$. Under Definition F.2 of this appendix,
    $`60714`$ is strict-universal at $`d = 5, 6`$ only; the lifts at
    $`d \geq 7`$ are non-strict. The main paper's theorem remains correct
-   under its own (sv$`=d`$, F-or-0) framework. The reframing question —
+   under its own (sv$`=d`$, F-or-0) framework. The reframing question -
    whether the central object of the theory is the
-   (sv$`=d`$)-universal tower or the strict-$`d`$-universal tower — is not
+   (sv$`=d`$)-universal tower or the strict-$`d`$-universal tower - is not
    settled here.
 
 ## F.7 Reproducibility note

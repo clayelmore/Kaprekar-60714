@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-search_multiset_universals_fast.py — Faster variant using random Q sampling.
+search_multiset_universals_fast.py - Faster variant using random Q sampling.
 
 For d >= 8, the original search_multiset_universals.py becomes prohibitively
 slow because it enumerates all (P, Q) pairs per F (O(arrangements^2)). This
-version uses random Q sampling per F — fast but probabilistic.
+version uses random Q sampling per F - fast but probabilistic.
 
 For each F, we sample up to N random Q-arrangements. For each, check if P = Q+F
 is also a valid arrangement of the multiset. If yes, recover the rule and test

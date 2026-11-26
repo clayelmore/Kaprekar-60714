@@ -68,7 +68,7 @@ $$\pi_{d} = \begin{cases} d + 1 & \text{(odd ladder)} \\ d & \text{(even ladder)
 
 $$\sigma_{d} = \begin{cases} d & \text{(odd ladder)} \\ d + 1 & \text{(even ladder)} \end{cases}, \quad \sigma_{d+1} = \begin{cases} d + 1 & \text{(odd ladder)} \\ d & \text{(even ladder)} \end{cases}.$$
 
-In both cases, the two appended coefficients $`c_d = 10^{\pi_d} - 10^{\sigma_d}`$ and $`c_{d+1} = 10^{\pi_{d+1}} - 10^{\sigma_{d+1}}`$ satisfy $`c_d + c_{d+1} = 0`$ — they form a **zero-sum pair**. The only difference between ladders is the sign convention on the new pair.
+In both cases, the two appended coefficients $`c_d = 10^{\pi_d} - 10^{\sigma_d}`$ and $`c_{d+1} = 10^{\pi_{d+1}} - 10^{\sigma_{d+1}}`$ satisfy $`c_d + c_{d+1} = 0`$ - they form a **zero-sum pair**. The only difference between ladders is the sign convention on the new pair.
 
 ## Table B.3. Demonstration at $`d = 100`$
 
@@ -101,7 +101,7 @@ $$K(F) = | (9900)(7) + (9)(6) + (90)(4) + (-9000)(1) | = |\,69300 + 54 + 360 - 9
 
 This is the same arithmetic at every $`d \geq 5`$. **The coefficient-preserving lifting makes the fixed-point equation trivial at every $`d`$** because the structural content of the lifting lives entirely in the zero-digit positions, which absorb the new coefficients without affecting $`K(F)`$.
 
-The nontrivial content of Theorem 3 is not that $`K(F) = F`$ at every $`d`$ — that is automatic from the construction. The nontrivial content is that every admissible orbit outside the escape class $`E_d`$ at every $`d \geq 5`$ reaches $`F`$, which is the work done by Lemmas 5.1 and 5.2.
+The nontrivial content of Theorem 3 is not that $`K(F) = F`$ at every $`d`$ - that is automatic from the construction. The nontrivial content is that every admissible orbit outside the escape class $`E_d`$ at every $`d \geq 5`$ reaches $`F`$, which is the work done by Lemmas 5.1 and 5.2.
 
 ---
 

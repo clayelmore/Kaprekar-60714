@@ -15,7 +15,7 @@ and extend them.*
 ## G.1 Purpose
 
 The original verifier in this paper tested universality against an
-$`S`$-restricted input basin — that is, the set of non-repdigit $`d`$-digit
+$`S`$-restricted input basin - that is, the set of non-repdigit $`d`$-digit
 multisets whose digits lie in the alphabet $`S = \{0, 1, 4, 6, 7\}`$. This
 restriction was inherited from the search infrastructure originally designed
 to *find* fixed points (whose digits naturally lie in $`S`$) but was
@@ -24,7 +24,7 @@ inadvertently applied to *test* universality.
 Classical Kaprekar universality, as the term is conventionally used in the
 literature on the digit-rearrangement function
 $`K(n) = \mathrm{sort\_desc}(n) - \mathrm{sort\_asc}(n)`$, requires the basin
-of $`K`$-iteration to include every non-repdigit $`d`$-digit input — that is,
+of $`K`$-iteration to include every non-repdigit $`d`$-digit input - that is,
 all multisets of digits drawn from $`\{0, 1, \ldots, 9\}`$ except repdigits.
 
 This appendix (a) clarifies the distinction, (b) re-verifies the paper's
@@ -97,12 +97,12 @@ sharing the same digit multiset and differing by a digit transposition. For
 example: $`16464717`$ and $`16446717`$; $`61771446`$ and $`61477146`$;
 $`66177144`$ and $`66147714`$. The pattern is consistent with the genuinely
 $`S`$-only universals being structurally related rather than scattered. Their
-basin coverage in classical scope ranges from $`99.1\%`$ to $`99.9\%`$ — the
+basin coverage in classical scope ranges from $`99.1\%`$ to $`99.9\%`$ - the
 missed inputs converge to alternative fixed points whose digit multisets lie
 outside $`S`$ (typically containing digits $`2`$, $`3`$, $`5`$, $`8`$, or $`9`$).
 
-The principal result of the paper — that $`60714`$ admits a coefficient-
-preserving lifting universal on $`A_d \setminus E_d`$ at every $`d \geq 5`$ —
+The principal result of the paper - that $`60714`$ admits a coefficient-
+preserving lifting universal on $`A_d \setminus E_d`$ at every $`d \geq 5`$ -
 is unchanged under the classical-scope correction. All $`60714`$ ladder
 universals are classical-universal at every tested
 $`d \in \{5, 6, 7, 8, 9, 10, 11\}`$.
@@ -189,7 +189,7 @@ filtered-out candidates.
 Among the $`5`$ universals discovered:
 
 - $`1`$ is in the high-density (density $`= 1.0`$) bucket of $`1{,}536`$
-  candidates: $`0`$ of $`1{,}536`$ universals — i.e., the high-confidence
+  candidates: $`0`$ of $`1{,}536`$ universals - i.e., the high-confidence
   prediction returned $`0`$ universals.
 - $`1`$ is in the medium-confidence bucket of $`2{,}220`$ candidates:
   $`1`$ of $`2{,}220 = 0.045\%`$.
@@ -222,18 +222,18 @@ content for individual $`F`$ values requires further work.
 
 Three scripts were developed for the corrected verification:
 
-1. `audit_full_basin.py` — given a single $`(F, \pi^{-1}, \sigma^{-1})`$,
+1. `audit_full_basin.py` - given a single $`(F, \pi^{-1}, \sigma^{-1})`$,
    iterates $`K`$ from every non-repdigit $`d`$-digit multiset and reports
    whether $`F`$ is a classical universal. Caching makes this fast: at
    $`d = 16`$, the full basin of $`2{,}042{,}965`$ multisets is processed in
    approximately $`13`$ seconds on a 2026-vintage laptop.
 
-2. `reverify_classical_all_rules.py` — given a JSON of $`(F, \mathrm{rule})`$
+2. `reverify_classical_all_rules.py` - given a JSON of $`(F, \mathrm{rule})`$
    pairs, classifies each $`F`$ as classical, genuinely $`S`$-only, or partial.
    For each $`F`$, all available strict rules are tested before declaring
    genuinely $`S`$-only.
 
-3. `verify_d16_familyD_classical.py` — corrected production verifier for new
+3. `verify_d16_familyD_classical.py` - corrected production verifier for new
    searches, using full-basin scope rather than $`S`$-restricted scope.
 
 The scripts are pure-stdlib Python, fully self-contained, and reproducible.

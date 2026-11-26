@@ -1,4 +1,4 @@
-# Pair-Symmetric Universal Construction — Theory & Rules
+# Pair-Symmetric Universal Construction - Theory & Rules
 
 **For the multiplicity chain {1,4,6,7}^m at d = 4m**
 
@@ -24,8 +24,8 @@ The map is $K_{\pi,\sigma}(n) = |\sum_{i=0}^{d-1} c_i \cdot s_i|$ where $s_i$ is
 - $\pi^{-1}(\{m,\ldots,2m-1\}) = A_6$ &nbsp;&nbsp;&nbsp;&nbsp; (the $m$ 6-digits go to $A_6$)
 - $\pi^{-1}(\{2m,\ldots,3m-1\}) = A_4$ &nbsp;&nbsp;&nbsp;&nbsp; (the $m$ 4-digits go to $A_4$)
 - $\pi^{-1}(\{3m,\ldots,4m-1\}) = A_1$ &nbsp;&nbsp;&nbsp;&nbsp; (the $m$ 1-digits go to $A_1$)
-- $\sigma^{-1}(\{0,\ldots,m-1\}) = A_1$ &nbsp;&nbsp;&nbsp;&nbsp; (the $m$ 7-digits go to $A_1$ in σ — pair-swap with 1s)
-- $\sigma^{-1}(\{m,\ldots,2m-1\}) = A_4$ &nbsp;&nbsp;&nbsp;&nbsp; (the $m$ 6-digits go to $A_4$ — pair-swap with 4s)
+- $\sigma^{-1}(\{0,\ldots,m-1\}) = A_1$ &nbsp;&nbsp;&nbsp;&nbsp; (the $m$ 7-digits go to $A_1$ in σ - pair-swap with 1s)
+- $\sigma^{-1}(\{m,\ldots,2m-1\}) = A_4$ &nbsp;&nbsp;&nbsp;&nbsp; (the $m$ 6-digits go to $A_4$ - pair-swap with 4s)
 - $\sigma^{-1}(\{2m,\ldots,3m-1\}) = A_6$
 - $\sigma^{-1}(\{3m,\ldots,4m-1\}) = A_7$
 
@@ -46,7 +46,7 @@ $$K = 7 S_7 + 6 S_6 + 4(-S_6) + 1(-S_7) = 6 S_7 + 2 S_6.$$
 
 ### 1.4 Fixed-point and universality conditions
 
-For $F = K(\mathbf{s})$ to satisfy $F = K(F)$ (i.e., be a fixed point under its own rule), we need only that $F$ has the digit multiset $M_m$ — because the sorted-descending form of any arrangement of $M_m$ is the canonical $\mathbf{s}$, and the rule operates only on the sort.
+For $F = K(\mathbf{s})$ to satisfy $F = K(F)$ (i.e., be a fixed point under its own rule), we need only that $F$ has the digit multiset $M_m$ - because the sorted-descending form of any arrangement of $M_m$ is the canonical $\mathbf{s}$, and the rule operates only on the sort.
 
 So **every pair-symmetric rule whose K-output has the right multiset is automatically a fixed-point rule for that output F**.
 
@@ -63,7 +63,7 @@ The deeper question is whether the rule's basin of attraction (over all $d$-digi
 | 3 | 12 | exhaustive | many | 42 |
 | 4 | 16 | 22,000,000 (≈35% of 63M) | 1,300+ | **341 verified** |
 | **5** | **20** | 200,000,000 (≈1.7% of 11.7B) | (running) | **≥ 1 verified** (F = 17461746146174617746) |
-| 6 | 24 | — | — | (this campaign — see §3) |
+| 6 | 24 | - | - | (this campaign - see §3) |
 
 The conjecture holds non-trivially at $m = 4$ and $m = 5$.
 
@@ -79,7 +79,7 @@ This is exactly Kaprekar's constant. The reverse partition $A_7 = \{3\}, \ldots,
 
 ---
 
-## 2. Rules — Explicit Examples
+## 2. Rules - Explicit Examples
 
 ### 2.1 The 99.89% near-universal at d=16 (the discovery)
 
@@ -123,7 +123,7 @@ Verifying the pair-symmetric structure:
 - π's 1-block positions: {0, 10, 4, 1} (last 4 of π_inv) ← matches σ's 7-block ✓
 - σ's 1-block positions: {15, 9, 12, 3} (last 4 of σ_inv) ← matches π's 7-block ✓
 
-The pair-swap (7 ↔ 1) is exact. Similarly for (6 ↔ 4) — the middle blocks are swapped.
+The pair-swap (7 ↔ 1) is exact. Similarly for (6 ↔ 4) - the middle blocks are swapped.
 
 ### 2.3 The d=20 m=5 classical universal
 
@@ -134,7 +134,7 @@ The specific (π_inv, σ_inv) will be saved in `d20_v1_DEEP.json` when the 200M-
 **Structural observations:**
 - Starts with 1 ✓ (cross-d pattern: lead ∈ {1, 6})
 - Ends with 6 ✓ (cross-d pattern: tail ∈ {4, 6})
-- Contains "1746" at positions 0-3 AND 4-7 (**two non-overlapping copies** — the 6174/1746 substring enrichment from d=16 doubles at d=20)
+- Contains "1746" at positions 0-3 AND 4-7 (**two non-overlapping copies** - the 6174/1746 substring enrichment from d=16 doubles at d=20)
 
 ### 2.4 The 41 first-batch d=16 universals (sample)
 
@@ -185,7 +185,7 @@ At $d = 24, m = 6$: multiset $\{1,4,6,7\}^6$. Partition space: $\binom{24}{6,6,6
 | Total partitions | 96.5 billion |
 | Basin at d=24 (non-repdigit multisets) | ~45.4 million |
 | classify_rule cost per F | ~5x d=20 cost ≈ 150-300 sec |
-| Expected hits per million partitions | unknown — probably 10× lower than d=20 |
+| Expected hits per million partitions | unknown - probably 10× lower than d=20 |
 | Expected wall time for 100M sample run | ~10 hours on 1 core |
 
 ### 3.3 Concrete d=24 candidate F (structural prediction)
@@ -217,7 +217,7 @@ This would establish the conjecture rigorously. Computational verification at $m
 
 1. **Exact count formula**: How does the number of pair-symmetric universals scale with $m$?
    - $m=1$: 2, $m=2$: 481, $m=3$: 42, $m=4$: 341, $m=5$: ≥1
-   - The counts are non-monotone — what controls them?
+   - The counts are non-monotone - what controls them?
 
 2. **Other structural families**: At m=5 (d=20), pair-symmetric v1 produces 0 candidates in 30M but 1 universal in 200M. The other two pair-symmetric variants (v2, v3) and the 4-cycle/derangement variants produce 0 candidates entirely. Are there universals in OTHER structural families at higher m?
 

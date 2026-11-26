@@ -19,13 +19,13 @@ non-near-repdigit) digit multisets at d=7 and records:
   - sample trajectories
   - direct verification: K(60714 padded) = 60714
 
-This is "Run A" in the d7_audit package — fast (~3 seconds) and gives
+This is "Run A" in the d7_audit package - fast (~3 seconds) and gives
 empirical confirmation of Theorem 5.2 at d=7. Contrast with Run B
 (classify_d7_full.py), which is the much longer sound enumeration over
 ALL sv=7 rules.
 
 Output:
-  - audit_60714_d7.json — structured results
+  - audit_60714_d7.json - structured results
   - prints summary to stdout
 
 Usage:
@@ -61,7 +61,7 @@ def is_block_aligned_d7(ms_desc):
 
 def main():
     print("=" * 60)
-    print("audit_60714_d7.py — Run A")
+    print("audit_60714_d7.py - Run A")
     print("60714 odd-ladder lifted rule at d=7")
     print("=" * 60)
     print()
@@ -121,7 +121,7 @@ def main():
             print(f"      {ms}  fate={fate}  steps={n}")
     print()
 
-    # Step-1 escape class — predicted by Lemma 5.5
+    # Step-1 escape class - predicted by Lemma 5.5
     # |E_d^(1)| = C(10 + k - 1, k) - 10 with k = 1 + (d - d0)/2
     # d=7, d_0=5 => k = 1 + 1 = 2
     # |E_7^(1)| = C(11, 2) - 10 = 55 - 10 = 45
@@ -137,7 +137,7 @@ def main():
     if pred_E1 == actual_E1:
         print("  MATCH ✓")
     else:
-        print(f"  MISMATCH — investigate")
+        print(f"  MISMATCH - investigate")
     print()
 
     # All inputs reaching 0 (full escape class E_7) - those reaching 0 in any number of steps

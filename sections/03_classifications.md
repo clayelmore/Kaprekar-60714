@@ -8,7 +8,7 @@ This section presents the complete classification of universal full-variable fix
 
 ## 3.1 Method
 
-At each digit length $`d`$, we enumerate the full-variable rules — ordered pairs $`(\pi, \sigma) \in S_d \times S_d`$ with $`\pi_i \neq \sigma_i`$ for every $`i`$ (Proposition 2.1) — and for each such rule we check:
+At each digit length $`d`$, we enumerate the full-variable rules - ordered pairs $`(\pi, \sigma) \in S_d \times S_d`$ with $`\pi_i \neq \sigma_i`$ for every $`i`$ (Proposition 2.1) - and for each such rule we check:
 
 1. Does the rule have at least one fixed point $`F \in A_d`$?
 2. For each fixed point $`F`$, is the rule universal for $`F`$? That is, does every input $`n \in A_d`$ reach $`F`$ under iteration?
@@ -57,9 +57,9 @@ At $`d = 5`$, there are $`5{,}280`$ full-variable rules (Proposition 2.1, $`5! \
 
 **Proof.** Exhaustive enumeration of $`5{,}280`$ rules against $`1{,}902`$ admissible digit multisets ($`99{,}540`$ admissible padded five-digit strings). Full computation in Appendix A.3; the complete list of $`33`$ fixed points appears in Table 3.1 below.
 
-**Classical rule does not appear.** The classical rule $`K_0`$ at $`d = 5`$ has coefficient vector $`(9999, \, 990, \, 0, \, -990, \, -9999)`$ — the middle coefficient vanishes by the forced borrow chain at odd digit length (§1.1). $`K_0`$ at $`d = 5`$ has $`\mathrm{sv} = 4`$, not $`5`$; it is not in the full-variable classification. The observation that "the classical Kaprekar routine fails at $`d = 5`$" is, in our framing, the observation that the classical rule at $`d = 5`$ is not even in the full-variable space — there is no contradiction to the existence of $`33`$ universal attractors in that space.
+**Classical rule does not appear.** The classical rule $`K_0`$ at $`d = 5`$ has coefficient vector $`(9999, \, 990, \, 0, \, -990, \, -9999)`$ - the middle coefficient vanishes by the forced borrow chain at odd digit length (§1.1). $`K_0`$ at $`d = 5`$ has $`\mathrm{sv} = 4`$, not $`5`$; it is not in the full-variable classification. The observation that "the classical Kaprekar routine fails at $`d = 5`$" is, in our framing, the observation that the classical rule at $`d = 5`$ is not even in the full-variable space - there is no contradiction to the existence of $`33`$ universal attractors in that space.
 
-**Reverse-pair structure fails at odd $`d`$.** The classical rule is a specific "reverse-pair" rule ($`\sigma_i = \pi_{d-1-i}`$). At even $`d`$, reverse-pair rules can be full-variable; at odd $`d`$, they cannot — the middle position always satisfies $`\sigma_{(d-1)/2} = \pi_{(d-1)/2}`$, forcing $`\mathrm{sv} \leq d - 1`$. Consequently, all $`66`$ universal full-variable rules at $`d = 5`$ are *non-reverse-pair* — they have no mirror symmetry. This is a structural distinction from the classical case.
+**Reverse-pair structure fails at odd $`d`$.** The classical rule is a specific "reverse-pair" rule ($`\sigma_i = \pi_{d-1-i}`$). At even $`d`$, reverse-pair rules can be full-variable; at odd $`d`$, they cannot - the middle position always satisfies $`\sigma_{(d-1)/2} = \pi_{(d-1)/2}`$, forcing $`\mathrm{sv} \leq d - 1`$. Consequently, all $`66`$ universal full-variable rules at $`d = 5`$ are *non-reverse-pair* - they have no mirror symmetry. This is a structural distinction from the classical case.
 
 **Table 3.1.** *The $`33`$ universal full-variable fixed points at $`d = 5`$, grouped by digit multiset.*
 
@@ -78,15 +78,15 @@ At $`d = 5`$, there are $`5{,}280`$ full-variable rules (Proposition 2.1, $`5! \
 
 **Observation 3.2.** *The $`\{0, 1, 4, 6, 7\}`$ multiset produces exactly two universal fixed points at $`d = 5`$: $`60714`$ and $`60417`$. These are the multiset twins featured in §6. Despite identical digit content, their native rules differ in a specific structural invariant (developed in §6) that predicts their contrasting cross-dimensional behavior.*
 
-**Observation 3.3.** *The classical fixed points $`6174`$, $`1746`$, $`2538`$, $`5382`$ (from $`d = 4`$) do not appear at $`d = 5`$ even as fixed points of any full-variable rule — not merely as non-universal fixed points, but as non-fixed points. Exhaustive enumeration confirms: for each of these four integers padded to five digits, no full-variable rule at $`d = 5`$ satisfies $`K(F_{\text{padded}}) = F`$.*
+**Observation 3.3.** *The classical fixed points $`6174`$, $`1746`$, $`2538`$, $`5382`$ (from $`d = 4`$) do not appear at $`d = 5`$ even as fixed points of any full-variable rule - not merely as non-universal fixed points, but as non-fixed points. Exhaustive enumeration confirms: for each of these four integers padded to five digits, no full-variable rule at $`d = 5`$ satisfies $`K(F_{\text{padded}}) = F`$.*
 
-**Observation 3.4 (effective rank within the full-variable classification).** *Two of the $`33`$ fixed points in Table 3.1 — namely $`54`$ and $`3753`$ — have effective rank at $`F`$ strictly less than their native algebraic rank:*
+**Observation 3.4 (effective rank within the full-variable classification).** *Two of the $`33`$ fixed points in Table 3.1 - namely $`54`$ and $`3753`$ - have effective rank at $`F`$ strictly less than their native algebraic rank:*
 
 - *$`54`$ has sorted-descending form $`(5, 4, 0, 0, 0)`$ at $`d = 5`$; three of the five digits are zero. Its native sv$`=5`$ rule is $`\pi = (1, 2, 4, 3, 0), \sigma = (2, 0, 3, 4, 1)`$ with coefficient vector $`(-90, 99, 9000, -9000, -9)`$. Three of these five coefficients are paired with zero digits in the fixed-point equation, giving $`\mathrm{sv}_F(K_{54}) = 2 < 5 = \mathrm{sv}(K_{54})`$.*
 
 - *$`3753`$ has sorted-descending form $`(7, 5, 3, 3, 0)`$ at $`d = 5`$; one digit is zero. Its native rule has $`\mathrm{sv}_F = 4 < 5`$.*
 
-*These fixed points are genuinely in the full-variable classification — their native rules are algebraically rank-$`5`$ — but their effective rank at $`F`$ is reduced by absorption of coefficients at zero-digit positions. This is the mechanism that underlies coefficient-preserving lifting in §5, visible here at the root of the classification: a rule can be algebraically full-variable while being effectively lower-rank on a specific fixed point. The remaining $`31`$ fps in Table 3.1 all have no zero digits and therefore have $`\mathrm{sv}_F = \mathrm{sv} = 5`$.*
+*These fixed points are genuinely in the full-variable classification - their native rules are algebraically rank-$`5`$ - but their effective rank at $`F`$ is reduced by absorption of coefficients at zero-digit positions. This is the mechanism that underlies coefficient-preserving lifting in §5, visible here at the root of the classification: a rule can be algebraically full-variable while being effectively lower-rank on a specific fixed point. The remaining $`31`$ fps in Table 3.1 all have no zero digits and therefore have $`\mathrm{sv}_F = \mathrm{sv} = 5`$.*
 
 ## 3.5 $`d = 6`$: five hundred and six universal full-variable fixed points
 
@@ -110,9 +110,9 @@ At $`d = 6`$, there are $`190{,}800`$ full-variable rules (Proposition 2.1, $`6!
 
 This stratification matters for §5 and §6: fixed points with more zero digits admit more coefficient-preserving liftings to higher $`d`$, a phenomenon visible already at the $`d = 5 \to d = 6`$ boundary and developed in detail at §6.
 
-**Note on the high-zero-count strata.** The $`8`$ fps with $`3`$ zero digits at $`d = 6`$ all share digit multiset $`\{0, 0, 0, 2, 2, 5\}`$: they are $`\{252, 2520, 20025, 25200, 200025, 200250, 250200, 252000\}`$. There are no universal full-variable fps at $`d = 6`$ with $`4`$ or more zero digits — the trivial fixed point $`F = 0`$ is excluded throughout this paper by the convention of §2 (Proposition 2.3). In particular, the fixed point $`549{,}945`$ has digit multiset $`\{4, 4, 5, 5, 9, 9\}`$ with no zero digits and does not appear in this stratification.
+**Note on the high-zero-count strata.** The $`8`$ fps with $`3`$ zero digits at $`d = 6`$ all share digit multiset $`\{0, 0, 0, 2, 2, 5\}`$: they are $`\{252, 2520, 20025, 25200, 200025, 200250, 250200, 252000\}`$. There are no universal full-variable fps at $`d = 6`$ with $`4`$ or more zero digits - the trivial fixed point $`F = 0`$ is excluded throughout this paper by the convention of §2 (Proposition 2.3). In particular, the fixed point $`549{,}945`$ has digit multiset $`\{4, 4, 5, 5, 9, 9\}`$ with no zero digits and does not appear in this stratification.
 
-**Connection to classical Kaprekar at $`d = 6`$.** The classical rule $`K_0`$ at $`d = 6`$ has coefficient vector $`(999{,}999, \, 89{,}991, \, 8{,}991, \, -8{,}991, \, -89{,}991, \, -999{,}999)`$ after simplification. It is full-variable at $`d = 6`$ (all coefficients nonzero). [Dahl 2026] analyzes its basin: the rule is *not* universal at $`d = 6`$ — it produces a 7-cycle that attracts $`93.55\%`$ of inputs, with $`6.25\%`$ reaching $`F = 631{,}764`$ and $`0.20\%`$ reaching $`F = 549{,}945`$. The universal fixed points at $`d = 6`$ in our classification are attractors of *other* full-variable rules, not the classical one.
+**Connection to classical Kaprekar at $`d = 6`$.** The classical rule $`K_0`$ at $`d = 6`$ has coefficient vector $`(999{,}999, \, 89{,}991, \, 8{,}991, \, -8{,}991, \, -89{,}991, \, -999{,}999)`$ after simplification. It is full-variable at $`d = 6`$ (all coefficients nonzero). [Dahl 2026] analyzes its basin: the rule is *not* universal at $`d = 6`$ - it produces a 7-cycle that attracts $`93.55\%`$ of inputs, with $`6.25\%`$ reaching $`F = 631{,}764`$ and $`0.20\%`$ reaching $`F = 549{,}945`$. The universal fixed points at $`d = 6`$ in our classification are attractors of *other* full-variable rules, not the classical one.
 
 **Observation 3.4.** *The digit sum of every universal full-variable fixed point at $`d = 6`$ is divisible by $`9`$. The distribution of digit sums is strikingly bell-shaped about $`27`$ (the midpoint of the admissible range $`\{9, 18, 27, 36, 45\}`$):*
 

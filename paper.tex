@@ -1,6 +1,6 @@
 \documentclass[11pt,letterpaper]{article}
 
-% --- Encoding & fonts ---
+% - Encoding & fonts ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 % \usepackage{lmodern} (omitted; using default fonts)
@@ -14,36 +14,36 @@
 \usepackage[expansion=false,protrusion=false]{microtype}
 \usepackage{textcomp}                 % needed by some Unicode passthroughs
 
-% --- Math ---
+% - Math ---
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
 
-% --- Tables (pandoc emits longtable) ---
+% - Tables (pandoc emits longtable) ---
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{calc}
 
-% --- Lists ---
+% - Lists ---
 \usepackage{enumitem}
 \setlist{nosep,leftmargin=*,topsep=2pt}
 
-% --- Layout ---
+% - Layout ---
 \usepackage{geometry}
 \geometry{margin=1in}
 \usepackage{parskip}                  % paragraph spacing rather than indent
 
-% --- Pandoc compatibility helpers ---
+% - Pandoc compatibility helpers ---
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \providecommand{\pandocbounded}[1]{#1}
 
-% --- Hyperlinks (last among style packages) ---
+% - Hyperlinks (last among style packages) ---
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
-% --- Theorem environments ---
+% - Theorem environments ---
 % The source carries its own theorem numbers (e.g. "Theorem 5.2",
 % "Lemma C.10"). Use a custom theoremstyle that places the qualifier
 % inline as the head note, and \newtheorem*{...} so amsthm doesn't add
@@ -51,7 +51,7 @@
 %
 % The default amsthm rendering of `\begin{theorem*}[Foo]` is "Theorem (Foo)."
 % with the qualifier in parens. The source's qualifiers are like "5.2" or
-% "5.2 (Dimension-transcendence)" — so the parens nest: "Theorem (5.2
+% "5.2 (Dimension-transcendence)" - so the parens nest: "Theorem (5.2
 % (Dimension-transcendence))." which reads badly. Use a custom theoremstyle
 % to render the qualifier with a leading space and a period: "Theorem 5.2."
 % or "Theorem 5.2 (Dimension-transcendence)."
@@ -88,7 +88,7 @@
 \newtheorem*{remark}{Remark}
 \newtheorem*{observation}{Observation}
 
-% --- Title metadata ---
+% - Title metadata ---
 \title{Dimension-Transcendent Attractors in\\
        Generalized Kaprekar Routines}
 \author{Clay Elmore\\
@@ -105,10 +105,10 @@ This failure is commonly described as a peculiarity of five-digit arithmetic. We
 
 When we classify all permutation-pair rules at each digit length, universal full-variable fixed points exist at \(d = 4\), \(d = 5\), and \(d = 6\). We complete this classification exhaustively at \(d \leq 6\), identifying \(33\) universal fixed points at \(d = 5\) and \(506\) at \(d = 6\). We then ask which fixed points extend from one digit length to the next: if \(F\) is a universal full-variable fixed point at digit length \(d\), does some rule at \(d + 1\) also have \(F\) as a universal fixed point?
 
-Among the \(33\) universal fixed points at \(d = 5\), exactly one --- \(F = 60714\) --- is a universal full-variable fixed point at \(d = 6\). The remaining \(32\) are dimension-locked at \(d = 5\): no full-variable rule at \(d = 6\) attracts them universally. The selection of \(60714\) from this population is the central discovery; the lifting machinery is the test it uniquely passes, not a construction tailored to fit it. Given this selection, we construct an explicit family of permutation-pair rules at each \(d \geq 5\), connected by a coefficient-preserving lifting recipe, and prove:
+Among the \(33\) universal fixed points at \(d = 5\), exactly one - \(F = 60714\) - is a universal full-variable fixed point at \(d = 6\). The remaining \(32\) are dimension-locked at \(d = 5\): no full-variable rule at \(d = 6\) attracts them universally. The selection of \(60714\) from this population is the central discovery; the lifting machinery is the test it uniquely passes, not a construction tailored to fit it. Given this selection, we construct an explicit family of permutation-pair rules at each \(d \geq 5\), connected by a coefficient-preserving lifting recipe, and prove:
 
 \begin{theorem}
-\(60714\) is a fixed point at every digit length \(d \geq 5\) under the coefficient-preserving lifting family constructed in §5. The corresponding dynamics are universal on \(A_d \setminus E_d\) at every \(d \geq 5\), where \(A_d\) is the admissible input set and \(E_d\) is an exactly-characterized escape class. The escape class is empty at \(d = 5, 6\), and at \(d \geq 7\) has the same structural form --- block-aligned multisets that collapse to \(0\) under the rule --- as the classical Kaprekar escape class at \(d = 3, 4\) (the ten repdigits at \(d = 3\) and the ten multiples of \(1111\) at \(d = 4\), which under the classical rule each map to \(0\) rather than to the nontrivial fixed point).
+\(60714\) is a fixed point at every digit length \(d \geq 5\) under the coefficient-preserving lifting family constructed in §5. The corresponding dynamics are universal on \(A_d \setminus E_d\) at every \(d \geq 5\), where \(A_d\) is the admissible input set and \(E_d\) is an exactly-characterized escape class. The escape class is empty at \(d = 5, 6\), and at \(d \geq 7\) has the same structural form - block-aligned multisets that collapse to \(0\) under the rule - as the classical Kaprekar escape class at \(d = 3, 4\) (the ten repdigits at \(d = 3\) and the ten multiples of \(1111\) at \(d = 4\), which under the classical rule each map to \(0\) rather than to the nontrivial fixed point).
 \end{theorem}
 
 This is, to our knowledge, the first explicitly constructed attractor in the generalized Kaprekar family for which a fixed-point equation persists across infinitely many dimensions, with universal convergence on \(A_d \setminus E_d\) at every \(d \geq 5\) and a structurally characterized escape class continuous with the classical case (§7.6). The classical Kaprekar constant \(6174\) exhibits a related but distinct pattern, proven here: universal at \(d = 4\) (native), algebraically obstructed at \(d = 5\), and universal on \(A_d \setminus E_d^{6174}\) at every \(d \geq 6\) under coefficient-preserving lifting, where \(E_d^{6174}\) is a precisely characterized \(45\)-input class at \(d \geq 8\). \(60714\), \(6174\), and \(60417\) share the digit multiset \(\{7, 6, 4, 1\}\), and within this thread the empirical invariant \(\mathrm{sum\_locked\_spans}\) orders cross-dimensional behavior: \(60714\) (\(\mathrm{sls} = 5\)) is universal on \(A_d \setminus E_d\) at every \(d \geq 5\) with \(E_d = \emptyset\) at \(d = 5, 6\), while \(6174\) (\(\mathrm{sls} = 8\)) is universal on \(A_d \setminus E_d^{6174}\) at every \(d \geq 6\). The invariant orders within-thread behaviors but does not generalize to a cross-multiset principle.
@@ -154,7 +154,7 @@ identically. Algebraically, \(K\) at \(d = 3\) has coefficient vector
 \((99, \, 0, \, -99)\): the coefficient on the middle position is
 exactly zero.
 
-This is not a computational observation --- it is a structural fact
+This is not a computational observation - it is a structural fact
 about the classical construction. At every odd digit length, the
 classical rule's center-position coefficient vanishes through the same
 forced borrow chain. The classical rule at \(d = 3\) is \emph{not} a
@@ -186,7 +186,7 @@ permutations \(\pi, \sigma \in S_d\) with \(\pi \neq \sigma\), the
 \[K_{\pi, \sigma}(n) = \bigl| \pi \cdot \mathrm{sort\_desc}(n) - \sigma \cdot \mathrm{sort\_desc}(n) \bigr|,\]
 
 where \(\pi \cdot (x_0, \ldots, x_{d-1})\) denotes the integer
-\(\sum_{i} 10^{d-1-i} x_{\pi_i}\) --- the digits rearranged by \(\pi\).
+\(\sum_{i} 10^{d-1-i} x_{\pi_i}\) - the digits rearranged by \(\pi\).
 The classical rule is \(\pi = (0, 1, \ldots, d-1)\) and
 \(\sigma = (d-1, d-2, \ldots, 0)\) (descending minus ascending), which
 we denote \(K_0\).
@@ -205,7 +205,7 @@ rule:
 \[\mathrm{sv}(K_{\pi, \sigma}) = \bigl|\{ i : c_i \neq 0 \}\bigr|.\]
 
 The rule is \textbf{full-variable} at digit length \(d\) if
-\(\mathrm{sv} = d\) --- every sorted-descending position participates
+\(\mathrm{sv} = d\) - every sorted-descending position participates
 nontrivially in the output. The classical rule is full-variable at
 \(d = 4\) (coefficient vector \((999, 90, -90, -999)\)) but not at odd
 \(d\), where the middle-position coefficient vanishes by the
@@ -234,15 +234,14 @@ permutation-pair rules} at \(d = 5\) contains rules with universal fixed
 points, and whether any such fixed points persist across digit lengths.
 Exhaustive enumeration at \(d = 5\) produced \(33\) universal
 full-variable fixed points (Theorem 3.3); the exhaustive
-cross-dimensional check (Theorem 4.1) found that exactly one of these
---- \(60714\) --- extends to \(d = 6\) as a universal full-variable
+cross-dimensional check (Theorem 4.1) found that exactly one of these - \(60714\) - extends to \(d = 6\) as a universal full-variable
 fixed point of \emph{some} rule there. The remaining \(32\) are
 dimension-locked at \(d = 5\).
 
 The coefficient-preserving lifting framework introduced in §5 is the
 \emph{mechanism} we discovered as the explanation for this
-cross-dimensional persistence. The recipe is uniform --- applied without
-modification across all \(33\) candidates --- and \(60714\) is the
+cross-dimensional persistence. The recipe is uniform - applied without
+modification across all \(33\) candidates - and \(60714\) is the
 integer that survives the test. Once the lifting is identified and
 \(60714\) is selected, Theorem 5.2 proves that the lifted family is
 universally convergent on \(A_d \setminus E_d\) at every \(d \geq 5\),
@@ -252,16 +251,16 @@ non-empty but takes the same structural form as the classical Kaprekar
 escape class at \(d = 3, 4\): a set of inputs whose orbit reaches \(0\)
 in finitely many applications of the rule, with the inputs characterized
 by an algebraic block-alignment condition (single-block repdigits at
-\(d = 3\), single-block multiples of \(1111\) at \(d = 4\) --- both of
-which collapse in a single step --- and multi-block aligned multisets at
+\(d = 3\), single-block multiples of \(1111\) at \(d = 4\) - both of
+which collapse in a single step - and multi-block aligned multisets at
 \(d \geq 7\), which collapse in at most a few steps; for \(d \leq 11\),
 exhaustive enumeration confirms collapse in at most \(4\) iterations).
 See §7.6 for the full continuity argument. Universal convergence on
 \(A_d \setminus E_d\) is a substantive dynamical claim that does not
 follow from the lifting's algebraic preservation property; it requires
-the proof developed in §5 and Appendix C. The discovery sequence ---
+the proof developed in §5 and Appendix C. The discovery sequence -
 observation of the rank gap, classification at low \(d\),
-cross-dimensional check, structural mechanism, dynamical theorem --- is
+cross-dimensional check, structural mechanism, dynamical theorem - is
 the methodological spine of §1.4 and is recapitulated in detail there.
 
 Fix an integer \(F\). Define its \textbf{native digit length} \(d_F\) to
@@ -299,7 +298,7 @@ point. The answer, exhaustively verified in §3 and §4, is no: no
 rank-\(5\) rule even has \(6174\) as a fixed point at \(d = 5\).
 
 The full-variable universal fixed points at \(d = 5\) are thirty-three
-specific integers --- none of them \(6174\). Among these thirty-three,
+specific integers - none of them \(6174\). Among these thirty-three,
 the question of §1.3 becomes: which extend to \(d = 6\) as universal
 rank-\(6\) fixed points? Which further extend to \(d = 7\), \(d = 8\),
 and beyond?
@@ -321,7 +320,7 @@ dimension-transcendent attractors. We began with brute-force
 enumeration: at each digit length \(d\), compute the universal
 full-variable fixed points by testing every permutation-pair rule
 exhaustively against every non-repdigit input. At \(d = 3\), \(4\),
-\(5\), \(6\) this enumeration is tractable --- the largest, \(d = 6\),
+\(5\), \(6\) this enumeration is tractable - the largest, \(d = 6\),
 requires testing \(190{,}800\) full-variable rules against \(4{,}905\)
 admissible digit multisets (\(999{,}450\) admissible padded six-digit
 strings), a search that runs in hours on commodity hardware but is
@@ -333,12 +332,12 @@ reappear at \(d + 1\)?
 The enumerations themselves, the data-structuring of the resulting
 fixed-point catalogues, and the systematic probe of structural
 hypotheses against the empirical evidence were carried out using a
-methodological pattern --- exhaustive brute search, pattern recognition
+methodological pattern - exhaustive brute search, pattern recognition
 on the output, proposed structural explanation, adversarial re-testing
-of the proposal against further enumeration, repeat --- that we believe
+of the proposal against further enumeration, repeat - that we believe
 is increasingly relevant to exploratory mathematics. The computer
-assistance used throughout the project --- including AI tools alongside
-conventional scripting --- is documented in the Acknowledgments.
+assistance used throughout the project - including AI tools alongside
+conventional scripting - is documented in the Acknowledgments.
 
 \hypertarget{the-54-60714-discovery-arc}{%
 \subsubsection{The 54 → 60714 discovery arc}\label{the-54-60714-discovery-arc}}
@@ -348,18 +347,18 @@ that led to this paper's main theorem. An early candidate for
 dimension-transcendence was \(F = 54\). At \(d = 2\) under the classical
 rule, \(54\) is a universal fixed point. At \(d = 5\), the full-variable
 classification (§3) finds \(54\) as one of \(33\) universal fps under a
-specific rank-\(5\) rule --- the rule
+specific rank-\(5\) rule - the rule
 \(\pi = (1, 2, 4, 3, 0), \sigma = (2, 0, 3, 4, 1)\) with coefficient
 vector \((-90, 99, 9000, -9000, -9)\). Initial empirical work suggested
 \(54\) as a natural candidate for the dimension-transcendence story,
 since it appears at both \(d = 2\) and \(d = 5\).
 
 Closer examination revealed a structural complication. \(54\)'s
-sorted-descending form at \(d = 5\) is \((5, 4, 0, 0, 0)\) --- three of
+sorted-descending form at \(d = 5\) is \((5, 4, 0, 0, 0)\) - three of
 the five digits are zero. In the native rule at \(d = 5\), three of the
 five coefficients are paired with these zero digits and contribute
-nothing to \(K(F) = F\). The effective rank of the rule at \(F\) ---
-what we formalize in §2.6 as \(\mathrm{sv}_F\) --- is \(2\), not \(5\).
+nothing to \(K(F) = F\). The effective rank of the rule at \(F\) -
+what we formalize in §2.6 as \(\mathrm{sv}_F\) - is \(2\), not \(5\).
 \(54\) is algebraically an sv\(=5\) fixed point, but structurally it
 inherits its fixed-point status from a rank-\(2\) algebraic operation on
 \((5, 4)\) with the other three positions absorbing coefficients that
@@ -368,8 +367,7 @@ is effectively the same equation as at \(d = 2\), dressed up to occupy
 \(d = 5\) without adding new structural content.
 
 This observation sharpened the question. A genuine
-dimension-transcendent fixed point would need \(\mathrm{sv}_F = d_F\)
---- all coefficients of its native rule contributing to \(K(F) = F\)
+dimension-transcendent fixed point would need \(\mathrm{sv}_F = d_F\) - all coefficients of its native rule contributing to \(K(F) = F\)
 through nonzero digits. Among the \(33\) fixed points at \(d = 5\), we
 searched for fixed points with no zero digits (so that
 \(\mathrm{sv}_F = 5\) automatically). Exhaustive enumeration at
@@ -389,9 +387,9 @@ every higher digit length?
 \hypertarget{conclusion}{%
 \subsubsection{Conclusion}\label{conclusion}}
 
-This methodological sequence --- exhaustive empirical search,
+This methodological sequence - exhaustive empirical search,
 identification of counterexamples that refine the question, structural
-proof on the refined target --- is explicit rather than disguised. The
+proof on the refined target - is explicit rather than disguised. The
 classical Kaprekar routine is elegant because its rule is stated in a
 single sentence; the result we present here is structural in a different
 sense. The rule varies with \(d\) (via coefficient-preserving lifting),
@@ -405,7 +403,7 @@ all \(d \geq 5\).
 
 This paper answers the following. (Throughout this section, theorems are
 presented as overview statements with section pointers; the body
-restates them with section-numbered identifiers --- Theorem 1 here
+restates them with section-numbered identifiers - Theorem 1 here
 corresponds to Theorems 3.1--3.4 in §3, Theorem 2 to Theorem 4.1 in §4,
 Theorem 3 to Theorem 5.2 in §5, and Theorem 4 to Theorem 6.1 in §6.)
 
@@ -419,7 +417,7 @@ follows:}
   \emph{\(d = 3\): no universal full-variable fixed points. (\(12\)
   full-variable rules enumerated exhaustively.)}
 \item
-  \emph{\(d = 4\): four universal full-variable fixed points ---
+  \emph{\(d = 4\): four universal full-variable fixed points -
   \(1746\), \(2538\), \(5382\), \(6174\). (\(216\) full-variable rules
   enumerated exhaustively.)}
 \item
@@ -435,7 +433,7 @@ definitive. Full tables appear in Appendix A.
 
 \textbf{Theorem 2 (Cross-dimensional cross-check, §4).} \emph{Of the
 thirty-three universal full-variable fixed points at \(d = 5\), exactly
-one --- \(F = 60714\) --- is a universal full-variable fixed point at
+one - \(F = 60714\) - is a universal full-variable fixed point at
 \(d = 6\) under some rule. The remaining thirty-two are dimension-locked
 at \(d = 5\): no rank-\(6\) rule at \(d = 6\) is universal for any of
 them.}
@@ -489,10 +487,10 @@ Kaprekar constant \(6174\) has a verified cross-dimensional pattern:}
 \item
   \emph{\(d = 4\): strict-universal (native).}
 \item
-  \emph{\(d = 5\): algebraic obstruction --- no rank-\(5\) rule fixes
+  \emph{\(d = 5\): algebraic obstruction - no rank-\(5\) rule fixes
   \(6174\).}
 \item
-  \emph{\(d = 6\): dynamic obstruction --- four rank-\(6\) rules fix
+  \emph{\(d = 6\): dynamic obstruction - four rank-\(6\) rules fix
   \(6174\), best basin \(0.969\).}
 \item
   \emph{\(d = 7\): strict-universal via the coefficient-preserving
@@ -504,8 +502,8 @@ Kaprekar constant \(6174\) has a verified cross-dimensional pattern:}
 \end{itemize}
 
 \emph{\(60714\), \(6174\), and \(60417\) are unified under a structural
-invariant, the \(\mathrm{sum\_locked\_spans}\) of their native rules ---
-taking values \(5\), \(8\), \(7\) respectively --- which empirically
+invariant, the \(\mathrm{sum\_locked\_spans}\) of their native rules -
+taking values \(5\), \(8\), \(7\) respectively - which empirically
 controls the number of absorbing (zero-digit) positions at which a
 coefficient-preserving lifting succeeds. This unification is empirical,
 not proven.}
@@ -523,10 +521,10 @@ classifications are computational facts, not constructions. Theorem 4.1
 then asks a natural cross-dimensional question: of the \(33\) universal
 fixed points at \(d = 5\), how many admit a coefficient-preserving
 lifting to \(d = 6\) that is also universal at \(d = 6\)? The answer is
-\textbf{exactly one}: \(60714\). The other \(32\) are obstructed ---
+\textbf{exactly one}: \(60714\). The other \(32\) are obstructed -
 \(17\) by algebra (no rank-\(6\) rule satisfies \(K(F) = F\)), \(15\) by
 dynamics (the rules that fix them have basin strictly less than \(1\)).
-This selection --- one survivor from a population of \(33\) --- is the
+This selection - one survivor from a population of \(33\) - is the
 central discovery, and it is not a construction. We did not choose the
 lifting machinery to fit \(60714\); \(60714\) is the integer that
 survived the lifting test.
@@ -535,7 +533,7 @@ survived the lifting test.
 \(d = 5 \to d = 6\) under the discovered lifting recipe, the same recipe
 applied at every higher \(d\) produces a coefficient-preserving lifted
 rule whose fixed-point equation \(K^{(d)}(60714) = 60714\) holds by
-construction. The recipe is uniform across the ladder --- an odd ladder
+construction. The recipe is uniform across the ladder - an odd ladder
 \(d = 5, 7, 9, \ldots\) and an even ladder \(d = 6, 8, 10, \ldots\),
 each obtained from the previous by appending a pair of coefficients
 summing to zero (§5). Two clarifications about what is and is not
@@ -548,16 +546,16 @@ positions (which is what makes the fixed-point equation persist along
 the ladder), but this is a consequence of the same recipe applied to the
 same fixed point, not a separate per-\(d\) design choice. The
 non-trivial content of Theorem 5.2 is therefore the dynamical claim
-about basins --- that \(K^{(d)}\) is universally convergent at every
+about basins - that \(K^{(d)}\) is universally convergent at every
 \(d \geq 5\) on \(A_d \setminus E_d\), with \(E_d\) exactly
-characterized --- and this claim does not follow from algebraic
+characterized - and this claim does not follow from algebraic
 preservation alone. It requires the structural induction of §5 and the
 support lemmas of Appendix C.
 
 The escape class \(E_d\) at \(d \geq 7\) is continuous with the
 classical Kaprekar phenomenon: at \(d = 3, 4\) classical Kaprekar
-dynamics already exhibit an escape class --- the ten repdigits at
-\(d = 3\) and the ten multiples of \(1111\) at \(d = 4\) --- each of
+dynamics already exhibit an escape class - the ten repdigits at
+\(d = 3\) and the ten multiples of \(1111\) at \(d = 4\) - each of
 which iterates to \(0\) rather than to the nontrivial fixed point. The
 classical literature treats these as ``inadmissible.'' The escape class
 at \(d \geq 7\) is the same phenomenon at higher digit lengths: a
@@ -597,7 +595,7 @@ cross-dimensional transcendence in partial forms:
 \end{itemize}
 
 \(60714\)'s distinction is therefore not ``uniqueness as a transcendent
-fixed point'' --- many other fixed points transcend partially --- but
+fixed point'' - many other fixed points transcend partially - but
 \textbf{uniqueness as the case that survives Theorem 4.1's selection
 test among the \(d = 5\) universal full-variable fixed points}. The
 classification machinery (Theorems 3.3 and 3.4) and the
@@ -629,7 +627,7 @@ exist; ours covers fixed points of \emph{non-classical} permutation-pair
 rules at every digit length where they exist. The two classifications
 operate on different operators and produce disjoint fixed-point
 families. As a concrete check: \(60714\) is not a classical-rule
-Kaprekar number --- under \(K_0\) at \(d = 5\) it iterates to \(74943\)
+Kaprekar number - under \(K_0\) at \(d = 5\) it iterates to \(74943\)
 in one step and enters the classical \(d = 5\) four-cycle
 \(74943 \to 62964 \to 71973 \to 83952 \to 74943\). Conversely, none of
 Iwasaki's seed numbers \(\{495, 6174, 36, 123456789, 27, 875421, 09\}\)
@@ -649,8 +647,8 @@ series of Nuez (2021--2022) {[}Nuez 2021, Nuez 2021b, Nuez 2022{]}, who
 develops a parametric formulation of the classical rule using
 symmetric-digit differences and catalogues the transformation functions
 acting on these parameters. Our parametric observations at the classical
-rule --- in particular, the middle-digit cancellation at odd digit
-lengths (§1.1) --- are special cases of Nuez's framework, and we credit
+rule - in particular, the middle-digit cancellation at odd digit
+lengths (§1.1) - are special cases of Nuez's framework, and we credit
 him accordingly. Our axis of generalization is distinct: we fix the base
 at ten and vary the rule across the full space of ordered permutation
 pairs at each digit length, reaching \(33\) universal full-variable
@@ -767,7 +765,7 @@ sorted-descending digits in their own order, and
 reverse.
 
 \textbf{Coefficient expansion.} Let \(r(i) = \tau^{-1}(i)\) denote the
-preimage of place \(i\) under a permutation \(\tau\) --- that is, the
+preimage of place \(i\) under a permutation \(\tau\) - that is, the
 sorted-descending position that contributes to the \(10^i\) place of
 \(\tau \cdot x\). Then
 
@@ -848,7 +846,7 @@ rule \(K_{\pi, \sigma}\) is
 \[\mathrm{sv}(K_{\pi, \sigma}) \;=\; \bigl|\{\,i : c_i \neq 0\,\}\bigr| \;=\; \bigl|\{\,i : \pi_i \neq \sigma_i\,\}\bigr|.\]
 
 The rule is \textbf{full-variable} at digit length \(d\) if
-\(\mathrm{sv} = d\) --- equivalently, if the map
+\(\mathrm{sv} = d\) - equivalently, if the map
 \(i \mapsto (\pi_i, \sigma_i)\) has \(\pi_i \neq \sigma_i\) for every
 \(i\).
 
@@ -860,7 +858,7 @@ derangement of \(\{0, 1, \ldots, d-1\}\).}
 \textbf{Proof.} \(\mathrm{sv} = d\) means \(\pi_i \neq \sigma_i\) for
 all \(i\). Equivalently, setting \(j = \pi_i\) and
 \(\rho = \sigma \circ \pi^{-1}\), this says \(\rho(j) \neq j\) for all
-\(j\) --- precisely that \(\rho\) is a derangement. \(\square\)
+\(j\) - precisely that \(\rho\) is a derangement. \(\square\)
 
 \textbf{Rule counts by rank.} The total number of ordered pairs
 \((\pi, \sigma)\) with \(\pi \neq \sigma\) is \(d! \, (d! - 1)\). The
@@ -898,8 +896,8 @@ universal for \(F = 6174\) {[}Kaprekar 1955{]}. It reaches \(6174\)
 within at most seven iterations for every admissible input.
 
 \textbf{Example (dimension-agnostic).} At \(d = 3\), the classical rule
-\(K_0\) has coefficient vector \((99, \, 0, \, -99)\) --- the middle
-coefficient vanishes by the forced borrow chain of §1.1 --- so
+\(K_0\) has coefficient vector \((99, \, 0, \, -99)\) - the middle
+coefficient vanishes by the forced borrow chain of §1.1 - so
 \(\mathrm{sv}(K_0) = 2\). The classical rule at \(d = 3\) is \emph{not}
 full-variable. It is universal for \(F = 495\), but \(495\) is a fixed
 point of a rank-\(2\) rule, not a rank-\(3\) rule.
@@ -934,7 +932,7 @@ Our full-variable classification excludes these by design: we study only
 rules with \(\mathrm{sv} = d\), where every sorted-descending position
 contributes nontrivially. This restriction is principled rather than
 definitional. Rank-reducing rules are those whose coefficient vector has
-at least one zero --- equivalently, whose action depends on strictly
+at least one zero - equivalently, whose action depends on strictly
 fewer than \(d\) inputs. Such rules describe a \((d-k)\)-dimensional
 dynamical system embedded in a \(d\)-dimensional input space; their
 fixed points and convergence behavior are determined by the
@@ -944,7 +942,7 @@ question would conflate persistence-by-projection (a structural
 artifact) with persistence-by-genuine-extension (the phenomenon of
 interest). The classical rule at \(d = 5\) is itself such a rank-reducer
 (sv \(= 4\), not \(5\)), which is why classical Kaprekar fails at five
-digits --- not because Kaprekar dynamics has no five-digit attractor,
+digits - not because Kaprekar dynamics has no five-digit attractor,
 but because the classical rule is rank-\(4\) when viewed at \(d = 5\).
 The dimension-agnostic family (\(45, 495, 450\), etc.) deserves
 independent study but is outside the scope of this paper. See §1.1 for
@@ -1088,9 +1086,9 @@ list of fixed points at \(d = 6\) appears in Appendix A.
 \hypertarget{method}{%
 \subsection{Method}\label{method}}
 
-At each digit length \(d\), we enumerate the full-variable rules ---
+At each digit length \(d\), we enumerate the full-variable rules -
 ordered pairs \((\pi, \sigma) \in S_d \times S_d\) with
-\(\pi_i \neq \sigma_i\) for every \(i\) (Proposition 2.1) --- and for
+\(\pi_i \neq \sigma_i\) for every \(i\) (Proposition 2.1) - and for
 each such rule we check:
 
 \begin{enumerate}
@@ -1204,16 +1202,16 @@ the forced borrow chain at odd digit length, §1.1), so
 \(\mathrm{sv}(K_0) = 4\), not \(5\). The observation that ``the
 classical Kaprekar routine fails at \(d = 5\)'' is, in our framing, the
 observation that the classical rule at \(d = 5\) is not even in the
-full-variable space --- there is no contradiction to the existence of
+full-variable space - there is no contradiction to the existence of
 \(33\) universal attractors in that space.
 
 \textbf{Reverse-pair structure fails at odd \(d\).} The classical rule
 is a specific ``reverse-pair'' rule (\(\sigma_i = \pi_{d-1-i}\)). At
 even \(d\), reverse-pair rules can be full-variable; at odd \(d\), they
-cannot --- the middle position always satisfies
+cannot - the middle position always satisfies
 \(\sigma_{(d-1)/2} = \pi_{(d-1)/2}\), forcing
 \(\mathrm{sv} \leq d - 1\). Consequently, all \(66\) universal
-full-variable rules at \(d = 5\) are \emph{non-reverse-pair} --- they
+full-variable rules at \(d = 5\) are \emph{non-reverse-pair} - they
 have no mirror symmetry. This is a structural distinction from the
 classical case.
 
@@ -1264,15 +1262,15 @@ cross-dimensional behavior.}
 
 \textbf{Observation 3.3.} \emph{The classical fixed points \(6174\),
 \(1746\), \(2538\), \(5382\) (from \(d = 4\)) do not appear at \(d = 5\)
-even as fixed points of any full-variable rule --- not merely as
+even as fixed points of any full-variable rule - not merely as
 non-universal fixed points, but as non-fixed points. Exhaustive
 enumeration confirms: for each of these four integers padded to five
 digits, no full-variable rule at \(d = 5\) satisfies
 \(K(F_{\text{padded}}) = F\).}
 
 \textbf{Observation 3.4 (effective rank within the full-variable
-classification).} \emph{Two of the \(33\) fixed points in Table 3.1 ---
-namely \(54\) and \(3753\) --- have effective rank at \(F\) strictly
+classification).} \emph{Two of the \(33\) fixed points in Table 3.1 -
+namely \(54\) and \(3753\) - have effective rank at \(F\) strictly
 less than their native algebraic rank:}
 
 \begin{itemize}
@@ -1290,7 +1288,7 @@ less than their native algebraic rank:}
 \end{itemize}
 
 \emph{These fixed points are genuinely in the full-variable
-classification --- their native rules are algebraically rank-\(5\) ---
+classification - their native rules are algebraically rank-\(5\) -
 but their effective rank at \(F\) is reduced by absorption of
 coefficients at zero-digit positions. This is the mechanism that
 underlies coefficient-preserving lifting in §5, visible here at the root
@@ -1355,7 +1353,7 @@ zero digits at \(d = 6\) all share digit multiset
 \(\{0, 0, 0, 2, 2, 5\}\): they are
 \(\{252, 2520, 20025, 25200, 200025, 200250, 250200, 252000\}\). There
 are no universal full-variable fps at \(d = 6\) with \(4\) or more zero
-digits --- the trivial fixed point \(F = 0\) is excluded throughout this
+digits - the trivial fixed point \(F = 0\) is excluded throughout this
 paper by the convention of §2 (Proposition 2.3). In particular, the
 fixed point \(549{,}945\) has digit multiset \(\{4, 4, 5, 5, 9, 9\}\)
 with no zero digits and does not appear in this stratification.
@@ -1365,7 +1363,7 @@ rule \(K_0\) at \(d = 6\) has coefficient vector
 \((999{,}999, \, 89{,}991, \, 8{,}991, \, -8{,}991, \, -89{,}991, \, -999{,}999)\)
 after simplification. It is full-variable at \(d = 6\) (all coefficients
 nonzero). {[}Dahl 2026{]} analyzes its basin: the rule is \emph{not}
-universal at \(d = 6\) --- it produces a 7-cycle that attracts
+universal at \(d = 6\) - it produces a 7-cycle that attracts
 \(93.55\%\) of inputs, with \(6.25\%\) reaching \(F = 631{,}764\) and
 \(0.20\%\) reaching \(F = 549{,}945\). The universal fixed points at
 \(d = 6\) in our classification are attractors of \emph{other}
@@ -1444,7 +1442,7 @@ points?
 
 Let \(F_5 = \{F^{(1)}, \ldots, F^{(33)}\}\) be the set of universal
 full-variable fixed points at \(d = 5\) (Theorem 3.3). For each
-\(F^{(k)} \in F_5\), consider the padded integer \(F^{(k)}_{(6)}\) ---
+\(F^{(k)} \in F_5\), consider the padded integer \(F^{(k)}_{(6)}\) -
 that is, \(F^{(k)}\) interpreted as a six-digit integer by prepending a
 zero. Let \(\overline{F^{(k)}}\) denote its sorted-descending form at
 length \(6\): this is the sorted-descending form at length \(5\) with a
@@ -1459,7 +1457,7 @@ That is, does the fixed-point equation admit any full-variable solution
 at \(d = 6\)?
 
 \textbf{Question B (dynamic).} If yes, is any such rule universal for
-\(F^{(k)}\) at \(d = 6\) --- meaning every input in \(A_6\) iterates to
+\(F^{(k)}\) at \(d = 6\) - meaning every input in \(A_6\) iterates to
 \(F^{(k)}\)?
 
 A positive answer to both questions constitutes
@@ -1536,7 +1534,7 @@ For \(15\) of the \(16\) fixed points with algebraic solutions, every
 fixed-point-satisfying rule has basin \(< 1\). The best basins are
 tabulated below.
 
-For \(1\) fixed point --- \(F = 60714\) --- exactly two of the four
+For \(1\) fixed point - \(F = 60714\) - exactly two of the four
 full-variable rules satisfying the fixed-point equation are universal
 (basin \(= 1.0\)); the other two have basin substantially less than
 \(1\).
@@ -1583,7 +1581,7 @@ Fixed point & Digit multiset at \(d = 5\) \\
 
 \emph{All \(17\) fixed points share a structural feature: their
 multisets at \(d = 5\) contain at most one zero digit, so padding to
-\(d = 6\) gives at most two absorbing positions --- typically
+\(d = 6\) gives at most two absorbing positions - typically
 insufficient for any full-variable sv\(=6\) rule to satisfy
 \(K(F_{(6)}) = F_{(6)}\).}
 
@@ -1624,7 +1622,7 @@ universal. For most fixed points, competing attractors (the rule's other
 fixed points or short cycles) draw off substantial fractions of input
 space. Notably, \(54\) and \(60417\) achieve basins very close to \(1\)
 (respectively \(0.9631\) and \(0.9598\)) but remain dynamically
-obstructed --- they are ``near misses'' in a precise sense, and were
+obstructed - they are ``near misses'' in a precise sense, and were
 among the candidates investigated in detail before \(60714\) was
 identified as the unique transcendent fp at \(d = 5\).}
 
@@ -1634,9 +1632,9 @@ with one zero digit at \(d = 5\) (so two zero digits when padded to
 \(d = 6\)) are candidates for coefficient-preserving lifting with two
 absorbing positions. Those with no zero digits have only one absorbing
 position after padding, and empirically none admits a full-variable
-sv=\(6\) rule fixing them. This pattern --- more zero digits
+sv=\(6\) rule fixing them. This pattern - more zero digits
 \(\Rightarrow\) more absorbing capacity \(\Rightarrow\) more algebraic
-solutions --- is developed further at §5 and §6.}
+solutions - is developed further at §5 and §6.}
 
 \hypertarget{the-unique-success-case-f-60714}{%
 \subsection{\texorpdfstring{The unique success case: \(F = 60714\)}{The unique success case: F = 60714}}\label{the-unique-success-case-f-60714}}
@@ -1708,8 +1706,8 @@ Theorem 4.1 is the central cross-dimensional result at the
   \(1\) of \(33\) fixed points succeeds.
 \item
   \textbf{The distinction is structural, not incidental.} \(60714\)'s
-  native rule has a specific algebraic structure --- the split-lifting
-  structure --- that admits extension to \(d = 6\). The other \(32\)
+  native rule has a specific algebraic structure - the split-lifting
+  structure - that admits extension to \(d = 6\). The other \(32\)
   fixed points' native rules do not.
 \item
   \textbf{The mechanism generalizes.} The coefficient-preserving lifting
@@ -1728,17 +1726,17 @@ full-variable fixed point \(F\) at native digit length \(d_F\), define
 its \emph{dimension-locking spectrum} as the set of \(d > d_F\) at which
 \(F\) is also a universal full-variable fixed point. Theorem 4.1
 establishes that \(32\) of \(33\) fixed points at \(d = 5\) have empty
-dimension-locking spectrum extension to \(d = 6\), and that one ---
-\(60714\) --- has \(d = 6\) in its spectrum. Theorem 5.2 of the next
+dimension-locking spectrum extension to \(d = 6\), and that one -
+\(60714\) - has \(d = 6\) in its spectrum. Theorem 5.2 of the next
 section extends this: \(60714\)'s dimension-locking spectrum contains
 every \(d \geq 5\). The other \(32\) fixed points' spectra at \(d > 6\)
 are addressed individually at the appendix level, but no systematic
 characterization of which fixed points have unbounded dimension-locking
 spectra is presently known beyond the case of \(60714\).
 
-A formal conjecture --- that every full-variable fixed point with
+A formal conjecture - that every full-variable fixed point with
 unbounded dimension-locking spectrum admits a coefficient-preserving
-lifting similar to \(60714\)'s --- is stated as Conjecture 7.1.
+lifting similar to \(60714\)'s - is stated as Conjecture 7.1.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1819,14 +1817,14 @@ where the final equality uses that \(K_{F}^{(d_{F})}\) fixes \(F\) at
 
 \textbf{Remark 5.1.} Proposition 5.1 shows that the fixed-point equation
 is automatic under coefficient-preserving lifting. All structural
-content of the lifting --- both the nontrivial coefficients at
-zero-digit positions and the sign-sum structure --- lives in the
+content of the lifting - both the nontrivial coefficients at
+zero-digit positions and the sign-sum structure - lives in the
 coefficient positions corresponding to \(F\)'s zero digits, where it
 does not affect \(K(F) = F\). This is the fundamental observation
 enabling the uniform construction across \(d\).
 
 \textbf{Remark 5.2.} Proposition 5.1 does \emph{not} assert universality
-of the lifting --- it asserts only that the lifting satisfies
+of the lifting - it asserts only that the lifting satisfies
 \(K(F) = F\). Universality at \(d > d_F\) requires that every admissible
 input iterates to \(F\), which is a substantively stronger claim. The
 remainder of §5 is devoted to establishing this for the specific lifting
@@ -1841,15 +1839,15 @@ equation \(K^{(d)}(F) = F\) at \(d > d_F\) is engineered: Proposition
 5.1 shows it follows automatically from the coefficient-preserving
 structure. \textbf{The non-trivial content lives elsewhere.} First, the
 \emph{selection} of \(F = 60714\) from the population of \(33\)
-universal full-variable fixed points at \(d = 5\) is not engineered ---
+universal full-variable fixed points at \(d = 5\) is not engineered -
 it is the unique survivor of the cross-dimensional test of Theorem 4.1,
 with \(32\) other candidates failing either algebraically (no rank-\(6\)
 rule fixes them) or dynamically (the rules that fix them have basin
 strictly less than \(1\)). Second, the \emph{dynamical} claim that the
 lifted rule converges universally on \(A_d \setminus E_d\) at every
-\(d \geq 5\) --- with \(E_d = \emptyset\) at \(d = 5, 6\) and an
+\(d \geq 5\) - with \(E_d = \emptyset\) at \(d = 5, 6\) and an
 exactly-characterized escape class continuous with the classical case at
-\(d \geq 7\) --- is a substantive theorem about the rule's iterated
+\(d \geq 7\) - is a substantive theorem about the rule's iterated
 behavior, not about the algebra of \(K(F) = F\). Engineering the
 algebraic identity is cheap; surviving the cross-dimensional selection
 and yielding universal dynamics is not. The integer \(60714\) is what
@@ -2001,14 +1999,14 @@ exactly:}
 \item
   \emph{\(d = 8\) (even ladder): \(45\) admissibles collapse to \(0\) in
   step \(1\) under the \(d = 8\) lifted rule of Tables B.1--B.2. Total
-  escape class \(|E_8| = 45\) --- every escape is a one-step collapse,
+  escape class \(|E_8| = 45\) - every escape is a one-step collapse,
   with no multi-step escapes. Maximum reaching time among successful
   trajectories: \(21\) steps. Basin:
   \(24{,}165/24{,}210 \approx 0.998141\).}
 \end{itemize}
 
-\emph{The contrast --- multi-step escapes at \(d = 7\) vs.~uniformly
-one-step escapes at \(d = 8\) --- is part of a real even/odd ladder
+\emph{The contrast - multi-step escapes at \(d = 7\) vs.~uniformly
+one-step escapes at \(d = 8\) - is part of a real even/odd ladder
 asymmetry verified by exhaustive enumeration through \(d = 11\). At even
 \(d\) on the canonical lifting, \(|E_d| = |E_d^{(1)}|\) exactly (every
 escape orbit collapses in one step). At odd \(d\), multi-step escape
@@ -2058,7 +2056,7 @@ either ladder, and for every \(n \in T_d\):}
   \emph{Writing \(n\)'s sorted-descending form as
   \((x_0, \ldots, x_{d-3}, 0, 0)\), we have}
   \[K_{60714}^{(d)}(n) = K_{60714}^{(d-2)}\bigl((x_0, \ldots, x_{d-3})\bigr)\]
-  \emph{--- that is, the rule's action on \(T_d\) is exactly the rule at
+  \emph{ - that is, the rule's action on \(T_d\) is exactly the rule at
   \(d - 2\) applied to the non-tail digits.}
 \end{enumerate}
 
@@ -2139,7 +2137,7 @@ fact that a number with fewer than \(d\) digits has a padded
 representation with trailing sorted zeros. Nothing about the specific
 value \(60714\) or the specific native rule enters. Indeed, Lemma 5.1
 holds verbatim for any zero-sum pair lifting of any
-coefficient-preserving lifting family --- not just \(60714\)'s.
+coefficient-preserving lifting family - not just \(60714\)'s.
 
 \hypertarget{proof-of-lemma-5.2-bounded-reaching-time}{%
 \subsection{Proof of Lemma 5.2 (bounded reaching time)}\label{proof-of-lemma-5.2-bounded-reaching-time}}
@@ -2161,7 +2159,7 @@ these cover all \(d \geq 7\).
 
 \textbf{Proof.} Exhaustive enumeration. For each \(d\) and each ladder's
 rule, we iterate \(K_{60714}^{(d)}\) starting from every admissible
-digit multiset at \(d\) --- that is, every multiset of \(d\) digits from
+digit multiset at \(d\) - that is, every multiset of \(d\) digits from
 \(\{0, 1, \ldots, 9\}\) with at least two distinct digit values and not
 a near-repdigit. At each iteration, we test whether the current multiset
 has at least two trailing zeros in its sorted-descending form; if yes,
@@ -2195,7 +2193,7 @@ multisets tested. The computation is implemented in Python; the full
 enumeration log appears in Appendix D.
 
 The upper bound \(\leq 8\) iterations holds at every \(d \leq 16\). At
-\(d \geq 15\), reaching time is \(\leq 1\) --- orbits enter \(T_d\) in a
+\(d \geq 15\), reaching time is \(\leq 1\) - orbits enter \(T_d\) in a
 single step. \(\square\)
 
 \textbf{Remark 5.4.} Counts in the table equal \(\binom{d+9}{9} - 100\)
@@ -2203,7 +2201,7 @@ single step. \(\square\)
 near-repdigits, but here counted as digit multisets so the correction is
 exactly \(100\) for all \(d \geq 4\)). The enumeration is over digit
 multisets, not over distinct integer inputs, because \(K_{60714}^{(d)}\)
-depends only on the sorted-descending form of its input --- all integers
+depends only on the sorted-descending form of its input - all integers
 with the same multiset have identical orbits. This gives a
 factor-of-\(d!\) reduction in the verification complexity. The number of
 non-repdigit non-near-repdigit multisets at \(d = 16\) is just over
@@ -2272,9 +2270,9 @@ argument inside the absolute value is non-negative:
 
 A key telescoping observation (Lemma C.6, \emph{cliff-sequence bound})
 gives \(\sum_k \delta_k \leq 9\). Combined with the decimal-block
-structure --- each \(\delta_k = 0\) gives a \((0,0)\) block (2 zero
+structure - each \(\delta_k = 0\) gives a \((0,0)\) block (2 zero
 digits), each \(\delta_k = 1\) gives a \((0,9)\) block (1 zero digit),
-each \(\delta_k \geq 2\) gives a block with no zero digits --- a
+each \(\delta_k \geq 2\) gives a block with no zero digits - a
 counting argument shows that \(K^{(d)}(n)\) has at least \(2M - 9\) zero
 digits in the block region. For the odd ladder at \(d \geq 15\) (so
 \(M \geq 5\)), this gives at least one zero from the block region, which
@@ -2291,8 +2289,8 @@ computation shows \(T_d\) is reached in exactly two iterations. At
 \(d \geq 20\) on the even ladder, the block-count margin grows and
 one-step closure holds.
 
-The full algebraic computation --- the cliff-sequence bound, the
-block-structure disjointness, and the zero-counting argument --- appears
+The full algebraic computation - the cliff-sequence bound, the
+block-structure disjointness, and the zero-counting argument - appears
 as Lemmas C.3 and C.4 in Appendix C. Here we record only the resulting
 bound: uniform reaching time \(\leq 1\) on the odd ladder at
 \(d \geq 15\), and uniform reaching time \(\leq 2\) on the even ladder
@@ -2303,8 +2301,8 @@ Propositions 5.2 and 5.3 together establish Lemma 5.2.
 \hypertarget{near-repdigit-exclusion}{%
 \subsection{Near-repdigit exclusion}\label{near-repdigit-exclusion}}
 
-Near-repdigit inputs --- multisets where one digit appears \(d - 1\) or
-\(d\) times --- can produce pathological trajectories under
+Near-repdigit inputs - multisets where one digit appears \(d - 1\) or
+\(d\) times - can produce pathological trajectories under
 coefficient-preserving liftings. Specifically, an input like
 \((X, X, X, X, X, X, 0, 0)\) at \(d = 8\) (six-of-a-kind plus two zeros)
 lies in \(T_d\) (two trailing zeros) but iterates to
@@ -2324,7 +2322,7 @@ also excludes repdigits.
 \textbf{Note on near-repdigits and \(60714\).} In our finite-state
 enumeration at \(d \leq 16\), every admissible (non-near-repdigit) input
 reaches \(T_d\) within \(\leq 8\) iterations. If we extended to
-near-repdigit inputs, a small number would fail --- these are the
+near-repdigit inputs, a small number would fail - these are the
 \(45\)-multiset escape class documented for \(6174\) at §6 and a smaller
 analogous class for \(60714\). The exclusion of near-repdigits in
 \(A_d\) removes these pathological inputs from consideration.
@@ -2366,7 +2364,7 @@ By the induction hypothesis, the orbit of the non-tail digits under
 \(K^{(d-2)}\) reaches \(60714\) in finitely many steps. Pulling back
 through the isomorphism of Lemma 5.1, the orbit of \(m\) under
 \(K^{(d)}\) reaches \(60714_{(d)}\) (i.e., \(60714\) padded to \(d\)
-digits --- equivalently, the integer \(60714\) viewed as a \(d\)-digit
+digits - equivalently, the integer \(60714\) viewed as a \(d\)-digit
 integer with leading zeros). Therefore the original orbit of \(n\)
 reaches \(60714\) in finitely many total steps. \(\square\)
 
@@ -2422,8 +2420,8 @@ is structurally transparent.
 \hypertarget{the-7-6-4-1-thread}{%
 \section{The \(\{7, 6, 4, 1\}\)-Thread}\label{the-7-6-4-1-thread}}
 
-This section connects the central result of §5 --- that 60714 is
-universal at every \(d \geq 5\) --- to the classical Kaprekar
+This section connects the central result of §5 - that 60714 is
+universal at every \(d \geq 5\) - to the classical Kaprekar
 literature. The four-digit fixed point 6174, identified by Kaprekar in
 1949, lives in the same digit multiset as 60714 and gives the section
 its motivation: 60714 is the \(d = 5\) generalization that Kaprekar's
@@ -2432,7 +2430,7 @@ minus smallest-first'' rule degenerates at \(d = 5\) to a sv\(=4\)
 rank-deficient operator with no fixed point.
 
 The unifying structure is what we call the \textbf{\{7, 6, 4,
-1\}-thread} --- the digit multiset shared by 6174 (at \(d = 4\)), 60714
+1\}-thread} - the digit multiset shared by 6174 (at \(d = 4\)), 60714
 and 60417 (at \(d = 5\)), 1746 (at \(d = 4\), classical-rule reverse
 anagram of 6174), and a four-fp cluster at \(d = 6\) (146070, 170460,
 607140, and 60714 lifted). Within this thread, the four fps studied here
@@ -2454,9 +2452,8 @@ proven as a theorem.
 
 Kaprekar's 1949 result identifies 6174 as the unique attractor of the
 classical four-digit Kaprekar routine: starting from any non-repdigit
-four-digit integer, the iteration \(K_0(n)\) --- defined as the digits
-of \(n\) rearranged descending, minus the digits rearranged ascending
---- reaches 6174 within at most seven steps. In our framework, this is
+four-digit integer, the iteration \(K_0(n)\) - defined as the digits
+of \(n\) rearranged descending, minus the digits rearranged ascending - reaches 6174 within at most seven steps. In our framework, this is
 the rule with permutation pair \(\pi = (3, 2, 1, 0)\),
 \(\sigma = (0, 1, 2, 3)\) and coefficient vector
 \((999, 90, -90, -999)\).
@@ -2471,8 +2468,8 @@ four-cycle \((74943, 62964, 71973, 83952)\) that catches the entire
 admissible set.
 
 This is partially what 60714 addresses. The fixed point 60714 lives in
-the digit multiset \(\{7, 6, 4, 1, 0\}\) --- the same digits as 6174 (at
-\(d = 4\), padded with a zero at \(d = 5\)) --- but it is \emph{not} a
+the digit multiset \(\{7, 6, 4, 1, 0\}\) - the same digits as 6174 (at
+\(d = 4\), padded with a zero at \(d = 5\)) - but it is \emph{not} a
 fixed point of the classical rule, which has no fixed points at
 \(d = 5\). Instead, 60714 is the universal attractor of a
 \emph{different} permutation pair: the rule
@@ -2482,7 +2479,7 @@ fixed point of the classical rule, which has no fixed points at
 and 60714 is its unique universal fixed point at \(d = 5\).
 
 The thread that connects 6174 to 60714 is therefore not direct
-succession --- there is no rule that fixes both --- but \textbf{shared
+succession - there is no rule that fixes both - but \textbf{shared
 digit content}. Both fps live in the multiset \(\{7, 6, 4, 1, 0\}\)
 (with 6174 padded with one zero at \(d \geq 5\)), and the
 cross-dimensional behavior of each gives information about the
@@ -2516,14 +2513,14 @@ positions form a derangement of zero-sum pair structure. Then:}
   \emph{\(d = 5\) (algebraic obstruction).} No sv\(=5\) rule fixes 6174
   at \(d = 5\). The trivial sv\(=4\) extension of \(K_0\) (coefficients
   \((999, 90, -90, -999, 0)\)) achieves basin \(0.99775\) over the
-  \(99{,}540\) admissible \(d = 5\) multisets --- near-universal but not
+  \(99{,}540\) admissible \(d = 5\) multisets - near-universal but not
   strict.
 \item
   \emph{\(d = 6\) (dynamic obstruction). Among the four sv\(=6\) rules
   fixing 6174 at \(d = 6\) (two coefficient-preserving liftings of
   \(K_0\) plus their sign-flips), the best basin achieved is
   \(0.968603\) over the \(4{,}905\) admissible multisets at \(d = 6\)
-  --- below the NEAR threshold of \(0.99\). Thus 6174 is dynamically
+  - below the NEAR threshold of \(0.99\). Thus 6174 is dynamically
   obstructed at \(d = 6\): full-variable rules fix it, but none is even
   near-universal.}
 \item
@@ -2579,11 +2576,11 @@ the non-monotone ``fingerprint'' sometimes attributed to 6174.
 \(d = 6\), only \(45\) admissibles reach \(0\) (the same
 \((X^4, Y^2)\)-shape escape class, in the appropriate ladder
 convention), but an additional \(109\) admissibles fail to reach
-\(6174\) by entering non-trivial cycles --- these account for the basin
+\(6174\) by entering non-trivial cycles - these account for the basin
 shortfall to \(0.969\) but are not part of the escape class. At
 \(d = 7\) the canonical lifting has no cycles, but the escape class is
 larger and structurally heterogeneous: \(117\) multisets across four
-shape classes (\((3,2,1,1)\): \(56\); \((4,3)\): \(45\) --- the
+shape classes (\((3,2,1,1)\): \(56\); \((4,3)\): \(45\) - the
 canonical four-of-a-kind-paired form; \((3,3,1)\): \(8\); \((5,1,1)\):
 \(8\)). The ``fixed escape class'' framing applies precisely from
 \(d = 8\) onward; basin monotonicity holds throughout but the dynamical
@@ -2610,7 +2607,7 @@ ratio asymptotically approaches \(1\) as \(d \to \infty\).
 
 The contrast with 60714 is immediate. Where 6174 achieves only
 near-universality at \(d \geq 5\), \textbf{60714 achieves universal
-convergence on \(A_d \setminus E_d\) at every \(d \geq 5\) --- with
+convergence on \(A_d \setminus E_d\) at every \(d \geq 5\) - with
 \(E_d = \emptyset\) at \(d = 5, 6\) and an exactly-characterized escape
 class continuous with the classical case at \(d \geq 7\)} (Theorem 5.2).
 The two fixed points share digit multiset \(\{7, 6, 4, 1, 0\}\) at every
@@ -2628,7 +2625,7 @@ three structural respects:
   \(\mathrm{abcd} - \mathrm{dcba}\), with sum-zero coefficient vector
   \((999, 90, -90, -999)\). 60714's native rule is
   \(\mathrm{adcbe} - \mathrm{deacb}\), with coefficient vector
-  \((9900, 9, 90, -9000, -999)\) --- a non-classical rule that exploits
+  \((9900, 9, 90, -9000, -999)\) - a non-classical rule that exploits
   the absorbing capacity of 60714's zero digit at sorted-descending
   position 4.
 \item
@@ -2636,7 +2633,7 @@ three structural respects:
   achieve only near-universality at \(d \geq 5\), with a fixed
   \(45\)-input escape class. 60714's coefficient-preserving lifts are
   universally convergent on \(A_d \setminus E_d\) at every \(d \geq 5\)
-  --- with \(E_d = \emptyset\) at \(d = 5, 6\) and an
+  - with \(E_d = \emptyset\) at \(d = 5, 6\) and an
   exactly-characterized escape class of block-aligned multisets at
   \(d \geq 7\).
 \end{enumerate}
@@ -2648,7 +2645,7 @@ native rule's coefficients are concentrated. The four-of-a-kind escape
 class arises because the sum-zero coefficient structure of \(K_0\) acts
 trivially on inputs with only two distinct digit values. 60714's native
 rule, by contrast, has its largest-magnitude coefficient \((-999)\)
-landing on its zero digit at sorted-descending position 4 --- that is,
+landing on its zero digit at sorted-descending position 4 - that is,
 \emph{within} the absorbing region. Coefficient-preserving liftings of
 60714 inherit this structural placement, and the resulting rules have no
 analogous escape class.
@@ -2935,8 +2932,8 @@ from the two-zero \(d = 6\) stratum verified by Run C, plus 12 held-out
 fps drawn from \(0\)-zero, \(1\)-zero, \(2\)-zero, and \(3\)-zero
 strata), every TRANS/NEAR fp has at least one zero-sum-pair fixing rule
 (zero false positives for the Type A predictor). Of the \(13\) LOCK fps
-in the combined record, \(7\) are Type A LOCK --- exactly identified by
-the predictor --- and \(6\) are Type B LOCK. Held-out predictions: \(3\)
+in the combined record, \(7\) are Type A LOCK - exactly identified by
+the predictor - and \(6\) are Type B LOCK. Held-out predictions: \(3\)
 of \(3\) Type A predictions in the held-out set correctly identified
 LOCK fps, with no false positives among the \(6\) TRANS or \(2\) Type B
 LOCK records. \(\square\)
@@ -2981,7 +2978,7 @@ Observation 6.3 generalizes the coefficient-preserving lifting mechanism
 of §5. The lifted rule for \(60714\) at \(d = 7\) contains a zero-sum
 pair \((9 \cdot 10^6, -9 \cdot 10^6)\) at the two appended positions.
 The verified observation states that \emph{some} zero-sum-pair structure
-is necessary for high-basin fixing rules at \(d = 7\) --- not
+is necessary for high-basin fixing rules at \(d = 7\) - not
 necessarily on appended positions, but somewhere in the rule. Type A
 LOCK occurs precisely when \(F\)'s nonzero digit arrangement in its
 sorted-descending form forbids any zero-sum-pair configuration from
@@ -2991,8 +2988,8 @@ The within-thread sls observation of §6.4--§6.5 sits inside this broader
 framework: among the four \(\{7, 6, 4, 1\}\)-thread members at
 \(d = 7\), all admit zero-sum-pair rules (\(12\) such rules each for
 \(60714\), \(170460\), \(607140\); \(36\) for \(146070\)). The Type A vs
-Type B distinction does not separate them --- they are all Type
-B-or-better --- and the finer ordering observed in §6.5.1 reflects
+Type B distinction does not separate them - they are all Type
+B-or-better - and the finer ordering observed in §6.5.1 reflects
 within-multiset basin structure not captured by the coarser Type A /
 Type B partition.
 
@@ -3026,7 +3023,7 @@ algebraic rank \(d\) at even \(d\) but rank \(d - 1\) at odd \(d\),
 because the middle coefficient \(10^{(d-1)/2} - 10^{(d-1)/2} = 0\)
 vanishes identically. Universal fixed points of this rule therefore can
 only exist at even \(d\) (where 6174 sits at \(d = 4\), and
-\(631{,}764\) --- though not full-variable in our sense --- sits at
+\(631{,}764\) - though not full-variable in our sense - sits at
 \(d = 6\); cf.~§3). At odd \(d\), universal full-variable fps must come
 from non-classical rules. 60714 is the canonical such fp at \(d = 5\).
 
@@ -3051,14 +3048,14 @@ every \(d \geq 8\) under its native lifting.
 empirical within-thread ordering of these three behaviors (plus 1746 as
 a within-multiset control) but does not yet yield a uniform theorem
 analogous to Theorem 5.2 for fps other than 60714. Extending the
-lifting-theorem framework to 6174 --- proving the monotone
-NEAR-convergence of basin to \(1\) across all \(d \geq 5\) --- is a
+lifting-theorem framework to 6174 - proving the monotone
+NEAR-convergence of basin to \(1\) across all \(d \geq 5\) - is a
 natural open direction (§7).
 
 \textbf{4. The cycle-signature pattern at \(d = 7\) is a consequence of
 Type A locking, not an independent classifier.} The cycle-signature
-observation at \(d_F = 6\) --- that signature \((3, 3)\) uniformly
-produces dimension-locked rules --- does not extend to signature
+observation at \(d_F = 6\) - that signature \((3, 3)\) uniformly
+produces dimension-locked rules - does not extend to signature
 \((3, 4)\) at \(d = 7\) (Appendix D shows \((3, 4)\) produces both TRANS
 and LOCK). A refined empirical observation does hold at \(d = 7\): among
 the 53 verified two-zero \(d = 6\) fps, those whose \(F\)-fixing rule
@@ -3086,7 +3083,7 @@ universal), 60417 (sls \(= 7\), dimension-locked beyond \(d = 5\)), and
 6174 (sls \(= 8\), monotone NEAR). This unification is explicitly
 labeled as empirical and within-thread; cross-multiset testing on the
 \(\{2, 3, 5, 8\}\)-thread shows the invariant is not a global predictor.
-60714 is the uniquely complete case --- the universal attractor that the
+60714 is the uniquely complete case - the universal attractor that the
 classical Kaprekar recipe at \(d = 5\) could not see, but which exists
 in the same digit multiset as 6174 once non-classical full-variable
 rules are admitted.
@@ -3108,7 +3105,7 @@ what we have proven; we collect them here.
 \subsection{Dimension-locking as a general phenomenon}\label{dimension-locking-as-a-general-phenomenon}}
 
 Theorem 4.1 established that \(32\) of \(33\) universal full-variable
-fixed points at \(d = 5\) are dimension-locked at \(d = 5\) --- no
+fixed points at \(d = 5\) are dimension-locked at \(d = 5\) - no
 rank-\(6\) rule at \(d = 6\) is universal for them. The natural
 generalization is:
 
@@ -3116,12 +3113,12 @@ generalization is:
 universality).} \emph{Let \(F\) be a universal full-variable fixed point
 at native digit length \(d_F\), and suppose \(K\) is a full-variable
 rule at some \(d \neq d_F\) that is universal for \(F\). Then
-\(\mathrm{sv}_F(K) < d\) --- that is, the effective rank of \(K\) at
+\(\mathrm{sv}_F(K) < d\) - that is, the effective rank of \(K\) at
 \(F\) is strictly less than the algebraic rank.}
 
 Informally: when a fixed point appears at a non-native digit length, it
 always does so through a rule whose effective rank at \(F\) is strictly
-reduced --- some of the rule's coefficients are ``absorbed'' by \(F\)'s
+reduced - some of the rule's coefficients are ``absorbed'' by \(F\)'s
 zero digits and do not contribute to the computation \(K(F) = F\).
 
 \textbf{Status.} Verified exhaustively at \(d = 6\) for all \(33\)
@@ -3196,7 +3193,7 @@ Appendix D) or a more structural argument for which multisets can
 support cross-dimensional threads.
 
 \textbf{Question 7.2.} \emph{Is there an analogue of \(60714\) at higher
-native digit lengths --- a fixed point \(F\) with native \(d_F = 7\) or
+native digit lengths - a fixed point \(F\) with native \(d_F = 7\) or
 \(d_F = 8\) that is universal at every \(d \geq d_F\) via a
 coefficient-preserving lifting?}
 
@@ -3248,7 +3245,7 @@ an algebraic question on the coefficient vectors' action on multisets of
 the form \((X, X, X, X, 0, \ldots, 0)\).
 
 \hypertarget{the-depth-of-the-escape-class-the-basin-density-conjecture}{%
-\subsection{The depth of the escape class --- the Basin Density Conjecture}\label{the-depth-of-the-escape-class-the-basin-density-conjecture}}
+\subsection{The depth of the escape class - the Basin Density Conjecture}\label{the-depth-of-the-escape-class-the-basin-density-conjecture}}
 
 Before stating the Basin Density Conjecture, we record a structural
 observation that places the escape class \(E_d\) in continuity with the
@@ -3259,8 +3256,8 @@ classical Kaprekar phenomenon at \(d = 3, 4\).
 \(d = 3\) and \(d = 4\). At \(d = 3\), the ten repdigits
 \(\{0, 111, 222, \ldots, 999\}\) each map to \(0\) in one application of
 \(K_0\), rather than to the nontrivial fixed point \(495\). At
-\(d = 4\), the ten multiples of \(1111\) --- namely
-\(\{0, 1111, 2222, \ldots, 9999\}\) --- each map to \(0\) in one
+\(d = 4\), the ten multiples of \(1111\) - namely
+\(\{0, 1111, 2222, \ldots, 9999\}\) - each map to \(0\) in one
 application of \(K_0\), rather than to \(6174\). In both cases, the
 escape class is precisely the set of inputs whose sorted-descending and
 sorted-ascending forms are identical, and these are exactly the inputs
@@ -3275,7 +3272,7 @@ analogous to that of the repdigits at \(d = 3\) and the multiples of
 \(1111\) at \(d = 4\).}
 
 What is new at \(d \geq 7\) is therefore not the existence of an escape
-class --- that is a generic feature of digit-permutation dynamics under
+class - that is a generic feature of digit-permutation dynamics under
 any sum-zero rule, and the classical case at \(d = 3, 4\) has always had
 one. What is new is the \emph{explicit closed form} for \(|E_d^{(1)}|\)
 given by Lemma 5.5, the proof of one-step collapse for inputs in
@@ -3288,7 +3285,7 @@ by an analogous block-alignment criterion. Conjecture 7.6 asks whether
 the escape class, while growing combinatorially with \(d\), has
 vanishing density.
 
-Lemma 5.5 gives a closed form for \(|E_d^{(1)}|\) --- the number of
+Lemma 5.5 gives a closed form for \(|E_d^{(1)}|\) - the number of
 step-\(1\) collapse inputs at digit length \(d\). The full escape class
 \(E_d\) is the backward orbit of \(B_d \cap A_d\), and at \(d \leq 11\)
 exhaustive enumeration confirms that every orbit in \(E_d\) reaches
@@ -3333,7 +3330,7 @@ The dimension-agnostic family is the simplest case: these fixed points
 persist across all digit lengths by construction. A more interesting
 question is whether there are non-full-variable rules whose
 cross-dimensional behavior mirrors \(60714\)'s full-variable
-universality --- say, rules with \(\mathrm{sv} = d - 1\) that produce
+universality - say, rules with \(\mathrm{sv} = d - 1\) that produce
 universal fixed points at every \(d\) in some range. We leave this open.
 
 \hypertarget{concluding-remarks}{%
@@ -3343,18 +3340,18 @@ The central result of this paper is Theorem 5.2: \(60714\) is a
 universal full-variable fixed point at every digit length \(d \geq 5\),
 under an explicit coefficient-preserving lifting. This is the first
 explicitly constructed cross-dimensional persistence result in the
-generalized Kaprekar family. The supporting results --- the
+generalized Kaprekar family. The supporting results - the
 classifications of §3, the uniqueness of §4, and the \(6174\)
-cross-dimensional pattern of §6 --- place this theorem in a structural
+cross-dimensional pattern of §6 - place this theorem in a structural
 context that raises more questions than it answers. Conjectures 7.1 and
 7.2 and Questions 7.1--7.5 and the Basin Density Conjecture (7.6)
 together outline a program for understanding cross-dimensional behavior
 in the generalized family: which fixed points transcend, under what
 structural conditions, and with what mechanism.
 
-The methodology of the paper --- exhaustive enumeration at each digit
+The methodology of the paper - exhaustive enumeration at each digit
 length, combined with structural proof on the cases the enumeration
-distinguishes --- has been effective at \(d \leq 6\) for the full rule
+distinguishes - has been effective at \(d \leq 6\) for the full rule
 space and at \(d \leq 9\) for targeted verification of specific fps.
 Extending this methodology to \(d \geq 7\) for the full rule space, or
 to \(d \geq 10\) for \(6174\), is the natural next step.
@@ -3364,24 +3361,23 @@ to \(d \geq 10\) for \(6174\), is the natural next step.
 \hypertarget{acknowledgments}{%
 \section{Acknowledgments}\label{acknowledgments}}
 
-The mathematical content of this paper --- the framing of the organizing
+The mathematical content of this paper - the framing of the organizing
 question, the classifications at \(d = 3, 4, 5, 6\), the
 cross-dimensional cross-check, the coefficient-preserving lifting
 framework, the proof of Theorem 5.2 (including the structural arguments
 of Lemmas 5.1, 5.2, 5.3, 5.4 and the support lemmas of Appendix C), the
-\(\{7, 6, 4, 1\}\)-thread analysis, and the open-question program of §7
---- was developed by the author, who is solely responsible for the
+\(\{7, 6, 4, 1\}\)-thread analysis, and the open-question program of §7 - was developed by the author, who is solely responsible for the
 paper's content, including any remaining errors.
 
 The development of the paper used substantial computer assistance, in
 the spirit of the increasing role of computational tools in
 number-theoretic research. Verification scripts were written and
-executed for every numerical claim in the paper --- classifications,
+executed for every numerical claim in the paper - classifications,
 basin counts, ladder-extension data, escape-class enumerations.
 Structural arguments (most notably Lemma C.10's case enumeration and the
 \(d \geq 15\) algebraic argument in Appendix C.4) were tested against
 worked examples and edge cases, a process that identified and corrected
-several defects during development --- including a parenthetical
+several defects during development - including a parenthetical
 algebraic error in an earlier version of Lemma C.9, an enumeration-count
 error in an earlier version of Lemma C.10, and an off-by-one error in a
 closed-form formula in supplementary material. Prose was edited
@@ -3558,7 +3554,7 @@ full-variable classification under the rule \(\pi = (1, 2, 4, 3, 0)\),
 \(\sigma = (2, 0, 3, 4, 1)\) with coefficient vector
 \((-90, 99, 9000, -9000, -9)\). This rule is algebraically full-variable
 at \(d = 5\) (\(\mathrm{sv} = 5\)), but its effective rank at \(F = 54\)
-is only \(2\) --- three of the five coefficients land on zero digits of
+is only \(2\) - three of the five coefficients land on zero digits of
 \(F\)'s sorted-descending form \((5, 4, 0, 0, 0)\) and do not contribute
 to \(K(F) = F\). Thus
 \(\mathrm{sv}_F(K_{54}) = 2 < 5 = \mathrm{sv}(K_{54})\). This is
@@ -3677,7 +3673,7 @@ of the same digits:
 \[252,\ \ 2520,\ \ 20025,\ \ 25200,\ \ 200025,\ \ 200250,\ \ 250200,\ \ 252000.\]
 
 That all eight 3-zero fps belong to a single multiset is a notable
-structural fact --- at higher zero-count strata, the multiset diversity
+structural fact - at higher zero-count strata, the multiset diversity
 drops sharply.
 
 \textbf{The \(53\) fps with \(2\) zero digits}, grouped by digit
@@ -3722,7 +3718,7 @@ The complete sorted list of all \(53\) fps with \(2\) zero digits:
 \[909081, 910089, 910809.\]
 
 \textbf{The \(\{7, 6, 4, 1, 0, 0\}\) multiset cluster.} The four fps in
-this cluster --- \(60714, 146070, 170460, 607140\) --- share the
+this cluster - \(60714, 146070, 170460, 607140\) - share the
 multiset structure of the central object of §5 (60714 padded to
 \(d = 6\)). They are precisely the universal full-variable fps in this
 multiset at \(d = 6\), and the cross-dimensional behavior of all four is
@@ -3908,7 +3904,7 @@ positions:
 In both cases, the two appended coefficients
 \(c_d = 10^{\pi_d} - 10^{\sigma_d}\) and
 \(c_{d+1} = 10^{\pi_{d+1}} - 10^{\sigma_{d+1}}\) satisfy
-\(c_d + c_{d+1} = 0\) --- they form a \textbf{zero-sum pair}. The only
+\(c_d + c_{d+1} = 0\) - they form a \textbf{zero-sum pair}. The only
 difference between ladders is the sign convention on the new pair.
 
 \hypertarget{table-b.3.-demonstration-at-d-100}{%
@@ -3971,7 +3967,7 @@ entirely in the zero-digit positions, which absorb the new coefficients
 without affecting \(K(F)\).
 
 The nontrivial content of Theorem 3 is not that \(K(F) = F\) at every
-\(d\) --- that is automatic from the construction. The nontrivial
+\(d\) - that is automatic from the construction. The nontrivial
 content is that every admissible orbit outside the escape class \(E_d\)
 at every \(d \geq 5\) reaches \(F\), which is the work done by Lemmas
 5.1 and 5.2.
@@ -4278,7 +4274,7 @@ block contributes \((0, 0)\) at decimals
 \([5, 6], [7, 8], \ldots, [13, 14]\). The block region produces \(10\)
 zero digits at decimals \(5\) through \(14\). Even after accounting for
 at most one carry from the core into decimal \(5\), decimals \(6\)
-through \(14\) remain zero --- that is \(9\) zero digits, far more than
+through \(14\) remain zero - that is \(9\) zero digits, far more than
 the \(2\) required.
 
 \emph{Case B1: \(1 \leq x_4 \leq 7\).} By Lemma C.7,
@@ -4403,7 +4399,7 @@ the core.} Block \(k\)'s contribution affects only decimal positions
 \(2(k+1)+7 = 2k+9\) and \(2(k+1)+8 = 2k+10\). These do not overlap. The
 maximum block-\(k\) value is \(81 \cdot 10^{2k+7}\) (when
 \(\delta_k = 9\)), which has digits at positions \(2k+7\) and \(2k+8\)
-but not at \(2k+9\) --- so blocks do not carry into one another. The
+but not at \(2k+9\) - so blocks do not carry into one another. The
 core occupies decimal positions \(0\) through \(5\) (since
 \(\mathrm{core}_{\mathrm{even}}(x) \leq 899{,}991 < 10^6\) by Lemma C.8
 below). Decimal position \(6\) is occupied by neither core nor any
@@ -4599,11 +4595,11 @@ iterations of \(K^{(d)}\) required is at most \(2\).}
 
 \textbf{Proof.} By Lemma 5.1, \(K^{(d)}(n)\) is the integer
 \(K^{(d-2)}(m)\), and \(K^{(d)}(n) \in T_d\). The state
-\(n_1 := \sigma_d(K^{(d)}(n))\) --- i.e., the sorted-descending form at
-length \(d\) of the integer \(K^{(d-2)}(m)\) --- has a projection at
+\(n_1 := \sigma_d(K^{(d)}(n))\) - i.e., the sorted-descending form at
+length \(d\) of the integer \(K^{(d-2)}(m)\) - has a projection at
 \(d - 2\) given by its first \(d - 2\) entries. The proof of the lemma
 reduces to a case enumeration over the Case 2 inputs
-\(n \in A_d \cap T_d\) --- those whose sorted-descending form is
+\(n \in A_d \cap T_d\) - those whose sorted-descending form is
 \((v, v, \ldots, v, w, 0, 0)\) with \(d - 3\) copies of \(v \neq 0\),
 one digit \(w \neq v\), and two trailing zeros. (The \(v = 0\) row is
 excluded by admissibility at \(d\): it would give \(d - 1\) zeros and
@@ -4636,7 +4632,7 @@ The induction closes after one iteration of \(K^{(d)}\).
 bottom. For \(d - 2 \geq 7\), the lifting structure (zero-sum appended
 pairs with \(v > w\) pushed against the negative-coefficient slot)
 forces the closed form \(K^{(d-2)}(m) = 9 (v - w) \cdot 10^{d-3}\). (At
-\(d - 2 \in \{5, 6\}\) --- i.e., \(d \in \{7, 8\}\) --- the closed form
+\(d - 2 \in \{5, 6\}\) - i.e., \(d \in \{7, 8\}\) - the closed form
 does not apply because the lifting at \(d - 2 = 5\) has the native
 \(-999\) coefficient and at \(d - 2 = 6\) the split-lifted root is in
 play; these base cases are handled below.) Let
@@ -4654,23 +4650,22 @@ computation:
   \(9 \Delta \in \{18, 27, 36, 45, 54, 63, 72, 81\}\) has two nonzero
   digits, and \(9 \Delta \cdot 10^{d-3}\) at sort-desc-length-\(d\) has
   projection at \(d - 2\) that is an admissible multiset (two distinct
-  nonzero digits, \(d - 4\) zeros --- max count \(d - 4 < d - 3\) for
+  nonzero digits, \(d - 4\) zeros - max count \(d - 4 < d - 3\) for
   \(d \geq 8\)). The induction closes after one iteration of
   \(K^{(d)}\).
 \item
   If \(\Delta = 1\) (\(9\) Case B inputs total): \(9 \Delta = 9\) has
   one nonzero digit, and \(9 \cdot 10^{d-3}\) at sort-desc-length-\(d\)
-  has projection at \(d - 2\) equal to \((9, 0, 0, \ldots, 0)\) ---
+  has projection at \(d - 2\) equal to \((9, 0, 0, \ldots, 0)\) -
   itself a near-repdigit at \(d - 2\). A second iteration of \(K^{(d)}\)
   is required.
 \end{itemize}
 
-For these \(9\) second-iteration stragglers, applying \(K^{(d)}\) again
---- which by Lemma 5.1 again projects to
+For these \(9\) second-iteration stragglers, applying \(K^{(d)}\) again - which by Lemma 5.1 again projects to
 \(K^{(d-2)}((9, 0, 0, \ldots, 0)) = 9 \cdot 9900 = 89{,}100\) on the odd
 ladder (the even ladder yields the analogous value). The integer
 \(89{,}100\), sorted-descending at length \(d\), has projection
-\((9, 8, 1, 0, 0, \ldots, 0)\) at \(d - 2\) --- admissible (three
+\((9, 8, 1, 0, 0, \ldots, 0)\) at \(d - 2\) - admissible (three
 distinct nonzero digits, max count \(d - 5 < d - 3\) for \(d \geq 8\)).
 The induction closes after two iterations of \(K^{(d)}\).
 
@@ -4713,12 +4708,12 @@ Theorem 5.2 at \(d - 2\), the orbit of \(m\) under \(K^{(d-2)}\) reaches
 
 \textbf{Summary.} For \(n \in A_d \cap T_d\) with \(m \in A_{d-2}\)
 (Case 3), the induction closes directly. For \(n\) in the residual
-escape class (Case 1b only --- repdigit projection), the orbit reaches
+escape class (Case 1b only - repdigit projection), the orbit reaches
 \(0\) rather than \(60714\). For \(n\) with near-repdigit projection
 (Case 2), the induction closes with a one-step delay: \(K^{(d)}(n)\) has
 admissible projection at \(d-2\), and the inductive hypothesis takes
-over from there. The main theorem's statement --- universal at every
-\(d \geq 5\) --- holds in the strict sense at \(d = 5\) and \(d = 6\)
+over from there. The main theorem's statement - universal at every
+\(d \geq 5\) - holds in the strict sense at \(d = 5\) and \(d = 6\)
 (where the escape class is empty) and holds \emph{modulo the
 characterized residual escape class} (Case 1b only) at \(d \geq 7\). The
 escape class is explicitly documented at each \(d\) in Appendices D and
@@ -4961,9 +4956,8 @@ the Type A predictor has \(7\) correct predictions out of \(7\) across
 The cycle signature of a permutation pair \((\pi, \sigma)\) records the
 cycle decomposition of \(\pi \cdot \sigma^{-1}\). Among the \(53\) Run C
 fps, four signatures appear among fixing rules: \((2, 2, 3)\),
-\((2, 5)\), \((3, 4)\), and \((7,)\). The signature \((3, 4)\) --- the
-natural structural analog at \(d_F = 7\) of \((3, 3)\) at \(d_F = 6\)
---- does \emph{not} uniformly produce LOCK rules: \(9\) of the \(53\)
+\((2, 5)\), \((3, 4)\), and \((7,)\). The signature \((3, 4)\) - the
+natural structural analog at \(d_F = 7\) of \((3, 3)\) at \(d_F = 6\) - does \emph{not} uniformly produce LOCK rules: \(9\) of the \(53\)
 fps include \((3, 4)\) in their signature set and TRANS, while \(5\)
 include \((3, 4)\) and LOCK. The factorization mechanism that locks
 \((3, 3)\) at \(d_F = 6\) (Theorem 6.1 part 4) does not generalize
@@ -5086,7 +5080,7 @@ multiply zero digits and do not affect \(K(F) = F\).
 \(d = 8\) with coefficient vector
 \(c = (c_0, c_1, c_2, c_3, c_4, c_5, c_6, c_7)\) is a
 coefficient-preserving lifting of \(K_0\) if \(c_i = c_i^{(4)}\) for
-\(i \in \{0, 1, 2, 3\}\) --- that is, if the first four coefficients are
+\(i \in \{0, 1, 2, 3\}\) - that is, if the first four coefficients are
 exactly \((999, 90, -90, -999)\). By Proposition 5.1, any such rule
 satisfies \(K(6174_{(8)}) = 6174\).
 
@@ -5172,15 +5166,13 @@ with \(X > Y \geq 0\), accounting for all \(45\) escape multisets.
 \textbf{Complete list of escape multisets at \(d = 8\)} (listed as
 sorted-descending tuples):
 
-\((1, 1, 1, 1, 0, 0, 0, 0), \; (2, 2, 2, 2, 0, 0, 0, 0), \; \ldots, \; (9, 9, 9, 9, 0, 0, 0, 0)\)
---- the \(9\) multisets with \(Y = 0\).
+\((1, 1, 1, 1, 0, 0, 0, 0), \; (2, 2, 2, 2, 0, 0, 0, 0), \; \ldots, \; (9, 9, 9, 9, 0, 0, 0, 0)\) - the \(9\) multisets with \(Y = 0\).
 
-\((2, 2, 2, 2, 1, 1, 1, 1), \; (3, 3, 3, 3, 1, 1, 1, 1), \; \ldots, \; (9, 9, 9, 9, 1, 1, 1, 1)\)
---- the \(8\) multisets with \(Y = 1\).
+\((2, 2, 2, 2, 1, 1, 1, 1), \; (3, 3, 3, 3, 1, 1, 1, 1), \; \ldots, \; (9, 9, 9, 9, 1, 1, 1, 1)\) - the \(8\) multisets with \(Y = 1\).
 
 \(\vdots\)
 
-\((9, 9, 9, 9, 8, 8, 8, 8)\) --- the \(1\) multiset with \(Y = 8\).
+\((9, 9, 9, 9, 8, 8, 8, 8)\) - the \(1\) multiset with \(Y = 8\).
 
 \textbf{Total: \(9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 45\) multisets.}
 
@@ -5198,7 +5190,7 @@ structure), and the last four coefficients sum to \(0\) (by the
 coefficient-preserving lifting construction). When the input has only
 two distinct values, the rule's action collapses algebraically to zero.
 
-This is not a feature of the specific best lifting --- it is a
+This is not a feature of the specific best lifting - it is a
 structural consequence of sum-zero constraints on coefficient-preserving
 liftings. Every coefficient-preserving lifting at \(d = 8\) maps every
 four-of-a-kind-paired multiset to \(0\).
@@ -5316,7 +5308,7 @@ is chosen) is outlined in §E.2.2 and could likely be extended to all
 Tower}{Appendix F. Strict-d Anchors and the \textbackslash\{7, 6, 4, 1\textbackslash\}-Thread Tower}}\label{appendix-f.-strict-d-anchors-and-the-7-6-4-1-thread-tower}}
 
 \emph{Status: Preliminary working notes added April 29, 2026 (revised
-April 30, 2026 to correct §F.5 --- see ``Note (added in revision)''
+April 30, 2026 to correct §F.5 - see ``Note (added in revision)''
 below). The classifications and counts in §F.3 and §F.4 are
 computational findings established by two independent enumerations: the
 original \texttt{universality\_scan\_v3.py} run and a fresh from-scratch
@@ -5345,14 +5337,14 @@ class of §5 (Lemma 5.1, Lemma 5.2). The present appendix makes this
 convention explicit and uses the abbreviation \textbf{F-or-0
 universality} when the distinction matters.
 
-This appendix introduces a strengthened criterion --- \emph{strict at
-\(d\)} --- that distinguishes rules whose dynamics genuinely involve all
+This appendix introduces a strengthened criterion - \emph{strict at
+\(d\)} - that distinguishes rules whose dynamics genuinely involve all
 \(d\) coefficient positions on \(F\) from rules that are zero-sum-pair
 extensions of lower-dimensional rules. Under the strict criterion, the
 cross-dimensional structure of the \(\{7, 6, 4, 1\}\)-thread is
 substantially richer than reported in the main paper, and the classical
 Kaprekar constants \(6174\) and \(1746\) acquire strict-anchor status at
-\(d = 7\) --- a finding consistent with, but sharper than, the
+\(d = 7\) - a finding consistent with, but sharper than, the
 cross-dimensional pattern of \(6174\) described in §6.
 
 \hypertarget{f.2-the-strict-d-criterion}{%
@@ -5468,7 +5460,7 @@ and near-universal at \(d \geq 7\), obstructed at \(d = 5, 6\)), but
 stated in terms of universality rather than strict anchorhood. The
 strict-\(d\) criterion sharpens the observation: \(6174\)'s reappearance
 at \(d = 7\) is not a quirk of a particular lifting family but a
-structural feature --- \(6174\) is a strict-\(d\) anchor at \(d = 7\) in
+structural feature - \(6174\) is a strict-\(d\) anchor at \(d = 7\) in
 the same sense it is at \(d = 4\).
 
 \textbf{\emph{Observation F.3}} \emph{(strict-anchor status of \(60714\)
@@ -5488,7 +5480,7 @@ trailing zero positions of the sorted-descending form
 \(\mathrm{sort\_desc}(60714) = (7, 6, 4, 1, 0, 0, 0)\). Both positions
 hold digit \(0\), so the pair contributes zero on \(F\), and the
 fixed-point equation is reproduced by the five-coefficient sub-rule at
-indices \(\{0, 1, 2, 3, 4\}\) --- which is precisely the \(d = 5\) rule.
+indices \(\{0, 1, 2, 3, 4\}\) - which is precisely the \(d = 5\) rule.
 
 This observation is consistent with the main paper's Theorem 3:
 \(60714\) is a universal full-variable fp at every \(d \geq 5\). The
@@ -5500,7 +5492,7 @@ live at \(d = 5\) and \(d = 6\).
 \subsection{Pure-duplication extensions}\label{f.5-pure-duplication-extensions}}
 
 The main paper considers only zero-padded extensions of multisets across
-\(d\). We tested the alternative --- \emph{pure-duplication extension},
+\(d\). We tested the alternative - \emph{pure-duplication extension},
 where the digits added at \(d > 4\) are drawn from the classical core
 itself (e.g., \(\{7, 7, 6, 4, 1\}\) at \(d = 5\)).
 
@@ -5512,8 +5504,8 @@ classical multiset. For \(d \in \{5, 6\}\), every multiset of the form
 multisets of \(M\). No such sum is divisible by \(9\) for
 \(|S| \in \{1, 2\}\); consequently no universal fp exists in these
 multisets at \(d = 5, 6\). For \(d = 7\), four pure-duplication
-multisets are admissible by digit sum --- namely \(\{7,7,7,6,4,4,1\}\),
-\(\{7,7,6,4,1,1,1\}\), \(\{7,6,6,6,6,4,1\}\), \(\{7,6,4,4,4,1,1\}\) ---
+multisets are admissible by digit sum - namely \(\{7,7,7,6,4,4,1\}\),
+\(\{7,7,6,4,1,1,1\}\), \(\{7,6,6,6,6,4,1\}\), \(\{7,6,4,4,4,1,1\}\) -
 and exhaustive enumeration over all sv\(\geq 2\) rules at \(d = 7\)
 produces zero rule-fp pairs satisfying \(K(F) = F\) in any of the four.
 The same result holds for \(\{8, 5, 3, 2\}\) at \(d = 5, 6, 7\).
@@ -5521,15 +5513,15 @@ The same result holds for \(\{8, 5, 3, 2\}\) at \(d = 5, 6, 7\).
 \textbf{\emph{Note (added in revision).}} A subsequent investigation
 extended this inquiry to \(d = 8\). At \(d = 8\) in the
 \(\{7, 6, 4, 1\}\)-thread, three of the four admissible pure-duplication
-multisets --- \(\{7,7,7,7,6,6,4,1\}\), \(\{7,6,6,4,4,4,4,1\}\),
-\(\{7,6,6,4,1,1,1,1\}\) --- remain empty of universal sv\(= 8\) fps, but
+multisets - \(\{7,7,7,7,6,6,4,1\}\), \(\{7,6,6,4,4,4,4,1\}\),
+\(\{7,6,6,4,1,1,1,1\}\) - remain empty of universal sv\(= 8\) fps, but
 the \emph{symmetric}-duplication multiset \(\{7,7,6,6,4,4,1,1\}\) (each
 core digit doubled exactly twice) admits universal full-variable rules.
 Pure-duplication extensions are therefore not uniformly empty across all
 \(d > 4\), and zero-padding is not the unique viable extension
 mechanism. The pattern by which symmetric duplications break the
-empty-pure-duplication property at \(d = 8\) --- and whether this
-extends to higher even \(d\) or to the \(\{8, 5, 3, 2\}\)-thread --- is
+empty-pure-duplication property at \(d = 8\) - and whether this
+extends to higher even \(d\) or to the \(\{8, 5, 3, 2\}\)-thread - is
 open.
 
 The empirical pattern at \(d \in \{5, 6, 7\}\) remains: zero-padding is
@@ -5563,7 +5555,7 @@ This appendix reports observations; it does not settle them.
   spaces do not accommodate. A precise statement and proof are open.
 \item
   \emph{Strict-anchor count at \(d = 8, 9, \ldots\)?} The \(d = 7\)
-  count is \(11\) --- substantially larger than the \(d = 6\) count of
+  count is \(11\) - substantially larger than the \(d = 6\) count of
   \(4\). A subsequent \(d = 8\) scan in the canonical zero-padded
   multiset \(\{7, 6, 4, 1, 0^4\}\) produced \(89\) strict anchors, and
   the symmetric pure-duplication multiset \(\{7, 7, 6, 6, 4, 4, 1, 1\}\)
@@ -5588,8 +5580,8 @@ This appendix reports observations; it does not settle them.
   this appendix, \(60714\) is strict-universal at \(d = 5, 6\) only; the
   lifts at \(d \geq 7\) are non-strict. The main paper's theorem remains
   correct under its own (sv\(=d\), F-or-0) framework. The reframing
-  question --- whether the central object of the theory is the
-  (sv\(=d\))-universal tower or the strict-\(d\)-universal tower --- is
+  question - whether the central object of the theory is the
+  (sv\(=d\))-universal tower or the strict-\(d\)-universal tower - is
   not settled here.
 \end{enumerate}
 
@@ -5629,7 +5621,7 @@ They strengthen and extend them.}
 \subsection{Purpose}\label{g.1-purpose}}
 
 The original verifier in this paper tested universality against an
-\(S\)-restricted input basin --- that is, the set of non-repdigit
+\(S\)-restricted input basin - that is, the set of non-repdigit
 \(d\)-digit multisets whose digits lie in the alphabet
 \(S = \{0, 1, 4, 6, 7\}\). This restriction was inherited from the
 search infrastructure originally designed to \emph{find} fixed points
@@ -5639,8 +5631,7 @@ search infrastructure originally designed to \emph{find} fixed points
 Classical Kaprekar universality, as the term is conventionally used in
 the literature on the digit-rearrangement function
 \(K(n) = \mathrm{sort\_desc}(n) - \mathrm{sort\_asc}(n)\), requires the
-basin of \(K\)-iteration to include every non-repdigit \(d\)-digit input
---- that is, all multisets of digits drawn from \(\{0, 1, \ldots, 9\}\)
+basin of \(K\)-iteration to include every non-repdigit \(d\)-digit input - that is, all multisets of digits drawn from \(\{0, 1, \ldots, 9\}\)
 except repdigits.
 
 This appendix (a) clarifies the distinction, (b) re-verifies the paper's
@@ -5740,13 +5731,13 @@ transposition. For example: \(16464717\) and \(16446717\); \(61771446\)
 and \(61477146\); \(66177144\) and \(66147714\). The pattern is
 consistent with the genuinely \(S\)-only universals being structurally
 related rather than scattered. Their basin coverage in classical scope
-ranges from \(99.1\%\) to \(99.9\%\) --- the missed inputs converge to
+ranges from \(99.1\%\) to \(99.9\%\) - the missed inputs converge to
 alternative fixed points whose digit multisets lie outside \(S\)
 (typically containing digits \(2\), \(3\), \(5\), \(8\), or \(9\)).
 
-The principal result of the paper --- that \(60714\) admits a
+The principal result of the paper - that \(60714\) admits a
 coefficient- preserving lifting universal on \(A_d \setminus E_d\) at
-every \(d \geq 5\) --- is unchanged under the classical-scope
+every \(d \geq 5\) - is unchanged under the classical-scope
 correction. All \(60714\) ladder universals are classical-universal at
 every tested \(d \in \{5, 6, 7, 8, 9, 10, 11\}\).
 
@@ -5845,7 +5836,7 @@ Among the \(5\) universals discovered:
 \tightlist
 \item
   \(1\) is in the high-density (density \(= 1.0\)) bucket of \(1{,}536\)
-  candidates: \(0\) of \(1{,}536\) universals --- i.e., the
+  candidates: \(0\) of \(1{,}536\) universals - i.e., the
   high-confidence prediction returned \(0\) universals.
 \item
   \(1\) is in the medium-confidence bucket of \(2{,}220\) candidates:
@@ -5892,19 +5883,19 @@ Three scripts were developed for the corrected verification:
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \texttt{audit\_full\_basin.py} --- given a single
+  \texttt{audit\_full\_basin.py} - given a single
   \((F, \pi^{-1}, \sigma^{-1})\), iterates \(K\) from every non-repdigit
   \(d\)-digit multiset and reports whether \(F\) is a classical
   universal. Caching makes this fast: at \(d = 16\), the full basin of
   \(2{,}042{,}965\) multisets is processed in approximately \(13\)
   seconds on a 2026-vintage laptop.
 \item
-  \texttt{reverify\_classical\_all\_rules.py} --- given a JSON of
+  \texttt{reverify\_classical\_all\_rules.py} - given a JSON of
   \((F, \mathrm{rule})\) pairs, classifies each \(F\) as classical,
   genuinely \(S\)-only, or partial. For each \(F\), all available strict
   rules are tested before declaring genuinely \(S\)-only.
 \item
-  \texttt{verify\_d16\_familyD\_classical.py} --- corrected production
+  \texttt{verify\_d16\_familyD\_classical.py} - corrected production
   verifier for new searches, using full-basin scope rather than
   \(S\)-restricted scope.
 \end{enumerate}

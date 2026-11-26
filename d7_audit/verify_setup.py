@@ -39,7 +39,7 @@ def ok(msg):
 
 def main():
     print("=" * 60)
-    print("verify_setup.py — d=7 audit package sanity check")
+    print("verify_setup.py - d=7 audit package sanity check")
     print("=" * 60)
     print()
 

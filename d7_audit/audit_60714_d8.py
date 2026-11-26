@@ -24,13 +24,13 @@ non-near-repdigit) digit multisets at d=8 and records:
   - reaching-time histogram
   - sample trajectories
 
-This is a complementary "Run A2" to audit_60714_d7.py — same fast scope
+This is a complementary "Run A2" to audit_60714_d7.py - same fast scope
 (~6-10 seconds) but along the even ladder instead of the odd ladder. Useful
 data point: d=6, d=8, d=10... basin decay is what Theorem 5.2 predicts
 along the even ladder; this audit gives the d=8 number.
 
 Output:
-  - audit_60714_d8.json — structured results
+  - audit_60714_d8.json - structured results
   - prints summary to stdout
 
 Usage:
@@ -67,7 +67,7 @@ def is_block_aligned_d8(ms_desc):
 
 def main():
     print("=" * 60)
-    print("audit_60714_d8.py — Run A2 (even ladder)")
+    print("audit_60714_d8.py - Run A2 (even ladder)")
     print("60714 even-ladder lifted rule at d=8")
     print("=" * 60)
     print()
@@ -127,7 +127,7 @@ def main():
             print(f"      {ms}  fate={fate}  steps={n}")
     print()
 
-    # Step-1 escape class — predicted by Lemma 5.5
+    # Step-1 escape class - predicted by Lemma 5.5
     # |E_d^(1)| = C(10 + k - 1, k) - 10 with k = 1 + (d - d0)/2
     # d=8, d_0=6 => k = 1 + 1 = 2
     # |E_8^(1)| = C(11, 2) - 10 = 55 - 10 = 45 (same as d=7 by coincidence of k)
@@ -143,7 +143,7 @@ def main():
     if pred_E1 == actual_E1:
         print("  MATCH ✓")
     else:
-        print(f"  MISMATCH — investigate")
+        print(f"  MISMATCH - investigate")
     print()
 
     # All inputs reaching 0 (full escape class E_8) - those reaching 0 in any number of steps
