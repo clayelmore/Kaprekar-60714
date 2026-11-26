@@ -1,6 +1,6 @@
 import importlib.util, itertools, json
 from collections import Counter
-spec=importlib.util.spec_from_file_location("eng","~/Downloads/search_multiset_universals_fast.py")
+spec=importlib.util.spec_from_file_location("eng",__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', '..', 'scripts', 'search_multiset_universals_fast.py'))
 eng=importlib.util.module_from_spec(spec); spec.loader.exec_module(eng)
 K_apply=eng.K_apply; sdd=eng.sorted_desc_digits
 d=12; A=[3,2,1,0]; B=[0,1,2,3]
@@ -13,7 +13,8 @@ def build_clean(perms):
 R_clean=build_clean([(0,1,2),(2,1,0),(2,1,0),(1,2,0)])
 F_clean=617461746174
 # the universal scramble rule, fixes 666141417774 (100%)
-e=json.load(open('~/Downloads/d16_1467_test/m3_verified_universals.json'))[0]
+# Note: m3_verified_universals.json is not included in the repository.
+e=json.load(open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', 'data', 'm3_verified_universals.json')))[0]
 R_scr=eng.coefs_from_invs(e['pi_inv'],e['sigma_inv'],d)
 F_scr=K_apply(R_scr,sdd(int('111444666777'),d))
 

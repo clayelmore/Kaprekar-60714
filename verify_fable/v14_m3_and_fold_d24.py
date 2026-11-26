@@ -3,10 +3,11 @@
 then fold_2 it to d=24 (m=6) and run proxy + 300k random-seed scan."""
 import sys, itertools, random, time, json
 from collections import Counter
-sys.path.insert(0, '~/Downloads')
+sys.path.insert(0, __import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', 'scripts'))  # the engine lives in scripts/
 from search_multiset_universals_fast import K_apply, sorted_desc_digits
 
-art = json.load(open('~/Downloads/d16_1467_test/m3_verified_universals.json'))[0]
+# Note: m3_verified_universals.json is not included in the repository.
+art = json.load(open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', 'multiplicity_chain', 'data', 'm3_verified_universals.json')))[0]
 c12 = tuple(art['c'])
 d = 12
 s = tuple([7]*3 + [6]*3 + [4]*3 + [1]*3)

@@ -3,9 +3,10 @@
 38,567,100 multisets, rank-indexed bytearray cache (memory ~40MB).
 Codes: 0 unknown, 1 reaches F24, 2 other terminal."""
 import sys, itertools, time, json
-sys.path.insert(0, '~/Downloads')
+sys.path.insert(0, __import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', 'scripts'))  # the engine lives in scripts/
 
-art = json.load(open('~/Downloads/d16_1467_test/m3_verified_universals.json'))[0]
+# Note: m3_verified_universals.json is not included in the repository.
+art = json.load(open(__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', 'multiplicity_chain', 'data', 'm3_verified_universals.json')))[0]
 c12 = tuple(art['c'])
 def fold_c(c0, d0, k):
     return tuple(g * 10**(d0*(k-1-j)) for g in c0 for j in range(k))

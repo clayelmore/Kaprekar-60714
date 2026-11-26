@@ -9,7 +9,7 @@
 """
 import sys, itertools, time
 from collections import Counter
-sys.path.insert(0, '~/Downloads')
+sys.path.insert(0, __import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', 'scripts'))  # the engine lives in scripts/
 from search_multiset_universals_fast import K_apply, sorted_desc_digits, coefs_from_invs
 
 def admissible_multisets(d):

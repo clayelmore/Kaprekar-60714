@@ -1,6 +1,6 @@
 import importlib.util, random, sys
 from collections import Counter
-spec=importlib.util.spec_from_file_location("eng","~/Downloads/search_multiset_universals_fast.py")
+spec=importlib.util.spec_from_file_location("eng",__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', '..', 'scripts', 'search_multiset_universals_fast.py'))
 eng=importlib.util.module_from_spec(spec); spec.loader.exec_module(eng)
 K_apply=eng.K_apply; sdd=eng.sorted_desc_digits
 random.seed(606); A=[3,2,1,0]; B=[0,1,2,3]; k=6; d=24; F=int("6174"*6)

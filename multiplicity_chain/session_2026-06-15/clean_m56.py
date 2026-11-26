@@ -1,6 +1,6 @@
 import importlib.util, random, itertools
 from collections import Counter
-spec=importlib.util.spec_from_file_location("eng","~/Downloads/search_multiset_universals_fast.py")
+spec=importlib.util.spec_from_file_location("eng",__import__('os').path.join(__import__('os').path.dirname(__import__('os').path.abspath(__file__)), '..', '..', 'scripts', 'search_multiset_universals_fast.py'))
 eng=importlib.util.module_from_spec(spec); spec.loader.exec_module(eng)
 K_apply=eng.K_apply; sdd=eng.sorted_desc_digits
 random.seed(11)

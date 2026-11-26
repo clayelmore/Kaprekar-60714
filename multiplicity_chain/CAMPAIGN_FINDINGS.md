@@ -182,7 +182,7 @@ For a random sample to find ONE pair-symmetric rule by chance, you'd need ~10¹�
 
 ## 9. Key Files
 
-In `~/Downloads/d16_1467_test/`:
+In the working folder used during the campaign (files that were kept are in `multiplicity_chain/data/`):
 - `pair_symmetric_BIG.json` — 313 d=16 universals with full rule data (652 KB)
 - `pair_symmetric_search.json` — first 41 d=16 universals (full rules)
 - `d16_m4_universals_summary.json` — clean d=16 summary
