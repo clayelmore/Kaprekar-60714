@@ -1,0 +1,18 @@
+(i) random half-swap rules, n = 1..6: 3000  tuples per rule: 4  direct evaluations at b in [B(D), B(D)+40] and 10^6+3, 10^9+7: 516000
+    T_inf vs direct mismatches: 0
+    Lemma 7.2(a) sign/zero failures: 0  (tuples with sgn(rho) = 0 seen: 294 )
+    Lemma 7.2(b) image entries exceeding 2D+1: 0  (tuples whose image attains 2D+1: 6067 )
+    Lemma 7.2(a) and 7.2(c) 'if and only if' at admissible b in [2D+1, 4D+2]: 443948 evaluations, failures: 0
+    [info] probe below B(D): sampled D values with a failure at b = 4D+2: 61 of 61 with any failure (e.g. D = [0, 1, 2, 3, 4, 5, 6, 7] )
+(i') exhaustive: all rules n = 1, 2, 3, all rho with D <= 5, b = B(D)..B(D)+3 and all admissible b below B(D): 534040 evaluations, failures: 0
+(iii) Remark (iii): T_inf cycles found in random rules: 486  failures as T_b cycles: 0
+(iv) Remark (iv) witness n = 1, pair (0,1), rho = (D), D = 0..300: T_inf = (2D+1), base 4D+2 admissible with T_b = (2D), base 4D+3 gives (2D+1); failures: 0
+(v) Remark (v): state ((b-1)/2, ...) in odd b, random rules: 3000  failures: 0
+(ii) rule AFEJBGIDHC - GIDHCAFEJB, pairs (P_q, M_q), q = 0..4: [(1, 2), (9, 7), (4, 3), (5, 8), (0, 6)]
+    T_inf (13, 13, 15, 25, 31) -> sgn 1  theta = [1, -2, -7, 17, -39]  image (1, 1, 6, 17, 38)
+    T_inf (1, 1, 6, 17, 38) -> sgn 1  theta = [4, -5, -22, 36, -19]  image (4, 4, 18, 21, 36)
+    T_inf (4, 4, 18, 21, 36) -> sgn 1  theta = [13, -14, -16, 31, -26]  image (13, 13, 15, 25, 31)
+    Lemma 7.2(c) hypotheses at b = 77 (2D+1, rho_1+rho_4, 2 max T_inf + 1): [(63, 38, 77), (77, 18, 73), (73, 25, 63)] True
+    direct cycle check in every base 77 .. 1200 and in 100003, 1000003, 1000000007 ( 1127 bases): failures: []
+    rule universal in base 10 (complete enumeration of 10-digit multisets): True
+ALL CHECKS PASS

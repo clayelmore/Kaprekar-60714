@@ -4,7 +4,7 @@ The LaTeX preamble is taken from paper_hierarchy.tex with title, author and date
 import re, subprocess, os
 D = "theorem_paper"
 ORDER = ["sec1_intro.md", "sec2_setting.md", "sec3_even.md", "sec4_odd.md", "sec5_certificate.md",
-         "sec6_computations.md", "sec7_caution.md", "sec8_open.md", "sec9_back.md"]
+         "sec6_computations.md", "sec7_caution.md", "sec7_proof_family.md", "sec7_proof_corner.md", "sec8_open.md", "sec9_back.md"]
 front = open(f"{D}/front.md").read()
 title = re.search(r'^title: "(.*)"$', front, re.M).group(1)
 abstract = re.search(r"abstract: \|\n((?:  .*\n?)+)", front).group(1)

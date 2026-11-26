@@ -57,12 +57,12 @@ print("corner rule:", " - ".join(words(pl)), " pairs (P_q, M_q), q=0..4:", [(a[2
 def digs(rho, b): return tuple(sorted([b-1-r for r in rho] + list(rho), reverse=True))
 def state(s, b): return tuple(sorted(min(x, b-1-x) for x in s))[:0] or tuple(sorted(s[n:]))
 rho0 = (13, 13, 15, 25, 31); bad = []
-for b in list(range(77, 1200)) + [100003, 1000003]:
+for b in list(range(77, 1201)) + [100003, 1000003, 1000000007]:
     s = digs(rho0, b); orb = []
     for _ in range(3):
         s = step(pl, s, b); orb.append(tuple(sorted(s[n:])))
         assert tuple(sorted(b-1-x for x in s[:n])) == orb[-1]
     if orb != [(1, 1, 6, 17, 38), (4, 4, 18, 21, 36), rho0]: bad.append(b)
-print("corner cycle identical in bases 77..1199, 100003, 1000003:", not bad, bad[:5])
+print("corner cycle identical in bases 77..1200, 100003, 1000003, 1000000007:", not bad, bad[:5])
 # and the rule is universal in base 10 (complete enumeration of 10-digit multisets)
 print("corner rule universal in base 10:", universal(pl, 10))

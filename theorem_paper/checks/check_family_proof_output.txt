@@ -1,0 +1,16 @@
+Step 0: all 36 inequalities hold from their stated (sharp) thresholds; overall t0 = 10
+step 1: X1 -> X2: differences, borrows kappa, digits, identities, W1 expansion, letters verified
+step 2: X2 -> X3: differences, borrows kappa, digits, identities, W2 expansion, letters verified
+step 3: X3 -> X4: differences, borrows kappa, digits, identities, W3 expansion, letters verified
+step 4: X4 -> X1: differences, borrows kappa, digits, identities, W4 expansion, letters verified
+X1..X4 pairwise distinct for all t >= 10
+direct iteration: K(Xi) sorts to X(i+1), K^5(x) = K(x), and K(x)..K^4(x) are 4 distinct strings, for every t = 10..2000 (1991 bases)
+  base 50 (t = 10): {1: (37, 37, 33, 14, 13, 12, 1, 0), 2: (49, 46, 25, 12, 10, 4, 1, 0), 3: (48, 45, 29, 21, 2, 1, 1, 0), 4: (49, 47, 34, 31, 18, 16, 1, 0)}
+  t = 4 (b = 20): K(X4) sorts to (19, 15, 13, 6, 2, 1, 1, 0) != X1 = (13, 19, 15, 2, 1, 6, 1, 0); orbit ends at the fixed point with sorted digits (19, 19, 18, 1, 0, 0, 0, 0) after 5 more steps
+  t = 5 (b = 25): K(X4) sorts to (22, 18, 17, 7, 4, 3, 1, 0) != X1 = (17, 22, 18, 4, 3, 7, 1, 0); orbit ends at the fixed point with sorted digits (24, 24, 23, 1, 0, 0, 0, 0) after 3 more steps
+  t = 6 (b = 30): K(X4) sorts to (25, 21, 21, 8, 6, 5, 1, 0) != X1 = (21, 25, 21, 6, 5, 8, 1, 0); orbit ends at the fixed point with sorted digits (29, 29, 28, 1, 0, 0, 0, 0) after 5 more steps
+  t = 7 (b = 35): K(X4) sorts to (28, 25, 24, 9, 8, 7, 1, 0) != X1 = (25, 28, 24, 8, 7, 9, 1, 0); orbit ends at the fixed point with sorted digits (34, 34, 33, 1, 0, 0, 0, 0) after 5 more steps
+  t = 8 (b = 40): K(X4) sorts to (31, 29, 27, 10, 10, 9, 1, 0) != X1 = (29, 31, 27, 10, 9, 10, 1, 0); orbit ends at the fixed point with sorted digits (39, 39, 38, 1, 0, 0, 0, 0) after 4 more steps
+  t = 9 (b = 45): K(X4) sorts to (34, 33, 30, 12, 11, 11, 1, 0) != X1 = (33, 34, 30, 12, 11, 11, 1, 0); orbit ends at the fixed point with sorted digits (44, 44, 43, 1, 0, 0, 0, 0) after 7 more steps
+below threshold: X1 not sorted for t <= 9; for 4 <= t <= 9 the orbit leaves the family
+ALL CHECKS PASS

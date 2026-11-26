@@ -100,7 +100,7 @@
 \maketitle
 
 \begin{abstract}
-Kaprekar's routine sorts the digits of a number, subtracts the ascending arrangement from the descending one, and repeats; at four digits in base ten every input with at least two distinct digits reaches \(6174\). At most other lengths and in most other bases the routine ends in cycles. We study the wider family in which two fixed arrangements of the sorted digits are subtracted. For every length \(L \geq 6\) we give an explicit rule of this kind and prove that in every base \(b \geq 3\) it sends every string that is not a repdigit to the single value \((b-1)(b^h - 1)\), \(h = \lceil L/2 \rceil\); in base ten this is \(8991\) at length \(6\), \(89991\) at lengths \(7\) and \(8\), \(899991\) at lengths \(9\) and \(10\), and so on. At even length the two arrangements differ by exchanging the two halves of the places, extending a four-digit rule studied by Young, which in bases \(b \geq 3\) has a single nonzero constant only when \(b = 3 \cdot 2^k\); at odd length, where the places cannot all be exchanged in pairs, one letter is held fixed. For the whole family of such half-swap rules in an even base we prove a finite certificate: a rule on \(2n\) digits is universal (every non-repdigit reaches one nonzero fixed value) if and only if its pairs cover every gap and a map on \(\binom{n+H}{n}\) states, \(H = \lfloor (b-1)/2 \rfloor\), has an attracting fixed state (\(126\) states at ten digits in base ten). A subclass of these rules lifts to every longer even length with explicit endpoints. We report a census of the family in base ten and two examples of rules that pass in every small base tested and fail in a large one. The inverse problem, to produce a rule and a proof for a prescribed endpoint, is left open. The theorems are tested by complete enumeration in small cases and the proofs have been reviewed by AI models; they have not yet been reviewed by a mathematician.
+Kaprekar's routine sorts the digits of a number, subtracts the ascending arrangement from the descending one, and repeats; at four digits in base ten every input with at least two distinct digits reaches \(6174\). At most other lengths and in most other bases the routine ends in cycles. We study the wider family in which two fixed arrangements of the sorted digits are subtracted. For every length \(L \geq 6\) we give an explicit rule of this kind and prove that in every base \(b \geq 3\) it sends every string that is not a repdigit to the single value \((b-1)(b^h - 1)\), \(h = \lceil L/2 \rceil\); in base ten this is \(8991\) at length \(6\), \(89991\) at lengths \(7\) and \(8\), \(899991\) at lengths \(9\) and \(10\), and so on. At even length the two arrangements differ by exchanging the two halves of the places, extending a four-digit rule studied by Young, which in bases \(b \geq 3\) has a single nonzero constant only when \(b = 3 \cdot 2^k\); at odd length, where the places cannot all be exchanged in pairs, one letter is held fixed. For the whole family of such half-swap rules in an even base we prove a finite certificate: a rule on \(2n\) digits is universal (every non-repdigit reaches one nonzero fixed value) if and only if its pairs cover every gap and a map on \(\binom{n+H}{n}\) states, \(H = \lfloor (b-1)/2 \rfloor\), has an attracting fixed state (\(126\) states at ten digits in base ten). A subclass of these rules lifts to every longer even length with explicit endpoints. We report a census of the family in base ten, and we prove that two rules which pass in every small base tested fail in infinitely many large ones. The inverse problem, to produce a rule and a proof for a prescribed endpoint, is left open. The theorems are tested by complete enumeration in small cases and the proofs have been reviewed by AI models; they have not yet been reviewed by a mathematician.
 \end{abstract}
 
 \section{Introduction}\label{introduction}
@@ -115,11 +115,11 @@ This paper asks for more: one rule for each length whose endpoint attracts every
 
 \textbf{A finite certificate.} The proof of Theorem 3.3 rests on an elementary identity: when every letter moves exactly \(n\) places, the image is \((b^n - 1)m\), and its digits are the \(n\) digits of \(m - 1\) followed by their complements. (For \(n = 2\) this is visible in Young's formulas.) After one step a string is therefore described by \(n\) numbers between \(0\) and \(\lfloor (b-1)/2 \rfloor\). Section 5 applies the same reduction to every half-swap rule, with any dealing of the letters. In an even base, such a rule is universal if and only if its pairs cover every gap and its induced map on \(\binom{n+H}{n}\) states, \(H = \lfloor (b-1)/2 \rfloor\), has a fixed state that every state reaches (Theorem 5.9). In base \(10\) at ten digits the table has \(126\) rows, against \(92{,}378\) digit multisets. A subclass of these rules (class C) lifts: adjoining a new largest and a new smallest letter as a pair gives a rule of the same class two digits longer, so one checked table yields a universal rule at every longer even length, with an explicit endpoint (Theorem 5.13).
 
-\textbf{Computations and a caution.} Section 6 reports complete enumerations that test the theorems and a census of the half-swap family in base \(10\). Section 7 records two rules that are universal in every small base tried and fail in large bases: for rules of this kind, agreement in every base from \(3\) to \(26\), or in sampled bases up to \(640\), is not evidence for all bases.
+\textbf{Computations and a caution.} Section 6 reports complete enumerations that test the theorems and a census of the half-swap family in base \(10\). Section 7 gives two rules that are universal in every small base tried and fail in large bases, and proves the failures: one rule has a cycle in every base that is a multiple of \(5\) from \(50\) on (Proposition 7.1), the other in every base from \(77\) on (Proposition 7.3), by way of a map on deficits that does not depend on the base (Lemma 7.2). For rules of this kind, agreement in every base from \(3\) to \(26\), or in sampled bases up to \(640\), is not evidence for all bases.
 
 \textbf{What is not done.} The problem we would most like to solve is the inverse one: given a number, produce a rule that sends every input to it, with a proof. That problem is open (Section 8). The endpoints of Theorem 4.17 consist almost entirely of the digits \(0\) and \(b-1\), and the endpoints reached by the lifting theorem all have one shape. Unlike \(6174\), which comes from the most natural rule, the rules \(R_n\) were found by computer search and then proved.
 
-Each statement below carries a label. \textbf{Proven} means a proof is given here. \textbf{Computed} means a finite enumeration, complete unless marked as sampled. The statements, and the reduced maps used in the proofs, have been tested by machine as described in Section 6, and the proofs have been reviewed by AI models; they have not yet been reviewed by a mathematician. On the search described in Section 9 we did not find Theorems 3.3, 4.16, 5.9, or 5.13 in print; the identity behind Lemma 3.6 is elementary and appears for \(n = 2\) in {[}Young 1995{]}. In the citation indexes we consulted, Young's paper is cited only once, in passing {[}Devlin and Zeng 2021{]}. A search of this kind cannot exclude prior work.
+Each statement below carries a label. \textbf{Proven} means a proof is given here. \textbf{Computed} means a finite enumeration, complete unless marked as sampled. The statements, and the reduced maps used in the proofs, have been tested by machine as described in Sections 6 and 7, and the proofs have been reviewed by AI models; they have not yet been reviewed by a mathematician. On the search described in Section 9 we did not find Theorems 3.3, 4.16, 5.9, or 5.13 in print; the identity behind Lemma 3.6 is elementary and appears for \(n = 2\) in {[}Young 1995{]}. In the citation indexes we consulted, Young's paper is cited only once, in passing {[}Devlin and Zeng 2021{]}. A search of this kind cannot exclude prior work.
 
 \section{Rules and notation}\label{rules-and-notation}
 
@@ -853,7 +853,7 @@ Class C (Definition 5.10): among rules that cover every gap there are none at \(
 
 At \(6\) and \(8\) digits, \(12\) and \(112\) half-swap rules are universal in every base from \(7\) to \(13\) and in base \(16\) (complete census), and show no failure on any state in bases \(22\), \(31\), \(50\), and \(97\) (at \(8\) digits in base \(200\), on a random sample of \(300{,}000\) states). In the odd bases \(31\) and \(97\) this check of states is not a proof of universality there (Section 5, Limits). Their endpoints are \(6\) and \(24\) arrangements of the one digit multiset consisting of \(b-2\), \(1\), \(n-1\) digits \(b-1\), and \(n-1\) zeros. The rule \(R_n\) is one of them at each length. One other, \(\mathtt{EABDFC} - \mathtt{DFCEAB}\) at \(6\) digits, has a proof along the lines of Section 3 in the project notes, not reproduced here. For the rest, universality in every base is not proved (Open problem 6).
 
-At \(10\) digits the picture is different. \(25{,}350\) rules are universal in all of the bases \(7\) to \(13\) and \(16\). Sampling in further bases (\(313\) to \(3467\), and states near the corner of small deficits) finds cycles for some of them, including the second rule of Section 7, which had passed sampling in bases \(97\), \(200\), and \(640\). A sample cannot certify the rest. We make no claim about which of them, apart from \(R_5\), are universal in every base.
+At \(10\) digits the picture is different. \(25{,}350\) rules are universal in all of the bases \(7\) to \(13\) and \(16\). Sampling in further bases (\(313\) to \(3467\), and states near the corner of small deficits) finds cycles for some of them, including the second rule of Section 7 (Proposition 7.3), which had passed sampling in bases \(97\), \(200\), and \(640\). A sample cannot certify the rest. We make no claim about which of them, apart from \(R_5\), are universal in every base.
 
 \subsection{Sampled targets}\label{sampled-targets}
 
@@ -882,21 +882,398 @@ Each rule found is a complete enumeration at its length and is a fact about that
 
 \section{A caution about small bases}\label{a-caution-about-small-bases}
 
-The theorems of Sections 3 and 4 hold in every base \(b \geq 3\), and those of Section 5 in every even base, because they were proved there. This section records two examples in which a rule passes complete enumeration in every small base tested and fails in large bases. Everything here is \textbf{Computed}; nothing in this section is proved for all bases, and the examples are not offered as evidence of any general law.
+The theorems of Sections 3 and 4 hold in every base \(b \geq 3\), and those of Section 5 in every even base, because they were proved there. This section records two examples in which a rule passes complete enumeration in every small base tested and fails in large bases. The two examples were found by computation and are first described as computed. Propositions 7.1 and 7.3 then prove that each rule fails in every base of an infinite range. The examples are not offered as evidence of any general law.
 
 \subsection{A cycle that scales with the base}\label{a-cycle-that-scales-with-the-base}
 
-The six-letter rule \(\mathtt{EABDFC} - \mathtt{DFCEAB}\) is a half-swap rule on the same pairing as \(R_3\), and at length \(6\) it is universal with endpoint \((b-1)(b^3-1)\) in every base from \(3\) to \(80\) by complete enumeration (a proof for every base, along the lines of Section 3, is in the project notes and is not reproduced here). One way to extend it to length \(8\) keeps the coefficients of the letters \(\mathtt{A}\) to \(\mathtt{E}\), gives the two new gaps the weights \(b^6 - b\) and \(b^7 - b\), and changes the last coefficient from \(b - b^4\) to \(b - b^7\). The result is \[\mathtt{GFEABDHC} - \mathtt{HGDFCEAB}.\] This rule is universal at length \(8\) in every base from \(3\) to \(26\), by complete enumeration of all digit multisets. In base \(50\) it is not: the sorted digit strings \[\begin{aligned}(48,45,29,21,2,1,1,0) &\to (49,47,34,31,18,16,1,0) \\ &\to (37,37,33,14,13,12,1,0) \to (49,46,25,12,10,4,1,0)\end{aligned}\] form a cycle of period \(4\). The cycle belongs to a family. For \(b\) a multiple of \(5\) put \(q = b/5\); then \[(4q-3,\; 3q+7,\; 3q+3,\; 2q-6,\; 2q-7,\; q+2,\; 1,\; 0)\] lies on a cycle of period \(4\) in every base \(b = 55, 60, \dots, 2000\) and in the bases \(2500\), \(10000\), and \(100005\) (direct iteration in each of these \(393\) bases; base \(50\) is the same family with two digits tied). Divided by \(b\), the cycle tends to a fixed orbit with coordinates in fifths. Complete enumeration in the bases \(3\) to \(26\) does not see it.
+The six-letter rule \(\mathtt{EABDFC} - \mathtt{DFCEAB}\) is a half-swap rule on the same pairing as \(R_3\), and at length \(6\) it is universal with endpoint \((b-1)(b^3-1)\) in every base from \(3\) to \(80\) by complete enumeration (a proof for every base, along the lines of Section 3, is in the project notes and is not reproduced here). One way to extend it to length \(8\) keeps the coefficients of the letters \(\mathtt{A}\) to \(\mathtt{E}\), gives the two new gaps the weights \(b^6 - b\) and \(b^7 - b\), and changes the last coefficient from \(b - b^4\) to \(b - b^7\). The result is \[\mathtt{GFEABDHC} - \mathtt{HGDFCEAB}.\] This rule is universal at length \(8\) in every base from \(3\) to \(26\), by complete enumeration of all digit multisets. In base \(50\) it is not: the sorted digit strings \[\begin{aligned}(48,45,29,21,2,1,1,0) &\to (49,47,34,31,18,16,1,0) \\ &\to (37,37,33,14,13,12,1,0) \to (49,46,25,12,10,4,1,0)\end{aligned}\] form a cycle of period \(4\). The cycle belongs to a family. For \(b\) a multiple of \(5\) put \(t = b/5\); then \[(4t-3,\; 3t+7,\; 3t+3,\; 2t-6,\; 2t-7,\; t+2,\; 1,\; 0)\] lies on a cycle of period \(4\) in every base \(b = 55, 60, \dots, 2000\) and in the bases \(2500\), \(10000\), and \(100005\) (direct iteration in each of these \(393\) bases; base \(50\) is the same family with two digits tied). Proposition 7.1 below proves this for every base \(5t\) with \(t \geq 10\). Divided by \(b\), the cycle tends to a fixed orbit with coordinates in fifths. Complete enumeration in the bases \(3\) to \(26\) does not see it.
 
 \subsection{A cycle that does not depend on the base}\label{a-cycle-that-does-not-depend-on-the-base}
 
-The second example is inside the family of Section 5. The ten-digit half-swap rule \[\mathtt{AFEJBGIDHC} - \mathtt{GIDHCAFEJB}\] is universal in every base from \(3\) to \(13\) and in base \(16\) (complete enumeration). In the notation of Section 5, its state after one step is a multiset of five deficits. The three states \[(13,13,15,25,31) \to (1,1,6,17,38) \to (4,4,18,21,36) \to (13,13,15,25,31)\] form a cycle in every base from \(77\) to \(1199\), and in the bases \(100003\) and \(1000003\): the same deficits, whatever the base. The largest deficit on the cycle is \(38\), so the cycle cannot exist until \(b \geq 77\); from there on it is always present in the range tested. In digits, five letters sit a fixed distance below \(b-1\) and five a fixed distance above \(0\), so a random string in a large base is almost never near it. This rule had passed random sampling in bases \(97\), \(200\), and \(640\).
+The second example is inside the family of Section 5. The ten-digit half-swap rule \[\mathtt{AFEJBGIDHC} - \mathtt{GIDHCAFEJB}\] is universal in every base from \(3\) to \(13\) and in base \(16\) (complete enumeration). In the notation of Section 5, its state after one step is a multiset of five deficits. The three states \[(13,13,15,25,31) \to (1,1,6,17,38) \to (4,4,18,21,36) \to (13,13,15,25,31)\] form a cycle in every base from \(77\) to \(1200\), and in the bases \(100003\), \(1000003\), and \(1000000007\): the same deficits, whatever the base. The largest deficit on the cycle is \(38\), so the cycle cannot exist until \(b \geq 77\); from there on it is always present in the range tested, and Proposition 7.3 below proves that it is present in every base \(b \geq 77\). In digits, five letters sit a fixed distance below \(b-1\) and five a fixed distance above \(0\), so a random string in a large base is almost never near it. This rule had passed random sampling in bases \(97\), \(200\), and \(640\).
 
 \subsection{What the examples show}\label{what-the-examples-show}
 
-Two different mechanisms appear: a cycle whose digits grow in proportion to \(b\), and a cycle whose deficits are constant in \(b\). In both cases the rule is universal in every small base that was tried. For the half-swap family the second mechanism suggests a base-free object: a map on tuples of non-negative integers (the deficits) that does not mention \(b\). That the dynamics near the corner is governed by such a map is observed here, not proved; see Section 8.
+Two different mechanisms appear: a cycle whose digits grow in proportion to \(b\), and a cycle whose deficits are constant in \(b\). In both cases the rule is universal in every small base that was tried. For the half-swap family the second mechanism suggests a base-free object: a map on tuples of nonnegative integers (the deficits) that does not mention \(b\). Lemma 7.2 below makes this precise and proves it: for each state, once the base is large compared with the deficits, the next state is given by a map that does not involve \(b\).
 
-The conclusion is narrow. For rules of this kind, agreement in every base from \(3\) to \(26\) (complete enumeration), or in sampled bases up to \(640\), is not evidence of universality in every base. The only rules in this paper asserted to be universal in every base are those of Theorems 3.3 and 4.16, and they are asserted because they are proved.
+The conclusion is narrow. For rules of this kind, agreement in every base from \(3\) to \(26\) (complete enumeration), or in sampled bases up to \(640\), is not evidence of universality in every base. The only rules in this paper asserted to be universal in every base are those of Theorems 3.3 and 4.16, and they are asserted because they are proved. The rest of this section proves the two failures.
+
+\subsection{The cycle family, proved}\label{the-cycle-family-proved}
+
+This subsection proves that the family of the first example, the rule \(\mathtt{GFEABDHC} - \mathtt{HGDFCEAB}\), has a cycle of period \(4\) in every base \(b = 5t\) with \(t \geq 10\); this supersedes the computed range quoted there. In this subsection \(t = b/5\), and the letter \(\mathtt{H}\) always denotes the eighth letter \(s_7\) of the rule's words, not the bound \(H\) of Section 3. For \(b = 5t\) define the four sorted digit strings \[\begin{aligned}
+X_1 &= (4t-3,\; 3t+7,\; 3t+3,\; 2t-6,\; 2t-7,\; t+2,\; 1,\; 0),\\
+X_2 &= (5t-1,\; 5t-4,\; 3t-5,\; t+2,\; t,\; 4,\; 1,\; 0),\\
+X_3 &= (5t-2,\; 5t-5,\; 3t-1,\; 2t+1,\; 2,\; 1,\; 1,\; 0),\\
+X_4 &= (5t-1,\; 5t-3,\; 3t+4,\; 3t+1,\; 2t-2,\; 2t-4,\; 1,\; 0).
+\end{aligned}\] Each is listed as \((s_0, \dots, s_7) = (\mathtt{A}, \dots, \mathtt{H})\).
+
+\textbf{Proposition 7.1.} \emph{(Proven.) Let \(b = 5t\) with \(t \geq 10\), and let \(K\) be the map of the rule \(\mathtt{GFEABDHC} - \mathtt{HGDFCEAB}\) in base \(b\). Then \(X_1, X_2, X_3, X_4\) are sorted digit strings in base \(b\), and the sorted digits of \(K(X_1)\), \(K(X_2)\), \(K(X_3)\), \(K(X_4)\) are \(X_2\), \(X_3\), \(X_4\), \(X_1\) respectively. The four strings are distinct, so the rule has a cycle of period exactly \(4\) in every base \(b = 5t \geq 50\) and is not universal in any of these bases. In base \(50\) the first two digits of \(X_1\) coincide, \(X_1 = (37,37,33,14,13,12,1,0)\), and the cycle is the base-\(50\) cycle displayed in the first example of this section, which starts at \(X_3\). The bound \(t \geq 10\) is sharp: for \(t \leq 9\) the entries listed for \(X_1\) are not in descending order, since \((4t-3) - (3t+7) = t - 10 < 0\).}
+
+\emph{Proof.} Throughout, \(t\) is an integer and \(b = 5t\).
+
+\emph{The two words.} Number the places \(k = 7, 6, \dots, 0\) from the most significant. Word 1 carries the letters \(\mathtt{G}, \mathtt{F}, \mathtt{E}, \mathtt{A}, \mathtt{B}, \mathtt{D}, \mathtt{H}, \mathtt{C}\) at these places and word 2 carries \(\mathtt{H}, \mathtt{G}, \mathtt{D}, \mathtt{F}, \mathtt{C}, \mathtt{E}, \mathtt{A}, \mathtt{B}\). Let \(d_k\) be the digit of word 1 at place \(k\) minus the digit of word 2 at place \(k\): \[\begin{aligned}
+d_7 &= \mathtt{G}-\mathtt{H}, & d_6 &= \mathtt{F}-\mathtt{G}, & d_5 &= \mathtt{E}-\mathtt{D}, & d_4 &= \mathtt{A}-\mathtt{F},\\
+d_3 &= \mathtt{B}-\mathtt{C}, & d_2 &= \mathtt{D}-\mathtt{E}, & d_1 &= \mathtt{H}-\mathtt{A}, & d_0 &= \mathtt{C}-\mathtt{B}.
+\end{aligned}\] Then \(W = (\text{word } 1) - (\text{word } 2) = \sum_{k=0}^{7} d_k\, b^k\).
+
+\emph{Borrows.} Choose \(\kappa_0, \dots, \kappa_6 \in \{0, 1\}\), put \(\kappa_{-1} = \kappa_7 = 0\), and set \[e_k \;=\; d_k + b\,\kappa_k - \kappa_{k-1} \qquad (0 \leq k \leq 7).\] Here \(\kappa_k = 1\) means that place \(k\) borrows \(1\) from place \(k+1\). The sum telescopes: \[\sum_{k=0}^{7} e_k b^k \;=\; \sum_{k=0}^{7} d_k b^k + \sum_{k=0}^{6} \kappa_k b^{k+1} - \sum_{k=1}^{7} \kappa_{k-1} b^{k} \;=\; W, \tag{1}\] an identity of polynomials in \(t\) for any choice of the \(\kappa_k\). If moreover \(0 \leq e_k \leq b-1\) for every \(k\) and some \(e_k \geq 1\), then (1) is the base-\(b\) expansion of \(W\), so \(W > 0\), the image of the string is \(|W| = W\), and its digits are \(e_0, \dots, e_7\). Its sorted digits are the \(e_k\) in descending order.
+
+\emph{Step 0: the four strings are valid.} A string \((s_0, \dots, s_7)\) is a sorted digit string in base \(b\) exactly when the nine numbers \(b-1-s_0\), \(s_0-s_1\), \ldots, \(s_6-s_7\), \(s_7\) are all nonnegative. For the four strings they are:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+quantity & \(X_1\) & \(X_2\) & \(X_3\) & \(X_4\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(b-1-s_0\) & \(t+2\) & \(0\) & \(1\) & \(0\) \\
+\(s_0-s_1\) & \(t-10\) & \(3\) & \(3\) & \(2\) \\
+\(s_1-s_2\) & \(4\) & \(2t+1\) & \(2t-4\) & \(2t-7\) \\
+\(s_2-s_3\) & \(t+9\) & \(2t-7\) & \(t-2\) & \(3\) \\
+\(s_3-s_4\) & \(1\) & \(2\) & \(2t-1\) & \(t+3\) \\
+\(s_4-s_5\) & \(t-9\) & \(t-4\) & \(1\) & \(2\) \\
+\(s_5-s_6\) & \(t+1\) & \(3\) & \(0\) & \(2t-5\) \\
+\(s_6-s_7\) & \(1\) & \(1\) & \(1\) & \(1\) \\
+\(s_7\) & \(0\) & \(0\) & \(0\) & \(0\) \\
+\end{longtable}
+}
+
+Every entry is either a nonnegative constant or of the form \(at + c\) with \(a > 0\), hence nondecreasing in \(t\). The entries \(t+2\), \(t+9\), \(t+1\), \(2t+1\), \(2t-1\), \(t+3\) are nonnegative for all \(t \geq 1\). The others are nonnegative exactly in the following ranges: \(t - 10 \geq 0\) for \(t \geq 10\); \(t - 9 \geq 0\) for \(t \geq 9\); \(2t - 7 \geq 0\) (in \(X_2\) and in \(X_4\)) and \(t - 4 \geq 0\) for \(t \geq 4\); \(2t - 5 \geq 0\) for \(t \geq 3\); \(2t - 4 \geq 0\) and \(t - 2 \geq 0\) for \(t \geq 2\). Hence \(X_2\) and \(X_4\) are valid for \(t \geq 4\), \(X_3\) for \(t \geq 2\), and \(X_1\) for \(t \geq 10\); all four are valid for \(t \geq 10\). The only constraint that binds at \(t = 10\) is \(s_0 - s_1 = t - 10\) for \(X_1\), and it fails for every \(t \leq 9\). In particular all entries of all four strings lie in \([0, b-1]\) for \(t \geq 10\).
+
+\emph{Steps 1 to 4.} For each step the table lists, place by place, the difference \(d_k\) (obtained by substituting the letters of the current string into the formulas above), the borrow \(\kappa_k\), the resulting digit \(e_k\), and the letter of the next string that \(e_k\) equals. In each table the letter row is a permutation of \(\mathtt{A}, \dots, \mathtt{H}\), so the eight digits \(e_k\) are the entries of the next string, as a multiset. By Step 0 they lie in \([0, b-1]\) and their descending order is the next string, for \(t \geq 10\). At least one digit is at least \(1\) (the digit \(e_7 = 1\) in Steps 1, 2, 4 and \(e_6 = 5t - 1\) in Step 3), so the remark after (1) applies. Where two entries of the next string are equal (the two \(1\)s of \(X_3\), and \(\mathtt{A} = \mathtt{B} = 37\) of \(X_1\) at \(t = 10\)), either letter may be read; the multiset is the same.
+
+\emph{Step 1: \(X_1 \to X_2\).} Here \(\mathtt{A} = 4t-3\), \(\mathtt{B} = 3t+7\), \(\mathtt{C} = 3t+3\), \(\mathtt{D} = 2t-6\), \(\mathtt{E} = 2t-7\), \(\mathtt{F} = t+2\), \(\mathtt{G} = 1\), \(\mathtt{H} = 0\). Places \(0\), \(1\), \(5\) borrow.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+place \(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(7\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(6\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(5\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(4\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(0\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(d_k\) & \(1\) & \(t+1\) & \(-1\) & \(3t-5\) & \(4\) & \(1\) & \(3-4t\) & \(-4\) \\
+\(\kappa_k\) & \(0\) & \(0\) & \(1\) & \(0\) & \(0\) & \(0\) & \(1\) & \(1\) \\
+\(e_k\) & \(1\) & \(t\) & \(5t-1\) & \(3t-5\) & \(4\) & \(0\) & \(t+2\) & \(5t-4\) \\
+letter of \(X_2\) & \(\mathtt{G}\) & \(\mathtt{E}\) & \(\mathtt{A}\) & \(\mathtt{C}\) & \(\mathtt{F}\) & \(\mathtt{H}\) & \(\mathtt{D}\) & \(\mathtt{B}\) \\
+\end{longtable}
+}
+
+\[\begin{aligned}
+W_1 &= 93750t^7 + 15625t^6 - 1250t^5 - 3125t^4\\
+&\quad + 500t^3 + 5t^2 + 15t - 4 \;>\; 0.
+\end{aligned}\]
+
+\emph{Step 2: \(X_2 \to X_3\).} Here \(\mathtt{A} = 5t-1\), \(\mathtt{B} = 5t-4\), \(\mathtt{C} = 3t-5\), \(\mathtt{D} = t+2\), \(\mathtt{E} = t\), \(\mathtt{F} = 4\), \(\mathtt{G} = 1\), \(\mathtt{H} = 0\). Places \(0\), \(1\), \(5\) borrow.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+place \(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(7\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(6\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(5\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(4\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(0\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(d_k\) & \(1\) & \(3\) & \(-2\) & \(5t-5\) & \(2t+1\) & \(2\) & \(1-5t\) & \(-2t-1\) \\
+\(\kappa_k\) & \(0\) & \(0\) & \(1\) & \(0\) & \(0\) & \(0\) & \(1\) & \(1\) \\
+\(e_k\) & \(1\) & \(2\) & \(5t-2\) & \(5t-5\) & \(2t+1\) & \(1\) & \(0\) & \(3t-1\) \\
+letter of \(X_3\) & \(\mathtt{F}\) & \(\mathtt{E}\) & \(\mathtt{A}\) & \(\mathtt{B}\) & \(\mathtt{D}\) & \(\mathtt{G}\) & \(\mathtt{H}\) & \(\mathtt{C}\) \\
+\end{longtable}
+}
+
+\[\begin{aligned}
+W_2 &= 78125t^7 + 46875t^6 - 3125t^5 - 2875t^4\\
+&\quad + 125t^3 + 25t^2 + 3t - 1 \;>\; 0.
+\end{aligned}\]
+
+\emph{Step 3: \(X_3 \to X_4\).} Here \(\mathtt{A} = 5t-2\), \(\mathtt{B} = 5t-5\), \(\mathtt{C} = 3t-1\), \(\mathtt{D} = 2t+1\), \(\mathtt{E} = 2\), \(\mathtt{F} = \mathtt{G} = 1\), \(\mathtt{H} = 0\). Places \(0\), \(1\), \(5\), \(6\) borrow.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+place \(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(7\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(6\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(5\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(4\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(0\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(d_k\) & \(1\) & \(0\) & \(1-2t\) & \(5t-3\) & \(2t-4\) & \(2t-1\) & \(2-5t\) & \(4-2t\) \\
+\(\kappa_k\) & \(0\) & \(1\) & \(1\) & \(0\) & \(0\) & \(0\) & \(1\) & \(1\) \\
+\(e_k\) & \(0\) & \(5t-1\) & \(3t+1\) & \(5t-3\) & \(2t-4\) & \(2t-2\) & \(1\) & \(3t+4\) \\
+letter of \(X_4\) & \(\mathtt{H}\) & \(\mathtt{A}\) & \(\mathtt{D}\) & \(\mathtt{B}\) & \(\mathtt{F}\) & \(\mathtt{E}\) & \(\mathtt{G}\) & \(\mathtt{C}\) \\
+\end{longtable}
+}
+
+\[\begin{aligned}
+W_3 &= 78125t^7 - 6250t^6 + 6250t^5 - 1625t^4\\
+&\quad - 450t^3 - 50t^2 + 8t + 4 \;>\; 0.
+\end{aligned}\]
+
+\emph{Step 4: \(X_4 \to X_1\).} Here \(\mathtt{A} = 5t-1\), \(\mathtt{B} = 5t-3\), \(\mathtt{C} = 3t+4\), \(\mathtt{D} = 3t+1\), \(\mathtt{E} = 2t-2\), \(\mathtt{F} = 2t-4\), \(\mathtt{G} = 1\), \(\mathtt{H} = 0\). Places \(0\), \(1\), \(5\) borrow.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 16\tabcolsep) * \real{0.1111}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+place \(k\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(7\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(6\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(5\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(4\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\(0\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(d_k\) & \(1\) & \(2t-5\) & \(-t-3\) & \(3t+3\) & \(2t-7\) & \(t+3\) & \(1-5t\) & \(7-2t\) \\
+\(\kappa_k\) & \(0\) & \(0\) & \(1\) & \(0\) & \(0\) & \(0\) & \(1\) & \(1\) \\
+\(e_k\) & \(1\) & \(2t-6\) & \(4t-3\) & \(3t+3\) & \(2t-7\) & \(t+2\) & \(0\) & \(3t+7\) \\
+letter of \(X_1\) & \(\mathtt{G}\) & \(\mathtt{D}\) & \(\mathtt{A}\) & \(\mathtt{C}\) & \(\mathtt{E}\) & \(\mathtt{F}\) & \(\mathtt{H}\) & \(\mathtt{B}\) \\
+\end{longtable}
+}
+
+\[\begin{aligned}
+W_4 &= 109375t^7 - 81250t^6 - 7500t^5 + 2125t^4\\
+&\quad - 850t^3 + 50t^2 + 3t + 7 \;>\; 0.
+\end{aligned}\]
+
+In each step the displayed polynomial equals \(\sum_k d_k b^k\) with \(b = 5t\), and its positivity for \(t \geq 10\) is the positivity established after (1); it is not needed separately. Each \(W_i\) vanishes at \(t = 1/5\), that is, it is divisible by \(b - 1\), as Lemma 2.3(a) requires.
+
+\emph{Period and non-universality.} The four strings are distinct for \(t \geq 10\): the first digit of \(X_1\) is \(4t - 3\), below the first digits \(5t-1\), \(5t-2\), \(5t-1\) of the others; \(X_3\) has first digit \(5t-2\) and \(X_2\), \(X_4\) have \(5t-1\); and \(X_2\), \(X_4\) differ in their second digits \(5t-4\) and \(5t-3\). Let \(x\) be any string whose sorted digits are \(X_1\). By Steps 1 to 4 the sorted digits of \(K(x), K^2(x), K^3(x), K^4(x)\) are \(X_2, X_3, X_4, X_1\). Since \(K\) depends only on the letters, that is, on the sorted digits, and \(K^4(x)\) has the same sorted digits as \(x\), we get \(K^5(x) = K(x)\). The strings \(K(x), \dots, K^4(x)\) have four different multisets of digits, so they are four distinct strings, and they form a cycle of \(K\) of length \(4\). A string \(F\) with \(K(F) = F\) has the same sorted digits as its image, while consecutive strings on the orbit of \(x\) do not, so no string on this orbit is fixed and the orbit never reaches a fixed string. Since \(X_1\) is not a repdigit (\(s_0 = 4t - 3 > 0 = s_7\)), the rule is not universal in base \(b\) (Definition 2.2). \(\blacksquare\)
+
+A computer-algebra check accompanies the proof: it verifies the identity (1), the differences, digits, and expansions \(W_1, \dots, W_4\) in each table as polynomial identities in \(t\), each inequality of Step 0 from its stated threshold, and the sharpness of each threshold; it also iterates the rule directly on strings, from the two words, in every base \(b = 5t\) with \(10 \leq t \leq 2000\).
+
+\textbf{Below the threshold} \emph{(Computed)}. For \(4 \leq t \leq 9\) (bases \(20\) to \(45\)) the entries of \(X_2\), \(X_3\), \(X_4\) are still valid and the computations of Steps 2, 3, and 4 still hold: the digits of \(K(X_4)\) are the eight entries listed for \(X_1\), all in \([0, b-1]\). But they are no longer in that order, since \(3t + 7 > 4t - 3\) (and further entries are out of order for \(t \leq 8\)), so the sorted digits of \(K(X_4)\) form a different string, and direct iteration shows that its orbit ends at the fixed point whose sorted digits are \((b-1, b-1, b-2, 1, 0, 0, 0, 0)\), in each of these six bases. For \(t \leq 3\) some listed entries are negative or out of order already in \(X_2\). So the family gives a cycle exactly for \(t \geq 10\), and the base-\(50\) cycle is its first member.
+
+\subsection{The base-free map, proved}\label{the-base-free-map-proved}
+
+The observation made for the second example of this section, that the deficits on its cycle do not depend on the base, can be made precise for every half-swap rule. Fix a half-swap rule on \(2n\) digits, \(n \ge 1\), with pairs \((P_q, M_q)\), \(q = 0, \dots, n-1\) (Definition 5.1); the pairs do not depend on \(b\). Throughout, \(\rho = (\rho_1 \le \dots \le \rho_n)\) is a nondecreasing \(n\)-tuple of nonnegative integers with largest entry \(D = \rho_n\). It is a state in base \(b\) exactly when \(D \le H = \lfloor (b-1)/2 \rfloor\). Definition 5.8 is stated for even \(b\). For any base \(b\) and any state \(\rho\) with \(V(s^\rho) \ne 0\) we use the same words: \(T_b(\rho)\) is the state of the image \(K(s^\rho)\). This needs only Lemma 5.6, which holds in every base.
+
+\textbf{High and low letters.} For an index \(j \in \{0, \dots, 2n-1\}\) call \(j\) \emph{high} if \(j \le n-1\) and \emph{low} if \(j \ge n\), and put \[a_j = \rho_{j+1} \ \ (j \le n-1), \qquad a_j = \rho_{2n-j} \ \ (j \ge n).\] By the definition of \(s^\rho\) in Section 5, in every base \(b\) in which \(\rho\) is a state, \(s^\rho_j = b - 1 - a_j\) for high \(j\) and \(s^\rho_j = a_j\) for low \(j\). A pair is \emph{mixed} if one of its indices is high and the other is low. To pair \(q\) we attach two integers \(\varepsilon_q \in \{-1, 0, 1\}\) and \(\gamma_q\), which depend on \(\rho\) and on the rule but not on \(b\):
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lcc@{}}
+\toprule\noalign{}
+pair \(q\) & \(\varepsilon_q\) & \(\gamma_q\) \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\(P_q\), \(M_q\) both high & \(0\) & \(a_{M_q} - a_{P_q}\) \\
+\(P_q\), \(M_q\) both low & \(0\) & \(a_{P_q} - a_{M_q}\) \\
+\(P_q\) high, \(M_q\) low & \(1\) & \(-1 - a_{P_q} - a_{M_q}\) \\
+\(P_q\) low, \(M_q\) high & \(-1\) & \(1 + a_{P_q} + a_{M_q}\) \\
+\end{longtable}
+}
+
+\textbf{The base-free map \(T_\infty\).} Let \(\mathrm{sgn}(\rho) = 0\) if \((\varepsilon_q, \gamma_q) = (0, 0)\) for every \(q\). Otherwise let \(q^*\) be the largest \(q\) with \((\varepsilon_q, \gamma_q) \ne (0,0)\); let \(\mathrm{sgn}(\rho) = \varepsilon_{q^*}\) if \(\varepsilon_{q^*} \ne 0\), and let \(\mathrm{sgn}(\rho) \in \{1, -1\}\) be the sign of \(\gamma_{q^*}\) if \(\varepsilon_{q^*} = 0\). When \(\mathrm{sgn}(\rho) \ne 0\), put \(\varepsilon'_q = \mathrm{sgn}(\rho)\, \varepsilon_q\), \(\gamma'_q = \mathrm{sgn}(\rho)\, \gamma_q\), \(\varepsilon'_{-1} = 0\), and \[h_k = \gamma'_k + \varepsilon'_{k-1} - [k = 0] \qquad (k = 0, \dots, n-1),\] where \([k=0]\) is \(1\) for \(k = 0\) and \(0\) otherwise. Compute \(\theta_0, \dots, \theta_{n-1}\) and borrows \(\kappa_0, \dots, \kappa_n\) by \[\kappa_0 = 0, \qquad \theta_k = h_k + \kappa_k, \qquad \kappa_{k+1} = \begin{cases} -1 & \theta_k < 0, \\ 0 & \theta_k \ge 0, \end{cases}\] so that here, unlike in the proof of Proposition 7.1, each borrow \(\kappa_k\) lies in \(\{-1, 0\}\). Put \(u_k = \theta_k\) if \(\theta_k \ge 0\) and \(u_k = -1 - \theta_k\) if \(\theta_k < 0\), that is, \(u_k = \max(\theta_k, -1-\theta_k) \ge 0\). Then \(T_\infty(\rho)\) is the tuple \((u_0, \dots, u_{n-1})\) sorted in increasing order. If \(\mathrm{sgn}(\rho) = 0\), \(T_\infty(\rho)\) is not defined. Only integer arithmetic on \(\rho\) and the pairs enters; the base does not appear.
+
+We call a base \(b\) \emph{admissible} for \(\rho\) if \(b \ge 2D+1\) and \(b - 1 > a_{P_q} + a_{M_q}\) for every mixed pair \(q\). Every \(b \ge 2D + 2\) is admissible, since \(a_{P_q} + a_{M_q} \le 2D\). If \(b\) is admissible, then \(D \le (b-1)/2\), so \(\rho\) is a state in base \(b\).
+
+\textbf{Lemma 7.2.} \emph{(Proven.)} Fix a half-swap rule on \(2n\) digits and a nondecreasing \(n\)-tuple \(\rho\) of nonnegative integers with largest entry \(D\). Put \(B(D) = 4D + 3\).
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  For every admissible base \(b\): \(V(s^\rho) = 0\) if and only if \(\mathrm{sgn}(\rho) = 0\), and otherwise \(V(s^\rho)\) has the sign \(\mathrm{sgn}(\rho)\). Moreover \(\mathrm{sgn}(\rho) = 0\) exactly when the rule has no mixed pair and \(\gamma_q = 0\) for every \(q\).
+\item
+  If \(\mathrm{sgn}(\rho) \ne 0\), every entry of \(T_\infty(\rho)\) is at most \(2D + 1\).
+\item
+  Let \(\mathrm{sgn}(\rho) \ne 0\) and let \(b\) be admissible. Then \(T_b(\rho) = T_\infty(\rho)\) if and only if \(b \ge 2\max T_\infty(\rho) + 1\).
+\item
+  In particular, for every base \(b \ge B(D)\): whether \(V(s^\rho)\) is zero, and its sign if not, are given by \(\mathrm{sgn}(\rho)\) and do not depend on \(b\); and if \(V(s^\rho) \ne 0\), then \(T_b(\rho) = T_\infty(\rho)\) does not depend on \(b\), and its largest entry is at most \(2D+1\).
+\end{enumerate}
+
+\emph{Proof.} \emph{Step 1 (the differences).} Let \(b\) be admissible and \(d_q = s^\rho_{P_q} - s^\rho_{M_q}\), so that \(V(s^\rho) = \sum_q b^q d_q\). We show \[d_q = \varepsilon_q\, b + \gamma_q \qquad (q = 0, \dots, n-1).\] If both indices are high, \(d_q = (b-1-a_{P_q}) - (b-1-a_{M_q}) = a_{M_q} - a_{P_q}\). If both are low, \(d_q = a_{P_q} - a_{M_q}\). If \(P_q\) is high and \(M_q\) low, \(d_q = b - 1 - a_{P_q} - a_{M_q}\). If \(P_q\) is low and \(M_q\) high, \(d_q = a_{P_q} - (b - 1 - a_{M_q}) = -b + 1 + a_{P_q} + a_{M_q}\). In each case this is \(\varepsilon_q b + \gamma_q\) with the table above. Since all \(a_j\) lie in \([0, D]\), we also have: \[\begin{aligned}
+|\gamma_q| &\le D && \text{if } \varepsilon_q = 0, \\
+-2D-1 \le \gamma_q &\le -1 && \text{if } \varepsilon_q = 1, \\
+1 \le \gamma_q &\le 2D+1 && \text{if } \varepsilon_q = -1.
+\end{aligned} \tag{1}\] For a pair that is not mixed, \(d_q = \gamma_q\) is an integer independent of \(b\). For a mixed pair, \(|d_q| = b - 1 - a_{P_q} - a_{M_q} > 0\) by admissibility, and \(d_q\) has the sign \(\varepsilon_q\). So in every case \(d_q \ne 0\) if and only if \((\varepsilon_q, \gamma_q) \ne (0,0)\), and then the sign of \(d_q\) is \(\varepsilon_q\) if \(\varepsilon_q \ne 0\) and the sign of \(\gamma_q\) otherwise.
+
+\emph{Proof of (a).} Each \(d_q\) is a difference of two digits, so \(|d_q| \le b - 1\). If every \(d_q\) is \(0\), then \(V = 0\). Otherwise let \(q^*\) be the largest \(q\) with \(d_q \ne 0\). Then \[\Bigl|\sum_{q < q^*} b^q d_q\Bigr| \le (b-1)(1 + b + \dots + b^{q^*-1}) = b^{q^*} - 1 < b^{q^*} |d_{q^*}|,\] so \(V \ne 0\) and \(V\) has the sign of \(d_{q^*}\). By Step 1, \(q^*\) is also the largest \(q\) with \((\varepsilon_q, \gamma_q) \ne (0,0)\), and the sign of \(d_{q^*}\) is \(\mathrm{sgn}(\rho)\). The last sentence of (a) holds because \(\varepsilon_q \ne 0\) exactly for mixed pairs.
+
+\emph{The borrows.} Suppose \(\mathrm{sgn}(\rho) \ne 0\). Multiplying (1) by \(\mathrm{sgn}(\rho)\) keeps the following two implications: \[\varepsilon'_q = 1 \implies \gamma'_q \le -1, \qquad \varepsilon'_q = -1 \implies \gamma'_q \ge 1. \tag{2}\] We show by induction on \(k\) that \[\begin{aligned}
+&\theta_k = \gamma'_k + \delta_k \ \text{ with } \delta_0 = -1 \text{ and } \delta_k \in \{-1, 0\}, \\
+&\varepsilon'_k = 1 \implies \theta_k \le -1, \qquad \varepsilon'_k = -1 \implies \theta_k \ge 0.
+\end{aligned} \tag{3}\] For \(k = 0\), \(\theta_0 = h_0 = \gamma'_0 - 1\), so \(\delta_0 = -1\); if \(\varepsilon'_0 = 1\) then \(\theta_0 \le -2\) by (2), and if \(\varepsilon'_0 = -1\) then \(\theta_0 \ge 0\) by (2). Let \(k \ge 1\) and assume (3) for \(k - 1\). Then \(\theta_k = \gamma'_k + \delta_k\) with \(\delta_k = \varepsilon'_{k-1} + \kappa_k\). If \(\varepsilon'_{k-1} = 1\), then \(\theta_{k-1} \le -1\), so \(\kappa_k = -1\) and \(\delta_k = 0\). If \(\varepsilon'_{k-1} = -1\), then \(\theta_{k-1} \ge 0\), so \(\kappa_k = 0\) and \(\delta_k = -1\). If \(\varepsilon'_{k-1} = 0\), then \(\delta_k = \kappa_k \in \{-1, 0\}\). So \(\delta_k \in \{-1, 0\}\), and the two implications for \(\theta_k\) follow from (2) as in the case \(k = 0\). This proves (3).
+
+\emph{Proof of (b).} By (1), \(|\gamma'_k| = |\gamma_k| \le 2D + 1\), so (3) gives \(-2D - 2 \le \theta_k \le 2D + 1\). Hence \(u_k = \theta_k \le 2D+1\) when \(\theta_k \ge 0\), and \(u_k = -1 - \theta_k \le 2D+1\) when \(\theta_k < 0\).
+
+\emph{Proof of (c).} By (a), \(V = V(s^\rho) \ne 0\), so \(T_b(\rho)\) is defined. If \(T_b(\rho) = T_\infty(\rho)\), then every entry of \(T_\infty(\rho)\) is a deficit in base \(b\), hence at most \((b-1)/2\), and \(b \ge 2\max T_\infty(\rho) + 1\). Conversely, let \(b \ge 2u_k + 1\) for every \(k\). By (a), \(V\) has the sign \(\mathrm{sgn}(\rho)\), so \(m = |V| = \mathrm{sgn}(\rho)\, V \ge 1\) and, by Step 1, \[N = m - 1 = \sum_{q=0}^{n-1} b^q (\varepsilon'_q b + \gamma'_q) - 1 = \sum_{k=0}^{n-1} h_k b^k + \varepsilon'_{n-1} b^n.\] Put \(x_k = \theta_k\) if \(\theta_k \ge 0\) and \(x_k = b + \theta_k\) if \(\theta_k < 0\). If \(\theta_k \ge 0\), then \(u_k = \theta_k\) and \(2\theta_k \le b - 1\), so \(x_k = \theta_k\) is a digit with \(x_k \le b - 1 - x_k\), and \(r(x_k) = \theta_k = u_k\). If \(\theta_k < 0\), then \(u_k = -1 - \theta_k \ge 0\) and \(b \ge 2u_k + 1 = -2\theta_k - 1\), so \(x_k = b + \theta_k\) satisfies \(0 \le -\theta_k - 1 \le x_k \le b - 1\); here \(b - 1 - x_k = -1 - \theta_k = u_k \le x_k\), so \(r(x_k) = u_k\). In both cases \(x_k\) is a digit, \(r(x_k) = u_k\), and \(\theta_k = x_k + b\,\kappa_{k+1}\). Since \(h_k = \theta_k - \kappa_k\) and \(\kappa_0 = 0\), \[\sum_{k=0}^{n-1} h_k b^k = \sum_{k=0}^{n-1} \bigl(x_k + b\,\kappa_{k+1} - \kappa_k\bigr) b^k = X + \kappa_n b^n,\] where \(X = \sum_{k=0}^{n-1} x_k b^k\). So \(N = X + (\varepsilon'_{n-1} + \kappa_n)\, b^n\), where \(0 \le X \le b^n - 1\), and \(0 \le N \le b^n - 2\) by Lemma 5.2. Hence \(b^n\, |\varepsilon'_{n-1} + \kappa_n| = |N - X| \le b^n - 1\), which forces \(\varepsilon'_{n-1} + \kappa_n = 0\) and \(N = X\). So the \(n\) digits of \(N\) are \(x_{n-1}, \dots, x_0\), and by Lemma 5.6 the state of \(K(s^\rho)\) is the sorted tuple of \(r(x_0), \dots, r(x_{n-1})\), that is, of \(u_0, \dots, u_{n-1}\). This is \(T_\infty(\rho)\).
+
+\emph{Proof of (d).} Let \(b \ge 4D + 3\). Then \(b \ge 2D + 2\), so \(b\) is admissible, and (a) applies. If \(V(s^\rho) \ne 0\), then \(\mathrm{sgn}(\rho) \ne 0\) by (a), every \(u_k \le 2D + 1\) by (b), and \(2u_k + 1 \le 4D + 3 \le b\); so (c) applies. \(\blacksquare\)
+
+\emph{Remarks.} (i) In words: each letter of \(s^\rho\) is high (\(b-1-\rho_i\)) or low (\(\rho_i\)). A pair of two high or two low letters gives a difference \(d_q\) that is an integer independent of \(b\); a mixed pair gives \(\pm(b - 1 - \rho_i - \rho_j)\), of known sign once \(b\) is admissible. The sign of \(V\) is that of the top nonzero \(d_q\). Writing \(|V| - 1\) as a polynomial in \(b\) with the coefficients \(h_k\), the digits of \(N\) are obtained by borrows whose pattern is fixed by the signs of the \(\theta_k\), and each digit is either \(\theta_k \ge 0\) or \(b\) minus \(-\theta_k\); the deficit of either kind is \(u_k\), which does not involve \(b\).
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  If the rule covers gap \(n - 1\) (in particular, if it covers every gap), the pair covering it has one index \(\le n-1\) and one \(\ge n\), so it is mixed, and \(\mathrm{sgn}(\rho) \ne 0\) for every \(\rho\) by (a). Then \(T_\infty\) is a map from nondecreasing \(n\)-tuples of nonnegative integers to themselves.
+\item
+  Let \(\rho^{(0)}, \dots, \rho^{(p-1)}\) be a cycle of \(T_\infty\), and let \(D\) be the largest entry of all its states. Then it is a cycle of \(T_b\) in every base \(b \ge 2D + 2\), and also in the base \(b = 2D + 1\) when that base is admissible for each state of the cycle. Indeed, each \(\mathrm{sgn}(\rho^{(i)})\) is nonzero, since \(T_\infty(\rho^{(i)})\) is defined; each image \(T_\infty(\rho^{(i)})\) is a state of the cycle, so its entries are at most \(D\) and \(2\max T_\infty(\rho^{(i)}) + 1 \le 2D + 1 \le b\); and every \(b \ge 2D + 2\) is admissible for each \(\rho^{(i)}\). So (c) gives \(T_b(\rho^{(i)}) = T_\infty(\rho^{(i)})\) for every \(i\). This is why the base \(77 = 2 \cdot 38 + 1\) is included in Proposition 7.3.
+\item
+  The bound \(B(D) = 4D + 3\) in (d) cannot be lowered as a bound valid for every rule, and the bound \(2D + 1\) in (b) is attained. Take \(n = 1\), the rule with the single pair \((P_0, M_0) = (0, 1)\), and \(\rho = (D)\). Index \(0\) is high and index \(1\) is low, with \(a_0 = a_1 = D\), so the pair is mixed with \(\varepsilon_0 = 1\) and \(\gamma_0 = -1 - 2D\). Then \(\mathrm{sgn}(\rho) = 1\), \(h_0 = \theta_0 = -2D - 2\), and \(T_\infty(\rho) = (2D + 1)\). The base \(b = 4D + 2\) is admissible, since \(b \ge 2D + 1\) and \(b - 1 = 4D + 1 > 2D\). But there \(H = 2D\), so \(2D + 1\) is not a deficit and \(T_b(\rho) \ne T_\infty(\rho)\), in accordance with (c). (Directly: \(V = b - 1 - 2D = 2D + 1\), \(N = 2D\), and \(T_b(\rho) = (2D)\).)
+\item
+  In an odd base \(b\), the state with every entry equal to \((b-1)/2\), whose string is the repdigit of Section 5, gets no value of \(T_b\) from Lemma 7.2. Here \(D = (b-1)/2\), so \(b = 2D + 1\). If the rule has a mixed pair \(q\), then \(a_{P_q} + a_{M_q} = 2D = b - 1\), so \(b\) is not admissible and the lemma does not apply. If it has no mixed pair, then \(b\) is admissible, but every \(\gamma_q\) is a difference of two equal entries, so \(\mathrm{sgn}(\rho) = 0\), and (a) gives \(V = 0\), so \(T_b\) is not defined there.
+\end{enumerate}
+
+\textbf{Proposition 7.3.} \emph{(Proven.)} Let \(R\) be the ten-digit rule \(\mathtt{AFEJBGIDHC} - \mathtt{GIDHCAFEJB}\). Its pairs are \[(P_q, M_q) = (1,2),\ (9,7),\ (4,3),\ (5,8),\ (0,6) \qquad (q = 0, 1, 2, 3, 4).\] Put \(\rho^{(0)} = (13,13,15,25,31)\), \(\rho^{(1)} = (1,1,6,17,38)\) and \(\rho^{(2)} = (4,4,18,21,36)\). In every base \(b \ge 77\), even or odd, \[T_b(\rho^{(0)}) = \rho^{(1)}, \qquad T_b(\rho^{(1)}) = \rho^{(2)}, \qquad T_b(\rho^{(2)}) = \rho^{(0)}.\] The string \(s^{\rho^{(0)}}\) is not a repdigit, and no string in its orbit under \(K\) is a fixed point of \(K\). Hence \(R\) is not universal in any base \(b \ge 77\). In a base \(b \le 76\) this cycle does not exist, because \(38\) is not a deficit in such a base.
+
+The rule is universal in base \(10\) (Computed: complete enumeration of the \(92{,}378\) ten-digit multisets, in \texttt{checks/caution\_check.py} and again in \texttt{checks/check\_corner\_proof.py}).
+
+\emph{Proof.} \emph{The pairs.} In word 1, \(\mathtt{AFEJBGIDHC}\), the letters at places \(9, 8, 7, 6, 5\) are \(\mathtt{A}, \mathtt{F}, \mathtt{E}, \mathtt{J}, \mathtt{B}\), that is, \(P_4, P_3, P_2, P_1, P_0 = 0, 5, 4, 9, 1\), and the letters at places \(4, \dots, 0\) are \(\mathtt{G}, \mathtt{I}, \mathtt{D}, \mathtt{H}, \mathtt{C}\), that is, \(M_4, \dots, M_0 = 6, 8, 3, 7, 2\). Word 2 must then be \(M_4 \dots M_0\) followed by \(P_4 \dots P_0\), which is \(\mathtt{GIDHC}\,\mathtt{AFEJB}\), as given.
+
+\emph{The map \(T_\infty\) for this rule.} Here \(n = 5\); indices \(0\) to \(4\) are high and \(5\) to \(9\) are low, with \(a_j = \rho_{j+1}\) for \(j \le 4\) and \(a_5, a_6, a_7, a_8, a_9 = \rho_5, \rho_4, \rho_3, \rho_2, \rho_1\). Pairs \(0\) and \(2\) are both high, pairs \(1\) and \(3\) are both low, and pair \(4\), \((0, 6)\), is mixed with \(P_4\) high. The table gives \(\varepsilon_0 = \dots = \varepsilon_3 = 0\), \(\varepsilon_4 = 1\) and \[\begin{aligned}
+&\gamma_0 = \rho_3 - \rho_2, \qquad \gamma_1 = \rho_1 - \rho_3, \qquad \gamma_2 = \rho_4 - \rho_5, \\
+&\gamma_3 = \rho_5 - \rho_2, \qquad \gamma_4 = -1 - \rho_1 - \rho_4,
+\end{aligned}\] so that \[\begin{aligned}
+V(s^\rho) &= (\rho_3 - \rho_2) + b\,(\rho_1 - \rho_3) + b^2 (\rho_4 - \rho_5) \\
+&\quad + b^3 (\rho_5 - \rho_2) + b^4 (b - 1 - \rho_1 - \rho_4).
+\end{aligned}\] The top pair has \(\varepsilon_4 = 1\), so \(\mathrm{sgn}(\rho) = 1\) for every \(\rho\), and \(\varepsilon'_{k-1} = 0\) for \(k \le 4\). Hence \[(h_0, \dots, h_4) = (\rho_3 - \rho_2 - 1,\ \rho_1 - \rho_3,\ \rho_4 - \rho_5,\ \rho_5 - \rho_2,\ -1 - \rho_1 - \rho_4).\] For the three tuples the borrow computation gives:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\(\rho\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\((h_0, \dots, h_4)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\((\theta_0, \dots, \theta_4)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\((u_0, \dots, u_4)\)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\((13,13,15,25,31)\) & \((1,-2,-6,18,-39)\) & \((1,-2,-7,17,-39)\) & \((1,1,6,17,38)\) \\
+\((1,1,6,17,38)\) & \((4,-5,-21,37,-19)\) & \((4,-5,-22,36,-19)\) & \((4,4,21,36,18)\) \\
+\((4,4,18,21,36)\) & \((13,-14,-15,32,-26)\) & \((13,-14,-16,31,-26)\) & \((13,13,15,31,25)\) \\
+\end{longtable}
+}
+
+Sorting the last column gives \(T_\infty(\rho)\): \((1,1,6,17,38)\), \((4,4,18,21,36)\) and \((13,13,15,25,31)\).
+
+For example, in the first row \(\theta_0 = 1 \ge 0\), so \(\kappa_1 = 0\) and \(\theta_1 = -2\); then \(\kappa_2 = -1\), \(\theta_2 = -6 - 1 = -7\), \(\kappa_3 = -1\), \(\theta_3 = 18 - 1 = 17\), \(\kappa_4 = 0\) and \(\theta_4 = -39\). So \(T_\infty\) maps \(\rho^{(0)} \mapsto \rho^{(1)} \mapsto \rho^{(2)} \mapsto \rho^{(0)}\).
+
+\emph{The cycle in every base \(b \ge 77\).} We apply Lemma 7.2(c) to each of the three tuples. Their largest entries are \(31\), \(38\) and \(36\), so \(2D + 1\) is \(63\), \(77\) and \(73\), all at most \(b\). The only mixed pair is pair \(4\), with \(a_{P_4} + a_{M_4} = a_0 + a_6 = \rho_1 + \rho_4\), which is \(38\), \(18\) and \(25\) for the three tuples, all less than \(76 \le b - 1\). So \(b\) is admissible for each tuple. The values of \(2\max T_\infty(\rho^{(i)}) + 1\) are \(2 \cdot 38 + 1 = 77\), \(2 \cdot 36 + 1 = 73\) and \(2 \cdot 31 + 1 = 63\) for \(i = 0, 1, 2\), all at most \(b\). Since \(\mathrm{sgn}(\rho^{(i)}) = 1\), Lemma 7.2(a) gives \(V(s^{\rho^{(i)}}) > 0\), and Lemma 7.2(c) gives \(T_b(\rho^{(i)}) = T_\infty(\rho^{(i)})\) for \(i = 0, 1, 2\). This is the cycle.
+
+\emph{Non-universality.} Fix \(b \ge 77\). All entries of the three tuples are at most \(38 \le H\), so they are states and their strings are defined. Let \(s = s^{\rho^{(0)}}\). Its largest letter is \(b - 1 - 13 \ge 63\) and its smallest is \(13\), so \(s\) is not a repdigit. We show that for every \(k \ge 0\), \(K^k(s)\) has the same letters as \(s^{\rho^{(k \bmod 3)}}\). For \(k = 0\) this is clear. If \(K^k(s)\) has the letters of \(s^{\rho^{(i)}}\), then \(K^{k+1}(s) = K(s^{\rho^{(i)}})\), since \(K\) depends only on the letters. Here \(V(s^{\rho^{(i)}}) > 0\), so \(K(s^{\rho^{(i)}})\) is an image with \(m \ge 1\), and its state is \(T_b(\rho^{(i)}) = \rho^{(i+1 \bmod 3)}\). By Lemma 5.6 its letters are those of \(s^{\rho^{(i+1 \bmod 3)}}\). This completes the induction.
+
+The five smallest letters of \(s^{\rho}\) are the entries of \(\rho\), and the three tuples are distinct, so the strings \(s^{\rho^{(0)}}, s^{\rho^{(1)}}, s^{\rho^{(2)}}\) have three different multisets of letters. Hence \(K^k(s)\) and \(K^{k+1}(s)\) have different letters for every \(k \ge 0\), so \(K^{k+1}(s) \ne K^k(s)\): no string in the orbit of \(s\) is a fixed point of \(K\). In particular the orbit of \(s\) never reaches a nonzero fixed point \(F\), and it never reaches \(0\), which is fixed. So \(R\) is not universal in base \(b\). (Since \(K^3(s)\) has the letters of \(s\), \(K^4(s) = K(s)\), and the three strings \(K(s), K^2(s), K^3(s)\) form a cycle of \(K\) of length \(3\).)
+
+\emph{Bases \(b \le 76\).} A deficit satisfies \(r(x) = \min(x, b-1-x) \le (b-1)/2\). The state \(\rho^{(1)}\) contains \(38\), and \(38 \le (b-1)/2\) only when \(b \ge 77\). So for \(b \le 76\) no image has the state \(\rho^{(1)}\), and the three states cannot form a cycle of \(T_b\). This says nothing about other cycles in small bases; by the second example of this section the rule is universal in every base from \(3\) to \(13\) and in base \(16\) (complete enumeration). \(\blacksquare\)
+
+(Computed confirmation: \texttt{checks/check\_corner\_proof.py} forms the digit string \(s^{\rho^{(0)}}\) in every base \(b\) from \(77\) to \(1200\) and in the bases \(100003\), \(1000003\) and \(1000000007\), applies \(K\) (word 1 minus word 2, absolute value) three times, and reads off the states \(\rho^{(1)}\), \(\rho^{(2)}\), \(\rho^{(0)}\) after the three steps in every one of these bases.)
 
 \section{Open problems}\label{open-problems}
 
@@ -906,7 +1283,7 @@ The conclusion is narrow. For rules of this kind, agreement in every base from \
 
 \textbf{3. Odd bases.} The criterion and the lifting theorem of Section 5 are proved for even \(b\). In an odd base the digit \((b-1)/2\) is its own complement and has the largest deficit, and the proofs use that this does not happen. Is there a version for odd \(b\)?
 
-\textbf{4. The base-free deficit map.} For a half-swap rule, prove that when every deficit is small compared with \(b\) the next state is given by a map on deficits that does not involve \(b\) (Section 7 shows one instance over a long range of bases). If that holds, ``the deficit map on non-negative integer \(n\)-tuples has exactly one fixed point and no other cycle'' is a necessary condition, free of \(b\), for a half-swap rule to be universal in every base. Is it also sufficient, together with a condition that excludes cycles which scale with \(b\)?
+\textbf{4. The base-free deficit map.} A half-swap rule has a map \(T_\infty\) on tuples of nonnegative integers (defined before Lemma 7.2) that does not involve \(b\) and, by Lemma 7.2, agrees with the map on states in every base that is large compared with the deficits. A cycle of \(T_\infty\) of length at least \(2\) gives a cycle in every large base by Remark (iii) after Lemma 7.2, and the rule is then not universal there by the argument of Proposition 7.3. So the absence of such cycles is a necessary condition, free of \(b\), for a half-swap rule to be universal in every base. Is there a sufficient condition of this kind, together with a condition that excludes cycles which scale with \(b\) as in Proposition 7.1? For which rules can the condition on \(T_\infty\) be decided?
 
 \textbf{5. Rules that use more of the input.} The rules \(R_n\) and \(M_n\) have \(n\) distinct nonzero coefficients up to sign among \(2n\) or \(2n+1\) letters, and their endpoint consists almost entirely of the digits \(0\) and \(b-1\). Is there a rule of some length \(L \geq 4\) that is universal in every base \(b \geq 3\) and in which no two gap weights agree up to sign? We know of none.
 
@@ -916,7 +1293,7 @@ The conclusion is narrow. For rules of this kind, agreement in every base from \
 
 \section{Methods and provenance}\label{methods-and-provenance}
 
-All enumerations run over digit multisets, since a rule reads its input only through the sorted digits; there are \(\binom{L+b-1}{L}\) multisets of length \(L\) in base \(b\). The checks of Section 6 that concern Theorems 3.3, 4.16, 5.9, and 5.13 were written from the statements as printed in this paper, separately from the programs used when the proofs were first found. The examples of Section 7 were re-run for this paper, except the six-digit range \(3\) to \(80\) and the statement about sampling in bases \(97\), \(200\), and \(640\), which are quoted. The census counts of Section 6 (the half-swap family in base \(10\), the counts across bases, the test of \(400\) class-C rules, and the sampled targets) are quoted from the project's November 2026 computations and were not re-run for this paper, apart from the rows for \(4\), \(6\), and \(8\) digits of the base-\(10\) table, which were reproduced by direct enumeration. Source code and outputs are linked from the project page, \url{https://arbolinea.com/60714/}.
+All enumerations run over digit multisets, since a rule reads its input only through the sorted digits; there are \(\binom{L+b-1}{L}\) multisets of length \(L\) in base \(b\). The checks of Section 6 that concern Theorems 3.3, 4.16, 5.9, and 5.13 were written from the statements as printed in this paper, separately from the programs used when the proofs were first found. The examples of Section 7 were re-run for this paper, except the six-digit range \(3\) to \(80\) and the statement about sampling in bases \(97\), \(200\), and \(640\), which are quoted. The proofs of Proposition 7.1, Lemma 7.2, and Proposition 7.3 are accompanied by check scripts written from the statements as printed. The census counts of Section 6 (the half-swap family in base \(10\), the counts across bases, the test of \(400\) class-C rules, and the sampled targets) are quoted from the project's November 2026 computations and were not re-run for this paper, apart from the rows for \(4\), \(6\), and \(8\) digits of the base-\(10\) table, which were reproduced by direct enumeration. Source code and outputs are linked from the project page, \url{https://arbolinea.com/60714/}.
 
 The literature search behind the statement of novelty in the introduction was made in November 2026 with general web search engines (including searches of arXiv and Zenodo), the OEIS, and papers fetched from the online archives of the \emph{Fibonacci Quarterly} and the \emph{Journal of Integer Sequences}. A citation search followed, since an extension of Young's rule to \(2n\) digits would most likely cite {[}Young 1995{]} or {[}Peterson and Pulapaka 2008{]}. In OpenAlex, Semantic Scholar, zbMATH Open, and Google Scholar, the only work citing {[}Young 1995{]} is {[}Devlin and Zeng 2021{]}, which mentions it among variations of the classical routine; {[}Peterson and Pulapaka 2008{]} is cited by that paper and by one paper of Nuez on the classical routine (\emph{Symmetry} 14 (2022), not the preprint cited above). A full-text search of OpenAlex for the name of Young's routine returns the same two papers and no others. The titles of the \(40\) documents since 1995 that zbMATH Open returns for ``Kaprekar'' were also read; four of them are hidden by the database for license reasons and could not be read. MathSciNet was not consulted. The sequence \(9(10^n - 1)\) is OEIS A086580; its entry has no comment on Kaprekar-type maps.
 

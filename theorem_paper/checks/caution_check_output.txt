@@ -1,0 +1,11 @@
+length-8 extension: GFEABDHC - HGDFCEAB
+base 50 cycle, period 4
+   (48, 45, 29, 21, 2, 1, 1, 0)
+   (49, 47, 34, 31, 18, 16, 1, 0)
+   (37, 37, 33, 14, 13, 12, 1, 0)
+   (49, 46, 25, 12, 10, 4, 1, 0)
+affine family: bases checked 393 all period 4: True
+six-digit rule universal at base 20: True
+corner rule: AFEJBGIDHC - GIDHCAFEJB  pairs (P_q, M_q), q=0..4: [(1, 2), (9, 7), (4, 3), (5, 8), (0, 6)]
+corner cycle identical in bases 77..1200, 100003, 1000003, 1000000007: True []
+corner rule universal in base 10: True
