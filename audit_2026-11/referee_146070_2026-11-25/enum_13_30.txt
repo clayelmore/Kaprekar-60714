@@ -1,0 +1,54 @@
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 45
+d=13 multisets=497420 nonrep=497410 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 0000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 45
+d=14 multisets=817190 nonrep=817180 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 00000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 45
+d=15 multisets=1307504 nonrep=1307494 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 46
+d=16 multisets=2042975 nonrep=2042965 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 0000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 46
+d=17 multisets=3124550 nonrep=3124540 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 00000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 46
+d=18 multisets=4686825 nonrep=4686815 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 46
+d=19 multisets=6906900 nonrep=6906890 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 0000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 46
+d=20 multisets=10015005 nonrep=10014995 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 00000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 47
+d=21 multisets=14307150 nonrep=14307140 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 47
+d=22 multisets=20160075 nonrep=20160065 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 0000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 47
+d=23 multisets=28048800 nonrep=28048790 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 00000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 47
+d=24 multisets=38567100 nonrep=38567090 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 000000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 47
+d=25 multisets=52451256 nonrep=52451246 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 0000000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 48
+d=26 multisets=70607460 nonrep=70607450 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 00000000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 48
+d=27 multisets=94143280 nonrep=94143270 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 000000000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 48
+d=28 multisets=124403620 nonrep=124403610 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 0000000000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 48
+d=29 multisets=163011640 nonrep=163011630 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 00000000000000000000000000001
+  max steps to the integer 146070 (worst arrangement, inputs other than 146070 itself) = 42 ; bound floor((d-1)/5)+43 = 48
+d=30 multisets=211915132 nonrep=211915122 bad=0 fixedpoints(multiset-level)=2 K(target)=146070:1 repdigits->0:1 maxSteps_to_target_multiset=41 maxR=11
+  argmax multiset (ascending): 000000000000000000000000000001

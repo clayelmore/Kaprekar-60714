@@ -1,0 +1,2 @@
+Lemma3 d-independence violations: 0
+d=400 inputs=7593 fails=0 maxSteps_to_integer=113 bound=122 maxR=9 lemma2_checks=405584 lemma2_fail=0
