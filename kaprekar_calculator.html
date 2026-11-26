@@ -480,11 +480,11 @@
   <header>
     <div class="eyebrow">an interactive companion</div>
     <h1>Kaprekar's Classic Routine<br><span class="num-gold">495</span> <span class="amp">&amp;</span> <span class="num">6174</span></h1>
-    <div class="subtitle">The original 1949 routine, at three and four digits</div>
+    <div class="subtitle">The classic routine, at three and four digits</div>
 
     <div class="lede">
       <p>Pick a number with three or four digits, using at least two different digits. Sort the digits one way, then the other. Subtract the smaller from the larger. Do it again with the answer.</p>
-      <p>At <em>three digits</em> you always reach <em>495</em>. At <em>four digits</em> you always reach <em>6174</em>. This is the routine the Indian schoolteacher D.&nbsp;R.&nbsp;Kaprekar discovered in 1949. It still works.</p>
+      <p>At <em>three digits</em> you always reach <em>495</em>. At <em>four digits</em> you always reach <em>6174</em>. The Indian schoolteacher D.&nbsp;R.&nbsp;Kaprekar found the four-digit constant 6174 in 1949; the paper credits the three-digit constant 495 to C.&nbsp;W.&nbsp;Trigg (1974).</p>
     </div>
   </header>
 
@@ -510,11 +510,11 @@
   <div class="about">
     <p>This is the classical <strong>Kaprekar routine</strong>: sort the digits descending, sort them ascending, subtract. Repeat. At three digits the routine always reaches <strong>495</strong> (within six steps). At four digits it always reaches <strong>6174</strong> (within seven steps). The two numbers are sometimes called <em>Kaprekar's constants</em>.</p>
 
-    <p>The routine is famous because of how clean it is: one simple rule, one number every input ends up at, and a short proof you can almost do in your head. Try it with five-digit numbers, though, and the routine stops working: you bounce around in a small loop forever instead of reaching a fixed number. For a long time, that was the end of the story.</p>
+    <p>The routine is famous because of how clean it is: one simple rule, one number every input ends up at, and a check small enough to do by hand. Try it with five-digit numbers, though, and the routine stops working: you bounce around in a small loop forever instead of reaching a fixed number. For a long time, that was the end of the story.</p>
 
     <p>The companion <a href="60714_calculator.html">60714 calculator</a> picks up where this one leaves off. It iterates a slightly different rule that <em>does</em> have a five-digit fixed point, 60714, with a version of the rule for every longer length. At five and six digits every input that is not one repeated digit reaches 60714. At seven digits and more, every input reaches 60714 or 0, and the share that collapses to 0 grows with length (about 12% of digit collections at 24 digits).</p>
 
-    <p>Full paper, the proof, and reproducibility scripts: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a></p>
+    <p>Paper, calculator and more: <a href="https://arbolinea.com/60714/" target="_blank" rel="noopener">arbolinea.com/60714</a>. Scripts and data: <a href="https://github.com/clayelmore/Kaprekar-60714" target="_blank" rel="noopener">github.com/clayelmore/Kaprekar-60714</a>.</p>
   </div>
 
   <div class="ornament">⁂</div>
@@ -713,9 +713,9 @@ function render(result) {
     banner.className = 'fixed-banner';
     banner.style.animationDelay = (result.trail.length * 0.06) + 's';
     if (result.d === 3) {
-      banner.innerHTML = 'Kaprekar 1949 in action: every admissible 3-digit input reaches 495 within six steps.';
+      banner.innerHTML = 'The classic routine in action: every admissible 3-digit input reaches 495 within six steps.';
     } else {
-      banner.innerHTML = 'Kaprekar 1949 in action: every admissible 4-digit input reaches 6174 within seven steps.';
+      banner.innerHTML = 'The classic routine in action: every admissible 4-digit input reaches 6174 within seven steps.';
     }
     trajectoryEl.appendChild(banner);
   }

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>60714: The Digits of 6174 at Every Length</title>
-<meta name="description" content="60714 is a fixed point of an explicit Kaprekar-type rule at every digit length d ≥ 5. At 5 and 6 digits every input that is not one repeated digit reaches it; at 7 or more digits every input reaches 60714 or 0. By Clay Elmore.">
+<meta name="description" content="60714 is a fixed point of an explicit Kaprekar-type rule at every length d ≥ 5, reached by every start only at five and six digits: there every input that is not one repeated digit reaches it; at 7 or more digits every input reaches 60714 or 0. By Clay Elmore.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -496,7 +496,7 @@
   <section class="hero">
     <div class="hero-eyebrow">A Generalized Kaprekar Phenomenon</div>
     <div class="integer" id="integer" title="Click to copy" role="button" tabindex="0" aria-label="60714, click to copy">60714</div>
-    <p class="hero-subtitle">A five-digit number reached by every input at 5 and 6 digits; at 7 or more digits every input reaches it or collapses to 0, and the share collapsing to 0 grows with length.</p>
+    <p class="hero-subtitle">A five-digit number reached by every input at 5 and 6 digits; at 7 or more digits every input reaches it or collapses to 0, and the share collapsing to 0 grows overall with length, though not at every step.</p>
     <div class="hero-meta">
       <span>Clay Elmore</span>
       <span>November 2026</span>
@@ -506,8 +506,9 @@
   <!-- ═══════════ ABSTRACT ═══════════ -->
   <section class="abstract">
     <p>Kaprekar's classical process fixes <em>6174</em> at four digits and <em>495</em> at three. The classical rule, applied at <em>d = 5</em>, falls into one of three cycles and has no fixed endpoint.</p>
-    <p>The paper allows any rule that sorts the digits and subtracts one rearrangement from another. At <em>d = 5</em>, exhaustive enumeration over all 5,280 full-variable rules yields 33 universal fixed points; at <em>d = 6</em>, 506. Of the 33 at <em>d = 5</em>, exactly one, <em>60714</em>, is universal again at <em>d = 6</em> (among full-variable rules; allowing a letter to stay in place gives 54, of which 22 recur).</p>
-    <p>Proved: <em>60714</em> is a fixed point of an explicit rule at every <em>d ≥ 5</em>. At <em>d = 5, 6</em> every input that is not one repeated digit reaches it (at five digits: 99,990 of 100,000 strings, in at most 30 steps). At <em>d ≥ 7</em> every input reaches 60714 or 0. The inputs that reach 0 form an exactly characterized escape class, and its share grows with length: 0.56% of digit collections at 8 digits, about 12% at 24 digits (computed). The proof runs by induction along two ladders (odd and even <em>d</em>), algebraic at large <em>d</em> and by complete enumeration at small <em>d</em>. The paper also studies the repetition direction, the digits of 6174 written <em>m</em> times; there the question for every <em>m</em> is open.</p>
+    <p>The paper allows any rule that sorts the digits and subtracts one rearrangement from another. At <em>d = 5</em>, exhaustive enumeration over all 5,280 full-variable rules yields 33 universal fixed points; at <em>d = 6</em>, 506. Of the 33 at <em>d = 5</em>, exactly one, <em>60714</em>, is universal again at <em>d = 6</em> (counting only rules in which every digit takes part, at both lengths; if a letter may stay in place and only repeated-digit inputs are excluded, there are 54, of which 22 recur).</p>
+    <p>Computed: at <em>d = 5, 6</em> every input that is not one repeated digit reaches <em>60714</em> (at five digits: 99,990 of 100,000 strings, in at most 30 steps). This is a complete computer check, not a hand proof.</p>
+    <p>Shown in the paper (not refereed): <em>60714</em> is a fixed point of an explicit rule at every <em>d ≥ 5</em>, and at <em>d ≥ 7</em> every input reaches 60714 or 0. The inputs that reach 0 form an exactly characterized escape class, and its share grows overall with length, though not at every step: 0.71% of digit collections at 7 digits, 0.56% at 8, about 12% at 24 (computed). The paper's argument runs by induction along two ladders (odd and even <em>d</em>), algebraic at large <em>d</em> and resting on stated complete enumerations at small <em>d</em>. The paper also studies the repetition direction, the digits of 6174 written <em>m</em> times; there the question for every <em>m</em> is open.</p>
   </section>
 
   <!-- ═══════════ MAIN RESULT ═══════════ -->
@@ -516,7 +517,7 @@
     <div class="result">
       <strong>Theorem 4.1.</strong> The integer <em>60714</em> is a fixed point of an explicit coefficient-preserving lifting <em>K<sup>(d)</sup></em> at every digit length <em>d ≥ 5</em>. At <em>d = 5, 6</em> every admissible input reaches <em>60714</em>. At <em>d ≥ 7</em> every admissible input outside an exactly characterized escape class <em>E<sub>d</sub></em> reaches <em>60714</em>, and every input in <em>E<sub>d</sub></em> reaches <em>0</em>.
     </div>
-    <p>The inputs that the rule sends to 0 in one step number <em>C(⌊(d−3)/2⌋ + 9, 9) − 10</em>. The whole escape class is larger: the share of inputs that collapse to 0 grows with length, from 0.56% of digit collections at 8 digits to about 12% at 24 digits (computed, November 2026).</p>
+    <p>The inputs that the rule sends to 0 in one step number <em>C(⌊(d−3)/2⌋ + 9, 9) − 10</em>. The whole escape class is larger: the share of inputs that collapse to 0 grows overall with length, though not at every step, from 0.56% of digit collections at 8 digits to about 12% at 24 digits (computed, November 2026).</p>
   </section>
 
   <!-- ═══════════ THE RULE ═══════════ -->
@@ -628,14 +629,14 @@
       <a class="artifact" href="kaprekar_calculator.html">
         <div class="artifact-label">Interactive</div>
         <div class="artifact-title">Kaprekar's Classic Routine</div>
-        <div class="artifact-desc">The original 1949 routine. Type any 3- or 4-digit number and watch it walk to 495 (at three digits) or 6174 (at four).</div>
+        <div class="artifact-desc">The classic routine: 6174 is Kaprekar's four-digit constant (1949), and 495 is the three-digit constant. Type any 3- or 4-digit number and watch it walk to 495 (at three digits) or 6174 (at four).</div>
         <span class="artifact-arrow">→</span>
       </a>
 
       <a class="artifact" href="paper_hierarchy.pdf">
         <div class="artifact-label">Paper · PDF</div>
         <div class="artifact-title">The Digits of 6174 at Every Length</div>
-        <div class="artifact-desc">Two Liftings of a Universal Kaprekar Fixed Point. November 2026. The current paper.</div>
+        <div class="artifact-desc">Two Liftings of a Universal Kaprekar Fixed Point. November 2026. The current paper. 60714 is a fixed point at every length; reached by every start only at five and six digits.</div>
         <span class="artifact-arrow">→</span>
       </a>
 
@@ -656,7 +657,7 @@
       <a class="artifact" href="paper.pdf">
         <div class="artifact-label">Older version · PDF</div>
         <div class="artifact-title">Older version (April 2026, 80 pages)</div>
-        <div class="artifact-desc">The first, longer paper on 60714. Kept for reference; the paper above replaces it. Its numbering differs, and later computation does not support its basin density conjecture (the share collapsing to 0 grows through 24 digits).</div>
+        <div class="artifact-desc">The first, longer paper on 60714. Kept for reference; the paper above replaces it. Its numbering differs, and later computation does not support its basin density conjecture (the share collapsing to 0 grows overall through 24 digits).</div>
         <span class="artifact-arrow">→</span>
       </a>
 
@@ -702,7 +703,7 @@
       <a class="artifact" href="https://github.com/clayelmore/Kaprekar-60714/blob/main/sections/04_cross_check.md">
         <div class="artifact-label">April version · §4</div>
         <div class="artifact-title">Cross-check d = 5 → d = 6</div>
-        <div class="artifact-desc">Of the 33 full-variable fixed points at d=5, exactly one (60714) is universal again at d=6.</div>
+        <div class="artifact-desc">Of the 33 fixed points at d=5 for rules in which every digit takes part, exactly one (60714) is universal again at d=6 under such rules.</div>
         <span class="artifact-arrow">→</span>
       </a>
 

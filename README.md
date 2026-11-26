@@ -2,13 +2,15 @@
 
 **Main page: [arbolinea.com/60714](https://arbolinea.com/60714/)** (the video, the rule, an explorable picture, the calculator, and the paper). This repository holds the code and data behind it.
 
+**Check it yourself:** `python3 audit_2026-11/video_60714/verify_60714_d5.py` (about 2 seconds; checks all 100,000 five-digit strings). Video: [youtu.be/8B35aQmRqBg](https://youtu.be/8B35aQmRqBg). Readable page: [arbolinea.com/60714](https://arbolinea.com/60714/).
+
 A five-digit number that is a fixed point of an explicit Kaprekar-type rule at every digit length d ≥ 5.
 
-At 5 and 6 digits, every input that is not one repeated digit reaches **60714** (at 5 digits: 99,990 of 100,000 strings, in at most 30 steps). At 7 or more digits, every input reaches either 60714 or 0. The inputs that collapse to 0 form an exactly characterized escape class, and its share grows with length: 0.56% of digit collections at 8 digits, about 12% at 24 digits (computed). The classical routine also sends inputs to 0, but only the repdigits; here the collapse reaches other inputs as well.
+At 5 and 6 digits, every input that is not one repeated digit reaches **60714** (at 5 digits: 99,990 of 100,000 strings, in at most 30 steps). The five- and six-digit statements are complete computer checks, not hand proofs. At 7 or more digits, every input reaches either 60714 or 0 (Theorem 4.1 of the paper states and argues this; not refereed). The inputs that collapse to 0 form an exactly characterized escape class, and its share grows overall with length, though not at every step: 0.71% of digit collections at 7 digits, 0.56% at 8, about 12% at 24 (computed). The classical routine also sends inputs to 0, but only the repdigits; here the collapse reaches other inputs as well.
 
 The paper fixes the digits of 6174 and varies the length: instead of fixing the rule and asking which digit lengths work, it lets the rule change with the length and follows one fixed point, 60714, across all lengths. The same family of rules (two permutations of the sorted digits, subtracted) was defined earlier by Peterson and Pulapaka (2008).
 
-The paper's results include the **classification of universal full-variable fixed points at digit length d** (the catalog 0, 4, 33, 506 at d ∈ {3, 4, 5, 6}), the **coefficient-preserving lifting recipe** that connects rules across digit lengths, and the **escape class** (Definition 4.6) that describes exactly which inputs collapse to 0. 60714 is the only one of the 33 five-digit full-variable fixed points that is universal again at six digits.
+The paper's results include the **classification of universal full-variable fixed points at digit length d** (the catalog 0, 4, 33, 506 at d ∈ {3, 4, 5, 6}), the **coefficient-preserving lifting recipe** that connects rules across digit lengths, and the **escape class** (Definition 4.6) that describes exactly which inputs collapse to 0. 60714 is the only one of the 33 five-digit full-variable fixed points that is universal again at six digits (counting only rules in which every digit takes part, at both lengths).
 
 ## The paper
 
@@ -63,11 +65,11 @@ The story changes if you let the rule itself vary. For each digit length d there
 
 The natural follow-up question: which of these fixed points persist across lengths? If F is universal at d, is it also universal at d + 1, under some related rule?
 
-The answer is mostly no. Of the 33 universal fixed points at d = 5 (full-variable rules), only one is universal again at d = 6. That one is **60714**. (If rules that leave a letter in place are allowed, the five-digit count is 54, and 22 of them recur at six digits.)
+The answer is mostly no. Of the 33 universal fixed points at d = 5 (full-variable rules, in which every digit takes part), only one is universal again at d = 6 under such rules. That one is **60714**. (If rules that leave a letter in place are allowed and only repeated-digit inputs are excluded, the five-digit count is 54, and 22 of them recur at six digits.)
 
-60714 stays a fixed point at every higher d, with an explicit recipe: each rule is built from the d = 5 or d = 6 rule by appending pairs of coefficients summing to zero at the new digit positions. Theorem 4.1 proves that at d = 5, 6 every input that is not one repeated digit reaches 60714, and that at every d ≥ 7 every input reaches 60714 or 0, with the inputs that reach 0 characterized exactly.
+60714 stays a fixed point at every higher d, with an explicit recipe: each rule is built from the d = 5 or d = 6 rule by appending pairs of coefficients summing to zero at the new digit positions. Theorem 4.1 of the paper states and argues (not refereed) that at d = 5, 6 every input that is not one repeated digit reaches 60714, and that at every d ≥ 7 every input reaches 60714 or 0, with the inputs that reach 0 characterized exactly.
 
-The proof combines complete enumeration at 7 ≤ d ≤ 16 with an algebraic argument that covers all larger d.
+The paper's argument combines stated complete enumerations at 7 ≤ d ≤ 16 with an algebraic argument that covers all larger d; no human mathematician has refereed it.
 
 ---
 
@@ -76,8 +78,8 @@ The proof combines complete enumeration at 7 ≤ d ≤ 16 with an algebraic argu
 | Result | Statement |
 |---|---|
 | **Theorem 3.2** | Exhaustive census: 0, 4, 33, and 506 universal full-variable fixed points at d = 3, 4, 5, 6 respectively |
-| **Theorem 3.3** | Of the 33 fixed points at d = 5, exactly one (60714) is also universal at d = 6 |
-| **Theorem 4.1** | 60714 is a fixed point at every d ≥ 5; every input reaches it at d = 5, 6; at d ≥ 7 every input reaches 60714 or 0 |
+| **Theorem 3.3** | Of the 33 fixed points at d = 5, exactly one (60714) is also universal at d = 6 (rules in which every digit takes part, at both lengths) |
+| **Theorem 4.1** | States and argues (not refereed): 60714 is a fixed point at every d ≥ 5; every input reaches it at d = 5, 6 (complete computer check); at d ≥ 7 every input reaches 60714 or 0 |
 | **Theorem 4.7** | Padded 6174 has no full-variable fixed-point rule at d = 5, and under the lifting family it never regains universality |
 | **Sections 5 to 7** | The repetition direction ({1,4,6,7} written m times): folding results, and why a proof for every m is open |
 
@@ -95,7 +97,7 @@ For in-browser viewing; sections render cleanly on GitHub. Numbering here is tha
 | 2 | [Framework](sections/02_framework.md) | Permutation-pair rules, algebraic rank, native digit length |
 | 3 | [Classifications at d ≤ 6](sections/03_classifications.md) | Exhaustive enumeration, Theorems 3.1–3.4 |
 | 4 | [Cross-check d = 5 → d = 6](sections/04_cross_check.md) | The 32 dimension-locked fixed points |
-| 5 | [The 60714 theorem](sections/05_theorem_60714.md) | The lifting construction and its proof |
+| 5 | [The 60714 theorem](sections/05_theorem_60714.md) | The lifting construction and the older version's argument for it |
 | 6 | [The {7,6,4,1} thread](sections/06_thread_7641.md) | 60714 vs 6174 vs 60417 vs 1746 |
 | 7 | [Open questions](sections/07_open_questions.md) | Conjectures and directions as of April 2026 |
 
@@ -151,7 +153,7 @@ For the d = 7 work in Appendix D of the older version (the exhaustive classifica
 
 ## How this paper was written
 
-The discovery arc, the classification errors and self-corrections, and the proof gaps and their resolution are documented in §1.4 of the older version. In short: brute-force enumeration produced the empirical landscape, an early candidate (54) turned out to be algebraically degenerate, and the search moved on to 60714.
+The discovery arc, the classification errors and self-corrections, and the gaps in the argument and their resolution are documented in §1.4 of the older version. In short: brute-force enumeration produced the empirical landscape, an early candidate (54) turned out to be algebraically degenerate, and the search moved on to 60714.
 
 ---
 

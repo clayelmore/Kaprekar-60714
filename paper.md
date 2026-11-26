@@ -1,3 +1,5 @@
+> **Older version (April 2026).** The current paper is `paper_hierarchy.pdf`; main page: https://arbolinea.com/60714/. Statements below that 60714 is universal at every length are superseded: see the current paper.
+
 # Dimension-Transcendent Attractors in Generalized Kaprekar Routines
 
 ---

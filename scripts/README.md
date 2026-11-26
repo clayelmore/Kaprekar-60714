@@ -60,7 +60,7 @@ The `--save` and `--save-txt` flags can be combined to produce both JSON and tex
 python3 cross_check_d5_to_d6.py
 ```
 
-### Theorem 5.2 (60714 universal at every $`d \geq 5`$)
+### Theorem 4.1 of the current paper (60714 fixed at every d ≥ 5; reached by every input at d = 5, 6; off an escape class for d ≥ 7)
 
 The corrected Theorem 5.2 has three parts (algebraic at all d, strict-universal at d = 5, 6, near-universal at d ≥ 7 with characterized escape class). Four verification steps:
 

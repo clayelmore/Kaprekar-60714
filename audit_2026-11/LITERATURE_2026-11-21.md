@@ -1,7 +1,7 @@
 # Literature check: is the all-lengths, all-bases rule new? (2026-11-21)
 
-Method: two search engines, six queries, five sources read through targeted extraction. One further read
-(Nuez 2021, arXiv 2110.15123) was blocked by a credit limit; its claim below rests on one engine's excerpt plus
+Method: two search engines, six queries, five sources read through targeted extraction. One further source
+(Nuez 2021, arXiv 2110.15123) was not read in full; its claim below rests on one engine's excerpt plus
 my own arithmetic. This is a short search, not a systematic review. "Not found" is not "does not exist".
 
 ## What is already published

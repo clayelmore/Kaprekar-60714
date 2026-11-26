@@ -314,13 +314,13 @@
 
     <p>At three digits, there are 12. At four digits, 216. At five digits, 5,280. At six digits, almost 200,000.</p>
 
-    <p>Kaprekar's shuffle is one of them. The classic version. The famous version. The other ones aren't in the spotlight, but they're sitting there in the same family.</p>
+    <p>These counts are of shuffles that move every digit; Kaprekar's four-digit shuffle is one of them. The classic version. The famous version. The other ones aren't in the spotlight, but they're sitting there in the same family.</p>
 
     <p>So a different question from the classic one is: among all those shuffles, are there any other "land here forever" numbers? And if there are, do any of them keep working as you stretch the routine to longer numbers?</p>
 
     <p>This is the question I kept thinking about. It's not the question Kaprekar was asking. His question was about his one rule, and his answer was complete on its own. This is just a different question, sitting next to his.</p>
 
-    <p>Answering it takes more bookkeeping than answering Kaprekar's. To check just the five-digit case you have to test 5,280 different shuffles against 99,540 different starting numbers, follow each one until it either lands somewhere or starts looping, and keep track of all the results. That's about half a billion subtractions. A modern laptop crunches the numbers in seconds. The harder part is making sense of what comes out the other side.</p>
+    <p>Answering it takes more bookkeeping than answering Kaprekar's. To check just the five-digit case you have to test 5,280 different shuffles against 99,540 different starting numbers (leaving out numbers with four or five equal digits), follow each one until it either lands somewhere or starts looping, and keep track of all the results. That's more than half a billion subtractions. A modern laptop crunches the numbers in seconds. The harder part is making sense of what comes out the other side.</p>
 
     <div class="tryit">
       <span class="tryit-label">Try it yourself</span>
@@ -333,9 +333,9 @@
 
     <p>One of the 33 is <strong class="num-accent">60714</strong>.</p>
 
-    <p>Out of those 33 numbers, only one still works the same way when you stretch the routine to six-digit numbers: every six-digit input ends up there. That one is 60714.</p>
+    <p>Out of those 33 numbers, only one still works the same way when you stretch the routine to six-digit numbers (again counting shuffles that move every digit): every six-digit input that is not one repeated digit ends up there. That one is 60714.</p>
 
-    <p>The shuffle changes a little each time you add a digit (it has to, to fit the longer number), and there's a fixed recipe for how it changes. Here is what is proved. At five and six digits, every input that is not one repeated digit reaches 60714; at five digits that is 99,990 of the 100,000 strings, in at most 30 steps. At every longer length, 60714 is still a fixed point, and every input reaches either 60714 or 0. The share that falls to 0 grows with the length: about half a percent of digit collections at eight digits, about 12% at twenty-four. So past six digits, 60714 is no longer the place every number ends up.</p>
+    <p>The shuffle changes a little each time you add a digit (it has to, to fit the longer number), and there's a fixed recipe for how it changes. Here is what the paper shows. At five and six digits, by complete computer check, every input that is not one repeated digit reaches 60714; at five digits that is 99,990 of the 100,000 strings, in at most 30 steps. For every longer length, the paper argues that 60714 is still a fixed point and that every input reaches either 60714 or 0; no human mathematician has refereed that argument yet. The share that falls to 0 grows overall with the length, though not at every step: about 0.7% of digit collections at seven digits, about half a percent at eight, about 12% at twenty-four. So past six digits, 60714 is no longer the place every number ends up.</p>
 
     <h2>So what's it good for?</h2>
 
@@ -357,7 +357,7 @@
 
   <footer>
     <p>The full technical paper, the interactive calculator, the verification scripts, and the complete reproducibility record live at <a href="index.html">the main page</a>.</p>
-    <p style="margin-top: 0.5rem;">The questions and the direction are ours. The computation, checking, and drafting were done with AI models, Anthropic's Claude and OpenAI's ChatGPT, used as research tools. No human mathematician has refereed the results.</p>
+    <p style="margin-top: 0.5rem;">The questions and the direction are mine. The computation, checking, and drafting were done with AI models, Anthropic's Claude and OpenAI's ChatGPT, used as research tools. No human mathematician has refereed the results.</p>
     <p style="margin-top: 1rem;">© 2026 Clay Elmore</p>
   </footer>
 

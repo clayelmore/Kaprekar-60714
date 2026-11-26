@@ -27,3 +27,4 @@ node_modules/
 audit_2026-11/HANDOFF_*.md
 audit_2026-11/video_60714/film/CLAUDE.md
 audit_2026-11/video_60714/film/AGENTS.md
+*.log

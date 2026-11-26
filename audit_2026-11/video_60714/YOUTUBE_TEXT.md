@@ -1,6 +1,4 @@
-# Text for the upload and the comment (draft)
-
-The page address is filled in. Nothing else needs replacing before posting.
+# Video description and comment (as posted)
 
 ## Video title (Arbolinea channel)
 

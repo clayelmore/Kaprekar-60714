@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>60714: a Kaprekar fixed point at every length</title>
-<meta name="description" content="Interactive calculator for the lifted Kaprekar rules that fix 60714 at every digit length from 5 up. At 5 and 6 digits every input that is not one repeated digit reaches 60714; at 7 or more digits some inputs collapse to 0 instead.">
+<meta name="description" content="Interactive calculator for the lifted Kaprekar rules under which 60714 is a fixed point at every length from 5 up; reached by every start only at five and six digits. At 5 and 6 digits every input that is not one repeated digit reaches 60714; at 7 or more digits some inputs collapse to 0 instead.">
 
 
 <style>
@@ -618,13 +618,13 @@
   <div class="about">
     <p>The number <strong>60714</strong> is a fixed point of an explicit family of permutation-pair rules built from its native rule at <em>d = 5</em>, with the family extending to every higher digit length by appending pairs of coefficients that sum to zero. The fixed-point equation K(60714) = 60714 holds at every d ≥ 5.</p>
 
-    <p><strong>What is shown.</strong> At <strong>d = 5 and d = 6</strong>, every input that is not one repeated digit reaches 60714. At <strong>d ≥ 7</strong>, every input reaches 60714 or 0. The inputs that reach 0 form the <strong>escape class</strong>: the <strong>block-aligned multisets</strong>, which the rule sends to 0 in one step, and the inputs whose orbits land on them. The escape class is characterized exactly, but it is not small: its share grows with length, from 0.56% of digit collections at 8 digits to about 12% at 24 digits (computed).</p>
+    <p><strong>What is shown.</strong> At <strong>d = 5 and d = 6</strong>, every input that is not one repeated digit reaches 60714. At <strong>d ≥ 7</strong>, every input reaches 60714 or 0. The inputs that reach 0 form the <strong>escape class</strong>: the <strong>block-aligned multisets</strong>, which the rule sends to 0 in one step, and the inputs whose orbits land on them. The escape class is characterized exactly, but it is not small: its share grows overall with length, though not at every step, from 0.56% of digit collections at 8 digits to about 12% at 24 digits (computed).</p>
 
     <p>Kaprekar's constant 6174 is reached from every 4-digit input that is not one repeated digit; his rule has no fixed endpoint at 5 digits. If the rule is allowed to change with the length (here, by appending pairs of coefficients that sum to zero), 60714, the digits of 6174 plus a zero, stays a fixed point at every length, with the escape class above at 7 digits and more.</p>
 
-    <p style="font-style: italic; font-size: 0.85em; color: var(--soft); margin-top: 0.5em;">This calculator is a pedagogical companion to the paper, not a formal verifier. It demonstrates the iteration on individual inputs; the formal claims of the paper are established by the Python scripts and proofs in the repository.</p>
+    <p style="font-style: italic; font-size: 0.85em; color: var(--soft); margin-top: 0.5em;">This calculator is a pedagogical companion to the paper, not a formal verifier. It demonstrates the iteration on individual inputs; the paper's counts come from the scripts in the repository.</p>
 
-    <p>The paper: <a href="paper_hierarchy.pdf">The Digits of 6174 at Every Length (PDF)</a> (Theorem 4.1 and Definition 4.6). More about the result: <a href="https://arbolinea.com/60714/">arbolinea.com/60714</a>. Scripts and data: <a href="https://github.com/clayelmore/Kaprekar-60714">github.com/clayelmore/Kaprekar-60714</a>.</p>
+    <p>The paper: <a href="paper_hierarchy.pdf">The Digits of 6174 at Every Length (PDF)</a> (Theorem 4.1 and Definition 4.6): a fixed point at every length; reached by every start only at five and six digits. More about the result: <a href="https://arbolinea.com/60714/">arbolinea.com/60714</a>. Scripts and data: <a href="https://github.com/clayelmore/Kaprekar-60714">github.com/clayelmore/Kaprekar-60714</a>.</p>
   </div>
 
   <div class="ornament">⁂</div>
@@ -714,11 +714,7 @@ function getLetterStrings(d) {
       // appended positions are dPrime-2 (lower) and dPrime-1 (higher)
       const lo = dPrime - 2;
       const hi = dPrime - 1;
-      // odd-ladder: prepend (hi, lo) to π, (lo, hi) to σ
-      // Check against Table B.1: d=7 π = "fgadcbe"
-      // If d=5 base π = "adcbe" and d=7 = "fgadcbe", then "fg" was prepended.
-      // f = 5, g = 6. dPrime=7 gives lo=5, hi=6. So prepend [lo, hi] = [5,6] = "fg". ✓
-      // d=7 σ = "gfdeacb", d=5 σ = "deacb", prepended "gf" = [6,5] = [hi, lo]. ✓
+      // prepend (lo, hi) to π and (hi, lo) to σ: the letter form of appending the pair (+9·10^k, −9·10^k), k = d'−2, as on both ladders (see Appendix F of the paper)
       piVar    = [lo, hi].concat(piVar);
       sigmaVar = [hi, lo].concat(sigmaVar);
     }
