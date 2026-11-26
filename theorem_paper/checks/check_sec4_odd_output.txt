@@ -1,0 +1,96 @@
+letter form n=3: DAEBCGF-CGFBDAE ok
+letter form n=4: GACDBFHIE-FHIEBGACD ok
+letter form n=5: DIFAGBCJEKH-CJEKHBDIFAG ok
+
+Complete enumeration over multisets:
+  n=3 b=3: 36 multisets, all non-repdigits reach F=160; max steps 3, bound 4 ok
+  n=3 b=4: 120 multisets, all non-repdigits reach F=765; max steps 3, bound 4 ok
+  n=3 b=5: 330 multisets, all non-repdigits reach F=2496; max steps 4, bound 5 ok
+  n=3 b=7: 1716 multisets, all non-repdigits reach F=14400; max steps 5, bound 6 ok
+  n=3 b=10: 11440 multisets, all non-repdigits reach F=89991; max steps 5, bound 7 ok
+  n=4 b=3: 55 multisets, all non-repdigits reach F=484; max steps 3, bound 5 ok
+  n=4 b=4: 220 multisets, all non-repdigits reach F=3069; max steps 4, bound 6 ok
+  n=4 b=5: 715 multisets, all non-repdigits reach F=12496; max steps 4, bound 7 ok
+  n=4 b=7: 5005 multisets, all non-repdigits reach F=100836; max steps 6, bound 9 ok
+  n=4 b=10: 48620 multisets, all non-repdigits reach F=899991; max steps 7, bound 12 ok
+  n=5 b=3: 78 multisets, all non-repdigits reach F=1456; max steps 3, bound 4 ok
+  n=5 b=4: 364 multisets, all non-repdigits reach F=12285; max steps 3, bound 4 ok
+  n=5 b=5: 1365 multisets, all non-repdigits reach F=62496; max steps 3, bound 5 ok
+  n=5 b=7: 12376 multisets, all non-repdigits reach F=705888; max steps 3, bound 6 ok
+  n=5 b=10: 167960 multisets, all non-repdigits reach F=8999991; max steps 4, bound 7 ok
+
+Reduced maps against the direct rule, on every state:
+  n=3 b=3: 4 states ok
+  n=3 b=4: 4 states ok
+  n=3 b=5: 10 states ok
+  n=3 b=6: 10 states ok
+  n=3 b=7: 20 states ok
+  n=3 b=8: 20 states ok
+  n=3 b=9: 35 states ok
+  n=3 b=10: 35 states ok
+  n=3 b=11: 56 states ok
+  n=3 b=12: 56 states ok
+  n=4 b=3: 5 states ok
+  n=4 b=4: 5 states ok
+  n=4 b=5: 15 states ok
+  n=4 b=6: 15 states ok
+  n=4 b=7: 35 states ok
+  n=4 b=8: 35 states ok
+  n=4 b=9: 70 states ok
+  n=4 b=10: 70 states ok
+  n=4 b=11: 126 states ok
+  n=4 b=12: 126 states ok
+  n=5 b=3: 6 states ok
+  n=5 b=4: 6 states ok
+  n=5 b=5: 21 states ok
+  n=5 b=6: 21 states ok
+  n=5 b=7: 56 states ok
+  n=5 b=8: 56 states ok
+  n=5 b=9: 126 states ok
+  n=5 b=10: 126 states ok
+  n=5 b=11: 252 states ok
+  n=5 b=12: 252 states ok
+  n=6 b=3: 7 states ok
+  n=6 b=4: 7 states ok
+  n=6 b=5: 28 states ok
+  n=6 b=6: 28 states ok
+  n=6 b=7: 84 states ok
+  n=6 b=8: 84 states ok
+  n=6 b=9: 210 states ok
+  n=6 b=10: 210 states ok
+  n=6 b=11: 462 states ok
+  n=6 b=12: 462 states ok
+  n=7 b=3: 8 states ok
+  n=7 b=4: 8 states ok
+  n=7 b=5: 36 states ok
+  n=7 b=6: 36 states ok
+  n=7 b=7: 120 states ok
+  n=7 b=8: 120 states ok
+  n=7 b=9: 330 states ok
+  n=7 b=10: 330 states ok
+  n=7 b=11: 792 states ok
+  n=7 b=12: 792 states ok
+  n=8 b=3: 9 states ok
+  n=8 b=4: 9 states ok
+  n=8 b=5: 45 states ok
+  n=8 b=6: 45 states ok
+  n=8 b=7: 165 states ok
+  n=8 b=8: 165 states ok
+  n=8 b=9: 495 states ok
+  n=8 b=10: 495 states ok
+  n=8 b=11: 1287 states ok
+  n=8 b=12: 1287 states ok
+
+Reduced-map orbits: longest bad run and steps (state level):
+  n=3: bases 3..40; longest bad run 3; b=3: run 0/0, steps 4/4; b=4: run 0/0, steps 3/4; b=5: run 0/0, steps 5/5; b=7: run 1/1, steps 5/6; b=10: run 1/2, steps 6/7; b=11: run 1/3, steps 6/8; b=12: run 1/3, steps 6/8; b=20: run 2/7, steps 7/12; b=30: run 3/12, steps 7/17; b=40: run 3/17, steps 8/22
+  n=4: bases 3..40; longest bad run 18; b=3: run 0/0, steps 4/5; b=4: run 0/0, steps 4/6; b=5: run 2/2, steps 6/7; b=7: run 3/4, steps 7/9; b=10: run 4/6, steps 8/12; b=11: run 5/8, steps 9/13; b=12: run 5/8, steps 9/14; b=20: run 8/16, steps 12/22; b=30: run 14/26, steps 18/32; b=40: run 18/36, steps 22/42
+  n=5: bases 3..40; longest bad run 2; b=3: run 0/0, steps 4/4; b=4: run 0/0, steps 3/4; b=5: run 0/0, steps 5/5; b=7: run 0/1, steps 5/6; b=10: run 0/2, steps 5/7; b=11: run 1/3, steps 5/8; b=12: run 1/3, steps 5/8; b=20: run 1/7, steps 6/12; b=30: run 2/12, steps 6/17; b=40: run 2/17, steps 7/22
+  n=6: bases 3..32; longest bad run 2; b=3: run 0/0, steps 4/6.5; b=4: run 0/0, steps 4/7.0; b=5: run 0/0, steps 5/7.5; b=7: run 0/1, steps 5/8.5; b=10: run 1/2, steps 5/10.0; b=11: run 1/3, steps 6/10.5; b=12: run 1/3, steps 6/11.0; b=20: run 2/7, steps 6/15.0; b=30: run 2/12, steps 6/20.0; b=32: run 2/13, steps 7/21.0
+  n=7: bases 3..26; longest bad run 1; b=3: run 0/0, steps 4/4; b=4: run 0/0, steps 3/4; b=5: run 0/0, steps 5/5; b=7: run 0/1, steps 5/6; b=10: run 0/2, steps 5/7; b=11: run 0/3, steps 5/8; b=12: run 0/3, steps 5/8; b=20: run 1/7, steps 6/12; b=26: run 1/10, steps 6/15
+  n=8: bases 3..22; longest bad run 1; b=3: run 0/0, steps 4/6.5; b=4: run 0/0, steps 4/7.0; b=5: run 0/0, steps 5/7.5; b=7: run 0/1, steps 5/8.5; b=10: run 0/2, steps 5/10.0; b=11: run 0/3, steps 5/10.5; b=12: run 0/3, steps 5/11.0; b=20: run 1/7, steps 6/15.0; b=22: run 1/8, steps 6/16.0
+
+Computed note after Theorem 4.16 (b = 3..40):
+  n=3: longest bad run 3 (claim: at most 3) ok
+  n=4: longest run is H or H-1 for every b: ok | b=10: 4 b=40: 18
+
+ALL CHECKS PASS

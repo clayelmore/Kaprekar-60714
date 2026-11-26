@@ -1,0 +1,871 @@
+---
+title: "Kaprekar-Type Constants for Every Length $L \geq 6$ and Every Base $b \geq 3$, with a Finite Certificate for a Family of Rules"
+author: "Clay Elmore"
+date: "2026"
+abstract: |
+  Kaprekar's routine sorts the digits of a number, subtracts the ascending arrangement from the descending one, and repeats; at four digits in base ten every input with at least two distinct digits reaches $6174$. At most other lengths and in most other bases the routine ends in cycles. We study the wider family in which two fixed arrangements of the sorted digits are subtracted. For every length $L \geq 6$ we give an explicit rule of this kind and prove that in every base $b \geq 3$ it sends every string that is not a repdigit to the single value $(b-1)(b^h - 1)$, $h = \lceil L/2 \rceil$; in base ten this is $8991$ at length $6$, $89991$ at lengths $7$ and $8$, $899991$ at lengths $9$ and $10$, and so on. At even length the two arrangements differ by exchanging the two halves of the places, extending a four-digit rule studied by Young, which in bases $b \geq 3$ has a single nonzero constant only when $b = 3 \cdot 2^k$; at odd length, where the places cannot all be exchanged in pairs, one letter is held fixed. For the whole family of such half-swap rules in an even base we prove a finite certificate: a rule on $2n$ digits is universal (every non-repdigit reaches one nonzero fixed value) if and only if its pairs cover every gap and a map on $\binom{n+H}{n}$ states, $H = \lfloor (b-1)/2 \rfloor$, has an attracting fixed state ($126$ states at ten digits in base ten). A subclass of these rules lifts to every longer even length with explicit endpoints. We report a census of the family in base ten and two examples of rules that pass in every small base tested and fail in a large one. The inverse problem, to produce a rule and a proof for a prescribed endpoint, is left open. The theorems are tested by complete enumeration in small cases and the proofs have been reviewed by AI models; they have not yet been reviewed by a mathematician.
+---
+
+## Introduction
+
+In 1949 D. R. Kaprekar observed that if the digits of a four-digit number are sorted into descending and ascending order and the two arrangements are subtracted, then repeating the step sends every number with at least two distinct digits to $6174$ [Kaprekar 1949, Kaprekar 1955]. The same routine at three digits ends at $495$. At other lengths, and in other bases, it usually ends in one of several cycles. For three digits it has a constant in every even base and a cycle of period two in every odd base ([Eldridge and Sagong 1988]; reproved in [Peterson and Pulapaka 2008]); for four digits it has a constant only in base $5$ and in the bases $10 \cdot 4^k$ ([Hasse and Prichett 1978], as summarized in [Chen, Ono, Schwartz and Thakur 2026]); in base $10$ the only constants are $495$ and $6174$ [Prichett, Ludington and Lapenta 1981]. The classical routine has been studied for every number of digits in odd bases [Kay and Downes-Ward 2022] and in even bases [Kay and Downes-Ward 2024], and at four digits in odd bases [Chen, Ono, Schwartz and Thakur 2026]. It does not give one constant at every length, and it does not give one constant in every base at any length.
+
+The routine has an obvious generalization: after sorting, subtract two other fixed arrangements of the sorted digits. Peterson and Pulapaka named these routines of type $(\alpha, \beta)$, settled three of the fifteen types at three digits in every base, and left the types at four or more digits open [Peterson and Pulapaka 2008]. (Smarandache [Smarandache 2010] posed a similar family in which the digits are rearranged as written, without sorting, and asked when a constant is reached; that is a different map.) Two rules of this kind are closest to the present paper. Young studied the four-digit rule that exchanges the two halves of the sorted word, $\mathtt{ABCD} - \mathtt{CDAB}$, in every base $g$, classified all of its cycles, and proved that, among the bases $g \geq 3$, it yields a single nonzero constant precisely when $g = 3 \cdot 2^k$ [Young 1995]. The same rule appeared earlier as a Monthly problem [Fukuta and Chapman 1993], which we have not seen; we rely on the account in [Hanslik et al. 2015]. Nuez showed that in base $10$ the rule exchanging only the largest and smallest letter sends every non-repdigit to $49\cdots95$ at every length from $3$ on [Nuez 2021]; that rule reads two letters of the input and ignores the rest. Reductions of the classical map to digit differences are standard; two recent preprints, which we know from their abstracts only, use related finite quotients [Perry 2026, Polukhin 2026].
+
+This paper asks for more: one rule for each length whose endpoint attracts every input in every base, odd bases included. We call such a rule *universal* in base $b$ (Definition 2.2; Kay and Downes-Ward [Kay and Downes-Ward 2024] call the corresponding fixed point *unanimous*). A single nonzero constant in Young's classification does not by itself give universality: in base $3$ that rule has one nonzero constant, but some inputs fall to $0$ (see the remark after Theorem 3.3). The results are these.
+
+**Every length from $6$ on, every base from $3$ on.** For each $n \geq 3$ there is an explicit rule $R_n$ of length $2n$ in which the two words differ by exchanging place $q$ with place $q + n$, as in Young's rule, but with the letters dealt to the places in a particular order. We call rules of this kind *half-swap* rules. In every base $b \geq 3$, $R_n$ sends every string of $2n$ digits that is not a repdigit to $(b-1)(b^n - 1)$ (Theorem 3.3). An odd number of places cannot be exchanged in pairs: at odd length a rule must leave a place fixed or move letters around a cycle of odd length at least $3$ (Proposition 4.2). We take the first option. At length $2n+1$ one letter is held fixed in the middle, and the resulting rule $M_n$ sends every non-repdigit to $(b-1)(b^{n+1}-1)$ in every base $b \geq 3$ (Theorem 4.16). Together: for every length $L \geq 6$, with $h = \lceil L/2 \rceil$, there is a rule under which every non-repdigit reaches $(b-1)(b^h - 1)$ in every base $b \geq 3$ (Theorem 4.17). In base $10$ the endpoint is $8991$ at length $6$, $89991$ at lengths $7$ and $8$, $899991$ at lengths $9$ and $10$, and so on, padded with leading zeros to length $L$. For $R_n$ with $n$ even the number of steps is at most $7$ whatever the base; the other bounds grow linearly with $b$. The length-$4$ case is different in kind: there the block exchange has a single nonzero constant only in the bases $3 \cdot 2^k$ by Young's theorem, and a census finds no half-swap rule of length $4$ that is universal in every base.
+
+**A finite certificate.** The proof of Theorem 3.3 rests on an elementary identity: when every letter moves exactly $n$ places, the image is $(b^n - 1)m$, and its digits are the $n$ digits of $m - 1$ followed by their complements. (For $n = 2$ this is visible in Young's formulas.) After one step a string is therefore described by $n$ numbers between $0$ and $\lfloor (b-1)/2 \rfloor$. Section 5 applies the same reduction to every half-swap rule, with any dealing of the letters. In an even base, such a rule is universal if and only if its pairs cover every gap and its induced map on $\binom{n+H}{n}$ states, $H = \lfloor (b-1)/2 \rfloor$, has a fixed state that every state reaches (Theorem 5.9). In base $10$ at ten digits the table has $126$ rows, against $92{,}378$ digit multisets. A subclass of these rules (class C) lifts: adjoining a new largest and a new smallest letter as a pair gives a rule of the same class two digits longer, so one checked table yields a universal rule at every longer even length, with an explicit endpoint (Theorem 5.13).
+
+**Computations and a caution.** Section 6 reports complete enumerations that test the theorems and a census of the half-swap family in base $10$. Section 7 records two rules that are universal in every small base tried and fail in large bases: for rules of this kind, agreement in every base from $3$ to $26$, or in sampled bases up to $640$, is not evidence for all bases.
+
+**What is not done.** The problem we would most like to solve is the inverse one: given a number, produce a rule that sends every input to it, with a proof. That problem is open (Section 8). The endpoints of Theorem 4.17 consist almost entirely of the digits $0$ and $b-1$, and the endpoints reached by the lifting theorem all have one shape. Unlike $6174$, which comes from the most natural rule, the rules $R_n$ were found by computer search and then proved.
+
+Each statement below carries a label. **Proven** means a proof is given here. **Computed** means a finite enumeration, complete unless marked as sampled. The statements, and the reduced maps used in the proofs, have been tested by machine as described in Section 6, and the proofs have been reviewed by AI models; they have not yet been reviewed by a mathematician. On the search described in Section 9 we did not find Theorems 3.3, 4.16, 5.9, or 5.13 in print; the identity behind Lemma 3.6 is elementary and appears for $n = 2$ in [Young 1995]. The search did not include a citation search in a reviewing database, so we cannot exclude prior work.
+
+## Rules and notation
+
+Fix a base $b \geq 2$ and a length $L \geq 2$. A *string* is a sequence of $L$ digits in base $b$, leading zeros allowed; it is identified with the integer it represents, which lies in $[0, b^L)$. Places are numbered from the least significant, place $0$, to the most significant, place $L-1$. For a string $x$ write $s_0 \geq s_1 \geq \dots \geq s_{L-1}$ for its digits sorted in descending order. We call $s_i$ *letter* $i$ and, when displaying rules, write the letters as $\mathtt{A} = s_0$, $\mathtt{B} = s_1$, and so on. A *repdigit* is a string with $s_0 = s_{L-1}$.
+
+**Definition 2.1.** *A* rule *of length $L$ is an ordered pair $(\alpha, \beta)$ of distinct bijections from the letters $\{0, \dots, L-1\}$ to the places $\{0, \dots, L-1\}$. It acts on strings by*
+$$K(x) \;=\; \Bigl|\, \sum_{i=0}^{L-1} b^{\alpha(i)} s_i \;-\; \sum_{i=0}^{L-1} b^{\beta(i)} s_i \,\Bigr| \;=\; \Bigl|\, \sum_{i=0}^{L-1} c_i\, s_i \,\Bigr|, \qquad c_i = b^{\alpha(i)} - b^{\beta(i)}.$$
+*The two sums are* word 1 *and* word 2*. A rule is displayed by writing each word as a string of letters, most significant place first.*
+
+The classical routine of Kaprekar is $\mathtt{ABCD} - \mathtt{DCBA}$ at $L = 4$ and $b = 10$: sort the digits, subtract the reversal. Each word is an integer in $[0, b^L)$, so $K(x)$ is again a string of length $L$. Since $K(x)$ depends on $x$ only through its sorted digits, the orbit of $x$ is determined by its digit multiset, and all enumerations below run over multisets. The definition of a rule does not mention $b$: the same pair of words can be read in every base, and the question of this paper is what happens when it is.
+
+Because $\sum_i c_i = 0$, every repdigit maps to $0$, and $0$ is a repdigit. The interesting inputs are the others.
+
+**Definition 2.2.** *A rule is* universal *in base $b$ if there is a string $F \neq 0$ with $K(F) = F$ such that every string that is not a repdigit reaches $F$ under iteration of $K$. Here "reaches" allows zero steps: $F$ reaches itself. The value $F$ is the* endpoint*, or* constant*, of the rule.*
+
+Kaprekar's theorem is that $\mathtt{ABCD} - \mathtt{DCBA}$ is universal in base $10$ with endpoint $6174$.
+
+It is often convenient to pass from digits to gaps. Put $g_j = s_j - s_{j+1} \geq 0$ for $0 \leq j \leq L-2$, and $C_j = c_0 + c_1 + \dots + c_j$. Summation by parts, with $\sum_i c_i = 0$, gives
+$$K(x) \;=\; \Bigl|\, \sum_{j=0}^{L-2} C_j\, g_j \,\Bigr|.$$
+We call $C_j$ the *weight* of gap $j$.
+
+**Lemma 2.3.** *(Proven.) Let a rule of length $L$ be given, in base $b$.*
+
+*(a) $K(x)$ is a multiple of $b - 1$ for every string $x$.*
+
+*(b) If $K(F) = F$, then $F$ is the absolute difference of two arrangements of its own digits, namely its two words.*
+
+*(c) If some gap weight $C_j$ is $0$, the rule is not universal.*
+
+*Proof.* (a) Each $c_i$ is a difference of two powers of $b$, and $b^k \equiv 1 \pmod{b-1}$. (b) Both words of $F$ are arrangements of the digits of $F$, and $K(F)$ is the absolute value of their difference. (c) Let $x$ be the string whose sorted digits are $j+1$ ones followed by $L-1-j$ zeros. Since $0 \leq j \leq L-2$, it is not a repdigit. Its only nonzero gap is $g_j = 1$, so $K(x) = |C_j| = 0$, and $0$ is fixed. So $x$ never reaches a nonzero endpoint. $\blacksquare$
+
+Part (c) is the only general obstruction used below. Parts (a) and (b) limit which numbers can be endpoints at all: in base $10$ an endpoint is a multiple of $9$ that equals one arrangement of its digits minus another.
+
+## Even lengths
+
+This section proves that at every even length $2n \geq 6$ and in every base $b \geq 3$ there is an explicit rule, the half-swap rule $R_n$, that sends every string of $2n$ digits that is not a repdigit to the constant $F = (b-1)(b^n - 1)$. The rule depends on $n$, but not on $b$.
+
+Notation is as in Section 2, with $L = 2n$. Throughout the section we fix a base $b \geq 3$ and an integer $n \geq 3$. We call the sorted digit $s_i$ *letter* $i$, and places are counted from the least significant digit, which is at place $0$.
+
+### The half-swap rules
+
+**Definition 3.1.** A *half-swap rule* is an assignment, to each place $q \in \{0, \dots, n-1\}$, of an ordered pair $(P_q, M_q)$ of letters, such that the $2n$ entries $P_0, M_0, \dots, P_{n-1}, M_{n-1}$ are the letters $0, 1, \dots, 2n-1$, each once. *Word 1* is the string with $s_{P_q}$ at place $q + n$ and $s_{M_q}$ at place $q$, for every $q$; *word 2* has $s_{M_q}$ at place $q + n$ and $s_{P_q}$ at place $q$. The rule sends a string with sorted digits $s$ to
+$$K(s) = \lvert \text{word 1} - \text{word 2} \rvert.$$
+
+Here $K(s)$ means the value of the rule on any string whose sorted digits are $s$ (Definition 2.1 writes $K(x)$ for a string $x$); it depends only on $s$. Between the two words every letter moves exactly $n$ places. We write "place $q$: $(P_q, M_q)$" to give the pair at place $q$.
+
+**Definition 3.2 (the rule $R_n$).** For $n$ odd, $n = 2k+1$, the rule $R_n$ has
+$$\text{place } 0: (n,\ n+1), \qquad \text{place } 1: (0,\ 2n-1), \qquad \text{place } 2: (n-1,\ n-2),$$
+and, for $j = 1, \dots, k-1$,
+$$\text{place } n+1-2j: (2j,\ 2j-1), \qquad \text{place } n-2j: (2n-1-2j,\ 2n-2j).$$
+For $n$ even, $n = 2k+2$, the rule $R_n$ has
+$$\text{place } 0: (n-2,\ n-1), \qquad \text{place } 1: (1,\ 2n-1),$$
+$$\text{place } 2: (0,\ 2n-2), \qquad \text{place } 3: (n+1,\ n),$$
+and, for $j = 1, \dots, k-1$,
+$$\text{place } n+1-2j: (2j+1,\ 2j), \qquad \text{place } n-2j: (2n-2-2j,\ 2n-1-2j).$$
+
+For $k = 1$ the lists over $j$ are empty. In both cases the places listed are $0, 1, \dots, n-1$, each once, and the letters listed are $0, 1, \dots, 2n-1$, each once, so $R_n$ is a half-swap rule. In letters, with word 1 and word 2 written from the most significant place down, $R_3$ is $\mathtt{CADBFE} - \mathtt{BFECAD}$, $R_4$ is $\mathtt{FABCEGHD} - \mathtt{EGHDFABC}$, and $R_5$ is $\mathtt{CHEAFBIDJG} - \mathtt{BIDJGCHEAF}$.
+
+**Theorem 3.3.** *(Proven.) For every base $b \geq 3$ and every $n \geq 3$, every $2n$-digit string that is not a repdigit reaches $F = (b-1)(b^n - 1)$ under iteration of $R_n$, and $F$ is fixed. Repdigits map to $0$. In base $b$, the digits of $F$ (without leading zeros) are $b-2$, then $n-1$ digits $b-1$, then $1$; in base $10$, $F$ is $8991$, $89991$, $899991$, $\dots$ for $n = 3, 4, 5, \dots$. The number of applications of $R_n$ needed to reach $F$ is at most $7$ for $n$ even, at most $b/3 + 9$ for $n$ odd with $n \geq 5$, and at most $b/2 + 10$ for $n = 3$.*
+
+The proof occupies the rest of the section. We first reduce the rule to a map on a short vector of *deficits* (Lemmas 3.4 to 3.8), then treat odd $n$ and even $n$ separately, and assemble the pieces at the end.
+
+*Remark.* (Computed.) Lengths $2$ and $4$ are excluded for a reason. A complete census of all half-swap rules finds none universal at length $2$ in any of the bases $3$ to $16$. At length $4$ it finds none universal in base $4$, $7$, $8$, $9$, $10$, or $16$, so no half-swap rule of length $4$ is universal in every base. For one half-swap rule of length $4$, the block exchange $\mathtt{ABCD} - \mathtt{CDAB}$, Young [Young 1995] classified the cycles in every base $g$ and proved that, among the bases $g \geq 3$, the rule yields a single nonzero constant precisely when $g = 3 \cdot 2^k$. In that classification some inputs may also fall to $0$, so this is weaker than universality in the sense of Definition 2.2: in base $3$ some inputs do fall to $0$ (the string $2210$ maps to $1111$ and then to $0$, although $32$ is the only nonzero fixed value), while in bases $6$, $12$ and $24$ the rule is universal (Computed).
+
+### The common reduction
+
+For a sorted string $s$ and a half-swap rule we write $d_q = s_{P_q} - s_{M_q}$ for the difference at place $q$.
+
+**Lemma 3.4 (factorization).** *(Proven.) For a half-swap rule,*
+$$K(s) = (b^n - 1)\, m, \qquad m = \lvert V \rvert, \qquad V = \sum_{q=0}^{n-1} b^q\, d_q,$$
+*and $m \leq b^n - 1$. For the rule $R_n$, $m = 0$ exactly when the string is a repdigit.*
+
+*Proof.* The pair at place $q$ contributes $s_{P_q} b^{q+n} + s_{M_q} b^q$ to word 1 and $s_{M_q} b^{q+n} + s_{P_q} b^q$ to word 2, so it contributes $(b^{q+n} - b^q)\, d_q = (b^n - 1)\, b^q d_q$ to their difference. Summing over $q$ gives the factorization. Each $d_q$ lies in $[-(b-1), b-1]$, so $m \leq (b-1)(1 + b + \dots + b^{n-1}) = b^n - 1$.
+
+If some $d_q$ is nonzero, let $q$ be the lowest place with $d_q \neq 0$. Then $V \equiv b^q d_q \pmod{b^{q+1}}$, and since $0 < \lvert d_q \rvert < b$, $b^{q+1}$ does not divide $b^q d_q$, so $V \neq 0$. Hence $V = 0$ exactly when every $d_q$ is $0$. For $n$ odd, $R_n$ contains the pair $(0, 2n-1)$, so all differences zero forces $s_0 = s_{2n-1}$, a repdigit. For $n$ even, $R_n$ contains the pairs $(0, 2n-2)$ and $(1, 2n-1)$: $s_0 = s_{2n-2}$ makes letters $0, \dots, 2n-2$ equal, and then $s_1 = s_{2n-1}$ makes the last letter equal to them as well. Conversely, for a repdigit every $d_q$ is $0$. $\blacksquare$
+
+In particular repdigits map to $0$.
+
+**Definition 3.5 (deficits and states).** The *deficit* of a digit $x \in \{0, \dots, b-1\}$ is $r(x) = \min(x,\ b-1-x)$. Put $H = \lfloor (b-1)/2 \rfloor$, so $0 \leq r(x) \leq H$. A *state* is a nondecreasing $n$-tuple $\rho = (\rho_1 \leq \rho_2 \leq \dots \leq \rho_n)$ of integers in $[0, H]$. A $2n$-digit string *has state $\rho$* if its digit multiset is
+$$\{\, b-1-\rho_1,\ \dots,\ b-1-\rho_n,\ \rho_1,\ \dots,\ \rho_n \,\}.$$
+We write $\tau$ for the state $\tau = (0, \dots, 0, 1)$ (it is fixed by the reduced map: Lemmas 3.9 and 3.15).
+
+Since $\rho_n \leq H \leq (b-1)/2$, a string with state $\rho$ has sorted digits
+$$s_{i-1} = b-1-\rho_i, \qquad s_{2n-i} = \rho_i \qquad (i = 1, \dots, n). \tag{3.1}$$
+Such a string is a repdigit exactly when $s_0 = s_{2n-1}$, that is, $\rho_1 = (b-1)/2$; since every $\rho_i$ lies between $\rho_1$ and $H$, this happens exactly when $b$ is odd and every $\rho_i = (b-1)/2$. We call that state the *repdigit state*. For $b$ even there is none. Because $K$ depends only on the digit multiset, $K$ of a string with state $\rho$ depends only on $\rho$.
+
+**Lemma 3.6 (shape of an image).** *(Proven.) Let $s$ be a string with $m \geq 1$, and write $N = m - 1$ with $n$ base-$b$ digits $x_{n-1}, \dots, x_0$ (place $i$ carries $x_i$; leading zeros allowed). Then*
+$$K(s) = N\, b^n + (b^n - 1 - N),$$
+*and the $2n$ digits of $K(s)$ are $x_0, \dots, x_{n-1}$ and $b-1-x_0, \dots, b-1-x_{n-1}$. Consequently $K(s)$ has the state $\rho$ whose entries are the sorted deficits $r(x_0), \dots, r(x_{n-1})$. The value $F = (b-1)(b^n-1)$ has state $\tau$, and its base-$b$ digits are as stated in Theorem 3.3.*
+
+*Proof.* By Lemma 3.4, $1 \leq m \leq b^n - 1$, so $0 \leq N \leq b^n - 2$. Then $K(s) = (b^n - 1)m = (m-1) b^n + (b^n - m) = N b^n + (b^n - 1 - N)$. Both $N$ and $b^n - 1 - N$ lie in $[0, b^n - 1]$, so the upper $n$ digits of $K(s)$ are those of $N$ and the lower $n$ digits are those of $b^n - 1 - N$. Since every digit of $b^n - 1$ equals $b-1$, the subtraction has no borrows, and the digits of $b^n - 1 - N$ are $b-1-x_0, \dots, b-1-x_{n-1}$. Each pair $\{x_i, b-1-x_i\}$ equals $\{b-1-r(x_i),\ r(x_i)\}$, which gives the state.
+
+For $F$ we have $m = b-1$, so $N = b-2$, with $x_0 = b-2$ and all other $x_i = 0$. Since $b \geq 3$, $r(b-2) = 1$, and $r(0) = 0$, so the state is $\tau$. The upper half of $F$ is $b - 2$ and the lower half is $b^n - 1 - (b-2) = (b-1)(b^{n-1} + \dots + b) + 1$, whose digits are $n-1$ digits $b-1$ followed by $1$. $\blacksquare$
+
+So after one step every value has a state, and from then on the next value is computed from the state alone. From here on $K$ is the rule $R_n$. For a state $\rho$ other than the repdigit state, write $\rho'$ for the state of $K(s)$, where $s$ is any string with state $\rho$; this is well defined because such an $s$ is not a repdigit, so $m \geq 1$ by Lemma 3.4 (whose statement that $m = 0$ only for repdigits is for $R_n$). We call $\rho \mapsto \rho'$ the *reduced map* of $R_n$.
+
+We write $\uplus$ for the union of multisets (multiplicities add), $x^{[t]}$ for $t$ copies of $x$, and $x^+ = \max(x, 0)$. A multiset of $n$ values in $[0, H]$ is identified with the state that lists it in nondecreasing order.
+
+**Lemma 3.7 (sorting).** *(Proven.) Let a finite multiset consist of values each taken an even number of times, together with one extra copy of $a$ and one extra copy of $a+1$, for some integer $a \geq 0$. Sort it in nondecreasing order and pair consecutive entries: (1st, 2nd), (3rd, 4th), and so on. Then exactly one pair has difference $1$, and every other pair has difference $0$.*
+
+*Proof.* The multiset has an even number of entries. Each value below $a$ occurs an even number of times; going through these values in increasing order, each block of equal values starts at an odd position and fills whole pairs. The value $a$ occurs an odd number of times and its block starts at an odd position, so its copies fill whole pairs except the last copy, which is at an odd position and is paired with the next entry. That entry is the smallest value above $a$, namely $a + 1$, so this pair has difference $1$. The remaining copies of $a+1$ are even in number and start at an odd position, so they and every larger value fill whole pairs. A pair inside a block of equal values has difference $0$. $\blacksquare$
+
+**Lemma 3.8 (the first image is not a repdigit).** *(Proven.) If $s$ is not a repdigit, then $K(s)$, computed with $R_n$, is not a repdigit.*
+
+The lemma is not automatic for half-swap rules: the length-$4$ half-swap rule $\mathtt{ABCD} - \mathtt{CDAB}$ (place $0$: $(1, 3)$, place $1$: $(0, 2)$) sends the base-$3$ string $2210$, which is not a repdigit, to the repdigit $1111$.
+
+*Proof.* By Lemma 3.4, $m \geq 1$, so by Lemma 3.6 $K(s)$ has a state. By Definition 3.5, a repdigit with a state is the string with all $2n$ digits equal to $\kappa$, where $b = 2\kappa + 1$ is odd and $\kappa = (b-1)/2 \geq 1$. Its value is $\kappa(b^{2n} - 1)/(b-1) = (b^n - 1)(b^n + 1)/2$, so it would require $m = (b^n + 1)/2$, that is, $V = \pm (b^n + 1)/2$. Write $E_t = 1 + b + \dots + b^{t-1}$ (so $E_0 = 0$); then $(b^n + 1)/2 = \kappa E_n + 1$.
+
+We read $V = \sum_q b^q d_q$ one place at a time. Put $Q_0 = V$ and $Q_{t+1} = (Q_t - d_t)/b$; then $Q_t = \sum_{q \geq t} b^{q-t} d_q$ is an integer and $d_t \equiv Q_t \pmod b$. When $Q_t \not\equiv 0 \pmod b$, exactly two integers in $[-(b-1), b-1]$ are congruent to $Q_t$, one positive and one negative, so the sign of $d_t$ determines $d_t$. Below, the residues that occur are $\kappa$ and $\kappa+1$, both nonzero modulo $b$. The two representatives of $\kappa$ are $\kappa$ and $\kappa - b = -(\kappa+1)$; those of $\kappa+1$ are $\kappa+1$ and $-\kappa$.
+
+*Case $V > 0$.* $Q_0 = \kappa E_n + 1 \equiv \kappa + 1$. If $d_0 \geq 0$ then $d_0 = \kappa+1$ and $Q_1 = \kappa E_{n-1}$. For $1 \leq t \leq n-1$, if $Q_t = \kappa E_{n-t}$ then $Q_t \equiv \kappa$; if moreover $d_t \geq 0$, then $d_t = \kappa$ and $Q_{t+1} = \kappa E_{n-t-1}$; if $d_t \leq 0$, then $d_t = -(\kappa+1)$.
+
+*Case $V < 0$.* For $0 \leq t \leq n-1$, if $Q_t = -(\kappa E_{n-t} + 1)$ then $Q_t \equiv -(\kappa+1) \equiv \kappa$. If $d_t \geq 0$ then $d_t = \kappa$, and $Q_{t+1} = -(\kappa E_{n-t} + 1 + \kappa)/b = -(\kappa E_{n-t-1} + 1)$, because $\kappa E_{n-t} + \kappa + 1 = \kappa b E_{n-t-1} + 2\kappa + 1 = b(\kappa E_{n-t-1} + 1)$. If $d_t \leq 0$ then $d_t = -(\kappa+1)$. The case starts with $Q_0 = -(\kappa E_n + 1)$.
+
+*$n$ odd.* Here $d_0 = s_n - s_{n+1} \geq 0$, $d_1 = s_0 - s_{2n-1} \geq 0$ and $d_2 = s_{n-1} - s_{n-2} \leq 0$. The two gaps $s_{n-2} - s_{n-1}$ and $s_n - s_{n+1}$ lie inside the full range $s_0 - s_{2n-1}$ and do not overlap, so $d_0 + \lvert d_2 \rvert \leq d_1$. If $V > 0$, the readings above give $d_0 = \kappa+1$, $d_1 = \kappa$, $d_2 = -(\kappa+1)$. If $V < 0$, they give $d_0 = \kappa$, $d_1 = \kappa$, $d_2 = -(\kappa+1)$. Either way $d_0 + \lvert d_2 \rvert \geq 2\kappa + 1 > \kappa = d_1$, a contradiction.
+
+*$n$ even.* Here $d_0 = s_{n-2} - s_{n-1} \geq 0$, $d_1 = s_1 - s_{2n-1} \geq 0$, $d_2 = s_0 - s_{2n-2} \geq 0$ and $d_3 = s_{n+1} - s_n \leq 0$. Since $s_{n-1} \geq s_n$, $d_0 + \lvert d_3 \rvert \leq s_{n-2} - s_{n+1}$, and since $n - 2 \geq 1$ and $n + 1 \leq 2n - 1$, this is at most $s_1 - s_{2n-1} = d_1$. If $V > 0$, then $d_0 = \kappa + 1$ and $d_1 = \kappa$, contradicting $d_0 \leq d_1$. If $V < 0$, then $d_0 = d_1 = d_2 = \kappa$ and $d_3 = -(\kappa+1)$, so $d_0 + \lvert d_3 \rvert = 2\kappa + 1 > d_1$, a contradiction. $\blacksquare$
+
+### The case $n$ odd (length $2n \equiv 2 \pmod 4$)
+
+In this subsection $n = 2k + 1$ with $k \geq 1$.
+
+**Lemma 3.9 (reduced map, $n$ odd).** *(Proven.) Let $\rho$ be a state other than the repdigit state, and put*
+$$w_j = \rho_{2j+1} - \rho_{2j} \ (j = 1, \dots, k), \qquad A = b - 1 - 2\rho_1, \qquad g = r(A).$$
+*(Here $A$ is a number, not the letter $\mathtt{A}$ of the rule displays, and $g$ is not a gap $g_j$ of Section 2.) Then $0 \leq A \leq b-1$, $g = \min(2\rho_1,\ b-1-2\rho_1)$, $0 \leq w_j \leq H$, and a string with state $\rho$ has*
+$$V = bA - (b^2 - 1)\, w_k - \sum_{j=1}^{k-1} w_j\, (b-1)\, b^{n-2j}.$$
+
+- *(G) If some $w_j \geq 1$, let $J$ be the largest such $j$. Then*
+$$\begin{aligned} \rho' = {} & \biguplus_{j<J} \{(w_j - 1)^+,\ (w_j - 1)^+\} \\ & \uplus \{w_J - 1,\ w_J\} \uplus \{0^{[2(k-J)]}\} \uplus \{g\}. \end{aligned}$$
+- *(Z) If every $w_j = 0$, then $A \geq 1$ and $\rho' = \{0^{[n-1]},\ r(A-1)\}$.*
+
+*In both cases $\rho'$ is not the repdigit state. Moreover $\tau' = \tau$, and every string with state $\tau$ maps to $F$; in particular $F$ is fixed.*
+
+*Proof.* Since $0 \leq \rho_1 \leq H \leq (b-1)/2$, $0 \leq A \leq b-1$, and $b - 1 - A = 2\rho_1$ gives the formula for $g$. Also $0 \leq w_j \leq \rho_{2j+1} \leq H$.
+
+By (3.1), letter $t$ is $b - 1 - \rho_{t+1}$ for $t \leq n-1$ and $\rho_{2n-t}$ for $t \geq n$. Substituting into the pairs of $R_n$:
+
+- place $0$: $d_0 = s_n - s_{n+1} = \rho_n - \rho_{n-1} = w_k$;
+- place $1$: $d_1 = s_0 - s_{2n-1} = (b-1-\rho_1) - \rho_1 = A$;
+- place $2$: $d_2 = s_{n-1} - s_{n-2} = \rho_{n-1} - \rho_n = -w_k$;
+- place $n+1-2j$ ($1 \leq j \leq k-1$): $s_{2j} - s_{2j-1} = \rho_{2j} - \rho_{2j+1} = -w_j$;
+- place $n-2j$ ($1 \leq j \leq k-1$): $s_{2n-1-2j} - s_{2n-2j} = \rho_{2j+1} - \rho_{2j} = w_j$.
+
+Hence $V = w_k + bA - b^2 w_k + \sum_{j<k} w_j (b^{n-2j} - b^{n+1-2j})$, which is the stated formula.
+
+*Sign of $V$.* We have $bA \leq b(b-1) < b^2 - 1 < (b-1) b^3$. If $w_k \geq 1$, then $(b^2 - 1) w_k > bA$; if $w_j \geq 1$ for some $j < k$, then the sum is at least $(b-1) b^{n-2j} \geq (b-1) b^3 > bA$, since $n - 2j \geq 3$. So $V < 0$ as soon as some $w_j \geq 1$, and then
+$$m = \sum_{j<k} w_j (b-1)\, b^{n-2j} + (b^2-1)\, w_k - bA.$$
+For $1 \leq w \leq H$ we have the base-$b$ expansions
+$$w(b-1) = (w-1)\,b + (b-w),$$
+$$(b^2-1)\,w - bA = (w-1)\,b^2 + (b-1-A)\,b + (b-w),$$
+in which every coefficient is a digit and $b - w \geq 1$. The block of $j < k$ occupies places $n - 2j$ and $n + 1 - 2j$, which lie in $[3, n-1]$; the last three terms occupy places $0, 1, 2$. So the blocks do not overlap.
+
+We also use: for $1 \leq w \leq H$, $r(w-1) = r(b-w) = w-1$ and $r(b-1-w) = r(w) = w$, because $2w \leq b - 1$. And $r(b-1-A) = r(A) = g$.
+
+*(G), $J = k$.* All terms above are nonnegative and occupy disjoint places, so they are the digits of $m$. The digit at place $0$ is $b - w_k \geq 1$, so $N = m - 1$ just lowers it to $b - 1 - w_k$. The digits of $N$ are: $(w_j - 1,\ b - w_j)$ at places $n+1-2j, n-2j$ for each $j < k$ with $w_j \geq 1$; $(0, 0)$ there for each $j < k$ with $w_j = 0$; and $(w_k - 1,\ b-1-A,\ b-1-w_k)$ at places $2, 1, 0$. Their deficits are $(w_j - 1)^+$ twice for each $j < k$, and $w_k - 1$, $g$, $w_k$. This is the formula with $J = k$.
+
+*(G), $J < k$.* Then $w_k = 0$ and $w_j = 0$ for $J < j < k$, so $N = X - (bA + 1)$, where $X$ is the sum of the blocks with $j \leq J$. Put $p = n - 2J \geq 3$. The lowest nonzero digit of $X$ is $b - w_J \geq 1$, at place $p$, and $X$ has zeros at all places below $p$. Since $0 < bA + 1 < b^3 \leq b^p$, we get $N = (X - b^p) + (b^p - 1 - bA)$. The first part lowers the digit at place $p$ to $b - 1 - w_J$ and leaves the higher digits unchanged. The second part is less than $b^p$ and has digit $b - 1 - A$ at place $1$ and $b - 1$ at every other place below $p$. The deficits of $N$ are therefore: $(w_j - 1)^+$ twice for each $j < J$; $w_J - 1$ and $w_J$ from places $p + 1$ and $p$; $g$ from place $1$; and $0$ from each of the $p - 1 = 2(k - J)$ places $0, 2, 3, \dots, p-1$. This is the formula. (The places $3, \dots, p-1$ are those of the blocks with $J < j < k$.)
+
+*(Z).* If $A = 0$ then $\rho_1 = (b-1)/2 = H$, so every $\rho_i = H = (b-1)/2$, the repdigit state, which is excluded. So $A \geq 1$, $V = bA$, $m = bA$, and $N = (A-1)\,b + (b-1)$: digits $b-1$ at place $0$, $A - 1$ at place $1$, and $0$ at places $2, \dots, n-1$. The deficits are $n - 1$ zeros and $r(A-1)$.
+
+*Not the repdigit state.* In (G), $\rho'$ contains $w_J - 1$ and $w_J$, which differ, so its entries are not all equal. In (Z), $\rho'$ contains $n - 1 \geq 2$ zeros, while the repdigit state has every entry equal to $(b-1)/2 \geq 1$.
+
+*The state $\tau$.* For $\tau$, $\rho_1 = 0$, so $A = b-1$ and $g = 0$; also $w_k = \rho_n - \rho_{n-1} = 1$ and $w_j = 0$ for $j < k$. So (G) applies with $J = k$, and $\tau' = \{0^{[2(k-1)]}\} \uplus \{0, 1\} \uplus \{0\} = \tau$. The value is $V = b(b-1) - (b^2 - 1) = -(b-1)$, so $m = b - 1$ and $K = (b-1)(b^n - 1) = F$. Since $F$ has state $\tau$ (Lemma 3.6), $F$ is fixed. $\blacksquare$
+
+**Lemma 3.10.** *(Proven.) Let $n$ be odd and let $\rho$ be a state with $\rho_1 = 0$. Then $\rho' = \tau$ or $\rho'' = \tau$.*
+
+*Proof.* Here $g = 0$ and $A = b - 1$. In case (Z), $\rho' = \{0^{[n-1]},\ r(b-2)\} = \tau$, since $r(b-2) = 1$ for $b \geq 3$. In case (G), $\rho'$ contains $g = 0$, so $\rho'_1 = 0$. The quantities $w'_j = \rho'_{2j+1} - \rho'_{2j}$ are the differences of the consecutive pairs $(\rho'_2, \rho'_3), (\rho'_4, \rho'_5), \dots, (\rho'_{n-1}, \rho'_n)$ of the sorted list obtained by removing one zero from $\rho'$. That list is $\biguplus_{j<J}\{(w_j-1)^+, (w_j-1)^+\} \uplus \{w_J - 1, w_J\} \uplus \{0^{[2(k-J)]}\}$, which satisfies Lemma 3.7 with $a = w_J - 1$. So exactly one $w'_j$ equals $1$ and the others are $0$. Since $\rho'_1 = 0$, case (G) applies to $\rho'$ with $g' = 0$, and
+$$\rho'' = \{0^{[2(J'-1)]}\} \uplus \{0, 1\} \uplus \{0^{[2(k-J')]}\} \uplus \{0\} = \tau,$$
+where $J'$ is the index with $w'_{J'} = 1$. $\blacksquare$
+
+**Definition 3.11.** For $n$ odd, a state is *bad* if $\rho_1 \geq 1$ and $w_j \geq 2$ for every $j = 1, \dots, k$.
+
+**Lemma 3.12.** *(Proven.) Let $n$ be odd and let $\rho$ be a state other than the repdigit state, with $\rho_1 \geq 1$, that is not bad. Then $\rho'_1 = 0$.*
+
+*Proof.* It suffices to show that $\rho'$ contains a $0$. In case (Z), $\rho'$ contains $n - 1 \geq 2$ zeros. In case (G), since $\rho$ is not bad and $\rho_1 \geq 1$, some $w_j \leq 1$. If $J < k$, $\rho'$ contains $2(k-J) \geq 2$ zeros. If $J = k$ and $w_k = 1$, then $w_J - 1 = 0$. If $J = k$ and $w_k \geq 2$, the index with $w_j \leq 1$ satisfies $j < J$, and $(w_j - 1)^+ = 0$. $\blacksquare$
+
+In a bad state every $w_j \geq 2$, so case (G) applies with $J = k$, and
+$$\rho' = \biguplus_{j<k} \{w_j - 1,\ w_j - 1\} \uplus \{w_k - 1,\ w_k\} \uplus \{g\}. \tag{3.2}$$
+
+**Lemma 3.13 (bad runs, $n = 3$).** *(Proven.) Let $n = 3$. Bad states exist only when $H \geq 3$. If $S_0, S_1, \dots, S_T$ are states with $S_{t+1} = S_t'$ for $0 \leq t \leq T-1$, and all of them are bad, then the number $T + 1$ of states is at most $(b+7)/2$.*
+
+*Proof.* For $n = 3$ we have $k = 1$; a state is $(\rho_1, \rho_2, \rho_3)$ with the single quantity $w = \rho_3 - \rho_2$, and $A = b - 1 - 2\rho_1$, $g = r(A)$. A bad state has $\rho_3 \geq \rho_1 + w \geq 3$, and $\rho_3 \leq H$, which gives the first claim. By Lemma 3.9, if $w \geq 1$ then $\rho' = \{w-1,\ w,\ g\}$. We say the step from a state with $w \geq 1$ is of *type (i)* if $g \leq w - 1$, and of *type (ii)* if $g \geq w$; since $g$ and $w$ are integers, one of the two holds.
+
+- Type (i): $\rho' = (g,\ w-1,\ w)$, so $w' = 1$ and $A' = b - 1 - 2g$.
+- Type (ii): $\rho' = (w-1,\ w,\ g)$, so $w' = g - w$ and $A' = b - 1 - 2(w-1) = b + 1 - 2w$.
+
+A bad state has $w \geq 2$. If its step is of type (i), the next state has $w' = 1$ and is not bad. So every step from a bad state to a bad state is of type (ii).
+
+We now prove more generally: if $S_0, \dots, S_T$ satisfy $S_{t+1} = S_t'$ and each step $S_t \to S_{t+1}$ ($0 \leq t \leq T-1$) is of type (ii), then $T \leq (b+5)/2$. Write $w^{(t)}$, $A^{(t)}$, $g^{(t)}$ for the quantities of $S_t$. For $1 \leq t \leq T-1$, the step $S_{t-1} \to S_t$ is of type (ii), so $A^{(t)} = b + 1 - 2w^{(t-1)}$ and
+$$g^{(t)} = r(A^{(t)}) = \min(b + 1 - 2w^{(t-1)},\ 2w^{(t-1)} - 2);$$
+the step $S_t \to S_{t+1}$ is of type (ii), so $w^{(t+1)} = g^{(t)} - w^{(t)}$. Hence, for $1 \leq t \leq T-1$,
+$$w^{(t+1)} + w^{(t)} = \min(2w^{(t-1)} - 2,\ b + 1 - 2w^{(t-1)}).$$
+Put $\omega_t = w^{(t)} - (b+3)/4$, a rational number. Then $2w^{(t-1)} - 2 = (b-1)/2 + 2\omega_{t-1}$ and $b + 1 - 2w^{(t-1)} = (b-1)/2 - 2\omega_{t-1}$, so the minimum is $(b-1)/2 - 2\lvert \omega_{t-1} \rvert$. Since $w^{(t+1)} + w^{(t)} = \omega_{t+1} + \omega_t + (b+3)/2$,
+$$\omega_{t+1} + \omega_t = -2 - 2\lvert \omega_{t-1} \rvert \qquad (1 \leq t \leq T-1).$$
+Therefore $\lvert \omega_t \rvert + \lvert \omega_{t+1} \rvert \geq 2 + 2\lvert \omega_{t-1} \rvert$, and so
+$$\max(\lvert \omega_t \rvert,\ \lvert \omega_{t+1} \rvert) \geq \lvert \omega_{t-1} \rvert + 1 \qquad (1 \leq t \leq T-1).$$
+Choose times $t_0 = 0 < t_1 < t_2 < \dots$ as follows: while $t_i + 2 \leq T$, apply the last inequality with $t = t_i + 1$ and let $t_{i+1} \in \{t_i + 1,\ t_i + 2\}$ satisfy $\lvert \omega_{t_{i+1}} \rvert \geq \lvert \omega_{t_i} \rvert + 1$. By induction $t_i \leq 2i$, so $t_i$ is defined for every $i \leq \lfloor T/2 \rfloor$, and $\lvert \omega_{t_i} \rvert \geq i$. But $0 \leq w \leq (b-1)/2$ gives $-(b+3)/4 \leq \omega \leq (b-5)/4$, so $\lvert \omega \rvert \leq (b+3)/4$. Hence $\lfloor T/2 \rfloor \leq (b+3)/4$ and $T \leq 2\lfloor T/2 \rfloor + 1 \leq (b+5)/2$.
+
+Finally, if $S_0, \dots, S_T$ are all bad, each of the $T$ steps between them goes from a bad state to a bad state and so is of type (ii). Hence $T \leq (b+5)/2$, that is, $T + 1 \leq (b+7)/2$. $\blacksquare$
+
+**Lemma 3.14 (bad runs, $n \geq 5$).** *(Proven.) Let $n = 2k + 1 \geq 5$. If some state is bad, then $H \geq 5$, and any nonempty sequence of consecutive states of the reduced map that are all bad has $\ell$ terms with*
+$$\ell \leq \tfrac{2}{3}(H - 5) + 2 < \tfrac{2}{3}H + 4 \leq \tfrac{b}{3} + 4.$$
+*In every case a run of consecutive bad states has fewer than $b/3 + 4$ terms.*
+
+*Proof.* For a state write $\lambda = \rho_1$ and $\Lambda = \rho_n$. A bad state has $\Lambda \geq \rho_1 + \sum_j w_j \geq 1 + 2k \geq 5$; since $\Lambda \leq H$, a bad state can exist only if $H \geq 5$. If there is no bad state the last sentence holds trivially, so assume $\ell \geq 1$.
+
+Let $\rho$ be bad. Since $\rho_{2k+1} - \rho_2$ is the sum of the $w_j$ and of the nonnegative gaps $\rho_{2j+2} - \rho_{2j+1}$ ($1 \leq j \leq k-1$), and $\rho_2 \geq \lambda$, we have $\sum_j w_j \leq \Lambda - \lambda$. Each $w_j \geq 2$, so
+$$\max_j w_j \leq \Lambda - \lambda - 2(k-1), \qquad \min_j w_j \leq (\Lambda - \lambda)/k.$$
+Also $g \leq 2\lambda$. By (3.2), the entries of $\rho'$ are $w_j - 1$ ($j < k$, twice each), $w_k - 1$, $w_k$ and $g$, so
+$$\Lambda' \leq \max\bigl(\Lambda - \lambda - 2(k-1),\ 2\lambda\bigr),$$
+$$\lambda' \leq \min_j w_j - 1 \leq \frac{\Lambda - \lambda}{k} - 1.$$
+
+Index the states of the orbit by time $t$, with $\lambda_t, \Lambda_t$. Suppose the states at times $t$ and $t+1$ are both bad. The bound on $\Lambda'$ at time $t+1$, with $2(k-1) \geq 2$, gives
+$$\Lambda_{t+2} \leq \max\bigl(\Lambda_{t+1} - \lambda_{t+1} - 2,\ 2\lambda_{t+1}\bigr).$$
+In the first term, $\lambda_{t+1} \geq 1$ gives $\Lambda_{t+1} - \lambda_{t+1} - 2 \leq \Lambda_{t+1} - 3$. In the second, the bound on $\lambda'$ at time $t$, with $k \geq 2$ and $\Lambda_t - \lambda_t \geq 0$, gives $2\lambda_{t+1} \leq 2(\Lambda_t - \lambda_t)/k - 2 \leq \Lambda_t - \lambda_t - 2$, and $\lambda_t \geq 1$ makes this at most $\Lambda_t - 3$. Hence
+$$\Lambda_{t+2} \leq \max(\Lambda_t,\ \Lambda_{t+1}) - 3.$$
+Put $\Lambda^*_t = \max(\Lambda_t, \Lambda_{t+1})$. If the states at times $t$, $t+1$, $t+2$ are all bad, applying the last inequality at $t$ and at $t+1$ gives $\Lambda_{t+2} \leq \Lambda^*_t - 3$ and $\Lambda_{t+3} \leq \max(\Lambda_{t+1}, \Lambda_{t+2}) - 3 \leq \Lambda^*_t - 3$, so $\Lambda^*_{t+2} \leq \Lambda^*_t - 3$.
+
+Let the bad states occupy times $t_0, \dots, t_0 + \ell - 1$. Since every $\Lambda \leq H$, $\Lambda^*_{t_0} \leq H$, and the last inequality gives $\Lambda_{t_0 + 2i} \leq \Lambda^*_{t_0 + 2i} \leq H - 3i$ whenever $2i \leq \ell - 1$. Take $i = \lfloor (\ell-1)/2 \rfloor$. The state at time $t_0 + 2i$ is bad, so $5 \leq \Lambda_{t_0+2i} \leq H - 3i$, and $i \leq (H - 5)/3$. Since $\ell \leq 2i + 2$, we get $\ell \leq 2(H-5)/3 + 2$. Finally $2(H-5)/3 + 2 < 2H/3 + 4$, and $H \leq (b-1)/2$ gives $2H/3 + 4 \leq b/3 + 4$. $\blacksquare$
+
+### The case $n$ even (length $2n \equiv 0 \pmod 4$)
+
+In this subsection $n = 2k + 2$ with $k \geq 1$.
+
+**Lemma 3.15 (reduced map, $n$ even).** *(Proven.) Let $\rho$ be a state other than the repdigit state, and put*
+$$w_j = \rho_{2j+2} - \rho_{2j+1} \ (j = 1, \dots, k), \qquad \sigma = b - 1 - \rho_1 - \rho_2, \qquad \eta = r(\sigma).$$
+*Then $0 \leq \sigma \leq b - 1$, $0 \leq w_j \leq H$, and a string with state $\rho$ has*
+$$V = (b^2 + b)\,\sigma - (b^3 - 1)\, w_k - \sum_{j=1}^{k-1} w_j\, (b-1)\, b^{n-2j}.$$
+
+- *(G) If some $w_j \geq 1$, let $J$ be the largest such $j$. Then*
+$$\begin{aligned} \rho' = {} & \biguplus_{j<J} \{(w_j - 1)^+,\ (w_j - 1)^+\} \\ & \uplus \{w_J - 1,\ w_J\} \uplus \{0^{[2(k-J)]}\} \uplus \{\eta,\ \eta\}. \end{aligned}$$
+- *(Z) If every $w_j = 0$, then $\sigma \geq 1$ and $\rho' = \{0^{[n-2]},\ r(\sigma),\ r(\sigma - 1)\}$.*
+
+*In both cases $\rho'$ is not the repdigit state. Moreover $\tau' = \tau$, and every string with state $\tau$ maps to $F$; in particular $F$ is fixed.*
+
+*Proof.* Since $\rho_1 + \rho_2 \leq 2H \leq b - 1$, $0 \leq \sigma \leq b-1$; and $0 \leq w_j \leq \rho_{2j+2} \leq H$. By (3.1), substituting into the pairs of $R_n$:
+
+- place $0$: $s_{n-2} - s_{n-1} = \rho_n - \rho_{n-1} = w_k$;
+- place $1$: $s_1 - s_{2n-1} = (b-1-\rho_2) - \rho_1 = \sigma$;
+- place $2$: $s_0 - s_{2n-2} = (b-1-\rho_1) - \rho_2 = \sigma$;
+- place $3$: $s_{n+1} - s_n = \rho_{n-1} - \rho_n = -w_k$;
+- place $n+1-2j$ ($1 \leq j \leq k-1$): $s_{2j+1} - s_{2j} = \rho_{2j+1} - \rho_{2j+2} = -w_j$;
+- place $n-2j$ ($1 \leq j \leq k-1$): $s_{2n-2-2j} - s_{2n-1-2j} = \rho_{2j+2} - \rho_{2j+1} = w_j$.
+
+This gives the formula for $V$.
+
+*Sign of $V$.* We have $(b^2 + b)\sigma \leq (b^2+b)(b-1) = b^3 - b < b^3 - 1 < (b-1)\, b^4$, and the blocks with $j < k$ sit at places $n - 2j \geq 4$. As in Lemma 3.9, $V < 0$ as soon as some $w_j \geq 1$. For $1 \leq w \leq H$,
+$$\begin{aligned} (b^3 - 1)\,w - (b^2 + b)\,\sigma = {} & (w-1)\,b^3 + (b-1-\sigma)\,b^2 \\ & + (b-1-\sigma)\,b + (b-w), \end{aligned}$$
+with every coefficient a digit and $b - w \geq 1$; and $w(b-1) b^{n-2j}$ has digits $w - 1$ and $b - w$ at places $n+1-2j$ and $n-2j$, as before.
+
+*(G), $J = k$.* The digits of $N = m - 1$ are those of the blocks $j < k$, as in Lemma 3.9, followed by $w_k - 1$, $b-1-\sigma$, $b-1-\sigma$, $b-1-w_k$ at places $3, 2, 1, 0$. Their deficits are $(w_j-1)^+$ twice for each $j < k$, and $w_k - 1$, $\eta$, $\eta$, $w_k$.
+
+*(G), $J < k$.* Then $N = X - \bigl((b^2+b)\sigma + 1\bigr)$, where $X$ is the sum of the blocks with $j \leq J$, whose lowest nonzero digit $b - w_J \geq 1$ is at place $p = n - 2J \geq 4$. Since $0 < (b^2 + b)\sigma + 1 \leq b^3 - b + 1 < b^4 \leq b^p$, the borrow stops at place $p$, as in Lemma 3.9: the digit there becomes $b - 1 - w_J$, places $1$ and $2$ become $b - 1 - \sigma$, and places $0, 3, 4, \dots, p-1$ become $b - 1$. These last are $p - 2 = 2(k-J)$ places with deficit $0$; places $1$ and $2$ give $\eta, \eta$; places $p+1, p$ give $w_J - 1, w_J$; and the blocks $j < J$ give $(w_j - 1)^+$ twice each.
+
+*(Z).* If $\sigma = 0$ then $\rho_1 + \rho_2 = b - 1$ with $\rho_1, \rho_2 \leq (b-1)/2$, which forces $b$ odd and $\rho_1 = \rho_2 = (b-1)/2$, hence every $\rho_i = (b-1)/2$: the repdigit state, which is excluded. So $\sigma \geq 1$, $m = (b^2 + b)\sigma$, and $N = \sigma b^2 + (\sigma - 1)\, b + (b-1)$, with digits $b-1$, $\sigma-1$, $\sigma$ at places $0, 1, 2$ and $0$ at places $3, \dots, n-1$. The deficits are $1 + (n-3) = n-2$ zeros, $r(\sigma)$ and $r(\sigma - 1)$.
+
+*Not the repdigit state.* In (G), $\rho'$ contains the distinct values $w_J - 1$ and $w_J$. In (Z), $\rho'$ contains $n - 2 \geq 2$ zeros, while the repdigit state has every entry equal to $(b-1)/2 \geq 1$.
+
+*The state $\tau$.* For $\tau$, $\rho_1 = \rho_2 = 0$ (as $n \geq 4$), so $\sigma = b - 1$ and $\eta = 0$; also $w_k = 1$ and $w_j = 0$ for $j < k$. Case (G) with $J = k$ gives $\tau' = \{0^{[2(k-1)]}\} \uplus \{0, 1\} \uplus \{0, 0\} = \tau$, and $V = (b^2 + b)(b-1) - (b^3 - 1) = -(b-1)$, so $m = b - 1$ and the value is $F$. Since $F$ has state $\tau$, $F$ is fixed. $\blacksquare$
+
+**Lemma 3.16.** *(Proven.) Let $n$ be even and let $\rho$ be a state other than the repdigit state. Then every $w'_j$ of $\rho'$ is $0$ or $1$, and at most one of them is $1$.*
+
+*Proof.* The quantities $w'_j = \rho'_{2j+2} - \rho'_{2j+1}$ ($j = 1, \dots, k$) are the differences of the consecutive pairs $(\rho'_3, \rho'_4), \dots, (\rho'_{n-1}, \rho'_n)$ of the sorted list $\rho'$, that is, of all pairs in Lemma 3.7's pairing except the first, $(\rho'_1, \rho'_2)$. In case (G), every value in $\rho'$ is taken an even number of times except for one extra $w_J - 1$ and one extra $w_J$ (note that $\eta$ occurs twice), so Lemma 3.7 applies with $a = w_J - 1$: exactly one pair of the pairing has difference $1$ and the rest have difference $0$. In case (Z), the sorted list is $n - 2$ zeros followed by $\min(r(\sigma), r(\sigma-1))$ and $\max(r(\sigma), r(\sigma-1))$, so only the top pair, which defines $w'_k$, can have a nonzero difference, and that difference is $\lvert r(\sigma) - r(\sigma - 1) \rvert \leq 1$, since $r$ changes by at most $1$ when its argument changes by $1$. $\blacksquare$
+
+**Lemma 3.17.** *(Proven.) Let $n$ be even and let $\rho$ be a state with $\rho_1 = \rho_2 = 0$. Then $\rho' = \tau$ or $\rho'' = \tau$.*
+
+*Proof.* Here $\sigma = b - 1$ and $\eta = 0$. In case (Z), $\rho' = \{0^{[n-2]},\ r(b-1),\ r(b-2)\} = \{0^{[n-1]}, 1\} = \tau$, since $b \geq 3$. In case (G), $\rho'$ contains the two zeros $\eta, \eta$, so $\rho'_1 = \rho'_2 = 0$, and by Lemma 3.16 all $w'_j$ are in $\{0, 1\}$ with at most one equal to $1$. If all $w'_j = 0$, case (Z) applied to $\rho'$ gives $\rho'' = \tau$, as just computed. If $w'_{J'} = 1$ and the others are $0$, case (G) applied to $\rho'$, with $\eta' = 0$, gives
+$$\rho'' = \{0^{[2(J'-1)]}\} \uplus \{0, 1\} \uplus \{0^{[2(k-J')]}\} \uplus \{0, 0\} = \tau. \qquad \blacksquare$$
+
+**Lemma 3.18.** *(Proven.) Let $n$ be even and let $\rho$ be a state, other than the repdigit state, whose $w_j$ are all in $\{0, 1\}$ with at most one equal to $1$.*
+
+- *If $n \geq 6$, then $\rho'_1 = \rho'_2 = 0$.*
+- *If $n = 4$, then $\rho'_1 = \rho'_2 = 0$, or $\rho' = (0, 1, \eta, \eta)$ with $\eta = r(b-1-\rho_1-\rho_2) \geq 1$ as in Lemma 3.15, in which case $\rho''_1 = \rho''_2 = 0$.*
+
+*Proof.* Let $n \geq 6$, so $k \geq 2$. In case (Z), $\rho'$ contains $n - 2 \geq 4$ zeros. In case (G), the single $w_J = 1$ and every other $w_j = 0$, so
+$$\rho' = \{0^{[2(J-1)]}\} \uplus \{0, 1\} \uplus \{0^{[2(k-J)]}\} \uplus \{\eta, \eta\},$$
+with $2(k-1) + 1 \geq 3$ zeros. Either way $\rho'_1 = \rho'_2 = 0$.
+
+Let $n = 4$, so $k = 1$ and there is a single $w = \rho_4 - \rho_3$. In case (Z), $\rho' = \{0, 0, r(\sigma), r(\sigma-1)\}$, so $\rho'_1 = \rho'_2 = 0$. In case (G), $w = 1$ and $\rho' = \{0, 1, \eta, \eta\}$. If $\eta = 0$ this is $\tau$, which has $\rho'_1 = \rho'_2 = 0$. If $\eta \geq 1$, then $\rho' = (0, 1, \eta, \eta)$ has $w' = \eta - \eta = 0$, so case (Z) applies to $\rho'$ and $\rho''$ begins with two zeros. $\blacksquare$
+
+### Proof of Theorem 3.3
+
+Repdigits map to $0$ by Lemma 3.4, and the digits of $F$ were found in Lemma 3.6. Let $y_0$ be a $2n$-digit string that is not a repdigit, and let $y_t$ be its image after $t$ applications of $R_n$. By Lemmas 3.4 and 3.6, $y_1$ has a state $S_1$, and by Lemma 3.8 $S_1$ is not the repdigit state. By Lemmas 3.9 and 3.15 and induction, for every $t \geq 1$ the value $y_t$ has a state $S_t$, $S_{t+1} = S_t'$, and $S_t$ is not the repdigit state. If $S_t = \tau$ for some $t$, then $S_u = \tau$ for all $u \geq t$, and $y_u = F$ for all $u > t$, because a string with state $\tau$ maps to $F$ and $F$ is fixed (Lemmas 3.9 and 3.15). So it suffices to bound the first $t$ with $S_t = \tau$; the number of steps to $F$ is at most that $t$ plus one.
+
+*$n$ odd.* Let $\ell \geq 0$ be the number of bad states at the start of the sequence, so that $S_1, \dots, S_\ell$ are bad and $S_{\ell+1}$ is not; $\ell$ is finite by Lemmas 3.13 and 3.14. If $S_{\ell+1}$ has $\rho_1 = 0$, put $u = \ell + 1$. Otherwise $S_{\ell+1}$ has $\rho_1 \geq 1$ and is not bad, so $S_{\ell+2}$ has $\rho_1 = 0$ by Lemma 3.12; put $u = \ell + 2$. By Lemma 3.10, $S_{u+2} = \tau$ (using that $\tau$ is fixed). So $y_t = F$ for every $t \geq u + 3$, and $u + 3 \leq \ell + 5$. For $n = 3$, Lemma 3.13 gives $\ell \leq (b+7)/2$, so the number of steps is at most $(b+7)/2 + 5 = (b+17)/2 \leq b/2 + 10$. For $n \geq 5$, Lemma 3.14 gives $\ell < b/3 + 4$, so the number of steps is less than $b/3 + 9$.
+
+*$n$ even.* By Lemma 3.16, $S_2$ has all $w_j$ in $\{0, 1\}$, with at most one equal to $1$. If $n \geq 6$, Lemma 3.18 gives $\rho_1 = \rho_2 = 0$ for $S_3$, Lemma 3.17 gives $S_5 = \tau$, and $y_6 = F$: at most $6$ steps. If $n = 4$, Lemma 3.18 gives $\rho_1 = \rho_2 = 0$ for $S_3$ or for $S_4$; Lemma 3.17 then gives $S_6 = \tau$ (using that $\tau$ is fixed), and $y_7 = F$: at most $7$ steps.
+
+In both cases $F$ is reached, within the stated number of steps. $\blacksquare$
+
+*Remark.* (Computed.) The bounds that grow with $b$ are far from sharp. The proof gives at most $(b+17)/2$ steps for $n = 3$, at most $6$ steps for even $n \geq 6$, and at most $7$ for $n = 4$. By complete enumeration of digit multisets, the largest number of steps to $F$ under $R_3$ is $8$ over all bases $3$ to $20$ (it is $6$ in base $10$, where the proof allows $13$). From every state of the reduced map of $R_3$ in each base $3$ to $201$, at most $12$ steps reach $\tau$ (attained first at $b = 199$), so in these bases every string reaches $F$ within $14$ steps, against $(b+17)/2 = 109$ at $b = 201$. The observed maxima for even $n$ are also below the proof's: $5$ steps for $n = 4$ and $4$ for $n = 6$, over the bases $3$, $4$, $5$, $7$, $10$.
+
+## Odd lengths
+
+Section 3 treats the even lengths $L = 2n$: the half-swap rule $R_n$ exchanges place $q$ with place $q+n$ for every $q$, and it is universal in every base $b \geq 3$ (Theorem 3.3). This section treats the odd lengths. We first observe that at odd length the place permutation of a rule cannot consist of exchanged pairs: it must fix a place or move letters around a cycle of odd length at least $3$. We then define a rule $M_n$ at length $2n+1$ that fixes the middle place and exchanges the other places in pairs, as $R_n$ does, and we prove that it is universal in every base $b \geq 3$, with an explicit bound on the number of steps. Together with Section 3 this gives one scheme for every length $L \geq 6$ (Theorem 4.17).
+
+As in Section 2, places are counted from the least significant digit, which is place $0$, and the letters $s_0 \geq s_1 \geq \dots \geq s_{L-1}$ are the sorted digits of a string. In letter forms, $\mathtt{A} = s_0$, $\mathtt{B} = s_1$, and so on, and each word is written with its most significant place first.
+
+### Place permutations at odd length
+
+**Definition 4.1.** *Let $(\alpha, \beta)$ be a rule of length $L$ (Definition 2.1), so that letter $i$ is at place $\alpha(i)$ in word 1 and at place $\beta(i)$ in word 2. Its* place permutation *is $\pi = \beta \circ \alpha^{-1}$: the letter at place $a$ in word 1 is at place $\pi(a)$ in word 2. The rule* exchanges places in pairs *if $\pi$ is an involution without fixed points, that is, $\pi(\pi(a)) = a$ and $\pi(a) \neq a$ for every place $a$.*
+
+The rule $R_n$ of Section 3 exchanges places in pairs: its place permutation exchanges $q$ and $q+n$ for $0 \leq q \leq n-1$.
+
+**Proposition 4.2.** *(Proven.) Let $L$ be odd. Then no rule of length $L$ exchanges places in pairs. More precisely, the place permutation $\pi$ of every rule of length $L$ has a fixed place or a cycle of odd length at least $3$. If $\pi$ fixes place $a$, the letter at place $a$ is the same in both words, and its contributions to word 1 and word 2 cancel in the difference.*
+
+*Proof.* The cycles of $\pi$ partition the $L$ places, so their lengths add up to $L$. Since $L$ is odd, at least one cycle has odd length, and that cycle has length $1$ (a fixed place) or odd length at least $3$. An involution has only cycles of length $1$ and $2$; if it has no fixed point, all its cycles have length $2$ and $L$ is even. So no rule of odd length exchanges places in pairs. Finally, if $\pi(a) = a$ and letter $i$ is at place $a$ in word 1, then $\beta(i) = \pi(\alpha(i)) = a = \alpha(i)$, so letter $i$ is at place $a$ in word 2 as well, and the difference of the words contains $b^a s_i - b^a s_i = 0$. $\blacksquare$
+
+So at odd length a rule must fix a place or move letters around a cycle of odd length at least $3$. We take the first option, with exactly one fixed place, in the middle. It is the device of Kaprekar's three-digit routine $\mathtt{ABC} - \mathtt{CBA}$, whose middle letter cancels. Proposition 4.2 says nothing about universality, and rules built on a cycle of odd length at least $3$ are not treated here.
+
+### The rule $M_n$
+
+**Definition 4.3.** *Let $n \geq 3$ and $L = 2n+1$, with letters $s_0 \geq \dots \geq s_{2n}$. Let $(P_q, M_q)$, $0 \leq q \leq n-1$, be the pairs of the half-swap rule $R_n$ (Definitions 3.1 and 3.2), which are written on the letters $0, \dots, 2n-1$. Relabel them by the map $\lambda$ defined by $\lambda(0) = 0$ and $\lambda(i) = i+1$ for $1 \leq i \leq 2n-1$; thus $\lambda$ is a bijection onto $\{0, 2, 3, \dots, 2n\}$, and letter $1$ is left out. The rule $M_n$ is the rule of length $2n+1$ with:*
+
+- *word 1: letter $\lambda(P_q)$ at place $q+n+1$ and letter $\lambda(M_q)$ at place $q$, for $0 \leq q \leq n-1$, and letter $1$ at place $n$;*
+- *word 2: letter $\lambda(M_q)$ at place $q+n+1$ and letter $\lambda(P_q)$ at place $q$, for $0 \leq q \leq n-1$, and letter $1$ at place $n$.*
+
+Two warnings on notation. The rule $M_n$ (indexed by the half-length $n$) and the letter $M_q$ (the second entry of the pair at place $q$) are different symbols. In this section $\lambda$ always denotes the relabeling map above; Section 3 uses $\lambda$ for a different quantity inside one proof.
+
+The place permutation of $M_n$ exchanges place $q$ with place $q+n+1$ for $0 \leq q \leq n-1$ and fixes the middle place $n$, which holds the second largest letter $s_1$ in both words. Written out, with "place $q$: $(i, j)$" meaning $(\lambda(P_q), \lambda(M_q)) = (i, j)$, the pairs of $M_n$ are as follows. Here $i$ and $j$ are letters of the $(2n+1)$-digit string.
+
+- $n$ odd, $n = 2k+1$: place $0$: $(n+1, n+2)$; place $1$: $(0, 2n)$; place $2$: $(n, n-1)$; and for $1 \leq j \leq k-1$, place $n+1-2j$: $(2j+1, 2j)$ and place $n-2j$: $(2n-2j, 2n+1-2j)$.
+- $n$ even, $n = 2k+2$: place $0$: $(n-1, n)$; place $1$: $(2, 2n)$; place $2$: $(0, 2n-1)$; place $3$: $(n+2, n+1)$; and for $1 \leq j \leq k-1$, place $n+1-2j$: $(2j+2, 2j+1)$ and place $n-2j$: $(2n-1-2j, 2n-2j)$.
+
+These lists are obtained from those of $R_n$ by applying $\lambda$ to every letter. In letters, the first three rules are
+$$M_3:\ \mathtt{DAEBCGF} - \mathtt{CGFBDAE}, \qquad M_4:\ \mathtt{GACDBFHIE} - \mathtt{FHIEBGACD},$$
+$$M_5:\ \mathtt{DIFAGBCJEKH} - \mathtt{CJEKHBDIFAG}.$$
+In each, the middle letter of both words is $\mathtt{B}$, and the first $n$ letters of word 1 are the last $n$ letters of word 2 and conversely.
+
+As in Section 3, $K(s) = \lvert \text{word 1} - \text{word 2} \rvert$ denotes the rule applied to a string $s$; in this section the rule is always $M_n$.
+
+**Lemma 4.4.** *(Proven.) Let $n \geq 3$ and $b \geq 3$, and let $K$ be the rule $M_n$. For every string $s$ of length $2n+1$,*
+$$K(s) = (b^{n+1} - 1)\, m, \qquad m = |V|, \qquad V = \sum_{q=0}^{n-1} b^q \bigl(s_{\lambda(P_q)} - s_{\lambda(M_q)}\bigr).$$
+*Moreover $0 \leq m \leq b^n - 1$, and $m = 0$ exactly when $s$ is a repdigit.*
+
+*Proof.* Letter $1$ is at place $n$ in both words and cancels. The pair at place $q$ contributes $b^{q+n+1} s_{\lambda(P_q)} + b^q s_{\lambda(M_q)}$ to word 1 and $b^{q+n+1} s_{\lambda(M_q)} + b^q s_{\lambda(P_q)}$ to word 2, so its contribution to the difference is $(b^{q+n+1} - b^q)(s_{\lambda(P_q)} - s_{\lambda(M_q)}) = (b^{n+1} - 1)\, b^q (s_{\lambda(P_q)} - s_{\lambda(M_q)})$. Summing over $q$ gives the factorization.
+
+Write $d_q = s_{\lambda(P_q)} - s_{\lambda(M_q)}$. Each $d_q$ lies in $[-(b-1), b-1]$, so $m \leq (b-1)(1 + b + \dots + b^{n-1}) = b^n - 1$. If $s$ is a repdigit, every $d_q$ is $0$. Conversely, suppose $V = 0$ but some $d_q \neq 0$, and let $q$ be the lowest such index. Then $V \equiv b^q d_q \pmod{b^{q+1}}$, and $b^q d_q \not\equiv 0 \pmod{b^{q+1}}$ because $0 < |d_q| < b$. This is a contradiction, so every $d_q$ is $0$. For $n$ odd the pair $(0, 2n)$ then gives $s_0 = s_{2n}$, so all letters are equal. For $n$ even the pairs $(0, 2n-1)$ and $(2, 2n)$ give $s_0 = s_{2n-1}$ and $s_2 = s_{2n}$; since the letters are sorted, the first makes $s_0, \dots, s_{2n-1}$ equal and the second makes $s_2, \dots, s_{2n}$ equal, so all letters are equal. In both cases $s$ is a repdigit. $\blacksquare$
+
+**Lemma 4.5.** *(Proven.) Let $n \geq 3$, $b \geq 3$, $K = M_n$, and let $s$ be a string of length $2n+1$ that is not a repdigit. Put $N = m - 1$, so $0 \leq N \leq b^n - 2$, and write $N$ with $n$ digits $x_{n-1} \dots x_0$. Then*
+$$K(s) = N\, b^{n+1} + (b^{n+1} - 1 - N).$$
+*The digits of $K(s)$ are $x_i$ at place $n+1+i$ and $b-1-x_i$ at place $i$, for $0 \leq i \leq n-1$, and $b-1$ at place $n$. So the digit multiset of $K(s)$ consists of one digit $b-1$ and the pairs $\{x_i, b-1-x_i\}$. Let $\rho_1 \leq \dots \leq \rho_n$ be the deficits $r(x_0), \dots, r(x_{n-1})$ in increasing order; then $0 \leq \rho_i \leq H$, and the letters of $K(s)$ are*
+$$s_0 = b-1, \qquad s_i = b-1-\rho_i \ \ (1 \leq i \leq n), \qquad s_{2n+1-i} = \rho_i \ \ (1 \leq i \leq n).$$
+*No image $K(s)$ is a repdigit. For the value $F = (b-1)(b^{n+1} - 1)$ we have $N = b-2$, and its sorted deficits are $\tau = (0, \dots, 0, 1)$.*
+
+*Proof.* By Lemma 4.4, $K(s) = (b^{n+1} - 1)(N+1) = N b^{n+1} + (b^{n+1} - 1 - N)$. Since $0 \leq N < b^n$, the number $b^{n+1} - 1 - N$ lies in $[0, b^{n+1})$, and its $n+1$ digits are the complements $b-1-x_i$ at places $0, \dots, n-1$ and $b-1-0 = b-1$ at place $n$ (the digit of $N$ at place $n$ is $0$). The term $N b^{n+1}$ puts the $x_i$ at places $n+1, \dots, 2n$. For each pair $\{x_i, b-1-x_i\}$ the smaller entry is $r(x_i)$ and the larger is $b-1-r(x_i)$. Since every deficit is at most $H \leq (b-1)/2$, every larger entry $b-1-\rho_i \geq b-1-H$ is at least every smaller entry $\rho_j \leq H$. Sorting therefore puts $b-1$ first, then $b-1-\rho_1 \geq \dots \geq b-1-\rho_n$, then $\rho_n \geq \dots \geq \rho_1$, which is the display.
+
+If $K(s)$ were a repdigit, all its digits would equal its digit $b-1$ at place $n$; then $x_0 = b-1$ and $b-1-x_0 = b-1$, so $b-1 = 0$, which is false. For $F$ we have $m = b-1$ and $N = b-2$, so $x_0 = b-2$ and $x_i = 0$ for $i \geq 1$; since $b \geq 3$, $r(b-2) = \min(b-2, 1) = 1$ and $r(0) = 0$. $\blacksquare$
+
+We use the multiset notation of Section 3: $\uplus$ is the union of multisets (multiplicities add), $x^{[t]}$ denotes $t$ copies of $x$, and $x^+ = \max(x, 0)$. A state is a nondecreasing $n$-tuple $\rho = (\rho_1 \leq \dots \leq \rho_n)$ of integers in $[0, H]$, as in Definition 3.5, and a multiset of $n$ values in $[0, H]$ is identified with the state that lists it in nondecreasing order.
+
+**Definition 4.6.** *Let $n \geq 3$ and $b \geq 3$. A string of length $2n+1$* has state $\rho$ *if $\rho$ is a state and the digit multiset of the string is*
+$$\{b-1\} \uplus \biguplus_{i=1}^{n} \{b-1-\rho_i,\ \rho_i\}.$$
+
+The letters of a string with state $\rho$ are those displayed in Lemma 4.5, by the same sorting argument: $s_0 = b-1$, $s_i = b-1-\rho_i$ and $s_{2n+1-i} = \rho_i$ for $1 \leq i \leq n$. Every state is allowed, including, for $b$ odd, the state with all entries $(b-1)/2$, which Section 3 calls the repdigit state. Here a string with that state is not a repdigit, because of the extra digit $b-1 \neq (b-1)/2$. More generally, no string with a state is a repdigit, since it contains the digits $b-1$ and $\rho_1 \leq H < b-1$. The lemmas below cover the state with all entries $(b-1)/2$ without exception: for $n$ odd it falls under case (Z) of Lemma 4.7, with $A = (b-1)/2 \geq 1$, and for $n$ even under case (Z) of Lemma 4.11, in the subcase $\sigma = 0$.
+
+By Lemma 4.5, the image $K(s)$ of a string that is not a repdigit has the state of its sorted deficits; in particular $F$ has state $\tau$. Since $K$ depends only on the digit multiset, $K(s)$ for a string $s$ with state $\rho$ depends only on $\rho$, and since $s$ is not a repdigit, $K(s)$ again has a state. We write $\rho'$ for this state and call $\rho \mapsto \rho'$ the *reduced map*. In base $b$, $F = (b-2)\, b^{n+1} + (b-1)(b^n + \dots + b) + 1$: its digits are $b-2$, then $n$ digits $b-1$, then $1$, which is $n+2$ digits, written as a string of length $2n+1$ with $n-1$ leading zeros.
+
+*Remark (comparison with the even rule).* Put $t_i = s_{\lambda(i)}$ for $0 \leq i \leq 2n-1$. For a string with state $\rho$, $t_0 = b-1$, $t_i = b-1-\rho_{i+1}$ for $1 \leq i \leq n-1$, and $t_i = \rho_{2n-i}$ for $n \leq i \leq 2n-1$. These are the letters of an even-length image with the same state $\rho$ (Lemma 3.6), except that letter $0$ there is $b-1-\rho_1$ instead of $b-1$. Letter $0$ occurs in exactly one pair of $R_n$, as its first entry, at place $1$ for $n$ odd and at place $2$ for $n$ even. So $V$ is the even rule's $V$ for the state $\rho$ plus $\rho_1 b$ ($n$ odd) or $\rho_1 b^2$ ($n$ even). The proofs below do not depend on this remark; they compute $V$ directly.
+
+### Odd $n$
+
+**Lemma 4.7.** *(Proven.) Let $n = 2k+1 \geq 3$ and $b \geq 3$, and let $\rho$ be a state. Put*
+$$w_j = \rho_{2j+1} - \rho_{2j} \ \ (1 \leq j \leq k), \qquad A = b - 1 - \rho_1.$$
+*Then $(b-1)/2 \leq A \leq b-1$, $r(A) = \rho_1$ and $0 \leq w_j \leq H$. A string with state $\rho$ has*
+$$V = bA - (b^2 - 1)\, w_k - \sum_{j=1}^{k-1} w_j (b-1)\, b^{n-2j}.$$
+*The next state $\rho'$ is as follows.*
+
+- *(G) Some $w_j \geq 1$. Let $J$ be the largest such $j$. Then*
+$$\begin{aligned}\rho' = {} & \biguplus_{j<J} \{(w_j - 1)^+,\ (w_j - 1)^+\} \\ & \uplus \{w_J - 1,\ w_J\} \uplus \{0^{[2(k-J)]}\} \uplus \{\rho_1\}.\end{aligned}$$
+- *(Z) All $w_j = 0$. Then $m = bA$ with $A \geq 1$, $N = (A-1)\,b + (b-1)$, and*
+$$\rho' = \{0^{[n-1]},\ r(A-1)\}.$$
+
+*The state $\tau$ is fixed by the reduced map, and every string with state $\tau$ maps to $F$.*
+
+*Proof.* Since $0 \leq \rho_1 \leq H \leq (b-1)/2$, we have $(b-1)/2 \leq A \leq b-1$, hence $r(A) = b-1-A = \rho_1$. The $w_j$ are nonnegative, and $\sum_j w_j \leq \rho_n - \rho_2 \leq H$, so each $w_j \leq H$.
+
+We compute the differences $s_{\lambda(P_q)} - s_{\lambda(M_q)}$ for a string with state $\rho$, using $s_0 = b-1$, $s_i = b-1-\rho_i$ for $1 \leq i \leq n$ and $s_{2n+1-i} = \rho_i$. Place $1$ is $(0, 2n)$ and gives $s_0 - s_{2n} = (b-1) - \rho_1 = A$. Place $0$ is $(n+1, n+2)$ and gives $\rho_n - \rho_{n-1} = w_k$. Place $2$ is $(n, n-1)$ and gives $(b-1-\rho_n) - (b-1-\rho_{n-1}) = -w_k$. For $1 \leq j \leq k-1$, place $n+1-2j$ is $(2j+1, 2j)$ and gives $\rho_{2j} - \rho_{2j+1} = -w_j$, and place $n-2j$ is $(2n-2j, 2n+1-2j)$ and gives $\rho_{2j+1} - \rho_{2j} = w_j$. Hence
+$$V = bA + w_k - b^2 w_k - \sum_{j=1}^{k-1} w_j \bigl(b^{n+1-2j} - b^{n-2j}\bigr),$$
+which is the stated formula.
+
+Since $bA \leq b(b-1) < b^2 - 1 < (b-1) b^3$, and $n - 2j \geq 3$ for $j \leq k-1$, we get $V < 0$ as soon as some $w_j \geq 1$. In that case
+$$m = \sum_{j=1}^{k-1} w_j (b-1)\, b^{n-2j} + (b^2 - 1)\, w_k - bA.$$
+For $1 \leq w \leq H$ we have the base-$b$ expansions
+$$w(b-1) = (w-1)\, b + (b-w),$$
+$$(b^2 - 1)\, w - bA = (w-1)\, b^2 + (b-1-A)\, b + (b-w),$$
+in which every coefficient is a digit: $0 \leq w - 1 \leq H - 1$, $0 \leq b-1-A \leq b-1$, and $1 \leq b-w \leq b-1$. The block of $j \leq k-1$ occupies places $n-2j$ and $n+1-2j$, which are at least $3$, and the last three terms occupy places $0, 1, 2$, so the blocks do not overlap. We also use the deficits $r(w-1) = w-1$, $r(b-w) = w-1$ and $r(b-1-w) = w$ for $1 \leq w \leq H$, and $r(b-1-A) = r(A) = \rho_1$.
+
+(G), $J = k$. Then $m$ is the sum of the blocks above, digit by digit, and $N = m - 1$ lowers the digit $b - w_k \geq 1$ at place $0$ to $b-1-w_k$ with no borrow. The digits of $N$ are $(w_j - 1, b - w_j)$ at places $(n+1-2j, n-2j)$ for each $j < k$ with $w_j \geq 1$, the digits $(0, 0)$ there for each $j < k$ with $w_j = 0$, and $(w_k - 1, b-1-A, b-1-w_k)$ at places $2, 1, 0$. Their deficits are $(w_j - 1)^+$ twice for each $j < k$, and $w_k - 1$, $\rho_1$, $w_k$. This is the formula with $J = k$.
+
+(G), $J < k$. Then $w_j = 0$ for $J < j \leq k$, and $N = X - (bA + 1)$, where $X$ is the sum of the blocks of $j \leq J$. The block of $J$ ends in the digit $b - w_J \geq 1$ at place $p = n - 2J \geq 3$, and $X$ is a multiple of $b^p$. Since $1 \leq bA + 1 < b^3 \leq b^p$, the subtraction lowers that digit to $b-1-w_J$, leaves the higher digits unchanged, and replaces places $0, \dots, p-1$ by the digits of $b^p - 1 - bA$, which are the complements of the digits of $bA$: $b-1-A$ at place $1$ and $b-1$ at the other $p - 1 = 2(k-J)$ places. The deficits are $(w_j - 1)^+$ twice for $j < J$, then $w_J - 1$ and $w_J$, then $0$ repeated $2(k-J)$ times, then $\rho_1$. In both cases this is $n$ values in all, and it is the formula of (G).
+
+(Z). Then $V = bA$, and $A \geq (b-1)/2 \geq 1$. So $m = bA$ and $N = bA - 1 = (A-1)\, b + (b-1)$, with digit $A - 1 \in [0, b-2]$ at place $1$, digit $b-1$ at place $0$, and $0$ at places $2, \dots, n-1$. The deficits are $r(A-1)$ and $n-1$ zeros.
+
+For $\tau = (0, \dots, 0, 1)$ we have $\rho_1 = 0$, $w_k = \rho_n - \rho_{n-1} = 1$ and $w_j = 0$ for $j < k$. So we are in (G) with $J = k$, and $\rho' = \{0^{[2(k-1)]}\} \uplus \{0, 1\} \uplus \{0\} = \tau$. For a string with state $\tau$, $A = b-1$, and $V = b(b-1) - (b^2 - 1) = -(b-1)$, so $m = b-1$ and the image is $(b^{n+1} - 1)(b-1) = F$. $\blacksquare$
+
+**Lemma 4.8.** *(Proven.) Let $n = 2k+1 \geq 3$, $b \geq 3$, and let $\rho$ be a state with $\rho_1 = 0$. Then $\rho'' = \tau$, and if $\rho$ is in case (Z), already $\rho' = \tau$. So a state with $\rho_1 = 0$ reaches $\tau$ in at most $2$ steps of the reduced map.*
+
+*Proof.* Here $A = b-1$. In (Z), $\rho' = \{0^{[n-1]}, r(b-2)\} = \tau$, since $r(b-2) = 1$ for $b \geq 3$; and $\tau$ is fixed. In (G), $\rho'$ contains the value $\rho_1 = 0$, so $\rho'_1 = 0$. Removing one $0$ leaves the multiset
+$$\biguplus_{j<J} \{(w_j - 1)^+,\ (w_j - 1)^+\} \uplus \{0^{[2(k-J)]}\} \uplus \{w_J - 1,\ w_J\},$$
+in which every value is taken an even number of times except for one extra copy of $a = w_J - 1 \geq 0$ and one extra copy of $a+1$. Its sorted entries are $\rho'_2, \dots, \rho'_n$, and the differences $w'_j = \rho'_{2j+1} - \rho'_{2j}$ are the differences of its consecutive pairs. By the sorting lemma (Lemma 3.7), exactly one $w'_j$ equals $1$ and the others are $0$. Then $\rho'$ is in case (G) with $\rho'_1 = 0$, its largest index $J'$ has $w'_{J'} = 1$, and
+$$\rho'' = \{0^{[2(J'-1)]}\} \uplus \{0, 1\} \uplus \{0^{[2(k-J')]}\} \uplus \{0\} = \tau. \ \blacksquare$$
+
+**Bad states, $n$ odd.** For $n = 2k+1 \geq 3$, a state $\rho$ is called *bad* if $\rho_1 \geq 1$ and $w_j \geq 2$ for every $j$, $1 \leq j \leq k$.
+
+**Lemma 4.9.** *(Proven.) Let $n = 2k+1 \geq 3$ and $b \geq 3$. If $\rho_1 \geq 1$ and $\rho$ is not bad, then $\rho'_1 = 0$.*
+
+*Proof.* It suffices that $\rho'$ contains a $0$. In (Z), $\rho'$ contains $n - 1 \geq 2$ zeros. In (G) there are three cases. If $J < k$, $\rho'$ contains $2(k-J) \geq 2$ zeros. If $J = k$ and $w_k = 1$, it contains $w_J - 1 = 0$. If $J = k$ and $w_k \geq 2$, then, since $\rho$ is not bad, some $j < k$ has $w_j \leq 1$, and $\rho'$ contains $(w_j - 1)^+ = 0$. $\blacksquare$
+
+**Lemma 4.10.** *(Proven.) Let $n = 2k+1 \geq 3$ and $b \geq 3$. If $\rho$ is bad, then $\rho$ is in case (G) with $J = k$,*
+$$\rho' = \biguplus_{j<k} \{w_j - 1,\ w_j - 1\} \uplus \{w_k - 1,\ w_k\} \uplus \{\rho_1\},$$
+*and $\max(\rho') \leq \rho_n - 1$. A bad state has $\rho_n \geq 3$. Consequently a run of consecutive bad states along an orbit of the reduced map has length at most $\max(0, H-2)$; for $H \leq 2$ there are no bad states.*
+
+*Proof.* In a bad state every $w_j \geq 2$, so $J = k$ and $(w_j - 1)^+ = w_j - 1$, which gives the formula. Since $\rho_2 \geq \rho_1 \geq 1$, every $w_j \leq \rho_n - \rho_2 \leq \rho_n - 1$. Also $\rho_1 \leq \rho_2 = \rho_3 - w_1 \leq \rho_n - 2$. So every entry of $\rho'$ is at most $\rho_n - 1$. A bad state has $\rho_n \geq \rho_3 = \rho_2 + w_1 \geq 1 + 2 = 3$. Along a run of $\ell \geq 1$ bad states the largest deficit drops by at least $1$ at each step, starts at most at $H$, and is at least $3$ at the last state of the run, so $H - (\ell-1) \geq 3$, that is, $\ell \leq H - 2$. If $H \leq 2$, no state has $\rho_n \geq 3$. $\blacksquare$
+
+### Even $n$
+
+**Lemma 4.11.** *(Proven.) Let $n = 2k+2 \geq 4$ and $b \geq 3$, and let $\rho$ be a state. Put*
+$$w_j = \rho_{2j+2} - \rho_{2j+1} \ \ (1 \leq j \leq k), \qquad \sigma = b - 1 - \rho_1 - \rho_2,$$
+$$\eta = r(\sigma), \qquad \sigma_2 = b - 1 - \rho_2.$$
+*Then $0 \leq \sigma \leq b-1$, $(b-1)/2 \leq \sigma_2 \leq b-1$ (so $\sigma_2 \geq 1$), $r(\sigma_2) = \rho_2$ and $0 \leq w_j \leq H$. A string with state $\rho$ has*
+$$V = b^2 \sigma_2 + b\,\sigma - (b^3 - 1)\, w_k - \sum_{j=1}^{k-1} w_j (b-1)\, b^{n-2j}.$$
+*The next state $\rho'$ is as follows.*
+
+- *(G) Some $w_j \geq 1$. Let $J$ be the largest such $j$. Then*
+$$\begin{aligned}\rho' = {} & \biguplus_{j<J} \{(w_j - 1)^+,\ (w_j - 1)^+\} \\ & \uplus \{w_J - 1,\ w_J\} \uplus \{0^{[2(k-J)]}\} \uplus \{\eta,\ \rho_2\}.\end{aligned}$$
+- *(Z) All $w_j = 0$. Then $m = b^2 \sigma_2 + b\,\sigma > 0$. If $\sigma \geq 1$, then $N = \sigma_2 b^2 + (\sigma - 1)\, b + (b-1)$ and*
+$$\rho' = \{0^{[n-2]},\ \rho_2,\ r(\sigma - 1)\}.$$
+  *If $\sigma = 0$, then $N = (\sigma_2 - 1)\, b^2 + (b-1)\, b + (b-1)$ and*
+$$\rho' = \{0^{[n-1]},\ r(\sigma_2 - 1)\}.$$
+
+*The state $\tau$ is fixed by the reduced map, and every string with state $\tau$ maps to $F$.*
+
+*Proof.* Since $\rho_1 + \rho_2 \leq 2H \leq b-1$, we have $0 \leq \sigma \leq b-1$. Since $\rho_2 \leq H \leq (b-1)/2$, we have $(b-1)/2 \leq \sigma_2 \leq b-1$ and $r(\sigma_2) = b-1-\sigma_2 = \rho_2$. The $w_j$ are nonnegative, and $\sum_j w_j \leq \rho_n - \rho_3 \leq H$.
+
+For a string with state $\rho$: place $1$ is $(2, 2n)$ and gives $s_2 - s_{2n} = (b-1-\rho_2) - \rho_1 = \sigma$. Place $2$ is $(0, 2n-1)$ and gives $s_0 - s_{2n-1} = (b-1) - \rho_2 = \sigma_2$. Place $0$ is $(n-1, n)$ and gives $(b-1-\rho_{n-1}) - (b-1-\rho_n) = w_k$. Place $3$ is $(n+2, n+1)$ and gives $\rho_{n-1} - \rho_n = -w_k$. For $1 \leq j \leq k-1$, place $n+1-2j$ is $(2j+2, 2j+1)$ and gives $\rho_{2j+1} - \rho_{2j+2} = -w_j$, and place $n-2j$ is $(2n-1-2j, 2n-2j)$ and gives $\rho_{2j+2} - \rho_{2j+1} = w_j$. Hence
+$$V = b^2 \sigma_2 + b\,\sigma + w_k - b^3 w_k - \sum_{j=1}^{k-1} w_j \bigl(b^{n+1-2j} - b^{n-2j}\bigr),$$
+which is the stated formula.
+
+We have $b^2 \sigma_2 + b\,\sigma \leq b^3 - b < b^3 - 1 < (b-1)\, b^4$, and $n - 2j \geq 4$ for $j \leq k-1$, so $V < 0$ as soon as some $w_j \geq 1$. For $1 \leq w \leq H$,
+$$\begin{aligned}(b^3 - 1)\, w - b^2 \sigma_2 - b\,\sigma = {} & (w-1)\, b^3 + (b-1-\sigma_2)\, b^2 \\ & + (b-1-\sigma)\, b + (b-w),\end{aligned}$$
+with every coefficient a digit, and the blocks $w_j (b-1) b^{n-2j} = ((w_j - 1) b + (b - w_j))\, b^{n-2j}$ for $j < k$ occupy places $n-2j \geq 4$ and $n+1-2j$, so nothing overlaps. The deficits needed are $r(b-1-\sigma_2) = \rho_2$, $r(b-1-\sigma) = \eta$, and those listed in the proof of Lemma 4.7.
+
+(G), $J = k$. Then $N = m - 1$ lowers the digit $b - w_k$ at place $0$ to $b-1-w_k$. The digits of $N$ at places $3, 2, 1, 0$ are $(w_k - 1, b-1-\sigma_2, b-1-\sigma, b-1-w_k)$, with deficits $w_k - 1$, $\rho_2$, $\eta$, $w_k$, and the blocks of $j < k$ give $(w_j - 1)^+$ twice each.
+
+(G), $J < k$. Then $w_k = 0$, and $N = X - (b^2 \sigma_2 + b\,\sigma + 1)$, where $X$ is the sum of the blocks of $j \leq J$. The block of $J$ ends in a digit $b - w_J \geq 1$ at place $p = n - 2J \geq 4$, and $1 \leq b^2 \sigma_2 + b\,\sigma + 1 \leq b^3 - b + 1 < b^3 \leq b^p$. So the subtraction lowers that digit to $b-1-w_J$, every place between $3$ and $p-1$ becomes $b-1$, and places $2, 1, 0$ become $b-1-\sigma_2$, $b-1-\sigma$, $b-1$. The places $0$ and $3, \dots, p-1$ number $p - 2 = 2(k-J)$, and they give deficit $0$. Places $1$ and $2$ give $\eta$ and $\rho_2$.
+
+In both cases of (G) this is the stated $\rho'$, with $n$ values in all.
+
+(Z). Then $m = b^2 \sigma_2 + b\,\sigma \geq b^2 > 0$. If $\sigma \geq 1$, then $N = \sigma_2 b^2 + (\sigma - 1)\, b + (b-1)$; the deficits are $\rho_2$ (place $2$), $r(\sigma - 1)$ (place $1$), $0$ (place $0$), and $0$ at places $3, \dots, n-1$, which is $n-2$ zeros in all. If $\sigma = 0$, then $N = \sigma_2 b^2 - 1 = (\sigma_2 - 1)\, b^2 + (b-1)\, b + (b-1)$; the deficits are $r(\sigma_2 - 1)$ and $n-1$ zeros.
+
+For $\tau$ we have $\rho_1 = \rho_2 = 0$, so $\sigma = \sigma_2 = b-1$ and $\eta = 0$; also $w_k = 1$ and $w_j = 0$ for $j < k$. So we are in (G) with $J = k$, and $\rho' = \{0^{[2(k-1)]}\} \uplus \{0, 1\} \uplus \{0, 0\} = \tau$. For a string with state $\tau$,
+$$V = b^2(b-1) + b(b-1) - (b^3 - 1) = -(b-1),$$
+so $m = b-1$ and the image is $F$. $\blacksquare$
+
+**Lemma 4.12.** *(Proven.) Let $n = 2k+2 \geq 4$, $b \geq 3$, and let $\rho$ be a state with $\rho_2 = 0$. Then $\rho'' = \tau$, and if $\rho$ is in case (Z), already $\rho' = \tau$. So a state with $\rho_2 = 0$ reaches $\tau$ in at most $2$ steps of the reduced map.*
+
+*Proof.* Here $\rho_1 = \rho_2 = 0$, so $\sigma = \sigma_2 = b-1$ and $\eta = 0$. In (Z), $\sigma \geq 1$ and $\rho' = \{0^{[n-2]}, 0, r(b-2)\} = \tau$. In (G), $\rho'$ contains the two zeros $\eta$ and $\rho_2$, so $\rho'_1 = \rho'_2 = 0$. Removing two zeros leaves
+$$\biguplus_{j<J} \{(w_j - 1)^+,\ (w_j - 1)^+\} \uplus \{0^{[2(k-J)]}\} \uplus \{w_J - 1,\ w_J\},$$
+whose sorted entries are $\rho'_3, \dots, \rho'_n$; the differences $w'_j = \rho'_{2j+2} - \rho'_{2j+1}$ are those of its consecutive pairs. By the sorting lemma (Lemma 3.7), exactly one $w'_j$ is $1$ and the others are $0$. Then $\rho'$ is in case (G) with $\rho'_1 = \rho'_2 = 0$, hence $\eta' = 0$, and its largest index $J'$ has $w'_{J'} = 1$, so
+$$\rho'' = \{0^{[2(J'-1)]}\} \uplus \{0, 1\} \uplus \{0^{[2(k-J')]}\} \uplus \{0, 0\} = \tau. \ \blacksquare$$
+
+**Bad states, $n$ even.** For $n = 2k+2 \geq 4$, a state $\rho$ is called *bad* if $\rho_2 \geq 1$, $w_j \geq 2$ for every $j < k$, $w_k \geq 1$, and it is not the case that $w_k = 1$ and $\eta = 0$. For $n = 4$ we have $k = 1$, and the clause "$w_j \geq 2$ for every $j < k$" is vacuous.
+
+**Lemma 4.13.** *(Proven.) Let $n = 2k+2 \geq 4$ and $b \geq 3$. If $\rho_2 \geq 1$ and $\rho$ is not bad, then $\rho'_2 = 0$. A bad state is in case (G) with $J = k$, and*
+$$\rho' = \biguplus_{j<k} \{w_j - 1,\ w_j - 1\} \uplus \{w_k - 1,\ w_k\} \uplus \{\eta,\ \rho_2\}.$$
+*In every state, $\eta \leq \rho_1 + \rho_2 \leq 2 \rho_2$.*
+
+*Proof.* It suffices that $\rho'$ contains two zeros. In (Z), $\rho'$ contains at least $n - 2 \geq 2$ zeros. In (G), a state with $\rho_2 \geq 1$ that is not bad has $w_j \leq 1$ for some $j < k$, or $w_k = 0$, or $w_k = 1$ and $\eta = 0$. If $w_k = 0$, then $J < k$ and $\rho'$ contains $2(k-J) \geq 2$ zeros. If $w_k \geq 1$, then $J = k$; if moreover $w_j \leq 1$ for some $j < k$, then $(w_j - 1)^+ = 0$ occurs twice; and if $w_k = 1$ and $\eta = 0$, then $w_k - 1 = 0$ and $\eta = 0$ are two zeros. In a bad state $w_k \geq 1$, so $J = k$, and $(w_j - 1)^+ = w_j - 1$ for $j < k$, which gives the formula. Finally $\eta = r(\sigma) \leq b - 1 - \sigma = \rho_1 + \rho_2 \leq 2 \rho_2$. $\blacksquare$
+
+For a state at time $t$ along an orbit of the reduced map we write $\Lambda_t = \rho_n$ (its largest deficit) and $\mu_t = \rho_2$.
+
+**Lemma 4.14.** *(Proven.) Let $n = 2k+2 \geq 6$ (so $k \geq 2$) and $b \geq 3$. A run of consecutive bad states along an orbit of the reduced map has length at most $\max(0, H - 2)$.*
+
+*Proof.* Let $\rho$ be bad, with $\Lambda = \rho_n$ and $\mu = \rho_2$, and let $\rho'$ be the next state, with $\Lambda'$ and $\mu'$. We have $\sum_j w_j \leq \rho_n - \rho_3 \leq \Lambda - \mu$, and every $w_j \geq 1$; since $k \geq 2$, each $w_j$ is at most $\Lambda - \mu - 1$. By Lemma 4.13 the entries of $\rho'$ are $w_j - 1$ ($j < k$, twice each), $w_k - 1$, $w_k$, $\eta \leq 2\mu$ and $\rho_2 = \mu$, so
+$$\Lambda' \leq \max(\Lambda - \mu - 1,\ 2\mu).$$
+Also $\rho'$ contains $w_1 - 1$ twice (because $1 < k$) and contains $w_k - 1$ and $w_k$, so its second smallest entry satisfies $\mu' \leq \min(w_1 - 1, w_k)$. Hence
+$$2\mu' \leq w_1 + w_k - 1 \leq \Lambda - \mu - 1.$$
+
+Now suppose the states at times $t$ and $t+1$ are both bad; then $\mu_t, \mu_{t+1} \geq 1$. Applying the first inequality at time $t+1$ and the second at time $t$,
+$$\begin{aligned}\Lambda_{t+2} & \leq \max(\Lambda_{t+1} - \mu_{t+1} - 1,\ 2\mu_{t+1}) \\ & \leq \max(\Lambda_{t+1} - 2,\ \Lambda_t - \mu_t - 1),\end{aligned}$$
+and the right side is at most $\max(\Lambda_t, \Lambda_{t+1}) - 2$. Put $\Lambda^*_t = \max(\Lambda_t, \Lambda_{t+1})$. If the states at times $t$, $t+1$, $t+2$ are bad, this bound applied at $t$ and at $t+1$ gives $\Lambda_{t+2} \leq \Lambda^*_t - 2$ and $\Lambda_{t+3} \leq \max(\Lambda_{t+1}, \Lambda_{t+2}) - 2 \leq \Lambda^*_t - 2$, so $\Lambda^*_{t+2} \leq \Lambda^*_t - 2$.
+
+Let the states at times $t_0, \dots, t_0 + \ell - 1$ be bad, with $\ell \geq 1$. Since $\Lambda^*_{t_0} \leq H$, induction gives $\Lambda_{t_0 + 2i} \leq \Lambda^*_{t_0 + 2i} \leq H - 2i$ whenever $2i \leq \ell - 1$. A bad state has $\Lambda \geq \rho_3 + \sum_j w_j \geq 1 + (2(k-1) + 1) \geq 4$. Take $i = \lfloor (\ell-1)/2 \rfloor$; then $4 \leq H - 2i$ and $\ell \leq 2i + 2 \leq H - 2$. $\blacksquare$
+
+**Lemma 4.15.** *(Proven.) Let $n = 4$ (so $k = 1$) and $b \geq 3$. A run of consecutive bad states along an orbit of the reduced map has length at most $\max(0, 2H - 2) \leq b - 3$.*
+
+*Proof.* Here $\rho = (\rho_1, \rho_2, \rho_3, \rho_4)$, $w = w_1 = \rho_4 - \rho_3$, and for a bad state $w \geq 1$ and $\rho' = \{w - 1, w, \eta, \rho_2\}$. Let the states at times $t$ and $t+1$ be bad, write $\rho$ for the state at time $t$ and $\Lambda = \rho_4$. We claim $\Lambda_{t+2} \leq \Lambda - 1$. Since the state $\rho'$ at time $t+1$ is bad, the state at time $t+2$ is $\{w' - 1, w', \eta', \rho'_2\}$, so $\Lambda_{t+2} = \max(w', \eta', \rho'_2)$, where $w' = \rho'_4 - \rho'_3$ and $\eta'$ is the value of $\eta$ for $\rho'$. We bound the three terms.
+
+- $\rho'_2 \leq w$, because $\rho'$ contains the two entries $w - 1$ and $w$. And $w \leq \Lambda - \rho_3 \leq \Lambda - 1$.
+- $\eta' \leq \rho'_1 + \rho'_2$ (Lemma 4.13), and the sum of the two smallest entries of $\rho'$ is at most the sum of any two of its entries, so $\eta' \leq (w - 1) + \rho_2 = \rho_4 - \rho_3 - 1 + \rho_2 \leq \Lambda - 1$.
+- If $\rho'_4 = \eta$, then $\rho'_3$ is the largest of the other three entries, $\max(w, \rho_2)$, so $w' = \eta - \max(w, \rho_2) \leq \eta - \rho_2 \leq \rho_1 \leq \rho_2 \leq \rho_3 \leq \Lambda - 1$. Otherwise $w' \leq \rho'_4 = \max(w, \rho_2) \leq \Lambda - 1$, since $\rho_2 \leq \rho_3 \leq \Lambda - 1$.
+
+This proves the claim. Let the states at times $t_0, \dots, t_0 + \ell - 1$ be bad, with $\ell \geq 1$. Applying the claim at $t_0, t_0 + 2, \dots$ gives $\Lambda_{t_0 + 2i} \leq H - i$ whenever $2i \leq \ell - 1$. A bad state has $\Lambda = \rho_3 + w \geq \rho_2 + 1 \geq 2$. Take $i = \lfloor (\ell-1)/2 \rfloor$; then $2 \leq H - i$, so $\ell \leq 2i + 2 \leq 2H - 2$. Finally $2H - 2 \leq (b-1) - 2 = b - 3$, which is nonnegative for $b \geq 3$. (For $b = 3, 4$ we have $H = 1$, and no state has $\Lambda \geq 2$, so there are no bad states.) $\blacksquare$
+
+### The theorem for $M_n$
+
+**Theorem 4.16.** *(Proven.) Let $b \geq 3$ and $n \geq 3$, and let $K$ be the rule $M_n$. Under iteration of $K$, every string of length $2n+1$ (leading zeros allowed) that is not a repdigit reaches*
+$$F = (b-1)(b^{n+1} - 1),$$
+*and $K(F) = F$. Repdigits map to $0$. The number of steps is at most:*
+
+- *$H + 3 \leq b/2 + 3$ for $n$ odd;*
+- *$b/2 + 5$ for $n$ even, $n \geq 6$;*
+- *$b + 2$ for $n = 4$.*
+
+*In base $b$, $F$ is the $(n+2)$-digit string $(b-2)(b-1)\cdots(b-1)1$ with $n$ digits $b-1$, written with $n-1$ leading zeros.*
+
+*Proof.* Repdigits map to $0$ by Lemma 4.4. The base-$b$ form of $F$ was computed after Definition 4.6. The string $F$ has state $\tau$: its digit multiset is $\{b-1\}$ together with the pairs $\{b-1-\tau_i, \tau_i\}$ of $\tau$. Every string with state $\tau$ maps to $F$ by Lemma 4.7 ($n$ odd) or Lemma 4.11 ($n$ even), so $F$ is fixed.
+
+Let $y_0$ be a string that is not a repdigit and $y_t = K^t(y_0)$. By Lemmas 4.4 and 4.5, each $y_t$ with $t \geq 1$ has a state $S_t$ (Definition 4.6), and $S_{t+1}$ is the image of $S_t$ under the reduced map. If $S_t = \tau$, then $y_{t+1} = F$ (Lemma 4.7 or 4.11). So it suffices to bound the first $t$ with $S_t = \tau$.
+
+Let $\ell \geq 0$ be the number of bad states at the start of the sequence $S_1, S_2, \dots$, so that $S_1, \dots, S_R$ are bad and $S_{\ell+1}$ is not; $\ell$ is finite by Lemmas 4.10, 4.14 and 4.15. For $n$ odd, $S_{\ell+1}$ has $\rho_1 = 0$, or it has $\rho_1 \geq 1$ and then $S_{\ell+2}$ has $\rho_1 = 0$ (Lemma 4.9). For $n$ even the same holds with $\rho_2$ in place of $\rho_1$ (Lemma 4.13). By Lemma 4.8 or 4.12, $S_t = \tau$ for some $t \leq \ell + 4$, so $y_{\ell+5} = F$. The number of steps is at most $\ell + 5$.
+
+$n$ odd. If $H \geq 2$, Lemma 4.10 gives $\ell \leq H - 2$, so at most $H + 3$ steps. If $H = 1$ (that is, $b = 3$ or $b = 4$), the only state with $\rho_1 \geq 1$ is $(1, \dots, 1)$, which is in case (Z) with $A = b-2$ and has $\rho' = \{0^{[n-1]}, r(b-3)\}$. For $b = 4$ this is $\tau$, since $r(1) = 1$. For $b = 3$ it is the all-zero state, which is in case (Z) with $A = b-1$ and maps to $\tau$ by Lemma 4.8. So if $S_1$ has $\rho_1 = 0$, then $S_3 = \tau$ (Lemma 4.8), and otherwise $S_2 = \tau$ ($b = 4$) or $S_3 = \tau$ ($b = 3$). In all cases $x_4 = F$, which is $H + 3$ steps. Finally $H + 3 \leq (b-1)/2 + 3 < b/2 + 3$.
+
+$n$ even, $n \geq 6$. Lemma 4.14 gives $\ell \leq \max(0, H - 2) \leq H$, so at most $H + 5 \leq b/2 + 5$ steps.
+
+$n = 4$. Lemma 4.15 gives $\ell \leq b - 3$, so at most $b + 2$ steps. $\blacksquare$
+
+For $n$ even, $n \geq 6$, the same argument in fact gives at most $5 + \max(0, H-2) = \max(5, H+3)$ steps, since Lemma 4.14 bounds $\ell$ by $\max(0, H-2)$. The run bounds of Lemmas 4.10 and 4.15, and with them the bound $b + 2$ for $n = 4$, are not sharp in general. *(Computed.)* Iterating the reduced map from every state, for $3 \leq b \leq 40$, the longest run of bad states is at most $3$ for $n = 3$, against $H - 2 = 17$ at $b = 40$; for $n = 4$ it is $H$ or $H - 1$ (for example $4$ at $b = 10$ and $18$ at $b = 40$), against $2H - 2$.
+
+*Remark (the choice of fixed letter).* The value of the fixed letter $s_1$ cancels, but its rank in the sorted order does not: changing one digit of the input can change which digit is the second largest, and so can change the output. The fixed letter cannot be $s_0$ in a rule of this kind. If letter $0$ is the fixed letter and the other $2n$ letters are exchanged in pairs, then $V$ depends only on $s_1, \dots, s_{2n}$, so every string whose last $2n$ letters are equal maps to $0$, for example $9111111$ in base $10$, which is not a repdigit. With $s_1$ fixed, Lemma 4.4 shows that only repdigits map to $0$.
+
+### All lengths at least $6$
+
+**Theorem 4.17.** *(Proven.) Let $b \geq 3$ and $L \geq 6$, and put $h = \lceil L/2 \rceil$. Take the rule $R_h$ of Section 3 if $L = 2h$, and the rule $M_{h-1}$ of Definition 4.3 if $L = 2h - 1$. In both rules place $q$ is exchanged with place $q + h$ for every $q$ with $q + h < L$; for odd $L$ the middle place $h - 1$ has no partner and holds $s_1$ in both words. Under iteration of this rule, every string of length $L$ that is not a repdigit reaches*
+$$F = (b-1)(b^h - 1),$$
+*and $F$ is fixed. Repdigits map to $0$. In base $b$, $F$ is the $(h+1)$-digit string $(b-2)(b-1)\cdots(b-1)1$ with $h - 1$ digits $b-1$, written as a string of length $L$ with $L - h - 1$ leading zeros.*
+
+*Proof.* For $L = 2h$ we have $h \geq 3$, and this is the even-length theorem for $R_h$ (Theorem 3.3), with $n = h$. Its place permutation exchanges $q$ and $q + h$ for $0 \leq q \leq h-1$, which are all $q$ with $q + h < 2h$.
+
+For $L = 2h - 1$ we have $L \geq 7$, so $n = h - 1 \geq 3$, and this is Theorem 4.16: its endpoint is $(b-1)(b^{n+1} - 1) = (b-1)(b^h - 1)$, written with $n - 1 = L - h - 1$ leading zeros. The place permutation of $M_n$ exchanges $q$ and $q + n + 1 = q + h$ for $0 \leq q \leq n - 1 = h - 2$, which are all $q$ with $q + h < 2h - 1$, and fixes place $n = h - 1$. $\blacksquare$
+
+The two lengths $2h - 1$ and $2h$ share the endpoint. In base $10$, length $6$ gives $8991$, lengths $7$ and $8$ give $89991$, lengths $9$ and $10$ give $899991$, and lengths $11$ and $12$ give $8999991$. For even $L$ the step bounds are those of Theorem 3.3. For odd $L$ they are those of Theorem 4.16 applied with $n = h - 1$, whose parity is opposite to that of $h$. For example, $L = 7$ has $n = 3$ and the bound $H + 3$, and $L = 9$ has $n = 4$ and the bound $b + 2$. For odd $L$ every one of these bounds grows with $b$, so this proof does not bound the number of steps independently of the base.
+
+## A finite certificate and a lifting theorem
+
+This section treats a whole family of rules at once: every rule that swaps the two halves of a word, with any pairing of the letters. For every such rule in any base, an image is $(b^n - 1)m$ and is determined by a short list of deficits. In an even base this turns universality into a check on a table of $\binom{n+H}{n}$ states, and a subclass of these rules (class C) lifts from length $2n$ to every longer even length, with explicit endpoints. The section is self-contained. Section 3 treats one rule, $R_n$, in every base $b \ge 3$, odd bases included; this section treats every half-swap rule, in even bases, one base at a time.
+
+### The setting: half-swap rules
+
+Fix a base $b \ge 2$ and $n \ge 1$. We work with strings of $2n$ digits, leading zeros allowed. Places are counted from the least significant digit, which is place $0$. The digits of a string, sorted descending, are the letters
+$$s_0 \ge s_1 \ge \dots \ge s_{2n-1}.$$
+The rules below read a string only through its letters, so we identify a string with its sorted digits when we apply a rule.
+
+**Definition 5.1.** A *half-swap rule* on $2n$ digits is a partition of the index set $\{0, 1, \dots, 2n-1\}$ into $n$ ordered pairs $(P_q, M_q)$, $q = 0, \dots, n-1$. *Word 1* is the $2n$-digit string with letter $s_{P_q}$ at place $q+n$ and letter $s_{M_q}$ at place $q$, for every $q$; *word 2* is the string with $s_{M_q}$ at place $q+n$ and $s_{P_q}$ at place $q$. The rule is
+$$K(s) = |\,\text{word 1} - \text{word 2}\,|,$$
+written as a $2n$-digit string. Put
+$$V(s) = \sum_{q=0}^{n-1} b^q \,(s_{P_q} - s_{M_q}), \qquad m = |V(s)|.$$
+The rule is *universal with endpoint $F$* if $F \ne 0$, $K(F) = F$, and every $2n$-digit string that is not a repdigit reaches $F$ under iteration of $K$. Here "reaches" allows zero steps: $F$ reaches itself.
+
+This repeats Definition 3.1, and "universal" is used as in Definition 2.2. Every letter lies in exactly one pair, so word 1 and word 2 are both rearrangements of $s$, and every letter moves exactly $n$ places. Reversing every pair at once exchanges word 1 and word 2, replaces $V$ by $-V$, and gives the same rule $K$. Reversing only some of the pairs changes $K$ in general. An *orientation* of a rule is the choice between its list of pairs and the global reversal of that list (all pairs reversed together), which gives the same $K$; it is not a separate choice for each pair. The orientation matters in Definitions 5.10 and 5.11: class C is a condition on an oriented rule, and lifting the reversed orientation gives a different rule, which need not be universal. In letter notation ($\mathtt{A} = s_0$, $\mathtt{B} = s_1$, and so on) a rule is written as word 1 minus word 2, most significant place first. For example, $\mathtt{DHFBIJGECA} - \mathtt{JGECADHFBI}$ is the rule on $10$ digits with pairs $(8,0), (1,2), (5,4), (7,6), (3,9)$ at places $q = 0, 1, 2, 3, 4$.
+
+Lemmas 5.2 and 5.3 are Lemma 3.4 for a general pairing.
+
+**Lemma 5.2 (factorization).** *(Proven.)* For every half-swap rule and every string $s$, $K(s) = (b^n - 1)\,m$ with $m = |V(s)|$, and $0 \le m \le b^n - 1$.
+
+*Proof.* Pair $q$ contributes $b^{q+n} s_{P_q} + b^q s_{M_q}$ to word 1 and $b^{q+n} s_{M_q} + b^q s_{P_q}$ to word 2. So
+$$\text{word 1} - \text{word 2} = \sum_q (b^{q+n} - b^q)(s_{P_q} - s_{M_q}) = (b^n - 1)\,V(s).$$
+Each difference $d_q = s_{P_q} - s_{M_q}$ lies in $[-(b-1), b-1]$, so $m \le (b-1)(1 + b + \dots + b^{n-1}) = b^n - 1$. Hence $K(s) \le (b^n-1)^2 < b^{2n}$, which is a $2n$-digit string. $\blacksquare$
+
+**Lemma 5.3 (zero lemma).** *(Proven.)* $V(s) = 0$ if and only if $s_{P_q} = s_{M_q}$ for every $q$.
+
+*Proof.* If every $d_q = s_{P_q} - s_{M_q}$ is $0$, then $V = 0$. Otherwise let $q$ be the lowest index with $d_q \ne 0$. Then $V \equiv b^q d_q \pmod{b^{q+1}}$, and $b^q d_q \not\equiv 0 \pmod{b^{q+1}}$ because $0 < |d_q| \le b-1$. So $V \ne 0$. $\blacksquare$
+
+**Definition 5.4.** For $j = 0, \dots, 2n-2$, the rule *covers gap $j$* (the gap between letters $s_j$ and $s_{j+1}$) if some pair satisfies
+$$\min(P_q, M_q) \le j < \max(P_q, M_q).$$
+The rule *covers every gap* if it covers gap $j$ for every $j = 0, \dots, 2n-2$.
+
+**Proposition 5.5 (gap cover).** *(Proven.)* In any base $b \ge 2$: $K(s) = 0$ holds only for repdigits $s$ if and only if the rule covers every gap.
+
+*Proof.* Suppose the rule covers every gap and $K(s) = 0$. Then $V(s) = 0$, so by Lemma 5.3 every pair has equal letters. Take a gap $j$, covered by a pair with indices $u \le j < v$. Then $s_u = s_v$, and since $s_u \ge s_j \ge s_{j+1} \ge s_v$, we get $s_j = s_{j+1}$. This holds for every gap, so all letters are equal and $s$ is a repdigit.
+
+Conversely, suppose gap $j$ is not covered. Let $s$ consist of $j+1$ digits $1$ followed by $2n-j-1$ digits $0$, so that $s_i = 1$ for $i \le j$ and $s_i = 0$ for $i > j$. It is not a repdigit, since $1 \le j+1 \le 2n-1$. Every pair lies on one side of the gap (both indices $\le j$ or both $> j$), so every pair has equal letters and $V(s) = 0$, that is, $K(s) = 0$. $\blacksquare$
+
+Repdigits always map to $0$, by Lemma 5.3, and $K(0) = 0$.
+
+The link with Section 2 is as follows. For a half-swap rule, $c_{P_q} = (b^n - 1)\, b^q$ and $c_{M_q} = -(b^n - 1)\, b^q$, so the gap weight is
+$$C_j = (b^n - 1) \sum_{q \,:\, \text{pair } q \text{ covers gap } j} \pm\, b^q,$$
+with sign $+$ when $P_q \le j < M_q$ and $-$ when $M_q \le j < P_q$; a pair that does not cover gap $j$ has both letters on the same side and contributes $0$. A signed sum of distinct powers of $b$ is $0$ only when it is empty (look at the lowest power, as in Lemma 5.3). So $C_j = 0$ exactly when gap $j$ is uncovered, and the "uncovered gap" half of Proposition 5.5 is Lemma 2.3(c).
+
+The next lemma is Lemma 3.6 for a general pairing.
+
+**Lemma 5.6 (shape of an image).** *(Proven.)* Let $s$ be a string with $m = |V(s)| \ge 1$, and put $N = m - 1$, written with $n$ digits $x_{n-1} \dots x_0$ (leading zeros allowed). Then
+$$K(s) = N\, b^n + (b^n - 1 - N),$$
+so the $2n$ digits of $K(s)$ are $x_{n-1}, \dots, x_0$ followed by their complements $b-1-x_{n-1}, \dots, b-1-x_0$. Define the *deficit* $r(x) = \min(x, b-1-x)$ and let $\rho_1 \le \dots \le \rho_n$ be the deficits $r(x_0), \dots, r(x_{n-1})$ in increasing order. Then $0 \le \rho_i \le H = \lfloor (b-1)/2 \rfloor$, and the letters of $K(s)$ are
+$$s_{i-1} = b - 1 - \rho_i, \qquad s_{2n-i} = \rho_i \qquad (i = 1, \dots, n).$$
+
+*Proof.* By Lemma 5.2, $1 \le m \le b^n - 1$, so $0 \le N \le b^n - 2$ and $N$ has $n$ digits. Then $K(s) = (b^n - 1)(N + 1) = N b^n + (b^n - 1 - N)$. Since $\sum_i (b-1-x_i)\, b^i = (b^n - 1) - N$ and each $b-1-x_i$ is a digit, the number $b^n - 1 - N$ has the $n$ digits $b-1-x_i$ at places $i = 0, \dots, n-1$, and $N b^n$ occupies places $n, \dots, 2n-1$. This gives the digits of $K(s)$.
+
+The multiset of these $2n$ digits is the union over $i$ of $\{x_i, b-1-x_i\} = \{r(x_i), b-1-r(x_i)\}$, that is, $\{\rho_1, \dots, \rho_n\}$ together with $\{b-1-\rho_1, \dots, b-1-\rho_n\}$. Each $\rho_i \le H \le (b-1)/2$, so every $b - 1 - \rho_j \ge (b-1)/2 \ge \rho_i$. Hence the $n$ largest letters are $b-1-\rho_1 \ge \dots \ge b-1-\rho_n$ and the $n$ smallest are $\rho_n \ge \dots \ge \rho_1$, which is the stated formula. $\blacksquare$
+
+We call $\rho = (\rho_1 \le \dots \le \rho_n)$ the *state* of the image $K(s)$. A state is a multiset of $n$ values in $\{0, \dots, H\}$, so there are $\binom{n+H}{n}$ states. For a state $\rho$, the *string of $\rho$*, written $s^\rho$, is the string with letters $s^\rho_{i-1} = b-1-\rho_i$ and $s^\rho_{2n-i} = \rho_i$ for $i = 1, \dots, n$. Two facts follow from Lemma 5.6. First, an image with state $\rho$ has the same letters as $s^\rho$, so its own image is $K(s^\rho)$: the state determines the next image. Second, the state of an image can be read off its letters, as $\rho_i = s_{2n-i}$; so two images with the same letters have the same state.
+
+### The small-table criterion (b even)
+
+From here to the end of the section the base $b$ is even, so $H = (b-2)/2$.
+
+**Lemma 5.7.** *(Proven.)* Let $b$ be even. For every state $\rho$, the string $s^\rho$ is not a repdigit.
+
+*Proof.* $s^\rho_0 = b - 1 - \rho_1 \ge b - 1 - (b-2)/2 = b/2$, while $s^\rho_{2n-1} = \rho_1 \le (b-2)/2 < b/2$. $\blacksquare$
+
+**Definition 5.8.** Let $b$ be even. For a half-swap rule and a state $\rho$ with $V(s^\rho) \ne 0$, let $T(\rho)$ be the state of the image $K(s^\rho)$. If the rule covers every gap, then $V(s^\rho) \ne 0$ for every state (Lemma 5.7 and Proposition 5.5), so $T$ is a map from the set of states to itself. A state $\tau$ is an *attracting fixed state* of $T$ if $T(\tau) = \tau$ and every state reaches $\tau$ under iteration of $T$.
+
+An attracting fixed state is the only fixed state of $T$, and $T$ then has no cycle of length $2$ or more, since every orbit ends at $\tau$. In this section $\tau$ always denotes the attracting fixed state of the rule at hand; for $R_n$ it is $(0, \dots, 0, 1)$ (Definition 3.5), but for other rules it can be a different state (Example 5.16).
+
+**Theorem 5.9 (small-table criterion).** *(Proven.)* Let $b$ be even. A half-swap rule on $2n$ digits is universal if and only if
+
+(a) it covers every gap, and
+
+(b) its map $T$ on the $\binom{n+H}{n}$ states has an attracting fixed state $\tau$.
+
+Condition (b) makes sense once (a) holds, since $T$ is then defined on every state (Definition 5.8). The endpoint is then
+$$F = (b^n - 1)\,|V(s^\tau)|.$$
+
+*Proof.* First a remark used in both directions. Let $s$ be a string with $K(s) \ne 0$, and let $\rho$ be the state of $K(s)$. Then for every $k \ge 0$, the image $K^{k+1}(s)$ is nonzero and has state $T^k(\rho)$, provided $T$ is defined along the way. For $k = 0$ this is the definition of $\rho$. If $K^{k+1}(s)$ has state $T^k(\rho)$, its letters are those of $s^{T^k(\rho)}$, so $K^{k+2}(s) = K(s^{T^k(\rho)})$, whose state is $T^{k+1}(\rho)$ by Definition 5.8.
+
+Suppose (a) and (b). Let $G = K(s^\tau)$. By (a), Lemma 5.7 and Proposition 5.5, $G \ne 0$, and $G = (b^n-1)|V(s^\tau)|$ by Lemma 5.2. The state of $G$ is $T(\tau) = \tau$, so $G$ has the letters of $s^\tau$ and $K(G) = K(s^\tau) = G$. Now let $s$ be a string that is not a repdigit. By (a) and Proposition 5.5, $K(s) \ne 0$; let $\rho$ be its state. By (b) there is $k$ with $T^k(\rho) = \tau$, and by the remark $K^{k+1}(s)$ has state $\tau$, so $K^{k+2}(s) = K(s^\tau) = G$. Hence the rule is universal with endpoint $G$.
+
+Conversely, suppose the rule is universal with endpoint $F$. If some gap were not covered, Proposition 5.5 would give a string $s$, not a repdigit, with $K(s) = 0$; since $K(0) = 0$, the orbit of $s$ stays at $0 \ne F$, a contradiction. So (a) holds, and $T$ is defined on every state. Since $F = K(F) \ne 0$, $F$ is an image; let $\tau$ be its state. The letters of $F$ are those of $s^\tau$, so $K(s^\tau) = K(F) = F$, and $T(\tau)$, the state of $K(s^\tau)$, is $\tau$. Also $F = K(s^\tau) = (b^n - 1)|V(s^\tau)|$. Now let $\rho$ be any state. By Lemma 5.7, $s^\rho$ is not a repdigit, so $K^k(s^\rho) = F$ for some $k \ge 0$. If $k = 0$, then $s^\rho$ and $F$ have the same letters, so $\rho = \tau$. If $k \ge 1$, then $K(s^\rho)$ has state $T(\rho)$, so by the remark $K^k(s^\rho)$ has state $T^k(\rho)$; it equals $F$, so $T^k(\rho) = \tau$. Thus every state reaches $\tau$, which is (b). $\blacksquare$
+
+Theorem 5.9 replaces a complete enumeration of all digit multisets of length $2n$ by a table of $T$ on $\binom{n+H}{n}$ states, which a reader can check line by line. In base $10$ ($H = 4$) the table has $70$ states at $8$ digits, $126$ at $10$, $210$ at $12$, $330$ at $14$ and $495$ at $16$, against $24{,}310$, $92{,}378$ and $293{,}930$ digit multisets at $8$, $10$ and $12$ digits.
+
+*Remark (base 2).* The results of this section hold in base $2$. There $H = 0$, so there is exactly one state, $(0, \dots, 0)$, whose string is $n$ ones followed by $n$ zeros. If the rule covers every gap, $T$ maps this state to itself, so condition (b) of Theorem 5.9 holds automatically and the criterion reduces to gap cover: in base $2$ a half-swap rule is universal if and only if it covers every gap. (Computed: this was also confirmed by complete enumeration of all half-swap rules for $n = 2, 3, 4, 5$; every rule that covers every gap is universal, and no other rule is.)
+
+### The lifting theorem (b even)
+
+**Definition 5.10 (class C).** Let $b$ be even. An oriented half-swap rule on $2n$ digits is *in class C* if
+
+(S) $V(s^\rho) > 0$ for every state $\rho$;
+
+(U) $T$ has an attracting fixed state $\tau$;
+
+(C1) for every state $\rho$ with $\rho_1 \ge 1$, the state $T(\rho)$ contains a $0$.
+
+A rule is in class C if one of its two orientations is. Its *seed data* are $\tau$, $m^* = V(s^\tau)$ and $N^* = m^* - 1$, written with $n$ digits. Here $m^*$ is a value of $V$, not of $|V|$; it is positive by (S), so $m^* = |V(s^\tau)|$.
+
+By (S), $V(s^\rho) \ne 0$ on every state, so $T$ is defined on every state (Definition 5.8) even if the rule does not cover every gap. Class C does not ask for gap cover, and Theorem 5.13 does not need it: a class-C rule that fails gap cover is not universal itself (Theorem 5.9), but its lifts are. Condition (C1) says: if an image has no digit $0$ and no digit $b-1$ (all its deficits are at least $1$), then the next image has a $0$ and a $b-1$.
+
+**Definition 5.11 (lifts).** Let $R$ be an oriented half-swap rule on $2n$ digits with pairs $(P_q, M_q)$. Its two *lifts* are oriented rules on $2n+2$ digits, with letters $s_0, \dots, s_{2n+1}$:
+
+* *top lift*: for $q = 0, \dots, n-1$ the pair at place $q$ is $(P_q + 1, M_q + 1)$, and the pair at place $n$ is $(0, 2n+1)$;
+* *bottom lift*: for $q = 0, \dots, n-1$ the pair at place $q+1$ is $(P_q + 1, M_q + 1)$, and the pair at place $0$ is $(2n+1, 0)$.
+
+In both lifts the new largest letter $s_0$ and the new smallest letter $s_{2n+1}$ form the new pair, and the old rule acts on the $2n$ letters in between. In letter notation, the top lift puts the new largest letter first and the new smallest letter in the middle of word 1. The lifts depend on the orientation of $R$: the lifts of the reversed list of pairs are different rules, and they need not be universal. (Computed: for the seed of Example 5.16, neither lift of the reversed orientation is universal.)
+
+In the next lemma and theorem, primes denote objects of the lifted rule: $T'$, $V'$, $N'$, $\tau'$, $m'^*$, $N'^*$. (Section 3 used a prime for the next state, $\rho'$; here the next state is written $T(\rho)$.) For a state $\rho$ of the old rule we write $m_\rho = V(s^\rho)$ and $N_\rho = m_\rho - 1$, with $n$ digits; $m_\rho$ is a value of $V$, positive under (S).
+
+**Lemma 5.12 (one step of a lift).** *(Proven.)* Let $b$ be even, let $R$ be an oriented rule on $2n$ digits satisfying (S), and let $R'$ be one of its lifts. Let $\mu = (\mu_1 \le \dots \le \mu_{n+1})$ be a state on $2n+2$ digits. Put $x = \mu_1$, $\rho = (\mu_2, \dots, \mu_{n+1})$ and $A = b - 1 - 2x$. Then $1 \le A \le b-1$, $V'(s^\mu) > 0$, and:
+
+* top lift: $V'(s^\mu) = b^n A + m_\rho$, and $N'$ is the digit $A$ followed by the $n$ digits of $N_\rho$;
+* bottom lift: $V'(s^\mu) = b\, m_\rho - A$, and $N'$ is the $n$ digits of $N_\rho$ followed by the digit $b-1-A$.
+
+In both cases
+$$T'(\mu) = \{\varphi(\mu_1)\} \uplus T(\mu_2, \dots, \mu_{n+1}), \qquad \varphi(x) = r(b - 1 - 2x), \tag{$*$}$$
+where $\uplus$ is union of multisets. Moreover $\varphi(0) = 0$.
+
+*Proof.* By the definition of $s^\mu$, its letters are $s^\mu_{i-1} = b - 1 - \mu_i$ and $s^\mu_{2n+2-i} = \mu_i$ for $i = 1, \dots, n+1$. So $s^\mu_0 = b-1-x$ and $s^\mu_{2n+1} = x$. The inner letters $t_j = s^\mu_{j+1}$, $j = 0, \dots, 2n-1$, satisfy
+$$t_{i-1} = s^\mu_i = b - 1 - \mu_{i+1} = b-1-\rho_i, \qquad t_{2n-i} = s^\mu_{2n+1-i} = \mu_{i+1} = \rho_i,$$
+for $i = 1, \dots, n$. So the inner letters are exactly the letters of $s^\rho$ on $2n$ digits. The old pairs, shifted by one letter, read these inner letters, so their contribution is computed from $s^\rho$. Also $A = s^\mu_0 - s^\mu_{2n+1}$. Since $0 \le x \le H = (b-2)/2$, we have $1 \le A \le b-1$ (and $A$ is odd). By (S) and Lemma 5.2, $1 \le m_\rho \le b^n - 1$, so $0 \le N_\rho \le b^n - 2$ has $n$ digits, and by Lemma 5.6 the sorted deficits of the digits of $N_\rho$ form the state of $K(s^\rho)$, which is $T(\rho)$.
+
+Top lift. The old pairs stay at places $0, \dots, n-1$ and contribute $m_\rho$; the new pair at place $n$ contributes $b^n (s^\mu_0 - s^\mu_{2n+1}) = b^n A$. So $V'(s^\mu) = b^n A + m_\rho > 0$, hence $m' = b^n A + m_\rho$ and
+$$N' = m' - 1 = b^n A + N_\rho.$$
+Since $0 \le N_\rho < b^n$ and $A$ is a digit, $N'$ is the digit $A$ followed by the $n$ digits of $N_\rho$.
+
+Bottom lift. The old pairs move to places $1, \dots, n$ and contribute $b\, m_\rho$; the new pair $(2n+1, 0)$ at place $0$ contributes $s^\mu_{2n+1} - s^\mu_0 = -A$. So $V'(s^\mu) = b\, m_\rho - A \ge b - (b-1) > 0$, hence $m' = b\, m_\rho - A$ and
+$$N' = m' - 1 = b\,(m_\rho - 1) + (b - 1 - A),$$
+with $0 \le b-1-A \le b-2$. So $N'$ is the $n$ digits of $N_\rho$ followed by the digit $b-1-A$. (Also $N' \le b(b^n - 2) + b - 2 < b^{n+1}$, so $N'$ has $n+1$ digits.)
+
+In both cases the digits of $N'$ are the digits of $N_\rho$ and one more digit, $A$ or $b-1-A$, and $r(A) = r(b-1-A)$. So the sorted deficits of $N'$, which form $T'(\mu)$ by Lemma 5.6, are $T(\rho)$ together with $r(A) = \varphi(x)$. Finally $\varphi(0) = r(b-1) = \min(b-1, 0) = 0$. $\blacksquare$
+
+**Theorem 5.13 (lifting theorem).** *(Proven.)* Let $b$ be even and let $R$ be a rule on $2n$ digits in class C, oriented so that (S), (U), (C1) hold, with seed data $\tau$, $m^*$, $N^*$. Then each lift $R'$ of $R$ (Definition 5.11) covers every gap, is in class C on $2n+2$ digits with the orientation of Definition 5.11, and is universal. Its attracting fixed state is $\tau' = \{0\} \uplus \tau$, and its seed data are:
+
+* top lift: $m'^* = (b-1)\, b^n + m^*$, that is, $N'^*$ is the digit $b-1$ followed by $N^*$;
+* bottom lift: $m'^* = b\, m^* - (b-1)$, that is, $N'^* = b N^*$ is $N^*$ followed by the digit $0$.
+
+The endpoint of $R'$ is $(b^{n+1} - 1)\, m'^*$.
+
+*Proof.* We check the three conditions of Definition 5.10 for $R'$, then gap cover.
+
+(S). By Lemma 5.12, $V'(s^\mu) > 0$ for every state $\mu$.
+
+(C1). Let $\mu$ be a state with $\mu_1 \ge 1$. Then $\rho = (\mu_2, \dots, \mu_{n+1})$ has $\rho_1 = \mu_2 \ge \mu_1 \ge 1$, so $T(\rho)$ contains a $0$ by (C1) for $R$, and so does $T'(\mu)$ by $(*)$.
+
+(U). Put $\tau' = \{0\} \uplus \tau$. Its smallest element is $0$, and removing it leaves $\tau$; so by $(*)$ and $\varphi(0) = 0$, $T'(\tau') = \{0\} \uplus T(\tau) = \tau'$. Now take any state $\mu$. If $\mu_1 \ge 1$, then $T'(\mu)$ contains a $0$, as just shown; so after at most one step the smallest deficit is $0$. Suppose $\mu_1 = 0$, and write $\mu = \{0\} \uplus \rho$. We show by induction on $k \ge 0$ that $T'^k(\mu) = \{0\} \uplus T^k(\rho)$. For $k = 0$ this is the definition. If $T'^k(\mu) = \{0\} \uplus T^k(\rho)$, its smallest element is $0$ and removing one copy of $0$ leaves $T^k(\rho)$, so $(*)$ gives $T'^{k+1}(\mu) = \{\varphi(0)\} \uplus T^{k+1}(\rho) = \{0\} \uplus T^{k+1}(\rho)$. By (U) for $R$ there is $k$ with $T^k(\rho) = \tau$, and then $T'^k(\mu) = \tau'$. So every state reaches $\tau'$.
+
+Gap cover. The new pair has indices $0$ and $2n+1$, so it covers every gap $j = 0, \dots, 2n$.
+
+By Theorem 5.9, $R'$ is universal with endpoint $(b^{n+1}-1)\,|V'(s^{\tau'})| = (b^{n+1}-1)\, m'^*$. At the state $\tau'$ we have $x = 0$, $A = b-1$ and $\rho = \tau$, so $m_\rho = m^*$. Lemma 5.12 gives, for the top lift, $m'^* = (b-1)\,b^n + m^*$ and $N'^* = (b-1)\,b^n + N^*$, the digit $b-1$ followed by $N^*$; for the bottom lift, $m'^* = b\, m^* - (b-1)$ and $N'^* = b\,m^* - b = b N^*$, which is $N^*$ followed by $0$. $\blacksquare$
+
+**Corollary 5.14.** *(Proven.)* Let $b$ be even and let $R$ be a rule on $2n$ digits in class C, oriented so that (S), (U), (C1) hold, with seed data $N^*$. Applying $i$ top lifts and $j$ bottom lifts, in any order, with $i + j \ge 1$, gives a rule on $2(n+i+j)$ digits that is in class C and universal. Its endpoint $F$ is $N$ followed by its digit complement, where
+$$N = (b-1)^i \; N^* \; 0^j,$$
+that is, $i$ digits $b-1$, then the $n$ digits of $N^*$, then $j$ zeros. In particular, a rule in class C that covers every gap is universal itself (Theorem 5.9), and it yields a universal rule at every longer even length.
+
+*Proof.* By Theorem 5.13 each lift is again in class C, so the lifts can be iterated, and each lifted rule is universal. By the same theorem, a top lift prepends the digit $b-1$ to $N^*$ and a bottom lift appends the digit $0$; these two operations on digit strings commute, so after $i$ top and $j$ bottom lifts in any order the seed data are $N = (b-1)^i N^* 0^j$, with $m = N + 1$. The endpoint is $(b^{n+i+j} - 1)\, m$, and by Lemma 5.6 its digits are those of $N$ followed by their complements. The last sentence follows from (U) and Theorem 5.9. $\blacksquare$
+
+**Proposition 5.15 (step count).** *(Proven.)* Let $b$ be even and let $R$ be a rule on $2n$ digits in class C, oriented so that (S), (U), (C1) hold, and suppose every state of $R$ reaches $\tau$ in at most $D$ steps of $T$. Apply $i$ top lifts and $j$ bottom lifts in any order, where either $i + j \ge 1$, or $i + j = 0$ and $R$ covers every gap. Then every string that is not a repdigit reaches the endpoint $F$ of the resulting rule in at most $D + i + j + 2$ applications of $K$.
+
+The condition on $i + j$ is needed: a class-C rule that misses a gap sends some non-repdigit to $0$ (Proposition 5.5), so it has no endpoint at all.
+
+*Proof.* The resulting rule covers every gap: by Theorem 5.13 if $i + j \ge 1$, by hypothesis if $i + j = 0$. So every non-repdigit has a nonzero image (Proposition 5.5), and the rule is universal by Corollary 5.14 if $i + j \ge 1$ and by Theorem 5.9 if $i + j = 0$. For one lift, the proof of (U) in Theorem 5.13 shows that a state $\mu$ with $\mu_1 = 0$ reaches $\tau'$ in at most $D$ steps of $T'$ (since $T'^k(\mu) = \{0\} \uplus T^k(\rho)$), and a state with $\mu_1 \ge 1$ reaches a state with smallest element $0$ in one step. So every state of the lift reaches $\tau'$ in at most $D + 1$ steps. By induction, after $i + j$ lifts every state reaches the attracting fixed state in at most $D + i + j$ steps. For a non-repdigit string $s$, $K(s)$ has some state $\rho$ (one application); by the remark in the proof of Theorem 5.9, after at most $D + i + j$ further applications the image has the attracting fixed state as its state. Such an image has the letters of $F$ but need not equal $F$, so one more application may be needed. In total at most $D + i + j + 2$ applications. $\blacksquare$
+
+**Example 5.16 (base 10).** *(The seed table is Computed; the lifted rules and endpoints then follow by Theorem 5.13 and Corollary 5.14, Proven.)* The rule $\mathtt{DHFBIJGECA} - \mathtt{JGECADHFBI}$ on $10$ digits has pairs $(P_q, M_q) = (8,0), (1,2), (5,4), (7,6), (3,9)$ at places $q = 0, \dots, 4$, so
+$$\begin{aligned}
+V &= (s_8 - s_0) + 10\,(s_1 - s_2) + 10^2 (s_5 - s_4) \\
+  &\quad + 10^3 (s_7 - s_6) + 10^4 (s_3 - s_9).
+\end{aligned}$$
+It covers every gap: the pair $(8,0)$ covers gaps $0$ to $7$ and the pair $(3,9)$ covers gaps $3$ to $8$. Its table of $T$ on the $126$ states satisfies (S), (U) and (C1) with this orientation, with $\tau = (0,0,1,2,3)$, and every state reaches $\tau$ in at most $9$ steps. At $\tau$ the letters are $9,9,8,7,6,3,2,1,0,0$, so
+$$m^* = -9 + 10 - 300 - 1000 + 70000 = 68701,$$
+$N^* = 68700$ (whose deficits $3,1,2,0,0$ sort to $\tau$), and the endpoint is
+$$F = 99999 \times 68701 = 6870031299.$$
+By Theorem 5.13 the top lift $\mathtt{AEIGCJLKHFDB} - \mathtt{LKHFDBAEIGCJ}$ is universal on $12$ digits with endpoint $968700031299$, and the bottom lift $\mathtt{EIGCJLKHFDBA} - \mathtt{KHFDBAEIGCJL}$ is universal with endpoint $687000312999$. By Corollary 5.14, two top lifts give $99687000031299$ at $14$ digits, two bottom lifts give $68700003129999$, and one of each, in either order, gives $96870000312999$ (the two orders give different rules with the same endpoint). In general the endpoints are $9^i\, 68700\, 0^j$ followed by its complement, at $2(5+i+j)$ digits.
+
+### Limits
+
+* *Shape of the endpoints.* By Lemmas 5.2 and 5.6, every nonzero image of a half-swap rule, and so every endpoint, is a multiple of $b^n - 1$ of the form $N$ followed by its digit complement. Fixed points of any other shape are out of reach of this section. For example, Kaprekar's constant $6174$ at $4$ digits ($n = 2$) is not of this form: the block $61$ would have to be followed by its complement $38$, and $6138 \ne 6174$. So $6174$ is not the endpoint of any half-swap rule on $4$ digits in base $10$.
+* *Seeds.* Seeds are found by search. There is no known recipe that produces a class-C rule for a given $N^*$. The lifts only add digits $b-1$ on the left of $N^*$ and digits $0$ on the right, so the endpoints reached from one seed form the family $(b-1)^i N^* 0^j$ and nothing else.
+* *Odd bases.* Theorem 5.9, Definition 5.10, Lemma 5.12, Theorem 5.13 and their consequences are stated and proved for even $b$ only. Evenness enters in one place: $H = (b-2)/2 < b/2$, which gives Lemma 5.7 (the string of a state is never a repdigit) and the bound $1 \le A \le b-1$ in Lemma 5.12. For odd $b$ two things go wrong. First, put $c = (b-1)/2$. The state with every $\rho_i = c$ has as its string the repdigit $c^{2n}$, which is its own mirror image, so Lemma 5.7 fails. On that state $V = 0$ for every rule (Lemma 5.3), so $T$ is not defined there, even for a rule that covers every gap. Second, the first image of a non-repdigit can be this repdigit: its value is $(b^n - 1)(b^n + 1)/2$, so this happens exactly when $m = (b^n + 1)/2$, and the repdigit then maps to $0$. It does happen for some rules: in base $3$ the rule $\mathtt{DABC} - \mathtt{BCDA}$ sends the string with digits $2, 2, 1, 0$ to $|25 - 65| = 40$, which is $1111$ in base $3$. (Lemma 3.8 excludes this for $R_n$.) As a result, the direction "universal implies (a) and (b)" of Theorem 5.9 fails as stated in odd bases, because $T$ is not defined on every state, while universal half-swap rules do exist in odd bases (Theorem 3.3). A criterion for odd bases would have to exclude $m = (b^n + 1)/2$ and restrict $T$ to the states other than $(c, \dots, c)$; we have not proved one. Also condition (S) of Definition 5.10 can never hold in an odd base, so class C as defined is empty there. Lemmas 5.2, 5.3, 5.6 and Proposition 5.5 hold in every base.
+
+## Computations
+
+This section collects the machine results. Each is **Computed**: a finite enumeration, complete unless the word "sampled" appears. None is used in a proof in Sections 3 to 5; they test the proofs and describe the family of Section 5 in base $10$. Scripts and outputs are linked from the project page given in Methods and provenance.
+
+### Tests of Theorems 3.3 and 4.16
+
+The rules $R_n$ and $M_n$ were coded from Definitions 3.2 and 4.3 as printed and run on every digit multiset of the given length.
+
+| rule | lengths | bases | result |
+|---|---|---|---|
+| $R_n$, $n = 3, 4, 5, 6$ | $6, 8, 10, 12$ | $3, 4, 5, 7, 10$ | all reach $(b-1)(b^n-1)$ |
+| $M_n$, $n = 3, 4, 5$ | $7, 9, 11$ | $3, 4, 5, 7, 10$ | all reach $(b-1)(b^{n+1}-1)$ |
+
+The largest case is $293{,}930$ multisets ($n = 6$, $b = 10$). The most steps observed in base $10$ are $6, 5, 4, 4$ for $R_3, \dots, R_6$ and $5, 7, 4$ for $M_3, M_4, M_5$. The reduced maps of Sections 3 and 4 (the formulas for $V$ and for the next state in cases (G) and (Z)) agree with the direct rule on every state for $n = 3$ to $6$ (even lengths) and $n = 3$ to $8$ (odd lengths) in every base from $3$ to $12$. Iterating the reduced maps from every state reaches $\tau$ in all bases tried: for $R_3$ in bases $3$ to $201$, with at most $12$ reduced steps and a longest bad run of $9$ (at $b = 199$), against the proved bound $(b+7)/2 = 103$; for $M_n$ in bases $3$ to $40$ ($n = 3, 4, 5$), $3$ to $32$ ($n = 6$), $3$ to $26$ ($n = 7$), and $3$ to $22$ ($n = 8$). No bad run exceeded its proved bound. Counting from an arbitrary state, which need not be the first image of a string, the step count $H + 3$ of Theorem 4.16 ($n$ odd) is attained at $b = 3$ and $b = 5$, and the run bound $2H - 2$ of Lemma 4.15 at $b = 5$; over all strings the most steps for $M_3$ are $3$ and $4$ in these two bases. For $M_4$ the longest bad runs grow linearly with the base: $4$, $8$, $14$, $18$ at $b = 10, 20, 30, 40$, against the bounds $6$, $16$, $26$, $36$.
+
+An earlier, independent set of programs ran the combined statement of Theorem 4.17 on every digit multiset for every length $L = 6$ to $13$ in every base $b = 3$ to $16$ (about $145$ million multisets), with no exception.
+
+### The half-swap family in base 10
+
+Theorem 5.9 reduces each half-swap rule in base $10$ to a table of $\binom{n+4}{n}$ states: $35$, $70$, $126$ at $6$, $8$, $10$ digits. Running the criterion on every half-swap rule of each length, with rules counted up to the global sign, gives the following.
+
+| digits | rules covering every gap | universal rules | endpoints |
+|---|---|---|---|
+| $4$ | $8$ | $0$ | $0$ |
+| $6$ | $240$ | $12$ | $6$ |
+| $8$ | $14{,}208$ | $520$ | $136$ |
+| $10$ | $1{,}355{,}520$ | $71{,}390$ | $9{,}524$ |
+
+At ten digits there are $99{,}999$ possible values of $m$; $35{,}020$ of them are fixed by some rule and $9{,}524$ are the endpoint value of a universal rule. Examples of endpoints are $16748325$, $01239876$, and $6870031299$. Every endpoint in the family is a block of digits followed by its digit complement.
+
+Class C (Definition 5.10): among rules that cover every gap there are none at $6$ or $8$ digits, and $5{,}590$ rules with $688$ endpoints at $10$ digits. By Theorem 5.13 each of these is the first member of a sequence of universal rules, one at every even length from $10$ on. The criterion itself was compared with complete enumeration of all digit multisets on $360$ randomly drawn half-swap rules (drawn with replacement, so with repeats; half of the draws universal) in bases $4$, $6$, and $10$ at $6$ and $8$ digits: the verdicts and the endpoints agree in every case. As a test of the lifting theorem, $400$ class-C rules were lifted twice in all four orders ($2{,}400$ distinct rules, $800$ at $12$ digits and $1{,}600$ at $14$): every one has the predicted endpoint by its state table, and for the rule of Example 5.16 the two lifts at $12$ digits and the four at $14$ digits were also confirmed on every digit multiset ($293{,}930$ and $817{,}190$ multisets).
+
+### Half-swap rules across bases
+
+At $6$ and $8$ digits, $12$ and $112$ half-swap rules are universal in every base from $7$ to $13$ and in base $16$ (complete census), and show no failure on any state in bases $22$, $31$, $50$, and $97$ (at $8$ digits in base $200$, on a random sample of $300{,}000$ states). In the odd bases $31$ and $97$ this check of states is not a proof of universality there (Section 5, Limits). Their endpoints are $6$ and $24$ arrangements of the one digit multiset consisting of $b-2$, $1$, $n-1$ digits $b-1$, and $n-1$ zeros. The rule $R_n$ is one of them at each length. One other, $\mathtt{EABDFC} - \mathtt{DFCEAB}$ at $6$ digits, has a proof along the lines of Section 3 in the project notes, not reproduced here. For the rest, universality in every base is not proved (Open problem 6).
+
+At $10$ digits the picture is different. $25{,}350$ rules are universal in all of the bases $7$ to $13$ and $16$. Sampling in further bases ($313$ to $3467$, and states near the corner of small deficits) finds cycles for some of them, including the second rule of Section 7, which had passed sampling in bases $97$, $200$, and $640$. A sample cannot certify the rest. We make no claim about which of them, apart from $R_5$, are universal in every base.
+
+### Sampled targets
+
+To see how often a number can be an endpoint, random targets were drawn in base $10$ and rules fixing the target were tested by complete enumeration: all of them when there are at most $20{,}000$, and a sample otherwise. Targets are $L$-digit strings with digit sum divisible by $9$, not repdigits; $300$ per length for $L \leq 10$ and $200$ per length above.
+
+| $L$ | targets satisfying Lemma 2.3(b) | universal rule found |
+|---|---|---|
+| $6$ | $54$ | $2$ |
+| $7$ | $102$ | $13$ |
+| $8$ | $108$ | $28$ |
+| $9$ | $144$ | $83$ |
+| $10$ | $165$ | $142$ |
+| $11$ | $124$ | $115$ |
+| $12$ | $150$ | $148$ |
+| $13$ | $148$ | $146$ |
+
+Each rule found is a complete enumeration at its length and is a fact about that one target. The trend with $L$ is an observation on a sample. It is the reason for stating the inverse problem (Open problem 1) and is not evidence for any particular answer to it. Two examples outside the half-swap family: $5445$ at $9$ digits is the endpoint of $\mathtt{HDCGFIEBA} - \mathtt{ICDHGBAEF}$, and $1657575000000$ at $13$ digits is the endpoint of $\mathtt{BACEGFJIMHLKD} - \mathtt{CGHBDAFLKIMJE}$, both in base $10$ by complete enumeration.
+
+## A caution about small bases
+
+The theorems of Sections 3 and 4 hold in every base $b \geq 3$, and those of Section 5 in every even base, because they were proved there. This section records two examples in which a rule passes complete enumeration in every small base tested and fails in large bases. Everything here is **Computed**; nothing in this section is proved for all bases, and the examples are not offered as evidence of any general law.
+
+### A cycle that scales with the base
+
+The six-letter rule $\mathtt{EABDFC} - \mathtt{DFCEAB}$ is a half-swap rule on the same pairing as $R_3$, and at length $6$ it is universal with endpoint $(b-1)(b^3-1)$ in every base from $3$ to $80$ by complete enumeration (a proof for every base, along the lines of Section 3, is in the project notes and is not reproduced here). One way to extend it to length $8$ keeps the coefficients of the letters $\mathtt{A}$ to $\mathtt{E}$, gives the two new gaps the weights $b^6 - b$ and $b^7 - b$, and changes the last coefficient from $b - b^4$ to $b - b^7$. The result is
+$$\mathtt{GFEABDHC} - \mathtt{HGDFCEAB}.$$
+This rule is universal at length $8$ in every base from $3$ to $26$, by complete enumeration of all digit multisets. In base $50$ it is not: the sorted digit strings
+$$\begin{aligned}(48,45,29,21,2,1,1,0) &\to (49,47,34,31,18,16,1,0) \\ &\to (37,37,33,14,13,12,1,0) \to (49,46,25,12,10,4,1,0)\end{aligned}$$
+form a cycle of period $4$. The cycle belongs to a family. For $b$ a multiple of $5$ put $q = b/5$; then
+$$(4q-3,\; 3q+7,\; 3q+3,\; 2q-6,\; 2q-7,\; q+2,\; 1,\; 0)$$
+lies on a cycle of period $4$ in every base $b = 55, 60, \dots, 2000$ and in the bases $2500$, $10000$, and $100005$ (direct iteration in each of these $393$ bases; base $50$ is the same family with two digits tied). Divided by $b$, the cycle tends to a fixed orbit with coordinates in fifths. Complete enumeration in the bases $3$ to $26$ does not see it.
+
+### A cycle that does not depend on the base
+
+The second example is inside the family of Section 5. The ten-digit half-swap rule
+$$\mathtt{AFEJBGIDHC} - \mathtt{GIDHCAFEJB}$$
+is universal in every base from $3$ to $13$ and in base $16$ (complete enumeration). In the notation of Section 5, its state after one step is a multiset of five deficits. The three states
+$$(13,13,15,25,31) \to (1,1,6,17,38) \to (4,4,18,21,36) \to (13,13,15,25,31)$$
+form a cycle in every base from $77$ to $1199$, and in the bases $100003$ and $1000003$: the same deficits, whatever the base. The largest deficit on the cycle is $38$, so the cycle cannot exist until $b \geq 77$; from there on it is always present in the range tested. In digits, five letters sit a fixed distance below $b-1$ and five a fixed distance above $0$, so a random string in a large base is almost never near it. This rule had passed random sampling in bases $97$, $200$, and $640$.
+
+### What the examples show
+
+Two different mechanisms appear: a cycle whose digits grow in proportion to $b$, and a cycle whose deficits are constant in $b$. In both cases the rule is universal in every small base that was tried. For the half-swap family the second mechanism suggests a base-free object: a map on tuples of non-negative integers (the deficits) that does not mention $b$. That the dynamics near the corner is governed by such a map is observed here, not proved; see Section 8.
+
+The conclusion is narrow. For rules of this kind, agreement in every base from $3$ to $26$ (complete enumeration), or in sampled bases up to $640$, is not evidence of universality in every base. The only rules in this paper asserted to be universal in every base are those of Theorems 3.3 and 4.16, and they are asserted because they are proved.
+
+## Open problems
+
+**1. The inverse problem.** Given a number $F$ and a length $L$, decide whether some rule of length $L$ is universal with endpoint $F$, and if so produce one together with a proof. Lemma 2.3 gives necessary conditions on $F$. Nothing in this paper gives a construction. The lifting theorem of Section 5 produces endpoints of one shape only (a block of digits followed by its digit complement), and its seeds come from search. A sampled survey in base $10$ suggests that at lengths $10$ to $13$ most numbers satisfying Lemma 2.3(b) are endpoints of some rule (Section 6), but each instance there is a separate enumeration, and no reason is known.
+
+**2. A recipe for seeds.** Which blocks $N^*$ occur as the first half of the endpoint of a class-C rule (Definition 5.10)? In base $10$ at ten digits there are $688$ such endpoints, all found by complete census. A description of this set that does not pass through a census would turn Theorem 5.13 into a construction.
+
+**3. Odd bases.** The criterion and the lifting theorem of Section 5 are proved for even $b$. In an odd base the digit $(b-1)/2$ is its own complement and has the largest deficit, and the proofs use that this does not happen. Is there a version for odd $b$?
+
+**4. The base-free deficit map.** For a half-swap rule, prove that when every deficit is small compared with $b$ the next state is given by a map on deficits that does not involve $b$ (Section 7 shows one instance over a long range of bases). If that holds, "the deficit map on non-negative integer $n$-tuples has exactly one fixed point and no other cycle" is a necessary condition, free of $b$, for a half-swap rule to be universal in every base. Is it also sufficient, together with a condition that excludes cycles which scale with $b$?
+
+**5. Rules that use more of the input.** The rules $R_n$ and $M_n$ have $n$ distinct nonzero coefficients up to sign among $2n$ or $2n+1$ letters, and their endpoint consists almost entirely of the digits $0$ and $b-1$. Is there a rule of some length $L \geq 4$ that is universal in every base $b \geq 3$ and in which no two gap weights agree up to sign? We know of none.
+
+**6. Other all-base arrangements.** At six and eight digits, a census of half-swap rules across bases finds $12$ and $112$ rules with no failure in any base tested, with endpoints that are $6$ and $24$ arrangements of one digit multiset (Section 6). Theorem 3.3 proves one rule of each length, and one more six-digit rule has a proof in the project notes (Section 6). Are the others universal in every base?
+
+**7. Sharp step counts.** For $R_n$ with $n$ odd, and for $M_n$ with $n \neq 4$, the observed maxima grow much more slowly than the linear bounds of Theorems 3.3 and 4.16. For $M_4$ the observed bad runs grow linearly, at about half the bound (Section 6). Determine the true order of growth.
+
+## Methods and provenance
+
+All enumerations run over digit multisets, since a rule reads its input only through the sorted digits; there are $\binom{L+b-1}{L}$ multisets of length $L$ in base $b$. The checks of Section 6 that concern Theorems 3.3, 4.16, 5.9, and 5.13 were written from the statements as printed in this paper, separately from the programs used when the proofs were first found. The examples of Section 7 were re-run for this paper, except the six-digit range $3$ to $80$ and the statement about sampling in bases $97$, $200$, and $640$, which are quoted. The census counts of Section 6 (the half-swap family in base $10$, the counts across bases, the test of $400$ class-C rules, and the sampled targets) are quoted from the project's November 2026 computations and were not re-run for this paper, apart from the rows for $4$, $6$, and $8$ digits of the base-$10$ table, which were reproduced by direct enumeration. Source code and outputs are linked from the project page, <https://arbolinea.com/60714/>.
+
+The literature search behind the statement of novelty in the introduction was made in November 2026 with general web search engines (including searches of arXiv and Zenodo), the OEIS, and papers fetched from the online archives of the *Fibonacci Quarterly* and the *Journal of Integer Sequences*. It did not include zbMATH, MathSciNet, or a citation search of the papers of Young and of Peterson and Pulapaka, which is where an extension of Young's rule to $2n$ digits would most likely be found. The sequence $9(10^n - 1)$ is OEIS A086580; its entry has no comment on Kaprekar-type maps.
+
+## Acknowledgments {.unnumbered}
+
+The searches, enumerations, proofs, and checks were developed in collaboration with AI models (Anthropic's Claude and OpenAI's ChatGPT), used as research instruments. Several intermediate claims were withdrawn when verification contradicted them; one of them, that the length-$8$ extension of $\mathtt{EABDFC} - \mathtt{DFCEAB}$ is universal in every base, is the subject of Section 7. The questions, the direction, and the responsibility for the results are the author's.
+
+## References {.unnumbered}
+
+- E. Chen, K. Ono, R. E. Schwartz, and D. S. Thakur, Four-digit Kaprekar dynamics in odd bases, *J. Integer Seq.* 29 (2026), Article 26.4.7.
+- K. E. Eldridge and S. Sagong, The determination of Kaprekar convergence and loop convergence of all three-digit numbers, *Amer. Math. Monthly* 95 (1988), 105-112.
+- J. Fukuta and R. J. Chapman, An absorbing 4-digit number, *Amer. Math. Monthly* 100 (1993), 955-956.
+- H. Hanslik, E. Hetmaniok, I. Sobstyl, M. Pleszczy`\'n`{=latex}ski, and R. Witu`\l{}`{=latex}a, Orbits of the Kaprekar's transformations: some introductory facts, *Zeszyty Nauk. Politech. `\'S`{=latex}l`\k{a}`{=latex}skiej Mat. Stosow.* 5 (2015), 5-34.
+- H. Hasse and G. D. Prichett, The determination of all four-digit Kaprekar constants, *J. Reine Angew. Math.* 299/300 (1978), 113-124.
+- D. R. Kaprekar, Another solitaire game, *Scripta Math.* 15 (1949), 244-245.
+- D. R. Kaprekar, An interesting property of the number 6174, *Scripta Math.* 21 (1955), 304.
+- A. Kay and K. Downes-Ward, Fixed points and cycles of the Kaprekar transformation: 1. Odd bases, *J. Integer Seq.* 25 (2022), Article 22.6.7.
+- A. Kay and K. Downes-Ward, Fixed points and cycles of the Kaprekar transformation: 2. Even bases, arXiv:2408.12257 (2024).
+- F. Nuez, Parametric transformation functions in the Kaprekar routine (I), arXiv:2110.15123 (2021).
+- N. Perry, Complete classification of decimal repdigit-shifted Kaprekar maps, preprint, Zenodo (2026), doi:10.5281/zenodo.24251808.
+- K. Peterson and H. Pulapaka, The Kaprekar routine and other digit games for undergraduate exploration, *J. Math. Sci.: Collaborative Explorations* 10 (2008), 143-156.
+- V. Polukhin, Linear structure of the image of the Kaprekar routine, symmetric sums, and a census of attractors, preprint, Zenodo (2026), doi:10.5281/zenodo.24444706.
+- G. D. Prichett, A. L. Ludington, and J. F. Lapenta, The determination of all decadic Kaprekar constants, *Fibonacci Quart.* 19 (1981), 45-52.
+- F. Smarandache, Generalization and alternatives of Kaprekar's routine, arXiv:1005.3235 (2010).
+- A. L. Young, The switch, subtract, reorder routine, *Fibonacci Quart.* 33 (1995), 432-440.

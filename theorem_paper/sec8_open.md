@@ -1,0 +1,15 @@
+## Open problems
+
+**1. The inverse problem.** Given a number $F$ and a length $L$, decide whether some rule of length $L$ is universal with endpoint $F$, and if so produce one together with a proof. Lemma 2.3 gives necessary conditions on $F$. Nothing in this paper gives a construction. The lifting theorem of Section 5 produces endpoints of one shape only (a block of digits followed by its digit complement), and its seeds come from search. A sampled survey in base $10$ suggests that at lengths $10$ to $13$ most numbers satisfying Lemma 2.3(b) are endpoints of some rule (Section 6), but each instance there is a separate enumeration, and no reason is known.
+
+**2. A recipe for seeds.** Which blocks $N^*$ occur as the first half of the endpoint of a class-C rule (Definition 5.10)? In base $10$ at ten digits there are $688$ such endpoints, all found by complete census. A description of this set that does not pass through a census would turn Theorem 5.13 into a construction.
+
+**3. Odd bases.** The criterion and the lifting theorem of Section 5 are proved for even $b$. In an odd base the digit $(b-1)/2$ is its own complement and has the largest deficit, and the proofs use that this does not happen. Is there a version for odd $b$?
+
+**4. The base-free deficit map.** For a half-swap rule, prove that when every deficit is small compared with $b$ the next state is given by a map on deficits that does not involve $b$ (Section 7 shows one instance over a long range of bases). If that holds, "the deficit map on non-negative integer $n$-tuples has exactly one fixed point and no other cycle" is a necessary condition, free of $b$, for a half-swap rule to be universal in every base. Is it also sufficient, together with a condition that excludes cycles which scale with $b$?
+
+**5. Rules that use more of the input.** The rules $R_n$ and $M_n$ have $n$ distinct nonzero coefficients up to sign among $2n$ or $2n+1$ letters, and their endpoint consists almost entirely of the digits $0$ and $b-1$. Is there a rule of some length $L \geq 4$ that is universal in every base $b \geq 3$ and in which no two gap weights agree up to sign? We know of none.
+
+**6. Other all-base arrangements.** At six and eight digits, a census of half-swap rules across bases finds $12$ and $112$ rules with no failure in any base tested, with endpoints that are $6$ and $24$ arrangements of one digit multiset (Section 6). Theorem 3.3 proves one rule of each length, and one more six-digit rule has a proof in the project notes (Section 6). Are the others universal in every base?
+
+**7. Sharp step counts.** For $R_n$ with $n$ odd, and for $M_n$ with $n \neq 4$, the observed maxima grow much more slowly than the linear bounds of Theorems 3.3 and 4.16. For $M_4$ the observed bad runs grow linearly, at about half the bound (Section 6). Determine the true order of growth.

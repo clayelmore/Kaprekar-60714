@@ -28,3 +28,7 @@ audit_2026-11/HANDOFF_*.md
 audit_2026-11/video_60714/film/CLAUDE.md
 audit_2026-11/video_60714/film/AGENTS.md
 *.log
+
+# second paper: referee working folders and literature notes stay local
+/theorem_paper/referee*/
+/theorem_paper/LITERATURE_*.md

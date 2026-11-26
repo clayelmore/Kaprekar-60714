@@ -189,7 +189,7 @@ rho_2 = 0 (3.3) unless already there; at most 2 steps to tau (3.2); one step to 
   non-repdigit reaches F for n = 3 (bases 3-14, 16, 20, 24, 30, 40), n = 4 (3-10, 12, 14, 16, 20), n = 5 (3-11),
   n = 6 (3-9); reduced maps and every inequality on every deficit state for n = 3 (to b = 301), 4 (to 121),
   5 (to 41), 6 (to 31), 7 (to 21), 8 (to 17), and on samples at b = 300, 301. The bound of 3.5 is attained at
-  n = 4, b = 5; for n = 4 the longest bad run is exactly H.
+  n = 4, b = 5; for n = 4 the longest bad run is H or H - 1 (corrected 2026-11-25: it is H - 1 at b = 20 and b = 40, H at b = 5, 7, 10, 11, 12, 30).
 * Length 9 census (all 362,880 fixed-middle rules, bases 4, 7, 10): 5,224 rules have one endpoint in all three;
   160 end at (b-1)(b^5-1); the fixed letter is never the largest or the smallest digit.
 * Census (`midfix.c`, all 5,040 fixed-middle rules at length 7, bases 3-12 and 16): 48 rules have one endpoint
