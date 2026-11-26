@@ -1,5 +1,7 @@
 # 60714
 
+**Main page: [arbolinea.com/60714](https://arbolinea.com/60714/)** (the video, the rule, an explorable picture, the calculator, and the paper). This repository holds the code and data behind it.
+
 A five-digit number that is a fixed point of an explicit Kaprekar-type rule at every digit length d ≥ 5.
 
 At 5 and 6 digits, every input that is not one repeated digit reaches **60714** (at 5 digits: 99,990 of 100,000 strings, in at most 30 steps). At 7 or more digits, every input reaches either 60714 or 0. The inputs that collapse to 0 form an exactly characterized escape class, and its share grows with length: 0.56% of digit collections at 8 digits, about 12% at 24 digits (computed). The classical routine also sends inputs to 0, but only the repdigits; here the collapse reaches other inputs as well.
@@ -161,7 +163,7 @@ The discovery arc, the classification errors and self-corrections, and the proof
   title  = {The Digits of 6174 at Every Length: Two Liftings of a Universal Kaprekar Fixed Point},
   year   = {2026},
   month  = nov,
-  note   = {Unpublished manuscript. https://github.com/clayelmore/Kaprekar-60714}
+  note   = {Unpublished manuscript. https://arbolinea.com/60714/}
 }
 ```
 
