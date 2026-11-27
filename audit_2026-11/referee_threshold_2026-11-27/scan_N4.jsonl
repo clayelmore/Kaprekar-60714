@@ -1,0 +1,576 @@
+{"a": [0, 1, 2, 3], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 2, 3], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 1, 2, 3], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 2, 3], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 1, 2, 3], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 1, 2, 3], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 1, 2, 3], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 2, 3], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 1, 3, 2], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 3, 2], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 1, 3, 2], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 1, 3, 2], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 3, 2], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 1, 3, 2], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 3, 2], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 1, 3, 2], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 1, 2, 3], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 2, 3], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 12"}
+{"a": [0, 1, 2, 3], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 2, 3], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 10"}
+{"a": [0, 1, 2, 3], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 2, 3], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 7"}
+{"a": [0, 1, 2, 3], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 1, 2, 3], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 1, 2, 3], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 1, 2, 3], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 1, 2, 3], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 8"}
+{"a": [0, 1, 2, 3], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 10"}
+{"a": [0, 2, 1, 3], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 1, 3], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 2, 1, 3], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 1, 3], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 1, 2, 3], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 6"}
+{"a": [0, 1, 2, 3], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 1, 2, 3], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 1, 2, 3], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 1, 3, 2], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 1, 3, 2], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 1, 3, 2], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 3, 2], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 7"}
+{"a": [0, 1, 3, 2], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 14"}
+{"a": [0, 1, 3, 2], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 11"}
+{"a": [0, 1, 3, 2], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 3, 2], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 5"}
+{"a": [0, 2, 1, 3], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 2, 1, 3], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 2, 1, 3], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 1, 3], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 24"}
+{"a": [0, 2, 1, 3], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 1, 3], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 2, 1, 3], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 1, 3], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 2, 3, 1], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 2, 3, 1], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 2, 3, 1], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 2, 3, 1], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 3, 2], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 1, 3, 2], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 1, 3, 2], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 1, 3, 2], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 11"}
+{"a": [0, 2, 1, 3], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 1, 3], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 2, 1, 3], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 12"}
+{"a": [0, 2, 1, 3], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 5"}
+{"a": [0, 2, 3, 1], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 2, 3, 1], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 3, 1], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 2, 3, 1], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 2, 1, 3], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 2, 1, 3], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 9"}
+{"a": [0, 2, 1, 3], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 2, 1, 3], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 2, 1, 3], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 6"}
+{"a": [0, 2, 1, 3], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 2, 1, 3], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 2, 1, 3], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 2, 3, 1], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 2, 3, 1], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 3, 1], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 2, 3, 1], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 1, 2], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 3, 1, 2], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 1, 2], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 3, 1, 2], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 2, 3, 1], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 2, 3, 1], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 2, 3, 1], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 17"}
+{"a": [0, 2, 3, 1], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 2, 3, 1], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 3, 1], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 14"}
+{"a": [0, 2, 3, 1], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 25"}
+{"a": [0, 2, 3, 1], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 1, 2], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 1, 2], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 3, 1, 2], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 8"}
+{"a": [0, 3, 1, 2], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 3, 1], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 2, 3, 1], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 2, 3, 1], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 2, 3, 1], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 2, 1], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 3, 2, 1], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 3, 2, 1], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 3, 2, 1], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 1, 2], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 1, 2], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 13"}
+{"a": [0, 3, 1, 2], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 1, 2], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 3, 1, 2], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 1, 2], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 3, 1, 2], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 1, 2], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 8"}
+{"a": [0, 3, 1, 2], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 1, 2], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 3, 1, 2], "b": [2, 1, 0, 3], "passes": false, "reason": "two fixed points"}
+{"a": [0, 3, 1, 2], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 3, 2, 1], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 3, 2, 1], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 2, 1], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 3, 2, 1], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 5"}
+{"a": [0, 3, 2, 1], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 2, 1], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 2, 1], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [0, 3, 2, 1], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 2, 3], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 2, 3], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 0, 2, 3], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 2, 3], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 15"}
+{"a": [0, 3, 2, 1], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 3, 2, 1], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 2, 1], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 2, 1], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 8"}
+{"a": [1, 0, 2, 3], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 2, 3], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 0, 2, 3], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 0, 2, 3], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [0, 3, 2, 1], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 14"}
+{"a": [0, 3, 2, 1], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 2, 1], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 2, 1], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 14"}
+{"a": [1, 0, 2, 3], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 7"}
+{"a": [1, 0, 2, 3], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 0, 2, 3], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 2, 3], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 0, 2, 3], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 2, 3], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 0, 2, 3], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 2, 3], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 12"}
+{"a": [1, 0, 3, 2], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 0, 3, 2], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 3, 2], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 8"}
+{"a": [1, 0, 3, 2], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 0, 3, 2], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 3, 2], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 0, 3, 2], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 0, 3, 2], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 3, 2], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 0, 3, 2], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 0, 3, 2], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 3, 2], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 0, 2, 3], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 0, 2, 3], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 0, 2, 3], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 5"}
+{"a": [1, 0, 2, 3], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 6"}
+{"a": [1, 0, 3, 2], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 0, 3, 2], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 0, 3, 2], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 3, 2], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 0, 3, 2], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 0, 3, 2], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 7"}
+{"a": [1, 0, 3, 2], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 11"}
+{"a": [1, 0, 3, 2], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 2, 0, 3], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 0, 3], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 7"}
+{"a": [1, 2, 0, 3], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 0, 3], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 2, 0, 3], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 2, 0, 3], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 8"}
+{"a": [1, 2, 0, 3], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 0, 3], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 2, 0, 3], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 0, 3], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 2, 0, 3], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 2, 0, 3], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 2, 0, 3], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 0, 3], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 9"}
+{"a": [1, 2, 0, 3], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 0, 3], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 2, 0, 3], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 2, 0, 3], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 2, 0, 3], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 10"}
+{"a": [1, 2, 0, 3], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 32"}
+{"a": [0, 1, 3, 2], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 1, 3, 2], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 1, 3, 2], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [0, 1, 3, 2], "b": [2, 1, 3, 0], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[1, 0, 0, 0, 0, 0, 0, 1, 1]]], "fixed": true}
+{"a": [0, 3, 2, 1], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [0, 3, 2, 1], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 7"}
+{"a": [0, 3, 2, 1], "b": [1, 3, 0, 2], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [0, 3, 2, 1], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 0, 2, 3], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 8"}
+{"a": [1, 0, 2, 3], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 0, 2, 3], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 0, 2, 3], "b": [3, 0, 2, 1], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[1, 0, 0, 0, 0, 0, 0, 1, 1]]], "fixed": true}
+{"a": [1, 2, 3, 0], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 2, 3, 0], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 3, 0], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 2, 3, 0], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 1, 2], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [0, 3, 1, 2], "b": [2, 3, 1, 0], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[1, 0, 0, 0, 0, 0, 0, 1, 1]]], "fixed": true}
+{"a": [0, 3, 1, 2], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [0, 3, 1, 2], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 2, 3, 0], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 2, 3, 0], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 2, 3, 0], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 2, 3, 0], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 3, 0], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 7"}
+{"a": [1, 2, 3, 0], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 3, 0], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 5"}
+{"a": [1, 2, 3, 0], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 3, 0], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 2, 3, 0], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 3, 0], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 9"}
+{"a": [1, 2, 3, 0], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 8"}
+{"a": [1, 3, 0, 2], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 0, 2], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 3, 0, 2], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 3, 0, 2], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 0, 2], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 3, 0, 2], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 3, 0, 2], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 0, 2], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 3, 0, 2], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 5"}
+{"a": [1, 3, 0, 2], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 0, 2], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 3, 0, 2], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 11"}
+{"a": [1, 3, 0, 2], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 3, 0, 2], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 6"}
+{"a": [1, 3, 0, 2], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 3, 0, 2], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 3, 0, 2], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 0, 2], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 3, 0, 2], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 3, 0, 2], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 2, 0, 3], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 6"}
+{"a": [1, 2, 0, 3], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 2, 0, 3], "b": [3, 2, 0, 1], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[1, 0, 0, 0, 0, 0, 0, 1, 1]]], "fixed": true}
+{"a": [1, 2, 0, 3], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 3, 2, 0], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 3, 2, 0], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 5"}
+{"a": [1, 3, 2, 0], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 3, 2, 0], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 3, 2, 0], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 3, 2, 0], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 2, 0], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 3, 2, 0], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 2, 0], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 3, 2, 0], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 11"}
+{"a": [1, 3, 2, 0], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 5"}
+{"a": [1, 3, 2, 0], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 2, 0], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 3, 2, 0], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 2, 0], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 3, 2, 0], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 3, 2, 0], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 3, 2, 0], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 2, 0], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [1, 3, 2, 0], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 1, 3], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 1, 3], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 0, 1, 3], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 1, 3], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [1, 3, 0, 2], "b": [2, 3, 0, 1], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [1, 3, 0, 2], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 3, 0, 2], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 3, 0, 2], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 0, 1, 3], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 1, 3], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 6"}
+{"a": [2, 0, 1, 3], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 8"}
+{"a": [2, 0, 1, 3], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 9"}
+{"a": [2, 0, 1, 3], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 1, 3], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 0, 1, 3], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 1, 3], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 0, 3, 2], "b": [2, 0, 1, 3], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [1, 0, 3, 2], "b": [2, 0, 3, 1], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [1, 0, 3, 2], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 0, 3, 2], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 0, 1, 3], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 23"}
+{"a": [2, 0, 1, 3], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 10"}
+{"a": [2, 0, 1, 3], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 0, 1, 3], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 0, 3, 1], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 9"}
+{"a": [2, 0, 3, 1], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 6"}
+{"a": [2, 0, 3, 1], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 0, 3, 1], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 3, 0], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 2, 3, 0], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [1, 2, 3, 0], "b": [0, 2, 1, 3], "passes": false, "reason": "two fixed points"}
+{"a": [1, 2, 3, 0], "b": [0, 2, 3, 1], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [2, 0, 3, 1], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 0, 3, 1], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [2, 0, 3, 1], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 4"}
+{"a": [2, 0, 3, 1], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 17"}
+{"a": [2, 0, 3, 1], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 0, 3, 1], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 3, 1], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 0, 3, 1], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 0, 1, 3], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 0, 1, 3], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 0, 1, 3], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 1, 3], "b": [1, 0, 3, 2], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [1, 3, 2, 0], "b": [0, 3, 1, 2], "passes": false, "reason": "two fixed points"}
+{"a": [1, 3, 2, 0], "b": [0, 3, 2, 1], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [1, 3, 2, 0], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 3, 2, 0], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 0, 3, 1], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 3, 1], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 0, 3, 1], "b": [3, 0, 1, 2], "passes": false, "reason": "two fixed points"}
+{"a": [2, 0, 3, 1], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 0, 3], "b": [0, 1, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 0, 3], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 1, 0, 3], "b": [0, 2, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 0, 3], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 0, 3, 1], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 8"}
+{"a": [2, 0, 3, 1], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 9"}
+{"a": [2, 0, 3, 1], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 3, 1], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 5"}
+{"a": [2, 1, 0, 3], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 0, 3], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 1, 0, 3], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 0, 3], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 1, 0, 3], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 9"}
+{"a": [2, 1, 0, 3], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 1, 0, 3], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 0, 3], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 1, 0, 3], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 0, 3], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 1, 0, 3], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 1, 0, 3], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 7"}
+{"a": [2, 1, 0, 3], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 1, 0, 3], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 1, 0, 3], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 17"}
+{"a": [2, 1, 0, 3], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 6"}
+{"a": [2, 1, 3, 0], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 5"}
+{"a": [2, 1, 3, 0], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 13"}
+{"a": [2, 1, 3, 0], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [2, 1, 3, 0], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 4"}
+{"a": [2, 1, 3, 0], "b": [1, 2, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 1, 3, 0], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 3, 0], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 1, 3, 0], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 3, 0], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 1, 3, 0], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 1, 3, 0], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 1, 3, 0], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [1, 2, 3, 0], "b": [0, 3, 1, 2], "passes": false, "reason": "full", "M": 17, "n_terminal": 2, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 1]]], "fixed": true}
+{"a": [1, 2, 3, 0], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [1, 2, 3, 0], "b": [1, 0, 2, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [1, 2, 3, 0], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 1, 3, 0], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 1, 3, 0], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 3, 0], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 5"}
+{"a": [2, 1, 3, 0], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 1, 3, 0], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 1, 3, 0], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 3, 0], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 1, 3, 0], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 0, 1], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 3, 0, 1], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 14"}
+{"a": [2, 3, 0, 1], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 3, 0, 1], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 0, 1], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 4"}
+{"a": [2, 3, 0, 1], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 0, 1], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 3, 0, 1], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 6"}
+{"a": [2, 3, 0, 1], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 3, 0, 1], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 0, 1], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 3, 0, 1], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 3, 0, 1], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 0, 1], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 3, 0, 1], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 5"}
+{"a": [2, 3, 0, 1], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 0, 1], "b": [3, 1, 0, 2], "passes": false, "reason": "two fixed points"}
+{"a": [2, 3, 0, 1], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 12"}
+{"a": [2, 3, 0, 1], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 0, 1], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 3, 1, 0], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 3, 1, 0], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 3, 1, 0], "b": [0, 2, 1, 3], "passes": false, "reason": "two fixed points"}
+{"a": [2, 3, 1, 0], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 3, 1, 0], "b": [0, 3, 1, 2], "passes": false, "reason": "two fixed points"}
+{"a": [2, 3, 1, 0], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 3, 1, 0], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 6"}
+{"a": [2, 3, 1, 0], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 4"}
+{"a": [2, 3, 1, 0], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 9"}
+{"a": [2, 3, 1, 0], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 1, 0], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 3, 1, 0], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 1, 0], "b": [2, 0, 1, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 3, 1, 0], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 3, 1, 0], "b": [2, 1, 0, 3], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 3, 1, 0], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 1, 0], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 3, 1, 0], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 1, 0], "b": [3, 0, 1, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 3, 1, 0], "b": [3, 0, 2, 1], "passes": false, "reason": "cycle period 7"}
+{"a": [2, 3, 1, 0], "b": [3, 1, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 3, 1, 0], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 1, 0], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 3, 1, 0], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 1, 2], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 8"}
+{"a": [3, 0, 1, 2], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 1, 2], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 12"}
+{"a": [3, 0, 1, 2], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 1, 2], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 1, 2], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 0, 1, 2], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 0, 1, 2], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 1, 2], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 14"}
+{"a": [3, 0, 1, 2], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 1, 2], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 1, 2], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 0, 3, 1], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 9"}
+{"a": [2, 0, 3, 1], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 0, 3, 1], "b": [1, 0, 2, 3], "passes": false, "reason": "two fixed points"}
+{"a": [2, 0, 3, 1], "b": [1, 0, 3, 2], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [3, 0, 1, 2], "b": [2, 3, 0, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 1, 2], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 1, 2], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 1, 2], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 0, 1, 2], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 1, 2], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 0, 1, 2], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 0, 1, 2], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 0, 2, 1], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 0, 2, 1], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 2, 1], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 14"}
+{"a": [3, 0, 2, 1], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 2, 1], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 0, 2, 1], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 2, 1], "b": [1, 0, 2, 3], "passes": false, "reason": "two fixed points"}
+{"a": [3, 0, 2, 1], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 0, 2, 1], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 0, 2, 1], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 0, 2, 1], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 2, 1], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 0, 2, 1], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 2, 1], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 2, 1], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 2, 1], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 2, 1], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 2, 1], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 0, 2, 1], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 0, 2, 1], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 2, 1], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 0, 2, 1], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 0, 2, 1], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 0, 2, 1], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 1, 0, 2], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 1, 0, 2], "b": [0, 1, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 0, 2], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 7"}
+{"a": [3, 1, 0, 2], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 1, 0, 2], "b": [0, 3, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 0, 2], "b": [0, 3, 2, 1], "passes": false, "reason": "two fixed points"}
+{"a": [3, 1, 0, 2], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 1, 0, 2], "b": [1, 0, 3, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 0, 2], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 6"}
+{"a": [3, 1, 0, 2], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 13"}
+{"a": [3, 1, 0, 2], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 0, 2], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [2, 0, 1, 3], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 0, 1, 3], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 0, 1, 3], "b": [3, 0, 1, 2], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [2, 0, 1, 3], "b": [3, 0, 2, 1], "passes": false, "reason": "two fixed points"}
+{"a": [3, 1, 0, 2], "b": [2, 3, 0, 1], "passes": false, "reason": "two fixed points"}
+{"a": [3, 1, 0, 2], "b": [2, 3, 1, 0], "passes": false, "reason": "cycle period 5"}
+{"a": [3, 1, 0, 2], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 0, 2], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 1, 0, 2], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 0, 2], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 1, 0, 2], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 1, 0, 2], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [2, 1, 0, 3], "b": [3, 1, 0, 2], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [2, 1, 0, 3], "b": [3, 1, 2, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 1, 0, 3], "b": [3, 2, 0, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [2, 1, 0, 3], "b": [3, 2, 1, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 1, 2, 0], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 1, 2, 0], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 1, 2, 0], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 1, 2, 0], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 1, 2, 0], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 1, 2, 0], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 2, 0], "b": [1, 3, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 1, 2, 0], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 3, 0, 1], "b": [1, 2, 0, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 3, 0, 1], "b": [1, 2, 3, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 3, 0, 1], "b": [1, 3, 0, 2], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [2, 3, 0, 1], "b": [1, 3, 2, 0], "passes": false, "reason": "two fixed points"}
+{"a": [3, 1, 2, 0], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 18"}
+{"a": [3, 1, 2, 0], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 1, 2, 0], "b": [2, 1, 0, 3], "passes": false, "reason": "two fixed points"}
+{"a": [3, 1, 2, 0], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 2, 0], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 1, 2, 0], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 2, 0], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 1, 2, 0], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 2, 0], "b": [2, 3, 0, 1], "passes": false, "reason": "two fixed points"}
+{"a": [3, 1, 2, 0], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 1, 2, 0], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 1, 2, 0], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 2, 0, 1], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 12"}
+{"a": [3, 2, 0, 1], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 2, 0, 1], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 2, 0, 1], "b": [0, 2, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 0, 1], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 8"}
+{"a": [3, 2, 0, 1], "b": [0, 3, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 0, 1], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 2, 0, 1], "b": [1, 0, 3, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 2, 0, 1], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 2, 0, 1], "b": [2, 0, 3, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 0, 1], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 2, 0, 1], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 2, 0, 1], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 0, 1], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 2, 0, 1], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 2, 0, 1], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 0, 1], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 2, 0, 1], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 2, 0, 1], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 0, 1], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 0, 1, 2], "b": [2, 0, 1, 3], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [3, 0, 1, 2], "b": [2, 0, 3, 1], "passes": false, "reason": "two fixed points"}
+{"a": [3, 0, 1, 2], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 0, 1, 2], "b": [2, 1, 3, 0], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 2, 1, 0], "b": [0, 3, 1, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 2, 1, 0], "b": [0, 3, 2, 1], "passes": false, "reason": "cycle period 7"}
+{"a": [3, 2, 1, 0], "b": [1, 0, 2, 3], "passes": false, "reason": "cycle period 12"}
+{"a": [3, 2, 1, 0], "b": [1, 0, 3, 2], "passes": false, "reason": "two fixed points"}
+{"a": [3, 2, 1, 0], "b": [1, 2, 0, 3], "passes": false, "reason": "two fixed points"}
+{"a": [3, 2, 1, 0], "b": [1, 2, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 1, 0], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 2, 1, 0], "b": [1, 3, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 1, 0], "b": [2, 0, 1, 3], "passes": false, "reason": "two fixed points"}
+{"a": [3, 2, 1, 0], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 18"}
+{"a": [3, 2, 1, 0], "b": [2, 1, 0, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 2, 1, 0], "b": [2, 1, 3, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 1, 0], "b": [2, 3, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 2, 1, 0], "b": [2, 3, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 1, 0], "b": [3, 0, 1, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 2, 1, 0], "b": [3, 0, 2, 1], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 2, 1, 0], "b": [3, 1, 0, 2], "passes": false, "reason": "lemma0", "witness": [9, 8, 8, 8]}
+{"a": [3, 2, 1, 0], "b": [3, 1, 2, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [3, 2, 1, 0], "b": [3, 2, 0, 1], "passes": false, "reason": "lemma0", "witness": [9, 9, 8, 8]}
+{"a": [3, 2, 1, 0], "b": [3, 2, 1, 0], "passes": false, "reason": "lemma0", "witness": [9, 9, 9, 8]}
+{"a": [2, 1, 3, 0], "b": [0, 1, 2, 3], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[2, 0, 0, 0, 0, 0, 1, 0, 1]]], "fixed": true}
+{"a": [2, 1, 3, 0], "b": [0, 1, 3, 2], "passes": false, "reason": "two fixed points"}
+{"a": [2, 1, 3, 0], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [2, 1, 3, 0], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 1, 0, 2], "b": [2, 0, 1, 3], "passes": false, "reason": "cycle period 6"}
+{"a": [3, 1, 0, 2], "b": [2, 0, 3, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 1, 0, 2], "b": [2, 1, 0, 3], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[0, 0, 0, 1, 1, 0, 0, 0, 0]]], "fixed": true}
+{"a": [3, 1, 0, 2], "b": [2, 1, 3, 0], "passes": false, "reason": "two fixed points"}
+{"a": [3, 1, 2, 0], "b": [0, 1, 2, 3], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[2, 0, 0, 0, 0, 0, 1, 0, 2]]], "fixed": true}
+{"a": [3, 1, 2, 0], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 1, 2, 0], "b": [0, 2, 1, 3], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 1, 2, 0], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 3"}
+{"a": [3, 2, 0, 1], "b": [1, 2, 0, 3], "passes": false, "reason": "two fixed points"}
+{"a": [3, 2, 0, 1], "b": [1, 2, 3, 0], "passes": true, "reason": "full", "M": 17, "n_terminal": 1, "terminal": [[[2, 0, 0, 0, 0, 0, 1, 0, 1]]], "fixed": true}
+{"a": [3, 2, 0, 1], "b": [1, 3, 0, 2], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 2, 0, 1], "b": [1, 3, 2, 0], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 2, 1, 0], "b": [0, 1, 2, 3], "passes": false, "reason": "cycle period 2"}
+{"a": [3, 2, 1, 0], "b": [0, 1, 3, 2], "passes": false, "reason": "cycle period 4"}
+{"a": [3, 2, 1, 0], "b": [0, 2, 1, 3], "passes": true, "reason": "full", "M": 16, "n_terminal": 1, "terminal": [[[2, 0, 0, 0, 0, 0, 1, 0, 2]]], "fixed": true}
+{"a": [3, 2, 1, 0], "b": [0, 2, 3, 1], "passes": false, "reason": "cycle period 6"}

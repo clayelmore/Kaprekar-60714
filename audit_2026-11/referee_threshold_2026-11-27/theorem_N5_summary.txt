@@ -1,0 +1,40 @@
+N=5  threshold 2N+14=24  cores=86  lengths=[24, 25]  rows=172
+stage-2 (complete enumeration) runs: 81
+((0, 2, 4, 3, 1), (1, 4, 3, 2, 0)) closure_pass=True universal at [24, 25] F ['1087326']
+((0, 3, 2, 1, 4), (4, 2, 1, 3, 0)) closure_pass=True universal at [24, 25] F ['1023876']
+((0, 3, 2, 4, 1), (1, 2, 4, 3, 0)) closure_pass=True universal at [24, 25] F ['1073826']
+((0, 3, 4, 2, 1), (1, 3, 4, 0, 2)) closure_pass=True universal at [24, 25] F ['45']
+((0, 4, 3, 1, 2), (2, 4, 3, 1, 0)) closure_pass=True universal at [24, 25] F ['891']
+((1, 0, 3, 2, 4), (2, 4, 1, 3, 0)) closure_pass=True universal at [24, 25] F ['51624']
+((1, 0, 3, 4, 2), (2, 0, 1, 4, 3)) closure_pass=True universal at [24, 25] F ['450']
+((1, 0, 3, 4, 2), (3, 1, 4, 2, 0)) closure_pass=True universal at [24, 25] F ['87516']
+((1, 0, 4, 3, 2), (4, 1, 3, 2, 0)) closure_pass=True universal at [24, 25] F ['78516']
+((1, 2, 4, 0, 3), (3, 0, 2, 4, 1)) closure_pass=True universal at [24, 25] F ['103257']
+((1, 2, 4, 3, 0), (0, 3, 2, 4, 1)) closure_pass=True universal at [24, 25] F ['107253']
+((1, 4, 2, 0, 3), (0, 4, 2, 3, 1)) closure_pass=True universal at [24, 25] F ['45']
+((2, 0, 4, 1, 3), (3, 1, 0, 4, 2)) closure_pass=True universal at [24, 25] F ['103572']
+((2, 0, 4, 3, 1), (1, 3, 0, 4, 2)) closure_pass=True universal at [24, 25] F ['107532']
+((2, 3, 0, 1, 4), (1, 3, 0, 4, 2)) closure_pass=True universal at [24, 25] F ['450']
+((2, 3, 1, 0, 4), (4, 3, 1, 0, 2)) closure_pass=True universal at [24, 25] F ['89100']
+((2, 3, 4, 0, 1), (0, 2, 1, 4, 3)) closure_pass=True universal at [24, 25] F ['124056']
+((3, 0, 2, 1, 4), (1, 4, 3, 2, 0)) closure_pass=True universal at [24, 25] F ['52164']
+((3, 0, 2, 4, 1), (4, 1, 3, 2, 0)) closure_pass=True universal at [24, 25] F ['62154']
+((3, 1, 0, 2, 4), (4, 2, 3, 0, 1)) closure_pass=True universal at [24, 25] F ['24831']
+((3, 1, 0, 4, 2), (2, 4, 3, 0, 1)) closure_pass=True universal at [24, 25] F ['84231']
+((3, 1, 2, 4, 0), (0, 1, 3, 4, 2)) closure_pass=True universal at [24, 25] F ['8091']
+((3, 1, 4, 2, 0), (0, 1, 2, 4, 3)) closure_pass=True universal at [24, 25] F ['1037691']
+((3, 4, 0, 1, 2), (1, 3, 2, 0, 4)) closure_pass=True universal at [24, 25] F ['140562']
+((4, 2, 0, 1, 3), (3, 2, 0, 1, 4)) closure_pass=True universal at [24, 25] F ['45000']
+((4, 2, 3, 0, 1), (1, 3, 0, 2, 4)) closure_pass=True universal at [24, 25] F ['269307']
+((4, 2, 3, 1, 0), (0, 2, 3, 1, 4)) closure_pass=True universal at [24, 25] F ['1079991']
+cores passing closure: 27
+COUNTEREXAMPLES: 0
+rules where every sampled non-repdigit ends in ONE cycle of period > 1 (stage 1): 8
+   (((0, 4, 3, 1, 2), (1, 0, 2, 4, 3)), 24, 'common cycle of period 5', ['999777776665443321111000'])
+   (((0, 4, 3, 1, 2), (1, 0, 2, 4, 3)), 25, 'common cycle of period 5', ['9997777766654433211110000'])
+   (((1, 0, 3, 2, 4), (4, 1, 0, 2, 3)), 24, 'common cycle of period 4', ['999777776665443321111000'])
+   (((1, 0, 3, 2, 4), (4, 1, 0, 2, 3)), 25, 'common cycle of period 4', ['9997777766654433211110000'])
+   (((2, 3, 1, 0, 4), (0, 3, 4, 2, 1)), 24, 'common cycle of period 3', ['999777776665443321111000'])
+   (((2, 3, 1, 0, 4), (0, 3, 4, 2, 1)), 25, 'common cycle of period 3', ['9997777766654433211110000'])
+   (((3, 0, 4, 1, 2), (0, 1, 2, 4, 3)), 24, 'common cycle of period 12', ['999777776665443321111000'])
+   (((3, 0, 4, 1, 2), (0, 1, 2, 4, 3)), 25, 'common cycle of period 12', ['9997777766654433211110000'])

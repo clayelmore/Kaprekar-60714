@@ -41,3 +41,5 @@ bases/b*_n7_*.txt
 bases7/one_*
 univcheck
 to_order/hunt_L*.tsv
+threshold_test
+threshold_test7

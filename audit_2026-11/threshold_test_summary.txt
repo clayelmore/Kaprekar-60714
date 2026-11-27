@@ -1,0 +1,61 @@
+threshold_test.c results, run 2026-11-27 (pathmax for class S includes the orbit of {1} up to the target)
+
+N=6 letters
+cores: 190800
+by class:
+15120 L0
+ 551 PASS
+16321 S:cycle
+158808 T:cycle
+failing witnesses by pathmax (most nonzero digits on the failing orbit):
+ 192 3
+1845 4
+7248 5
+30837 6
+55068 7
+60540 8
+17572 9
+1355 10
+ 119 11
+  82 12
+  86 13
+  52 14
+  47 15
+  27 16
+  21 17
+  13 18
+  14 19
+  11 20
+
+N=7 letters
+cores: 9344160
+by class:
+22426 KNOWN
+594720 L0
+761686 S:cycle
+7965328 T:cycle
+failing witnesses by pathmax (most nonzero digits on the failing orbit):
+3840 3
+37230 4
+79896 5
+475403 6
+1803989 7
+3201794 8
+2515321 9
+545924 10
+44650 11
+4480 12
+2766 13
+2681 14
+2418 15
+2130 16
+1472 17
+1071 18
+ 701 19
+ 723 20
+ 365 21
+ 160 22
+
+N=6 PASS maxsize:
+ 537 maxsize=20
+  14 maxsize=21

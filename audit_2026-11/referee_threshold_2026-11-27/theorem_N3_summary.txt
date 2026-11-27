@@ -1,0 +1,21 @@
+N=3  threshold 2N+14=20  cores=36  lengths=[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]  rows=684
+stage-2 (complete enumeration) runs: 40
+((0, 1, 2), (2, 1, 0)) closure_pass=False universal at [3] F ['495']
+((0, 2, 1), (1, 2, 0)) closure_pass=False universal at [3] F ['45']
+((1, 0, 2), (2, 0, 1)) closure_pass=True universal at [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21] F ['450']
+((1, 2, 0), (0, 2, 1)) closure_pass=False universal at [3] F ['45']
+((2, 0, 1), (1, 0, 2)) closure_pass=False universal at [3] F ['450']
+((2, 1, 0), (0, 1, 2)) closure_pass=True universal at [3, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21] F ['10791', '495']
+cores passing closure: 2
+COUNTEREXAMPLES: 0
+rules where every sampled non-repdigit ends in ONE cycle of period > 1 (stage 1): 24
+   (((0, 1, 2), (2, 0, 1)), 17, 'common cycle of period 2', ['99777766643211100'])
+   (((0, 1, 2), (2, 1, 0)), 4, 'common cycle of period 3', ['9421'])
+   (((0, 1, 2), (2, 1, 0)), 5, 'common cycle of period 3', ['94211'])
+   (((0, 1, 2), (2, 1, 0)), 6, 'common cycle of period 3', ['974211'])
+   (((0, 1, 2), (2, 1, 0)), 7, 'common cycle of period 3', ['9774211'])
+   (((0, 1, 2), (2, 1, 0)), 8, 'common cycle of period 3', ['97774211'])
+   (((0, 1, 2), (2, 1, 0)), 9, 'common cycle of period 3', ['977764211'])
+   (((0, 1, 2), (2, 1, 0)), 10, 'common cycle of period 3', ['9777643211'])
+   (((0, 1, 2), (2, 1, 0)), 11, 'common cycle of period 3', ['97776432111'])
+   (((0, 1, 2), (2, 1, 0)), 12, 'common cycle of period 3', ['977776432111'])
